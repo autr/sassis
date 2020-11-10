@@ -1,0 +1,191 @@
+
+$bg: mono(10%)
+$bg-light: mono(20%)
+$text: mono(80%)
+$bright: mono(95%) 
+$fade: mono(50%) 
+$green: color(150)
+$blue: color(200)
+$yellow: color(50)
+$red: color(340)
+$bg-alt: mono(12%)
+$fontsize: 12px
+
+
+=prop( $prop, $c, $s: '' )
+	@if $s == ''
+		#{$prop}: $c
+	@else
+		#{$s}
+			#{$prop}: $c
+
+=theme( $c, $n: '' ) 
+	$s: ''
+	@if $n != ''
+		@for $i from 1 through length($n)
+			$name: nth($n, $i)
+			$s: #{$s + '&.' + $name}
+			@if $i != length($n)
+				$s: #{$s + ', '}
+	@debug $c $s
+
+	+prop( color, $c, $s )
+	+prop( border-color, $c, $s ) 
+
+
+	// get alternative luminance...
+
+	$alt: red
+	@if ( lightness( $c ) > 51 )
+		$alt: $bg
+	@else 
+		$alt: $bright
+
+	// colors...
+
+	h1, h2, h3, h4, h5, h6
+		+prop( color, $c, $s )
+
+	input, select, textarea
+		+prop(color, $c, $s )
+
+	input[type=text], textarea
+		+prop(border-color, $c, $s )
+
+
+	.checkbox
+		input[type=checkbox] + span
+			+prop(border-color, $c, $s )
+			&:before, &:after
+				+prop(border-color, $c, $s )
+	.select, .chevron
+		&:after
+			+prop(border-color, $c, $s )
+	.filled
+		+prop(background, $c, $s )
+		+prop(color, $alt, $s )
+
+	a, select
+		+prop(color, $c, $s )
+		+prop(border-color, $c, $s )
+		&:active, &.filled
+			+prop(background, $c, $s )
+			+prop(color, $alt, $s )
+	button
+		+prop(border-color, $c, $s )
+		+prop(color, $c, $s ) 
+
+=terminal-theme( $fontfamily: Inconsolatas, $fontsize: 12px, $columnpadding: 8px, $containerwidth: 800px, $small: 480px, $medium: 624px, $large: 744px )
+	+sassis( $fontfamily, $fontsize, $columnpadding, $containerwidth, $small, $medium, $large )
+	+bg( $bg) )
+	+theme( $text ) 
+	+theme( $green, success selected added new created )
+	+theme( $blue, info ok placid )
+	+theme( $red, error unselected removed deleted )
+	+theme( $yellow, alert warning )
+	+theme( $bright, strong highlight bright )
+	+theme( $fade, fade disabled unimportant )
+
+
+	h1, h2, h3, h4, h5, h6
+		font-size: $fontsize
+		line-height: $fontsize
+
+	input[type=text]
+		background: transparent
+		border-width: 1px
+	.checkbox
+		$s: $fontsize * 0.9
+		+inline-block
+		+width-height($s * 1.5, $s * 1.5)
+		+relative
+		+top(3px)
+		line-height: 0
+		input[type=checkbox]
+			opacity: 0
+			padding: 0
+			margin: 0
+			z-index: 9
+			+fill
+		input[type=checkbox] + span
+			+width-height($s, $s)
+			+absolute
+			+top-left(50%, 0%)
+			+translate(0%, -50%)
+			border-width: 1px 
+			border-style: solid
+			overflow: hidden
+
+		// checked 
+
+		input[type=checkbox]:checked + span
+			&:before, &:after
+				border-width: 1px 
+				border-style: solid
+				content: ""
+				+absolute
+				+wh($s * 2, $s * 2)
+			&:before
+				+top-right
+				+origin(100%,0%)
+				+rotate(-45deg)
+			&:after
+				+top-left
+				+origin(0%,0%)
+				+rotate(45deg)
+
+		// indeterminate
+
+		input[type=checkbox]:indeterminate + span
+			&:before, &:after
+				content: ""
+				+fill
+				+top(50%)
+				margin-top: -0.5px
+				border-width: 0px
+				border-top-width: 1px 
+				border-style: solid 
+
+	button
+		text-transform: lowercase
+	.chevron
+		padding-right: $fontsize
+	.select, .chevron
+		+inline-block
+		+relative
+		select
+			padding-right: $fontsize
+		&:after
+			content: ""
+			display: inline-block
+			+top-right(6px, 2px)
+			+absolute
+			$s: 4px
+			+width-height($s, $s)
+			border-width: 0px
+			border-left-width: 1px
+			border-bottom-width: 1px
+			border-style: solid
+			transform: rotateZ(-45deg)
+			transform-origin: 50% 50%
+	a, select
+		cursor: pointer
+		display: inline-block
+		text-decoration: none
+		border: none
+		background: transparent
+		padding: 0
+		border-width: 0px
+		border-bottom-width: 1px
+		border-style: solid
+		&.nounderline
+			border-bottom-color: transparent
+		option
+			width: 10px
+			display: block
+		&.filled
+			padding: 0 0.2em
+	button
+		background: transparent
+		border-width: 1px
+		border-style: solid

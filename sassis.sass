@@ -3,7 +3,7 @@
 @import '_generic'
 
 
-=sassis( $fontfamily: sans-serid, $fontsize: 14px, $columnpadding: 8px, $containerwidth: 800px, $small: 480px, $medium: 624px, $large: 744px )
+=sassis( $fontfamily: sans-serif, $fontsize: 14px, $columnpadding: 8px, $containerwidth: 800px, $small: 480px, $medium: 624px, $large: 744px )
 	/* paul irish reset */
 	+reset
 	body
@@ -11,3 +11,6 @@
 		+flexgrid( $columnpadding, $containerwidth, $small, $medium, $large ) 
 		/* golden ratio fontsizes */
 		+fonts( $fontfamily, $fontsize )
+
+
+@import '_terminal-theme'
