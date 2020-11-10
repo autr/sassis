@@ -1,7 +1,22 @@
 @import '_mixins'
 @import '_flexgrid'
-@import '_generic'
 
+// creates 
+
+=fonts($fontfamily, $fontsize, $ratio: 1.61803398875)
+	$fontratios: 0.785714, 1, 1.2857, 1.64285, 2.071428, 2.642857
+	font-size: $fontsize
+	line-height: $fontsize * $ratio
+	font-family: $fontfamily
+	select, button, input
+		font-size: $fontsize
+		font-family: $fontfamily
+		line-height: $fontsize * $ratio
+	@for $i from 1 through length( $fontratios )
+		.f#{$i}, #{heading(7-$i)}
+			$fs: $fontsize * nth( $fontratios, $i )
+			font-size: $fs
+			line-height: $fs * 1.61803398875
 
 =sassis( $fontfamily: sans-serif, $fontsize: 14px, $columnpadding: 8px, $containerwidth: 800px, $small: 480px, $medium: 624px, $large: 744px )
 	/* paul irish reset */
@@ -14,3 +29,4 @@
 
 
 @import '_terminal-theme'
+@import '_generic'

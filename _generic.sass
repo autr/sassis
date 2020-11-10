@@ -1,200 +1,201 @@
 
+=helpers
 
-@for $i from 0 through 8 
-	@for $ii from 0 through 4
+	@for $i from 0 through 8 
+		@for $ii from 0 through 4
 
-		$n: #{$i}#{$ii * 2}
-		$v: $i + $ii*0.2 
+			$n: #{$i}#{$ii * 2}
+			$v: $i + $ii*0.2 
 
-		@if $ii == 0
-			$n: $i
+			@if $ii == 0
+				$n: $i
 
-		// padding
+			// padding
 
-		.p#{$n}
-			padding: #{$v}em
-		.pt#{$n}
-			padding-top: #{$v}em
-		.pr#{$n}
-			padding-right: #{$v}em
-		.pb#{$n}
-			padding-bottom: #{$v}em
-		.pl#{$n}
-			padding-left: #{$v}em
-		.ptb#{$n}, .pbt#{$n}
-			padding-top: #{$v}em
-			padding-bottom: #{$v}em
-		.plr#{$n}, .prl#{$n}
-			padding-left: #{$v}em
-			padding-right: #{$v}em
+			.p#{$n}
+				padding: #{$v}em
+			.pt#{$n}
+				padding-top: #{$v}em
+			.pr#{$n}
+				padding-right: #{$v}em
+			.pb#{$n}
+				padding-bottom: #{$v}em
+			.pl#{$n}
+				padding-left: #{$v}em
+			.ptb#{$n}, .pbt#{$n}
+				padding-top: #{$v}em
+				padding-bottom: #{$v}em
+			.plr#{$n}, .prl#{$n}
+				padding-left: #{$v}em
+				padding-right: #{$v}em
 
-		// margin
+			// margin
 
-		.m#{$n}
-			margin: #{$v}em
-		.mt#{$n}
-			margin-top: #{$v}em
-		.mr#{$n}
-			margin-right: #{$v}em
-		.mb#{$n}
-			margin-bottom: #{$v}em
-		.ml#{$n}
-			margin-left: #{$v}em
-		.mtb#{$n}, .mbt#{$n}
-			margin-top: #{$v}em
-			margin-bottom: #{$v}em
-		.mlr#{$n}, .mrl#{$n}
-			margin-left: #{$v}em
-			margin-right: #{$v}em
-
-
-		.spacer-#{$n}
-			content: ""
-			+block
-			+no-grow
-			+no-shrink
-			+basis( #{$v}em )
-			+w( #{$v}em )
-			+h( 100%)
-
-		.hide-last-spacer
-			> .spacer-#{$n}:last-child
-				display: none
-
-		// borders
-
-		@each $type in solid, dashed, dotted
-			.b#{$n}-#{$type}
-				border-width: #{$n}px
-				border-style: #{$type}
-			.btb#{$n}-#{$type}, .bbt#{$n}-#{$type}
-				border-top-width: #{$n}px
-				border-bottom-width: #{$n}px
-				border-style: #{$type}
-			.blr#{$n}-#{$type}, .brl#{$n}-#{$type}
-				border-left-width: #{$n}px
-				border-right-width: #{$n}px
-				border-style: #{$type}
-			.br#{$n}-#{$type}
-				border-right-width: #{$n}px
-				border-style: #{$type}
-			.bt#{$n}-#{$type}
-				border-top-width: #{$n}px
-				border-style: #{$type}
-			.bb#{$n}-#{$type}
-				border-bottom-width: #{$n}px
-				border-style: #{$type}
-			.bl#{$n}-#{$type}
-				border-left-width: #{$n}px
-				border-style: #{$type}
+			.m#{$n}
+				margin: #{$v}em
+			.mt#{$n}
+				margin-top: #{$v}em
+			.mr#{$n}
+				margin-right: #{$v}em
+			.mb#{$n}
+				margin-bottom: #{$v}em
+			.ml#{$n}
+				margin-left: #{$v}em
+			.mtb#{$n}, .mbt#{$n}
+				margin-top: #{$v}em
+				margin-bottom: #{$v}em
+			.mlr#{$n}, .mrl#{$n}
+				margin-left: #{$v}em
+				margin-right: #{$v}em
 
 
+			.spacer-#{$n}
+				content: ""
+				+block
+				+no-grow
+				+no-shrink
+				+basis( #{$v}em )
+				+w( #{$v}em )
+				+h( 100%)
 
-@for $i from 1 through 10
-	.clamp#{2 * $i}
-		// overflow: hidden
-		// text-overflow: ellipsis
-		// display: block
-		// max-height: #{4 * $i}em
-		display: -webkit-box
-		-webkit-box-orient: vertical
-		-webkit-line-clamp: #{2 * $i}
-		text-overflow: ellipsis
-		overflow: hidden
+			.hide-last-spacer
+				> .spacer-#{$n}:last-child
+					display: none
 
-.align-between
-	+align-between
-.align-evenly
-	+align-evenly
-.justify-between
-	+justify-between
-.justify-evenly
-	+justify-evenly
+			// borders
 
-
-.align-right
-	text-align: right
-.align-left
-	text-align: left
-.align-center
-	text-align: center
-.italic
-	font-style: italic
-
-.align-center
-	align-items: center
-.justify-center
-	justify-content: center
-.align-start
-	align-items: start
-.justify-start
-	justify-content: start
-.align-end
-	align-items: end
-.justify-end
-	justify-content: end
+			@each $type in solid, dashed, dotted
+				.b#{$n}-#{$type}
+					border-width: #{$n}px
+					border-style: #{$type}
+				.btb#{$n}-#{$type}, .bbt#{$n}-#{$type}
+					border-top-width: #{$n}px
+					border-bottom-width: #{$n}px
+					border-style: #{$type}
+				.blr#{$n}-#{$type}, .brl#{$n}-#{$type}
+					border-left-width: #{$n}px
+					border-right-width: #{$n}px
+					border-style: #{$type}
+				.br#{$n}-#{$type}
+					border-right-width: #{$n}px
+					border-style: #{$type}
+				.bt#{$n}-#{$type}
+					border-top-width: #{$n}px
+					border-style: #{$type}
+				.bb#{$n}-#{$type}
+					border-bottom-width: #{$n}px
+					border-style: #{$type}
+				.bl#{$n}-#{$type}
+					border-left-width: #{$n}px
+					border-style: #{$type}
 
 
-	
-.visible
-	opacity: 1
-.invisible
-	opacity: 0
-.inline-block
-	display: inline-block
-.block
-	display: block
-.none
-	display: none
-.relative
-	position: relative
-.absolute
-	position: absolute
-.flex
-	display: flex
-.flex-column
-	flex-direction: column
-.flex-row
-	flex-direction: row
-.grow
-	flex-grow: 1
-.shrink
-	flex-shrink: 1
-.no-grow
-	flex-grow: 0
-.no-basis
-	flex-basis: 0
-.light
-	font-weight: light
-.lighter
-	font-weight: lighter
-.normal
-	font-weight: normal
-.bold
-	font-weight: bold
-.bolder
-	font-weight: bolder
-.fill
-	+fill()
+
+	@for $i from 1 through 10
+		.clamp#{2 * $i}
+			// overflow: hidden
+			// text-overflow: ellipsis
+			// display: block
+			// max-height: #{4 * $i}em
+			display: -webkit-box
+			-webkit-box-orient: vertical
+			-webkit-line-clamp: #{2 * $i}
+			text-overflow: ellipsis
+			overflow: hidden
+
+	.align-between
+		+align-between
+	.align-evenly
+		+align-evenly
+	.justify-between
+		+justify-between
+	.justify-evenly
+		+justify-evenly
 
 
-@media only screen and (max-width: 48em)
-	.mobile-hide
-		display: none!important
-	.mobile-invisible
-		opacity: 0!important
-@media only screen and (min-width: 48em)
-	.mobile-show
-		display: none!important
-	.mobile-visible
-		opacity: 1!important
-@media only screen and (max-width: 64em)
-	.tablet-hide
-		display: none!important
-	.tablet-invisible
-		opacity: 0!important
-@media only screen and (min-width: 64em)
-	.tablet-show
-		display: none!important
-	.tablet-visible
-		opacity: 1!important
+	.align-right
+		text-align: right
+	.align-left
+		text-align: left
+	.align-center
+		text-align: center
+	.italic
+		font-style: italic
+
+	.align-center
+		align-items: center
+	.justify-center
+		justify-content: center
+	.align-start
+		align-items: start
+	.justify-start
+		justify-content: start
+	.align-end
+		align-items: end
+	.justify-end
+		justify-content: end
+
+
+		
+	.visible
+		opacity: 1
+	.invisible
+		opacity: 0
+	.inline-block
+		display: inline-block
+	.block
+		display: block
+	.none
+		display: none
+	.relative
+		position: relative
+	.absolute
+		position: absolute
+	.flex
+		display: flex
+	.flex-column
+		flex-direction: column
+	.flex-row
+		flex-direction: row
+	.grow
+		flex-grow: 1
+	.shrink
+		flex-shrink: 1
+	.no-grow
+		flex-grow: 0
+	.no-basis
+		flex-basis: 0
+	.light
+		font-weight: light
+	.lighter
+		font-weight: lighter
+	.normal
+		font-weight: normal
+	.bold
+		font-weight: bold
+	.bolder
+		font-weight: bolder
+	.fill
+		+fill()
+
+
+	@media only screen and (max-width: 48em)
+		.mobile-hide
+			display: none!important
+		.mobile-invisible
+			opacity: 0!important
+	@media only screen and (min-width: 48em)
+		.mobile-show
+			display: none!important
+		.mobile-visible
+			opacity: 1!important
+	@media only screen and (max-width: 64em)
+		.tablet-hide
+			display: none!important
+		.tablet-invisible
+			opacity: 0!important
+	@media only screen and (min-width: 64em)
+		.tablet-show
+			display: none!important
+		.tablet-visible
+			opacity: 1!important

@@ -1,3 +1,12 @@
+@import '_mixins'
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap')
+
+@function color($hue)
+	@return hsl($hue,95%,70%)
+
+@function mono($l)
+	@return hsl(200,10%,$l)
 
 $bg: mono(10%)
 $bg-light: mono(20%)
@@ -21,16 +30,19 @@ $fontsize: 12px
 
 =theme( $c, $n: '' ) 
 	$s: ''
+	$raw: ''
 	@if $n != ''
 		@for $i from 1 through length($n)
 			$name: nth($n, $i)
 			$s: #{$s + '&.' + $name}
+			$raw: #{$raw + '.' + $name}
 			@if $i != length($n)
 				$s: #{$s + ', '}
+				$raw: #{$raw + ', '}
 	@debug $c $s
 
-	+prop( color, $c, $s )
-	+prop( border-color, $c, $s ) 
+	+prop( color, $c, $raw )
+	+prop( border-color, $c, $raw ) 
 
 
 	// get alternative luminance...
@@ -75,17 +87,19 @@ $fontsize: 12px
 		+prop(border-color, $c, $s )
 		+prop(color, $c, $s ) 
 
-=terminal-theme( $fontfamily: Inconsolatas, $fontsize: 12px, $columnpadding: 8px, $containerwidth: 800px, $small: 480px, $medium: 624px, $large: 744px )
-	+sassis( $fontfamily, $fontsize, $columnpadding, $containerwidth, $small, $medium, $large )
-	+bg( $bg) )
+=terminal-theme( $fontfamily: (Inconsolatas, monospace), $fontsize: 12px, $columnpadding: 8px, $containerwidth: 800px, $small: 480px, $medium: 624px, $large: 744px )
+	+reset
+	+bg( $bg )
+	+flexgrid( $columnpadding, $containerwidth, $small, $medium, $large ) 
+	+fonts( $fontfamily, $fontsize )
 	+theme( $text ) 
-	+theme( $green, success selected added new created )
+	+theme( $green, success selected added new created create add )
 	+theme( $blue, info ok placid )
-	+theme( $red, error unselected removed deleted )
+	+theme( $red, error unselected removed deleted remove delete )
 	+theme( $yellow, alert warning )
 	+theme( $bright, strong highlight bright )
 	+theme( $fade, fade disabled unimportant )
-
+	+helpers
 
 	h1, h2, h3, h4, h5, h6
 		font-size: $fontsize
@@ -145,20 +159,28 @@ $fontsize: 12px
 				border-width: 0px
 				border-top-width: 1px 
 				border-style: solid 
-
+	select, input, button, textarea
+		line-height: 1.8em
+		border-radius: 0px
+		padding: 0 1em
+		outline: none
+		&:disabled
+			opacity: 0.5
 	button
 		text-transform: lowercase
+		font-weight: normal
 	.chevron
 		padding-right: $fontsize
 	.select, .chevron
 		+inline-block
 		+relative
 		select
-			padding-right: $fontsize
+			height: 1.8em
+			padding: 0em 1em 0em 0.5em 
 		&:after
 			content: ""
 			display: inline-block
-			+top-right(6px, 2px)
+			+top-right(0.6em, 0.6em)
 			+absolute
 			$s: 4px
 			+width-height($s, $s)
@@ -174,10 +196,11 @@ $fontsize: 12px
 		text-decoration: none
 		border: none
 		background: transparent
-		padding: 0
 		border-width: 0px
 		border-bottom-width: 1px
 		border-style: solid
+		&.outline
+			border-width: 1px
 		&.nounderline
 			border-bottom-color: transparent
 		option
@@ -189,3 +212,82 @@ $fontsize: 12px
 		background: transparent
 		border-width: 1px
 		border-style: solid
+
+
+	// code editor
+	.codejar-linenumbers *
+		color: $fade
+	code[class*="language-"],
+	pre[class*="language-"]
+		color: $bright
+		background: none
+		text-shadow: 0 1px rgba(0, 0, 0, 0.3)
+		+text-left
+		white-space: pre
+		word-spacing: normal
+		word-break: normal
+		word-wrap: normal
+		white-space: normal
+		tab-size: 4
+		hyphens: none
+
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata
+		color: $fade
+
+	.token.punctuation
+		color: $text
+
+	.token.namespace
+		opacity: .7
+
+	.token.property,
+	.token.tag,
+	.token.constant,
+	.token.symbol,
+	.token.deleted
+		color: color( 360 )
+
+	.token.boolean,
+	.token.number
+		color: color( 250 )
+
+	.token.selector,
+	.token.attr-name,
+	.token.string,
+	.token.char,
+	.token.builtin,
+	.token.inserted
+		color: color( 150 )
+
+	.token.operator,
+	.token.entity,
+	.token.url,
+	.language-css .token.string,
+	.style .token.string,
+	.token.variable
+		color: #f8f8f2
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.class-name
+		color: color( 320 )
+
+	.token.keyword
+		color: #66d9ef
+
+	.token.regex,
+	.token.important
+		color: #fd971f
+
+	.token.important,
+	.token.bold
+		font-weight: bold
+	.token.italic
+		font-style: italic
+
+	.token.entity
+		cursor: help
