@@ -1,0 +1,13 @@
+@import '_mixins'
+@import '_flexgrid'
+@import '_generic'
+
+
+=sassis( $fontfamily: sans-serid, $fontsize: 14px, $columnpadding: 8px, $containerwidth: 800px, $small: 480px, $medium: 624px, $large: 744px )
+	/* paul irish reset */
+	+reset
+	body
+		/* column padding, container size, sm, md, lg */
+		+flexgrid( $columnpadding, $containerwidth, $small, $medium, $large ) 
+		/* golden ratio fontsizes */
+		+fonts( $fontfamily, $fontsize )
