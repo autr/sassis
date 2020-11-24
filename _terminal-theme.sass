@@ -58,11 +58,15 @@ $fontsize: 12px
 	h1, h2, h3, h4, h5, h6
 		+prop( color, $c, $s )
 
-	input, select, textarea
+	input, select, textarea, input[type=range]
 		+prop(color, $c, $s )
 
-	input[type=text], textarea
+	input[type=text], textarea, input[type=range]
 		+prop(border-color, $c, $s )
+	input[type=range]
+		&::-webkit-slider-thumb
+			+prop(background, $c, $s )
+
 
 
 	.checkbox
@@ -80,7 +84,7 @@ $fontsize: 12px
 	a, select
 		+prop(color, $c, $s )
 		+prop(border-color, $c, $s )
-		&:active, &.filled
+		&:active
 			+prop(background, $c, $s )
 			+prop(color, $alt, $s )
 	button
@@ -104,8 +108,17 @@ $fontsize: 12px
 	h1, h2, h3, h4, h5, h6
 		font-size: $fontsize
 		line-height: $fontsize
-
-	input[type=text]
+	input[type=range]
+		-webkit-appearance: none
+		border-width: 1px
+		border-style: solid
+		&::-webkit-slider-thumb
+			-webkit-appearance: none
+			width: 2px
+			height: 100%
+			border: none
+			border-radius: 0px
+	input[type=text], input[type=range]
 		background: transparent
 		border-width: 1px
 	.checkbox
