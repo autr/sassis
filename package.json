@@ -1,0 +1,8 @@
+{
+  "name": "sassis",
+  "version": "1.0.0",
+  "author": "Gilbert Sinnott",
+  "scripts": {
+    "build": "cd src && node shorthand.js"
+  }
+}

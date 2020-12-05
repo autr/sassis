@@ -1,0 +1,373 @@
+@import '../_misc'
+@import '../_shorthand'
+
+
+@function str-replace($string, $search, $replace: '')
+	$index: str-index($string, $search)
+	@if $index
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+	@return $string
+
+@function encode-svg($svg)
+	$encoded: ''
+	$slice: 2000
+	$index: 0
+	$loops: ceil(str-length($svg) / $slice)
+
+	@for $i from 1 through $loops
+		$chunk: str-slice($svg, $index, $index + $slice - 1)
+		$chunk: str-replace($chunk, '"', "%22")
+		$chunk: str-replace($chunk, '<', '%3C')
+		$chunk: str-replace($chunk, '>', '%3E')
+		$chunk: str-replace($chunk, '&', '%26')
+		$chunk: str-replace($chunk, '#', '%23')
+		$chunk: str-replace($chunk, ',', '%2C')
+		$chunk: str-replace($chunk, '=', '%3D')
+		$chunk: str-replace($chunk, " ", '%20')
+		$chunk: str-replace($chunk, "/", '%2F')
+		$chunk: str-replace($chunk, ":", '%3A')
+		$encoded: #{$encoded}#{$chunk}
+		$index: $index + $slice
+	@return url("data:image/svg+xml, #{$encoded}")
+
+@function terminal-color($hue, $sat: 95%, $light: 70%, $inv: false)
+	@if $inv
+		@return hsl( $hue, $sat, 100% - $light )
+	@else
+		@return hsl( $hue, $sat, $light )
+
+=terminal-theme( $inv: false )
+	+terminal-structure
+	+terminal-code( $inv )
+
+	$sat: 95%
+	$li: 70%
+	$hue: 200 
+
+	+bg( terminal-color($hue, 10%, 10%, $inv), 10 )
+	$text: terminal-color($hue, 10%, 80%, $inv)
+	$bright: terminal-color($hue, 10%, 95%, $inv)
+	$fade: terminal-color($hue, 10%, 50%, $inv)
+
+	$green: terminal-color(150, $sat, $li, $inv )
+	$blue: terminal-color(200, $sat, $li, $inv )
+	$red: terminal-color(340, $sat, $li, $inv )
+	$yellow: terminal-color(50, $sat, $li, $inv )
+	
+	+terminal-colors( $text ) 
+	$various: a, b, c, d, e, f, g
+	@for $i from 1 through length($various) 
+		+terminal-colors( terminal-color( $i * ( 360 / length($various) ), $sat, $li, $inv), 'color-' + nth( $various, $i ) )  
+	+terminal-colors( $green, success selected added new created create add )
+	+terminal-colors( $blue, info ok placid )
+	+terminal-colors( $red, error unselected removed deleted remove delete )
+	+terminal-colors( $yellow, alert warning )
+	+terminal-colors( $bright, strong highlight bright )
+	+terminal-colors( $fade, fade disabled unimportant ) 
+
+=set-prop( $prop, $c, $s: '' )
+	@if $s == ''
+		#{$prop}: $c
+	@else
+		#{$s}
+			#{$prop}: $c
+
+
+@function invert-color( $c )
+	@return adjust-hue( invert($c), 180 )
+
+@function counterpoint( $a )
+	$b: invert-color($a)
+	$diff: lightness($a) - lightness($b)
+	$off: $diff
+	@if $off < 0
+		$off: ( $off * -1 )
+	$off: 100 - $off
+	$light: lightness( $a )
+	$amt: 0.5
+	@if $light >= 50 
+		$b: darken( $b, $off * 0.25 )
+	@else
+		$b: lighten( $b, $off * 0.25 )
+	@debug $off $light
+	@return $b
+
+=terminal-colors( $c, $n: '', $alt: false ) 
+	$s: ''
+	$raw: ''
+	@if $n != ''
+		@for $i from 1 through length($n)
+			$name: nth($n, $i)
+			$s: #{$s + '&.' + $name}
+			$raw: #{$raw + '.' + $name}
+			@if $i != length($n)
+				$s: #{$s + ', '}
+				$raw: #{$raw + ', '}
+	// @debug $c $s
+
+	+set-prop( color, $c, $raw )
+	+set-prop( border-color, $c, $raw ) 
+
+	.cross
+		background:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><line x1='0' y1='0' x2='100' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /><line x1='100' y1='0' x2='0' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
+	    background-size: auto
+
+	// get alternative luminance...
+
+	@if $alt == false
+		$alt: invert-color( $c )
+
+
+	// terminal-colors...
+
+	h1, h2, h3, h4, h5, h6
+		+set-prop( color, $c, $s )
+
+	input, select, textarea, input[type=range], textarea
+		+set-prop(color, $c, $s )
+		&::placeholder
+			+set-prop(color, $c , $s )
+
+	input, textarea, select
+		&:focus
+			+set-prop(box-shadow, 0px 0px 0px 2px $c inset, $s )
+
+	input[type=text], textarea, input[type=range], textarea
+		+set-prop(border-color, $c, $s )
+	input[type=range]::-webkit-slider-thumb
+		+set-prop(background, $c, $s )
+
+
+
+	.checkbox
+		input[type=checkbox] + span
+			+set-prop(border-color, $c, $s )
+			&:before, &:after
+				+set-prop(border-color, $c, $s )
+	.select, .chevron
+		&:after
+			+set-prop(border-color, $c, $s )
+	.edged
+		+set-prop( box-shadow, 0px 0px 0px 1px inset, $s)
+	.filled, a:active, button:active
+		+set-prop(background, $c, $s )
+		+set-prop(color, $alt, $s )
+	.filled:active
+		+set-prop(background, transparent, $s )
+		+set-prop(color, $c, $s )
+
+
+	a, select, button
+		+set-prop(color, $c, $s )
+		+set-prop(border-color, $c, $s )
+	button
+		+set-prop(border-color, $c, $s )
+		+set-prop(color, $c, $s ) 
+
+
+=terminal-code( $inv: false )
+
+	$hue: 200
+	$sat: 95%
+	$li: 70%
+	
+	.codejar-linenumbers *, .linenumbers, .line-numbers
+		color: terminal-color($hue, 10%, 50%, $inv)
+	code[class*="language-"],
+	pre[class*="language-"]
+		font-family: monospace
+		color: terminal-color($hue, 10%, 95%, $inv)
+		background: none
+		+text-left
+		white-space: pre
+		word-spacing: normal
+		word-break: normal
+		word-wrap: normal
+		white-space: normal
+		tab-size: 4
+		hyphens: none
+
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata
+		color: terminal-color($hue, 10%, 50%, $inv)
+
+	.token.punctuation
+		color: terminal-color($hue, 10%, 80%, $inv)
+
+	.token.namespace
+		opacity: .7
+
+	.token.property,
+	.token.tag,
+	.token.constant,
+	.token.symbol,
+	.token.deleted
+		color: terminal-color( 360, $sat, $li, $inv )
+
+	.token.boolean,
+	.token.number
+		color: terminal-color( 250, $sat, $li, $inv )
+
+	.token.selector,
+	.token.attr-name,
+	.token.string,
+	.token.char,
+	.token.builtin,
+	.token.inserted
+		color: terminal-color( 150, $sat, $li, $inv )
+
+	.token.operator,
+	.token.entity,
+	.token.url,
+	.language-css .token.string,
+	.style .token.string,
+	.token.variable
+		color: terminal-color( 150, $sat, $li, $inv )
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.class-name
+		color: terminal-color( 320, $sat, $li, $inv )
+
+	.token.keyword
+		color: terminal-color( 120, $sat, $li, $inv )
+
+	.token.regex,
+	.token.important
+		color: terminal-color( 220, $sat, $li, $inv )
+
+	.token.important,
+	.token.bold
+		font-weight: bold
+	.token.italic
+		font-style: italic
+
+	.token.entity
+		cursor: help
+
+
+=terminal-structure
+	input[type=range]
+		-webkit-appearance: none
+		border-width: 1px
+		border-style: solid
+		&::-webkit-slider-thumb
+			-webkit-appearance: none
+			width: 2px
+			height: 100%
+			min-height: 1em
+			border: none
+			border-radius: 0px
+	input[type=text], input[type=range], textarea
+		background: transparent
+		border-width: 1px
+		border-style: solid
+	.checkbox
+		$s: 0.9em
+		+inline-block
+		+width-height($s * 1.5, $s * 1.5)
+		+relative
+		+top(3px)
+		line-height: 0
+		input[type=checkbox]
+			opacity: 0
+			padding: 0
+			margin: 0
+			z-index: 9
+			+fill
+		input[type=checkbox] + span
+			+width-height($s, $s)
+			+absolute
+			+top-left(50%, 0%)
+			+translate(0%, -50%)
+			border-width: 1px 
+			border-style: solid
+			overflow: hidden
+
+		// checked 
+
+		input[type=checkbox]:checked + span
+			&:before, &:after
+				border-width: 1px 
+				border-style: solid
+				content: ""
+				+absolute
+				+wh($s * 2, $s * 2)
+			&:before
+				+top-right
+				+origin(100%,0%)
+				+rotate(-45deg)
+			&:after
+				+top-left
+				+origin(0%,0%)
+				+rotate(45deg)
+
+		// indeterminate
+
+		input[type=checkbox]:indeterminate + span
+			&:before, &:after
+				content: ""
+				+fill
+				+top(50%)
+				margin-top: -0.5px
+				border-width: 0px
+				border-top-width: 1px 
+				border-style: solid 
+	select, input, button, textarea
+		line-height: 1.8em
+		border-radius: 0px
+		padding: 0 1em
+		outline: none
+		&:disabled
+			opacity: 0.5
+	button
+		text-transform: lowercase
+		font-weight: normal
+	.chevron
+		padding-right: 1em
+	.select, .chevron
+		+inline-block
+		+relative
+		select
+			height: 1.8em
+			padding: 0em 1.5em 0em 0.5em 
+		&:after
+			content: ""
+			display: inline-block
+			+top-right(0.6em, 0.6em)
+			+absolute
+			$s: 4px
+			+width-height($s, $s)
+			border-width: 0px
+			border-left-width: 1px
+			border-bottom-width: 1px
+			border-style: solid
+			transform: rotateZ(-45deg)
+			transform-origin: 50% 50%
+	a, select
+		cursor: pointer
+		display: inline-block
+		text-decoration: none
+		border: none
+		background: transparent
+		border-width: 0px
+		border-bottom-width: 1px
+		border-style: solid
+		&.outline
+			border-width: 1px
+		&.nounderline
+			border-bottom-color: transparent
+		option
+			width: 10px
+			display: block
+		&.filled
+			padding: 0 0.2em
+	button
+		background: transparent
+		border-width: 1px
+		border-style: solid
+
+
