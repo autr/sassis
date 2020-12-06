@@ -85,13 +85,13 @@
 
 // top left right bottom
 
-=t($y)
+=t( $y: 0px )
 	top: $y
-=l($x)
+=l( $x: 0px )
 	left: $x
-=b($y)
+=b( $y: 0px )
 	bottom: $y
-=r($x)
+=r( $x: 0px )
 	right: $x
 
 =tl( $x: 0px, $y: 0px)
@@ -107,14 +107,14 @@
 	bottom: $x
 	right: $y
 
-=top($y)
-	t($y)
-=left($x)
-	l($x)
-=bottom($y)
-	b($y)
-=right($x)
-	r($x)
+=top( $y: 0px )
+	+t($y)
+=left( $x: 0px )
+	+l($x)
+=bottom( $y: 0px )
+	+b($y)
+=right( $x: 0px  )
+	+r($x)
 
 =top-left( $x: 0px, $y: 0px)
 	+tl( $x, $y )
