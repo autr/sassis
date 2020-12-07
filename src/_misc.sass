@@ -1,0 +1,390 @@
+
+=fontsize($fontsize, $ratio: 1.61803398875)
+	$fontratios: 0.785714, 1, 1.2857, 1.64285, 2.071428, 2.642857
+	font-size: $fontsize
+	line-height: $fontsize * $ratio
+	select, button, input
+		font-size: $fontsize
+		line-height: $fontsize * $ratio
+	@for $i from 1 through length( $fontratios )
+		@if $i == 1
+			small
+				$fs: $fontsize * nth( $fontratios, $i )
+				font-size: $fs
+				line-height: $fs * $ratio
+		@if $i == 3
+			big
+				$fs: $fontsize * nth( $fontratios, $i )
+				font-size: $fs
+				line-height: $fs * $ratio
+
+		.f#{$i}, h#{7-$i}
+			$fs: $fontsize * nth( $fontratios, $i )
+			font-size: $fs
+			line-height: $fs * $ratio
+
+
+// mixin....
+
+=device
+	@media only screen and (max-width: 48em)
+		.mobile-hide
+			display: none!important
+		.mobile-invisible
+			opacity: 0!important
+	@media only screen and (min-width: 48em)
+		.mobile-show
+			display: none!important
+		.mobile-visible
+			opacity: 1!important
+	@media only screen and (max-width: 64em)
+		.tablet-hide
+			display: none!important
+		.tablet-invisible
+			opacity: 0!important
+	@media only screen and (min-width: 64em)
+		.tablet-show
+			display: none!important
+		.tablet-visible
+			opacity: 1!important
+
+
+=reset-webkit
+	&:hover, &:active, &:focus
+		outline: none
+	-webkit-appearance: none
+	-webkit-tap-highlight-color: rgba(255,255,255,0)
+	touch-action: manipulation
+
+// is this used????
+
+=area( $name: "default" )
+	+flex
+	position: relative
+	box-sizing: border-box
+	border-radius: map-get($rounded-corners, $name)
+	width: 100%
+
+
+
+=basis( $amount: 1 )
+	flex-basis: $amount
+
+=line-clamp( $lines: 6 )
+	text-overflow: ellipsis
+	overflow: hidden
+	display: -webkit-box
+	-webkit-line-clamp: #{2 * $lines}
+	-webkit-box-orient: vertical
+
+
+=fill
+	+absolute
+	+width-height
+	+top-left
+
+// top left right bottom
+
+=t( $y: 0px )
+	top: $y
+=l( $x: 0px )
+	left: $x
+=b( $y: 0px )
+	bottom: $y
+=r( $x: 0px )
+	right: $x
+
+=tl( $x: 0px, $y: 0px)
+	top: $x
+	left: $y
+=tr( $x: 0px, $y: 0px)
+	top: $x
+	right: $y
+=bl( $x: 0px, $y: 0px)
+	bottom: $x
+	left: $y
+=br( $x: 0px, $y: 0px)
+	bottom: $x
+	right: $y
+
+=top( $y: 0px )
+	+t($y)
+=left( $x: 0px )
+	+l($x)
+=bottom( $y: 0px )
+	+b($y)
+=right( $x: 0px  )
+	+r($x)
+
+=top-left( $x: 0px, $y: 0px)
+	+tl( $x, $y )
+=top-right( $x: 0px, $y: 0px)
+	+tr( $x, $y )
+=bottom-left( $x: 0px, $y: 0px)
+	+bl( $x, $y )
+=bottom-right( $x: 0px, $y: 0px)
+	+br( $x, $y )
+
+
+// width height
+
+=w($w: 100%)
+	width: $w
+=h($h: 100%)
+	width: $h
+=wh( $w: 100%, $h: 100% )
+	width: $w
+	height: $h
+
+=width( $w: 100% )
+	width: $w
+=height( $h: 100% )
+	height: $h
+=width-height( $w: 100%, $h: 100% )
+	width: $w
+	height: $h
+
+
+=origin( $x: 50%, $y: 50% )
+	transform-origin: $x $y
+
+=translate( $x: -50%, $y: -50% )
+	transform: translate( $x, $y )
+
+=bg( $color: red, $iterate: 0% )
+	background-color: $color
+	@if $iterate != 0%
+		.pop
+			background-color: $color
+		.sink
+			background-color: $color
+
+=rotate($deg: 45deg)
+	transform: rotateZ($deg)
+
+
+=reset
+	*
+		-webkit-appearance: none
+		box-sizing: border-box
+	a
+		text-decoration: none
+	body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, select
+		margin: 0
+		padding: 0
+		border: 0
+		font-size: 100%
+		font: inherit
+		vertical-align: baseline
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+		display: block
+
+	body
+		line-height: 1
+		width: 100%
+		height: 100%
+
+	ol, ul 
+		list-style: none
+
+	blockquote, q
+		quotes: none
+
+	blockquote:before, blockquote:after, q:before, q:after
+		content: ''
+		content: none
+
+	table
+		border-collapse: collapse
+		border-spacing: 0
+
+
+=twelve( $spacing: 0em )
+	$screen-sm: 480px
+	$screen-md: 624px
+	$screen-lg: 744px
+	.twelve
+		box-sizing: border-box
+		display: -webkit-flex
+		display: -ms-flexbox
+		display: -webkit-box
+		display: flex
+		-webkit-flex: 0 1 auto
+		-ms-flex: 0 1 auto
+		-webkit-box-flex: 0
+		flex: 0 1 auto
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		-webkit-box-orient: horizontal
+		-webkit-box-direction: normal
+		flex-direction: row
+		-webkit-flex-wrap: wrap
+		-ms-flex-wrap: wrap
+		flex-wrap: wrap
+		&.twelve-nogutter
+			margin: 0
+			& > .col
+				padding: 0
+			
+	.twelve
+		margin: 0 ($spacing * -1) 0 ($spacing * -1)
+	.col
+		padding: 0 $spacing 0 $spacing
+
+
+	.col
+		box-sizing: border-box
+		-webkit-flex: 0 0 auto
+		-ms-flex: 0 0 auto
+		flex: 0 0 auto
+		-webkit-flex-grow: 1
+		-ms-flex-positive: 1
+		-webkit-box-flex: 1
+		flex-grow: 1
+		-ms-flex-preferred-size: 0
+		-webkit-flex-basis: 0
+		flex-basis: 0
+		max-width: 100%
+		min-width: 0
+
+
+	.col-align-top
+		-webkit-align-self: flex-start
+		-ms-flex-item-align: start
+		align-self: flex-start
+
+
+	.col-align-bottom
+		align-self: flex-end
+
+
+	.col-align-middle
+		-webkit-align-self: center
+		-ms-flex-item-align: center
+		align-self: center
+
+
+	//Column Content Alignment Classes
+	.col-top
+		justify-content: flex-start !important
+		flex-direction: column
+		display: flex
+
+
+	.col-bottom
+		justify-content: flex-end !important
+		flex-direction: column
+		display: flex
+
+
+	.col-middle
+		justify-content: center
+		flex-direction: column
+		display: flex
+
+
+	//Horizontal Grid Alignment
+	.twelve-start
+		-webkit-box-pack: start
+		-ms-flex-pack: start
+		justify-content: flex-start
+
+
+	.twelve-center
+		-webkit-box-pack: center
+		-ms-flex-pack: center
+		justify-content: center
+
+
+	.twelve-end
+		-webkit-box-pack: end
+		-ms-flex-pack: end
+		justify-content: flex-end
+
+
+	//Column Distribution
+	.twelve-around
+		justify-content: space-around
+
+
+	.twelve-between
+		-webkit-box-pack: justify
+		-ms-flex-pack: justify
+		justify-content: space-between
+
+
+	//Reordering Columns
+	.col-first
+		-webkit-box-ordinal-group: 0
+		-ms-flex-order: -1
+		order: -1
+
+
+	.col-last
+		-webkit-box-ordinal-group: 2
+		-ms-flex-order: 1
+		order: 1
+
+
+	.twelve-reverse
+		-webkit-box-orient: horizontal
+		-webkit-box-direction: reverse
+		-ms-flex-direction: row-reverse
+		flex-direction: row-reverse
+
+
+	////////////////////////
+	//Column Sizing Classes
+	////////////////////////
+
+	//Fixed Column Class
+	.col-fixed
+		flex: initial
+
+
+	//Grow Based Columns
+	@for $i from 2 through 11
+		.col-grow-#{$i}
+			flex-grow: $i
+
+
+	//Percent Based Columns
+	@for $i from 1 through 12
+		.col-#{$i}
+			-ms-flex-preferred-size: (100% / 12) * $i
+			-webkit-flex-basis: (100% / 12) * $i
+			flex-basis: (100% / 12) * $i
+			max-width: (100% / 12) * $i
+
+
+	//////////////////
+	//Media Queries
+	//////////////////
+
+	@media only screen and (max-width: $screen-sm)
+		@for $i from 1 through 12
+			.col-sm-#{$i}
+				-ms-flex-preferred-size: (100% / 12) * $i
+				-webkit-flex-basis: (100% / 12) * $i
+				flex-basis: (100% / 12) * $i
+				max-width: (100% / 12) * $i
+			
+
+	@media only screen and (min-width: $screen-sm) and (max-width: $screen-md)
+		@for $i from 1 through 12
+			.col-md-#{$i}
+				-ms-flex-preferred-size: (100% / 12) * $i
+				-webkit-flex-basis: (100% / 12) * $i
+				flex-basis: (100% / 12) * $i
+				max-width: (100% / 12) * $i
+			
+
+	@media only screen and (min-width: $screen-md) and (max-width: $screen-lg)
+		@for $i from 1 through 12
+			.col-lg-#{$i}
+				-ms-flex-preferred-size: (100% / 12) * $i
+				-webkit-flex-basis: (100% / 12) * $i
+				flex-basis: (100% / 12) * $i
+				max-width: (100% / 12) * $i
+		
+
