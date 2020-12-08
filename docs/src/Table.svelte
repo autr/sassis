@@ -31,6 +31,7 @@
 <tr><td>.visible</td><td>opacity: 1</td><td>+visible</td></tr>
 <tr><td>.invisible</td><td>opacity: 0</td><td>+invisible</td></tr>
 <tr><td>.no-bg</td><td>background: transparent</td><td>+no-bg</td></tr>
+<tr><td>.pointer</td><td>cursor: pointer</td><td>+pointer</td></tr>
 <tr><td>.align-items-[center|start|end|flex-start|flex-end|stretch]</td><td>align-items: [option]</td>+align-items-[center|start|end|flex-start|flex-end|stretch]<td></tr>
 <tr><td>.align-self-[center|start|end|flex-start|flex-end|stretch]</td><td>align-self: [option]</td>+align-self-[center|start|end|flex-start|flex-end|stretch]<td></tr>
 <tr><td>.align-content-[center|start|end|flex-start|flex-end|stretch]</td><td>align-content: [option]</td>+align-content-[center|start|end|flex-start|flex-end|stretch]<td></tr>
@@ -45,6 +46,19 @@
 <tr><td>.pl[0-80]</td><td>padding-left: [0-80]em</td></tr>
 <tr><td>.ptb[0-80]<br />.pbt[0-80]</td><td>padding-top: [0-80]em<br />padding-bottom: [0-80]em</td></tr>
 <tr><td>.plr[0-80]<br />.prl[0-80]</td><td>padding-left: [0-80]em<br />padding-right: [0-80]em</td></tr>
+
+<!-- child elements -->
+
+<tr><td>.cp[0-80]</td><td>padding: [0-80]em</td></tr>
+<tr><td>.cpt[0-80]</td><td>padding-top: [0-80]em</td></tr>
+<tr><td>.cpr[0-80]</td><td>padding-right: [0-80]em</td></tr>
+<tr><td>.cpb[0-80]</td><td>padding-bottom: [0-80]em</td></tr>
+<tr><td>.cpl[0-80]</td><td>padding-left: [0-80]em</td></tr>
+<tr><td>.cptb[0-80]<br />.pbt[0-80]</td><td>padding-top: [0-80]em<br />padding-bottom: [0-80]em</td></tr>
+<tr><td>.cplr[0-80]<br />.prl[0-80]</td><td>padding-left: [0-80]em<br />padding-right: [0-80]em</td></tr>
+
+
+
 <tr><td>.s[0-80]</td><td>flex-basis: [0-80]em</td></tr>
 <tr><td>.m[0-80]</td><td>margin: [0-80]em</td></tr>
 <tr><td>.mt[0-80]</td><td>margin-top: [0-80]em</td></tr>
@@ -53,6 +67,19 @@
 <tr><td>.ml[0-80]</td><td>margin-left: [0-80]em</td></tr>
 <tr><td>.mtb[0-80]<br />.mbt[0-80]</td><td>margin-top: [0-80]em<br />margin-bottom: [0-80]em</td></tr>
 <tr><td>.mlr[0-80]<br />.mrl[0-80]</td><td>margin-left: [0-80]em<br />margin-right: [0-80]em</td></tr>
+
+<!-- child elements -->
+
+<tr><td>.cm[0-80]</td><td>margin: [0-80]em</td></tr>
+<tr><td>.cmt[0-80]</td><td>margin-top: [0-80]em</td></tr>
+<tr><td>.cmr[0-80]</td><td>margin-right: [0-80]em</td></tr>
+<tr><td>.cmb[0-80]</td><td>margin-bottom: [0-80]em</td></tr>
+<tr><td>.cml[0-80]</td><td>margin-left: [0-80]em</td></tr>
+<tr><td>.cmtb[0-80]<br />.mbt[0-80]</td><td>margin-top: [0-80]em<br />margin-bottom: [0-80]em</td></tr>
+<tr><td>.cmlr[0-80]<br />.mrl[0-80]</td><td>margin-left: [0-80]em<br />margin-right: [0-80]em</td></tr>
+
+
+
 <tr><td>.s[0-80]</td><td>flex-basis: [0-80]em</td></tr>	
 <tr><td>.b[0-8]-[solid|dashed|dotted]</td><td>border-width: [0-8]px<br />border-style: [solid|dashed|dotted]</td></tr>
 <tr><td>.btb[0-8]-[solid|dashed|dotted]<br />.bbt[0-8]-[solid|dashed|dotted]</td><td>border-top-width: [0-8]px<br />border-bottom-width: [0-8]px<br />border-style: [solid|dashed|dotted]</td></tr>
@@ -75,5 +102,12 @@
 <tr><td>.h[0-100]</td><td>height: [0-100]%</td></tr>
 <tr><td>.h[0-100]em</td><td>height: [0-100]em</td></tr>
 <tr><td>.o[0-100]</td><td>transform-origin: [0-100]% [0-100]%</td></tr>
+<tr><td>.max-width[0-100]</td><td>max-width: [0-100]%</td></tr>
+<tr><td>.max-width[0-100]em</td><td>max-width: [0-100]em</td></tr>
+<tr><td>.max-height[0-100]</td><td>max-height: [0-100]%</td></tr>
+<tr><td>.max-height[0-100]em</td><td>max-height: [0-100]em</td></tr>
+<tr><td>.vw[0-100]</td><td>width: [0-100]vw</td></tr>
+<tr><td>.vh[0-100]</td><td>height: [0-100]vh</td></tr>
+
 
 </tbody></table>

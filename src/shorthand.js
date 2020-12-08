@@ -50,7 +50,8 @@ const aliases = {
 	'lighter': 'font-weight: lighter',
 	'visible': 'opacity: 1',
 	'invisible': 'opacity: 0',
-	'no-bg': 'background: transparent'
+	'no-bg': 'background: transparent',
+	'pointer': 'cursor: pointer'
 }
 
 
@@ -140,6 +141,32 @@ for ( let i = 0; i <= 80; i += 2 ) {
 	.${short}lr${num}, .${short}rl${num}
 		${prop}-left: ${val}em
 		${prop}-right: ${val}em
+
+	// child elements
+
+	.c${short}${num}
+		> *
+			${prop}: ${val}em
+	.c${short}t${num}
+		> *
+			${prop}-top: ${val}em
+	.c${short}r${num}
+		> *
+			${prop}-right: ${val}em
+	.c${short}b${num}
+		> *
+			${prop}-bottom: ${val}em
+	.c${short}l${num}
+		> *
+			${prop}-left: ${val}em
+	.c${short}tb${num}, .c${short}bt${num}
+		> *
+			${prop}-top: ${val}em
+			${prop}-bottom: ${val}em
+	.c${short}lr${num}, .c${short}rl${num}
+		> *
+			${prop}-left: ${val}em
+			${prop}-right: ${val}em
 		`;
 		classes += text + '\n'
 
@@ -152,7 +179,20 @@ for ( let i = 0; i <= 80; i += 2 ) {
 <tr><td>.${short}b[0-80]</td><td>${prop}-bottom: [0-80]em</td></tr>
 <tr><td>.${short}l[0-80]</td><td>${prop}-left: [0-80]em</td></tr>
 <tr><td>.${short}tb[0-80]<br />.${short}bt[0-80]</td><td>${prop}-top: [0-80]em<br />${prop}-bottom: [0-80]em</td></tr>
-<tr><td>.${short}lr[0-80]<br />.${short}rl[0-80]</td><td>${prop}-left: [0-80]em<br />${prop}-right: [0-80]em</td></tr>`
+<tr><td>.${short}lr[0-80]<br />.${short}rl[0-80]</td><td>${prop}-left: [0-80]em<br />${prop}-right: [0-80]em</td></tr>
+
+<!-- child elements -->
+
+<tr><td>.c${short}[0-80]</td><td>${prop}: [0-80]em</td></tr>
+<tr><td>.c${short}t[0-80]</td><td>${prop}-top: [0-80]em</td></tr>
+<tr><td>.c${short}r[0-80]</td><td>${prop}-right: [0-80]em</td></tr>
+<tr><td>.c${short}b[0-80]</td><td>${prop}-bottom: [0-80]em</td></tr>
+<tr><td>.c${short}l[0-80]</td><td>${prop}-left: [0-80]em</td></tr>
+<tr><td>.c${short}tb[0-80]<br />.${short}bt[0-80]</td><td>${prop}-top: [0-80]em<br />${prop}-bottom: [0-80]em</td></tr>
+<tr><td>.c${short}lr[0-80]<br />.${short}rl[0-80]</td><td>${prop}-left: [0-80]em<br />${prop}-right: [0-80]em</td></tr>
+
+
+`
 
 			table += '\n<tr><td>.s[0-80]</td><td>flex-basis: [0-80]em</td></tr>'
 
@@ -178,6 +218,40 @@ for ( let i = 0; i <= 80; i += 2 ) {
 	${prop}-right: $amount
 =${short}rl( $amount )
 	${prop}-left: $amount
+	${prop}-right: $amount
+
+// child elements
+
+=c${short}( $amount )
+	> *
+		${prop}: $amount
+=c${short}t( $amount )
+	> *
+		${prop}-top: $amount
+=c${short}r( $amount )
+	> *
+		${prop}-right: $amount
+=c${short}b( $amount )
+	> *
+		${prop}-bottom: $amount
+=c${short}l( $amount )
+	> *
+		${prop}-left: $amount
+=c${short}tb( $amount )
+	> *
+		${prop}-top: $amount
+	${prop}-bottom: $amount
+=c${short}bt( $amount )
+	> *
+		${prop}-top: $amount
+	${prop}-bottom: $amount
+=c${short}lr( $amount )
+	> *
+		${prop}-left: $amount
+	${prop}-right: $amount
+=c${short}rl( $amount )
+	> *
+		${prop}-left: $amount
 	${prop}-right: $amount
 			`;
 			mixins += mixin + '\n'
@@ -267,7 +341,7 @@ classes += '\n\n\t// ---------- 004 top left bottom right width height origin --
 classes += '\n\n\t// top left right bottom width height\n\n'
 
 for ( let i = 0; i <= 100; i++ ) {
-	const tlrbwh = {'t': 'top','l': 'left','b': 'bottom','r': 'right','w': 'width','h': 'height', 'o': 'transform-origin'};
+	const tlrbwh = {'t': 'top','l': 'left','b': 'bottom','r': 'right','w': 'width','h': 'height', 'o': 'transform-origin', 'max-width': 'max-width', 'max-height': 'max-height'};
 
 	Object.keys( tlrbwh ).forEach( letter => {
 
@@ -284,6 +358,9 @@ for ( let i = 0; i <= 100; i++ ) {
 			if (i == 0) table += `\n<tr><td>.${letter}[0-100]</td><td>${property}: [0-100]% [0-100]%</td></tr>`
 		}
 	})
+
+	classes += `\t.vh${i}\n\t\theight: ${i}vh\n\t.vw${i}\n\t\twidth: ${i}vw\n`
+	if (i == 0) table += `\n<tr><td>.vw[0-100]</td><td>width: [0-100]vw</td></tr>\n<tr><td>.vh[0-100]</td><td>height: [0-100]vh</td></tr>\n`
 }
 
 

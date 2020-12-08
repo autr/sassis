@@ -98,6 +98,9 @@
 =no-bg
 	background: transparent
 
+=pointer
+	cursor: pointer
+
 =align-items-center
 	align-items: center
 
@@ -255,6 +258,40 @@
 =prl( $amount )
 	padding-left: $amount
 	padding-right: $amount
+
+// child elements
+
+=cp( $amount )
+	> *
+		padding: $amount
+=cpt( $amount )
+	> *
+		padding-top: $amount
+=cpr( $amount )
+	> *
+		padding-right: $amount
+=cpb( $amount )
+	> *
+		padding-bottom: $amount
+=cpl( $amount )
+	> *
+		padding-left: $amount
+=cptb( $amount )
+	> *
+		padding-top: $amount
+	padding-bottom: $amount
+=cpbt( $amount )
+	> *
+		padding-top: $amount
+	padding-bottom: $amount
+=cplr( $amount )
+	> *
+		padding-left: $amount
+	padding-right: $amount
+=cprl( $amount )
+	> *
+		padding-left: $amount
+	padding-right: $amount
 			
 
 =m( $amount )
@@ -278,6 +315,40 @@
 	margin-right: $amount
 =mrl( $amount )
 	margin-left: $amount
+	margin-right: $amount
+
+// child elements
+
+=cm( $amount )
+	> *
+		margin: $amount
+=cmt( $amount )
+	> *
+		margin-top: $amount
+=cmr( $amount )
+	> *
+		margin-right: $amount
+=cmb( $amount )
+	> *
+		margin-bottom: $amount
+=cml( $amount )
+	> *
+		margin-left: $amount
+=cmtb( $amount )
+	> *
+		margin-top: $amount
+	margin-bottom: $amount
+=cmbt( $amount )
+	> *
+		margin-top: $amount
+	margin-bottom: $amount
+=cmlr( $amount )
+	> *
+		margin-left: $amount
+	margin-right: $amount
+=cmrl( $amount )
+	> *
+		margin-left: $amount
 	margin-right: $amount
 			
 
@@ -383,6 +454,9 @@
 
 	.no-bg
 		background: transparent
+
+	.pointer
+		cursor: pointer
 
 	.align-items-center
 		align-items: center
@@ -543,6 +617,32 @@
 	.plr0, .prl0
 		padding-left: 0em
 		padding-right: 0em
+
+	// child elements
+
+	.cp0
+		> *
+			padding: 0em
+	.cpt0
+		> *
+			padding-top: 0em
+	.cpr0
+		> *
+			padding-right: 0em
+	.cpb0
+		> *
+			padding-bottom: 0em
+	.cpl0
+		> *
+			padding-left: 0em
+	.cptb0, .cpbt0
+		> *
+			padding-top: 0em
+			padding-bottom: 0em
+	.cplr0, .cprl0
+		> *
+			padding-left: 0em
+			padding-right: 0em
 		
 
 	.m0
@@ -561,6 +661,32 @@
 	.mlr0, .mrl0
 		margin-left: 0em
 		margin-right: 0em
+
+	// child elements
+
+	.cm0
+		> *
+			margin: 0em
+	.cmt0
+		> *
+			margin-top: 0em
+	.cmr0
+		> *
+			margin-right: 0em
+	.cmb0
+		> *
+			margin-bottom: 0em
+	.cml0
+		> *
+			margin-left: 0em
+	.cmtb0, .cmbt0
+		> *
+			margin-top: 0em
+			margin-bottom: 0em
+	.cmlr0, .cmrl0
+		> *
+			margin-left: 0em
+			margin-right: 0em
 		
 
 	.s0
@@ -582,6 +708,32 @@
 	.plr0-2, .prl0-2
 		padding-left: 0.2em
 		padding-right: 0.2em
+
+	// child elements
+
+	.cp0-2
+		> *
+			padding: 0.2em
+	.cpt0-2
+		> *
+			padding-top: 0.2em
+	.cpr0-2
+		> *
+			padding-right: 0.2em
+	.cpb0-2
+		> *
+			padding-bottom: 0.2em
+	.cpl0-2
+		> *
+			padding-left: 0.2em
+	.cptb0-2, .cpbt0-2
+		> *
+			padding-top: 0.2em
+			padding-bottom: 0.2em
+	.cplr0-2, .cprl0-2
+		> *
+			padding-left: 0.2em
+			padding-right: 0.2em
 		
 
 	.m0-2
@@ -600,6 +752,32 @@
 	.mlr0-2, .mrl0-2
 		margin-left: 0.2em
 		margin-right: 0.2em
+
+	// child elements
+
+	.cm0-2
+		> *
+			margin: 0.2em
+	.cmt0-2
+		> *
+			margin-top: 0.2em
+	.cmr0-2
+		> *
+			margin-right: 0.2em
+	.cmb0-2
+		> *
+			margin-bottom: 0.2em
+	.cml0-2
+		> *
+			margin-left: 0.2em
+	.cmtb0-2, .cmbt0-2
+		> *
+			margin-top: 0.2em
+			margin-bottom: 0.2em
+	.cmlr0-2, .cmrl0-2
+		> *
+			margin-left: 0.2em
+			margin-right: 0.2em
 		
 
 	.s0-2
@@ -621,6 +799,32 @@
 	.plr0-4, .prl0-4
 		padding-left: 0.4em
 		padding-right: 0.4em
+
+	// child elements
+
+	.cp0-4
+		> *
+			padding: 0.4em
+	.cpt0-4
+		> *
+			padding-top: 0.4em
+	.cpr0-4
+		> *
+			padding-right: 0.4em
+	.cpb0-4
+		> *
+			padding-bottom: 0.4em
+	.cpl0-4
+		> *
+			padding-left: 0.4em
+	.cptb0-4, .cpbt0-4
+		> *
+			padding-top: 0.4em
+			padding-bottom: 0.4em
+	.cplr0-4, .cprl0-4
+		> *
+			padding-left: 0.4em
+			padding-right: 0.4em
 		
 
 	.m0-4
@@ -639,6 +843,32 @@
 	.mlr0-4, .mrl0-4
 		margin-left: 0.4em
 		margin-right: 0.4em
+
+	// child elements
+
+	.cm0-4
+		> *
+			margin: 0.4em
+	.cmt0-4
+		> *
+			margin-top: 0.4em
+	.cmr0-4
+		> *
+			margin-right: 0.4em
+	.cmb0-4
+		> *
+			margin-bottom: 0.4em
+	.cml0-4
+		> *
+			margin-left: 0.4em
+	.cmtb0-4, .cmbt0-4
+		> *
+			margin-top: 0.4em
+			margin-bottom: 0.4em
+	.cmlr0-4, .cmrl0-4
+		> *
+			margin-left: 0.4em
+			margin-right: 0.4em
 		
 
 	.s0-4
@@ -660,6 +890,32 @@
 	.plr0-6, .prl0-6
 		padding-left: 0.6em
 		padding-right: 0.6em
+
+	// child elements
+
+	.cp0-6
+		> *
+			padding: 0.6em
+	.cpt0-6
+		> *
+			padding-top: 0.6em
+	.cpr0-6
+		> *
+			padding-right: 0.6em
+	.cpb0-6
+		> *
+			padding-bottom: 0.6em
+	.cpl0-6
+		> *
+			padding-left: 0.6em
+	.cptb0-6, .cpbt0-6
+		> *
+			padding-top: 0.6em
+			padding-bottom: 0.6em
+	.cplr0-6, .cprl0-6
+		> *
+			padding-left: 0.6em
+			padding-right: 0.6em
 		
 
 	.m0-6
@@ -678,6 +934,32 @@
 	.mlr0-6, .mrl0-6
 		margin-left: 0.6em
 		margin-right: 0.6em
+
+	// child elements
+
+	.cm0-6
+		> *
+			margin: 0.6em
+	.cmt0-6
+		> *
+			margin-top: 0.6em
+	.cmr0-6
+		> *
+			margin-right: 0.6em
+	.cmb0-6
+		> *
+			margin-bottom: 0.6em
+	.cml0-6
+		> *
+			margin-left: 0.6em
+	.cmtb0-6, .cmbt0-6
+		> *
+			margin-top: 0.6em
+			margin-bottom: 0.6em
+	.cmlr0-6, .cmrl0-6
+		> *
+			margin-left: 0.6em
+			margin-right: 0.6em
 		
 
 	.s0-6
@@ -699,6 +981,32 @@
 	.plr0-8, .prl0-8
 		padding-left: 0.8em
 		padding-right: 0.8em
+
+	// child elements
+
+	.cp0-8
+		> *
+			padding: 0.8em
+	.cpt0-8
+		> *
+			padding-top: 0.8em
+	.cpr0-8
+		> *
+			padding-right: 0.8em
+	.cpb0-8
+		> *
+			padding-bottom: 0.8em
+	.cpl0-8
+		> *
+			padding-left: 0.8em
+	.cptb0-8, .cpbt0-8
+		> *
+			padding-top: 0.8em
+			padding-bottom: 0.8em
+	.cplr0-8, .cprl0-8
+		> *
+			padding-left: 0.8em
+			padding-right: 0.8em
 		
 
 	.m0-8
@@ -717,6 +1025,32 @@
 	.mlr0-8, .mrl0-8
 		margin-left: 0.8em
 		margin-right: 0.8em
+
+	// child elements
+
+	.cm0-8
+		> *
+			margin: 0.8em
+	.cmt0-8
+		> *
+			margin-top: 0.8em
+	.cmr0-8
+		> *
+			margin-right: 0.8em
+	.cmb0-8
+		> *
+			margin-bottom: 0.8em
+	.cml0-8
+		> *
+			margin-left: 0.8em
+	.cmtb0-8, .cmbt0-8
+		> *
+			margin-top: 0.8em
+			margin-bottom: 0.8em
+	.cmlr0-8, .cmrl0-8
+		> *
+			margin-left: 0.8em
+			margin-right: 0.8em
 		
 
 	.s0-8
@@ -738,6 +1072,32 @@
 	.plr1, .prl1
 		padding-left: 1em
 		padding-right: 1em
+
+	// child elements
+
+	.cp1
+		> *
+			padding: 1em
+	.cpt1
+		> *
+			padding-top: 1em
+	.cpr1
+		> *
+			padding-right: 1em
+	.cpb1
+		> *
+			padding-bottom: 1em
+	.cpl1
+		> *
+			padding-left: 1em
+	.cptb1, .cpbt1
+		> *
+			padding-top: 1em
+			padding-bottom: 1em
+	.cplr1, .cprl1
+		> *
+			padding-left: 1em
+			padding-right: 1em
 		
 
 	.m1
@@ -756,6 +1116,32 @@
 	.mlr1, .mrl1
 		margin-left: 1em
 		margin-right: 1em
+
+	// child elements
+
+	.cm1
+		> *
+			margin: 1em
+	.cmt1
+		> *
+			margin-top: 1em
+	.cmr1
+		> *
+			margin-right: 1em
+	.cmb1
+		> *
+			margin-bottom: 1em
+	.cml1
+		> *
+			margin-left: 1em
+	.cmtb1, .cmbt1
+		> *
+			margin-top: 1em
+			margin-bottom: 1em
+	.cmlr1, .cmrl1
+		> *
+			margin-left: 1em
+			margin-right: 1em
 		
 
 	.s1
@@ -777,6 +1163,32 @@
 	.plr1-2, .prl1-2
 		padding-left: 1.2em
 		padding-right: 1.2em
+
+	// child elements
+
+	.cp1-2
+		> *
+			padding: 1.2em
+	.cpt1-2
+		> *
+			padding-top: 1.2em
+	.cpr1-2
+		> *
+			padding-right: 1.2em
+	.cpb1-2
+		> *
+			padding-bottom: 1.2em
+	.cpl1-2
+		> *
+			padding-left: 1.2em
+	.cptb1-2, .cpbt1-2
+		> *
+			padding-top: 1.2em
+			padding-bottom: 1.2em
+	.cplr1-2, .cprl1-2
+		> *
+			padding-left: 1.2em
+			padding-right: 1.2em
 		
 
 	.m1-2
@@ -795,6 +1207,32 @@
 	.mlr1-2, .mrl1-2
 		margin-left: 1.2em
 		margin-right: 1.2em
+
+	// child elements
+
+	.cm1-2
+		> *
+			margin: 1.2em
+	.cmt1-2
+		> *
+			margin-top: 1.2em
+	.cmr1-2
+		> *
+			margin-right: 1.2em
+	.cmb1-2
+		> *
+			margin-bottom: 1.2em
+	.cml1-2
+		> *
+			margin-left: 1.2em
+	.cmtb1-2, .cmbt1-2
+		> *
+			margin-top: 1.2em
+			margin-bottom: 1.2em
+	.cmlr1-2, .cmrl1-2
+		> *
+			margin-left: 1.2em
+			margin-right: 1.2em
 		
 
 	.s1-2
@@ -816,6 +1254,32 @@
 	.plr1-4, .prl1-4
 		padding-left: 1.4em
 		padding-right: 1.4em
+
+	// child elements
+
+	.cp1-4
+		> *
+			padding: 1.4em
+	.cpt1-4
+		> *
+			padding-top: 1.4em
+	.cpr1-4
+		> *
+			padding-right: 1.4em
+	.cpb1-4
+		> *
+			padding-bottom: 1.4em
+	.cpl1-4
+		> *
+			padding-left: 1.4em
+	.cptb1-4, .cpbt1-4
+		> *
+			padding-top: 1.4em
+			padding-bottom: 1.4em
+	.cplr1-4, .cprl1-4
+		> *
+			padding-left: 1.4em
+			padding-right: 1.4em
 		
 
 	.m1-4
@@ -834,6 +1298,32 @@
 	.mlr1-4, .mrl1-4
 		margin-left: 1.4em
 		margin-right: 1.4em
+
+	// child elements
+
+	.cm1-4
+		> *
+			margin: 1.4em
+	.cmt1-4
+		> *
+			margin-top: 1.4em
+	.cmr1-4
+		> *
+			margin-right: 1.4em
+	.cmb1-4
+		> *
+			margin-bottom: 1.4em
+	.cml1-4
+		> *
+			margin-left: 1.4em
+	.cmtb1-4, .cmbt1-4
+		> *
+			margin-top: 1.4em
+			margin-bottom: 1.4em
+	.cmlr1-4, .cmrl1-4
+		> *
+			margin-left: 1.4em
+			margin-right: 1.4em
 		
 
 	.s1-4
@@ -855,6 +1345,32 @@
 	.plr1-6, .prl1-6
 		padding-left: 1.6em
 		padding-right: 1.6em
+
+	// child elements
+
+	.cp1-6
+		> *
+			padding: 1.6em
+	.cpt1-6
+		> *
+			padding-top: 1.6em
+	.cpr1-6
+		> *
+			padding-right: 1.6em
+	.cpb1-6
+		> *
+			padding-bottom: 1.6em
+	.cpl1-6
+		> *
+			padding-left: 1.6em
+	.cptb1-6, .cpbt1-6
+		> *
+			padding-top: 1.6em
+			padding-bottom: 1.6em
+	.cplr1-6, .cprl1-6
+		> *
+			padding-left: 1.6em
+			padding-right: 1.6em
 		
 
 	.m1-6
@@ -873,6 +1389,32 @@
 	.mlr1-6, .mrl1-6
 		margin-left: 1.6em
 		margin-right: 1.6em
+
+	// child elements
+
+	.cm1-6
+		> *
+			margin: 1.6em
+	.cmt1-6
+		> *
+			margin-top: 1.6em
+	.cmr1-6
+		> *
+			margin-right: 1.6em
+	.cmb1-6
+		> *
+			margin-bottom: 1.6em
+	.cml1-6
+		> *
+			margin-left: 1.6em
+	.cmtb1-6, .cmbt1-6
+		> *
+			margin-top: 1.6em
+			margin-bottom: 1.6em
+	.cmlr1-6, .cmrl1-6
+		> *
+			margin-left: 1.6em
+			margin-right: 1.6em
 		
 
 	.s1-6
@@ -894,6 +1436,32 @@
 	.plr1-8, .prl1-8
 		padding-left: 1.8em
 		padding-right: 1.8em
+
+	// child elements
+
+	.cp1-8
+		> *
+			padding: 1.8em
+	.cpt1-8
+		> *
+			padding-top: 1.8em
+	.cpr1-8
+		> *
+			padding-right: 1.8em
+	.cpb1-8
+		> *
+			padding-bottom: 1.8em
+	.cpl1-8
+		> *
+			padding-left: 1.8em
+	.cptb1-8, .cpbt1-8
+		> *
+			padding-top: 1.8em
+			padding-bottom: 1.8em
+	.cplr1-8, .cprl1-8
+		> *
+			padding-left: 1.8em
+			padding-right: 1.8em
 		
 
 	.m1-8
@@ -912,6 +1480,32 @@
 	.mlr1-8, .mrl1-8
 		margin-left: 1.8em
 		margin-right: 1.8em
+
+	// child elements
+
+	.cm1-8
+		> *
+			margin: 1.8em
+	.cmt1-8
+		> *
+			margin-top: 1.8em
+	.cmr1-8
+		> *
+			margin-right: 1.8em
+	.cmb1-8
+		> *
+			margin-bottom: 1.8em
+	.cml1-8
+		> *
+			margin-left: 1.8em
+	.cmtb1-8, .cmbt1-8
+		> *
+			margin-top: 1.8em
+			margin-bottom: 1.8em
+	.cmlr1-8, .cmrl1-8
+		> *
+			margin-left: 1.8em
+			margin-right: 1.8em
 		
 
 	.s1-8
@@ -933,6 +1527,32 @@
 	.plr2, .prl2
 		padding-left: 2em
 		padding-right: 2em
+
+	// child elements
+
+	.cp2
+		> *
+			padding: 2em
+	.cpt2
+		> *
+			padding-top: 2em
+	.cpr2
+		> *
+			padding-right: 2em
+	.cpb2
+		> *
+			padding-bottom: 2em
+	.cpl2
+		> *
+			padding-left: 2em
+	.cptb2, .cpbt2
+		> *
+			padding-top: 2em
+			padding-bottom: 2em
+	.cplr2, .cprl2
+		> *
+			padding-left: 2em
+			padding-right: 2em
 		
 
 	.m2
@@ -951,6 +1571,32 @@
 	.mlr2, .mrl2
 		margin-left: 2em
 		margin-right: 2em
+
+	// child elements
+
+	.cm2
+		> *
+			margin: 2em
+	.cmt2
+		> *
+			margin-top: 2em
+	.cmr2
+		> *
+			margin-right: 2em
+	.cmb2
+		> *
+			margin-bottom: 2em
+	.cml2
+		> *
+			margin-left: 2em
+	.cmtb2, .cmbt2
+		> *
+			margin-top: 2em
+			margin-bottom: 2em
+	.cmlr2, .cmrl2
+		> *
+			margin-left: 2em
+			margin-right: 2em
 		
 
 	.s2
@@ -972,6 +1618,32 @@
 	.plr2-2, .prl2-2
 		padding-left: 2.2em
 		padding-right: 2.2em
+
+	// child elements
+
+	.cp2-2
+		> *
+			padding: 2.2em
+	.cpt2-2
+		> *
+			padding-top: 2.2em
+	.cpr2-2
+		> *
+			padding-right: 2.2em
+	.cpb2-2
+		> *
+			padding-bottom: 2.2em
+	.cpl2-2
+		> *
+			padding-left: 2.2em
+	.cptb2-2, .cpbt2-2
+		> *
+			padding-top: 2.2em
+			padding-bottom: 2.2em
+	.cplr2-2, .cprl2-2
+		> *
+			padding-left: 2.2em
+			padding-right: 2.2em
 		
 
 	.m2-2
@@ -990,6 +1662,32 @@
 	.mlr2-2, .mrl2-2
 		margin-left: 2.2em
 		margin-right: 2.2em
+
+	// child elements
+
+	.cm2-2
+		> *
+			margin: 2.2em
+	.cmt2-2
+		> *
+			margin-top: 2.2em
+	.cmr2-2
+		> *
+			margin-right: 2.2em
+	.cmb2-2
+		> *
+			margin-bottom: 2.2em
+	.cml2-2
+		> *
+			margin-left: 2.2em
+	.cmtb2-2, .cmbt2-2
+		> *
+			margin-top: 2.2em
+			margin-bottom: 2.2em
+	.cmlr2-2, .cmrl2-2
+		> *
+			margin-left: 2.2em
+			margin-right: 2.2em
 		
 
 	.s2-2
@@ -1011,6 +1709,32 @@
 	.plr2-4, .prl2-4
 		padding-left: 2.4em
 		padding-right: 2.4em
+
+	// child elements
+
+	.cp2-4
+		> *
+			padding: 2.4em
+	.cpt2-4
+		> *
+			padding-top: 2.4em
+	.cpr2-4
+		> *
+			padding-right: 2.4em
+	.cpb2-4
+		> *
+			padding-bottom: 2.4em
+	.cpl2-4
+		> *
+			padding-left: 2.4em
+	.cptb2-4, .cpbt2-4
+		> *
+			padding-top: 2.4em
+			padding-bottom: 2.4em
+	.cplr2-4, .cprl2-4
+		> *
+			padding-left: 2.4em
+			padding-right: 2.4em
 		
 
 	.m2-4
@@ -1029,6 +1753,32 @@
 	.mlr2-4, .mrl2-4
 		margin-left: 2.4em
 		margin-right: 2.4em
+
+	// child elements
+
+	.cm2-4
+		> *
+			margin: 2.4em
+	.cmt2-4
+		> *
+			margin-top: 2.4em
+	.cmr2-4
+		> *
+			margin-right: 2.4em
+	.cmb2-4
+		> *
+			margin-bottom: 2.4em
+	.cml2-4
+		> *
+			margin-left: 2.4em
+	.cmtb2-4, .cmbt2-4
+		> *
+			margin-top: 2.4em
+			margin-bottom: 2.4em
+	.cmlr2-4, .cmrl2-4
+		> *
+			margin-left: 2.4em
+			margin-right: 2.4em
 		
 
 	.s2-4
@@ -1050,6 +1800,32 @@
 	.plr2-6, .prl2-6
 		padding-left: 2.6em
 		padding-right: 2.6em
+
+	// child elements
+
+	.cp2-6
+		> *
+			padding: 2.6em
+	.cpt2-6
+		> *
+			padding-top: 2.6em
+	.cpr2-6
+		> *
+			padding-right: 2.6em
+	.cpb2-6
+		> *
+			padding-bottom: 2.6em
+	.cpl2-6
+		> *
+			padding-left: 2.6em
+	.cptb2-6, .cpbt2-6
+		> *
+			padding-top: 2.6em
+			padding-bottom: 2.6em
+	.cplr2-6, .cprl2-6
+		> *
+			padding-left: 2.6em
+			padding-right: 2.6em
 		
 
 	.m2-6
@@ -1068,6 +1844,32 @@
 	.mlr2-6, .mrl2-6
 		margin-left: 2.6em
 		margin-right: 2.6em
+
+	// child elements
+
+	.cm2-6
+		> *
+			margin: 2.6em
+	.cmt2-6
+		> *
+			margin-top: 2.6em
+	.cmr2-6
+		> *
+			margin-right: 2.6em
+	.cmb2-6
+		> *
+			margin-bottom: 2.6em
+	.cml2-6
+		> *
+			margin-left: 2.6em
+	.cmtb2-6, .cmbt2-6
+		> *
+			margin-top: 2.6em
+			margin-bottom: 2.6em
+	.cmlr2-6, .cmrl2-6
+		> *
+			margin-left: 2.6em
+			margin-right: 2.6em
 		
 
 	.s2-6
@@ -1089,6 +1891,32 @@
 	.plr2-8, .prl2-8
 		padding-left: 2.8em
 		padding-right: 2.8em
+
+	// child elements
+
+	.cp2-8
+		> *
+			padding: 2.8em
+	.cpt2-8
+		> *
+			padding-top: 2.8em
+	.cpr2-8
+		> *
+			padding-right: 2.8em
+	.cpb2-8
+		> *
+			padding-bottom: 2.8em
+	.cpl2-8
+		> *
+			padding-left: 2.8em
+	.cptb2-8, .cpbt2-8
+		> *
+			padding-top: 2.8em
+			padding-bottom: 2.8em
+	.cplr2-8, .cprl2-8
+		> *
+			padding-left: 2.8em
+			padding-right: 2.8em
 		
 
 	.m2-8
@@ -1107,6 +1935,32 @@
 	.mlr2-8, .mrl2-8
 		margin-left: 2.8em
 		margin-right: 2.8em
+
+	// child elements
+
+	.cm2-8
+		> *
+			margin: 2.8em
+	.cmt2-8
+		> *
+			margin-top: 2.8em
+	.cmr2-8
+		> *
+			margin-right: 2.8em
+	.cmb2-8
+		> *
+			margin-bottom: 2.8em
+	.cml2-8
+		> *
+			margin-left: 2.8em
+	.cmtb2-8, .cmbt2-8
+		> *
+			margin-top: 2.8em
+			margin-bottom: 2.8em
+	.cmlr2-8, .cmrl2-8
+		> *
+			margin-left: 2.8em
+			margin-right: 2.8em
 		
 
 	.s2-8
@@ -1128,6 +1982,32 @@
 	.plr3, .prl3
 		padding-left: 3em
 		padding-right: 3em
+
+	// child elements
+
+	.cp3
+		> *
+			padding: 3em
+	.cpt3
+		> *
+			padding-top: 3em
+	.cpr3
+		> *
+			padding-right: 3em
+	.cpb3
+		> *
+			padding-bottom: 3em
+	.cpl3
+		> *
+			padding-left: 3em
+	.cptb3, .cpbt3
+		> *
+			padding-top: 3em
+			padding-bottom: 3em
+	.cplr3, .cprl3
+		> *
+			padding-left: 3em
+			padding-right: 3em
 		
 
 	.m3
@@ -1146,6 +2026,32 @@
 	.mlr3, .mrl3
 		margin-left: 3em
 		margin-right: 3em
+
+	// child elements
+
+	.cm3
+		> *
+			margin: 3em
+	.cmt3
+		> *
+			margin-top: 3em
+	.cmr3
+		> *
+			margin-right: 3em
+	.cmb3
+		> *
+			margin-bottom: 3em
+	.cml3
+		> *
+			margin-left: 3em
+	.cmtb3, .cmbt3
+		> *
+			margin-top: 3em
+			margin-bottom: 3em
+	.cmlr3, .cmrl3
+		> *
+			margin-left: 3em
+			margin-right: 3em
 		
 
 	.s3
@@ -1167,6 +2073,32 @@
 	.plr3-2, .prl3-2
 		padding-left: 3.2em
 		padding-right: 3.2em
+
+	// child elements
+
+	.cp3-2
+		> *
+			padding: 3.2em
+	.cpt3-2
+		> *
+			padding-top: 3.2em
+	.cpr3-2
+		> *
+			padding-right: 3.2em
+	.cpb3-2
+		> *
+			padding-bottom: 3.2em
+	.cpl3-2
+		> *
+			padding-left: 3.2em
+	.cptb3-2, .cpbt3-2
+		> *
+			padding-top: 3.2em
+			padding-bottom: 3.2em
+	.cplr3-2, .cprl3-2
+		> *
+			padding-left: 3.2em
+			padding-right: 3.2em
 		
 
 	.m3-2
@@ -1185,6 +2117,32 @@
 	.mlr3-2, .mrl3-2
 		margin-left: 3.2em
 		margin-right: 3.2em
+
+	// child elements
+
+	.cm3-2
+		> *
+			margin: 3.2em
+	.cmt3-2
+		> *
+			margin-top: 3.2em
+	.cmr3-2
+		> *
+			margin-right: 3.2em
+	.cmb3-2
+		> *
+			margin-bottom: 3.2em
+	.cml3-2
+		> *
+			margin-left: 3.2em
+	.cmtb3-2, .cmbt3-2
+		> *
+			margin-top: 3.2em
+			margin-bottom: 3.2em
+	.cmlr3-2, .cmrl3-2
+		> *
+			margin-left: 3.2em
+			margin-right: 3.2em
 		
 
 	.s3-2
@@ -1206,6 +2164,32 @@
 	.plr3-4, .prl3-4
 		padding-left: 3.4em
 		padding-right: 3.4em
+
+	// child elements
+
+	.cp3-4
+		> *
+			padding: 3.4em
+	.cpt3-4
+		> *
+			padding-top: 3.4em
+	.cpr3-4
+		> *
+			padding-right: 3.4em
+	.cpb3-4
+		> *
+			padding-bottom: 3.4em
+	.cpl3-4
+		> *
+			padding-left: 3.4em
+	.cptb3-4, .cpbt3-4
+		> *
+			padding-top: 3.4em
+			padding-bottom: 3.4em
+	.cplr3-4, .cprl3-4
+		> *
+			padding-left: 3.4em
+			padding-right: 3.4em
 		
 
 	.m3-4
@@ -1224,6 +2208,32 @@
 	.mlr3-4, .mrl3-4
 		margin-left: 3.4em
 		margin-right: 3.4em
+
+	// child elements
+
+	.cm3-4
+		> *
+			margin: 3.4em
+	.cmt3-4
+		> *
+			margin-top: 3.4em
+	.cmr3-4
+		> *
+			margin-right: 3.4em
+	.cmb3-4
+		> *
+			margin-bottom: 3.4em
+	.cml3-4
+		> *
+			margin-left: 3.4em
+	.cmtb3-4, .cmbt3-4
+		> *
+			margin-top: 3.4em
+			margin-bottom: 3.4em
+	.cmlr3-4, .cmrl3-4
+		> *
+			margin-left: 3.4em
+			margin-right: 3.4em
 		
 
 	.s3-4
@@ -1245,6 +2255,32 @@
 	.plr3-6, .prl3-6
 		padding-left: 3.6em
 		padding-right: 3.6em
+
+	// child elements
+
+	.cp3-6
+		> *
+			padding: 3.6em
+	.cpt3-6
+		> *
+			padding-top: 3.6em
+	.cpr3-6
+		> *
+			padding-right: 3.6em
+	.cpb3-6
+		> *
+			padding-bottom: 3.6em
+	.cpl3-6
+		> *
+			padding-left: 3.6em
+	.cptb3-6, .cpbt3-6
+		> *
+			padding-top: 3.6em
+			padding-bottom: 3.6em
+	.cplr3-6, .cprl3-6
+		> *
+			padding-left: 3.6em
+			padding-right: 3.6em
 		
 
 	.m3-6
@@ -1263,6 +2299,32 @@
 	.mlr3-6, .mrl3-6
 		margin-left: 3.6em
 		margin-right: 3.6em
+
+	// child elements
+
+	.cm3-6
+		> *
+			margin: 3.6em
+	.cmt3-6
+		> *
+			margin-top: 3.6em
+	.cmr3-6
+		> *
+			margin-right: 3.6em
+	.cmb3-6
+		> *
+			margin-bottom: 3.6em
+	.cml3-6
+		> *
+			margin-left: 3.6em
+	.cmtb3-6, .cmbt3-6
+		> *
+			margin-top: 3.6em
+			margin-bottom: 3.6em
+	.cmlr3-6, .cmrl3-6
+		> *
+			margin-left: 3.6em
+			margin-right: 3.6em
 		
 
 	.s3-6
@@ -1284,6 +2346,32 @@
 	.plr3-8, .prl3-8
 		padding-left: 3.8em
 		padding-right: 3.8em
+
+	// child elements
+
+	.cp3-8
+		> *
+			padding: 3.8em
+	.cpt3-8
+		> *
+			padding-top: 3.8em
+	.cpr3-8
+		> *
+			padding-right: 3.8em
+	.cpb3-8
+		> *
+			padding-bottom: 3.8em
+	.cpl3-8
+		> *
+			padding-left: 3.8em
+	.cptb3-8, .cpbt3-8
+		> *
+			padding-top: 3.8em
+			padding-bottom: 3.8em
+	.cplr3-8, .cprl3-8
+		> *
+			padding-left: 3.8em
+			padding-right: 3.8em
 		
 
 	.m3-8
@@ -1302,6 +2390,32 @@
 	.mlr3-8, .mrl3-8
 		margin-left: 3.8em
 		margin-right: 3.8em
+
+	// child elements
+
+	.cm3-8
+		> *
+			margin: 3.8em
+	.cmt3-8
+		> *
+			margin-top: 3.8em
+	.cmr3-8
+		> *
+			margin-right: 3.8em
+	.cmb3-8
+		> *
+			margin-bottom: 3.8em
+	.cml3-8
+		> *
+			margin-left: 3.8em
+	.cmtb3-8, .cmbt3-8
+		> *
+			margin-top: 3.8em
+			margin-bottom: 3.8em
+	.cmlr3-8, .cmrl3-8
+		> *
+			margin-left: 3.8em
+			margin-right: 3.8em
 		
 
 	.s3-8
@@ -1323,6 +2437,32 @@
 	.plr4, .prl4
 		padding-left: 4em
 		padding-right: 4em
+
+	// child elements
+
+	.cp4
+		> *
+			padding: 4em
+	.cpt4
+		> *
+			padding-top: 4em
+	.cpr4
+		> *
+			padding-right: 4em
+	.cpb4
+		> *
+			padding-bottom: 4em
+	.cpl4
+		> *
+			padding-left: 4em
+	.cptb4, .cpbt4
+		> *
+			padding-top: 4em
+			padding-bottom: 4em
+	.cplr4, .cprl4
+		> *
+			padding-left: 4em
+			padding-right: 4em
 		
 
 	.m4
@@ -1341,6 +2481,32 @@
 	.mlr4, .mrl4
 		margin-left: 4em
 		margin-right: 4em
+
+	// child elements
+
+	.cm4
+		> *
+			margin: 4em
+	.cmt4
+		> *
+			margin-top: 4em
+	.cmr4
+		> *
+			margin-right: 4em
+	.cmb4
+		> *
+			margin-bottom: 4em
+	.cml4
+		> *
+			margin-left: 4em
+	.cmtb4, .cmbt4
+		> *
+			margin-top: 4em
+			margin-bottom: 4em
+	.cmlr4, .cmrl4
+		> *
+			margin-left: 4em
+			margin-right: 4em
 		
 
 	.s4
@@ -1362,6 +2528,32 @@
 	.plr4-2, .prl4-2
 		padding-left: 4.2em
 		padding-right: 4.2em
+
+	// child elements
+
+	.cp4-2
+		> *
+			padding: 4.2em
+	.cpt4-2
+		> *
+			padding-top: 4.2em
+	.cpr4-2
+		> *
+			padding-right: 4.2em
+	.cpb4-2
+		> *
+			padding-bottom: 4.2em
+	.cpl4-2
+		> *
+			padding-left: 4.2em
+	.cptb4-2, .cpbt4-2
+		> *
+			padding-top: 4.2em
+			padding-bottom: 4.2em
+	.cplr4-2, .cprl4-2
+		> *
+			padding-left: 4.2em
+			padding-right: 4.2em
 		
 
 	.m4-2
@@ -1380,6 +2572,32 @@
 	.mlr4-2, .mrl4-2
 		margin-left: 4.2em
 		margin-right: 4.2em
+
+	// child elements
+
+	.cm4-2
+		> *
+			margin: 4.2em
+	.cmt4-2
+		> *
+			margin-top: 4.2em
+	.cmr4-2
+		> *
+			margin-right: 4.2em
+	.cmb4-2
+		> *
+			margin-bottom: 4.2em
+	.cml4-2
+		> *
+			margin-left: 4.2em
+	.cmtb4-2, .cmbt4-2
+		> *
+			margin-top: 4.2em
+			margin-bottom: 4.2em
+	.cmlr4-2, .cmrl4-2
+		> *
+			margin-left: 4.2em
+			margin-right: 4.2em
 		
 
 	.s4-2
@@ -1401,6 +2619,32 @@
 	.plr4-4, .prl4-4
 		padding-left: 4.4em
 		padding-right: 4.4em
+
+	// child elements
+
+	.cp4-4
+		> *
+			padding: 4.4em
+	.cpt4-4
+		> *
+			padding-top: 4.4em
+	.cpr4-4
+		> *
+			padding-right: 4.4em
+	.cpb4-4
+		> *
+			padding-bottom: 4.4em
+	.cpl4-4
+		> *
+			padding-left: 4.4em
+	.cptb4-4, .cpbt4-4
+		> *
+			padding-top: 4.4em
+			padding-bottom: 4.4em
+	.cplr4-4, .cprl4-4
+		> *
+			padding-left: 4.4em
+			padding-right: 4.4em
 		
 
 	.m4-4
@@ -1419,6 +2663,32 @@
 	.mlr4-4, .mrl4-4
 		margin-left: 4.4em
 		margin-right: 4.4em
+
+	// child elements
+
+	.cm4-4
+		> *
+			margin: 4.4em
+	.cmt4-4
+		> *
+			margin-top: 4.4em
+	.cmr4-4
+		> *
+			margin-right: 4.4em
+	.cmb4-4
+		> *
+			margin-bottom: 4.4em
+	.cml4-4
+		> *
+			margin-left: 4.4em
+	.cmtb4-4, .cmbt4-4
+		> *
+			margin-top: 4.4em
+			margin-bottom: 4.4em
+	.cmlr4-4, .cmrl4-4
+		> *
+			margin-left: 4.4em
+			margin-right: 4.4em
 		
 
 	.s4-4
@@ -1440,6 +2710,32 @@
 	.plr4-6, .prl4-6
 		padding-left: 4.6em
 		padding-right: 4.6em
+
+	// child elements
+
+	.cp4-6
+		> *
+			padding: 4.6em
+	.cpt4-6
+		> *
+			padding-top: 4.6em
+	.cpr4-6
+		> *
+			padding-right: 4.6em
+	.cpb4-6
+		> *
+			padding-bottom: 4.6em
+	.cpl4-6
+		> *
+			padding-left: 4.6em
+	.cptb4-6, .cpbt4-6
+		> *
+			padding-top: 4.6em
+			padding-bottom: 4.6em
+	.cplr4-6, .cprl4-6
+		> *
+			padding-left: 4.6em
+			padding-right: 4.6em
 		
 
 	.m4-6
@@ -1458,6 +2754,32 @@
 	.mlr4-6, .mrl4-6
 		margin-left: 4.6em
 		margin-right: 4.6em
+
+	// child elements
+
+	.cm4-6
+		> *
+			margin: 4.6em
+	.cmt4-6
+		> *
+			margin-top: 4.6em
+	.cmr4-6
+		> *
+			margin-right: 4.6em
+	.cmb4-6
+		> *
+			margin-bottom: 4.6em
+	.cml4-6
+		> *
+			margin-left: 4.6em
+	.cmtb4-6, .cmbt4-6
+		> *
+			margin-top: 4.6em
+			margin-bottom: 4.6em
+	.cmlr4-6, .cmrl4-6
+		> *
+			margin-left: 4.6em
+			margin-right: 4.6em
 		
 
 	.s4-6
@@ -1479,6 +2801,32 @@
 	.plr4-8, .prl4-8
 		padding-left: 4.8em
 		padding-right: 4.8em
+
+	// child elements
+
+	.cp4-8
+		> *
+			padding: 4.8em
+	.cpt4-8
+		> *
+			padding-top: 4.8em
+	.cpr4-8
+		> *
+			padding-right: 4.8em
+	.cpb4-8
+		> *
+			padding-bottom: 4.8em
+	.cpl4-8
+		> *
+			padding-left: 4.8em
+	.cptb4-8, .cpbt4-8
+		> *
+			padding-top: 4.8em
+			padding-bottom: 4.8em
+	.cplr4-8, .cprl4-8
+		> *
+			padding-left: 4.8em
+			padding-right: 4.8em
 		
 
 	.m4-8
@@ -1497,6 +2845,32 @@
 	.mlr4-8, .mrl4-8
 		margin-left: 4.8em
 		margin-right: 4.8em
+
+	// child elements
+
+	.cm4-8
+		> *
+			margin: 4.8em
+	.cmt4-8
+		> *
+			margin-top: 4.8em
+	.cmr4-8
+		> *
+			margin-right: 4.8em
+	.cmb4-8
+		> *
+			margin-bottom: 4.8em
+	.cml4-8
+		> *
+			margin-left: 4.8em
+	.cmtb4-8, .cmbt4-8
+		> *
+			margin-top: 4.8em
+			margin-bottom: 4.8em
+	.cmlr4-8, .cmrl4-8
+		> *
+			margin-left: 4.8em
+			margin-right: 4.8em
 		
 
 	.s4-8
@@ -1518,6 +2892,32 @@
 	.plr5, .prl5
 		padding-left: 5em
 		padding-right: 5em
+
+	// child elements
+
+	.cp5
+		> *
+			padding: 5em
+	.cpt5
+		> *
+			padding-top: 5em
+	.cpr5
+		> *
+			padding-right: 5em
+	.cpb5
+		> *
+			padding-bottom: 5em
+	.cpl5
+		> *
+			padding-left: 5em
+	.cptb5, .cpbt5
+		> *
+			padding-top: 5em
+			padding-bottom: 5em
+	.cplr5, .cprl5
+		> *
+			padding-left: 5em
+			padding-right: 5em
 		
 
 	.m5
@@ -1536,6 +2936,32 @@
 	.mlr5, .mrl5
 		margin-left: 5em
 		margin-right: 5em
+
+	// child elements
+
+	.cm5
+		> *
+			margin: 5em
+	.cmt5
+		> *
+			margin-top: 5em
+	.cmr5
+		> *
+			margin-right: 5em
+	.cmb5
+		> *
+			margin-bottom: 5em
+	.cml5
+		> *
+			margin-left: 5em
+	.cmtb5, .cmbt5
+		> *
+			margin-top: 5em
+			margin-bottom: 5em
+	.cmlr5, .cmrl5
+		> *
+			margin-left: 5em
+			margin-right: 5em
 		
 
 	.s5
@@ -1557,6 +2983,32 @@
 	.plr5-2, .prl5-2
 		padding-left: 5.2em
 		padding-right: 5.2em
+
+	// child elements
+
+	.cp5-2
+		> *
+			padding: 5.2em
+	.cpt5-2
+		> *
+			padding-top: 5.2em
+	.cpr5-2
+		> *
+			padding-right: 5.2em
+	.cpb5-2
+		> *
+			padding-bottom: 5.2em
+	.cpl5-2
+		> *
+			padding-left: 5.2em
+	.cptb5-2, .cpbt5-2
+		> *
+			padding-top: 5.2em
+			padding-bottom: 5.2em
+	.cplr5-2, .cprl5-2
+		> *
+			padding-left: 5.2em
+			padding-right: 5.2em
 		
 
 	.m5-2
@@ -1575,6 +3027,32 @@
 	.mlr5-2, .mrl5-2
 		margin-left: 5.2em
 		margin-right: 5.2em
+
+	// child elements
+
+	.cm5-2
+		> *
+			margin: 5.2em
+	.cmt5-2
+		> *
+			margin-top: 5.2em
+	.cmr5-2
+		> *
+			margin-right: 5.2em
+	.cmb5-2
+		> *
+			margin-bottom: 5.2em
+	.cml5-2
+		> *
+			margin-left: 5.2em
+	.cmtb5-2, .cmbt5-2
+		> *
+			margin-top: 5.2em
+			margin-bottom: 5.2em
+	.cmlr5-2, .cmrl5-2
+		> *
+			margin-left: 5.2em
+			margin-right: 5.2em
 		
 
 	.s5-2
@@ -1596,6 +3074,32 @@
 	.plr5-4, .prl5-4
 		padding-left: 5.4em
 		padding-right: 5.4em
+
+	// child elements
+
+	.cp5-4
+		> *
+			padding: 5.4em
+	.cpt5-4
+		> *
+			padding-top: 5.4em
+	.cpr5-4
+		> *
+			padding-right: 5.4em
+	.cpb5-4
+		> *
+			padding-bottom: 5.4em
+	.cpl5-4
+		> *
+			padding-left: 5.4em
+	.cptb5-4, .cpbt5-4
+		> *
+			padding-top: 5.4em
+			padding-bottom: 5.4em
+	.cplr5-4, .cprl5-4
+		> *
+			padding-left: 5.4em
+			padding-right: 5.4em
 		
 
 	.m5-4
@@ -1614,6 +3118,32 @@
 	.mlr5-4, .mrl5-4
 		margin-left: 5.4em
 		margin-right: 5.4em
+
+	// child elements
+
+	.cm5-4
+		> *
+			margin: 5.4em
+	.cmt5-4
+		> *
+			margin-top: 5.4em
+	.cmr5-4
+		> *
+			margin-right: 5.4em
+	.cmb5-4
+		> *
+			margin-bottom: 5.4em
+	.cml5-4
+		> *
+			margin-left: 5.4em
+	.cmtb5-4, .cmbt5-4
+		> *
+			margin-top: 5.4em
+			margin-bottom: 5.4em
+	.cmlr5-4, .cmrl5-4
+		> *
+			margin-left: 5.4em
+			margin-right: 5.4em
 		
 
 	.s5-4
@@ -1635,6 +3165,32 @@
 	.plr5-6, .prl5-6
 		padding-left: 5.6em
 		padding-right: 5.6em
+
+	// child elements
+
+	.cp5-6
+		> *
+			padding: 5.6em
+	.cpt5-6
+		> *
+			padding-top: 5.6em
+	.cpr5-6
+		> *
+			padding-right: 5.6em
+	.cpb5-6
+		> *
+			padding-bottom: 5.6em
+	.cpl5-6
+		> *
+			padding-left: 5.6em
+	.cptb5-6, .cpbt5-6
+		> *
+			padding-top: 5.6em
+			padding-bottom: 5.6em
+	.cplr5-6, .cprl5-6
+		> *
+			padding-left: 5.6em
+			padding-right: 5.6em
 		
 
 	.m5-6
@@ -1653,6 +3209,32 @@
 	.mlr5-6, .mrl5-6
 		margin-left: 5.6em
 		margin-right: 5.6em
+
+	// child elements
+
+	.cm5-6
+		> *
+			margin: 5.6em
+	.cmt5-6
+		> *
+			margin-top: 5.6em
+	.cmr5-6
+		> *
+			margin-right: 5.6em
+	.cmb5-6
+		> *
+			margin-bottom: 5.6em
+	.cml5-6
+		> *
+			margin-left: 5.6em
+	.cmtb5-6, .cmbt5-6
+		> *
+			margin-top: 5.6em
+			margin-bottom: 5.6em
+	.cmlr5-6, .cmrl5-6
+		> *
+			margin-left: 5.6em
+			margin-right: 5.6em
 		
 
 	.s5-6
@@ -1674,6 +3256,32 @@
 	.plr5-8, .prl5-8
 		padding-left: 5.8em
 		padding-right: 5.8em
+
+	// child elements
+
+	.cp5-8
+		> *
+			padding: 5.8em
+	.cpt5-8
+		> *
+			padding-top: 5.8em
+	.cpr5-8
+		> *
+			padding-right: 5.8em
+	.cpb5-8
+		> *
+			padding-bottom: 5.8em
+	.cpl5-8
+		> *
+			padding-left: 5.8em
+	.cptb5-8, .cpbt5-8
+		> *
+			padding-top: 5.8em
+			padding-bottom: 5.8em
+	.cplr5-8, .cprl5-8
+		> *
+			padding-left: 5.8em
+			padding-right: 5.8em
 		
 
 	.m5-8
@@ -1692,6 +3300,32 @@
 	.mlr5-8, .mrl5-8
 		margin-left: 5.8em
 		margin-right: 5.8em
+
+	// child elements
+
+	.cm5-8
+		> *
+			margin: 5.8em
+	.cmt5-8
+		> *
+			margin-top: 5.8em
+	.cmr5-8
+		> *
+			margin-right: 5.8em
+	.cmb5-8
+		> *
+			margin-bottom: 5.8em
+	.cml5-8
+		> *
+			margin-left: 5.8em
+	.cmtb5-8, .cmbt5-8
+		> *
+			margin-top: 5.8em
+			margin-bottom: 5.8em
+	.cmlr5-8, .cmrl5-8
+		> *
+			margin-left: 5.8em
+			margin-right: 5.8em
 		
 
 	.s5-8
@@ -1713,6 +3347,32 @@
 	.plr6, .prl6
 		padding-left: 6em
 		padding-right: 6em
+
+	// child elements
+
+	.cp6
+		> *
+			padding: 6em
+	.cpt6
+		> *
+			padding-top: 6em
+	.cpr6
+		> *
+			padding-right: 6em
+	.cpb6
+		> *
+			padding-bottom: 6em
+	.cpl6
+		> *
+			padding-left: 6em
+	.cptb6, .cpbt6
+		> *
+			padding-top: 6em
+			padding-bottom: 6em
+	.cplr6, .cprl6
+		> *
+			padding-left: 6em
+			padding-right: 6em
 		
 
 	.m6
@@ -1731,6 +3391,32 @@
 	.mlr6, .mrl6
 		margin-left: 6em
 		margin-right: 6em
+
+	// child elements
+
+	.cm6
+		> *
+			margin: 6em
+	.cmt6
+		> *
+			margin-top: 6em
+	.cmr6
+		> *
+			margin-right: 6em
+	.cmb6
+		> *
+			margin-bottom: 6em
+	.cml6
+		> *
+			margin-left: 6em
+	.cmtb6, .cmbt6
+		> *
+			margin-top: 6em
+			margin-bottom: 6em
+	.cmlr6, .cmrl6
+		> *
+			margin-left: 6em
+			margin-right: 6em
 		
 
 	.s6
@@ -1752,6 +3438,32 @@
 	.plr6-2, .prl6-2
 		padding-left: 6.2em
 		padding-right: 6.2em
+
+	// child elements
+
+	.cp6-2
+		> *
+			padding: 6.2em
+	.cpt6-2
+		> *
+			padding-top: 6.2em
+	.cpr6-2
+		> *
+			padding-right: 6.2em
+	.cpb6-2
+		> *
+			padding-bottom: 6.2em
+	.cpl6-2
+		> *
+			padding-left: 6.2em
+	.cptb6-2, .cpbt6-2
+		> *
+			padding-top: 6.2em
+			padding-bottom: 6.2em
+	.cplr6-2, .cprl6-2
+		> *
+			padding-left: 6.2em
+			padding-right: 6.2em
 		
 
 	.m6-2
@@ -1770,6 +3482,32 @@
 	.mlr6-2, .mrl6-2
 		margin-left: 6.2em
 		margin-right: 6.2em
+
+	// child elements
+
+	.cm6-2
+		> *
+			margin: 6.2em
+	.cmt6-2
+		> *
+			margin-top: 6.2em
+	.cmr6-2
+		> *
+			margin-right: 6.2em
+	.cmb6-2
+		> *
+			margin-bottom: 6.2em
+	.cml6-2
+		> *
+			margin-left: 6.2em
+	.cmtb6-2, .cmbt6-2
+		> *
+			margin-top: 6.2em
+			margin-bottom: 6.2em
+	.cmlr6-2, .cmrl6-2
+		> *
+			margin-left: 6.2em
+			margin-right: 6.2em
 		
 
 	.s6-2
@@ -1791,6 +3529,32 @@
 	.plr6-4, .prl6-4
 		padding-left: 6.4em
 		padding-right: 6.4em
+
+	// child elements
+
+	.cp6-4
+		> *
+			padding: 6.4em
+	.cpt6-4
+		> *
+			padding-top: 6.4em
+	.cpr6-4
+		> *
+			padding-right: 6.4em
+	.cpb6-4
+		> *
+			padding-bottom: 6.4em
+	.cpl6-4
+		> *
+			padding-left: 6.4em
+	.cptb6-4, .cpbt6-4
+		> *
+			padding-top: 6.4em
+			padding-bottom: 6.4em
+	.cplr6-4, .cprl6-4
+		> *
+			padding-left: 6.4em
+			padding-right: 6.4em
 		
 
 	.m6-4
@@ -1809,6 +3573,32 @@
 	.mlr6-4, .mrl6-4
 		margin-left: 6.4em
 		margin-right: 6.4em
+
+	// child elements
+
+	.cm6-4
+		> *
+			margin: 6.4em
+	.cmt6-4
+		> *
+			margin-top: 6.4em
+	.cmr6-4
+		> *
+			margin-right: 6.4em
+	.cmb6-4
+		> *
+			margin-bottom: 6.4em
+	.cml6-4
+		> *
+			margin-left: 6.4em
+	.cmtb6-4, .cmbt6-4
+		> *
+			margin-top: 6.4em
+			margin-bottom: 6.4em
+	.cmlr6-4, .cmrl6-4
+		> *
+			margin-left: 6.4em
+			margin-right: 6.4em
 		
 
 	.s6-4
@@ -1830,6 +3620,32 @@
 	.plr6-6, .prl6-6
 		padding-left: 6.6em
 		padding-right: 6.6em
+
+	// child elements
+
+	.cp6-6
+		> *
+			padding: 6.6em
+	.cpt6-6
+		> *
+			padding-top: 6.6em
+	.cpr6-6
+		> *
+			padding-right: 6.6em
+	.cpb6-6
+		> *
+			padding-bottom: 6.6em
+	.cpl6-6
+		> *
+			padding-left: 6.6em
+	.cptb6-6, .cpbt6-6
+		> *
+			padding-top: 6.6em
+			padding-bottom: 6.6em
+	.cplr6-6, .cprl6-6
+		> *
+			padding-left: 6.6em
+			padding-right: 6.6em
 		
 
 	.m6-6
@@ -1848,6 +3664,32 @@
 	.mlr6-6, .mrl6-6
 		margin-left: 6.6em
 		margin-right: 6.6em
+
+	// child elements
+
+	.cm6-6
+		> *
+			margin: 6.6em
+	.cmt6-6
+		> *
+			margin-top: 6.6em
+	.cmr6-6
+		> *
+			margin-right: 6.6em
+	.cmb6-6
+		> *
+			margin-bottom: 6.6em
+	.cml6-6
+		> *
+			margin-left: 6.6em
+	.cmtb6-6, .cmbt6-6
+		> *
+			margin-top: 6.6em
+			margin-bottom: 6.6em
+	.cmlr6-6, .cmrl6-6
+		> *
+			margin-left: 6.6em
+			margin-right: 6.6em
 		
 
 	.s6-6
@@ -1869,6 +3711,32 @@
 	.plr6-8, .prl6-8
 		padding-left: 6.8em
 		padding-right: 6.8em
+
+	// child elements
+
+	.cp6-8
+		> *
+			padding: 6.8em
+	.cpt6-8
+		> *
+			padding-top: 6.8em
+	.cpr6-8
+		> *
+			padding-right: 6.8em
+	.cpb6-8
+		> *
+			padding-bottom: 6.8em
+	.cpl6-8
+		> *
+			padding-left: 6.8em
+	.cptb6-8, .cpbt6-8
+		> *
+			padding-top: 6.8em
+			padding-bottom: 6.8em
+	.cplr6-8, .cprl6-8
+		> *
+			padding-left: 6.8em
+			padding-right: 6.8em
 		
 
 	.m6-8
@@ -1887,6 +3755,32 @@
 	.mlr6-8, .mrl6-8
 		margin-left: 6.8em
 		margin-right: 6.8em
+
+	// child elements
+
+	.cm6-8
+		> *
+			margin: 6.8em
+	.cmt6-8
+		> *
+			margin-top: 6.8em
+	.cmr6-8
+		> *
+			margin-right: 6.8em
+	.cmb6-8
+		> *
+			margin-bottom: 6.8em
+	.cml6-8
+		> *
+			margin-left: 6.8em
+	.cmtb6-8, .cmbt6-8
+		> *
+			margin-top: 6.8em
+			margin-bottom: 6.8em
+	.cmlr6-8, .cmrl6-8
+		> *
+			margin-left: 6.8em
+			margin-right: 6.8em
 		
 
 	.s6-8
@@ -1908,6 +3802,32 @@
 	.plr7, .prl7
 		padding-left: 7em
 		padding-right: 7em
+
+	// child elements
+
+	.cp7
+		> *
+			padding: 7em
+	.cpt7
+		> *
+			padding-top: 7em
+	.cpr7
+		> *
+			padding-right: 7em
+	.cpb7
+		> *
+			padding-bottom: 7em
+	.cpl7
+		> *
+			padding-left: 7em
+	.cptb7, .cpbt7
+		> *
+			padding-top: 7em
+			padding-bottom: 7em
+	.cplr7, .cprl7
+		> *
+			padding-left: 7em
+			padding-right: 7em
 		
 
 	.m7
@@ -1926,6 +3846,32 @@
 	.mlr7, .mrl7
 		margin-left: 7em
 		margin-right: 7em
+
+	// child elements
+
+	.cm7
+		> *
+			margin: 7em
+	.cmt7
+		> *
+			margin-top: 7em
+	.cmr7
+		> *
+			margin-right: 7em
+	.cmb7
+		> *
+			margin-bottom: 7em
+	.cml7
+		> *
+			margin-left: 7em
+	.cmtb7, .cmbt7
+		> *
+			margin-top: 7em
+			margin-bottom: 7em
+	.cmlr7, .cmrl7
+		> *
+			margin-left: 7em
+			margin-right: 7em
 		
 
 	.s7
@@ -1947,6 +3893,32 @@
 	.plr7-2, .prl7-2
 		padding-left: 7.2em
 		padding-right: 7.2em
+
+	// child elements
+
+	.cp7-2
+		> *
+			padding: 7.2em
+	.cpt7-2
+		> *
+			padding-top: 7.2em
+	.cpr7-2
+		> *
+			padding-right: 7.2em
+	.cpb7-2
+		> *
+			padding-bottom: 7.2em
+	.cpl7-2
+		> *
+			padding-left: 7.2em
+	.cptb7-2, .cpbt7-2
+		> *
+			padding-top: 7.2em
+			padding-bottom: 7.2em
+	.cplr7-2, .cprl7-2
+		> *
+			padding-left: 7.2em
+			padding-right: 7.2em
 		
 
 	.m7-2
@@ -1965,6 +3937,32 @@
 	.mlr7-2, .mrl7-2
 		margin-left: 7.2em
 		margin-right: 7.2em
+
+	// child elements
+
+	.cm7-2
+		> *
+			margin: 7.2em
+	.cmt7-2
+		> *
+			margin-top: 7.2em
+	.cmr7-2
+		> *
+			margin-right: 7.2em
+	.cmb7-2
+		> *
+			margin-bottom: 7.2em
+	.cml7-2
+		> *
+			margin-left: 7.2em
+	.cmtb7-2, .cmbt7-2
+		> *
+			margin-top: 7.2em
+			margin-bottom: 7.2em
+	.cmlr7-2, .cmrl7-2
+		> *
+			margin-left: 7.2em
+			margin-right: 7.2em
 		
 
 	.s7-2
@@ -1986,6 +3984,32 @@
 	.plr7-4, .prl7-4
 		padding-left: 7.4em
 		padding-right: 7.4em
+
+	// child elements
+
+	.cp7-4
+		> *
+			padding: 7.4em
+	.cpt7-4
+		> *
+			padding-top: 7.4em
+	.cpr7-4
+		> *
+			padding-right: 7.4em
+	.cpb7-4
+		> *
+			padding-bottom: 7.4em
+	.cpl7-4
+		> *
+			padding-left: 7.4em
+	.cptb7-4, .cpbt7-4
+		> *
+			padding-top: 7.4em
+			padding-bottom: 7.4em
+	.cplr7-4, .cprl7-4
+		> *
+			padding-left: 7.4em
+			padding-right: 7.4em
 		
 
 	.m7-4
@@ -2004,6 +4028,32 @@
 	.mlr7-4, .mrl7-4
 		margin-left: 7.4em
 		margin-right: 7.4em
+
+	// child elements
+
+	.cm7-4
+		> *
+			margin: 7.4em
+	.cmt7-4
+		> *
+			margin-top: 7.4em
+	.cmr7-4
+		> *
+			margin-right: 7.4em
+	.cmb7-4
+		> *
+			margin-bottom: 7.4em
+	.cml7-4
+		> *
+			margin-left: 7.4em
+	.cmtb7-4, .cmbt7-4
+		> *
+			margin-top: 7.4em
+			margin-bottom: 7.4em
+	.cmlr7-4, .cmrl7-4
+		> *
+			margin-left: 7.4em
+			margin-right: 7.4em
 		
 
 	.s7-4
@@ -2025,6 +4075,32 @@
 	.plr7-6, .prl7-6
 		padding-left: 7.6em
 		padding-right: 7.6em
+
+	// child elements
+
+	.cp7-6
+		> *
+			padding: 7.6em
+	.cpt7-6
+		> *
+			padding-top: 7.6em
+	.cpr7-6
+		> *
+			padding-right: 7.6em
+	.cpb7-6
+		> *
+			padding-bottom: 7.6em
+	.cpl7-6
+		> *
+			padding-left: 7.6em
+	.cptb7-6, .cpbt7-6
+		> *
+			padding-top: 7.6em
+			padding-bottom: 7.6em
+	.cplr7-6, .cprl7-6
+		> *
+			padding-left: 7.6em
+			padding-right: 7.6em
 		
 
 	.m7-6
@@ -2043,6 +4119,32 @@
 	.mlr7-6, .mrl7-6
 		margin-left: 7.6em
 		margin-right: 7.6em
+
+	// child elements
+
+	.cm7-6
+		> *
+			margin: 7.6em
+	.cmt7-6
+		> *
+			margin-top: 7.6em
+	.cmr7-6
+		> *
+			margin-right: 7.6em
+	.cmb7-6
+		> *
+			margin-bottom: 7.6em
+	.cml7-6
+		> *
+			margin-left: 7.6em
+	.cmtb7-6, .cmbt7-6
+		> *
+			margin-top: 7.6em
+			margin-bottom: 7.6em
+	.cmlr7-6, .cmrl7-6
+		> *
+			margin-left: 7.6em
+			margin-right: 7.6em
 		
 
 	.s7-6
@@ -2064,6 +4166,32 @@
 	.plr7-8, .prl7-8
 		padding-left: 7.8em
 		padding-right: 7.8em
+
+	// child elements
+
+	.cp7-8
+		> *
+			padding: 7.8em
+	.cpt7-8
+		> *
+			padding-top: 7.8em
+	.cpr7-8
+		> *
+			padding-right: 7.8em
+	.cpb7-8
+		> *
+			padding-bottom: 7.8em
+	.cpl7-8
+		> *
+			padding-left: 7.8em
+	.cptb7-8, .cpbt7-8
+		> *
+			padding-top: 7.8em
+			padding-bottom: 7.8em
+	.cplr7-8, .cprl7-8
+		> *
+			padding-left: 7.8em
+			padding-right: 7.8em
 		
 
 	.m7-8
@@ -2082,6 +4210,32 @@
 	.mlr7-8, .mrl7-8
 		margin-left: 7.8em
 		margin-right: 7.8em
+
+	// child elements
+
+	.cm7-8
+		> *
+			margin: 7.8em
+	.cmt7-8
+		> *
+			margin-top: 7.8em
+	.cmr7-8
+		> *
+			margin-right: 7.8em
+	.cmb7-8
+		> *
+			margin-bottom: 7.8em
+	.cml7-8
+		> *
+			margin-left: 7.8em
+	.cmtb7-8, .cmbt7-8
+		> *
+			margin-top: 7.8em
+			margin-bottom: 7.8em
+	.cmlr7-8, .cmrl7-8
+		> *
+			margin-left: 7.8em
+			margin-right: 7.8em
 		
 
 	.s7-8
@@ -2103,6 +4257,32 @@
 	.plr8, .prl8
 		padding-left: 8em
 		padding-right: 8em
+
+	// child elements
+
+	.cp8
+		> *
+			padding: 8em
+	.cpt8
+		> *
+			padding-top: 8em
+	.cpr8
+		> *
+			padding-right: 8em
+	.cpb8
+		> *
+			padding-bottom: 8em
+	.cpl8
+		> *
+			padding-left: 8em
+	.cptb8, .cpbt8
+		> *
+			padding-top: 8em
+			padding-bottom: 8em
+	.cplr8, .cprl8
+		> *
+			padding-left: 8em
+			padding-right: 8em
 		
 
 	.m8
@@ -2121,6 +4301,32 @@
 	.mlr8, .mrl8
 		margin-left: 8em
 		margin-right: 8em
+
+	// child elements
+
+	.cm8
+		> *
+			margin: 8em
+	.cmt8
+		> *
+			margin-top: 8em
+	.cmr8
+		> *
+			margin-right: 8em
+	.cmb8
+		> *
+			margin-bottom: 8em
+	.cml8
+		> *
+			margin-left: 8em
+	.cmtb8, .cmbt8
+		> *
+			margin-top: 8em
+			margin-bottom: 8em
+	.cmlr8, .cmrl8
+		> *
+			margin-left: 8em
+			margin-right: 8em
 		
 
 	.s8
@@ -2811,6 +5017,18 @@
 		height: 0%
 	.o0
 		transform-origin: 0% 0%
+	.max-width0em
+		max-width: 0em
+	.max-width0
+		max-width: 0%
+	.max-height0em
+		max-height: 0em
+	.max-height0
+		max-height: 0%
+	.vh0
+		height: 0vh
+	.vw0
+		width: 0vw
 	.t1em
 		top: 1em
 	.t1
@@ -2837,6 +5055,18 @@
 		height: 1%
 	.o1
 		transform-origin: 1% 1%
+	.max-width1em
+		max-width: 1em
+	.max-width1
+		max-width: 1%
+	.max-height1em
+		max-height: 1em
+	.max-height1
+		max-height: 1%
+	.vh1
+		height: 1vh
+	.vw1
+		width: 1vw
 	.t2em
 		top: 2em
 	.t2
@@ -2863,6 +5093,18 @@
 		height: 2%
 	.o2
 		transform-origin: 2% 2%
+	.max-width2em
+		max-width: 2em
+	.max-width2
+		max-width: 2%
+	.max-height2em
+		max-height: 2em
+	.max-height2
+		max-height: 2%
+	.vh2
+		height: 2vh
+	.vw2
+		width: 2vw
 	.t3em
 		top: 3em
 	.t3
@@ -2889,6 +5131,18 @@
 		height: 3%
 	.o3
 		transform-origin: 3% 3%
+	.max-width3em
+		max-width: 3em
+	.max-width3
+		max-width: 3%
+	.max-height3em
+		max-height: 3em
+	.max-height3
+		max-height: 3%
+	.vh3
+		height: 3vh
+	.vw3
+		width: 3vw
 	.t4em
 		top: 4em
 	.t4
@@ -2915,6 +5169,18 @@
 		height: 4%
 	.o4
 		transform-origin: 4% 4%
+	.max-width4em
+		max-width: 4em
+	.max-width4
+		max-width: 4%
+	.max-height4em
+		max-height: 4em
+	.max-height4
+		max-height: 4%
+	.vh4
+		height: 4vh
+	.vw4
+		width: 4vw
 	.t5em
 		top: 5em
 	.t5
@@ -2941,6 +5207,18 @@
 		height: 5%
 	.o5
 		transform-origin: 5% 5%
+	.max-width5em
+		max-width: 5em
+	.max-width5
+		max-width: 5%
+	.max-height5em
+		max-height: 5em
+	.max-height5
+		max-height: 5%
+	.vh5
+		height: 5vh
+	.vw5
+		width: 5vw
 	.t6em
 		top: 6em
 	.t6
@@ -2967,6 +5245,18 @@
 		height: 6%
 	.o6
 		transform-origin: 6% 6%
+	.max-width6em
+		max-width: 6em
+	.max-width6
+		max-width: 6%
+	.max-height6em
+		max-height: 6em
+	.max-height6
+		max-height: 6%
+	.vh6
+		height: 6vh
+	.vw6
+		width: 6vw
 	.t7em
 		top: 7em
 	.t7
@@ -2993,6 +5283,18 @@
 		height: 7%
 	.o7
 		transform-origin: 7% 7%
+	.max-width7em
+		max-width: 7em
+	.max-width7
+		max-width: 7%
+	.max-height7em
+		max-height: 7em
+	.max-height7
+		max-height: 7%
+	.vh7
+		height: 7vh
+	.vw7
+		width: 7vw
 	.t8em
 		top: 8em
 	.t8
@@ -3019,6 +5321,18 @@
 		height: 8%
 	.o8
 		transform-origin: 8% 8%
+	.max-width8em
+		max-width: 8em
+	.max-width8
+		max-width: 8%
+	.max-height8em
+		max-height: 8em
+	.max-height8
+		max-height: 8%
+	.vh8
+		height: 8vh
+	.vw8
+		width: 8vw
 	.t9em
 		top: 9em
 	.t9
@@ -3045,6 +5359,18 @@
 		height: 9%
 	.o9
 		transform-origin: 9% 9%
+	.max-width9em
+		max-width: 9em
+	.max-width9
+		max-width: 9%
+	.max-height9em
+		max-height: 9em
+	.max-height9
+		max-height: 9%
+	.vh9
+		height: 9vh
+	.vw9
+		width: 9vw
 	.t10em
 		top: 10em
 	.t10
@@ -3071,6 +5397,18 @@
 		height: 10%
 	.o10
 		transform-origin: 10% 10%
+	.max-width10em
+		max-width: 10em
+	.max-width10
+		max-width: 10%
+	.max-height10em
+		max-height: 10em
+	.max-height10
+		max-height: 10%
+	.vh10
+		height: 10vh
+	.vw10
+		width: 10vw
 	.t11em
 		top: 11em
 	.t11
@@ -3097,6 +5435,18 @@
 		height: 11%
 	.o11
 		transform-origin: 11% 11%
+	.max-width11em
+		max-width: 11em
+	.max-width11
+		max-width: 11%
+	.max-height11em
+		max-height: 11em
+	.max-height11
+		max-height: 11%
+	.vh11
+		height: 11vh
+	.vw11
+		width: 11vw
 	.t12em
 		top: 12em
 	.t12
@@ -3123,6 +5473,18 @@
 		height: 12%
 	.o12
 		transform-origin: 12% 12%
+	.max-width12em
+		max-width: 12em
+	.max-width12
+		max-width: 12%
+	.max-height12em
+		max-height: 12em
+	.max-height12
+		max-height: 12%
+	.vh12
+		height: 12vh
+	.vw12
+		width: 12vw
 	.t13em
 		top: 13em
 	.t13
@@ -3149,6 +5511,18 @@
 		height: 13%
 	.o13
 		transform-origin: 13% 13%
+	.max-width13em
+		max-width: 13em
+	.max-width13
+		max-width: 13%
+	.max-height13em
+		max-height: 13em
+	.max-height13
+		max-height: 13%
+	.vh13
+		height: 13vh
+	.vw13
+		width: 13vw
 	.t14em
 		top: 14em
 	.t14
@@ -3175,6 +5549,18 @@
 		height: 14%
 	.o14
 		transform-origin: 14% 14%
+	.max-width14em
+		max-width: 14em
+	.max-width14
+		max-width: 14%
+	.max-height14em
+		max-height: 14em
+	.max-height14
+		max-height: 14%
+	.vh14
+		height: 14vh
+	.vw14
+		width: 14vw
 	.t15em
 		top: 15em
 	.t15
@@ -3201,6 +5587,18 @@
 		height: 15%
 	.o15
 		transform-origin: 15% 15%
+	.max-width15em
+		max-width: 15em
+	.max-width15
+		max-width: 15%
+	.max-height15em
+		max-height: 15em
+	.max-height15
+		max-height: 15%
+	.vh15
+		height: 15vh
+	.vw15
+		width: 15vw
 	.t16em
 		top: 16em
 	.t16
@@ -3227,6 +5625,18 @@
 		height: 16%
 	.o16
 		transform-origin: 16% 16%
+	.max-width16em
+		max-width: 16em
+	.max-width16
+		max-width: 16%
+	.max-height16em
+		max-height: 16em
+	.max-height16
+		max-height: 16%
+	.vh16
+		height: 16vh
+	.vw16
+		width: 16vw
 	.t17em
 		top: 17em
 	.t17
@@ -3253,6 +5663,18 @@
 		height: 17%
 	.o17
 		transform-origin: 17% 17%
+	.max-width17em
+		max-width: 17em
+	.max-width17
+		max-width: 17%
+	.max-height17em
+		max-height: 17em
+	.max-height17
+		max-height: 17%
+	.vh17
+		height: 17vh
+	.vw17
+		width: 17vw
 	.t18em
 		top: 18em
 	.t18
@@ -3279,6 +5701,18 @@
 		height: 18%
 	.o18
 		transform-origin: 18% 18%
+	.max-width18em
+		max-width: 18em
+	.max-width18
+		max-width: 18%
+	.max-height18em
+		max-height: 18em
+	.max-height18
+		max-height: 18%
+	.vh18
+		height: 18vh
+	.vw18
+		width: 18vw
 	.t19em
 		top: 19em
 	.t19
@@ -3305,6 +5739,18 @@
 		height: 19%
 	.o19
 		transform-origin: 19% 19%
+	.max-width19em
+		max-width: 19em
+	.max-width19
+		max-width: 19%
+	.max-height19em
+		max-height: 19em
+	.max-height19
+		max-height: 19%
+	.vh19
+		height: 19vh
+	.vw19
+		width: 19vw
 	.t20em
 		top: 20em
 	.t20
@@ -3331,6 +5777,18 @@
 		height: 20%
 	.o20
 		transform-origin: 20% 20%
+	.max-width20em
+		max-width: 20em
+	.max-width20
+		max-width: 20%
+	.max-height20em
+		max-height: 20em
+	.max-height20
+		max-height: 20%
+	.vh20
+		height: 20vh
+	.vw20
+		width: 20vw
 	.t21em
 		top: 21em
 	.t21
@@ -3357,6 +5815,18 @@
 		height: 21%
 	.o21
 		transform-origin: 21% 21%
+	.max-width21em
+		max-width: 21em
+	.max-width21
+		max-width: 21%
+	.max-height21em
+		max-height: 21em
+	.max-height21
+		max-height: 21%
+	.vh21
+		height: 21vh
+	.vw21
+		width: 21vw
 	.t22em
 		top: 22em
 	.t22
@@ -3383,6 +5853,18 @@
 		height: 22%
 	.o22
 		transform-origin: 22% 22%
+	.max-width22em
+		max-width: 22em
+	.max-width22
+		max-width: 22%
+	.max-height22em
+		max-height: 22em
+	.max-height22
+		max-height: 22%
+	.vh22
+		height: 22vh
+	.vw22
+		width: 22vw
 	.t23em
 		top: 23em
 	.t23
@@ -3409,6 +5891,18 @@
 		height: 23%
 	.o23
 		transform-origin: 23% 23%
+	.max-width23em
+		max-width: 23em
+	.max-width23
+		max-width: 23%
+	.max-height23em
+		max-height: 23em
+	.max-height23
+		max-height: 23%
+	.vh23
+		height: 23vh
+	.vw23
+		width: 23vw
 	.t24em
 		top: 24em
 	.t24
@@ -3435,6 +5929,18 @@
 		height: 24%
 	.o24
 		transform-origin: 24% 24%
+	.max-width24em
+		max-width: 24em
+	.max-width24
+		max-width: 24%
+	.max-height24em
+		max-height: 24em
+	.max-height24
+		max-height: 24%
+	.vh24
+		height: 24vh
+	.vw24
+		width: 24vw
 	.t25em
 		top: 25em
 	.t25
@@ -3461,6 +5967,18 @@
 		height: 25%
 	.o25
 		transform-origin: 25% 25%
+	.max-width25em
+		max-width: 25em
+	.max-width25
+		max-width: 25%
+	.max-height25em
+		max-height: 25em
+	.max-height25
+		max-height: 25%
+	.vh25
+		height: 25vh
+	.vw25
+		width: 25vw
 	.t26em
 		top: 26em
 	.t26
@@ -3487,6 +6005,18 @@
 		height: 26%
 	.o26
 		transform-origin: 26% 26%
+	.max-width26em
+		max-width: 26em
+	.max-width26
+		max-width: 26%
+	.max-height26em
+		max-height: 26em
+	.max-height26
+		max-height: 26%
+	.vh26
+		height: 26vh
+	.vw26
+		width: 26vw
 	.t27em
 		top: 27em
 	.t27
@@ -3513,6 +6043,18 @@
 		height: 27%
 	.o27
 		transform-origin: 27% 27%
+	.max-width27em
+		max-width: 27em
+	.max-width27
+		max-width: 27%
+	.max-height27em
+		max-height: 27em
+	.max-height27
+		max-height: 27%
+	.vh27
+		height: 27vh
+	.vw27
+		width: 27vw
 	.t28em
 		top: 28em
 	.t28
@@ -3539,6 +6081,18 @@
 		height: 28%
 	.o28
 		transform-origin: 28% 28%
+	.max-width28em
+		max-width: 28em
+	.max-width28
+		max-width: 28%
+	.max-height28em
+		max-height: 28em
+	.max-height28
+		max-height: 28%
+	.vh28
+		height: 28vh
+	.vw28
+		width: 28vw
 	.t29em
 		top: 29em
 	.t29
@@ -3565,6 +6119,18 @@
 		height: 29%
 	.o29
 		transform-origin: 29% 29%
+	.max-width29em
+		max-width: 29em
+	.max-width29
+		max-width: 29%
+	.max-height29em
+		max-height: 29em
+	.max-height29
+		max-height: 29%
+	.vh29
+		height: 29vh
+	.vw29
+		width: 29vw
 	.t30em
 		top: 30em
 	.t30
@@ -3591,6 +6157,18 @@
 		height: 30%
 	.o30
 		transform-origin: 30% 30%
+	.max-width30em
+		max-width: 30em
+	.max-width30
+		max-width: 30%
+	.max-height30em
+		max-height: 30em
+	.max-height30
+		max-height: 30%
+	.vh30
+		height: 30vh
+	.vw30
+		width: 30vw
 	.t31em
 		top: 31em
 	.t31
@@ -3617,6 +6195,18 @@
 		height: 31%
 	.o31
 		transform-origin: 31% 31%
+	.max-width31em
+		max-width: 31em
+	.max-width31
+		max-width: 31%
+	.max-height31em
+		max-height: 31em
+	.max-height31
+		max-height: 31%
+	.vh31
+		height: 31vh
+	.vw31
+		width: 31vw
 	.t32em
 		top: 32em
 	.t32
@@ -3643,6 +6233,18 @@
 		height: 32%
 	.o32
 		transform-origin: 32% 32%
+	.max-width32em
+		max-width: 32em
+	.max-width32
+		max-width: 32%
+	.max-height32em
+		max-height: 32em
+	.max-height32
+		max-height: 32%
+	.vh32
+		height: 32vh
+	.vw32
+		width: 32vw
 	.t33em
 		top: 33em
 	.t33
@@ -3669,6 +6271,18 @@
 		height: 33%
 	.o33
 		transform-origin: 33% 33%
+	.max-width33em
+		max-width: 33em
+	.max-width33
+		max-width: 33%
+	.max-height33em
+		max-height: 33em
+	.max-height33
+		max-height: 33%
+	.vh33
+		height: 33vh
+	.vw33
+		width: 33vw
 	.t34em
 		top: 34em
 	.t34
@@ -3695,6 +6309,18 @@
 		height: 34%
 	.o34
 		transform-origin: 34% 34%
+	.max-width34em
+		max-width: 34em
+	.max-width34
+		max-width: 34%
+	.max-height34em
+		max-height: 34em
+	.max-height34
+		max-height: 34%
+	.vh34
+		height: 34vh
+	.vw34
+		width: 34vw
 	.t35em
 		top: 35em
 	.t35
@@ -3721,6 +6347,18 @@
 		height: 35%
 	.o35
 		transform-origin: 35% 35%
+	.max-width35em
+		max-width: 35em
+	.max-width35
+		max-width: 35%
+	.max-height35em
+		max-height: 35em
+	.max-height35
+		max-height: 35%
+	.vh35
+		height: 35vh
+	.vw35
+		width: 35vw
 	.t36em
 		top: 36em
 	.t36
@@ -3747,6 +6385,18 @@
 		height: 36%
 	.o36
 		transform-origin: 36% 36%
+	.max-width36em
+		max-width: 36em
+	.max-width36
+		max-width: 36%
+	.max-height36em
+		max-height: 36em
+	.max-height36
+		max-height: 36%
+	.vh36
+		height: 36vh
+	.vw36
+		width: 36vw
 	.t37em
 		top: 37em
 	.t37
@@ -3773,6 +6423,18 @@
 		height: 37%
 	.o37
 		transform-origin: 37% 37%
+	.max-width37em
+		max-width: 37em
+	.max-width37
+		max-width: 37%
+	.max-height37em
+		max-height: 37em
+	.max-height37
+		max-height: 37%
+	.vh37
+		height: 37vh
+	.vw37
+		width: 37vw
 	.t38em
 		top: 38em
 	.t38
@@ -3799,6 +6461,18 @@
 		height: 38%
 	.o38
 		transform-origin: 38% 38%
+	.max-width38em
+		max-width: 38em
+	.max-width38
+		max-width: 38%
+	.max-height38em
+		max-height: 38em
+	.max-height38
+		max-height: 38%
+	.vh38
+		height: 38vh
+	.vw38
+		width: 38vw
 	.t39em
 		top: 39em
 	.t39
@@ -3825,6 +6499,18 @@
 		height: 39%
 	.o39
 		transform-origin: 39% 39%
+	.max-width39em
+		max-width: 39em
+	.max-width39
+		max-width: 39%
+	.max-height39em
+		max-height: 39em
+	.max-height39
+		max-height: 39%
+	.vh39
+		height: 39vh
+	.vw39
+		width: 39vw
 	.t40em
 		top: 40em
 	.t40
@@ -3851,6 +6537,18 @@
 		height: 40%
 	.o40
 		transform-origin: 40% 40%
+	.max-width40em
+		max-width: 40em
+	.max-width40
+		max-width: 40%
+	.max-height40em
+		max-height: 40em
+	.max-height40
+		max-height: 40%
+	.vh40
+		height: 40vh
+	.vw40
+		width: 40vw
 	.t41em
 		top: 41em
 	.t41
@@ -3877,6 +6575,18 @@
 		height: 41%
 	.o41
 		transform-origin: 41% 41%
+	.max-width41em
+		max-width: 41em
+	.max-width41
+		max-width: 41%
+	.max-height41em
+		max-height: 41em
+	.max-height41
+		max-height: 41%
+	.vh41
+		height: 41vh
+	.vw41
+		width: 41vw
 	.t42em
 		top: 42em
 	.t42
@@ -3903,6 +6613,18 @@
 		height: 42%
 	.o42
 		transform-origin: 42% 42%
+	.max-width42em
+		max-width: 42em
+	.max-width42
+		max-width: 42%
+	.max-height42em
+		max-height: 42em
+	.max-height42
+		max-height: 42%
+	.vh42
+		height: 42vh
+	.vw42
+		width: 42vw
 	.t43em
 		top: 43em
 	.t43
@@ -3929,6 +6651,18 @@
 		height: 43%
 	.o43
 		transform-origin: 43% 43%
+	.max-width43em
+		max-width: 43em
+	.max-width43
+		max-width: 43%
+	.max-height43em
+		max-height: 43em
+	.max-height43
+		max-height: 43%
+	.vh43
+		height: 43vh
+	.vw43
+		width: 43vw
 	.t44em
 		top: 44em
 	.t44
@@ -3955,6 +6689,18 @@
 		height: 44%
 	.o44
 		transform-origin: 44% 44%
+	.max-width44em
+		max-width: 44em
+	.max-width44
+		max-width: 44%
+	.max-height44em
+		max-height: 44em
+	.max-height44
+		max-height: 44%
+	.vh44
+		height: 44vh
+	.vw44
+		width: 44vw
 	.t45em
 		top: 45em
 	.t45
@@ -3981,6 +6727,18 @@
 		height: 45%
 	.o45
 		transform-origin: 45% 45%
+	.max-width45em
+		max-width: 45em
+	.max-width45
+		max-width: 45%
+	.max-height45em
+		max-height: 45em
+	.max-height45
+		max-height: 45%
+	.vh45
+		height: 45vh
+	.vw45
+		width: 45vw
 	.t46em
 		top: 46em
 	.t46
@@ -4007,6 +6765,18 @@
 		height: 46%
 	.o46
 		transform-origin: 46% 46%
+	.max-width46em
+		max-width: 46em
+	.max-width46
+		max-width: 46%
+	.max-height46em
+		max-height: 46em
+	.max-height46
+		max-height: 46%
+	.vh46
+		height: 46vh
+	.vw46
+		width: 46vw
 	.t47em
 		top: 47em
 	.t47
@@ -4033,6 +6803,18 @@
 		height: 47%
 	.o47
 		transform-origin: 47% 47%
+	.max-width47em
+		max-width: 47em
+	.max-width47
+		max-width: 47%
+	.max-height47em
+		max-height: 47em
+	.max-height47
+		max-height: 47%
+	.vh47
+		height: 47vh
+	.vw47
+		width: 47vw
 	.t48em
 		top: 48em
 	.t48
@@ -4059,6 +6841,18 @@
 		height: 48%
 	.o48
 		transform-origin: 48% 48%
+	.max-width48em
+		max-width: 48em
+	.max-width48
+		max-width: 48%
+	.max-height48em
+		max-height: 48em
+	.max-height48
+		max-height: 48%
+	.vh48
+		height: 48vh
+	.vw48
+		width: 48vw
 	.t49em
 		top: 49em
 	.t49
@@ -4085,6 +6879,18 @@
 		height: 49%
 	.o49
 		transform-origin: 49% 49%
+	.max-width49em
+		max-width: 49em
+	.max-width49
+		max-width: 49%
+	.max-height49em
+		max-height: 49em
+	.max-height49
+		max-height: 49%
+	.vh49
+		height: 49vh
+	.vw49
+		width: 49vw
 	.t50em
 		top: 50em
 	.t50
@@ -4111,6 +6917,18 @@
 		height: 50%
 	.o50
 		transform-origin: 50% 50%
+	.max-width50em
+		max-width: 50em
+	.max-width50
+		max-width: 50%
+	.max-height50em
+		max-height: 50em
+	.max-height50
+		max-height: 50%
+	.vh50
+		height: 50vh
+	.vw50
+		width: 50vw
 	.t51em
 		top: 51em
 	.t51
@@ -4137,6 +6955,18 @@
 		height: 51%
 	.o51
 		transform-origin: 51% 51%
+	.max-width51em
+		max-width: 51em
+	.max-width51
+		max-width: 51%
+	.max-height51em
+		max-height: 51em
+	.max-height51
+		max-height: 51%
+	.vh51
+		height: 51vh
+	.vw51
+		width: 51vw
 	.t52em
 		top: 52em
 	.t52
@@ -4163,6 +6993,18 @@
 		height: 52%
 	.o52
 		transform-origin: 52% 52%
+	.max-width52em
+		max-width: 52em
+	.max-width52
+		max-width: 52%
+	.max-height52em
+		max-height: 52em
+	.max-height52
+		max-height: 52%
+	.vh52
+		height: 52vh
+	.vw52
+		width: 52vw
 	.t53em
 		top: 53em
 	.t53
@@ -4189,6 +7031,18 @@
 		height: 53%
 	.o53
 		transform-origin: 53% 53%
+	.max-width53em
+		max-width: 53em
+	.max-width53
+		max-width: 53%
+	.max-height53em
+		max-height: 53em
+	.max-height53
+		max-height: 53%
+	.vh53
+		height: 53vh
+	.vw53
+		width: 53vw
 	.t54em
 		top: 54em
 	.t54
@@ -4215,6 +7069,18 @@
 		height: 54%
 	.o54
 		transform-origin: 54% 54%
+	.max-width54em
+		max-width: 54em
+	.max-width54
+		max-width: 54%
+	.max-height54em
+		max-height: 54em
+	.max-height54
+		max-height: 54%
+	.vh54
+		height: 54vh
+	.vw54
+		width: 54vw
 	.t55em
 		top: 55em
 	.t55
@@ -4241,6 +7107,18 @@
 		height: 55%
 	.o55
 		transform-origin: 55% 55%
+	.max-width55em
+		max-width: 55em
+	.max-width55
+		max-width: 55%
+	.max-height55em
+		max-height: 55em
+	.max-height55
+		max-height: 55%
+	.vh55
+		height: 55vh
+	.vw55
+		width: 55vw
 	.t56em
 		top: 56em
 	.t56
@@ -4267,6 +7145,18 @@
 		height: 56%
 	.o56
 		transform-origin: 56% 56%
+	.max-width56em
+		max-width: 56em
+	.max-width56
+		max-width: 56%
+	.max-height56em
+		max-height: 56em
+	.max-height56
+		max-height: 56%
+	.vh56
+		height: 56vh
+	.vw56
+		width: 56vw
 	.t57em
 		top: 57em
 	.t57
@@ -4293,6 +7183,18 @@
 		height: 57%
 	.o57
 		transform-origin: 57% 57%
+	.max-width57em
+		max-width: 57em
+	.max-width57
+		max-width: 57%
+	.max-height57em
+		max-height: 57em
+	.max-height57
+		max-height: 57%
+	.vh57
+		height: 57vh
+	.vw57
+		width: 57vw
 	.t58em
 		top: 58em
 	.t58
@@ -4319,6 +7221,18 @@
 		height: 58%
 	.o58
 		transform-origin: 58% 58%
+	.max-width58em
+		max-width: 58em
+	.max-width58
+		max-width: 58%
+	.max-height58em
+		max-height: 58em
+	.max-height58
+		max-height: 58%
+	.vh58
+		height: 58vh
+	.vw58
+		width: 58vw
 	.t59em
 		top: 59em
 	.t59
@@ -4345,6 +7259,18 @@
 		height: 59%
 	.o59
 		transform-origin: 59% 59%
+	.max-width59em
+		max-width: 59em
+	.max-width59
+		max-width: 59%
+	.max-height59em
+		max-height: 59em
+	.max-height59
+		max-height: 59%
+	.vh59
+		height: 59vh
+	.vw59
+		width: 59vw
 	.t60em
 		top: 60em
 	.t60
@@ -4371,6 +7297,18 @@
 		height: 60%
 	.o60
 		transform-origin: 60% 60%
+	.max-width60em
+		max-width: 60em
+	.max-width60
+		max-width: 60%
+	.max-height60em
+		max-height: 60em
+	.max-height60
+		max-height: 60%
+	.vh60
+		height: 60vh
+	.vw60
+		width: 60vw
 	.t61em
 		top: 61em
 	.t61
@@ -4397,6 +7335,18 @@
 		height: 61%
 	.o61
 		transform-origin: 61% 61%
+	.max-width61em
+		max-width: 61em
+	.max-width61
+		max-width: 61%
+	.max-height61em
+		max-height: 61em
+	.max-height61
+		max-height: 61%
+	.vh61
+		height: 61vh
+	.vw61
+		width: 61vw
 	.t62em
 		top: 62em
 	.t62
@@ -4423,6 +7373,18 @@
 		height: 62%
 	.o62
 		transform-origin: 62% 62%
+	.max-width62em
+		max-width: 62em
+	.max-width62
+		max-width: 62%
+	.max-height62em
+		max-height: 62em
+	.max-height62
+		max-height: 62%
+	.vh62
+		height: 62vh
+	.vw62
+		width: 62vw
 	.t63em
 		top: 63em
 	.t63
@@ -4449,6 +7411,18 @@
 		height: 63%
 	.o63
 		transform-origin: 63% 63%
+	.max-width63em
+		max-width: 63em
+	.max-width63
+		max-width: 63%
+	.max-height63em
+		max-height: 63em
+	.max-height63
+		max-height: 63%
+	.vh63
+		height: 63vh
+	.vw63
+		width: 63vw
 	.t64em
 		top: 64em
 	.t64
@@ -4475,6 +7449,18 @@
 		height: 64%
 	.o64
 		transform-origin: 64% 64%
+	.max-width64em
+		max-width: 64em
+	.max-width64
+		max-width: 64%
+	.max-height64em
+		max-height: 64em
+	.max-height64
+		max-height: 64%
+	.vh64
+		height: 64vh
+	.vw64
+		width: 64vw
 	.t65em
 		top: 65em
 	.t65
@@ -4501,6 +7487,18 @@
 		height: 65%
 	.o65
 		transform-origin: 65% 65%
+	.max-width65em
+		max-width: 65em
+	.max-width65
+		max-width: 65%
+	.max-height65em
+		max-height: 65em
+	.max-height65
+		max-height: 65%
+	.vh65
+		height: 65vh
+	.vw65
+		width: 65vw
 	.t66em
 		top: 66em
 	.t66
@@ -4527,6 +7525,18 @@
 		height: 66%
 	.o66
 		transform-origin: 66% 66%
+	.max-width66em
+		max-width: 66em
+	.max-width66
+		max-width: 66%
+	.max-height66em
+		max-height: 66em
+	.max-height66
+		max-height: 66%
+	.vh66
+		height: 66vh
+	.vw66
+		width: 66vw
 	.t67em
 		top: 67em
 	.t67
@@ -4553,6 +7563,18 @@
 		height: 67%
 	.o67
 		transform-origin: 67% 67%
+	.max-width67em
+		max-width: 67em
+	.max-width67
+		max-width: 67%
+	.max-height67em
+		max-height: 67em
+	.max-height67
+		max-height: 67%
+	.vh67
+		height: 67vh
+	.vw67
+		width: 67vw
 	.t68em
 		top: 68em
 	.t68
@@ -4579,6 +7601,18 @@
 		height: 68%
 	.o68
 		transform-origin: 68% 68%
+	.max-width68em
+		max-width: 68em
+	.max-width68
+		max-width: 68%
+	.max-height68em
+		max-height: 68em
+	.max-height68
+		max-height: 68%
+	.vh68
+		height: 68vh
+	.vw68
+		width: 68vw
 	.t69em
 		top: 69em
 	.t69
@@ -4605,6 +7639,18 @@
 		height: 69%
 	.o69
 		transform-origin: 69% 69%
+	.max-width69em
+		max-width: 69em
+	.max-width69
+		max-width: 69%
+	.max-height69em
+		max-height: 69em
+	.max-height69
+		max-height: 69%
+	.vh69
+		height: 69vh
+	.vw69
+		width: 69vw
 	.t70em
 		top: 70em
 	.t70
@@ -4631,6 +7677,18 @@
 		height: 70%
 	.o70
 		transform-origin: 70% 70%
+	.max-width70em
+		max-width: 70em
+	.max-width70
+		max-width: 70%
+	.max-height70em
+		max-height: 70em
+	.max-height70
+		max-height: 70%
+	.vh70
+		height: 70vh
+	.vw70
+		width: 70vw
 	.t71em
 		top: 71em
 	.t71
@@ -4657,6 +7715,18 @@
 		height: 71%
 	.o71
 		transform-origin: 71% 71%
+	.max-width71em
+		max-width: 71em
+	.max-width71
+		max-width: 71%
+	.max-height71em
+		max-height: 71em
+	.max-height71
+		max-height: 71%
+	.vh71
+		height: 71vh
+	.vw71
+		width: 71vw
 	.t72em
 		top: 72em
 	.t72
@@ -4683,6 +7753,18 @@
 		height: 72%
 	.o72
 		transform-origin: 72% 72%
+	.max-width72em
+		max-width: 72em
+	.max-width72
+		max-width: 72%
+	.max-height72em
+		max-height: 72em
+	.max-height72
+		max-height: 72%
+	.vh72
+		height: 72vh
+	.vw72
+		width: 72vw
 	.t73em
 		top: 73em
 	.t73
@@ -4709,6 +7791,18 @@
 		height: 73%
 	.o73
 		transform-origin: 73% 73%
+	.max-width73em
+		max-width: 73em
+	.max-width73
+		max-width: 73%
+	.max-height73em
+		max-height: 73em
+	.max-height73
+		max-height: 73%
+	.vh73
+		height: 73vh
+	.vw73
+		width: 73vw
 	.t74em
 		top: 74em
 	.t74
@@ -4735,6 +7829,18 @@
 		height: 74%
 	.o74
 		transform-origin: 74% 74%
+	.max-width74em
+		max-width: 74em
+	.max-width74
+		max-width: 74%
+	.max-height74em
+		max-height: 74em
+	.max-height74
+		max-height: 74%
+	.vh74
+		height: 74vh
+	.vw74
+		width: 74vw
 	.t75em
 		top: 75em
 	.t75
@@ -4761,6 +7867,18 @@
 		height: 75%
 	.o75
 		transform-origin: 75% 75%
+	.max-width75em
+		max-width: 75em
+	.max-width75
+		max-width: 75%
+	.max-height75em
+		max-height: 75em
+	.max-height75
+		max-height: 75%
+	.vh75
+		height: 75vh
+	.vw75
+		width: 75vw
 	.t76em
 		top: 76em
 	.t76
@@ -4787,6 +7905,18 @@
 		height: 76%
 	.o76
 		transform-origin: 76% 76%
+	.max-width76em
+		max-width: 76em
+	.max-width76
+		max-width: 76%
+	.max-height76em
+		max-height: 76em
+	.max-height76
+		max-height: 76%
+	.vh76
+		height: 76vh
+	.vw76
+		width: 76vw
 	.t77em
 		top: 77em
 	.t77
@@ -4813,6 +7943,18 @@
 		height: 77%
 	.o77
 		transform-origin: 77% 77%
+	.max-width77em
+		max-width: 77em
+	.max-width77
+		max-width: 77%
+	.max-height77em
+		max-height: 77em
+	.max-height77
+		max-height: 77%
+	.vh77
+		height: 77vh
+	.vw77
+		width: 77vw
 	.t78em
 		top: 78em
 	.t78
@@ -4839,6 +7981,18 @@
 		height: 78%
 	.o78
 		transform-origin: 78% 78%
+	.max-width78em
+		max-width: 78em
+	.max-width78
+		max-width: 78%
+	.max-height78em
+		max-height: 78em
+	.max-height78
+		max-height: 78%
+	.vh78
+		height: 78vh
+	.vw78
+		width: 78vw
 	.t79em
 		top: 79em
 	.t79
@@ -4865,6 +8019,18 @@
 		height: 79%
 	.o79
 		transform-origin: 79% 79%
+	.max-width79em
+		max-width: 79em
+	.max-width79
+		max-width: 79%
+	.max-height79em
+		max-height: 79em
+	.max-height79
+		max-height: 79%
+	.vh79
+		height: 79vh
+	.vw79
+		width: 79vw
 	.t80em
 		top: 80em
 	.t80
@@ -4891,6 +8057,18 @@
 		height: 80%
 	.o80
 		transform-origin: 80% 80%
+	.max-width80em
+		max-width: 80em
+	.max-width80
+		max-width: 80%
+	.max-height80em
+		max-height: 80em
+	.max-height80
+		max-height: 80%
+	.vh80
+		height: 80vh
+	.vw80
+		width: 80vw
 	.t81em
 		top: 81em
 	.t81
@@ -4917,6 +8095,18 @@
 		height: 81%
 	.o81
 		transform-origin: 81% 81%
+	.max-width81em
+		max-width: 81em
+	.max-width81
+		max-width: 81%
+	.max-height81em
+		max-height: 81em
+	.max-height81
+		max-height: 81%
+	.vh81
+		height: 81vh
+	.vw81
+		width: 81vw
 	.t82em
 		top: 82em
 	.t82
@@ -4943,6 +8133,18 @@
 		height: 82%
 	.o82
 		transform-origin: 82% 82%
+	.max-width82em
+		max-width: 82em
+	.max-width82
+		max-width: 82%
+	.max-height82em
+		max-height: 82em
+	.max-height82
+		max-height: 82%
+	.vh82
+		height: 82vh
+	.vw82
+		width: 82vw
 	.t83em
 		top: 83em
 	.t83
@@ -4969,6 +8171,18 @@
 		height: 83%
 	.o83
 		transform-origin: 83% 83%
+	.max-width83em
+		max-width: 83em
+	.max-width83
+		max-width: 83%
+	.max-height83em
+		max-height: 83em
+	.max-height83
+		max-height: 83%
+	.vh83
+		height: 83vh
+	.vw83
+		width: 83vw
 	.t84em
 		top: 84em
 	.t84
@@ -4995,6 +8209,18 @@
 		height: 84%
 	.o84
 		transform-origin: 84% 84%
+	.max-width84em
+		max-width: 84em
+	.max-width84
+		max-width: 84%
+	.max-height84em
+		max-height: 84em
+	.max-height84
+		max-height: 84%
+	.vh84
+		height: 84vh
+	.vw84
+		width: 84vw
 	.t85em
 		top: 85em
 	.t85
@@ -5021,6 +8247,18 @@
 		height: 85%
 	.o85
 		transform-origin: 85% 85%
+	.max-width85em
+		max-width: 85em
+	.max-width85
+		max-width: 85%
+	.max-height85em
+		max-height: 85em
+	.max-height85
+		max-height: 85%
+	.vh85
+		height: 85vh
+	.vw85
+		width: 85vw
 	.t86em
 		top: 86em
 	.t86
@@ -5047,6 +8285,18 @@
 		height: 86%
 	.o86
 		transform-origin: 86% 86%
+	.max-width86em
+		max-width: 86em
+	.max-width86
+		max-width: 86%
+	.max-height86em
+		max-height: 86em
+	.max-height86
+		max-height: 86%
+	.vh86
+		height: 86vh
+	.vw86
+		width: 86vw
 	.t87em
 		top: 87em
 	.t87
@@ -5073,6 +8323,18 @@
 		height: 87%
 	.o87
 		transform-origin: 87% 87%
+	.max-width87em
+		max-width: 87em
+	.max-width87
+		max-width: 87%
+	.max-height87em
+		max-height: 87em
+	.max-height87
+		max-height: 87%
+	.vh87
+		height: 87vh
+	.vw87
+		width: 87vw
 	.t88em
 		top: 88em
 	.t88
@@ -5099,6 +8361,18 @@
 		height: 88%
 	.o88
 		transform-origin: 88% 88%
+	.max-width88em
+		max-width: 88em
+	.max-width88
+		max-width: 88%
+	.max-height88em
+		max-height: 88em
+	.max-height88
+		max-height: 88%
+	.vh88
+		height: 88vh
+	.vw88
+		width: 88vw
 	.t89em
 		top: 89em
 	.t89
@@ -5125,6 +8399,18 @@
 		height: 89%
 	.o89
 		transform-origin: 89% 89%
+	.max-width89em
+		max-width: 89em
+	.max-width89
+		max-width: 89%
+	.max-height89em
+		max-height: 89em
+	.max-height89
+		max-height: 89%
+	.vh89
+		height: 89vh
+	.vw89
+		width: 89vw
 	.t90em
 		top: 90em
 	.t90
@@ -5151,6 +8437,18 @@
 		height: 90%
 	.o90
 		transform-origin: 90% 90%
+	.max-width90em
+		max-width: 90em
+	.max-width90
+		max-width: 90%
+	.max-height90em
+		max-height: 90em
+	.max-height90
+		max-height: 90%
+	.vh90
+		height: 90vh
+	.vw90
+		width: 90vw
 	.t91em
 		top: 91em
 	.t91
@@ -5177,6 +8475,18 @@
 		height: 91%
 	.o91
 		transform-origin: 91% 91%
+	.max-width91em
+		max-width: 91em
+	.max-width91
+		max-width: 91%
+	.max-height91em
+		max-height: 91em
+	.max-height91
+		max-height: 91%
+	.vh91
+		height: 91vh
+	.vw91
+		width: 91vw
 	.t92em
 		top: 92em
 	.t92
@@ -5203,6 +8513,18 @@
 		height: 92%
 	.o92
 		transform-origin: 92% 92%
+	.max-width92em
+		max-width: 92em
+	.max-width92
+		max-width: 92%
+	.max-height92em
+		max-height: 92em
+	.max-height92
+		max-height: 92%
+	.vh92
+		height: 92vh
+	.vw92
+		width: 92vw
 	.t93em
 		top: 93em
 	.t93
@@ -5229,6 +8551,18 @@
 		height: 93%
 	.o93
 		transform-origin: 93% 93%
+	.max-width93em
+		max-width: 93em
+	.max-width93
+		max-width: 93%
+	.max-height93em
+		max-height: 93em
+	.max-height93
+		max-height: 93%
+	.vh93
+		height: 93vh
+	.vw93
+		width: 93vw
 	.t94em
 		top: 94em
 	.t94
@@ -5255,6 +8589,18 @@
 		height: 94%
 	.o94
 		transform-origin: 94% 94%
+	.max-width94em
+		max-width: 94em
+	.max-width94
+		max-width: 94%
+	.max-height94em
+		max-height: 94em
+	.max-height94
+		max-height: 94%
+	.vh94
+		height: 94vh
+	.vw94
+		width: 94vw
 	.t95em
 		top: 95em
 	.t95
@@ -5281,6 +8627,18 @@
 		height: 95%
 	.o95
 		transform-origin: 95% 95%
+	.max-width95em
+		max-width: 95em
+	.max-width95
+		max-width: 95%
+	.max-height95em
+		max-height: 95em
+	.max-height95
+		max-height: 95%
+	.vh95
+		height: 95vh
+	.vw95
+		width: 95vw
 	.t96em
 		top: 96em
 	.t96
@@ -5307,6 +8665,18 @@
 		height: 96%
 	.o96
 		transform-origin: 96% 96%
+	.max-width96em
+		max-width: 96em
+	.max-width96
+		max-width: 96%
+	.max-height96em
+		max-height: 96em
+	.max-height96
+		max-height: 96%
+	.vh96
+		height: 96vh
+	.vw96
+		width: 96vw
 	.t97em
 		top: 97em
 	.t97
@@ -5333,6 +8703,18 @@
 		height: 97%
 	.o97
 		transform-origin: 97% 97%
+	.max-width97em
+		max-width: 97em
+	.max-width97
+		max-width: 97%
+	.max-height97em
+		max-height: 97em
+	.max-height97
+		max-height: 97%
+	.vh97
+		height: 97vh
+	.vw97
+		width: 97vw
 	.t98em
 		top: 98em
 	.t98
@@ -5359,6 +8741,18 @@
 		height: 98%
 	.o98
 		transform-origin: 98% 98%
+	.max-width98em
+		max-width: 98em
+	.max-width98
+		max-width: 98%
+	.max-height98em
+		max-height: 98em
+	.max-height98
+		max-height: 98%
+	.vh98
+		height: 98vh
+	.vw98
+		width: 98vw
 	.t99em
 		top: 99em
 	.t99
@@ -5385,6 +8779,18 @@
 		height: 99%
 	.o99
 		transform-origin: 99% 99%
+	.max-width99em
+		max-width: 99em
+	.max-width99
+		max-width: 99%
+	.max-height99em
+		max-height: 99em
+	.max-height99
+		max-height: 99%
+	.vh99
+		height: 99vh
+	.vw99
+		width: 99vw
 	.t100em
 		top: 100em
 	.t100
@@ -5411,6 +8817,18 @@
 		height: 100%
 	.o100
 		transform-origin: 100% 100%
+	.max-width100em
+		max-width: 100em
+	.max-width100
+		max-width: 100%
+	.max-height100em
+		max-height: 100em
+	.max-height100
+		max-height: 100%
+	.vh100
+		height: 100vh
+	.vw100
+		width: 100vw
 
 
 
