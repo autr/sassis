@@ -153,11 +153,13 @@
 
 =bg( $color: red, $iterate: 0% )
 	background-color: $color
+	.bg
+		background-color: $color
 	@if $iterate != 0%
-		.pop
-			background-color: $color
+		.pop, .lift
+			background-color: lighten( $color, $iterate )
 		.sink
-			background-color: $color
+			background-color: darken( $color, $iterate )
 
 =rotate($deg: 45deg)
 	transform: rotateZ($deg)
@@ -167,12 +169,12 @@
 	*
 		-webkit-appearance: none
 		box-sizing: border-box
+		transform-origin: 50% 50%
 	a
 		text-decoration: none
 	body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, select
 		margin: 0
 		padding: 0
-		border: 0
 		font-size: 100%
 		font: inherit
 		vertical-align: baseline

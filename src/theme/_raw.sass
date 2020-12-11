@@ -1,9 +1,9 @@
 @import './_terminal'
 
 
-=raw-theme( $bg: white )
-	+terminal-structure
+=raw-theme( $bg: white, $text: null )
+
+	@if $text == null
+		$text: counterpoint( $bg )
 	+bg( $bg )
-	$text: counterpoint( $bg )
-	@debug $text
 	+terminal-colors( $text, '', $bg )

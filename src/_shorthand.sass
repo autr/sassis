@@ -7,17 +7,30 @@
 
 =absolute
 	position: absolute
+=abs
+	position: absolute
 
 =relative
+	position: relative
+=rel
 	position: relative
 
 =fixed
 	position: fixed
+=fix
+	position: fixed
+
+=sticky
+	position: sticky
+=stick
+	position: sticky
 
 =table
 	display: table
 
 =inline-block
+	display: inline-block
+=iblock
 	display: inline-block
 
 =block
@@ -25,17 +38,21 @@
 
 =flex
 	display: flex
+=fx
+	display: flex
 
 =flex-column
 	flex-direction: column
-
 =column
+	flex-direction: column
+=fx-col
 	flex-direction: column
 
 =flex-row
 	flex-direction: row
-
 =row
+	flex-direction: row
+=fx-row
 	flex-direction: row
 
 =grow
@@ -61,6 +78,12 @@
 
 =border-box
 	box-sizing: border-box
+
+=wrap
+	flex-wrap: wrap
+
+=no-wrap
+	flex-wrap: nowrap
 
 =text-left
 	text-align: left
@@ -101,143 +124,23 @@
 =pointer
 	cursor: pointer
 
-=align-items-center
-	align-items: center
+=overflow-hidden
+	overflow: hidden
+=hidden
+	overflow: hidden
 
-=align-items-start
-	align-items: start
+=overflow-auto
+	overflow: auto
 
-=align-items-end
-	align-items: end
 
-=align-items-flex-start
-	align-items: flex-start
+// main p elements
 
-=align-items-flex-end
-	align-items: flex-end
-
-=align-items-stretch
-	align-items: stretch
-
-=align-self-center
-	align-self: center
-
-=align-self-start
-	align-self: start
-
-=align-self-end
-	align-self: end
-
-=align-self-flex-start
-	align-self: flex-start
-
-=align-self-flex-end
-	align-self: flex-end
-
-=align-self-stretch
-	align-self: stretch
-
-=align-content-center
-	align-content: center
-
-=align-content-start
-	align-content: start
-
-=align-content-end
-	align-content: end
-
-=align-content-flex-start
-	align-content: flex-start
-
-=align-content-flex-end
-	align-content: flex-end
-
-=align-content-stretch
-	align-content: stretch
-
-=justify-items-between
-	justify-items: space-between
-
-=justify-items-evenly
-	justify-items: space-evenly
-
-=justify-items-around
-	justify-items: space-around
-
-=justify-items-center
-	justify-items: center
-
-=justify-items-start
-	justify-items: start
-
-=justify-items-end
-	justify-items: end
-
-=justify-items-stretch
-	justify-items: stretch
-
-=justify-items-flex-start
-	justify-items: flex-start
-
-=justify-items-flex-end
-	justify-items: flex-end
-
-=justify-self-between
-	justify-self: space-between
-
-=justify-self-evenly
-	justify-self: space-evenly
-
-=justify-self-around
-	justify-self: space-around
-
-=justify-self-center
-	justify-self: center
-
-=justify-self-start
-	justify-self: start
-
-=justify-self-end
-	justify-self: end
-
-=justify-self-stretch
-	justify-self: stretch
-
-=justify-self-flex-start
-	justify-self: flex-start
-
-=justify-self-flex-end
-	justify-self: flex-end
-
-=justify-content-between
-	justify-content: space-between
-
-=justify-content-evenly
-	justify-content: space-evenly
-
-=justify-content-around
-	justify-content: space-around
-
-=justify-content-center
-	justify-content: center
-
-=justify-content-start
-	justify-content: start
-
-=justify-content-end
-	justify-content: end
-
-=justify-content-stretch
-	justify-content: stretch
-
-=justify-content-flex-start
-	justify-content: flex-start
-
-=justify-content-flex-end
-	justify-content: flex-end
 
 =p( $amount )
 	padding: $amount
+
+// ...
+
 =pt( $amount )
 	padding-top: $amount
 =pr( $amount )
@@ -259,11 +162,15 @@
 	padding-left: $amount
 	padding-right: $amount
 
-// child elements
+// child p elements
+
 
 =cp( $amount )
-	> *
+	>*
 		padding: $amount
+
+// ...
+
 =cpt( $amount )
 	> *
 		padding-top: $amount
@@ -279,23 +186,30 @@
 =cptb( $amount )
 	> *
 		padding-top: $amount
-	padding-bottom: $amount
+		padding-bottom: $amount
 =cpbt( $amount )
 	> *
 		padding-top: $amount
-	padding-bottom: $amount
+		padding-bottom: $amount
 =cplr( $amount )
 	> *
 		padding-left: $amount
-	padding-right: $amount
+		padding-right: $amount
 =cprl( $amount )
 	> *
 		padding-left: $amount
-	padding-right: $amount
+		padding-right: $amount
 			
+
+
+// main m elements
+
 
 =m( $amount )
 	margin: $amount
+
+// ...
+
 =mt( $amount )
 	margin-top: $amount
 =mr( $amount )
@@ -317,11 +231,15 @@
 	margin-left: $amount
 	margin-right: $amount
 
-// child elements
+// child m elements
+
 
 =cm( $amount )
-	> *
+	>*
 		margin: $amount
+
+// ...
+
 =cmt( $amount )
 	> *
 		margin-top: $amount
@@ -337,19 +255,83 @@
 =cmtb( $amount )
 	> *
 		margin-top: $amount
-	margin-bottom: $amount
+		margin-bottom: $amount
 =cmbt( $amount )
 	> *
 		margin-top: $amount
-	margin-bottom: $amount
+		margin-bottom: $amount
 =cmlr( $amount )
 	> *
 		margin-left: $amount
-	margin-right: $amount
+		margin-right: $amount
 =cmrl( $amount )
 	> *
 		margin-left: $amount
-	margin-right: $amount
+		margin-right: $amount
+			
+
+
+// main  elements
+
+
+
+// ...
+
+=t( $amount )
+	top: $amount
+=r( $amount )
+	right: $amount
+=b( $amount )
+	bottom: $amount
+=l( $amount )
+	left: $amount
+=tb( $amount )
+	top: $amount
+	bottom: $amount
+=bt( $amount )
+	top: $amount
+	bottom: $amount
+=lr( $amount )
+	left: $amount
+	right: $amount
+=rl( $amount )
+	left: $amount
+	right: $amount
+
+// child  elements
+
+
+
+// ...
+
+=ct( $amount )
+	> *
+		top: $amount
+=cr( $amount )
+	> *
+		right: $amount
+=cb( $amount )
+	> *
+		bottom: $amount
+=cl( $amount )
+	> *
+		left: $amount
+=ctb( $amount )
+	> *
+		top: $amount
+		bottom: $amount
+=cbt( $amount )
+	> *
+		top: $amount
+		bottom: $amount
+=clr( $amount )
+	> *
+		left: $amount
+		right: $amount
+=crl( $amount )
+	> *
+		left: $amount
+		-right: $amount
 			
 
 =s( $amount )
@@ -362,37 +344,34 @@
 	// ---------- 001 basic ----------
 
 
-	.absolute
+	.absolute, .abs
 		position: absolute
 
-	.relative
+	.relative, .rel
 		position: relative
 
-	.fixed
+	.fixed, .fix
 		position: fixed
+
+	.sticky, .stick
+		position: sticky
 
 	.table
 		display: table
 
-	.inline-block
+	.inline-block, .iblock
 		display: inline-block
 
 	.block
 		display: block
 
-	.flex
+	.flex, .fx
 		display: flex
 
-	.flex-column
+	.flex-column, .column, .fx-col
 		flex-direction: column
 
-	.column
-		flex-direction: column
-
-	.flex-row
-		flex-direction: row
-
-	.row
+	.flex-row, .row, .fx-row
 		flex-direction: row
 
 	.grow
@@ -418,6 +397,12 @@
 
 	.border-box
 		box-sizing: border-box
+
+	.wrap
+		flex-wrap: wrap
+
+	.no-wrap
+		flex-wrap: nowrap
 
 	.text-left
 		text-align: left
@@ -458,140 +443,149 @@
 	.pointer
 		cursor: pointer
 
-	.align-items-center
-		align-items: center
+	.overflow-hidden, .hidden
+		overflow: hidden
 
-	.align-items-start
-		align-items: start
+	.overflow-auto
+		overflow: auto
 
-	.align-items-end
-		align-items: end
+.align-self-center, .align-self-c, .a-s-center, .a-s-c
+	align-self: center
 
-	.align-items-flex-start
-		align-items: flex-start
+.align-items-center, .align-items-c, .a-i-center, .a-i-c
+	align-items: center
 
-	.align-items-flex-end
-		align-items: flex-end
+.justify-self-center, .justify-self-c, .j-s-center, .j-s-c
+	justify-self: center
 
-	.align-items-stretch
-		align-items: stretch
+.justify-items-center, .justify-items-c, .j-i-center, .j-i-c
+	justify-items: center
 
-	.align-self-center
-		align-self: center
+.align-self-end, .align-self-e, .a-s-end, .a-s-e
+	align-self: end
 
-	.align-self-start
-		align-self: start
+.align-items-end, .align-items-e, .a-i-end, .a-i-e
+	align-items: end
 
-	.align-self-end
-		align-self: end
+.justify-self-end, .justify-self-e, .j-s-end, .j-s-e
+	justify-self: end
 
-	.align-self-flex-start
-		align-self: flex-start
+.justify-items-end, .justify-items-e, .j-i-end, .j-i-e
+	justify-items: end
 
-	.align-self-flex-end
-		align-self: flex-end
+.align-self-flex-end, .align-self-fe, .a-s-flex-end, .a-s-fe
+	align-self: flex-end
 
-	.align-self-stretch
-		align-self: stretch
+.align-items-flex-end, .align-items-fe, .a-i-flex-end, .a-i-fe
+	align-items: flex-end
 
-	.align-content-center
-		align-content: center
+.justify-self-flex-end, .justify-self-fe, .j-s-flex-end, .j-s-fe
+	justify-self: flex-end
 
-	.align-content-start
-		align-content: start
+.justify-items-flex-end, .justify-items-fe, .j-i-flex-end, .j-i-fe
+	justify-items: flex-end
 
-	.align-content-end
-		align-content: end
+.align-self-start, .align-self-s, .a-s-start, .a-s-s
+	align-self: start
 
-	.align-content-flex-start
-		align-content: flex-start
+.align-items-start, .align-items-s, .a-i-start, .a-i-s
+	align-items: start
 
-	.align-content-flex-end
-		align-content: flex-end
+.justify-self-start, .justify-self-s, .j-s-start, .j-s-s
+	justify-self: start
 
-	.align-content-stretch
-		align-content: stretch
+.justify-items-start, .justify-items-s, .j-i-start, .j-i-s
+	justify-items: start
 
-	.justify-items-between
-		justify-items: space-between
+.align-self-flex-start, .align-self-fs, .a-s-flex-start, .a-s-fs
+	align-self: flex-start
 
-	.justify-items-evenly
-		justify-items: space-evenly
+.align-items-flex-start, .align-items-fs, .a-i-flex-start, .a-i-fs
+	align-items: flex-start
 
-	.justify-items-around
-		justify-items: space-around
+.justify-self-flex-start, .justify-self-fs, .j-s-flex-start, .j-s-fs
+	justify-self: flex-start
 
-	.justify-items-center
-		justify-items: center
+.justify-items-flex-start, .justify-items-fs, .j-i-flex-start, .j-i-fs
+	justify-items: flex-start
 
-	.justify-items-start
-		justify-items: start
+.align-self-stretch, .align-self-str, .align-self-st, .a-s-stretch, .a-s-str, .a-s-st
+	align-self: stretch
 
-	.justify-items-end
-		justify-items: end
+.align-items-stretch, .align-items-str, .align-items-st, .a-i-stretch, .a-i-str, .a-i-st
+	align-items: stretch
 
-	.justify-items-stretch
-		justify-items: stretch
+.justify-self-stretch, .justify-self-str, .justify-self-st, .j-s-stretch, .j-s-str, .j-s-st
+	justify-self: stretch
 
-	.justify-items-flex-start
-		justify-items: flex-start
+.justify-items-stretch, .justify-items-str, .justify-items-st, .j-i-stretch, .j-i-str, .j-i-st
+	justify-items: stretch
 
-	.justify-items-flex-end
-		justify-items: flex-end
+.align-content-space-between, .align-content-between, .align-content-b, .a-c-space-between, .a-c-between, .a-c-b
+	align-content: space-between
 
-	.justify-self-between
-		justify-self: space-between
+.justify-content-space-between, .justify-content-between, .justify-content-b, .j-c-space-between, .j-c-between, .j-c-b
+	justify-content: space-between
 
-	.justify-self-evenly
-		justify-self: space-evenly
+.align-content-space-evenly, .align-content-evenly, .align-content-e, .a-c-space-evenly, .a-c-evenly, .a-c-e
+	align-content: space-evenly
 
-	.justify-self-around
-		justify-self: space-around
+.justify-content-space-evenly, .justify-content-evenly, .justify-content-e, .j-c-space-evenly, .j-c-evenly, .j-c-e
+	justify-content: space-evenly
 
-	.justify-self-center
-		justify-self: center
+.align-content-space-around, .align-content-around, .align-content-a, .a-c-space-around, .a-c-around, .a-c-a
+	align-content: space-around
 
-	.justify-self-start
-		justify-self: start
+.justify-content-space-around, .justify-content-around, .justify-content-a, .j-c-space-around, .j-c-around, .j-c-a
+	justify-content: space-around
 
-	.justify-self-end
-		justify-self: end
+.align-content-left, .align-content-l, .a-c-left, .a-c-l
+	align-content: left
 
-	.justify-self-stretch
-		justify-self: stretch
+.justify-content-left, .justify-content-l, .j-c-left, .j-c-l
+	justify-content: left
 
-	.justify-self-flex-start
-		justify-self: flex-start
+.align-content-right, .align-content-r, .a-c-right, .a-c-r
+	align-content: right
 
-	.justify-self-flex-end
-		justify-self: flex-end
+.justify-content-right, .justify-content-r, .j-c-right, .j-c-r
+	justify-content: right
 
-	.justify-content-between
-		justify-content: space-between
+.align-content-center, .align-content-c, .a-c-center, .a-c-c
+	align-content: center
 
-	.justify-content-evenly
-		justify-content: space-evenly
+.justify-content-center, .justify-content-c, .j-c-center, .j-c-c
+	justify-content: center
 
-	.justify-content-around
-		justify-content: space-around
+.align-content-end, .align-content-e, .a-c-end, .a-c-e
+	align-content: end
 
-	.justify-content-center
-		justify-content: center
+.justify-content-end, .justify-content-e, .j-c-end, .j-c-e
+	justify-content: end
 
-	.justify-content-start
-		justify-content: start
+.align-content-flex-end, .align-content-fe, .a-c-flex-end, .a-c-fe
+	align-content: flex-end
 
-	.justify-content-end
-		justify-content: end
+.justify-content-flex-end, .justify-content-fe, .j-c-flex-end, .j-c-fe
+	justify-content: flex-end
 
-	.justify-content-stretch
-		justify-content: stretch
+.align-content-start, .align-content-s, .a-c-start, .a-c-s
+	align-content: start
 
-	.justify-content-flex-start
-		justify-content: flex-start
+.justify-content-start, .justify-content-s, .j-c-start, .j-c-s
+	justify-content: start
 
-	.justify-content-flex-end
-		justify-content: flex-end
+.align-content-flex-start, .align-content-fs, .a-c-flex-start, .a-c-fs
+	align-content: flex-start
+
+.justify-content-flex-start, .justify-content-fs, .j-c-flex-start, .j-c-fs
+	justify-content: flex-start
+
+.align-content-stretch, .align-content-str, .align-content-st, .a-c-stretch, .a-c-str, .a-c-st
+	align-content: stretch
+
+.justify-content-stretch, .justify-content-str, .justify-content-st, .j-c-stretch, .j-c-str, .j-c-st
+	justify-content: stretch
 
 
 	// ---------- 002 margins paddings spacers ----------
@@ -601,8 +595,11 @@
 		margin: 0 (0 * -1) 0 (0 * -1)
 		.col
 			padding: 0 0 0 0
+
+	// main p elements
+
 	.p0
-		padding: 0em
+		padding: 0em 
 	.pt0
 		padding-top: 0em
 	.pr0
@@ -618,7 +615,7 @@
 		padding-left: 0em
 		padding-right: 0em
 
-	// child elements
+	// child p elements
 
 	.cp0
 		> *
@@ -645,8 +642,11 @@
 			padding-right: 0em
 		
 
+
+	// main m elements
+
 	.m0
-		margin: 0em
+		margin: 0em 
 	.mt0
 		margin-top: 0em
 	.mr0
@@ -662,7 +662,7 @@
 		margin-left: 0em
 		margin-right: 0em
 
-	// child elements
+	// child m elements
 
 	.cm0
 		> *
@@ -689,11 +689,50 @@
 			margin-right: 0em
 		
 
+	.t0
+		top: 0em
+	.r0
+		right: 0em
+	.b0
+		bottom: 0em
+	.l0
+		left: 0em
+	.tb0, .bt0
+		top: 0em
+		bottom: 0em
+	.lr0, .rl0
+		left: 0em
+		right: 0em
+	.ct0
+		> *
+			top: 0em
+	.cr0
+		> *
+			right: 0em
+	.cb0
+		> *
+			bottom: 0em
+	.cl0
+		> *
+			left: 0em
+	.ctb0, .cbt0
+		> *
+			top: 0em
+			bottom: 0em
+	.clr0, .crl0
+		> *
+			left: 0em
+			right: 0em
+		
+
 	.s0
 		flex-basis: 0em
 	
+
+	// main p elements
+
 	.p0-2
-		padding: 0.2em
+		padding: 0.2em 
 	.pt0-2
 		padding-top: 0.2em
 	.pr0-2
@@ -709,7 +748,7 @@
 		padding-left: 0.2em
 		padding-right: 0.2em
 
-	// child elements
+	// child p elements
 
 	.cp0-2
 		> *
@@ -736,8 +775,11 @@
 			padding-right: 0.2em
 		
 
+
+	// main m elements
+
 	.m0-2
-		margin: 0.2em
+		margin: 0.2em 
 	.mt0-2
 		margin-top: 0.2em
 	.mr0-2
@@ -753,7 +795,7 @@
 		margin-left: 0.2em
 		margin-right: 0.2em
 
-	// child elements
+	// child m elements
 
 	.cm0-2
 		> *
@@ -780,11 +822,50 @@
 			margin-right: 0.2em
 		
 
+	.t0-2
+		top: 0.2em
+	.r0-2
+		right: 0.2em
+	.b0-2
+		bottom: 0.2em
+	.l0-2
+		left: 0.2em
+	.tb0-2, .bt0-2
+		top: 0.2em
+		bottom: 0.2em
+	.lr0-2, .rl0-2
+		left: 0.2em
+		right: 0.2em
+	.ct0-2
+		> *
+			top: 0.2em
+	.cr0-2
+		> *
+			right: 0.2em
+	.cb0-2
+		> *
+			bottom: 0.2em
+	.cl0-2
+		> *
+			left: 0.2em
+	.ctb0-2, .cbt0-2
+		> *
+			top: 0.2em
+			bottom: 0.2em
+	.clr0-2, .crl0-2
+		> *
+			left: 0.2em
+			right: 0.2em
+		
+
 	.s0-2
 		flex-basis: 0.2em
 	
+
+	// main p elements
+
 	.p0-4
-		padding: 0.4em
+		padding: 0.4em 
 	.pt0-4
 		padding-top: 0.4em
 	.pr0-4
@@ -800,7 +881,7 @@
 		padding-left: 0.4em
 		padding-right: 0.4em
 
-	// child elements
+	// child p elements
 
 	.cp0-4
 		> *
@@ -827,8 +908,11 @@
 			padding-right: 0.4em
 		
 
+
+	// main m elements
+
 	.m0-4
-		margin: 0.4em
+		margin: 0.4em 
 	.mt0-4
 		margin-top: 0.4em
 	.mr0-4
@@ -844,7 +928,7 @@
 		margin-left: 0.4em
 		margin-right: 0.4em
 
-	// child elements
+	// child m elements
 
 	.cm0-4
 		> *
@@ -871,11 +955,50 @@
 			margin-right: 0.4em
 		
 
+	.t0-4
+		top: 0.4em
+	.r0-4
+		right: 0.4em
+	.b0-4
+		bottom: 0.4em
+	.l0-4
+		left: 0.4em
+	.tb0-4, .bt0-4
+		top: 0.4em
+		bottom: 0.4em
+	.lr0-4, .rl0-4
+		left: 0.4em
+		right: 0.4em
+	.ct0-4
+		> *
+			top: 0.4em
+	.cr0-4
+		> *
+			right: 0.4em
+	.cb0-4
+		> *
+			bottom: 0.4em
+	.cl0-4
+		> *
+			left: 0.4em
+	.ctb0-4, .cbt0-4
+		> *
+			top: 0.4em
+			bottom: 0.4em
+	.clr0-4, .crl0-4
+		> *
+			left: 0.4em
+			right: 0.4em
+		
+
 	.s0-4
 		flex-basis: 0.4em
 	
+
+	// main p elements
+
 	.p0-6
-		padding: 0.6em
+		padding: 0.6em 
 	.pt0-6
 		padding-top: 0.6em
 	.pr0-6
@@ -891,7 +1014,7 @@
 		padding-left: 0.6em
 		padding-right: 0.6em
 
-	// child elements
+	// child p elements
 
 	.cp0-6
 		> *
@@ -918,8 +1041,11 @@
 			padding-right: 0.6em
 		
 
+
+	// main m elements
+
 	.m0-6
-		margin: 0.6em
+		margin: 0.6em 
 	.mt0-6
 		margin-top: 0.6em
 	.mr0-6
@@ -935,7 +1061,7 @@
 		margin-left: 0.6em
 		margin-right: 0.6em
 
-	// child elements
+	// child m elements
 
 	.cm0-6
 		> *
@@ -962,11 +1088,50 @@
 			margin-right: 0.6em
 		
 
+	.t0-6
+		top: 0.6em
+	.r0-6
+		right: 0.6em
+	.b0-6
+		bottom: 0.6em
+	.l0-6
+		left: 0.6em
+	.tb0-6, .bt0-6
+		top: 0.6em
+		bottom: 0.6em
+	.lr0-6, .rl0-6
+		left: 0.6em
+		right: 0.6em
+	.ct0-6
+		> *
+			top: 0.6em
+	.cr0-6
+		> *
+			right: 0.6em
+	.cb0-6
+		> *
+			bottom: 0.6em
+	.cl0-6
+		> *
+			left: 0.6em
+	.ctb0-6, .cbt0-6
+		> *
+			top: 0.6em
+			bottom: 0.6em
+	.clr0-6, .crl0-6
+		> *
+			left: 0.6em
+			right: 0.6em
+		
+
 	.s0-6
 		flex-basis: 0.6em
 	
+
+	// main p elements
+
 	.p0-8
-		padding: 0.8em
+		padding: 0.8em 
 	.pt0-8
 		padding-top: 0.8em
 	.pr0-8
@@ -982,7 +1147,7 @@
 		padding-left: 0.8em
 		padding-right: 0.8em
 
-	// child elements
+	// child p elements
 
 	.cp0-8
 		> *
@@ -1009,8 +1174,11 @@
 			padding-right: 0.8em
 		
 
+
+	// main m elements
+
 	.m0-8
-		margin: 0.8em
+		margin: 0.8em 
 	.mt0-8
 		margin-top: 0.8em
 	.mr0-8
@@ -1026,7 +1194,7 @@
 		margin-left: 0.8em
 		margin-right: 0.8em
 
-	// child elements
+	// child m elements
 
 	.cm0-8
 		> *
@@ -1053,11 +1221,50 @@
 			margin-right: 0.8em
 		
 
+	.t0-8
+		top: 0.8em
+	.r0-8
+		right: 0.8em
+	.b0-8
+		bottom: 0.8em
+	.l0-8
+		left: 0.8em
+	.tb0-8, .bt0-8
+		top: 0.8em
+		bottom: 0.8em
+	.lr0-8, .rl0-8
+		left: 0.8em
+		right: 0.8em
+	.ct0-8
+		> *
+			top: 0.8em
+	.cr0-8
+		> *
+			right: 0.8em
+	.cb0-8
+		> *
+			bottom: 0.8em
+	.cl0-8
+		> *
+			left: 0.8em
+	.ctb0-8, .cbt0-8
+		> *
+			top: 0.8em
+			bottom: 0.8em
+	.clr0-8, .crl0-8
+		> *
+			left: 0.8em
+			right: 0.8em
+		
+
 	.s0-8
 		flex-basis: 0.8em
 	
+
+	// main p elements
+
 	.p1
-		padding: 1em
+		padding: 1em 
 	.pt1
 		padding-top: 1em
 	.pr1
@@ -1073,7 +1280,7 @@
 		padding-left: 1em
 		padding-right: 1em
 
-	// child elements
+	// child p elements
 
 	.cp1
 		> *
@@ -1100,8 +1307,11 @@
 			padding-right: 1em
 		
 
+
+	// main m elements
+
 	.m1
-		margin: 1em
+		margin: 1em 
 	.mt1
 		margin-top: 1em
 	.mr1
@@ -1117,7 +1327,7 @@
 		margin-left: 1em
 		margin-right: 1em
 
-	// child elements
+	// child m elements
 
 	.cm1
 		> *
@@ -1144,11 +1354,50 @@
 			margin-right: 1em
 		
 
+	.t1
+		top: 1em
+	.r1
+		right: 1em
+	.b1
+		bottom: 1em
+	.l1
+		left: 1em
+	.tb1, .bt1
+		top: 1em
+		bottom: 1em
+	.lr1, .rl1
+		left: 1em
+		right: 1em
+	.ct1
+		> *
+			top: 1em
+	.cr1
+		> *
+			right: 1em
+	.cb1
+		> *
+			bottom: 1em
+	.cl1
+		> *
+			left: 1em
+	.ctb1, .cbt1
+		> *
+			top: 1em
+			bottom: 1em
+	.clr1, .crl1
+		> *
+			left: 1em
+			right: 1em
+		
+
 	.s1
 		flex-basis: 1em
 	
+
+	// main p elements
+
 	.p1-2
-		padding: 1.2em
+		padding: 1.2em 
 	.pt1-2
 		padding-top: 1.2em
 	.pr1-2
@@ -1164,7 +1413,7 @@
 		padding-left: 1.2em
 		padding-right: 1.2em
 
-	// child elements
+	// child p elements
 
 	.cp1-2
 		> *
@@ -1191,8 +1440,11 @@
 			padding-right: 1.2em
 		
 
+
+	// main m elements
+
 	.m1-2
-		margin: 1.2em
+		margin: 1.2em 
 	.mt1-2
 		margin-top: 1.2em
 	.mr1-2
@@ -1208,7 +1460,7 @@
 		margin-left: 1.2em
 		margin-right: 1.2em
 
-	// child elements
+	// child m elements
 
 	.cm1-2
 		> *
@@ -1235,11 +1487,50 @@
 			margin-right: 1.2em
 		
 
+	.t1-2
+		top: 1.2em
+	.r1-2
+		right: 1.2em
+	.b1-2
+		bottom: 1.2em
+	.l1-2
+		left: 1.2em
+	.tb1-2, .bt1-2
+		top: 1.2em
+		bottom: 1.2em
+	.lr1-2, .rl1-2
+		left: 1.2em
+		right: 1.2em
+	.ct1-2
+		> *
+			top: 1.2em
+	.cr1-2
+		> *
+			right: 1.2em
+	.cb1-2
+		> *
+			bottom: 1.2em
+	.cl1-2
+		> *
+			left: 1.2em
+	.ctb1-2, .cbt1-2
+		> *
+			top: 1.2em
+			bottom: 1.2em
+	.clr1-2, .crl1-2
+		> *
+			left: 1.2em
+			right: 1.2em
+		
+
 	.s1-2
 		flex-basis: 1.2em
 	
+
+	// main p elements
+
 	.p1-4
-		padding: 1.4em
+		padding: 1.4em 
 	.pt1-4
 		padding-top: 1.4em
 	.pr1-4
@@ -1255,7 +1546,7 @@
 		padding-left: 1.4em
 		padding-right: 1.4em
 
-	// child elements
+	// child p elements
 
 	.cp1-4
 		> *
@@ -1282,8 +1573,11 @@
 			padding-right: 1.4em
 		
 
+
+	// main m elements
+
 	.m1-4
-		margin: 1.4em
+		margin: 1.4em 
 	.mt1-4
 		margin-top: 1.4em
 	.mr1-4
@@ -1299,7 +1593,7 @@
 		margin-left: 1.4em
 		margin-right: 1.4em
 
-	// child elements
+	// child m elements
 
 	.cm1-4
 		> *
@@ -1326,11 +1620,50 @@
 			margin-right: 1.4em
 		
 
+	.t1-4
+		top: 1.4em
+	.r1-4
+		right: 1.4em
+	.b1-4
+		bottom: 1.4em
+	.l1-4
+		left: 1.4em
+	.tb1-4, .bt1-4
+		top: 1.4em
+		bottom: 1.4em
+	.lr1-4, .rl1-4
+		left: 1.4em
+		right: 1.4em
+	.ct1-4
+		> *
+			top: 1.4em
+	.cr1-4
+		> *
+			right: 1.4em
+	.cb1-4
+		> *
+			bottom: 1.4em
+	.cl1-4
+		> *
+			left: 1.4em
+	.ctb1-4, .cbt1-4
+		> *
+			top: 1.4em
+			bottom: 1.4em
+	.clr1-4, .crl1-4
+		> *
+			left: 1.4em
+			right: 1.4em
+		
+
 	.s1-4
 		flex-basis: 1.4em
 	
+
+	// main p elements
+
 	.p1-6
-		padding: 1.6em
+		padding: 1.6em 
 	.pt1-6
 		padding-top: 1.6em
 	.pr1-6
@@ -1346,7 +1679,7 @@
 		padding-left: 1.6em
 		padding-right: 1.6em
 
-	// child elements
+	// child p elements
 
 	.cp1-6
 		> *
@@ -1373,8 +1706,11 @@
 			padding-right: 1.6em
 		
 
+
+	// main m elements
+
 	.m1-6
-		margin: 1.6em
+		margin: 1.6em 
 	.mt1-6
 		margin-top: 1.6em
 	.mr1-6
@@ -1390,7 +1726,7 @@
 		margin-left: 1.6em
 		margin-right: 1.6em
 
-	// child elements
+	// child m elements
 
 	.cm1-6
 		> *
@@ -1417,11 +1753,50 @@
 			margin-right: 1.6em
 		
 
+	.t1-6
+		top: 1.6em
+	.r1-6
+		right: 1.6em
+	.b1-6
+		bottom: 1.6em
+	.l1-6
+		left: 1.6em
+	.tb1-6, .bt1-6
+		top: 1.6em
+		bottom: 1.6em
+	.lr1-6, .rl1-6
+		left: 1.6em
+		right: 1.6em
+	.ct1-6
+		> *
+			top: 1.6em
+	.cr1-6
+		> *
+			right: 1.6em
+	.cb1-6
+		> *
+			bottom: 1.6em
+	.cl1-6
+		> *
+			left: 1.6em
+	.ctb1-6, .cbt1-6
+		> *
+			top: 1.6em
+			bottom: 1.6em
+	.clr1-6, .crl1-6
+		> *
+			left: 1.6em
+			right: 1.6em
+		
+
 	.s1-6
 		flex-basis: 1.6em
 	
+
+	// main p elements
+
 	.p1-8
-		padding: 1.8em
+		padding: 1.8em 
 	.pt1-8
 		padding-top: 1.8em
 	.pr1-8
@@ -1437,7 +1812,7 @@
 		padding-left: 1.8em
 		padding-right: 1.8em
 
-	// child elements
+	// child p elements
 
 	.cp1-8
 		> *
@@ -1464,8 +1839,11 @@
 			padding-right: 1.8em
 		
 
+
+	// main m elements
+
 	.m1-8
-		margin: 1.8em
+		margin: 1.8em 
 	.mt1-8
 		margin-top: 1.8em
 	.mr1-8
@@ -1481,7 +1859,7 @@
 		margin-left: 1.8em
 		margin-right: 1.8em
 
-	// child elements
+	// child m elements
 
 	.cm1-8
 		> *
@@ -1508,11 +1886,50 @@
 			margin-right: 1.8em
 		
 
+	.t1-8
+		top: 1.8em
+	.r1-8
+		right: 1.8em
+	.b1-8
+		bottom: 1.8em
+	.l1-8
+		left: 1.8em
+	.tb1-8, .bt1-8
+		top: 1.8em
+		bottom: 1.8em
+	.lr1-8, .rl1-8
+		left: 1.8em
+		right: 1.8em
+	.ct1-8
+		> *
+			top: 1.8em
+	.cr1-8
+		> *
+			right: 1.8em
+	.cb1-8
+		> *
+			bottom: 1.8em
+	.cl1-8
+		> *
+			left: 1.8em
+	.ctb1-8, .cbt1-8
+		> *
+			top: 1.8em
+			bottom: 1.8em
+	.clr1-8, .crl1-8
+		> *
+			left: 1.8em
+			right: 1.8em
+		
+
 	.s1-8
 		flex-basis: 1.8em
 	
+
+	// main p elements
+
 	.p2
-		padding: 2em
+		padding: 2em 
 	.pt2
 		padding-top: 2em
 	.pr2
@@ -1528,7 +1945,7 @@
 		padding-left: 2em
 		padding-right: 2em
 
-	// child elements
+	// child p elements
 
 	.cp2
 		> *
@@ -1555,8 +1972,11 @@
 			padding-right: 2em
 		
 
+
+	// main m elements
+
 	.m2
-		margin: 2em
+		margin: 2em 
 	.mt2
 		margin-top: 2em
 	.mr2
@@ -1572,7 +1992,7 @@
 		margin-left: 2em
 		margin-right: 2em
 
-	// child elements
+	// child m elements
 
 	.cm2
 		> *
@@ -1599,11 +2019,50 @@
 			margin-right: 2em
 		
 
+	.t2
+		top: 2em
+	.r2
+		right: 2em
+	.b2
+		bottom: 2em
+	.l2
+		left: 2em
+	.tb2, .bt2
+		top: 2em
+		bottom: 2em
+	.lr2, .rl2
+		left: 2em
+		right: 2em
+	.ct2
+		> *
+			top: 2em
+	.cr2
+		> *
+			right: 2em
+	.cb2
+		> *
+			bottom: 2em
+	.cl2
+		> *
+			left: 2em
+	.ctb2, .cbt2
+		> *
+			top: 2em
+			bottom: 2em
+	.clr2, .crl2
+		> *
+			left: 2em
+			right: 2em
+		
+
 	.s2
 		flex-basis: 2em
 	
+
+	// main p elements
+
 	.p2-2
-		padding: 2.2em
+		padding: 2.2em 
 	.pt2-2
 		padding-top: 2.2em
 	.pr2-2
@@ -1619,7 +2078,7 @@
 		padding-left: 2.2em
 		padding-right: 2.2em
 
-	// child elements
+	// child p elements
 
 	.cp2-2
 		> *
@@ -1646,8 +2105,11 @@
 			padding-right: 2.2em
 		
 
+
+	// main m elements
+
 	.m2-2
-		margin: 2.2em
+		margin: 2.2em 
 	.mt2-2
 		margin-top: 2.2em
 	.mr2-2
@@ -1663,7 +2125,7 @@
 		margin-left: 2.2em
 		margin-right: 2.2em
 
-	// child elements
+	// child m elements
 
 	.cm2-2
 		> *
@@ -1690,11 +2152,50 @@
 			margin-right: 2.2em
 		
 
+	.t2-2
+		top: 2.2em
+	.r2-2
+		right: 2.2em
+	.b2-2
+		bottom: 2.2em
+	.l2-2
+		left: 2.2em
+	.tb2-2, .bt2-2
+		top: 2.2em
+		bottom: 2.2em
+	.lr2-2, .rl2-2
+		left: 2.2em
+		right: 2.2em
+	.ct2-2
+		> *
+			top: 2.2em
+	.cr2-2
+		> *
+			right: 2.2em
+	.cb2-2
+		> *
+			bottom: 2.2em
+	.cl2-2
+		> *
+			left: 2.2em
+	.ctb2-2, .cbt2-2
+		> *
+			top: 2.2em
+			bottom: 2.2em
+	.clr2-2, .crl2-2
+		> *
+			left: 2.2em
+			right: 2.2em
+		
+
 	.s2-2
 		flex-basis: 2.2em
 	
+
+	// main p elements
+
 	.p2-4
-		padding: 2.4em
+		padding: 2.4em 
 	.pt2-4
 		padding-top: 2.4em
 	.pr2-4
@@ -1710,7 +2211,7 @@
 		padding-left: 2.4em
 		padding-right: 2.4em
 
-	// child elements
+	// child p elements
 
 	.cp2-4
 		> *
@@ -1737,8 +2238,11 @@
 			padding-right: 2.4em
 		
 
+
+	// main m elements
+
 	.m2-4
-		margin: 2.4em
+		margin: 2.4em 
 	.mt2-4
 		margin-top: 2.4em
 	.mr2-4
@@ -1754,7 +2258,7 @@
 		margin-left: 2.4em
 		margin-right: 2.4em
 
-	// child elements
+	// child m elements
 
 	.cm2-4
 		> *
@@ -1781,11 +2285,50 @@
 			margin-right: 2.4em
 		
 
+	.t2-4
+		top: 2.4em
+	.r2-4
+		right: 2.4em
+	.b2-4
+		bottom: 2.4em
+	.l2-4
+		left: 2.4em
+	.tb2-4, .bt2-4
+		top: 2.4em
+		bottom: 2.4em
+	.lr2-4, .rl2-4
+		left: 2.4em
+		right: 2.4em
+	.ct2-4
+		> *
+			top: 2.4em
+	.cr2-4
+		> *
+			right: 2.4em
+	.cb2-4
+		> *
+			bottom: 2.4em
+	.cl2-4
+		> *
+			left: 2.4em
+	.ctb2-4, .cbt2-4
+		> *
+			top: 2.4em
+			bottom: 2.4em
+	.clr2-4, .crl2-4
+		> *
+			left: 2.4em
+			right: 2.4em
+		
+
 	.s2-4
 		flex-basis: 2.4em
 	
+
+	// main p elements
+
 	.p2-6
-		padding: 2.6em
+		padding: 2.6em 
 	.pt2-6
 		padding-top: 2.6em
 	.pr2-6
@@ -1801,7 +2344,7 @@
 		padding-left: 2.6em
 		padding-right: 2.6em
 
-	// child elements
+	// child p elements
 
 	.cp2-6
 		> *
@@ -1828,8 +2371,11 @@
 			padding-right: 2.6em
 		
 
+
+	// main m elements
+
 	.m2-6
-		margin: 2.6em
+		margin: 2.6em 
 	.mt2-6
 		margin-top: 2.6em
 	.mr2-6
@@ -1845,7 +2391,7 @@
 		margin-left: 2.6em
 		margin-right: 2.6em
 
-	// child elements
+	// child m elements
 
 	.cm2-6
 		> *
@@ -1872,11 +2418,50 @@
 			margin-right: 2.6em
 		
 
+	.t2-6
+		top: 2.6em
+	.r2-6
+		right: 2.6em
+	.b2-6
+		bottom: 2.6em
+	.l2-6
+		left: 2.6em
+	.tb2-6, .bt2-6
+		top: 2.6em
+		bottom: 2.6em
+	.lr2-6, .rl2-6
+		left: 2.6em
+		right: 2.6em
+	.ct2-6
+		> *
+			top: 2.6em
+	.cr2-6
+		> *
+			right: 2.6em
+	.cb2-6
+		> *
+			bottom: 2.6em
+	.cl2-6
+		> *
+			left: 2.6em
+	.ctb2-6, .cbt2-6
+		> *
+			top: 2.6em
+			bottom: 2.6em
+	.clr2-6, .crl2-6
+		> *
+			left: 2.6em
+			right: 2.6em
+		
+
 	.s2-6
 		flex-basis: 2.6em
 	
+
+	// main p elements
+
 	.p2-8
-		padding: 2.8em
+		padding: 2.8em 
 	.pt2-8
 		padding-top: 2.8em
 	.pr2-8
@@ -1892,7 +2477,7 @@
 		padding-left: 2.8em
 		padding-right: 2.8em
 
-	// child elements
+	// child p elements
 
 	.cp2-8
 		> *
@@ -1919,8 +2504,11 @@
 			padding-right: 2.8em
 		
 
+
+	// main m elements
+
 	.m2-8
-		margin: 2.8em
+		margin: 2.8em 
 	.mt2-8
 		margin-top: 2.8em
 	.mr2-8
@@ -1936,7 +2524,7 @@
 		margin-left: 2.8em
 		margin-right: 2.8em
 
-	// child elements
+	// child m elements
 
 	.cm2-8
 		> *
@@ -1963,11 +2551,50 @@
 			margin-right: 2.8em
 		
 
+	.t2-8
+		top: 2.8em
+	.r2-8
+		right: 2.8em
+	.b2-8
+		bottom: 2.8em
+	.l2-8
+		left: 2.8em
+	.tb2-8, .bt2-8
+		top: 2.8em
+		bottom: 2.8em
+	.lr2-8, .rl2-8
+		left: 2.8em
+		right: 2.8em
+	.ct2-8
+		> *
+			top: 2.8em
+	.cr2-8
+		> *
+			right: 2.8em
+	.cb2-8
+		> *
+			bottom: 2.8em
+	.cl2-8
+		> *
+			left: 2.8em
+	.ctb2-8, .cbt2-8
+		> *
+			top: 2.8em
+			bottom: 2.8em
+	.clr2-8, .crl2-8
+		> *
+			left: 2.8em
+			right: 2.8em
+		
+
 	.s2-8
 		flex-basis: 2.8em
 	
+
+	// main p elements
+
 	.p3
-		padding: 3em
+		padding: 3em 
 	.pt3
 		padding-top: 3em
 	.pr3
@@ -1983,7 +2610,7 @@
 		padding-left: 3em
 		padding-right: 3em
 
-	// child elements
+	// child p elements
 
 	.cp3
 		> *
@@ -2010,8 +2637,11 @@
 			padding-right: 3em
 		
 
+
+	// main m elements
+
 	.m3
-		margin: 3em
+		margin: 3em 
 	.mt3
 		margin-top: 3em
 	.mr3
@@ -2027,7 +2657,7 @@
 		margin-left: 3em
 		margin-right: 3em
 
-	// child elements
+	// child m elements
 
 	.cm3
 		> *
@@ -2054,11 +2684,50 @@
 			margin-right: 3em
 		
 
+	.t3
+		top: 3em
+	.r3
+		right: 3em
+	.b3
+		bottom: 3em
+	.l3
+		left: 3em
+	.tb3, .bt3
+		top: 3em
+		bottom: 3em
+	.lr3, .rl3
+		left: 3em
+		right: 3em
+	.ct3
+		> *
+			top: 3em
+	.cr3
+		> *
+			right: 3em
+	.cb3
+		> *
+			bottom: 3em
+	.cl3
+		> *
+			left: 3em
+	.ctb3, .cbt3
+		> *
+			top: 3em
+			bottom: 3em
+	.clr3, .crl3
+		> *
+			left: 3em
+			right: 3em
+		
+
 	.s3
 		flex-basis: 3em
 	
+
+	// main p elements
+
 	.p3-2
-		padding: 3.2em
+		padding: 3.2em 
 	.pt3-2
 		padding-top: 3.2em
 	.pr3-2
@@ -2074,7 +2743,7 @@
 		padding-left: 3.2em
 		padding-right: 3.2em
 
-	// child elements
+	// child p elements
 
 	.cp3-2
 		> *
@@ -2101,8 +2770,11 @@
 			padding-right: 3.2em
 		
 
+
+	// main m elements
+
 	.m3-2
-		margin: 3.2em
+		margin: 3.2em 
 	.mt3-2
 		margin-top: 3.2em
 	.mr3-2
@@ -2118,7 +2790,7 @@
 		margin-left: 3.2em
 		margin-right: 3.2em
 
-	// child elements
+	// child m elements
 
 	.cm3-2
 		> *
@@ -2145,11 +2817,50 @@
 			margin-right: 3.2em
 		
 
+	.t3-2
+		top: 3.2em
+	.r3-2
+		right: 3.2em
+	.b3-2
+		bottom: 3.2em
+	.l3-2
+		left: 3.2em
+	.tb3-2, .bt3-2
+		top: 3.2em
+		bottom: 3.2em
+	.lr3-2, .rl3-2
+		left: 3.2em
+		right: 3.2em
+	.ct3-2
+		> *
+			top: 3.2em
+	.cr3-2
+		> *
+			right: 3.2em
+	.cb3-2
+		> *
+			bottom: 3.2em
+	.cl3-2
+		> *
+			left: 3.2em
+	.ctb3-2, .cbt3-2
+		> *
+			top: 3.2em
+			bottom: 3.2em
+	.clr3-2, .crl3-2
+		> *
+			left: 3.2em
+			right: 3.2em
+		
+
 	.s3-2
 		flex-basis: 3.2em
 	
+
+	// main p elements
+
 	.p3-4
-		padding: 3.4em
+		padding: 3.4em 
 	.pt3-4
 		padding-top: 3.4em
 	.pr3-4
@@ -2165,7 +2876,7 @@
 		padding-left: 3.4em
 		padding-right: 3.4em
 
-	// child elements
+	// child p elements
 
 	.cp3-4
 		> *
@@ -2192,8 +2903,11 @@
 			padding-right: 3.4em
 		
 
+
+	// main m elements
+
 	.m3-4
-		margin: 3.4em
+		margin: 3.4em 
 	.mt3-4
 		margin-top: 3.4em
 	.mr3-4
@@ -2209,7 +2923,7 @@
 		margin-left: 3.4em
 		margin-right: 3.4em
 
-	// child elements
+	// child m elements
 
 	.cm3-4
 		> *
@@ -2236,11 +2950,50 @@
 			margin-right: 3.4em
 		
 
+	.t3-4
+		top: 3.4em
+	.r3-4
+		right: 3.4em
+	.b3-4
+		bottom: 3.4em
+	.l3-4
+		left: 3.4em
+	.tb3-4, .bt3-4
+		top: 3.4em
+		bottom: 3.4em
+	.lr3-4, .rl3-4
+		left: 3.4em
+		right: 3.4em
+	.ct3-4
+		> *
+			top: 3.4em
+	.cr3-4
+		> *
+			right: 3.4em
+	.cb3-4
+		> *
+			bottom: 3.4em
+	.cl3-4
+		> *
+			left: 3.4em
+	.ctb3-4, .cbt3-4
+		> *
+			top: 3.4em
+			bottom: 3.4em
+	.clr3-4, .crl3-4
+		> *
+			left: 3.4em
+			right: 3.4em
+		
+
 	.s3-4
 		flex-basis: 3.4em
 	
+
+	// main p elements
+
 	.p3-6
-		padding: 3.6em
+		padding: 3.6em 
 	.pt3-6
 		padding-top: 3.6em
 	.pr3-6
@@ -2256,7 +3009,7 @@
 		padding-left: 3.6em
 		padding-right: 3.6em
 
-	// child elements
+	// child p elements
 
 	.cp3-6
 		> *
@@ -2283,8 +3036,11 @@
 			padding-right: 3.6em
 		
 
+
+	// main m elements
+
 	.m3-6
-		margin: 3.6em
+		margin: 3.6em 
 	.mt3-6
 		margin-top: 3.6em
 	.mr3-6
@@ -2300,7 +3056,7 @@
 		margin-left: 3.6em
 		margin-right: 3.6em
 
-	// child elements
+	// child m elements
 
 	.cm3-6
 		> *
@@ -2327,11 +3083,50 @@
 			margin-right: 3.6em
 		
 
+	.t3-6
+		top: 3.6em
+	.r3-6
+		right: 3.6em
+	.b3-6
+		bottom: 3.6em
+	.l3-6
+		left: 3.6em
+	.tb3-6, .bt3-6
+		top: 3.6em
+		bottom: 3.6em
+	.lr3-6, .rl3-6
+		left: 3.6em
+		right: 3.6em
+	.ct3-6
+		> *
+			top: 3.6em
+	.cr3-6
+		> *
+			right: 3.6em
+	.cb3-6
+		> *
+			bottom: 3.6em
+	.cl3-6
+		> *
+			left: 3.6em
+	.ctb3-6, .cbt3-6
+		> *
+			top: 3.6em
+			bottom: 3.6em
+	.clr3-6, .crl3-6
+		> *
+			left: 3.6em
+			right: 3.6em
+		
+
 	.s3-6
 		flex-basis: 3.6em
 	
+
+	// main p elements
+
 	.p3-8
-		padding: 3.8em
+		padding: 3.8em 
 	.pt3-8
 		padding-top: 3.8em
 	.pr3-8
@@ -2347,7 +3142,7 @@
 		padding-left: 3.8em
 		padding-right: 3.8em
 
-	// child elements
+	// child p elements
 
 	.cp3-8
 		> *
@@ -2374,8 +3169,11 @@
 			padding-right: 3.8em
 		
 
+
+	// main m elements
+
 	.m3-8
-		margin: 3.8em
+		margin: 3.8em 
 	.mt3-8
 		margin-top: 3.8em
 	.mr3-8
@@ -2391,7 +3189,7 @@
 		margin-left: 3.8em
 		margin-right: 3.8em
 
-	// child elements
+	// child m elements
 
 	.cm3-8
 		> *
@@ -2418,11 +3216,50 @@
 			margin-right: 3.8em
 		
 
+	.t3-8
+		top: 3.8em
+	.r3-8
+		right: 3.8em
+	.b3-8
+		bottom: 3.8em
+	.l3-8
+		left: 3.8em
+	.tb3-8, .bt3-8
+		top: 3.8em
+		bottom: 3.8em
+	.lr3-8, .rl3-8
+		left: 3.8em
+		right: 3.8em
+	.ct3-8
+		> *
+			top: 3.8em
+	.cr3-8
+		> *
+			right: 3.8em
+	.cb3-8
+		> *
+			bottom: 3.8em
+	.cl3-8
+		> *
+			left: 3.8em
+	.ctb3-8, .cbt3-8
+		> *
+			top: 3.8em
+			bottom: 3.8em
+	.clr3-8, .crl3-8
+		> *
+			left: 3.8em
+			right: 3.8em
+		
+
 	.s3-8
 		flex-basis: 3.8em
 	
+
+	// main p elements
+
 	.p4
-		padding: 4em
+		padding: 4em 
 	.pt4
 		padding-top: 4em
 	.pr4
@@ -2438,7 +3275,7 @@
 		padding-left: 4em
 		padding-right: 4em
 
-	// child elements
+	// child p elements
 
 	.cp4
 		> *
@@ -2465,8 +3302,11 @@
 			padding-right: 4em
 		
 
+
+	// main m elements
+
 	.m4
-		margin: 4em
+		margin: 4em 
 	.mt4
 		margin-top: 4em
 	.mr4
@@ -2482,7 +3322,7 @@
 		margin-left: 4em
 		margin-right: 4em
 
-	// child elements
+	// child m elements
 
 	.cm4
 		> *
@@ -2509,11 +3349,50 @@
 			margin-right: 4em
 		
 
+	.t4
+		top: 4em
+	.r4
+		right: 4em
+	.b4
+		bottom: 4em
+	.l4
+		left: 4em
+	.tb4, .bt4
+		top: 4em
+		bottom: 4em
+	.lr4, .rl4
+		left: 4em
+		right: 4em
+	.ct4
+		> *
+			top: 4em
+	.cr4
+		> *
+			right: 4em
+	.cb4
+		> *
+			bottom: 4em
+	.cl4
+		> *
+			left: 4em
+	.ctb4, .cbt4
+		> *
+			top: 4em
+			bottom: 4em
+	.clr4, .crl4
+		> *
+			left: 4em
+			right: 4em
+		
+
 	.s4
 		flex-basis: 4em
 	
+
+	// main p elements
+
 	.p4-2
-		padding: 4.2em
+		padding: 4.2em 
 	.pt4-2
 		padding-top: 4.2em
 	.pr4-2
@@ -2529,7 +3408,7 @@
 		padding-left: 4.2em
 		padding-right: 4.2em
 
-	// child elements
+	// child p elements
 
 	.cp4-2
 		> *
@@ -2556,8 +3435,11 @@
 			padding-right: 4.2em
 		
 
+
+	// main m elements
+
 	.m4-2
-		margin: 4.2em
+		margin: 4.2em 
 	.mt4-2
 		margin-top: 4.2em
 	.mr4-2
@@ -2573,7 +3455,7 @@
 		margin-left: 4.2em
 		margin-right: 4.2em
 
-	// child elements
+	// child m elements
 
 	.cm4-2
 		> *
@@ -2600,11 +3482,50 @@
 			margin-right: 4.2em
 		
 
+	.t4-2
+		top: 4.2em
+	.r4-2
+		right: 4.2em
+	.b4-2
+		bottom: 4.2em
+	.l4-2
+		left: 4.2em
+	.tb4-2, .bt4-2
+		top: 4.2em
+		bottom: 4.2em
+	.lr4-2, .rl4-2
+		left: 4.2em
+		right: 4.2em
+	.ct4-2
+		> *
+			top: 4.2em
+	.cr4-2
+		> *
+			right: 4.2em
+	.cb4-2
+		> *
+			bottom: 4.2em
+	.cl4-2
+		> *
+			left: 4.2em
+	.ctb4-2, .cbt4-2
+		> *
+			top: 4.2em
+			bottom: 4.2em
+	.clr4-2, .crl4-2
+		> *
+			left: 4.2em
+			right: 4.2em
+		
+
 	.s4-2
 		flex-basis: 4.2em
 	
+
+	// main p elements
+
 	.p4-4
-		padding: 4.4em
+		padding: 4.4em 
 	.pt4-4
 		padding-top: 4.4em
 	.pr4-4
@@ -2620,7 +3541,7 @@
 		padding-left: 4.4em
 		padding-right: 4.4em
 
-	// child elements
+	// child p elements
 
 	.cp4-4
 		> *
@@ -2647,8 +3568,11 @@
 			padding-right: 4.4em
 		
 
+
+	// main m elements
+
 	.m4-4
-		margin: 4.4em
+		margin: 4.4em 
 	.mt4-4
 		margin-top: 4.4em
 	.mr4-4
@@ -2664,7 +3588,7 @@
 		margin-left: 4.4em
 		margin-right: 4.4em
 
-	// child elements
+	// child m elements
 
 	.cm4-4
 		> *
@@ -2691,11 +3615,50 @@
 			margin-right: 4.4em
 		
 
+	.t4-4
+		top: 4.4em
+	.r4-4
+		right: 4.4em
+	.b4-4
+		bottom: 4.4em
+	.l4-4
+		left: 4.4em
+	.tb4-4, .bt4-4
+		top: 4.4em
+		bottom: 4.4em
+	.lr4-4, .rl4-4
+		left: 4.4em
+		right: 4.4em
+	.ct4-4
+		> *
+			top: 4.4em
+	.cr4-4
+		> *
+			right: 4.4em
+	.cb4-4
+		> *
+			bottom: 4.4em
+	.cl4-4
+		> *
+			left: 4.4em
+	.ctb4-4, .cbt4-4
+		> *
+			top: 4.4em
+			bottom: 4.4em
+	.clr4-4, .crl4-4
+		> *
+			left: 4.4em
+			right: 4.4em
+		
+
 	.s4-4
 		flex-basis: 4.4em
 	
+
+	// main p elements
+
 	.p4-6
-		padding: 4.6em
+		padding: 4.6em 
 	.pt4-6
 		padding-top: 4.6em
 	.pr4-6
@@ -2711,7 +3674,7 @@
 		padding-left: 4.6em
 		padding-right: 4.6em
 
-	// child elements
+	// child p elements
 
 	.cp4-6
 		> *
@@ -2738,8 +3701,11 @@
 			padding-right: 4.6em
 		
 
+
+	// main m elements
+
 	.m4-6
-		margin: 4.6em
+		margin: 4.6em 
 	.mt4-6
 		margin-top: 4.6em
 	.mr4-6
@@ -2755,7 +3721,7 @@
 		margin-left: 4.6em
 		margin-right: 4.6em
 
-	// child elements
+	// child m elements
 
 	.cm4-6
 		> *
@@ -2782,11 +3748,50 @@
 			margin-right: 4.6em
 		
 
+	.t4-6
+		top: 4.6em
+	.r4-6
+		right: 4.6em
+	.b4-6
+		bottom: 4.6em
+	.l4-6
+		left: 4.6em
+	.tb4-6, .bt4-6
+		top: 4.6em
+		bottom: 4.6em
+	.lr4-6, .rl4-6
+		left: 4.6em
+		right: 4.6em
+	.ct4-6
+		> *
+			top: 4.6em
+	.cr4-6
+		> *
+			right: 4.6em
+	.cb4-6
+		> *
+			bottom: 4.6em
+	.cl4-6
+		> *
+			left: 4.6em
+	.ctb4-6, .cbt4-6
+		> *
+			top: 4.6em
+			bottom: 4.6em
+	.clr4-6, .crl4-6
+		> *
+			left: 4.6em
+			right: 4.6em
+		
+
 	.s4-6
 		flex-basis: 4.6em
 	
+
+	// main p elements
+
 	.p4-8
-		padding: 4.8em
+		padding: 4.8em 
 	.pt4-8
 		padding-top: 4.8em
 	.pr4-8
@@ -2802,7 +3807,7 @@
 		padding-left: 4.8em
 		padding-right: 4.8em
 
-	// child elements
+	// child p elements
 
 	.cp4-8
 		> *
@@ -2829,8 +3834,11 @@
 			padding-right: 4.8em
 		
 
+
+	// main m elements
+
 	.m4-8
-		margin: 4.8em
+		margin: 4.8em 
 	.mt4-8
 		margin-top: 4.8em
 	.mr4-8
@@ -2846,7 +3854,7 @@
 		margin-left: 4.8em
 		margin-right: 4.8em
 
-	// child elements
+	// child m elements
 
 	.cm4-8
 		> *
@@ -2873,11 +3881,50 @@
 			margin-right: 4.8em
 		
 
+	.t4-8
+		top: 4.8em
+	.r4-8
+		right: 4.8em
+	.b4-8
+		bottom: 4.8em
+	.l4-8
+		left: 4.8em
+	.tb4-8, .bt4-8
+		top: 4.8em
+		bottom: 4.8em
+	.lr4-8, .rl4-8
+		left: 4.8em
+		right: 4.8em
+	.ct4-8
+		> *
+			top: 4.8em
+	.cr4-8
+		> *
+			right: 4.8em
+	.cb4-8
+		> *
+			bottom: 4.8em
+	.cl4-8
+		> *
+			left: 4.8em
+	.ctb4-8, .cbt4-8
+		> *
+			top: 4.8em
+			bottom: 4.8em
+	.clr4-8, .crl4-8
+		> *
+			left: 4.8em
+			right: 4.8em
+		
+
 	.s4-8
 		flex-basis: 4.8em
 	
+
+	// main p elements
+
 	.p5
-		padding: 5em
+		padding: 5em 
 	.pt5
 		padding-top: 5em
 	.pr5
@@ -2893,7 +3940,7 @@
 		padding-left: 5em
 		padding-right: 5em
 
-	// child elements
+	// child p elements
 
 	.cp5
 		> *
@@ -2920,8 +3967,11 @@
 			padding-right: 5em
 		
 
+
+	// main m elements
+
 	.m5
-		margin: 5em
+		margin: 5em 
 	.mt5
 		margin-top: 5em
 	.mr5
@@ -2937,7 +3987,7 @@
 		margin-left: 5em
 		margin-right: 5em
 
-	// child elements
+	// child m elements
 
 	.cm5
 		> *
@@ -2964,11 +4014,50 @@
 			margin-right: 5em
 		
 
+	.t5
+		top: 5em
+	.r5
+		right: 5em
+	.b5
+		bottom: 5em
+	.l5
+		left: 5em
+	.tb5, .bt5
+		top: 5em
+		bottom: 5em
+	.lr5, .rl5
+		left: 5em
+		right: 5em
+	.ct5
+		> *
+			top: 5em
+	.cr5
+		> *
+			right: 5em
+	.cb5
+		> *
+			bottom: 5em
+	.cl5
+		> *
+			left: 5em
+	.ctb5, .cbt5
+		> *
+			top: 5em
+			bottom: 5em
+	.clr5, .crl5
+		> *
+			left: 5em
+			right: 5em
+		
+
 	.s5
 		flex-basis: 5em
 	
+
+	// main p elements
+
 	.p5-2
-		padding: 5.2em
+		padding: 5.2em 
 	.pt5-2
 		padding-top: 5.2em
 	.pr5-2
@@ -2984,7 +4073,7 @@
 		padding-left: 5.2em
 		padding-right: 5.2em
 
-	// child elements
+	// child p elements
 
 	.cp5-2
 		> *
@@ -3011,8 +4100,11 @@
 			padding-right: 5.2em
 		
 
+
+	// main m elements
+
 	.m5-2
-		margin: 5.2em
+		margin: 5.2em 
 	.mt5-2
 		margin-top: 5.2em
 	.mr5-2
@@ -3028,7 +4120,7 @@
 		margin-left: 5.2em
 		margin-right: 5.2em
 
-	// child elements
+	// child m elements
 
 	.cm5-2
 		> *
@@ -3055,11 +4147,50 @@
 			margin-right: 5.2em
 		
 
+	.t5-2
+		top: 5.2em
+	.r5-2
+		right: 5.2em
+	.b5-2
+		bottom: 5.2em
+	.l5-2
+		left: 5.2em
+	.tb5-2, .bt5-2
+		top: 5.2em
+		bottom: 5.2em
+	.lr5-2, .rl5-2
+		left: 5.2em
+		right: 5.2em
+	.ct5-2
+		> *
+			top: 5.2em
+	.cr5-2
+		> *
+			right: 5.2em
+	.cb5-2
+		> *
+			bottom: 5.2em
+	.cl5-2
+		> *
+			left: 5.2em
+	.ctb5-2, .cbt5-2
+		> *
+			top: 5.2em
+			bottom: 5.2em
+	.clr5-2, .crl5-2
+		> *
+			left: 5.2em
+			right: 5.2em
+		
+
 	.s5-2
 		flex-basis: 5.2em
 	
+
+	// main p elements
+
 	.p5-4
-		padding: 5.4em
+		padding: 5.4em 
 	.pt5-4
 		padding-top: 5.4em
 	.pr5-4
@@ -3075,7 +4206,7 @@
 		padding-left: 5.4em
 		padding-right: 5.4em
 
-	// child elements
+	// child p elements
 
 	.cp5-4
 		> *
@@ -3102,8 +4233,11 @@
 			padding-right: 5.4em
 		
 
+
+	// main m elements
+
 	.m5-4
-		margin: 5.4em
+		margin: 5.4em 
 	.mt5-4
 		margin-top: 5.4em
 	.mr5-4
@@ -3119,7 +4253,7 @@
 		margin-left: 5.4em
 		margin-right: 5.4em
 
-	// child elements
+	// child m elements
 
 	.cm5-4
 		> *
@@ -3146,11 +4280,50 @@
 			margin-right: 5.4em
 		
 
+	.t5-4
+		top: 5.4em
+	.r5-4
+		right: 5.4em
+	.b5-4
+		bottom: 5.4em
+	.l5-4
+		left: 5.4em
+	.tb5-4, .bt5-4
+		top: 5.4em
+		bottom: 5.4em
+	.lr5-4, .rl5-4
+		left: 5.4em
+		right: 5.4em
+	.ct5-4
+		> *
+			top: 5.4em
+	.cr5-4
+		> *
+			right: 5.4em
+	.cb5-4
+		> *
+			bottom: 5.4em
+	.cl5-4
+		> *
+			left: 5.4em
+	.ctb5-4, .cbt5-4
+		> *
+			top: 5.4em
+			bottom: 5.4em
+	.clr5-4, .crl5-4
+		> *
+			left: 5.4em
+			right: 5.4em
+		
+
 	.s5-4
 		flex-basis: 5.4em
 	
+
+	// main p elements
+
 	.p5-6
-		padding: 5.6em
+		padding: 5.6em 
 	.pt5-6
 		padding-top: 5.6em
 	.pr5-6
@@ -3166,7 +4339,7 @@
 		padding-left: 5.6em
 		padding-right: 5.6em
 
-	// child elements
+	// child p elements
 
 	.cp5-6
 		> *
@@ -3193,8 +4366,11 @@
 			padding-right: 5.6em
 		
 
+
+	// main m elements
+
 	.m5-6
-		margin: 5.6em
+		margin: 5.6em 
 	.mt5-6
 		margin-top: 5.6em
 	.mr5-6
@@ -3210,7 +4386,7 @@
 		margin-left: 5.6em
 		margin-right: 5.6em
 
-	// child elements
+	// child m elements
 
 	.cm5-6
 		> *
@@ -3237,11 +4413,50 @@
 			margin-right: 5.6em
 		
 
+	.t5-6
+		top: 5.6em
+	.r5-6
+		right: 5.6em
+	.b5-6
+		bottom: 5.6em
+	.l5-6
+		left: 5.6em
+	.tb5-6, .bt5-6
+		top: 5.6em
+		bottom: 5.6em
+	.lr5-6, .rl5-6
+		left: 5.6em
+		right: 5.6em
+	.ct5-6
+		> *
+			top: 5.6em
+	.cr5-6
+		> *
+			right: 5.6em
+	.cb5-6
+		> *
+			bottom: 5.6em
+	.cl5-6
+		> *
+			left: 5.6em
+	.ctb5-6, .cbt5-6
+		> *
+			top: 5.6em
+			bottom: 5.6em
+	.clr5-6, .crl5-6
+		> *
+			left: 5.6em
+			right: 5.6em
+		
+
 	.s5-6
 		flex-basis: 5.6em
 	
+
+	// main p elements
+
 	.p5-8
-		padding: 5.8em
+		padding: 5.8em 
 	.pt5-8
 		padding-top: 5.8em
 	.pr5-8
@@ -3257,7 +4472,7 @@
 		padding-left: 5.8em
 		padding-right: 5.8em
 
-	// child elements
+	// child p elements
 
 	.cp5-8
 		> *
@@ -3284,8 +4499,11 @@
 			padding-right: 5.8em
 		
 
+
+	// main m elements
+
 	.m5-8
-		margin: 5.8em
+		margin: 5.8em 
 	.mt5-8
 		margin-top: 5.8em
 	.mr5-8
@@ -3301,7 +4519,7 @@
 		margin-left: 5.8em
 		margin-right: 5.8em
 
-	// child elements
+	// child m elements
 
 	.cm5-8
 		> *
@@ -3328,11 +4546,50 @@
 			margin-right: 5.8em
 		
 
+	.t5-8
+		top: 5.8em
+	.r5-8
+		right: 5.8em
+	.b5-8
+		bottom: 5.8em
+	.l5-8
+		left: 5.8em
+	.tb5-8, .bt5-8
+		top: 5.8em
+		bottom: 5.8em
+	.lr5-8, .rl5-8
+		left: 5.8em
+		right: 5.8em
+	.ct5-8
+		> *
+			top: 5.8em
+	.cr5-8
+		> *
+			right: 5.8em
+	.cb5-8
+		> *
+			bottom: 5.8em
+	.cl5-8
+		> *
+			left: 5.8em
+	.ctb5-8, .cbt5-8
+		> *
+			top: 5.8em
+			bottom: 5.8em
+	.clr5-8, .crl5-8
+		> *
+			left: 5.8em
+			right: 5.8em
+		
+
 	.s5-8
 		flex-basis: 5.8em
 	
+
+	// main p elements
+
 	.p6
-		padding: 6em
+		padding: 6em 
 	.pt6
 		padding-top: 6em
 	.pr6
@@ -3348,7 +4605,7 @@
 		padding-left: 6em
 		padding-right: 6em
 
-	// child elements
+	// child p elements
 
 	.cp6
 		> *
@@ -3375,8 +4632,11 @@
 			padding-right: 6em
 		
 
+
+	// main m elements
+
 	.m6
-		margin: 6em
+		margin: 6em 
 	.mt6
 		margin-top: 6em
 	.mr6
@@ -3392,7 +4652,7 @@
 		margin-left: 6em
 		margin-right: 6em
 
-	// child elements
+	// child m elements
 
 	.cm6
 		> *
@@ -3419,11 +4679,50 @@
 			margin-right: 6em
 		
 
+	.t6
+		top: 6em
+	.r6
+		right: 6em
+	.b6
+		bottom: 6em
+	.l6
+		left: 6em
+	.tb6, .bt6
+		top: 6em
+		bottom: 6em
+	.lr6, .rl6
+		left: 6em
+		right: 6em
+	.ct6
+		> *
+			top: 6em
+	.cr6
+		> *
+			right: 6em
+	.cb6
+		> *
+			bottom: 6em
+	.cl6
+		> *
+			left: 6em
+	.ctb6, .cbt6
+		> *
+			top: 6em
+			bottom: 6em
+	.clr6, .crl6
+		> *
+			left: 6em
+			right: 6em
+		
+
 	.s6
 		flex-basis: 6em
 	
+
+	// main p elements
+
 	.p6-2
-		padding: 6.2em
+		padding: 6.2em 
 	.pt6-2
 		padding-top: 6.2em
 	.pr6-2
@@ -3439,7 +4738,7 @@
 		padding-left: 6.2em
 		padding-right: 6.2em
 
-	// child elements
+	// child p elements
 
 	.cp6-2
 		> *
@@ -3466,8 +4765,11 @@
 			padding-right: 6.2em
 		
 
+
+	// main m elements
+
 	.m6-2
-		margin: 6.2em
+		margin: 6.2em 
 	.mt6-2
 		margin-top: 6.2em
 	.mr6-2
@@ -3483,7 +4785,7 @@
 		margin-left: 6.2em
 		margin-right: 6.2em
 
-	// child elements
+	// child m elements
 
 	.cm6-2
 		> *
@@ -3510,11 +4812,50 @@
 			margin-right: 6.2em
 		
 
+	.t6-2
+		top: 6.2em
+	.r6-2
+		right: 6.2em
+	.b6-2
+		bottom: 6.2em
+	.l6-2
+		left: 6.2em
+	.tb6-2, .bt6-2
+		top: 6.2em
+		bottom: 6.2em
+	.lr6-2, .rl6-2
+		left: 6.2em
+		right: 6.2em
+	.ct6-2
+		> *
+			top: 6.2em
+	.cr6-2
+		> *
+			right: 6.2em
+	.cb6-2
+		> *
+			bottom: 6.2em
+	.cl6-2
+		> *
+			left: 6.2em
+	.ctb6-2, .cbt6-2
+		> *
+			top: 6.2em
+			bottom: 6.2em
+	.clr6-2, .crl6-2
+		> *
+			left: 6.2em
+			right: 6.2em
+		
+
 	.s6-2
 		flex-basis: 6.2em
 	
+
+	// main p elements
+
 	.p6-4
-		padding: 6.4em
+		padding: 6.4em 
 	.pt6-4
 		padding-top: 6.4em
 	.pr6-4
@@ -3530,7 +4871,7 @@
 		padding-left: 6.4em
 		padding-right: 6.4em
 
-	// child elements
+	// child p elements
 
 	.cp6-4
 		> *
@@ -3557,8 +4898,11 @@
 			padding-right: 6.4em
 		
 
+
+	// main m elements
+
 	.m6-4
-		margin: 6.4em
+		margin: 6.4em 
 	.mt6-4
 		margin-top: 6.4em
 	.mr6-4
@@ -3574,7 +4918,7 @@
 		margin-left: 6.4em
 		margin-right: 6.4em
 
-	// child elements
+	// child m elements
 
 	.cm6-4
 		> *
@@ -3601,11 +4945,50 @@
 			margin-right: 6.4em
 		
 
+	.t6-4
+		top: 6.4em
+	.r6-4
+		right: 6.4em
+	.b6-4
+		bottom: 6.4em
+	.l6-4
+		left: 6.4em
+	.tb6-4, .bt6-4
+		top: 6.4em
+		bottom: 6.4em
+	.lr6-4, .rl6-4
+		left: 6.4em
+		right: 6.4em
+	.ct6-4
+		> *
+			top: 6.4em
+	.cr6-4
+		> *
+			right: 6.4em
+	.cb6-4
+		> *
+			bottom: 6.4em
+	.cl6-4
+		> *
+			left: 6.4em
+	.ctb6-4, .cbt6-4
+		> *
+			top: 6.4em
+			bottom: 6.4em
+	.clr6-4, .crl6-4
+		> *
+			left: 6.4em
+			right: 6.4em
+		
+
 	.s6-4
 		flex-basis: 6.4em
 	
+
+	// main p elements
+
 	.p6-6
-		padding: 6.6em
+		padding: 6.6em 
 	.pt6-6
 		padding-top: 6.6em
 	.pr6-6
@@ -3621,7 +5004,7 @@
 		padding-left: 6.6em
 		padding-right: 6.6em
 
-	// child elements
+	// child p elements
 
 	.cp6-6
 		> *
@@ -3648,8 +5031,11 @@
 			padding-right: 6.6em
 		
 
+
+	// main m elements
+
 	.m6-6
-		margin: 6.6em
+		margin: 6.6em 
 	.mt6-6
 		margin-top: 6.6em
 	.mr6-6
@@ -3665,7 +5051,7 @@
 		margin-left: 6.6em
 		margin-right: 6.6em
 
-	// child elements
+	// child m elements
 
 	.cm6-6
 		> *
@@ -3692,11 +5078,50 @@
 			margin-right: 6.6em
 		
 
+	.t6-6
+		top: 6.6em
+	.r6-6
+		right: 6.6em
+	.b6-6
+		bottom: 6.6em
+	.l6-6
+		left: 6.6em
+	.tb6-6, .bt6-6
+		top: 6.6em
+		bottom: 6.6em
+	.lr6-6, .rl6-6
+		left: 6.6em
+		right: 6.6em
+	.ct6-6
+		> *
+			top: 6.6em
+	.cr6-6
+		> *
+			right: 6.6em
+	.cb6-6
+		> *
+			bottom: 6.6em
+	.cl6-6
+		> *
+			left: 6.6em
+	.ctb6-6, .cbt6-6
+		> *
+			top: 6.6em
+			bottom: 6.6em
+	.clr6-6, .crl6-6
+		> *
+			left: 6.6em
+			right: 6.6em
+		
+
 	.s6-6
 		flex-basis: 6.6em
 	
+
+	// main p elements
+
 	.p6-8
-		padding: 6.8em
+		padding: 6.8em 
 	.pt6-8
 		padding-top: 6.8em
 	.pr6-8
@@ -3712,7 +5137,7 @@
 		padding-left: 6.8em
 		padding-right: 6.8em
 
-	// child elements
+	// child p elements
 
 	.cp6-8
 		> *
@@ -3739,8 +5164,11 @@
 			padding-right: 6.8em
 		
 
+
+	// main m elements
+
 	.m6-8
-		margin: 6.8em
+		margin: 6.8em 
 	.mt6-8
 		margin-top: 6.8em
 	.mr6-8
@@ -3756,7 +5184,7 @@
 		margin-left: 6.8em
 		margin-right: 6.8em
 
-	// child elements
+	// child m elements
 
 	.cm6-8
 		> *
@@ -3783,11 +5211,50 @@
 			margin-right: 6.8em
 		
 
+	.t6-8
+		top: 6.8em
+	.r6-8
+		right: 6.8em
+	.b6-8
+		bottom: 6.8em
+	.l6-8
+		left: 6.8em
+	.tb6-8, .bt6-8
+		top: 6.8em
+		bottom: 6.8em
+	.lr6-8, .rl6-8
+		left: 6.8em
+		right: 6.8em
+	.ct6-8
+		> *
+			top: 6.8em
+	.cr6-8
+		> *
+			right: 6.8em
+	.cb6-8
+		> *
+			bottom: 6.8em
+	.cl6-8
+		> *
+			left: 6.8em
+	.ctb6-8, .cbt6-8
+		> *
+			top: 6.8em
+			bottom: 6.8em
+	.clr6-8, .crl6-8
+		> *
+			left: 6.8em
+			right: 6.8em
+		
+
 	.s6-8
 		flex-basis: 6.8em
 	
+
+	// main p elements
+
 	.p7
-		padding: 7em
+		padding: 7em 
 	.pt7
 		padding-top: 7em
 	.pr7
@@ -3803,7 +5270,7 @@
 		padding-left: 7em
 		padding-right: 7em
 
-	// child elements
+	// child p elements
 
 	.cp7
 		> *
@@ -3830,8 +5297,11 @@
 			padding-right: 7em
 		
 
+
+	// main m elements
+
 	.m7
-		margin: 7em
+		margin: 7em 
 	.mt7
 		margin-top: 7em
 	.mr7
@@ -3847,7 +5317,7 @@
 		margin-left: 7em
 		margin-right: 7em
 
-	// child elements
+	// child m elements
 
 	.cm7
 		> *
@@ -3874,11 +5344,50 @@
 			margin-right: 7em
 		
 
+	.t7
+		top: 7em
+	.r7
+		right: 7em
+	.b7
+		bottom: 7em
+	.l7
+		left: 7em
+	.tb7, .bt7
+		top: 7em
+		bottom: 7em
+	.lr7, .rl7
+		left: 7em
+		right: 7em
+	.ct7
+		> *
+			top: 7em
+	.cr7
+		> *
+			right: 7em
+	.cb7
+		> *
+			bottom: 7em
+	.cl7
+		> *
+			left: 7em
+	.ctb7, .cbt7
+		> *
+			top: 7em
+			bottom: 7em
+	.clr7, .crl7
+		> *
+			left: 7em
+			right: 7em
+		
+
 	.s7
 		flex-basis: 7em
 	
+
+	// main p elements
+
 	.p7-2
-		padding: 7.2em
+		padding: 7.2em 
 	.pt7-2
 		padding-top: 7.2em
 	.pr7-2
@@ -3894,7 +5403,7 @@
 		padding-left: 7.2em
 		padding-right: 7.2em
 
-	// child elements
+	// child p elements
 
 	.cp7-2
 		> *
@@ -3921,8 +5430,11 @@
 			padding-right: 7.2em
 		
 
+
+	// main m elements
+
 	.m7-2
-		margin: 7.2em
+		margin: 7.2em 
 	.mt7-2
 		margin-top: 7.2em
 	.mr7-2
@@ -3938,7 +5450,7 @@
 		margin-left: 7.2em
 		margin-right: 7.2em
 
-	// child elements
+	// child m elements
 
 	.cm7-2
 		> *
@@ -3965,11 +5477,50 @@
 			margin-right: 7.2em
 		
 
+	.t7-2
+		top: 7.2em
+	.r7-2
+		right: 7.2em
+	.b7-2
+		bottom: 7.2em
+	.l7-2
+		left: 7.2em
+	.tb7-2, .bt7-2
+		top: 7.2em
+		bottom: 7.2em
+	.lr7-2, .rl7-2
+		left: 7.2em
+		right: 7.2em
+	.ct7-2
+		> *
+			top: 7.2em
+	.cr7-2
+		> *
+			right: 7.2em
+	.cb7-2
+		> *
+			bottom: 7.2em
+	.cl7-2
+		> *
+			left: 7.2em
+	.ctb7-2, .cbt7-2
+		> *
+			top: 7.2em
+			bottom: 7.2em
+	.clr7-2, .crl7-2
+		> *
+			left: 7.2em
+			right: 7.2em
+		
+
 	.s7-2
 		flex-basis: 7.2em
 	
+
+	// main p elements
+
 	.p7-4
-		padding: 7.4em
+		padding: 7.4em 
 	.pt7-4
 		padding-top: 7.4em
 	.pr7-4
@@ -3985,7 +5536,7 @@
 		padding-left: 7.4em
 		padding-right: 7.4em
 
-	// child elements
+	// child p elements
 
 	.cp7-4
 		> *
@@ -4012,8 +5563,11 @@
 			padding-right: 7.4em
 		
 
+
+	// main m elements
+
 	.m7-4
-		margin: 7.4em
+		margin: 7.4em 
 	.mt7-4
 		margin-top: 7.4em
 	.mr7-4
@@ -4029,7 +5583,7 @@
 		margin-left: 7.4em
 		margin-right: 7.4em
 
-	// child elements
+	// child m elements
 
 	.cm7-4
 		> *
@@ -4056,11 +5610,50 @@
 			margin-right: 7.4em
 		
 
+	.t7-4
+		top: 7.4em
+	.r7-4
+		right: 7.4em
+	.b7-4
+		bottom: 7.4em
+	.l7-4
+		left: 7.4em
+	.tb7-4, .bt7-4
+		top: 7.4em
+		bottom: 7.4em
+	.lr7-4, .rl7-4
+		left: 7.4em
+		right: 7.4em
+	.ct7-4
+		> *
+			top: 7.4em
+	.cr7-4
+		> *
+			right: 7.4em
+	.cb7-4
+		> *
+			bottom: 7.4em
+	.cl7-4
+		> *
+			left: 7.4em
+	.ctb7-4, .cbt7-4
+		> *
+			top: 7.4em
+			bottom: 7.4em
+	.clr7-4, .crl7-4
+		> *
+			left: 7.4em
+			right: 7.4em
+		
+
 	.s7-4
 		flex-basis: 7.4em
 	
+
+	// main p elements
+
 	.p7-6
-		padding: 7.6em
+		padding: 7.6em 
 	.pt7-6
 		padding-top: 7.6em
 	.pr7-6
@@ -4076,7 +5669,7 @@
 		padding-left: 7.6em
 		padding-right: 7.6em
 
-	// child elements
+	// child p elements
 
 	.cp7-6
 		> *
@@ -4103,8 +5696,11 @@
 			padding-right: 7.6em
 		
 
+
+	// main m elements
+
 	.m7-6
-		margin: 7.6em
+		margin: 7.6em 
 	.mt7-6
 		margin-top: 7.6em
 	.mr7-6
@@ -4120,7 +5716,7 @@
 		margin-left: 7.6em
 		margin-right: 7.6em
 
-	// child elements
+	// child m elements
 
 	.cm7-6
 		> *
@@ -4147,11 +5743,50 @@
 			margin-right: 7.6em
 		
 
+	.t7-6
+		top: 7.6em
+	.r7-6
+		right: 7.6em
+	.b7-6
+		bottom: 7.6em
+	.l7-6
+		left: 7.6em
+	.tb7-6, .bt7-6
+		top: 7.6em
+		bottom: 7.6em
+	.lr7-6, .rl7-6
+		left: 7.6em
+		right: 7.6em
+	.ct7-6
+		> *
+			top: 7.6em
+	.cr7-6
+		> *
+			right: 7.6em
+	.cb7-6
+		> *
+			bottom: 7.6em
+	.cl7-6
+		> *
+			left: 7.6em
+	.ctb7-6, .cbt7-6
+		> *
+			top: 7.6em
+			bottom: 7.6em
+	.clr7-6, .crl7-6
+		> *
+			left: 7.6em
+			right: 7.6em
+		
+
 	.s7-6
 		flex-basis: 7.6em
 	
+
+	// main p elements
+
 	.p7-8
-		padding: 7.8em
+		padding: 7.8em 
 	.pt7-8
 		padding-top: 7.8em
 	.pr7-8
@@ -4167,7 +5802,7 @@
 		padding-left: 7.8em
 		padding-right: 7.8em
 
-	// child elements
+	// child p elements
 
 	.cp7-8
 		> *
@@ -4194,8 +5829,11 @@
 			padding-right: 7.8em
 		
 
+
+	// main m elements
+
 	.m7-8
-		margin: 7.8em
+		margin: 7.8em 
 	.mt7-8
 		margin-top: 7.8em
 	.mr7-8
@@ -4211,7 +5849,7 @@
 		margin-left: 7.8em
 		margin-right: 7.8em
 
-	// child elements
+	// child m elements
 
 	.cm7-8
 		> *
@@ -4238,11 +5876,50 @@
 			margin-right: 7.8em
 		
 
+	.t7-8
+		top: 7.8em
+	.r7-8
+		right: 7.8em
+	.b7-8
+		bottom: 7.8em
+	.l7-8
+		left: 7.8em
+	.tb7-8, .bt7-8
+		top: 7.8em
+		bottom: 7.8em
+	.lr7-8, .rl7-8
+		left: 7.8em
+		right: 7.8em
+	.ct7-8
+		> *
+			top: 7.8em
+	.cr7-8
+		> *
+			right: 7.8em
+	.cb7-8
+		> *
+			bottom: 7.8em
+	.cl7-8
+		> *
+			left: 7.8em
+	.ctb7-8, .cbt7-8
+		> *
+			top: 7.8em
+			bottom: 7.8em
+	.clr7-8, .crl7-8
+		> *
+			left: 7.8em
+			right: 7.8em
+		
+
 	.s7-8
 		flex-basis: 7.8em
 	
+
+	// main p elements
+
 	.p8
-		padding: 8em
+		padding: 8em 
 	.pt8
 		padding-top: 8em
 	.pr8
@@ -4258,7 +5935,7 @@
 		padding-left: 8em
 		padding-right: 8em
 
-	// child elements
+	// child p elements
 
 	.cp8
 		> *
@@ -4285,8 +5962,11 @@
 			padding-right: 8em
 		
 
+
+	// main m elements
+
 	.m8
-		margin: 8em
+		margin: 8em 
 	.mt8
 		margin-top: 8em
 	.mr8
@@ -4302,7 +5982,7 @@
 		margin-left: 8em
 		margin-right: 8em
 
-	// child elements
+	// child m elements
 
 	.cm8
 		> *
@@ -4327,6 +6007,42 @@
 		> *
 			margin-left: 8em
 			margin-right: 8em
+		
+
+	.t8
+		top: 8em
+	.r8
+		right: 8em
+	.b8
+		bottom: 8em
+	.l8
+		left: 8em
+	.tb8, .bt8
+		top: 8em
+		bottom: 8em
+	.lr8, .rl8
+		left: 8em
+		right: 8em
+	.ct8
+		> *
+			top: 8em
+	.cr8
+		> *
+			right: 8em
+	.cb8
+		> *
+			bottom: 8em
+	.cl8
+		> *
+			left: 8em
+	.ctb8, .cbt8
+		> *
+			top: 8em
+			bottom: 8em
+	.clr8, .crl8
+		> *
+			left: 8em
+			right: 8em
 		
 
 	.s8
@@ -4408,6 +6124,9 @@
 		border-left-width: 0px
 		border-style: dotted
 		
+	.radius0
+		border-radius: 0px
+
 	.b1-solid
 		border-width: 1px
 		border-style: solid
@@ -4480,6 +6199,9 @@
 		border-left-width: 1px
 		border-style: dotted
 		
+	.radius1
+		border-radius: 1px
+
 	.b2-solid
 		border-width: 2px
 		border-style: solid
@@ -4552,6 +6274,9 @@
 		border-left-width: 2px
 		border-style: dotted
 		
+	.radius2
+		border-radius: 2px
+
 	.b3-solid
 		border-width: 3px
 		border-style: solid
@@ -4624,6 +6349,9 @@
 		border-left-width: 3px
 		border-style: dotted
 		
+	.radius3
+		border-radius: 3px
+
 	.b4-solid
 		border-width: 4px
 		border-style: solid
@@ -4696,6 +6424,9 @@
 		border-left-width: 4px
 		border-style: dotted
 		
+	.radius4
+		border-radius: 4px
+
 	.b5-solid
 		border-width: 5px
 		border-style: solid
@@ -4768,6 +6499,9 @@
 		border-left-width: 5px
 		border-style: dotted
 		
+	.radius5
+		border-radius: 5px
+
 	.b6-solid
 		border-width: 6px
 		border-style: solid
@@ -4840,6 +6574,9 @@
 		border-left-width: 6px
 		border-style: dotted
 		
+	.radius6
+		border-radius: 6px
+
 	.b7-solid
 		border-width: 7px
 		border-style: solid
@@ -4912,6 +6649,9 @@
 		border-left-width: 7px
 		border-style: dotted
 		
+	.radius7
+		border-radius: 7px
+
 	.b8-solid
 		border-width: 8px
 		border-style: solid
@@ -4984,6 +6724,9 @@
 		border-left-width: 8px
 		border-style: dotted
 		
+	.radius8
+		border-radius: 8px
+
 
 	// ---------- 004 top left bottom right width height origin ----------
 
@@ -4993,3842 +6736,7074 @@
 
 	.t0em
 		top: 0em
-	.t0
+	.t0pc
 		top: 0%
+	.t0px
+		top: 0px
 	.l0em
 		left: 0em
-	.l0
+	.l0pc
 		left: 0%
+	.l0px
+		left: 0px
 	.b0em
 		bottom: 0em
-	.b0
+	.b0pc
 		bottom: 0%
+	.b0px
+		bottom: 0px
 	.r0em
 		right: 0em
-	.r0
+	.r0pc
 		right: 0%
+	.r0px
+		right: 0px
 	.w0em
 		width: 0em
-	.w0
+	.w0pc
 		width: 0%
+	.w0px
+		width: 0px
 	.h0em
 		height: 0em
-	.h0
+	.h0pc
 		height: 0%
-	.o0
-		transform-origin: 0% 0%
+	.h0px
+		height: 0px
 	.max-width0em
 		max-width: 0em
-	.max-width0
+	.max-width0pc
 		max-width: 0%
+	.max-width0px
+		max-width: 0px
 	.max-height0em
 		max-height: 0em
-	.max-height0
+	.max-height0pc
 		max-height: 0%
+	.max-height0px
+		max-height: 0px
+	.min-width0em
+		min-width: 0em
+	.min-width0pc
+		min-width: 0%
+	.min-width0px
+		min-width: 0px
+	.min-height0em
+		min-height: 0em
+	.min-height0pc
+		min-height: 0%
+	.min-height0px
+		min-height: 0px
+	.z0
+		z-index: 0
 	.vh0
 		height: 0vh
 	.vw0
 		width: 0vw
+	.basis0
+		flex-basis: 0%
+	.basis0em
+		flex-basis: 0em
 	.t1em
 		top: 1em
-	.t1
+	.t1pc
 		top: 1%
+	.t1px
+		top: 1px
 	.l1em
 		left: 1em
-	.l1
+	.l1pc
 		left: 1%
+	.l1px
+		left: 1px
 	.b1em
 		bottom: 1em
-	.b1
+	.b1pc
 		bottom: 1%
+	.b1px
+		bottom: 1px
 	.r1em
 		right: 1em
-	.r1
+	.r1pc
 		right: 1%
+	.r1px
+		right: 1px
 	.w1em
 		width: 1em
-	.w1
+	.w1pc
 		width: 1%
+	.w1px
+		width: 1px
 	.h1em
 		height: 1em
-	.h1
+	.h1pc
 		height: 1%
-	.o1
-		transform-origin: 1% 1%
+	.h1px
+		height: 1px
 	.max-width1em
 		max-width: 1em
-	.max-width1
+	.max-width1pc
 		max-width: 1%
+	.max-width1px
+		max-width: 1px
 	.max-height1em
 		max-height: 1em
-	.max-height1
+	.max-height1pc
 		max-height: 1%
+	.max-height1px
+		max-height: 1px
+	.min-width1em
+		min-width: 1em
+	.min-width1pc
+		min-width: 1%
+	.min-width1px
+		min-width: 1px
+	.min-height1em
+		min-height: 1em
+	.min-height1pc
+		min-height: 1%
+	.min-height1px
+		min-height: 1px
+	.z1
+		z-index: 1
 	.vh1
 		height: 1vh
 	.vw1
 		width: 1vw
+	.basis1
+		flex-basis: 1%
+	.basis1em
+		flex-basis: 1em
 	.t2em
 		top: 2em
-	.t2
+	.t2pc
 		top: 2%
+	.t2px
+		top: 2px
 	.l2em
 		left: 2em
-	.l2
+	.l2pc
 		left: 2%
+	.l2px
+		left: 2px
 	.b2em
 		bottom: 2em
-	.b2
+	.b2pc
 		bottom: 2%
+	.b2px
+		bottom: 2px
 	.r2em
 		right: 2em
-	.r2
+	.r2pc
 		right: 2%
+	.r2px
+		right: 2px
 	.w2em
 		width: 2em
-	.w2
+	.w2pc
 		width: 2%
+	.w2px
+		width: 2px
 	.h2em
 		height: 2em
-	.h2
+	.h2pc
 		height: 2%
-	.o2
-		transform-origin: 2% 2%
+	.h2px
+		height: 2px
 	.max-width2em
 		max-width: 2em
-	.max-width2
+	.max-width2pc
 		max-width: 2%
+	.max-width2px
+		max-width: 2px
 	.max-height2em
 		max-height: 2em
-	.max-height2
+	.max-height2pc
 		max-height: 2%
+	.max-height2px
+		max-height: 2px
+	.min-width2em
+		min-width: 2em
+	.min-width2pc
+		min-width: 2%
+	.min-width2px
+		min-width: 2px
+	.min-height2em
+		min-height: 2em
+	.min-height2pc
+		min-height: 2%
+	.min-height2px
+		min-height: 2px
+	.z2
+		z-index: 2
 	.vh2
 		height: 2vh
 	.vw2
 		width: 2vw
+	.basis2
+		flex-basis: 2%
+	.basis2em
+		flex-basis: 2em
 	.t3em
 		top: 3em
-	.t3
+	.t3pc
 		top: 3%
+	.t3px
+		top: 3px
 	.l3em
 		left: 3em
-	.l3
+	.l3pc
 		left: 3%
+	.l3px
+		left: 3px
 	.b3em
 		bottom: 3em
-	.b3
+	.b3pc
 		bottom: 3%
+	.b3px
+		bottom: 3px
 	.r3em
 		right: 3em
-	.r3
+	.r3pc
 		right: 3%
+	.r3px
+		right: 3px
 	.w3em
 		width: 3em
-	.w3
+	.w3pc
 		width: 3%
+	.w3px
+		width: 3px
 	.h3em
 		height: 3em
-	.h3
+	.h3pc
 		height: 3%
-	.o3
-		transform-origin: 3% 3%
+	.h3px
+		height: 3px
 	.max-width3em
 		max-width: 3em
-	.max-width3
+	.max-width3pc
 		max-width: 3%
+	.max-width3px
+		max-width: 3px
 	.max-height3em
 		max-height: 3em
-	.max-height3
+	.max-height3pc
 		max-height: 3%
+	.max-height3px
+		max-height: 3px
+	.min-width3em
+		min-width: 3em
+	.min-width3pc
+		min-width: 3%
+	.min-width3px
+		min-width: 3px
+	.min-height3em
+		min-height: 3em
+	.min-height3pc
+		min-height: 3%
+	.min-height3px
+		min-height: 3px
+	.z3
+		z-index: 3
 	.vh3
 		height: 3vh
 	.vw3
 		width: 3vw
+	.basis3
+		flex-basis: 3%
+	.basis3em
+		flex-basis: 3em
 	.t4em
 		top: 4em
-	.t4
+	.t4pc
 		top: 4%
+	.t4px
+		top: 4px
 	.l4em
 		left: 4em
-	.l4
+	.l4pc
 		left: 4%
+	.l4px
+		left: 4px
 	.b4em
 		bottom: 4em
-	.b4
+	.b4pc
 		bottom: 4%
+	.b4px
+		bottom: 4px
 	.r4em
 		right: 4em
-	.r4
+	.r4pc
 		right: 4%
+	.r4px
+		right: 4px
 	.w4em
 		width: 4em
-	.w4
+	.w4pc
 		width: 4%
+	.w4px
+		width: 4px
 	.h4em
 		height: 4em
-	.h4
+	.h4pc
 		height: 4%
-	.o4
-		transform-origin: 4% 4%
+	.h4px
+		height: 4px
 	.max-width4em
 		max-width: 4em
-	.max-width4
+	.max-width4pc
 		max-width: 4%
+	.max-width4px
+		max-width: 4px
 	.max-height4em
 		max-height: 4em
-	.max-height4
+	.max-height4pc
 		max-height: 4%
+	.max-height4px
+		max-height: 4px
+	.min-width4em
+		min-width: 4em
+	.min-width4pc
+		min-width: 4%
+	.min-width4px
+		min-width: 4px
+	.min-height4em
+		min-height: 4em
+	.min-height4pc
+		min-height: 4%
+	.min-height4px
+		min-height: 4px
+	.z4
+		z-index: 4
 	.vh4
 		height: 4vh
 	.vw4
 		width: 4vw
+	.basis4
+		flex-basis: 4%
+	.basis4em
+		flex-basis: 4em
 	.t5em
 		top: 5em
-	.t5
+	.t5pc
 		top: 5%
+	.t5px
+		top: 5px
 	.l5em
 		left: 5em
-	.l5
+	.l5pc
 		left: 5%
+	.l5px
+		left: 5px
 	.b5em
 		bottom: 5em
-	.b5
+	.b5pc
 		bottom: 5%
+	.b5px
+		bottom: 5px
 	.r5em
 		right: 5em
-	.r5
+	.r5pc
 		right: 5%
+	.r5px
+		right: 5px
 	.w5em
 		width: 5em
-	.w5
+	.w5pc
 		width: 5%
+	.w5px
+		width: 5px
 	.h5em
 		height: 5em
-	.h5
+	.h5pc
 		height: 5%
-	.o5
-		transform-origin: 5% 5%
+	.h5px
+		height: 5px
 	.max-width5em
 		max-width: 5em
-	.max-width5
+	.max-width5pc
 		max-width: 5%
+	.max-width5px
+		max-width: 5px
 	.max-height5em
 		max-height: 5em
-	.max-height5
+	.max-height5pc
 		max-height: 5%
+	.max-height5px
+		max-height: 5px
+	.min-width5em
+		min-width: 5em
+	.min-width5pc
+		min-width: 5%
+	.min-width5px
+		min-width: 5px
+	.min-height5em
+		min-height: 5em
+	.min-height5pc
+		min-height: 5%
+	.min-height5px
+		min-height: 5px
+	.z5
+		z-index: 5
 	.vh5
 		height: 5vh
 	.vw5
 		width: 5vw
+	.basis5
+		flex-basis: 5%
+	.basis5em
+		flex-basis: 5em
 	.t6em
 		top: 6em
-	.t6
+	.t6pc
 		top: 6%
+	.t6px
+		top: 6px
 	.l6em
 		left: 6em
-	.l6
+	.l6pc
 		left: 6%
+	.l6px
+		left: 6px
 	.b6em
 		bottom: 6em
-	.b6
+	.b6pc
 		bottom: 6%
+	.b6px
+		bottom: 6px
 	.r6em
 		right: 6em
-	.r6
+	.r6pc
 		right: 6%
+	.r6px
+		right: 6px
 	.w6em
 		width: 6em
-	.w6
+	.w6pc
 		width: 6%
+	.w6px
+		width: 6px
 	.h6em
 		height: 6em
-	.h6
+	.h6pc
 		height: 6%
-	.o6
-		transform-origin: 6% 6%
+	.h6px
+		height: 6px
 	.max-width6em
 		max-width: 6em
-	.max-width6
+	.max-width6pc
 		max-width: 6%
+	.max-width6px
+		max-width: 6px
 	.max-height6em
 		max-height: 6em
-	.max-height6
+	.max-height6pc
 		max-height: 6%
+	.max-height6px
+		max-height: 6px
+	.min-width6em
+		min-width: 6em
+	.min-width6pc
+		min-width: 6%
+	.min-width6px
+		min-width: 6px
+	.min-height6em
+		min-height: 6em
+	.min-height6pc
+		min-height: 6%
+	.min-height6px
+		min-height: 6px
+	.z6
+		z-index: 6
 	.vh6
 		height: 6vh
 	.vw6
 		width: 6vw
+	.basis6
+		flex-basis: 6%
+	.basis6em
+		flex-basis: 6em
 	.t7em
 		top: 7em
-	.t7
+	.t7pc
 		top: 7%
+	.t7px
+		top: 7px
 	.l7em
 		left: 7em
-	.l7
+	.l7pc
 		left: 7%
+	.l7px
+		left: 7px
 	.b7em
 		bottom: 7em
-	.b7
+	.b7pc
 		bottom: 7%
+	.b7px
+		bottom: 7px
 	.r7em
 		right: 7em
-	.r7
+	.r7pc
 		right: 7%
+	.r7px
+		right: 7px
 	.w7em
 		width: 7em
-	.w7
+	.w7pc
 		width: 7%
+	.w7px
+		width: 7px
 	.h7em
 		height: 7em
-	.h7
+	.h7pc
 		height: 7%
-	.o7
-		transform-origin: 7% 7%
+	.h7px
+		height: 7px
 	.max-width7em
 		max-width: 7em
-	.max-width7
+	.max-width7pc
 		max-width: 7%
+	.max-width7px
+		max-width: 7px
 	.max-height7em
 		max-height: 7em
-	.max-height7
+	.max-height7pc
 		max-height: 7%
+	.max-height7px
+		max-height: 7px
+	.min-width7em
+		min-width: 7em
+	.min-width7pc
+		min-width: 7%
+	.min-width7px
+		min-width: 7px
+	.min-height7em
+		min-height: 7em
+	.min-height7pc
+		min-height: 7%
+	.min-height7px
+		min-height: 7px
+	.z7
+		z-index: 7
 	.vh7
 		height: 7vh
 	.vw7
 		width: 7vw
+	.basis7
+		flex-basis: 7%
+	.basis7em
+		flex-basis: 7em
 	.t8em
 		top: 8em
-	.t8
+	.t8pc
 		top: 8%
+	.t8px
+		top: 8px
 	.l8em
 		left: 8em
-	.l8
+	.l8pc
 		left: 8%
+	.l8px
+		left: 8px
 	.b8em
 		bottom: 8em
-	.b8
+	.b8pc
 		bottom: 8%
+	.b8px
+		bottom: 8px
 	.r8em
 		right: 8em
-	.r8
+	.r8pc
 		right: 8%
+	.r8px
+		right: 8px
 	.w8em
 		width: 8em
-	.w8
+	.w8pc
 		width: 8%
+	.w8px
+		width: 8px
 	.h8em
 		height: 8em
-	.h8
+	.h8pc
 		height: 8%
-	.o8
-		transform-origin: 8% 8%
+	.h8px
+		height: 8px
 	.max-width8em
 		max-width: 8em
-	.max-width8
+	.max-width8pc
 		max-width: 8%
+	.max-width8px
+		max-width: 8px
 	.max-height8em
 		max-height: 8em
-	.max-height8
+	.max-height8pc
 		max-height: 8%
+	.max-height8px
+		max-height: 8px
+	.min-width8em
+		min-width: 8em
+	.min-width8pc
+		min-width: 8%
+	.min-width8px
+		min-width: 8px
+	.min-height8em
+		min-height: 8em
+	.min-height8pc
+		min-height: 8%
+	.min-height8px
+		min-height: 8px
+	.z8
+		z-index: 8
 	.vh8
 		height: 8vh
 	.vw8
 		width: 8vw
+	.basis8
+		flex-basis: 8%
+	.basis8em
+		flex-basis: 8em
 	.t9em
 		top: 9em
-	.t9
+	.t9pc
 		top: 9%
+	.t9px
+		top: 9px
 	.l9em
 		left: 9em
-	.l9
+	.l9pc
 		left: 9%
+	.l9px
+		left: 9px
 	.b9em
 		bottom: 9em
-	.b9
+	.b9pc
 		bottom: 9%
+	.b9px
+		bottom: 9px
 	.r9em
 		right: 9em
-	.r9
+	.r9pc
 		right: 9%
+	.r9px
+		right: 9px
 	.w9em
 		width: 9em
-	.w9
+	.w9pc
 		width: 9%
+	.w9px
+		width: 9px
 	.h9em
 		height: 9em
-	.h9
+	.h9pc
 		height: 9%
-	.o9
-		transform-origin: 9% 9%
+	.h9px
+		height: 9px
 	.max-width9em
 		max-width: 9em
-	.max-width9
+	.max-width9pc
 		max-width: 9%
+	.max-width9px
+		max-width: 9px
 	.max-height9em
 		max-height: 9em
-	.max-height9
+	.max-height9pc
 		max-height: 9%
+	.max-height9px
+		max-height: 9px
+	.min-width9em
+		min-width: 9em
+	.min-width9pc
+		min-width: 9%
+	.min-width9px
+		min-width: 9px
+	.min-height9em
+		min-height: 9em
+	.min-height9pc
+		min-height: 9%
+	.min-height9px
+		min-height: 9px
+	.z9
+		z-index: 9
 	.vh9
 		height: 9vh
 	.vw9
 		width: 9vw
+	.basis9
+		flex-basis: 9%
+	.basis9em
+		flex-basis: 9em
 	.t10em
 		top: 10em
-	.t10
+	.t10pc
 		top: 10%
+	.t10px
+		top: 10px
 	.l10em
 		left: 10em
-	.l10
+	.l10pc
 		left: 10%
+	.l10px
+		left: 10px
 	.b10em
 		bottom: 10em
-	.b10
+	.b10pc
 		bottom: 10%
+	.b10px
+		bottom: 10px
 	.r10em
 		right: 10em
-	.r10
+	.r10pc
 		right: 10%
+	.r10px
+		right: 10px
 	.w10em
 		width: 10em
-	.w10
+	.w10pc
 		width: 10%
+	.w10px
+		width: 10px
 	.h10em
 		height: 10em
-	.h10
+	.h10pc
 		height: 10%
-	.o10
-		transform-origin: 10% 10%
+	.h10px
+		height: 10px
 	.max-width10em
 		max-width: 10em
-	.max-width10
+	.max-width10pc
 		max-width: 10%
+	.max-width10px
+		max-width: 10px
 	.max-height10em
 		max-height: 10em
-	.max-height10
+	.max-height10pc
 		max-height: 10%
+	.max-height10px
+		max-height: 10px
+	.min-width10em
+		min-width: 10em
+	.min-width10pc
+		min-width: 10%
+	.min-width10px
+		min-width: 10px
+	.min-height10em
+		min-height: 10em
+	.min-height10pc
+		min-height: 10%
+	.min-height10px
+		min-height: 10px
+	.z10
+		z-index: 10
 	.vh10
 		height: 10vh
 	.vw10
 		width: 10vw
+	.basis10
+		flex-basis: 10%
+	.basis10em
+		flex-basis: 10em
 	.t11em
 		top: 11em
-	.t11
+	.t11pc
 		top: 11%
+	.t11px
+		top: 11px
 	.l11em
 		left: 11em
-	.l11
+	.l11pc
 		left: 11%
+	.l11px
+		left: 11px
 	.b11em
 		bottom: 11em
-	.b11
+	.b11pc
 		bottom: 11%
+	.b11px
+		bottom: 11px
 	.r11em
 		right: 11em
-	.r11
+	.r11pc
 		right: 11%
+	.r11px
+		right: 11px
 	.w11em
 		width: 11em
-	.w11
+	.w11pc
 		width: 11%
+	.w11px
+		width: 11px
 	.h11em
 		height: 11em
-	.h11
+	.h11pc
 		height: 11%
-	.o11
-		transform-origin: 11% 11%
+	.h11px
+		height: 11px
 	.max-width11em
 		max-width: 11em
-	.max-width11
+	.max-width11pc
 		max-width: 11%
+	.max-width11px
+		max-width: 11px
 	.max-height11em
 		max-height: 11em
-	.max-height11
+	.max-height11pc
 		max-height: 11%
+	.max-height11px
+		max-height: 11px
+	.min-width11em
+		min-width: 11em
+	.min-width11pc
+		min-width: 11%
+	.min-width11px
+		min-width: 11px
+	.min-height11em
+		min-height: 11em
+	.min-height11pc
+		min-height: 11%
+	.min-height11px
+		min-height: 11px
+	.z11
+		z-index: 11
 	.vh11
 		height: 11vh
 	.vw11
 		width: 11vw
+	.basis11
+		flex-basis: 11%
+	.basis11em
+		flex-basis: 11em
 	.t12em
 		top: 12em
-	.t12
+	.t12pc
 		top: 12%
+	.t12px
+		top: 12px
 	.l12em
 		left: 12em
-	.l12
+	.l12pc
 		left: 12%
+	.l12px
+		left: 12px
 	.b12em
 		bottom: 12em
-	.b12
+	.b12pc
 		bottom: 12%
+	.b12px
+		bottom: 12px
 	.r12em
 		right: 12em
-	.r12
+	.r12pc
 		right: 12%
+	.r12px
+		right: 12px
 	.w12em
 		width: 12em
-	.w12
+	.w12pc
 		width: 12%
+	.w12px
+		width: 12px
 	.h12em
 		height: 12em
-	.h12
+	.h12pc
 		height: 12%
-	.o12
-		transform-origin: 12% 12%
+	.h12px
+		height: 12px
 	.max-width12em
 		max-width: 12em
-	.max-width12
+	.max-width12pc
 		max-width: 12%
+	.max-width12px
+		max-width: 12px
 	.max-height12em
 		max-height: 12em
-	.max-height12
+	.max-height12pc
 		max-height: 12%
+	.max-height12px
+		max-height: 12px
+	.min-width12em
+		min-width: 12em
+	.min-width12pc
+		min-width: 12%
+	.min-width12px
+		min-width: 12px
+	.min-height12em
+		min-height: 12em
+	.min-height12pc
+		min-height: 12%
+	.min-height12px
+		min-height: 12px
+	.z12
+		z-index: 12
 	.vh12
 		height: 12vh
 	.vw12
 		width: 12vw
+	.basis12
+		flex-basis: 12%
+	.basis12em
+		flex-basis: 12em
 	.t13em
 		top: 13em
-	.t13
+	.t13pc
 		top: 13%
+	.t13px
+		top: 13px
 	.l13em
 		left: 13em
-	.l13
+	.l13pc
 		left: 13%
+	.l13px
+		left: 13px
 	.b13em
 		bottom: 13em
-	.b13
+	.b13pc
 		bottom: 13%
+	.b13px
+		bottom: 13px
 	.r13em
 		right: 13em
-	.r13
+	.r13pc
 		right: 13%
+	.r13px
+		right: 13px
 	.w13em
 		width: 13em
-	.w13
+	.w13pc
 		width: 13%
+	.w13px
+		width: 13px
 	.h13em
 		height: 13em
-	.h13
+	.h13pc
 		height: 13%
-	.o13
-		transform-origin: 13% 13%
+	.h13px
+		height: 13px
 	.max-width13em
 		max-width: 13em
-	.max-width13
+	.max-width13pc
 		max-width: 13%
+	.max-width13px
+		max-width: 13px
 	.max-height13em
 		max-height: 13em
-	.max-height13
+	.max-height13pc
 		max-height: 13%
+	.max-height13px
+		max-height: 13px
+	.min-width13em
+		min-width: 13em
+	.min-width13pc
+		min-width: 13%
+	.min-width13px
+		min-width: 13px
+	.min-height13em
+		min-height: 13em
+	.min-height13pc
+		min-height: 13%
+	.min-height13px
+		min-height: 13px
+	.z13
+		z-index: 13
 	.vh13
 		height: 13vh
 	.vw13
 		width: 13vw
+	.basis13
+		flex-basis: 13%
+	.basis13em
+		flex-basis: 13em
 	.t14em
 		top: 14em
-	.t14
+	.t14pc
 		top: 14%
+	.t14px
+		top: 14px
 	.l14em
 		left: 14em
-	.l14
+	.l14pc
 		left: 14%
+	.l14px
+		left: 14px
 	.b14em
 		bottom: 14em
-	.b14
+	.b14pc
 		bottom: 14%
+	.b14px
+		bottom: 14px
 	.r14em
 		right: 14em
-	.r14
+	.r14pc
 		right: 14%
+	.r14px
+		right: 14px
 	.w14em
 		width: 14em
-	.w14
+	.w14pc
 		width: 14%
+	.w14px
+		width: 14px
 	.h14em
 		height: 14em
-	.h14
+	.h14pc
 		height: 14%
-	.o14
-		transform-origin: 14% 14%
+	.h14px
+		height: 14px
 	.max-width14em
 		max-width: 14em
-	.max-width14
+	.max-width14pc
 		max-width: 14%
+	.max-width14px
+		max-width: 14px
 	.max-height14em
 		max-height: 14em
-	.max-height14
+	.max-height14pc
 		max-height: 14%
+	.max-height14px
+		max-height: 14px
+	.min-width14em
+		min-width: 14em
+	.min-width14pc
+		min-width: 14%
+	.min-width14px
+		min-width: 14px
+	.min-height14em
+		min-height: 14em
+	.min-height14pc
+		min-height: 14%
+	.min-height14px
+		min-height: 14px
+	.z14
+		z-index: 14
 	.vh14
 		height: 14vh
 	.vw14
 		width: 14vw
+	.basis14
+		flex-basis: 14%
+	.basis14em
+		flex-basis: 14em
 	.t15em
 		top: 15em
-	.t15
+	.t15pc
 		top: 15%
+	.t15px
+		top: 15px
 	.l15em
 		left: 15em
-	.l15
+	.l15pc
 		left: 15%
+	.l15px
+		left: 15px
 	.b15em
 		bottom: 15em
-	.b15
+	.b15pc
 		bottom: 15%
+	.b15px
+		bottom: 15px
 	.r15em
 		right: 15em
-	.r15
+	.r15pc
 		right: 15%
+	.r15px
+		right: 15px
 	.w15em
 		width: 15em
-	.w15
+	.w15pc
 		width: 15%
+	.w15px
+		width: 15px
 	.h15em
 		height: 15em
-	.h15
+	.h15pc
 		height: 15%
-	.o15
-		transform-origin: 15% 15%
+	.h15px
+		height: 15px
 	.max-width15em
 		max-width: 15em
-	.max-width15
+	.max-width15pc
 		max-width: 15%
+	.max-width15px
+		max-width: 15px
 	.max-height15em
 		max-height: 15em
-	.max-height15
+	.max-height15pc
 		max-height: 15%
+	.max-height15px
+		max-height: 15px
+	.min-width15em
+		min-width: 15em
+	.min-width15pc
+		min-width: 15%
+	.min-width15px
+		min-width: 15px
+	.min-height15em
+		min-height: 15em
+	.min-height15pc
+		min-height: 15%
+	.min-height15px
+		min-height: 15px
+	.z15
+		z-index: 15
 	.vh15
 		height: 15vh
 	.vw15
 		width: 15vw
+	.basis15
+		flex-basis: 15%
+	.basis15em
+		flex-basis: 15em
 	.t16em
 		top: 16em
-	.t16
+	.t16pc
 		top: 16%
+	.t16px
+		top: 16px
 	.l16em
 		left: 16em
-	.l16
+	.l16pc
 		left: 16%
+	.l16px
+		left: 16px
 	.b16em
 		bottom: 16em
-	.b16
+	.b16pc
 		bottom: 16%
+	.b16px
+		bottom: 16px
 	.r16em
 		right: 16em
-	.r16
+	.r16pc
 		right: 16%
+	.r16px
+		right: 16px
 	.w16em
 		width: 16em
-	.w16
+	.w16pc
 		width: 16%
+	.w16px
+		width: 16px
 	.h16em
 		height: 16em
-	.h16
+	.h16pc
 		height: 16%
-	.o16
-		transform-origin: 16% 16%
+	.h16px
+		height: 16px
 	.max-width16em
 		max-width: 16em
-	.max-width16
+	.max-width16pc
 		max-width: 16%
+	.max-width16px
+		max-width: 16px
 	.max-height16em
 		max-height: 16em
-	.max-height16
+	.max-height16pc
 		max-height: 16%
+	.max-height16px
+		max-height: 16px
+	.min-width16em
+		min-width: 16em
+	.min-width16pc
+		min-width: 16%
+	.min-width16px
+		min-width: 16px
+	.min-height16em
+		min-height: 16em
+	.min-height16pc
+		min-height: 16%
+	.min-height16px
+		min-height: 16px
+	.z16
+		z-index: 16
 	.vh16
 		height: 16vh
 	.vw16
 		width: 16vw
+	.basis16
+		flex-basis: 16%
+	.basis16em
+		flex-basis: 16em
 	.t17em
 		top: 17em
-	.t17
+	.t17pc
 		top: 17%
+	.t17px
+		top: 17px
 	.l17em
 		left: 17em
-	.l17
+	.l17pc
 		left: 17%
+	.l17px
+		left: 17px
 	.b17em
 		bottom: 17em
-	.b17
+	.b17pc
 		bottom: 17%
+	.b17px
+		bottom: 17px
 	.r17em
 		right: 17em
-	.r17
+	.r17pc
 		right: 17%
+	.r17px
+		right: 17px
 	.w17em
 		width: 17em
-	.w17
+	.w17pc
 		width: 17%
+	.w17px
+		width: 17px
 	.h17em
 		height: 17em
-	.h17
+	.h17pc
 		height: 17%
-	.o17
-		transform-origin: 17% 17%
+	.h17px
+		height: 17px
 	.max-width17em
 		max-width: 17em
-	.max-width17
+	.max-width17pc
 		max-width: 17%
+	.max-width17px
+		max-width: 17px
 	.max-height17em
 		max-height: 17em
-	.max-height17
+	.max-height17pc
 		max-height: 17%
+	.max-height17px
+		max-height: 17px
+	.min-width17em
+		min-width: 17em
+	.min-width17pc
+		min-width: 17%
+	.min-width17px
+		min-width: 17px
+	.min-height17em
+		min-height: 17em
+	.min-height17pc
+		min-height: 17%
+	.min-height17px
+		min-height: 17px
+	.z17
+		z-index: 17
 	.vh17
 		height: 17vh
 	.vw17
 		width: 17vw
+	.basis17
+		flex-basis: 17%
+	.basis17em
+		flex-basis: 17em
 	.t18em
 		top: 18em
-	.t18
+	.t18pc
 		top: 18%
+	.t18px
+		top: 18px
 	.l18em
 		left: 18em
-	.l18
+	.l18pc
 		left: 18%
+	.l18px
+		left: 18px
 	.b18em
 		bottom: 18em
-	.b18
+	.b18pc
 		bottom: 18%
+	.b18px
+		bottom: 18px
 	.r18em
 		right: 18em
-	.r18
+	.r18pc
 		right: 18%
+	.r18px
+		right: 18px
 	.w18em
 		width: 18em
-	.w18
+	.w18pc
 		width: 18%
+	.w18px
+		width: 18px
 	.h18em
 		height: 18em
-	.h18
+	.h18pc
 		height: 18%
-	.o18
-		transform-origin: 18% 18%
+	.h18px
+		height: 18px
 	.max-width18em
 		max-width: 18em
-	.max-width18
+	.max-width18pc
 		max-width: 18%
+	.max-width18px
+		max-width: 18px
 	.max-height18em
 		max-height: 18em
-	.max-height18
+	.max-height18pc
 		max-height: 18%
+	.max-height18px
+		max-height: 18px
+	.min-width18em
+		min-width: 18em
+	.min-width18pc
+		min-width: 18%
+	.min-width18px
+		min-width: 18px
+	.min-height18em
+		min-height: 18em
+	.min-height18pc
+		min-height: 18%
+	.min-height18px
+		min-height: 18px
+	.z18
+		z-index: 18
 	.vh18
 		height: 18vh
 	.vw18
 		width: 18vw
+	.basis18
+		flex-basis: 18%
+	.basis18em
+		flex-basis: 18em
 	.t19em
 		top: 19em
-	.t19
+	.t19pc
 		top: 19%
+	.t19px
+		top: 19px
 	.l19em
 		left: 19em
-	.l19
+	.l19pc
 		left: 19%
+	.l19px
+		left: 19px
 	.b19em
 		bottom: 19em
-	.b19
+	.b19pc
 		bottom: 19%
+	.b19px
+		bottom: 19px
 	.r19em
 		right: 19em
-	.r19
+	.r19pc
 		right: 19%
+	.r19px
+		right: 19px
 	.w19em
 		width: 19em
-	.w19
+	.w19pc
 		width: 19%
+	.w19px
+		width: 19px
 	.h19em
 		height: 19em
-	.h19
+	.h19pc
 		height: 19%
-	.o19
-		transform-origin: 19% 19%
+	.h19px
+		height: 19px
 	.max-width19em
 		max-width: 19em
-	.max-width19
+	.max-width19pc
 		max-width: 19%
+	.max-width19px
+		max-width: 19px
 	.max-height19em
 		max-height: 19em
-	.max-height19
+	.max-height19pc
 		max-height: 19%
+	.max-height19px
+		max-height: 19px
+	.min-width19em
+		min-width: 19em
+	.min-width19pc
+		min-width: 19%
+	.min-width19px
+		min-width: 19px
+	.min-height19em
+		min-height: 19em
+	.min-height19pc
+		min-height: 19%
+	.min-height19px
+		min-height: 19px
+	.z19
+		z-index: 19
 	.vh19
 		height: 19vh
 	.vw19
 		width: 19vw
+	.basis19
+		flex-basis: 19%
+	.basis19em
+		flex-basis: 19em
 	.t20em
 		top: 20em
-	.t20
+	.t20pc
 		top: 20%
+	.t20px
+		top: 20px
 	.l20em
 		left: 20em
-	.l20
+	.l20pc
 		left: 20%
+	.l20px
+		left: 20px
 	.b20em
 		bottom: 20em
-	.b20
+	.b20pc
 		bottom: 20%
+	.b20px
+		bottom: 20px
 	.r20em
 		right: 20em
-	.r20
+	.r20pc
 		right: 20%
+	.r20px
+		right: 20px
 	.w20em
 		width: 20em
-	.w20
+	.w20pc
 		width: 20%
+	.w20px
+		width: 20px
 	.h20em
 		height: 20em
-	.h20
+	.h20pc
 		height: 20%
-	.o20
-		transform-origin: 20% 20%
+	.h20px
+		height: 20px
 	.max-width20em
 		max-width: 20em
-	.max-width20
+	.max-width20pc
 		max-width: 20%
+	.max-width20px
+		max-width: 20px
 	.max-height20em
 		max-height: 20em
-	.max-height20
+	.max-height20pc
 		max-height: 20%
+	.max-height20px
+		max-height: 20px
+	.min-width20em
+		min-width: 20em
+	.min-width20pc
+		min-width: 20%
+	.min-width20px
+		min-width: 20px
+	.min-height20em
+		min-height: 20em
+	.min-height20pc
+		min-height: 20%
+	.min-height20px
+		min-height: 20px
+	.z20
+		z-index: 20
 	.vh20
 		height: 20vh
 	.vw20
 		width: 20vw
+	.basis20
+		flex-basis: 20%
+	.basis20em
+		flex-basis: 20em
 	.t21em
 		top: 21em
-	.t21
+	.t21pc
 		top: 21%
+	.t21px
+		top: 21px
 	.l21em
 		left: 21em
-	.l21
+	.l21pc
 		left: 21%
+	.l21px
+		left: 21px
 	.b21em
 		bottom: 21em
-	.b21
+	.b21pc
 		bottom: 21%
+	.b21px
+		bottom: 21px
 	.r21em
 		right: 21em
-	.r21
+	.r21pc
 		right: 21%
+	.r21px
+		right: 21px
 	.w21em
 		width: 21em
-	.w21
+	.w21pc
 		width: 21%
+	.w21px
+		width: 21px
 	.h21em
 		height: 21em
-	.h21
+	.h21pc
 		height: 21%
-	.o21
-		transform-origin: 21% 21%
+	.h21px
+		height: 21px
 	.max-width21em
 		max-width: 21em
-	.max-width21
+	.max-width21pc
 		max-width: 21%
+	.max-width21px
+		max-width: 21px
 	.max-height21em
 		max-height: 21em
-	.max-height21
+	.max-height21pc
 		max-height: 21%
+	.max-height21px
+		max-height: 21px
+	.min-width21em
+		min-width: 21em
+	.min-width21pc
+		min-width: 21%
+	.min-width21px
+		min-width: 21px
+	.min-height21em
+		min-height: 21em
+	.min-height21pc
+		min-height: 21%
+	.min-height21px
+		min-height: 21px
+	.z21
+		z-index: 21
 	.vh21
 		height: 21vh
 	.vw21
 		width: 21vw
+	.basis21
+		flex-basis: 21%
+	.basis21em
+		flex-basis: 21em
 	.t22em
 		top: 22em
-	.t22
+	.t22pc
 		top: 22%
+	.t22px
+		top: 22px
 	.l22em
 		left: 22em
-	.l22
+	.l22pc
 		left: 22%
+	.l22px
+		left: 22px
 	.b22em
 		bottom: 22em
-	.b22
+	.b22pc
 		bottom: 22%
+	.b22px
+		bottom: 22px
 	.r22em
 		right: 22em
-	.r22
+	.r22pc
 		right: 22%
+	.r22px
+		right: 22px
 	.w22em
 		width: 22em
-	.w22
+	.w22pc
 		width: 22%
+	.w22px
+		width: 22px
 	.h22em
 		height: 22em
-	.h22
+	.h22pc
 		height: 22%
-	.o22
-		transform-origin: 22% 22%
+	.h22px
+		height: 22px
 	.max-width22em
 		max-width: 22em
-	.max-width22
+	.max-width22pc
 		max-width: 22%
+	.max-width22px
+		max-width: 22px
 	.max-height22em
 		max-height: 22em
-	.max-height22
+	.max-height22pc
 		max-height: 22%
+	.max-height22px
+		max-height: 22px
+	.min-width22em
+		min-width: 22em
+	.min-width22pc
+		min-width: 22%
+	.min-width22px
+		min-width: 22px
+	.min-height22em
+		min-height: 22em
+	.min-height22pc
+		min-height: 22%
+	.min-height22px
+		min-height: 22px
+	.z22
+		z-index: 22
 	.vh22
 		height: 22vh
 	.vw22
 		width: 22vw
+	.basis22
+		flex-basis: 22%
+	.basis22em
+		flex-basis: 22em
 	.t23em
 		top: 23em
-	.t23
+	.t23pc
 		top: 23%
+	.t23px
+		top: 23px
 	.l23em
 		left: 23em
-	.l23
+	.l23pc
 		left: 23%
+	.l23px
+		left: 23px
 	.b23em
 		bottom: 23em
-	.b23
+	.b23pc
 		bottom: 23%
+	.b23px
+		bottom: 23px
 	.r23em
 		right: 23em
-	.r23
+	.r23pc
 		right: 23%
+	.r23px
+		right: 23px
 	.w23em
 		width: 23em
-	.w23
+	.w23pc
 		width: 23%
+	.w23px
+		width: 23px
 	.h23em
 		height: 23em
-	.h23
+	.h23pc
 		height: 23%
-	.o23
-		transform-origin: 23% 23%
+	.h23px
+		height: 23px
 	.max-width23em
 		max-width: 23em
-	.max-width23
+	.max-width23pc
 		max-width: 23%
+	.max-width23px
+		max-width: 23px
 	.max-height23em
 		max-height: 23em
-	.max-height23
+	.max-height23pc
 		max-height: 23%
+	.max-height23px
+		max-height: 23px
+	.min-width23em
+		min-width: 23em
+	.min-width23pc
+		min-width: 23%
+	.min-width23px
+		min-width: 23px
+	.min-height23em
+		min-height: 23em
+	.min-height23pc
+		min-height: 23%
+	.min-height23px
+		min-height: 23px
+	.z23
+		z-index: 23
 	.vh23
 		height: 23vh
 	.vw23
 		width: 23vw
+	.basis23
+		flex-basis: 23%
+	.basis23em
+		flex-basis: 23em
 	.t24em
 		top: 24em
-	.t24
+	.t24pc
 		top: 24%
+	.t24px
+		top: 24px
 	.l24em
 		left: 24em
-	.l24
+	.l24pc
 		left: 24%
+	.l24px
+		left: 24px
 	.b24em
 		bottom: 24em
-	.b24
+	.b24pc
 		bottom: 24%
+	.b24px
+		bottom: 24px
 	.r24em
 		right: 24em
-	.r24
+	.r24pc
 		right: 24%
+	.r24px
+		right: 24px
 	.w24em
 		width: 24em
-	.w24
+	.w24pc
 		width: 24%
+	.w24px
+		width: 24px
 	.h24em
 		height: 24em
-	.h24
+	.h24pc
 		height: 24%
-	.o24
-		transform-origin: 24% 24%
+	.h24px
+		height: 24px
 	.max-width24em
 		max-width: 24em
-	.max-width24
+	.max-width24pc
 		max-width: 24%
+	.max-width24px
+		max-width: 24px
 	.max-height24em
 		max-height: 24em
-	.max-height24
+	.max-height24pc
 		max-height: 24%
+	.max-height24px
+		max-height: 24px
+	.min-width24em
+		min-width: 24em
+	.min-width24pc
+		min-width: 24%
+	.min-width24px
+		min-width: 24px
+	.min-height24em
+		min-height: 24em
+	.min-height24pc
+		min-height: 24%
+	.min-height24px
+		min-height: 24px
+	.z24
+		z-index: 24
 	.vh24
 		height: 24vh
 	.vw24
 		width: 24vw
+	.basis24
+		flex-basis: 24%
+	.basis24em
+		flex-basis: 24em
 	.t25em
 		top: 25em
-	.t25
+	.t25pc
 		top: 25%
+	.t25px
+		top: 25px
 	.l25em
 		left: 25em
-	.l25
+	.l25pc
 		left: 25%
+	.l25px
+		left: 25px
 	.b25em
 		bottom: 25em
-	.b25
+	.b25pc
 		bottom: 25%
+	.b25px
+		bottom: 25px
 	.r25em
 		right: 25em
-	.r25
+	.r25pc
 		right: 25%
+	.r25px
+		right: 25px
 	.w25em
 		width: 25em
-	.w25
+	.w25pc
 		width: 25%
+	.w25px
+		width: 25px
 	.h25em
 		height: 25em
-	.h25
+	.h25pc
 		height: 25%
-	.o25
-		transform-origin: 25% 25%
+	.h25px
+		height: 25px
 	.max-width25em
 		max-width: 25em
-	.max-width25
+	.max-width25pc
 		max-width: 25%
+	.max-width25px
+		max-width: 25px
 	.max-height25em
 		max-height: 25em
-	.max-height25
+	.max-height25pc
 		max-height: 25%
+	.max-height25px
+		max-height: 25px
+	.min-width25em
+		min-width: 25em
+	.min-width25pc
+		min-width: 25%
+	.min-width25px
+		min-width: 25px
+	.min-height25em
+		min-height: 25em
+	.min-height25pc
+		min-height: 25%
+	.min-height25px
+		min-height: 25px
+	.z25
+		z-index: 25
 	.vh25
 		height: 25vh
 	.vw25
 		width: 25vw
+	.basis25
+		flex-basis: 25%
+	.basis25em
+		flex-basis: 25em
 	.t26em
 		top: 26em
-	.t26
+	.t26pc
 		top: 26%
+	.t26px
+		top: 26px
 	.l26em
 		left: 26em
-	.l26
+	.l26pc
 		left: 26%
+	.l26px
+		left: 26px
 	.b26em
 		bottom: 26em
-	.b26
+	.b26pc
 		bottom: 26%
+	.b26px
+		bottom: 26px
 	.r26em
 		right: 26em
-	.r26
+	.r26pc
 		right: 26%
+	.r26px
+		right: 26px
 	.w26em
 		width: 26em
-	.w26
+	.w26pc
 		width: 26%
+	.w26px
+		width: 26px
 	.h26em
 		height: 26em
-	.h26
+	.h26pc
 		height: 26%
-	.o26
-		transform-origin: 26% 26%
+	.h26px
+		height: 26px
 	.max-width26em
 		max-width: 26em
-	.max-width26
+	.max-width26pc
 		max-width: 26%
+	.max-width26px
+		max-width: 26px
 	.max-height26em
 		max-height: 26em
-	.max-height26
+	.max-height26pc
 		max-height: 26%
+	.max-height26px
+		max-height: 26px
+	.min-width26em
+		min-width: 26em
+	.min-width26pc
+		min-width: 26%
+	.min-width26px
+		min-width: 26px
+	.min-height26em
+		min-height: 26em
+	.min-height26pc
+		min-height: 26%
+	.min-height26px
+		min-height: 26px
+	.z26
+		z-index: 26
 	.vh26
 		height: 26vh
 	.vw26
 		width: 26vw
+	.basis26
+		flex-basis: 26%
+	.basis26em
+		flex-basis: 26em
 	.t27em
 		top: 27em
-	.t27
+	.t27pc
 		top: 27%
+	.t27px
+		top: 27px
 	.l27em
 		left: 27em
-	.l27
+	.l27pc
 		left: 27%
+	.l27px
+		left: 27px
 	.b27em
 		bottom: 27em
-	.b27
+	.b27pc
 		bottom: 27%
+	.b27px
+		bottom: 27px
 	.r27em
 		right: 27em
-	.r27
+	.r27pc
 		right: 27%
+	.r27px
+		right: 27px
 	.w27em
 		width: 27em
-	.w27
+	.w27pc
 		width: 27%
+	.w27px
+		width: 27px
 	.h27em
 		height: 27em
-	.h27
+	.h27pc
 		height: 27%
-	.o27
-		transform-origin: 27% 27%
+	.h27px
+		height: 27px
 	.max-width27em
 		max-width: 27em
-	.max-width27
+	.max-width27pc
 		max-width: 27%
+	.max-width27px
+		max-width: 27px
 	.max-height27em
 		max-height: 27em
-	.max-height27
+	.max-height27pc
 		max-height: 27%
+	.max-height27px
+		max-height: 27px
+	.min-width27em
+		min-width: 27em
+	.min-width27pc
+		min-width: 27%
+	.min-width27px
+		min-width: 27px
+	.min-height27em
+		min-height: 27em
+	.min-height27pc
+		min-height: 27%
+	.min-height27px
+		min-height: 27px
+	.z27
+		z-index: 27
 	.vh27
 		height: 27vh
 	.vw27
 		width: 27vw
+	.basis27
+		flex-basis: 27%
+	.basis27em
+		flex-basis: 27em
 	.t28em
 		top: 28em
-	.t28
+	.t28pc
 		top: 28%
+	.t28px
+		top: 28px
 	.l28em
 		left: 28em
-	.l28
+	.l28pc
 		left: 28%
+	.l28px
+		left: 28px
 	.b28em
 		bottom: 28em
-	.b28
+	.b28pc
 		bottom: 28%
+	.b28px
+		bottom: 28px
 	.r28em
 		right: 28em
-	.r28
+	.r28pc
 		right: 28%
+	.r28px
+		right: 28px
 	.w28em
 		width: 28em
-	.w28
+	.w28pc
 		width: 28%
+	.w28px
+		width: 28px
 	.h28em
 		height: 28em
-	.h28
+	.h28pc
 		height: 28%
-	.o28
-		transform-origin: 28% 28%
+	.h28px
+		height: 28px
 	.max-width28em
 		max-width: 28em
-	.max-width28
+	.max-width28pc
 		max-width: 28%
+	.max-width28px
+		max-width: 28px
 	.max-height28em
 		max-height: 28em
-	.max-height28
+	.max-height28pc
 		max-height: 28%
+	.max-height28px
+		max-height: 28px
+	.min-width28em
+		min-width: 28em
+	.min-width28pc
+		min-width: 28%
+	.min-width28px
+		min-width: 28px
+	.min-height28em
+		min-height: 28em
+	.min-height28pc
+		min-height: 28%
+	.min-height28px
+		min-height: 28px
+	.z28
+		z-index: 28
 	.vh28
 		height: 28vh
 	.vw28
 		width: 28vw
+	.basis28
+		flex-basis: 28%
+	.basis28em
+		flex-basis: 28em
 	.t29em
 		top: 29em
-	.t29
+	.t29pc
 		top: 29%
+	.t29px
+		top: 29px
 	.l29em
 		left: 29em
-	.l29
+	.l29pc
 		left: 29%
+	.l29px
+		left: 29px
 	.b29em
 		bottom: 29em
-	.b29
+	.b29pc
 		bottom: 29%
+	.b29px
+		bottom: 29px
 	.r29em
 		right: 29em
-	.r29
+	.r29pc
 		right: 29%
+	.r29px
+		right: 29px
 	.w29em
 		width: 29em
-	.w29
+	.w29pc
 		width: 29%
+	.w29px
+		width: 29px
 	.h29em
 		height: 29em
-	.h29
+	.h29pc
 		height: 29%
-	.o29
-		transform-origin: 29% 29%
+	.h29px
+		height: 29px
 	.max-width29em
 		max-width: 29em
-	.max-width29
+	.max-width29pc
 		max-width: 29%
+	.max-width29px
+		max-width: 29px
 	.max-height29em
 		max-height: 29em
-	.max-height29
+	.max-height29pc
 		max-height: 29%
+	.max-height29px
+		max-height: 29px
+	.min-width29em
+		min-width: 29em
+	.min-width29pc
+		min-width: 29%
+	.min-width29px
+		min-width: 29px
+	.min-height29em
+		min-height: 29em
+	.min-height29pc
+		min-height: 29%
+	.min-height29px
+		min-height: 29px
+	.z29
+		z-index: 29
 	.vh29
 		height: 29vh
 	.vw29
 		width: 29vw
+	.basis29
+		flex-basis: 29%
+	.basis29em
+		flex-basis: 29em
 	.t30em
 		top: 30em
-	.t30
+	.t30pc
 		top: 30%
+	.t30px
+		top: 30px
 	.l30em
 		left: 30em
-	.l30
+	.l30pc
 		left: 30%
+	.l30px
+		left: 30px
 	.b30em
 		bottom: 30em
-	.b30
+	.b30pc
 		bottom: 30%
+	.b30px
+		bottom: 30px
 	.r30em
 		right: 30em
-	.r30
+	.r30pc
 		right: 30%
+	.r30px
+		right: 30px
 	.w30em
 		width: 30em
-	.w30
+	.w30pc
 		width: 30%
+	.w30px
+		width: 30px
 	.h30em
 		height: 30em
-	.h30
+	.h30pc
 		height: 30%
-	.o30
-		transform-origin: 30% 30%
+	.h30px
+		height: 30px
 	.max-width30em
 		max-width: 30em
-	.max-width30
+	.max-width30pc
 		max-width: 30%
+	.max-width30px
+		max-width: 30px
 	.max-height30em
 		max-height: 30em
-	.max-height30
+	.max-height30pc
 		max-height: 30%
+	.max-height30px
+		max-height: 30px
+	.min-width30em
+		min-width: 30em
+	.min-width30pc
+		min-width: 30%
+	.min-width30px
+		min-width: 30px
+	.min-height30em
+		min-height: 30em
+	.min-height30pc
+		min-height: 30%
+	.min-height30px
+		min-height: 30px
+	.z30
+		z-index: 30
 	.vh30
 		height: 30vh
 	.vw30
 		width: 30vw
+	.basis30
+		flex-basis: 30%
+	.basis30em
+		flex-basis: 30em
 	.t31em
 		top: 31em
-	.t31
+	.t31pc
 		top: 31%
+	.t31px
+		top: 31px
 	.l31em
 		left: 31em
-	.l31
+	.l31pc
 		left: 31%
+	.l31px
+		left: 31px
 	.b31em
 		bottom: 31em
-	.b31
+	.b31pc
 		bottom: 31%
+	.b31px
+		bottom: 31px
 	.r31em
 		right: 31em
-	.r31
+	.r31pc
 		right: 31%
+	.r31px
+		right: 31px
 	.w31em
 		width: 31em
-	.w31
+	.w31pc
 		width: 31%
+	.w31px
+		width: 31px
 	.h31em
 		height: 31em
-	.h31
+	.h31pc
 		height: 31%
-	.o31
-		transform-origin: 31% 31%
+	.h31px
+		height: 31px
 	.max-width31em
 		max-width: 31em
-	.max-width31
+	.max-width31pc
 		max-width: 31%
+	.max-width31px
+		max-width: 31px
 	.max-height31em
 		max-height: 31em
-	.max-height31
+	.max-height31pc
 		max-height: 31%
+	.max-height31px
+		max-height: 31px
+	.min-width31em
+		min-width: 31em
+	.min-width31pc
+		min-width: 31%
+	.min-width31px
+		min-width: 31px
+	.min-height31em
+		min-height: 31em
+	.min-height31pc
+		min-height: 31%
+	.min-height31px
+		min-height: 31px
+	.z31
+		z-index: 31
 	.vh31
 		height: 31vh
 	.vw31
 		width: 31vw
+	.basis31
+		flex-basis: 31%
+	.basis31em
+		flex-basis: 31em
 	.t32em
 		top: 32em
-	.t32
+	.t32pc
 		top: 32%
+	.t32px
+		top: 32px
 	.l32em
 		left: 32em
-	.l32
+	.l32pc
 		left: 32%
+	.l32px
+		left: 32px
 	.b32em
 		bottom: 32em
-	.b32
+	.b32pc
 		bottom: 32%
+	.b32px
+		bottom: 32px
 	.r32em
 		right: 32em
-	.r32
+	.r32pc
 		right: 32%
+	.r32px
+		right: 32px
 	.w32em
 		width: 32em
-	.w32
+	.w32pc
 		width: 32%
+	.w32px
+		width: 32px
 	.h32em
 		height: 32em
-	.h32
+	.h32pc
 		height: 32%
-	.o32
-		transform-origin: 32% 32%
+	.h32px
+		height: 32px
 	.max-width32em
 		max-width: 32em
-	.max-width32
+	.max-width32pc
 		max-width: 32%
+	.max-width32px
+		max-width: 32px
 	.max-height32em
 		max-height: 32em
-	.max-height32
+	.max-height32pc
 		max-height: 32%
+	.max-height32px
+		max-height: 32px
+	.min-width32em
+		min-width: 32em
+	.min-width32pc
+		min-width: 32%
+	.min-width32px
+		min-width: 32px
+	.min-height32em
+		min-height: 32em
+	.min-height32pc
+		min-height: 32%
+	.min-height32px
+		min-height: 32px
+	.z32
+		z-index: 32
 	.vh32
 		height: 32vh
 	.vw32
 		width: 32vw
+	.basis32
+		flex-basis: 32%
+	.basis32em
+		flex-basis: 32em
 	.t33em
 		top: 33em
-	.t33
+	.t33pc
 		top: 33%
+	.t33px
+		top: 33px
 	.l33em
 		left: 33em
-	.l33
+	.l33pc
 		left: 33%
+	.l33px
+		left: 33px
 	.b33em
 		bottom: 33em
-	.b33
+	.b33pc
 		bottom: 33%
+	.b33px
+		bottom: 33px
 	.r33em
 		right: 33em
-	.r33
+	.r33pc
 		right: 33%
+	.r33px
+		right: 33px
 	.w33em
 		width: 33em
-	.w33
+	.w33pc
 		width: 33%
+	.w33px
+		width: 33px
 	.h33em
 		height: 33em
-	.h33
+	.h33pc
 		height: 33%
-	.o33
-		transform-origin: 33% 33%
+	.h33px
+		height: 33px
 	.max-width33em
 		max-width: 33em
-	.max-width33
+	.max-width33pc
 		max-width: 33%
+	.max-width33px
+		max-width: 33px
 	.max-height33em
 		max-height: 33em
-	.max-height33
+	.max-height33pc
 		max-height: 33%
+	.max-height33px
+		max-height: 33px
+	.min-width33em
+		min-width: 33em
+	.min-width33pc
+		min-width: 33%
+	.min-width33px
+		min-width: 33px
+	.min-height33em
+		min-height: 33em
+	.min-height33pc
+		min-height: 33%
+	.min-height33px
+		min-height: 33px
+	.z33
+		z-index: 33
 	.vh33
 		height: 33vh
 	.vw33
 		width: 33vw
+	.basis33
+		flex-basis: 33%
+	.basis33em
+		flex-basis: 33em
 	.t34em
 		top: 34em
-	.t34
+	.t34pc
 		top: 34%
+	.t34px
+		top: 34px
 	.l34em
 		left: 34em
-	.l34
+	.l34pc
 		left: 34%
+	.l34px
+		left: 34px
 	.b34em
 		bottom: 34em
-	.b34
+	.b34pc
 		bottom: 34%
+	.b34px
+		bottom: 34px
 	.r34em
 		right: 34em
-	.r34
+	.r34pc
 		right: 34%
+	.r34px
+		right: 34px
 	.w34em
 		width: 34em
-	.w34
+	.w34pc
 		width: 34%
+	.w34px
+		width: 34px
 	.h34em
 		height: 34em
-	.h34
+	.h34pc
 		height: 34%
-	.o34
-		transform-origin: 34% 34%
+	.h34px
+		height: 34px
 	.max-width34em
 		max-width: 34em
-	.max-width34
+	.max-width34pc
 		max-width: 34%
+	.max-width34px
+		max-width: 34px
 	.max-height34em
 		max-height: 34em
-	.max-height34
+	.max-height34pc
 		max-height: 34%
+	.max-height34px
+		max-height: 34px
+	.min-width34em
+		min-width: 34em
+	.min-width34pc
+		min-width: 34%
+	.min-width34px
+		min-width: 34px
+	.min-height34em
+		min-height: 34em
+	.min-height34pc
+		min-height: 34%
+	.min-height34px
+		min-height: 34px
+	.z34
+		z-index: 34
 	.vh34
 		height: 34vh
 	.vw34
 		width: 34vw
+	.basis34
+		flex-basis: 34%
+	.basis34em
+		flex-basis: 34em
 	.t35em
 		top: 35em
-	.t35
+	.t35pc
 		top: 35%
+	.t35px
+		top: 35px
 	.l35em
 		left: 35em
-	.l35
+	.l35pc
 		left: 35%
+	.l35px
+		left: 35px
 	.b35em
 		bottom: 35em
-	.b35
+	.b35pc
 		bottom: 35%
+	.b35px
+		bottom: 35px
 	.r35em
 		right: 35em
-	.r35
+	.r35pc
 		right: 35%
+	.r35px
+		right: 35px
 	.w35em
 		width: 35em
-	.w35
+	.w35pc
 		width: 35%
+	.w35px
+		width: 35px
 	.h35em
 		height: 35em
-	.h35
+	.h35pc
 		height: 35%
-	.o35
-		transform-origin: 35% 35%
+	.h35px
+		height: 35px
 	.max-width35em
 		max-width: 35em
-	.max-width35
+	.max-width35pc
 		max-width: 35%
+	.max-width35px
+		max-width: 35px
 	.max-height35em
 		max-height: 35em
-	.max-height35
+	.max-height35pc
 		max-height: 35%
+	.max-height35px
+		max-height: 35px
+	.min-width35em
+		min-width: 35em
+	.min-width35pc
+		min-width: 35%
+	.min-width35px
+		min-width: 35px
+	.min-height35em
+		min-height: 35em
+	.min-height35pc
+		min-height: 35%
+	.min-height35px
+		min-height: 35px
+	.z35
+		z-index: 35
 	.vh35
 		height: 35vh
 	.vw35
 		width: 35vw
+	.basis35
+		flex-basis: 35%
+	.basis35em
+		flex-basis: 35em
 	.t36em
 		top: 36em
-	.t36
+	.t36pc
 		top: 36%
+	.t36px
+		top: 36px
 	.l36em
 		left: 36em
-	.l36
+	.l36pc
 		left: 36%
+	.l36px
+		left: 36px
 	.b36em
 		bottom: 36em
-	.b36
+	.b36pc
 		bottom: 36%
+	.b36px
+		bottom: 36px
 	.r36em
 		right: 36em
-	.r36
+	.r36pc
 		right: 36%
+	.r36px
+		right: 36px
 	.w36em
 		width: 36em
-	.w36
+	.w36pc
 		width: 36%
+	.w36px
+		width: 36px
 	.h36em
 		height: 36em
-	.h36
+	.h36pc
 		height: 36%
-	.o36
-		transform-origin: 36% 36%
+	.h36px
+		height: 36px
 	.max-width36em
 		max-width: 36em
-	.max-width36
+	.max-width36pc
 		max-width: 36%
+	.max-width36px
+		max-width: 36px
 	.max-height36em
 		max-height: 36em
-	.max-height36
+	.max-height36pc
 		max-height: 36%
+	.max-height36px
+		max-height: 36px
+	.min-width36em
+		min-width: 36em
+	.min-width36pc
+		min-width: 36%
+	.min-width36px
+		min-width: 36px
+	.min-height36em
+		min-height: 36em
+	.min-height36pc
+		min-height: 36%
+	.min-height36px
+		min-height: 36px
+	.z36
+		z-index: 36
 	.vh36
 		height: 36vh
 	.vw36
 		width: 36vw
+	.basis36
+		flex-basis: 36%
+	.basis36em
+		flex-basis: 36em
 	.t37em
 		top: 37em
-	.t37
+	.t37pc
 		top: 37%
+	.t37px
+		top: 37px
 	.l37em
 		left: 37em
-	.l37
+	.l37pc
 		left: 37%
+	.l37px
+		left: 37px
 	.b37em
 		bottom: 37em
-	.b37
+	.b37pc
 		bottom: 37%
+	.b37px
+		bottom: 37px
 	.r37em
 		right: 37em
-	.r37
+	.r37pc
 		right: 37%
+	.r37px
+		right: 37px
 	.w37em
 		width: 37em
-	.w37
+	.w37pc
 		width: 37%
+	.w37px
+		width: 37px
 	.h37em
 		height: 37em
-	.h37
+	.h37pc
 		height: 37%
-	.o37
-		transform-origin: 37% 37%
+	.h37px
+		height: 37px
 	.max-width37em
 		max-width: 37em
-	.max-width37
+	.max-width37pc
 		max-width: 37%
+	.max-width37px
+		max-width: 37px
 	.max-height37em
 		max-height: 37em
-	.max-height37
+	.max-height37pc
 		max-height: 37%
+	.max-height37px
+		max-height: 37px
+	.min-width37em
+		min-width: 37em
+	.min-width37pc
+		min-width: 37%
+	.min-width37px
+		min-width: 37px
+	.min-height37em
+		min-height: 37em
+	.min-height37pc
+		min-height: 37%
+	.min-height37px
+		min-height: 37px
+	.z37
+		z-index: 37
 	.vh37
 		height: 37vh
 	.vw37
 		width: 37vw
+	.basis37
+		flex-basis: 37%
+	.basis37em
+		flex-basis: 37em
 	.t38em
 		top: 38em
-	.t38
+	.t38pc
 		top: 38%
+	.t38px
+		top: 38px
 	.l38em
 		left: 38em
-	.l38
+	.l38pc
 		left: 38%
+	.l38px
+		left: 38px
 	.b38em
 		bottom: 38em
-	.b38
+	.b38pc
 		bottom: 38%
+	.b38px
+		bottom: 38px
 	.r38em
 		right: 38em
-	.r38
+	.r38pc
 		right: 38%
+	.r38px
+		right: 38px
 	.w38em
 		width: 38em
-	.w38
+	.w38pc
 		width: 38%
+	.w38px
+		width: 38px
 	.h38em
 		height: 38em
-	.h38
+	.h38pc
 		height: 38%
-	.o38
-		transform-origin: 38% 38%
+	.h38px
+		height: 38px
 	.max-width38em
 		max-width: 38em
-	.max-width38
+	.max-width38pc
 		max-width: 38%
+	.max-width38px
+		max-width: 38px
 	.max-height38em
 		max-height: 38em
-	.max-height38
+	.max-height38pc
 		max-height: 38%
+	.max-height38px
+		max-height: 38px
+	.min-width38em
+		min-width: 38em
+	.min-width38pc
+		min-width: 38%
+	.min-width38px
+		min-width: 38px
+	.min-height38em
+		min-height: 38em
+	.min-height38pc
+		min-height: 38%
+	.min-height38px
+		min-height: 38px
+	.z38
+		z-index: 38
 	.vh38
 		height: 38vh
 	.vw38
 		width: 38vw
+	.basis38
+		flex-basis: 38%
+	.basis38em
+		flex-basis: 38em
 	.t39em
 		top: 39em
-	.t39
+	.t39pc
 		top: 39%
+	.t39px
+		top: 39px
 	.l39em
 		left: 39em
-	.l39
+	.l39pc
 		left: 39%
+	.l39px
+		left: 39px
 	.b39em
 		bottom: 39em
-	.b39
+	.b39pc
 		bottom: 39%
+	.b39px
+		bottom: 39px
 	.r39em
 		right: 39em
-	.r39
+	.r39pc
 		right: 39%
+	.r39px
+		right: 39px
 	.w39em
 		width: 39em
-	.w39
+	.w39pc
 		width: 39%
+	.w39px
+		width: 39px
 	.h39em
 		height: 39em
-	.h39
+	.h39pc
 		height: 39%
-	.o39
-		transform-origin: 39% 39%
+	.h39px
+		height: 39px
 	.max-width39em
 		max-width: 39em
-	.max-width39
+	.max-width39pc
 		max-width: 39%
+	.max-width39px
+		max-width: 39px
 	.max-height39em
 		max-height: 39em
-	.max-height39
+	.max-height39pc
 		max-height: 39%
+	.max-height39px
+		max-height: 39px
+	.min-width39em
+		min-width: 39em
+	.min-width39pc
+		min-width: 39%
+	.min-width39px
+		min-width: 39px
+	.min-height39em
+		min-height: 39em
+	.min-height39pc
+		min-height: 39%
+	.min-height39px
+		min-height: 39px
+	.z39
+		z-index: 39
 	.vh39
 		height: 39vh
 	.vw39
 		width: 39vw
+	.basis39
+		flex-basis: 39%
+	.basis39em
+		flex-basis: 39em
 	.t40em
 		top: 40em
-	.t40
+	.t40pc
 		top: 40%
+	.t40px
+		top: 40px
 	.l40em
 		left: 40em
-	.l40
+	.l40pc
 		left: 40%
+	.l40px
+		left: 40px
 	.b40em
 		bottom: 40em
-	.b40
+	.b40pc
 		bottom: 40%
+	.b40px
+		bottom: 40px
 	.r40em
 		right: 40em
-	.r40
+	.r40pc
 		right: 40%
+	.r40px
+		right: 40px
 	.w40em
 		width: 40em
-	.w40
+	.w40pc
 		width: 40%
+	.w40px
+		width: 40px
 	.h40em
 		height: 40em
-	.h40
+	.h40pc
 		height: 40%
-	.o40
-		transform-origin: 40% 40%
+	.h40px
+		height: 40px
 	.max-width40em
 		max-width: 40em
-	.max-width40
+	.max-width40pc
 		max-width: 40%
+	.max-width40px
+		max-width: 40px
 	.max-height40em
 		max-height: 40em
-	.max-height40
+	.max-height40pc
 		max-height: 40%
+	.max-height40px
+		max-height: 40px
+	.min-width40em
+		min-width: 40em
+	.min-width40pc
+		min-width: 40%
+	.min-width40px
+		min-width: 40px
+	.min-height40em
+		min-height: 40em
+	.min-height40pc
+		min-height: 40%
+	.min-height40px
+		min-height: 40px
+	.z40
+		z-index: 40
 	.vh40
 		height: 40vh
 	.vw40
 		width: 40vw
+	.basis40
+		flex-basis: 40%
+	.basis40em
+		flex-basis: 40em
 	.t41em
 		top: 41em
-	.t41
+	.t41pc
 		top: 41%
+	.t41px
+		top: 41px
 	.l41em
 		left: 41em
-	.l41
+	.l41pc
 		left: 41%
+	.l41px
+		left: 41px
 	.b41em
 		bottom: 41em
-	.b41
+	.b41pc
 		bottom: 41%
+	.b41px
+		bottom: 41px
 	.r41em
 		right: 41em
-	.r41
+	.r41pc
 		right: 41%
+	.r41px
+		right: 41px
 	.w41em
 		width: 41em
-	.w41
+	.w41pc
 		width: 41%
+	.w41px
+		width: 41px
 	.h41em
 		height: 41em
-	.h41
+	.h41pc
 		height: 41%
-	.o41
-		transform-origin: 41% 41%
+	.h41px
+		height: 41px
 	.max-width41em
 		max-width: 41em
-	.max-width41
+	.max-width41pc
 		max-width: 41%
+	.max-width41px
+		max-width: 41px
 	.max-height41em
 		max-height: 41em
-	.max-height41
+	.max-height41pc
 		max-height: 41%
+	.max-height41px
+		max-height: 41px
+	.min-width41em
+		min-width: 41em
+	.min-width41pc
+		min-width: 41%
+	.min-width41px
+		min-width: 41px
+	.min-height41em
+		min-height: 41em
+	.min-height41pc
+		min-height: 41%
+	.min-height41px
+		min-height: 41px
+	.z41
+		z-index: 41
 	.vh41
 		height: 41vh
 	.vw41
 		width: 41vw
+	.basis41
+		flex-basis: 41%
+	.basis41em
+		flex-basis: 41em
 	.t42em
 		top: 42em
-	.t42
+	.t42pc
 		top: 42%
+	.t42px
+		top: 42px
 	.l42em
 		left: 42em
-	.l42
+	.l42pc
 		left: 42%
+	.l42px
+		left: 42px
 	.b42em
 		bottom: 42em
-	.b42
+	.b42pc
 		bottom: 42%
+	.b42px
+		bottom: 42px
 	.r42em
 		right: 42em
-	.r42
+	.r42pc
 		right: 42%
+	.r42px
+		right: 42px
 	.w42em
 		width: 42em
-	.w42
+	.w42pc
 		width: 42%
+	.w42px
+		width: 42px
 	.h42em
 		height: 42em
-	.h42
+	.h42pc
 		height: 42%
-	.o42
-		transform-origin: 42% 42%
+	.h42px
+		height: 42px
 	.max-width42em
 		max-width: 42em
-	.max-width42
+	.max-width42pc
 		max-width: 42%
+	.max-width42px
+		max-width: 42px
 	.max-height42em
 		max-height: 42em
-	.max-height42
+	.max-height42pc
 		max-height: 42%
+	.max-height42px
+		max-height: 42px
+	.min-width42em
+		min-width: 42em
+	.min-width42pc
+		min-width: 42%
+	.min-width42px
+		min-width: 42px
+	.min-height42em
+		min-height: 42em
+	.min-height42pc
+		min-height: 42%
+	.min-height42px
+		min-height: 42px
+	.z42
+		z-index: 42
 	.vh42
 		height: 42vh
 	.vw42
 		width: 42vw
+	.basis42
+		flex-basis: 42%
+	.basis42em
+		flex-basis: 42em
 	.t43em
 		top: 43em
-	.t43
+	.t43pc
 		top: 43%
+	.t43px
+		top: 43px
 	.l43em
 		left: 43em
-	.l43
+	.l43pc
 		left: 43%
+	.l43px
+		left: 43px
 	.b43em
 		bottom: 43em
-	.b43
+	.b43pc
 		bottom: 43%
+	.b43px
+		bottom: 43px
 	.r43em
 		right: 43em
-	.r43
+	.r43pc
 		right: 43%
+	.r43px
+		right: 43px
 	.w43em
 		width: 43em
-	.w43
+	.w43pc
 		width: 43%
+	.w43px
+		width: 43px
 	.h43em
 		height: 43em
-	.h43
+	.h43pc
 		height: 43%
-	.o43
-		transform-origin: 43% 43%
+	.h43px
+		height: 43px
 	.max-width43em
 		max-width: 43em
-	.max-width43
+	.max-width43pc
 		max-width: 43%
+	.max-width43px
+		max-width: 43px
 	.max-height43em
 		max-height: 43em
-	.max-height43
+	.max-height43pc
 		max-height: 43%
+	.max-height43px
+		max-height: 43px
+	.min-width43em
+		min-width: 43em
+	.min-width43pc
+		min-width: 43%
+	.min-width43px
+		min-width: 43px
+	.min-height43em
+		min-height: 43em
+	.min-height43pc
+		min-height: 43%
+	.min-height43px
+		min-height: 43px
+	.z43
+		z-index: 43
 	.vh43
 		height: 43vh
 	.vw43
 		width: 43vw
+	.basis43
+		flex-basis: 43%
+	.basis43em
+		flex-basis: 43em
 	.t44em
 		top: 44em
-	.t44
+	.t44pc
 		top: 44%
+	.t44px
+		top: 44px
 	.l44em
 		left: 44em
-	.l44
+	.l44pc
 		left: 44%
+	.l44px
+		left: 44px
 	.b44em
 		bottom: 44em
-	.b44
+	.b44pc
 		bottom: 44%
+	.b44px
+		bottom: 44px
 	.r44em
 		right: 44em
-	.r44
+	.r44pc
 		right: 44%
+	.r44px
+		right: 44px
 	.w44em
 		width: 44em
-	.w44
+	.w44pc
 		width: 44%
+	.w44px
+		width: 44px
 	.h44em
 		height: 44em
-	.h44
+	.h44pc
 		height: 44%
-	.o44
-		transform-origin: 44% 44%
+	.h44px
+		height: 44px
 	.max-width44em
 		max-width: 44em
-	.max-width44
+	.max-width44pc
 		max-width: 44%
+	.max-width44px
+		max-width: 44px
 	.max-height44em
 		max-height: 44em
-	.max-height44
+	.max-height44pc
 		max-height: 44%
+	.max-height44px
+		max-height: 44px
+	.min-width44em
+		min-width: 44em
+	.min-width44pc
+		min-width: 44%
+	.min-width44px
+		min-width: 44px
+	.min-height44em
+		min-height: 44em
+	.min-height44pc
+		min-height: 44%
+	.min-height44px
+		min-height: 44px
+	.z44
+		z-index: 44
 	.vh44
 		height: 44vh
 	.vw44
 		width: 44vw
+	.basis44
+		flex-basis: 44%
+	.basis44em
+		flex-basis: 44em
 	.t45em
 		top: 45em
-	.t45
+	.t45pc
 		top: 45%
+	.t45px
+		top: 45px
 	.l45em
 		left: 45em
-	.l45
+	.l45pc
 		left: 45%
+	.l45px
+		left: 45px
 	.b45em
 		bottom: 45em
-	.b45
+	.b45pc
 		bottom: 45%
+	.b45px
+		bottom: 45px
 	.r45em
 		right: 45em
-	.r45
+	.r45pc
 		right: 45%
+	.r45px
+		right: 45px
 	.w45em
 		width: 45em
-	.w45
+	.w45pc
 		width: 45%
+	.w45px
+		width: 45px
 	.h45em
 		height: 45em
-	.h45
+	.h45pc
 		height: 45%
-	.o45
-		transform-origin: 45% 45%
+	.h45px
+		height: 45px
 	.max-width45em
 		max-width: 45em
-	.max-width45
+	.max-width45pc
 		max-width: 45%
+	.max-width45px
+		max-width: 45px
 	.max-height45em
 		max-height: 45em
-	.max-height45
+	.max-height45pc
 		max-height: 45%
+	.max-height45px
+		max-height: 45px
+	.min-width45em
+		min-width: 45em
+	.min-width45pc
+		min-width: 45%
+	.min-width45px
+		min-width: 45px
+	.min-height45em
+		min-height: 45em
+	.min-height45pc
+		min-height: 45%
+	.min-height45px
+		min-height: 45px
+	.z45
+		z-index: 45
 	.vh45
 		height: 45vh
 	.vw45
 		width: 45vw
+	.basis45
+		flex-basis: 45%
+	.basis45em
+		flex-basis: 45em
 	.t46em
 		top: 46em
-	.t46
+	.t46pc
 		top: 46%
+	.t46px
+		top: 46px
 	.l46em
 		left: 46em
-	.l46
+	.l46pc
 		left: 46%
+	.l46px
+		left: 46px
 	.b46em
 		bottom: 46em
-	.b46
+	.b46pc
 		bottom: 46%
+	.b46px
+		bottom: 46px
 	.r46em
 		right: 46em
-	.r46
+	.r46pc
 		right: 46%
+	.r46px
+		right: 46px
 	.w46em
 		width: 46em
-	.w46
+	.w46pc
 		width: 46%
+	.w46px
+		width: 46px
 	.h46em
 		height: 46em
-	.h46
+	.h46pc
 		height: 46%
-	.o46
-		transform-origin: 46% 46%
+	.h46px
+		height: 46px
 	.max-width46em
 		max-width: 46em
-	.max-width46
+	.max-width46pc
 		max-width: 46%
+	.max-width46px
+		max-width: 46px
 	.max-height46em
 		max-height: 46em
-	.max-height46
+	.max-height46pc
 		max-height: 46%
+	.max-height46px
+		max-height: 46px
+	.min-width46em
+		min-width: 46em
+	.min-width46pc
+		min-width: 46%
+	.min-width46px
+		min-width: 46px
+	.min-height46em
+		min-height: 46em
+	.min-height46pc
+		min-height: 46%
+	.min-height46px
+		min-height: 46px
+	.z46
+		z-index: 46
 	.vh46
 		height: 46vh
 	.vw46
 		width: 46vw
+	.basis46
+		flex-basis: 46%
+	.basis46em
+		flex-basis: 46em
 	.t47em
 		top: 47em
-	.t47
+	.t47pc
 		top: 47%
+	.t47px
+		top: 47px
 	.l47em
 		left: 47em
-	.l47
+	.l47pc
 		left: 47%
+	.l47px
+		left: 47px
 	.b47em
 		bottom: 47em
-	.b47
+	.b47pc
 		bottom: 47%
+	.b47px
+		bottom: 47px
 	.r47em
 		right: 47em
-	.r47
+	.r47pc
 		right: 47%
+	.r47px
+		right: 47px
 	.w47em
 		width: 47em
-	.w47
+	.w47pc
 		width: 47%
+	.w47px
+		width: 47px
 	.h47em
 		height: 47em
-	.h47
+	.h47pc
 		height: 47%
-	.o47
-		transform-origin: 47% 47%
+	.h47px
+		height: 47px
 	.max-width47em
 		max-width: 47em
-	.max-width47
+	.max-width47pc
 		max-width: 47%
+	.max-width47px
+		max-width: 47px
 	.max-height47em
 		max-height: 47em
-	.max-height47
+	.max-height47pc
 		max-height: 47%
+	.max-height47px
+		max-height: 47px
+	.min-width47em
+		min-width: 47em
+	.min-width47pc
+		min-width: 47%
+	.min-width47px
+		min-width: 47px
+	.min-height47em
+		min-height: 47em
+	.min-height47pc
+		min-height: 47%
+	.min-height47px
+		min-height: 47px
+	.z47
+		z-index: 47
 	.vh47
 		height: 47vh
 	.vw47
 		width: 47vw
+	.basis47
+		flex-basis: 47%
+	.basis47em
+		flex-basis: 47em
 	.t48em
 		top: 48em
-	.t48
+	.t48pc
 		top: 48%
+	.t48px
+		top: 48px
 	.l48em
 		left: 48em
-	.l48
+	.l48pc
 		left: 48%
+	.l48px
+		left: 48px
 	.b48em
 		bottom: 48em
-	.b48
+	.b48pc
 		bottom: 48%
+	.b48px
+		bottom: 48px
 	.r48em
 		right: 48em
-	.r48
+	.r48pc
 		right: 48%
+	.r48px
+		right: 48px
 	.w48em
 		width: 48em
-	.w48
+	.w48pc
 		width: 48%
+	.w48px
+		width: 48px
 	.h48em
 		height: 48em
-	.h48
+	.h48pc
 		height: 48%
-	.o48
-		transform-origin: 48% 48%
+	.h48px
+		height: 48px
 	.max-width48em
 		max-width: 48em
-	.max-width48
+	.max-width48pc
 		max-width: 48%
+	.max-width48px
+		max-width: 48px
 	.max-height48em
 		max-height: 48em
-	.max-height48
+	.max-height48pc
 		max-height: 48%
+	.max-height48px
+		max-height: 48px
+	.min-width48em
+		min-width: 48em
+	.min-width48pc
+		min-width: 48%
+	.min-width48px
+		min-width: 48px
+	.min-height48em
+		min-height: 48em
+	.min-height48pc
+		min-height: 48%
+	.min-height48px
+		min-height: 48px
+	.z48
+		z-index: 48
 	.vh48
 		height: 48vh
 	.vw48
 		width: 48vw
+	.basis48
+		flex-basis: 48%
+	.basis48em
+		flex-basis: 48em
 	.t49em
 		top: 49em
-	.t49
+	.t49pc
 		top: 49%
+	.t49px
+		top: 49px
 	.l49em
 		left: 49em
-	.l49
+	.l49pc
 		left: 49%
+	.l49px
+		left: 49px
 	.b49em
 		bottom: 49em
-	.b49
+	.b49pc
 		bottom: 49%
+	.b49px
+		bottom: 49px
 	.r49em
 		right: 49em
-	.r49
+	.r49pc
 		right: 49%
+	.r49px
+		right: 49px
 	.w49em
 		width: 49em
-	.w49
+	.w49pc
 		width: 49%
+	.w49px
+		width: 49px
 	.h49em
 		height: 49em
-	.h49
+	.h49pc
 		height: 49%
-	.o49
-		transform-origin: 49% 49%
+	.h49px
+		height: 49px
 	.max-width49em
 		max-width: 49em
-	.max-width49
+	.max-width49pc
 		max-width: 49%
+	.max-width49px
+		max-width: 49px
 	.max-height49em
 		max-height: 49em
-	.max-height49
+	.max-height49pc
 		max-height: 49%
+	.max-height49px
+		max-height: 49px
+	.min-width49em
+		min-width: 49em
+	.min-width49pc
+		min-width: 49%
+	.min-width49px
+		min-width: 49px
+	.min-height49em
+		min-height: 49em
+	.min-height49pc
+		min-height: 49%
+	.min-height49px
+		min-height: 49px
+	.z49
+		z-index: 49
 	.vh49
 		height: 49vh
 	.vw49
 		width: 49vw
+	.basis49
+		flex-basis: 49%
+	.basis49em
+		flex-basis: 49em
 	.t50em
 		top: 50em
-	.t50
+	.t50pc
 		top: 50%
+	.t50px
+		top: 50px
 	.l50em
 		left: 50em
-	.l50
+	.l50pc
 		left: 50%
+	.l50px
+		left: 50px
 	.b50em
 		bottom: 50em
-	.b50
+	.b50pc
 		bottom: 50%
+	.b50px
+		bottom: 50px
 	.r50em
 		right: 50em
-	.r50
+	.r50pc
 		right: 50%
+	.r50px
+		right: 50px
 	.w50em
 		width: 50em
-	.w50
+	.w50pc
 		width: 50%
+	.w50px
+		width: 50px
 	.h50em
 		height: 50em
-	.h50
+	.h50pc
 		height: 50%
-	.o50
-		transform-origin: 50% 50%
+	.h50px
+		height: 50px
 	.max-width50em
 		max-width: 50em
-	.max-width50
+	.max-width50pc
 		max-width: 50%
+	.max-width50px
+		max-width: 50px
 	.max-height50em
 		max-height: 50em
-	.max-height50
+	.max-height50pc
 		max-height: 50%
+	.max-height50px
+		max-height: 50px
+	.min-width50em
+		min-width: 50em
+	.min-width50pc
+		min-width: 50%
+	.min-width50px
+		min-width: 50px
+	.min-height50em
+		min-height: 50em
+	.min-height50pc
+		min-height: 50%
+	.min-height50px
+		min-height: 50px
+	.z50
+		z-index: 50
 	.vh50
 		height: 50vh
 	.vw50
 		width: 50vw
+	.basis50
+		flex-basis: 50%
+	.basis50em
+		flex-basis: 50em
 	.t51em
 		top: 51em
-	.t51
+	.t51pc
 		top: 51%
+	.t51px
+		top: 51px
 	.l51em
 		left: 51em
-	.l51
+	.l51pc
 		left: 51%
+	.l51px
+		left: 51px
 	.b51em
 		bottom: 51em
-	.b51
+	.b51pc
 		bottom: 51%
+	.b51px
+		bottom: 51px
 	.r51em
 		right: 51em
-	.r51
+	.r51pc
 		right: 51%
+	.r51px
+		right: 51px
 	.w51em
 		width: 51em
-	.w51
+	.w51pc
 		width: 51%
+	.w51px
+		width: 51px
 	.h51em
 		height: 51em
-	.h51
+	.h51pc
 		height: 51%
-	.o51
-		transform-origin: 51% 51%
+	.h51px
+		height: 51px
 	.max-width51em
 		max-width: 51em
-	.max-width51
+	.max-width51pc
 		max-width: 51%
+	.max-width51px
+		max-width: 51px
 	.max-height51em
 		max-height: 51em
-	.max-height51
+	.max-height51pc
 		max-height: 51%
+	.max-height51px
+		max-height: 51px
+	.min-width51em
+		min-width: 51em
+	.min-width51pc
+		min-width: 51%
+	.min-width51px
+		min-width: 51px
+	.min-height51em
+		min-height: 51em
+	.min-height51pc
+		min-height: 51%
+	.min-height51px
+		min-height: 51px
+	.z51
+		z-index: 51
 	.vh51
 		height: 51vh
 	.vw51
 		width: 51vw
+	.basis51
+		flex-basis: 51%
+	.basis51em
+		flex-basis: 51em
 	.t52em
 		top: 52em
-	.t52
+	.t52pc
 		top: 52%
+	.t52px
+		top: 52px
 	.l52em
 		left: 52em
-	.l52
+	.l52pc
 		left: 52%
+	.l52px
+		left: 52px
 	.b52em
 		bottom: 52em
-	.b52
+	.b52pc
 		bottom: 52%
+	.b52px
+		bottom: 52px
 	.r52em
 		right: 52em
-	.r52
+	.r52pc
 		right: 52%
+	.r52px
+		right: 52px
 	.w52em
 		width: 52em
-	.w52
+	.w52pc
 		width: 52%
+	.w52px
+		width: 52px
 	.h52em
 		height: 52em
-	.h52
+	.h52pc
 		height: 52%
-	.o52
-		transform-origin: 52% 52%
+	.h52px
+		height: 52px
 	.max-width52em
 		max-width: 52em
-	.max-width52
+	.max-width52pc
 		max-width: 52%
+	.max-width52px
+		max-width: 52px
 	.max-height52em
 		max-height: 52em
-	.max-height52
+	.max-height52pc
 		max-height: 52%
+	.max-height52px
+		max-height: 52px
+	.min-width52em
+		min-width: 52em
+	.min-width52pc
+		min-width: 52%
+	.min-width52px
+		min-width: 52px
+	.min-height52em
+		min-height: 52em
+	.min-height52pc
+		min-height: 52%
+	.min-height52px
+		min-height: 52px
+	.z52
+		z-index: 52
 	.vh52
 		height: 52vh
 	.vw52
 		width: 52vw
+	.basis52
+		flex-basis: 52%
+	.basis52em
+		flex-basis: 52em
 	.t53em
 		top: 53em
-	.t53
+	.t53pc
 		top: 53%
+	.t53px
+		top: 53px
 	.l53em
 		left: 53em
-	.l53
+	.l53pc
 		left: 53%
+	.l53px
+		left: 53px
 	.b53em
 		bottom: 53em
-	.b53
+	.b53pc
 		bottom: 53%
+	.b53px
+		bottom: 53px
 	.r53em
 		right: 53em
-	.r53
+	.r53pc
 		right: 53%
+	.r53px
+		right: 53px
 	.w53em
 		width: 53em
-	.w53
+	.w53pc
 		width: 53%
+	.w53px
+		width: 53px
 	.h53em
 		height: 53em
-	.h53
+	.h53pc
 		height: 53%
-	.o53
-		transform-origin: 53% 53%
+	.h53px
+		height: 53px
 	.max-width53em
 		max-width: 53em
-	.max-width53
+	.max-width53pc
 		max-width: 53%
+	.max-width53px
+		max-width: 53px
 	.max-height53em
 		max-height: 53em
-	.max-height53
+	.max-height53pc
 		max-height: 53%
+	.max-height53px
+		max-height: 53px
+	.min-width53em
+		min-width: 53em
+	.min-width53pc
+		min-width: 53%
+	.min-width53px
+		min-width: 53px
+	.min-height53em
+		min-height: 53em
+	.min-height53pc
+		min-height: 53%
+	.min-height53px
+		min-height: 53px
+	.z53
+		z-index: 53
 	.vh53
 		height: 53vh
 	.vw53
 		width: 53vw
+	.basis53
+		flex-basis: 53%
+	.basis53em
+		flex-basis: 53em
 	.t54em
 		top: 54em
-	.t54
+	.t54pc
 		top: 54%
+	.t54px
+		top: 54px
 	.l54em
 		left: 54em
-	.l54
+	.l54pc
 		left: 54%
+	.l54px
+		left: 54px
 	.b54em
 		bottom: 54em
-	.b54
+	.b54pc
 		bottom: 54%
+	.b54px
+		bottom: 54px
 	.r54em
 		right: 54em
-	.r54
+	.r54pc
 		right: 54%
+	.r54px
+		right: 54px
 	.w54em
 		width: 54em
-	.w54
+	.w54pc
 		width: 54%
+	.w54px
+		width: 54px
 	.h54em
 		height: 54em
-	.h54
+	.h54pc
 		height: 54%
-	.o54
-		transform-origin: 54% 54%
+	.h54px
+		height: 54px
 	.max-width54em
 		max-width: 54em
-	.max-width54
+	.max-width54pc
 		max-width: 54%
+	.max-width54px
+		max-width: 54px
 	.max-height54em
 		max-height: 54em
-	.max-height54
+	.max-height54pc
 		max-height: 54%
+	.max-height54px
+		max-height: 54px
+	.min-width54em
+		min-width: 54em
+	.min-width54pc
+		min-width: 54%
+	.min-width54px
+		min-width: 54px
+	.min-height54em
+		min-height: 54em
+	.min-height54pc
+		min-height: 54%
+	.min-height54px
+		min-height: 54px
+	.z54
+		z-index: 54
 	.vh54
 		height: 54vh
 	.vw54
 		width: 54vw
+	.basis54
+		flex-basis: 54%
+	.basis54em
+		flex-basis: 54em
 	.t55em
 		top: 55em
-	.t55
+	.t55pc
 		top: 55%
+	.t55px
+		top: 55px
 	.l55em
 		left: 55em
-	.l55
+	.l55pc
 		left: 55%
+	.l55px
+		left: 55px
 	.b55em
 		bottom: 55em
-	.b55
+	.b55pc
 		bottom: 55%
+	.b55px
+		bottom: 55px
 	.r55em
 		right: 55em
-	.r55
+	.r55pc
 		right: 55%
+	.r55px
+		right: 55px
 	.w55em
 		width: 55em
-	.w55
+	.w55pc
 		width: 55%
+	.w55px
+		width: 55px
 	.h55em
 		height: 55em
-	.h55
+	.h55pc
 		height: 55%
-	.o55
-		transform-origin: 55% 55%
+	.h55px
+		height: 55px
 	.max-width55em
 		max-width: 55em
-	.max-width55
+	.max-width55pc
 		max-width: 55%
+	.max-width55px
+		max-width: 55px
 	.max-height55em
 		max-height: 55em
-	.max-height55
+	.max-height55pc
 		max-height: 55%
+	.max-height55px
+		max-height: 55px
+	.min-width55em
+		min-width: 55em
+	.min-width55pc
+		min-width: 55%
+	.min-width55px
+		min-width: 55px
+	.min-height55em
+		min-height: 55em
+	.min-height55pc
+		min-height: 55%
+	.min-height55px
+		min-height: 55px
+	.z55
+		z-index: 55
 	.vh55
 		height: 55vh
 	.vw55
 		width: 55vw
+	.basis55
+		flex-basis: 55%
+	.basis55em
+		flex-basis: 55em
 	.t56em
 		top: 56em
-	.t56
+	.t56pc
 		top: 56%
+	.t56px
+		top: 56px
 	.l56em
 		left: 56em
-	.l56
+	.l56pc
 		left: 56%
+	.l56px
+		left: 56px
 	.b56em
 		bottom: 56em
-	.b56
+	.b56pc
 		bottom: 56%
+	.b56px
+		bottom: 56px
 	.r56em
 		right: 56em
-	.r56
+	.r56pc
 		right: 56%
+	.r56px
+		right: 56px
 	.w56em
 		width: 56em
-	.w56
+	.w56pc
 		width: 56%
+	.w56px
+		width: 56px
 	.h56em
 		height: 56em
-	.h56
+	.h56pc
 		height: 56%
-	.o56
-		transform-origin: 56% 56%
+	.h56px
+		height: 56px
 	.max-width56em
 		max-width: 56em
-	.max-width56
+	.max-width56pc
 		max-width: 56%
+	.max-width56px
+		max-width: 56px
 	.max-height56em
 		max-height: 56em
-	.max-height56
+	.max-height56pc
 		max-height: 56%
+	.max-height56px
+		max-height: 56px
+	.min-width56em
+		min-width: 56em
+	.min-width56pc
+		min-width: 56%
+	.min-width56px
+		min-width: 56px
+	.min-height56em
+		min-height: 56em
+	.min-height56pc
+		min-height: 56%
+	.min-height56px
+		min-height: 56px
+	.z56
+		z-index: 56
 	.vh56
 		height: 56vh
 	.vw56
 		width: 56vw
+	.basis56
+		flex-basis: 56%
+	.basis56em
+		flex-basis: 56em
 	.t57em
 		top: 57em
-	.t57
+	.t57pc
 		top: 57%
+	.t57px
+		top: 57px
 	.l57em
 		left: 57em
-	.l57
+	.l57pc
 		left: 57%
+	.l57px
+		left: 57px
 	.b57em
 		bottom: 57em
-	.b57
+	.b57pc
 		bottom: 57%
+	.b57px
+		bottom: 57px
 	.r57em
 		right: 57em
-	.r57
+	.r57pc
 		right: 57%
+	.r57px
+		right: 57px
 	.w57em
 		width: 57em
-	.w57
+	.w57pc
 		width: 57%
+	.w57px
+		width: 57px
 	.h57em
 		height: 57em
-	.h57
+	.h57pc
 		height: 57%
-	.o57
-		transform-origin: 57% 57%
+	.h57px
+		height: 57px
 	.max-width57em
 		max-width: 57em
-	.max-width57
+	.max-width57pc
 		max-width: 57%
+	.max-width57px
+		max-width: 57px
 	.max-height57em
 		max-height: 57em
-	.max-height57
+	.max-height57pc
 		max-height: 57%
+	.max-height57px
+		max-height: 57px
+	.min-width57em
+		min-width: 57em
+	.min-width57pc
+		min-width: 57%
+	.min-width57px
+		min-width: 57px
+	.min-height57em
+		min-height: 57em
+	.min-height57pc
+		min-height: 57%
+	.min-height57px
+		min-height: 57px
+	.z57
+		z-index: 57
 	.vh57
 		height: 57vh
 	.vw57
 		width: 57vw
+	.basis57
+		flex-basis: 57%
+	.basis57em
+		flex-basis: 57em
 	.t58em
 		top: 58em
-	.t58
+	.t58pc
 		top: 58%
+	.t58px
+		top: 58px
 	.l58em
 		left: 58em
-	.l58
+	.l58pc
 		left: 58%
+	.l58px
+		left: 58px
 	.b58em
 		bottom: 58em
-	.b58
+	.b58pc
 		bottom: 58%
+	.b58px
+		bottom: 58px
 	.r58em
 		right: 58em
-	.r58
+	.r58pc
 		right: 58%
+	.r58px
+		right: 58px
 	.w58em
 		width: 58em
-	.w58
+	.w58pc
 		width: 58%
+	.w58px
+		width: 58px
 	.h58em
 		height: 58em
-	.h58
+	.h58pc
 		height: 58%
-	.o58
-		transform-origin: 58% 58%
+	.h58px
+		height: 58px
 	.max-width58em
 		max-width: 58em
-	.max-width58
+	.max-width58pc
 		max-width: 58%
+	.max-width58px
+		max-width: 58px
 	.max-height58em
 		max-height: 58em
-	.max-height58
+	.max-height58pc
 		max-height: 58%
+	.max-height58px
+		max-height: 58px
+	.min-width58em
+		min-width: 58em
+	.min-width58pc
+		min-width: 58%
+	.min-width58px
+		min-width: 58px
+	.min-height58em
+		min-height: 58em
+	.min-height58pc
+		min-height: 58%
+	.min-height58px
+		min-height: 58px
+	.z58
+		z-index: 58
 	.vh58
 		height: 58vh
 	.vw58
 		width: 58vw
+	.basis58
+		flex-basis: 58%
+	.basis58em
+		flex-basis: 58em
 	.t59em
 		top: 59em
-	.t59
+	.t59pc
 		top: 59%
+	.t59px
+		top: 59px
 	.l59em
 		left: 59em
-	.l59
+	.l59pc
 		left: 59%
+	.l59px
+		left: 59px
 	.b59em
 		bottom: 59em
-	.b59
+	.b59pc
 		bottom: 59%
+	.b59px
+		bottom: 59px
 	.r59em
 		right: 59em
-	.r59
+	.r59pc
 		right: 59%
+	.r59px
+		right: 59px
 	.w59em
 		width: 59em
-	.w59
+	.w59pc
 		width: 59%
+	.w59px
+		width: 59px
 	.h59em
 		height: 59em
-	.h59
+	.h59pc
 		height: 59%
-	.o59
-		transform-origin: 59% 59%
+	.h59px
+		height: 59px
 	.max-width59em
 		max-width: 59em
-	.max-width59
+	.max-width59pc
 		max-width: 59%
+	.max-width59px
+		max-width: 59px
 	.max-height59em
 		max-height: 59em
-	.max-height59
+	.max-height59pc
 		max-height: 59%
+	.max-height59px
+		max-height: 59px
+	.min-width59em
+		min-width: 59em
+	.min-width59pc
+		min-width: 59%
+	.min-width59px
+		min-width: 59px
+	.min-height59em
+		min-height: 59em
+	.min-height59pc
+		min-height: 59%
+	.min-height59px
+		min-height: 59px
+	.z59
+		z-index: 59
 	.vh59
 		height: 59vh
 	.vw59
 		width: 59vw
+	.basis59
+		flex-basis: 59%
+	.basis59em
+		flex-basis: 59em
 	.t60em
 		top: 60em
-	.t60
+	.t60pc
 		top: 60%
+	.t60px
+		top: 60px
 	.l60em
 		left: 60em
-	.l60
+	.l60pc
 		left: 60%
+	.l60px
+		left: 60px
 	.b60em
 		bottom: 60em
-	.b60
+	.b60pc
 		bottom: 60%
+	.b60px
+		bottom: 60px
 	.r60em
 		right: 60em
-	.r60
+	.r60pc
 		right: 60%
+	.r60px
+		right: 60px
 	.w60em
 		width: 60em
-	.w60
+	.w60pc
 		width: 60%
+	.w60px
+		width: 60px
 	.h60em
 		height: 60em
-	.h60
+	.h60pc
 		height: 60%
-	.o60
-		transform-origin: 60% 60%
+	.h60px
+		height: 60px
 	.max-width60em
 		max-width: 60em
-	.max-width60
+	.max-width60pc
 		max-width: 60%
+	.max-width60px
+		max-width: 60px
 	.max-height60em
 		max-height: 60em
-	.max-height60
+	.max-height60pc
 		max-height: 60%
+	.max-height60px
+		max-height: 60px
+	.min-width60em
+		min-width: 60em
+	.min-width60pc
+		min-width: 60%
+	.min-width60px
+		min-width: 60px
+	.min-height60em
+		min-height: 60em
+	.min-height60pc
+		min-height: 60%
+	.min-height60px
+		min-height: 60px
+	.z60
+		z-index: 60
 	.vh60
 		height: 60vh
 	.vw60
 		width: 60vw
+	.basis60
+		flex-basis: 60%
+	.basis60em
+		flex-basis: 60em
 	.t61em
 		top: 61em
-	.t61
+	.t61pc
 		top: 61%
+	.t61px
+		top: 61px
 	.l61em
 		left: 61em
-	.l61
+	.l61pc
 		left: 61%
+	.l61px
+		left: 61px
 	.b61em
 		bottom: 61em
-	.b61
+	.b61pc
 		bottom: 61%
+	.b61px
+		bottom: 61px
 	.r61em
 		right: 61em
-	.r61
+	.r61pc
 		right: 61%
+	.r61px
+		right: 61px
 	.w61em
 		width: 61em
-	.w61
+	.w61pc
 		width: 61%
+	.w61px
+		width: 61px
 	.h61em
 		height: 61em
-	.h61
+	.h61pc
 		height: 61%
-	.o61
-		transform-origin: 61% 61%
+	.h61px
+		height: 61px
 	.max-width61em
 		max-width: 61em
-	.max-width61
+	.max-width61pc
 		max-width: 61%
+	.max-width61px
+		max-width: 61px
 	.max-height61em
 		max-height: 61em
-	.max-height61
+	.max-height61pc
 		max-height: 61%
+	.max-height61px
+		max-height: 61px
+	.min-width61em
+		min-width: 61em
+	.min-width61pc
+		min-width: 61%
+	.min-width61px
+		min-width: 61px
+	.min-height61em
+		min-height: 61em
+	.min-height61pc
+		min-height: 61%
+	.min-height61px
+		min-height: 61px
+	.z61
+		z-index: 61
 	.vh61
 		height: 61vh
 	.vw61
 		width: 61vw
+	.basis61
+		flex-basis: 61%
+	.basis61em
+		flex-basis: 61em
 	.t62em
 		top: 62em
-	.t62
+	.t62pc
 		top: 62%
+	.t62px
+		top: 62px
 	.l62em
 		left: 62em
-	.l62
+	.l62pc
 		left: 62%
+	.l62px
+		left: 62px
 	.b62em
 		bottom: 62em
-	.b62
+	.b62pc
 		bottom: 62%
+	.b62px
+		bottom: 62px
 	.r62em
 		right: 62em
-	.r62
+	.r62pc
 		right: 62%
+	.r62px
+		right: 62px
 	.w62em
 		width: 62em
-	.w62
+	.w62pc
 		width: 62%
+	.w62px
+		width: 62px
 	.h62em
 		height: 62em
-	.h62
+	.h62pc
 		height: 62%
-	.o62
-		transform-origin: 62% 62%
+	.h62px
+		height: 62px
 	.max-width62em
 		max-width: 62em
-	.max-width62
+	.max-width62pc
 		max-width: 62%
+	.max-width62px
+		max-width: 62px
 	.max-height62em
 		max-height: 62em
-	.max-height62
+	.max-height62pc
 		max-height: 62%
+	.max-height62px
+		max-height: 62px
+	.min-width62em
+		min-width: 62em
+	.min-width62pc
+		min-width: 62%
+	.min-width62px
+		min-width: 62px
+	.min-height62em
+		min-height: 62em
+	.min-height62pc
+		min-height: 62%
+	.min-height62px
+		min-height: 62px
+	.z62
+		z-index: 62
 	.vh62
 		height: 62vh
 	.vw62
 		width: 62vw
+	.basis62
+		flex-basis: 62%
+	.basis62em
+		flex-basis: 62em
 	.t63em
 		top: 63em
-	.t63
+	.t63pc
 		top: 63%
+	.t63px
+		top: 63px
 	.l63em
 		left: 63em
-	.l63
+	.l63pc
 		left: 63%
+	.l63px
+		left: 63px
 	.b63em
 		bottom: 63em
-	.b63
+	.b63pc
 		bottom: 63%
+	.b63px
+		bottom: 63px
 	.r63em
 		right: 63em
-	.r63
+	.r63pc
 		right: 63%
+	.r63px
+		right: 63px
 	.w63em
 		width: 63em
-	.w63
+	.w63pc
 		width: 63%
+	.w63px
+		width: 63px
 	.h63em
 		height: 63em
-	.h63
+	.h63pc
 		height: 63%
-	.o63
-		transform-origin: 63% 63%
+	.h63px
+		height: 63px
 	.max-width63em
 		max-width: 63em
-	.max-width63
+	.max-width63pc
 		max-width: 63%
+	.max-width63px
+		max-width: 63px
 	.max-height63em
 		max-height: 63em
-	.max-height63
+	.max-height63pc
 		max-height: 63%
+	.max-height63px
+		max-height: 63px
+	.min-width63em
+		min-width: 63em
+	.min-width63pc
+		min-width: 63%
+	.min-width63px
+		min-width: 63px
+	.min-height63em
+		min-height: 63em
+	.min-height63pc
+		min-height: 63%
+	.min-height63px
+		min-height: 63px
+	.z63
+		z-index: 63
 	.vh63
 		height: 63vh
 	.vw63
 		width: 63vw
+	.basis63
+		flex-basis: 63%
+	.basis63em
+		flex-basis: 63em
 	.t64em
 		top: 64em
-	.t64
+	.t64pc
 		top: 64%
+	.t64px
+		top: 64px
 	.l64em
 		left: 64em
-	.l64
+	.l64pc
 		left: 64%
+	.l64px
+		left: 64px
 	.b64em
 		bottom: 64em
-	.b64
+	.b64pc
 		bottom: 64%
+	.b64px
+		bottom: 64px
 	.r64em
 		right: 64em
-	.r64
+	.r64pc
 		right: 64%
+	.r64px
+		right: 64px
 	.w64em
 		width: 64em
-	.w64
+	.w64pc
 		width: 64%
+	.w64px
+		width: 64px
 	.h64em
 		height: 64em
-	.h64
+	.h64pc
 		height: 64%
-	.o64
-		transform-origin: 64% 64%
+	.h64px
+		height: 64px
 	.max-width64em
 		max-width: 64em
-	.max-width64
+	.max-width64pc
 		max-width: 64%
+	.max-width64px
+		max-width: 64px
 	.max-height64em
 		max-height: 64em
-	.max-height64
+	.max-height64pc
 		max-height: 64%
+	.max-height64px
+		max-height: 64px
+	.min-width64em
+		min-width: 64em
+	.min-width64pc
+		min-width: 64%
+	.min-width64px
+		min-width: 64px
+	.min-height64em
+		min-height: 64em
+	.min-height64pc
+		min-height: 64%
+	.min-height64px
+		min-height: 64px
+	.z64
+		z-index: 64
 	.vh64
 		height: 64vh
 	.vw64
 		width: 64vw
+	.basis64
+		flex-basis: 64%
+	.basis64em
+		flex-basis: 64em
 	.t65em
 		top: 65em
-	.t65
+	.t65pc
 		top: 65%
+	.t65px
+		top: 65px
 	.l65em
 		left: 65em
-	.l65
+	.l65pc
 		left: 65%
+	.l65px
+		left: 65px
 	.b65em
 		bottom: 65em
-	.b65
+	.b65pc
 		bottom: 65%
+	.b65px
+		bottom: 65px
 	.r65em
 		right: 65em
-	.r65
+	.r65pc
 		right: 65%
+	.r65px
+		right: 65px
 	.w65em
 		width: 65em
-	.w65
+	.w65pc
 		width: 65%
+	.w65px
+		width: 65px
 	.h65em
 		height: 65em
-	.h65
+	.h65pc
 		height: 65%
-	.o65
-		transform-origin: 65% 65%
+	.h65px
+		height: 65px
 	.max-width65em
 		max-width: 65em
-	.max-width65
+	.max-width65pc
 		max-width: 65%
+	.max-width65px
+		max-width: 65px
 	.max-height65em
 		max-height: 65em
-	.max-height65
+	.max-height65pc
 		max-height: 65%
+	.max-height65px
+		max-height: 65px
+	.min-width65em
+		min-width: 65em
+	.min-width65pc
+		min-width: 65%
+	.min-width65px
+		min-width: 65px
+	.min-height65em
+		min-height: 65em
+	.min-height65pc
+		min-height: 65%
+	.min-height65px
+		min-height: 65px
+	.z65
+		z-index: 65
 	.vh65
 		height: 65vh
 	.vw65
 		width: 65vw
+	.basis65
+		flex-basis: 65%
+	.basis65em
+		flex-basis: 65em
 	.t66em
 		top: 66em
-	.t66
+	.t66pc
 		top: 66%
+	.t66px
+		top: 66px
 	.l66em
 		left: 66em
-	.l66
+	.l66pc
 		left: 66%
+	.l66px
+		left: 66px
 	.b66em
 		bottom: 66em
-	.b66
+	.b66pc
 		bottom: 66%
+	.b66px
+		bottom: 66px
 	.r66em
 		right: 66em
-	.r66
+	.r66pc
 		right: 66%
+	.r66px
+		right: 66px
 	.w66em
 		width: 66em
-	.w66
+	.w66pc
 		width: 66%
+	.w66px
+		width: 66px
 	.h66em
 		height: 66em
-	.h66
+	.h66pc
 		height: 66%
-	.o66
-		transform-origin: 66% 66%
+	.h66px
+		height: 66px
 	.max-width66em
 		max-width: 66em
-	.max-width66
+	.max-width66pc
 		max-width: 66%
+	.max-width66px
+		max-width: 66px
 	.max-height66em
 		max-height: 66em
-	.max-height66
+	.max-height66pc
 		max-height: 66%
+	.max-height66px
+		max-height: 66px
+	.min-width66em
+		min-width: 66em
+	.min-width66pc
+		min-width: 66%
+	.min-width66px
+		min-width: 66px
+	.min-height66em
+		min-height: 66em
+	.min-height66pc
+		min-height: 66%
+	.min-height66px
+		min-height: 66px
+	.z66
+		z-index: 66
 	.vh66
 		height: 66vh
 	.vw66
 		width: 66vw
+	.basis66
+		flex-basis: 66%
+	.basis66em
+		flex-basis: 66em
 	.t67em
 		top: 67em
-	.t67
+	.t67pc
 		top: 67%
+	.t67px
+		top: 67px
 	.l67em
 		left: 67em
-	.l67
+	.l67pc
 		left: 67%
+	.l67px
+		left: 67px
 	.b67em
 		bottom: 67em
-	.b67
+	.b67pc
 		bottom: 67%
+	.b67px
+		bottom: 67px
 	.r67em
 		right: 67em
-	.r67
+	.r67pc
 		right: 67%
+	.r67px
+		right: 67px
 	.w67em
 		width: 67em
-	.w67
+	.w67pc
 		width: 67%
+	.w67px
+		width: 67px
 	.h67em
 		height: 67em
-	.h67
+	.h67pc
 		height: 67%
-	.o67
-		transform-origin: 67% 67%
+	.h67px
+		height: 67px
 	.max-width67em
 		max-width: 67em
-	.max-width67
+	.max-width67pc
 		max-width: 67%
+	.max-width67px
+		max-width: 67px
 	.max-height67em
 		max-height: 67em
-	.max-height67
+	.max-height67pc
 		max-height: 67%
+	.max-height67px
+		max-height: 67px
+	.min-width67em
+		min-width: 67em
+	.min-width67pc
+		min-width: 67%
+	.min-width67px
+		min-width: 67px
+	.min-height67em
+		min-height: 67em
+	.min-height67pc
+		min-height: 67%
+	.min-height67px
+		min-height: 67px
+	.z67
+		z-index: 67
 	.vh67
 		height: 67vh
 	.vw67
 		width: 67vw
+	.basis67
+		flex-basis: 67%
+	.basis67em
+		flex-basis: 67em
 	.t68em
 		top: 68em
-	.t68
+	.t68pc
 		top: 68%
+	.t68px
+		top: 68px
 	.l68em
 		left: 68em
-	.l68
+	.l68pc
 		left: 68%
+	.l68px
+		left: 68px
 	.b68em
 		bottom: 68em
-	.b68
+	.b68pc
 		bottom: 68%
+	.b68px
+		bottom: 68px
 	.r68em
 		right: 68em
-	.r68
+	.r68pc
 		right: 68%
+	.r68px
+		right: 68px
 	.w68em
 		width: 68em
-	.w68
+	.w68pc
 		width: 68%
+	.w68px
+		width: 68px
 	.h68em
 		height: 68em
-	.h68
+	.h68pc
 		height: 68%
-	.o68
-		transform-origin: 68% 68%
+	.h68px
+		height: 68px
 	.max-width68em
 		max-width: 68em
-	.max-width68
+	.max-width68pc
 		max-width: 68%
+	.max-width68px
+		max-width: 68px
 	.max-height68em
 		max-height: 68em
-	.max-height68
+	.max-height68pc
 		max-height: 68%
+	.max-height68px
+		max-height: 68px
+	.min-width68em
+		min-width: 68em
+	.min-width68pc
+		min-width: 68%
+	.min-width68px
+		min-width: 68px
+	.min-height68em
+		min-height: 68em
+	.min-height68pc
+		min-height: 68%
+	.min-height68px
+		min-height: 68px
+	.z68
+		z-index: 68
 	.vh68
 		height: 68vh
 	.vw68
 		width: 68vw
+	.basis68
+		flex-basis: 68%
+	.basis68em
+		flex-basis: 68em
 	.t69em
 		top: 69em
-	.t69
+	.t69pc
 		top: 69%
+	.t69px
+		top: 69px
 	.l69em
 		left: 69em
-	.l69
+	.l69pc
 		left: 69%
+	.l69px
+		left: 69px
 	.b69em
 		bottom: 69em
-	.b69
+	.b69pc
 		bottom: 69%
+	.b69px
+		bottom: 69px
 	.r69em
 		right: 69em
-	.r69
+	.r69pc
 		right: 69%
+	.r69px
+		right: 69px
 	.w69em
 		width: 69em
-	.w69
+	.w69pc
 		width: 69%
+	.w69px
+		width: 69px
 	.h69em
 		height: 69em
-	.h69
+	.h69pc
 		height: 69%
-	.o69
-		transform-origin: 69% 69%
+	.h69px
+		height: 69px
 	.max-width69em
 		max-width: 69em
-	.max-width69
+	.max-width69pc
 		max-width: 69%
+	.max-width69px
+		max-width: 69px
 	.max-height69em
 		max-height: 69em
-	.max-height69
+	.max-height69pc
 		max-height: 69%
+	.max-height69px
+		max-height: 69px
+	.min-width69em
+		min-width: 69em
+	.min-width69pc
+		min-width: 69%
+	.min-width69px
+		min-width: 69px
+	.min-height69em
+		min-height: 69em
+	.min-height69pc
+		min-height: 69%
+	.min-height69px
+		min-height: 69px
+	.z69
+		z-index: 69
 	.vh69
 		height: 69vh
 	.vw69
 		width: 69vw
+	.basis69
+		flex-basis: 69%
+	.basis69em
+		flex-basis: 69em
 	.t70em
 		top: 70em
-	.t70
+	.t70pc
 		top: 70%
+	.t70px
+		top: 70px
 	.l70em
 		left: 70em
-	.l70
+	.l70pc
 		left: 70%
+	.l70px
+		left: 70px
 	.b70em
 		bottom: 70em
-	.b70
+	.b70pc
 		bottom: 70%
+	.b70px
+		bottom: 70px
 	.r70em
 		right: 70em
-	.r70
+	.r70pc
 		right: 70%
+	.r70px
+		right: 70px
 	.w70em
 		width: 70em
-	.w70
+	.w70pc
 		width: 70%
+	.w70px
+		width: 70px
 	.h70em
 		height: 70em
-	.h70
+	.h70pc
 		height: 70%
-	.o70
-		transform-origin: 70% 70%
+	.h70px
+		height: 70px
 	.max-width70em
 		max-width: 70em
-	.max-width70
+	.max-width70pc
 		max-width: 70%
+	.max-width70px
+		max-width: 70px
 	.max-height70em
 		max-height: 70em
-	.max-height70
+	.max-height70pc
 		max-height: 70%
+	.max-height70px
+		max-height: 70px
+	.min-width70em
+		min-width: 70em
+	.min-width70pc
+		min-width: 70%
+	.min-width70px
+		min-width: 70px
+	.min-height70em
+		min-height: 70em
+	.min-height70pc
+		min-height: 70%
+	.min-height70px
+		min-height: 70px
+	.z70
+		z-index: 70
 	.vh70
 		height: 70vh
 	.vw70
 		width: 70vw
+	.basis70
+		flex-basis: 70%
+	.basis70em
+		flex-basis: 70em
 	.t71em
 		top: 71em
-	.t71
+	.t71pc
 		top: 71%
+	.t71px
+		top: 71px
 	.l71em
 		left: 71em
-	.l71
+	.l71pc
 		left: 71%
+	.l71px
+		left: 71px
 	.b71em
 		bottom: 71em
-	.b71
+	.b71pc
 		bottom: 71%
+	.b71px
+		bottom: 71px
 	.r71em
 		right: 71em
-	.r71
+	.r71pc
 		right: 71%
+	.r71px
+		right: 71px
 	.w71em
 		width: 71em
-	.w71
+	.w71pc
 		width: 71%
+	.w71px
+		width: 71px
 	.h71em
 		height: 71em
-	.h71
+	.h71pc
 		height: 71%
-	.o71
-		transform-origin: 71% 71%
+	.h71px
+		height: 71px
 	.max-width71em
 		max-width: 71em
-	.max-width71
+	.max-width71pc
 		max-width: 71%
+	.max-width71px
+		max-width: 71px
 	.max-height71em
 		max-height: 71em
-	.max-height71
+	.max-height71pc
 		max-height: 71%
+	.max-height71px
+		max-height: 71px
+	.min-width71em
+		min-width: 71em
+	.min-width71pc
+		min-width: 71%
+	.min-width71px
+		min-width: 71px
+	.min-height71em
+		min-height: 71em
+	.min-height71pc
+		min-height: 71%
+	.min-height71px
+		min-height: 71px
+	.z71
+		z-index: 71
 	.vh71
 		height: 71vh
 	.vw71
 		width: 71vw
+	.basis71
+		flex-basis: 71%
+	.basis71em
+		flex-basis: 71em
 	.t72em
 		top: 72em
-	.t72
+	.t72pc
 		top: 72%
+	.t72px
+		top: 72px
 	.l72em
 		left: 72em
-	.l72
+	.l72pc
 		left: 72%
+	.l72px
+		left: 72px
 	.b72em
 		bottom: 72em
-	.b72
+	.b72pc
 		bottom: 72%
+	.b72px
+		bottom: 72px
 	.r72em
 		right: 72em
-	.r72
+	.r72pc
 		right: 72%
+	.r72px
+		right: 72px
 	.w72em
 		width: 72em
-	.w72
+	.w72pc
 		width: 72%
+	.w72px
+		width: 72px
 	.h72em
 		height: 72em
-	.h72
+	.h72pc
 		height: 72%
-	.o72
-		transform-origin: 72% 72%
+	.h72px
+		height: 72px
 	.max-width72em
 		max-width: 72em
-	.max-width72
+	.max-width72pc
 		max-width: 72%
+	.max-width72px
+		max-width: 72px
 	.max-height72em
 		max-height: 72em
-	.max-height72
+	.max-height72pc
 		max-height: 72%
+	.max-height72px
+		max-height: 72px
+	.min-width72em
+		min-width: 72em
+	.min-width72pc
+		min-width: 72%
+	.min-width72px
+		min-width: 72px
+	.min-height72em
+		min-height: 72em
+	.min-height72pc
+		min-height: 72%
+	.min-height72px
+		min-height: 72px
+	.z72
+		z-index: 72
 	.vh72
 		height: 72vh
 	.vw72
 		width: 72vw
+	.basis72
+		flex-basis: 72%
+	.basis72em
+		flex-basis: 72em
 	.t73em
 		top: 73em
-	.t73
+	.t73pc
 		top: 73%
+	.t73px
+		top: 73px
 	.l73em
 		left: 73em
-	.l73
+	.l73pc
 		left: 73%
+	.l73px
+		left: 73px
 	.b73em
 		bottom: 73em
-	.b73
+	.b73pc
 		bottom: 73%
+	.b73px
+		bottom: 73px
 	.r73em
 		right: 73em
-	.r73
+	.r73pc
 		right: 73%
+	.r73px
+		right: 73px
 	.w73em
 		width: 73em
-	.w73
+	.w73pc
 		width: 73%
+	.w73px
+		width: 73px
 	.h73em
 		height: 73em
-	.h73
+	.h73pc
 		height: 73%
-	.o73
-		transform-origin: 73% 73%
+	.h73px
+		height: 73px
 	.max-width73em
 		max-width: 73em
-	.max-width73
+	.max-width73pc
 		max-width: 73%
+	.max-width73px
+		max-width: 73px
 	.max-height73em
 		max-height: 73em
-	.max-height73
+	.max-height73pc
 		max-height: 73%
+	.max-height73px
+		max-height: 73px
+	.min-width73em
+		min-width: 73em
+	.min-width73pc
+		min-width: 73%
+	.min-width73px
+		min-width: 73px
+	.min-height73em
+		min-height: 73em
+	.min-height73pc
+		min-height: 73%
+	.min-height73px
+		min-height: 73px
+	.z73
+		z-index: 73
 	.vh73
 		height: 73vh
 	.vw73
 		width: 73vw
+	.basis73
+		flex-basis: 73%
+	.basis73em
+		flex-basis: 73em
 	.t74em
 		top: 74em
-	.t74
+	.t74pc
 		top: 74%
+	.t74px
+		top: 74px
 	.l74em
 		left: 74em
-	.l74
+	.l74pc
 		left: 74%
+	.l74px
+		left: 74px
 	.b74em
 		bottom: 74em
-	.b74
+	.b74pc
 		bottom: 74%
+	.b74px
+		bottom: 74px
 	.r74em
 		right: 74em
-	.r74
+	.r74pc
 		right: 74%
+	.r74px
+		right: 74px
 	.w74em
 		width: 74em
-	.w74
+	.w74pc
 		width: 74%
+	.w74px
+		width: 74px
 	.h74em
 		height: 74em
-	.h74
+	.h74pc
 		height: 74%
-	.o74
-		transform-origin: 74% 74%
+	.h74px
+		height: 74px
 	.max-width74em
 		max-width: 74em
-	.max-width74
+	.max-width74pc
 		max-width: 74%
+	.max-width74px
+		max-width: 74px
 	.max-height74em
 		max-height: 74em
-	.max-height74
+	.max-height74pc
 		max-height: 74%
+	.max-height74px
+		max-height: 74px
+	.min-width74em
+		min-width: 74em
+	.min-width74pc
+		min-width: 74%
+	.min-width74px
+		min-width: 74px
+	.min-height74em
+		min-height: 74em
+	.min-height74pc
+		min-height: 74%
+	.min-height74px
+		min-height: 74px
+	.z74
+		z-index: 74
 	.vh74
 		height: 74vh
 	.vw74
 		width: 74vw
+	.basis74
+		flex-basis: 74%
+	.basis74em
+		flex-basis: 74em
 	.t75em
 		top: 75em
-	.t75
+	.t75pc
 		top: 75%
+	.t75px
+		top: 75px
 	.l75em
 		left: 75em
-	.l75
+	.l75pc
 		left: 75%
+	.l75px
+		left: 75px
 	.b75em
 		bottom: 75em
-	.b75
+	.b75pc
 		bottom: 75%
+	.b75px
+		bottom: 75px
 	.r75em
 		right: 75em
-	.r75
+	.r75pc
 		right: 75%
+	.r75px
+		right: 75px
 	.w75em
 		width: 75em
-	.w75
+	.w75pc
 		width: 75%
+	.w75px
+		width: 75px
 	.h75em
 		height: 75em
-	.h75
+	.h75pc
 		height: 75%
-	.o75
-		transform-origin: 75% 75%
+	.h75px
+		height: 75px
 	.max-width75em
 		max-width: 75em
-	.max-width75
+	.max-width75pc
 		max-width: 75%
+	.max-width75px
+		max-width: 75px
 	.max-height75em
 		max-height: 75em
-	.max-height75
+	.max-height75pc
 		max-height: 75%
+	.max-height75px
+		max-height: 75px
+	.min-width75em
+		min-width: 75em
+	.min-width75pc
+		min-width: 75%
+	.min-width75px
+		min-width: 75px
+	.min-height75em
+		min-height: 75em
+	.min-height75pc
+		min-height: 75%
+	.min-height75px
+		min-height: 75px
+	.z75
+		z-index: 75
 	.vh75
 		height: 75vh
 	.vw75
 		width: 75vw
+	.basis75
+		flex-basis: 75%
+	.basis75em
+		flex-basis: 75em
 	.t76em
 		top: 76em
-	.t76
+	.t76pc
 		top: 76%
+	.t76px
+		top: 76px
 	.l76em
 		left: 76em
-	.l76
+	.l76pc
 		left: 76%
+	.l76px
+		left: 76px
 	.b76em
 		bottom: 76em
-	.b76
+	.b76pc
 		bottom: 76%
+	.b76px
+		bottom: 76px
 	.r76em
 		right: 76em
-	.r76
+	.r76pc
 		right: 76%
+	.r76px
+		right: 76px
 	.w76em
 		width: 76em
-	.w76
+	.w76pc
 		width: 76%
+	.w76px
+		width: 76px
 	.h76em
 		height: 76em
-	.h76
+	.h76pc
 		height: 76%
-	.o76
-		transform-origin: 76% 76%
+	.h76px
+		height: 76px
 	.max-width76em
 		max-width: 76em
-	.max-width76
+	.max-width76pc
 		max-width: 76%
+	.max-width76px
+		max-width: 76px
 	.max-height76em
 		max-height: 76em
-	.max-height76
+	.max-height76pc
 		max-height: 76%
+	.max-height76px
+		max-height: 76px
+	.min-width76em
+		min-width: 76em
+	.min-width76pc
+		min-width: 76%
+	.min-width76px
+		min-width: 76px
+	.min-height76em
+		min-height: 76em
+	.min-height76pc
+		min-height: 76%
+	.min-height76px
+		min-height: 76px
+	.z76
+		z-index: 76
 	.vh76
 		height: 76vh
 	.vw76
 		width: 76vw
+	.basis76
+		flex-basis: 76%
+	.basis76em
+		flex-basis: 76em
 	.t77em
 		top: 77em
-	.t77
+	.t77pc
 		top: 77%
+	.t77px
+		top: 77px
 	.l77em
 		left: 77em
-	.l77
+	.l77pc
 		left: 77%
+	.l77px
+		left: 77px
 	.b77em
 		bottom: 77em
-	.b77
+	.b77pc
 		bottom: 77%
+	.b77px
+		bottom: 77px
 	.r77em
 		right: 77em
-	.r77
+	.r77pc
 		right: 77%
+	.r77px
+		right: 77px
 	.w77em
 		width: 77em
-	.w77
+	.w77pc
 		width: 77%
+	.w77px
+		width: 77px
 	.h77em
 		height: 77em
-	.h77
+	.h77pc
 		height: 77%
-	.o77
-		transform-origin: 77% 77%
+	.h77px
+		height: 77px
 	.max-width77em
 		max-width: 77em
-	.max-width77
+	.max-width77pc
 		max-width: 77%
+	.max-width77px
+		max-width: 77px
 	.max-height77em
 		max-height: 77em
-	.max-height77
+	.max-height77pc
 		max-height: 77%
+	.max-height77px
+		max-height: 77px
+	.min-width77em
+		min-width: 77em
+	.min-width77pc
+		min-width: 77%
+	.min-width77px
+		min-width: 77px
+	.min-height77em
+		min-height: 77em
+	.min-height77pc
+		min-height: 77%
+	.min-height77px
+		min-height: 77px
+	.z77
+		z-index: 77
 	.vh77
 		height: 77vh
 	.vw77
 		width: 77vw
+	.basis77
+		flex-basis: 77%
+	.basis77em
+		flex-basis: 77em
 	.t78em
 		top: 78em
-	.t78
+	.t78pc
 		top: 78%
+	.t78px
+		top: 78px
 	.l78em
 		left: 78em
-	.l78
+	.l78pc
 		left: 78%
+	.l78px
+		left: 78px
 	.b78em
 		bottom: 78em
-	.b78
+	.b78pc
 		bottom: 78%
+	.b78px
+		bottom: 78px
 	.r78em
 		right: 78em
-	.r78
+	.r78pc
 		right: 78%
+	.r78px
+		right: 78px
 	.w78em
 		width: 78em
-	.w78
+	.w78pc
 		width: 78%
+	.w78px
+		width: 78px
 	.h78em
 		height: 78em
-	.h78
+	.h78pc
 		height: 78%
-	.o78
-		transform-origin: 78% 78%
+	.h78px
+		height: 78px
 	.max-width78em
 		max-width: 78em
-	.max-width78
+	.max-width78pc
 		max-width: 78%
+	.max-width78px
+		max-width: 78px
 	.max-height78em
 		max-height: 78em
-	.max-height78
+	.max-height78pc
 		max-height: 78%
+	.max-height78px
+		max-height: 78px
+	.min-width78em
+		min-width: 78em
+	.min-width78pc
+		min-width: 78%
+	.min-width78px
+		min-width: 78px
+	.min-height78em
+		min-height: 78em
+	.min-height78pc
+		min-height: 78%
+	.min-height78px
+		min-height: 78px
+	.z78
+		z-index: 78
 	.vh78
 		height: 78vh
 	.vw78
 		width: 78vw
+	.basis78
+		flex-basis: 78%
+	.basis78em
+		flex-basis: 78em
 	.t79em
 		top: 79em
-	.t79
+	.t79pc
 		top: 79%
+	.t79px
+		top: 79px
 	.l79em
 		left: 79em
-	.l79
+	.l79pc
 		left: 79%
+	.l79px
+		left: 79px
 	.b79em
 		bottom: 79em
-	.b79
+	.b79pc
 		bottom: 79%
+	.b79px
+		bottom: 79px
 	.r79em
 		right: 79em
-	.r79
+	.r79pc
 		right: 79%
+	.r79px
+		right: 79px
 	.w79em
 		width: 79em
-	.w79
+	.w79pc
 		width: 79%
+	.w79px
+		width: 79px
 	.h79em
 		height: 79em
-	.h79
+	.h79pc
 		height: 79%
-	.o79
-		transform-origin: 79% 79%
+	.h79px
+		height: 79px
 	.max-width79em
 		max-width: 79em
-	.max-width79
+	.max-width79pc
 		max-width: 79%
+	.max-width79px
+		max-width: 79px
 	.max-height79em
 		max-height: 79em
-	.max-height79
+	.max-height79pc
 		max-height: 79%
+	.max-height79px
+		max-height: 79px
+	.min-width79em
+		min-width: 79em
+	.min-width79pc
+		min-width: 79%
+	.min-width79px
+		min-width: 79px
+	.min-height79em
+		min-height: 79em
+	.min-height79pc
+		min-height: 79%
+	.min-height79px
+		min-height: 79px
+	.z79
+		z-index: 79
 	.vh79
 		height: 79vh
 	.vw79
 		width: 79vw
+	.basis79
+		flex-basis: 79%
+	.basis79em
+		flex-basis: 79em
 	.t80em
 		top: 80em
-	.t80
+	.t80pc
 		top: 80%
+	.t80px
+		top: 80px
 	.l80em
 		left: 80em
-	.l80
+	.l80pc
 		left: 80%
+	.l80px
+		left: 80px
 	.b80em
 		bottom: 80em
-	.b80
+	.b80pc
 		bottom: 80%
+	.b80px
+		bottom: 80px
 	.r80em
 		right: 80em
-	.r80
+	.r80pc
 		right: 80%
+	.r80px
+		right: 80px
 	.w80em
 		width: 80em
-	.w80
+	.w80pc
 		width: 80%
+	.w80px
+		width: 80px
 	.h80em
 		height: 80em
-	.h80
+	.h80pc
 		height: 80%
-	.o80
-		transform-origin: 80% 80%
+	.h80px
+		height: 80px
 	.max-width80em
 		max-width: 80em
-	.max-width80
+	.max-width80pc
 		max-width: 80%
+	.max-width80px
+		max-width: 80px
 	.max-height80em
 		max-height: 80em
-	.max-height80
+	.max-height80pc
 		max-height: 80%
+	.max-height80px
+		max-height: 80px
+	.min-width80em
+		min-width: 80em
+	.min-width80pc
+		min-width: 80%
+	.min-width80px
+		min-width: 80px
+	.min-height80em
+		min-height: 80em
+	.min-height80pc
+		min-height: 80%
+	.min-height80px
+		min-height: 80px
+	.z80
+		z-index: 80
 	.vh80
 		height: 80vh
 	.vw80
 		width: 80vw
+	.basis80
+		flex-basis: 80%
+	.basis80em
+		flex-basis: 80em
 	.t81em
 		top: 81em
-	.t81
+	.t81pc
 		top: 81%
+	.t81px
+		top: 81px
 	.l81em
 		left: 81em
-	.l81
+	.l81pc
 		left: 81%
+	.l81px
+		left: 81px
 	.b81em
 		bottom: 81em
-	.b81
+	.b81pc
 		bottom: 81%
+	.b81px
+		bottom: 81px
 	.r81em
 		right: 81em
-	.r81
+	.r81pc
 		right: 81%
+	.r81px
+		right: 81px
 	.w81em
 		width: 81em
-	.w81
+	.w81pc
 		width: 81%
+	.w81px
+		width: 81px
 	.h81em
 		height: 81em
-	.h81
+	.h81pc
 		height: 81%
-	.o81
-		transform-origin: 81% 81%
+	.h81px
+		height: 81px
 	.max-width81em
 		max-width: 81em
-	.max-width81
+	.max-width81pc
 		max-width: 81%
+	.max-width81px
+		max-width: 81px
 	.max-height81em
 		max-height: 81em
-	.max-height81
+	.max-height81pc
 		max-height: 81%
+	.max-height81px
+		max-height: 81px
+	.min-width81em
+		min-width: 81em
+	.min-width81pc
+		min-width: 81%
+	.min-width81px
+		min-width: 81px
+	.min-height81em
+		min-height: 81em
+	.min-height81pc
+		min-height: 81%
+	.min-height81px
+		min-height: 81px
+	.z81
+		z-index: 81
 	.vh81
 		height: 81vh
 	.vw81
 		width: 81vw
+	.basis81
+		flex-basis: 81%
+	.basis81em
+		flex-basis: 81em
 	.t82em
 		top: 82em
-	.t82
+	.t82pc
 		top: 82%
+	.t82px
+		top: 82px
 	.l82em
 		left: 82em
-	.l82
+	.l82pc
 		left: 82%
+	.l82px
+		left: 82px
 	.b82em
 		bottom: 82em
-	.b82
+	.b82pc
 		bottom: 82%
+	.b82px
+		bottom: 82px
 	.r82em
 		right: 82em
-	.r82
+	.r82pc
 		right: 82%
+	.r82px
+		right: 82px
 	.w82em
 		width: 82em
-	.w82
+	.w82pc
 		width: 82%
+	.w82px
+		width: 82px
 	.h82em
 		height: 82em
-	.h82
+	.h82pc
 		height: 82%
-	.o82
-		transform-origin: 82% 82%
+	.h82px
+		height: 82px
 	.max-width82em
 		max-width: 82em
-	.max-width82
+	.max-width82pc
 		max-width: 82%
+	.max-width82px
+		max-width: 82px
 	.max-height82em
 		max-height: 82em
-	.max-height82
+	.max-height82pc
 		max-height: 82%
+	.max-height82px
+		max-height: 82px
+	.min-width82em
+		min-width: 82em
+	.min-width82pc
+		min-width: 82%
+	.min-width82px
+		min-width: 82px
+	.min-height82em
+		min-height: 82em
+	.min-height82pc
+		min-height: 82%
+	.min-height82px
+		min-height: 82px
+	.z82
+		z-index: 82
 	.vh82
 		height: 82vh
 	.vw82
 		width: 82vw
+	.basis82
+		flex-basis: 82%
+	.basis82em
+		flex-basis: 82em
 	.t83em
 		top: 83em
-	.t83
+	.t83pc
 		top: 83%
+	.t83px
+		top: 83px
 	.l83em
 		left: 83em
-	.l83
+	.l83pc
 		left: 83%
+	.l83px
+		left: 83px
 	.b83em
 		bottom: 83em
-	.b83
+	.b83pc
 		bottom: 83%
+	.b83px
+		bottom: 83px
 	.r83em
 		right: 83em
-	.r83
+	.r83pc
 		right: 83%
+	.r83px
+		right: 83px
 	.w83em
 		width: 83em
-	.w83
+	.w83pc
 		width: 83%
+	.w83px
+		width: 83px
 	.h83em
 		height: 83em
-	.h83
+	.h83pc
 		height: 83%
-	.o83
-		transform-origin: 83% 83%
+	.h83px
+		height: 83px
 	.max-width83em
 		max-width: 83em
-	.max-width83
+	.max-width83pc
 		max-width: 83%
+	.max-width83px
+		max-width: 83px
 	.max-height83em
 		max-height: 83em
-	.max-height83
+	.max-height83pc
 		max-height: 83%
+	.max-height83px
+		max-height: 83px
+	.min-width83em
+		min-width: 83em
+	.min-width83pc
+		min-width: 83%
+	.min-width83px
+		min-width: 83px
+	.min-height83em
+		min-height: 83em
+	.min-height83pc
+		min-height: 83%
+	.min-height83px
+		min-height: 83px
+	.z83
+		z-index: 83
 	.vh83
 		height: 83vh
 	.vw83
 		width: 83vw
+	.basis83
+		flex-basis: 83%
+	.basis83em
+		flex-basis: 83em
 	.t84em
 		top: 84em
-	.t84
+	.t84pc
 		top: 84%
+	.t84px
+		top: 84px
 	.l84em
 		left: 84em
-	.l84
+	.l84pc
 		left: 84%
+	.l84px
+		left: 84px
 	.b84em
 		bottom: 84em
-	.b84
+	.b84pc
 		bottom: 84%
+	.b84px
+		bottom: 84px
 	.r84em
 		right: 84em
-	.r84
+	.r84pc
 		right: 84%
+	.r84px
+		right: 84px
 	.w84em
 		width: 84em
-	.w84
+	.w84pc
 		width: 84%
+	.w84px
+		width: 84px
 	.h84em
 		height: 84em
-	.h84
+	.h84pc
 		height: 84%
-	.o84
-		transform-origin: 84% 84%
+	.h84px
+		height: 84px
 	.max-width84em
 		max-width: 84em
-	.max-width84
+	.max-width84pc
 		max-width: 84%
+	.max-width84px
+		max-width: 84px
 	.max-height84em
 		max-height: 84em
-	.max-height84
+	.max-height84pc
 		max-height: 84%
+	.max-height84px
+		max-height: 84px
+	.min-width84em
+		min-width: 84em
+	.min-width84pc
+		min-width: 84%
+	.min-width84px
+		min-width: 84px
+	.min-height84em
+		min-height: 84em
+	.min-height84pc
+		min-height: 84%
+	.min-height84px
+		min-height: 84px
+	.z84
+		z-index: 84
 	.vh84
 		height: 84vh
 	.vw84
 		width: 84vw
+	.basis84
+		flex-basis: 84%
+	.basis84em
+		flex-basis: 84em
 	.t85em
 		top: 85em
-	.t85
+	.t85pc
 		top: 85%
+	.t85px
+		top: 85px
 	.l85em
 		left: 85em
-	.l85
+	.l85pc
 		left: 85%
+	.l85px
+		left: 85px
 	.b85em
 		bottom: 85em
-	.b85
+	.b85pc
 		bottom: 85%
+	.b85px
+		bottom: 85px
 	.r85em
 		right: 85em
-	.r85
+	.r85pc
 		right: 85%
+	.r85px
+		right: 85px
 	.w85em
 		width: 85em
-	.w85
+	.w85pc
 		width: 85%
+	.w85px
+		width: 85px
 	.h85em
 		height: 85em
-	.h85
+	.h85pc
 		height: 85%
-	.o85
-		transform-origin: 85% 85%
+	.h85px
+		height: 85px
 	.max-width85em
 		max-width: 85em
-	.max-width85
+	.max-width85pc
 		max-width: 85%
+	.max-width85px
+		max-width: 85px
 	.max-height85em
 		max-height: 85em
-	.max-height85
+	.max-height85pc
 		max-height: 85%
+	.max-height85px
+		max-height: 85px
+	.min-width85em
+		min-width: 85em
+	.min-width85pc
+		min-width: 85%
+	.min-width85px
+		min-width: 85px
+	.min-height85em
+		min-height: 85em
+	.min-height85pc
+		min-height: 85%
+	.min-height85px
+		min-height: 85px
+	.z85
+		z-index: 85
 	.vh85
 		height: 85vh
 	.vw85
 		width: 85vw
+	.basis85
+		flex-basis: 85%
+	.basis85em
+		flex-basis: 85em
 	.t86em
 		top: 86em
-	.t86
+	.t86pc
 		top: 86%
+	.t86px
+		top: 86px
 	.l86em
 		left: 86em
-	.l86
+	.l86pc
 		left: 86%
+	.l86px
+		left: 86px
 	.b86em
 		bottom: 86em
-	.b86
+	.b86pc
 		bottom: 86%
+	.b86px
+		bottom: 86px
 	.r86em
 		right: 86em
-	.r86
+	.r86pc
 		right: 86%
+	.r86px
+		right: 86px
 	.w86em
 		width: 86em
-	.w86
+	.w86pc
 		width: 86%
+	.w86px
+		width: 86px
 	.h86em
 		height: 86em
-	.h86
+	.h86pc
 		height: 86%
-	.o86
-		transform-origin: 86% 86%
+	.h86px
+		height: 86px
 	.max-width86em
 		max-width: 86em
-	.max-width86
+	.max-width86pc
 		max-width: 86%
+	.max-width86px
+		max-width: 86px
 	.max-height86em
 		max-height: 86em
-	.max-height86
+	.max-height86pc
 		max-height: 86%
+	.max-height86px
+		max-height: 86px
+	.min-width86em
+		min-width: 86em
+	.min-width86pc
+		min-width: 86%
+	.min-width86px
+		min-width: 86px
+	.min-height86em
+		min-height: 86em
+	.min-height86pc
+		min-height: 86%
+	.min-height86px
+		min-height: 86px
+	.z86
+		z-index: 86
 	.vh86
 		height: 86vh
 	.vw86
 		width: 86vw
+	.basis86
+		flex-basis: 86%
+	.basis86em
+		flex-basis: 86em
 	.t87em
 		top: 87em
-	.t87
+	.t87pc
 		top: 87%
+	.t87px
+		top: 87px
 	.l87em
 		left: 87em
-	.l87
+	.l87pc
 		left: 87%
+	.l87px
+		left: 87px
 	.b87em
 		bottom: 87em
-	.b87
+	.b87pc
 		bottom: 87%
+	.b87px
+		bottom: 87px
 	.r87em
 		right: 87em
-	.r87
+	.r87pc
 		right: 87%
+	.r87px
+		right: 87px
 	.w87em
 		width: 87em
-	.w87
+	.w87pc
 		width: 87%
+	.w87px
+		width: 87px
 	.h87em
 		height: 87em
-	.h87
+	.h87pc
 		height: 87%
-	.o87
-		transform-origin: 87% 87%
+	.h87px
+		height: 87px
 	.max-width87em
 		max-width: 87em
-	.max-width87
+	.max-width87pc
 		max-width: 87%
+	.max-width87px
+		max-width: 87px
 	.max-height87em
 		max-height: 87em
-	.max-height87
+	.max-height87pc
 		max-height: 87%
+	.max-height87px
+		max-height: 87px
+	.min-width87em
+		min-width: 87em
+	.min-width87pc
+		min-width: 87%
+	.min-width87px
+		min-width: 87px
+	.min-height87em
+		min-height: 87em
+	.min-height87pc
+		min-height: 87%
+	.min-height87px
+		min-height: 87px
+	.z87
+		z-index: 87
 	.vh87
 		height: 87vh
 	.vw87
 		width: 87vw
+	.basis87
+		flex-basis: 87%
+	.basis87em
+		flex-basis: 87em
 	.t88em
 		top: 88em
-	.t88
+	.t88pc
 		top: 88%
+	.t88px
+		top: 88px
 	.l88em
 		left: 88em
-	.l88
+	.l88pc
 		left: 88%
+	.l88px
+		left: 88px
 	.b88em
 		bottom: 88em
-	.b88
+	.b88pc
 		bottom: 88%
+	.b88px
+		bottom: 88px
 	.r88em
 		right: 88em
-	.r88
+	.r88pc
 		right: 88%
+	.r88px
+		right: 88px
 	.w88em
 		width: 88em
-	.w88
+	.w88pc
 		width: 88%
+	.w88px
+		width: 88px
 	.h88em
 		height: 88em
-	.h88
+	.h88pc
 		height: 88%
-	.o88
-		transform-origin: 88% 88%
+	.h88px
+		height: 88px
 	.max-width88em
 		max-width: 88em
-	.max-width88
+	.max-width88pc
 		max-width: 88%
+	.max-width88px
+		max-width: 88px
 	.max-height88em
 		max-height: 88em
-	.max-height88
+	.max-height88pc
 		max-height: 88%
+	.max-height88px
+		max-height: 88px
+	.min-width88em
+		min-width: 88em
+	.min-width88pc
+		min-width: 88%
+	.min-width88px
+		min-width: 88px
+	.min-height88em
+		min-height: 88em
+	.min-height88pc
+		min-height: 88%
+	.min-height88px
+		min-height: 88px
+	.z88
+		z-index: 88
 	.vh88
 		height: 88vh
 	.vw88
 		width: 88vw
+	.basis88
+		flex-basis: 88%
+	.basis88em
+		flex-basis: 88em
 	.t89em
 		top: 89em
-	.t89
+	.t89pc
 		top: 89%
+	.t89px
+		top: 89px
 	.l89em
 		left: 89em
-	.l89
+	.l89pc
 		left: 89%
+	.l89px
+		left: 89px
 	.b89em
 		bottom: 89em
-	.b89
+	.b89pc
 		bottom: 89%
+	.b89px
+		bottom: 89px
 	.r89em
 		right: 89em
-	.r89
+	.r89pc
 		right: 89%
+	.r89px
+		right: 89px
 	.w89em
 		width: 89em
-	.w89
+	.w89pc
 		width: 89%
+	.w89px
+		width: 89px
 	.h89em
 		height: 89em
-	.h89
+	.h89pc
 		height: 89%
-	.o89
-		transform-origin: 89% 89%
+	.h89px
+		height: 89px
 	.max-width89em
 		max-width: 89em
-	.max-width89
+	.max-width89pc
 		max-width: 89%
+	.max-width89px
+		max-width: 89px
 	.max-height89em
 		max-height: 89em
-	.max-height89
+	.max-height89pc
 		max-height: 89%
+	.max-height89px
+		max-height: 89px
+	.min-width89em
+		min-width: 89em
+	.min-width89pc
+		min-width: 89%
+	.min-width89px
+		min-width: 89px
+	.min-height89em
+		min-height: 89em
+	.min-height89pc
+		min-height: 89%
+	.min-height89px
+		min-height: 89px
+	.z89
+		z-index: 89
 	.vh89
 		height: 89vh
 	.vw89
 		width: 89vw
+	.basis89
+		flex-basis: 89%
+	.basis89em
+		flex-basis: 89em
 	.t90em
 		top: 90em
-	.t90
+	.t90pc
 		top: 90%
+	.t90px
+		top: 90px
 	.l90em
 		left: 90em
-	.l90
+	.l90pc
 		left: 90%
+	.l90px
+		left: 90px
 	.b90em
 		bottom: 90em
-	.b90
+	.b90pc
 		bottom: 90%
+	.b90px
+		bottom: 90px
 	.r90em
 		right: 90em
-	.r90
+	.r90pc
 		right: 90%
+	.r90px
+		right: 90px
 	.w90em
 		width: 90em
-	.w90
+	.w90pc
 		width: 90%
+	.w90px
+		width: 90px
 	.h90em
 		height: 90em
-	.h90
+	.h90pc
 		height: 90%
-	.o90
-		transform-origin: 90% 90%
+	.h90px
+		height: 90px
 	.max-width90em
 		max-width: 90em
-	.max-width90
+	.max-width90pc
 		max-width: 90%
+	.max-width90px
+		max-width: 90px
 	.max-height90em
 		max-height: 90em
-	.max-height90
+	.max-height90pc
 		max-height: 90%
+	.max-height90px
+		max-height: 90px
+	.min-width90em
+		min-width: 90em
+	.min-width90pc
+		min-width: 90%
+	.min-width90px
+		min-width: 90px
+	.min-height90em
+		min-height: 90em
+	.min-height90pc
+		min-height: 90%
+	.min-height90px
+		min-height: 90px
+	.z90
+		z-index: 90
 	.vh90
 		height: 90vh
 	.vw90
 		width: 90vw
+	.basis90
+		flex-basis: 90%
+	.basis90em
+		flex-basis: 90em
 	.t91em
 		top: 91em
-	.t91
+	.t91pc
 		top: 91%
+	.t91px
+		top: 91px
 	.l91em
 		left: 91em
-	.l91
+	.l91pc
 		left: 91%
+	.l91px
+		left: 91px
 	.b91em
 		bottom: 91em
-	.b91
+	.b91pc
 		bottom: 91%
+	.b91px
+		bottom: 91px
 	.r91em
 		right: 91em
-	.r91
+	.r91pc
 		right: 91%
+	.r91px
+		right: 91px
 	.w91em
 		width: 91em
-	.w91
+	.w91pc
 		width: 91%
+	.w91px
+		width: 91px
 	.h91em
 		height: 91em
-	.h91
+	.h91pc
 		height: 91%
-	.o91
-		transform-origin: 91% 91%
+	.h91px
+		height: 91px
 	.max-width91em
 		max-width: 91em
-	.max-width91
+	.max-width91pc
 		max-width: 91%
+	.max-width91px
+		max-width: 91px
 	.max-height91em
 		max-height: 91em
-	.max-height91
+	.max-height91pc
 		max-height: 91%
+	.max-height91px
+		max-height: 91px
+	.min-width91em
+		min-width: 91em
+	.min-width91pc
+		min-width: 91%
+	.min-width91px
+		min-width: 91px
+	.min-height91em
+		min-height: 91em
+	.min-height91pc
+		min-height: 91%
+	.min-height91px
+		min-height: 91px
+	.z91
+		z-index: 91
 	.vh91
 		height: 91vh
 	.vw91
 		width: 91vw
+	.basis91
+		flex-basis: 91%
+	.basis91em
+		flex-basis: 91em
 	.t92em
 		top: 92em
-	.t92
+	.t92pc
 		top: 92%
+	.t92px
+		top: 92px
 	.l92em
 		left: 92em
-	.l92
+	.l92pc
 		left: 92%
+	.l92px
+		left: 92px
 	.b92em
 		bottom: 92em
-	.b92
+	.b92pc
 		bottom: 92%
+	.b92px
+		bottom: 92px
 	.r92em
 		right: 92em
-	.r92
+	.r92pc
 		right: 92%
+	.r92px
+		right: 92px
 	.w92em
 		width: 92em
-	.w92
+	.w92pc
 		width: 92%
+	.w92px
+		width: 92px
 	.h92em
 		height: 92em
-	.h92
+	.h92pc
 		height: 92%
-	.o92
-		transform-origin: 92% 92%
+	.h92px
+		height: 92px
 	.max-width92em
 		max-width: 92em
-	.max-width92
+	.max-width92pc
 		max-width: 92%
+	.max-width92px
+		max-width: 92px
 	.max-height92em
 		max-height: 92em
-	.max-height92
+	.max-height92pc
 		max-height: 92%
+	.max-height92px
+		max-height: 92px
+	.min-width92em
+		min-width: 92em
+	.min-width92pc
+		min-width: 92%
+	.min-width92px
+		min-width: 92px
+	.min-height92em
+		min-height: 92em
+	.min-height92pc
+		min-height: 92%
+	.min-height92px
+		min-height: 92px
+	.z92
+		z-index: 92
 	.vh92
 		height: 92vh
 	.vw92
 		width: 92vw
+	.basis92
+		flex-basis: 92%
+	.basis92em
+		flex-basis: 92em
 	.t93em
 		top: 93em
-	.t93
+	.t93pc
 		top: 93%
+	.t93px
+		top: 93px
 	.l93em
 		left: 93em
-	.l93
+	.l93pc
 		left: 93%
+	.l93px
+		left: 93px
 	.b93em
 		bottom: 93em
-	.b93
+	.b93pc
 		bottom: 93%
+	.b93px
+		bottom: 93px
 	.r93em
 		right: 93em
-	.r93
+	.r93pc
 		right: 93%
+	.r93px
+		right: 93px
 	.w93em
 		width: 93em
-	.w93
+	.w93pc
 		width: 93%
+	.w93px
+		width: 93px
 	.h93em
 		height: 93em
-	.h93
+	.h93pc
 		height: 93%
-	.o93
-		transform-origin: 93% 93%
+	.h93px
+		height: 93px
 	.max-width93em
 		max-width: 93em
-	.max-width93
+	.max-width93pc
 		max-width: 93%
+	.max-width93px
+		max-width: 93px
 	.max-height93em
 		max-height: 93em
-	.max-height93
+	.max-height93pc
 		max-height: 93%
+	.max-height93px
+		max-height: 93px
+	.min-width93em
+		min-width: 93em
+	.min-width93pc
+		min-width: 93%
+	.min-width93px
+		min-width: 93px
+	.min-height93em
+		min-height: 93em
+	.min-height93pc
+		min-height: 93%
+	.min-height93px
+		min-height: 93px
+	.z93
+		z-index: 93
 	.vh93
 		height: 93vh
 	.vw93
 		width: 93vw
+	.basis93
+		flex-basis: 93%
+	.basis93em
+		flex-basis: 93em
 	.t94em
 		top: 94em
-	.t94
+	.t94pc
 		top: 94%
+	.t94px
+		top: 94px
 	.l94em
 		left: 94em
-	.l94
+	.l94pc
 		left: 94%
+	.l94px
+		left: 94px
 	.b94em
 		bottom: 94em
-	.b94
+	.b94pc
 		bottom: 94%
+	.b94px
+		bottom: 94px
 	.r94em
 		right: 94em
-	.r94
+	.r94pc
 		right: 94%
+	.r94px
+		right: 94px
 	.w94em
 		width: 94em
-	.w94
+	.w94pc
 		width: 94%
+	.w94px
+		width: 94px
 	.h94em
 		height: 94em
-	.h94
+	.h94pc
 		height: 94%
-	.o94
-		transform-origin: 94% 94%
+	.h94px
+		height: 94px
 	.max-width94em
 		max-width: 94em
-	.max-width94
+	.max-width94pc
 		max-width: 94%
+	.max-width94px
+		max-width: 94px
 	.max-height94em
 		max-height: 94em
-	.max-height94
+	.max-height94pc
 		max-height: 94%
+	.max-height94px
+		max-height: 94px
+	.min-width94em
+		min-width: 94em
+	.min-width94pc
+		min-width: 94%
+	.min-width94px
+		min-width: 94px
+	.min-height94em
+		min-height: 94em
+	.min-height94pc
+		min-height: 94%
+	.min-height94px
+		min-height: 94px
+	.z94
+		z-index: 94
 	.vh94
 		height: 94vh
 	.vw94
 		width: 94vw
+	.basis94
+		flex-basis: 94%
+	.basis94em
+		flex-basis: 94em
 	.t95em
 		top: 95em
-	.t95
+	.t95pc
 		top: 95%
+	.t95px
+		top: 95px
 	.l95em
 		left: 95em
-	.l95
+	.l95pc
 		left: 95%
+	.l95px
+		left: 95px
 	.b95em
 		bottom: 95em
-	.b95
+	.b95pc
 		bottom: 95%
+	.b95px
+		bottom: 95px
 	.r95em
 		right: 95em
-	.r95
+	.r95pc
 		right: 95%
+	.r95px
+		right: 95px
 	.w95em
 		width: 95em
-	.w95
+	.w95pc
 		width: 95%
+	.w95px
+		width: 95px
 	.h95em
 		height: 95em
-	.h95
+	.h95pc
 		height: 95%
-	.o95
-		transform-origin: 95% 95%
+	.h95px
+		height: 95px
 	.max-width95em
 		max-width: 95em
-	.max-width95
+	.max-width95pc
 		max-width: 95%
+	.max-width95px
+		max-width: 95px
 	.max-height95em
 		max-height: 95em
-	.max-height95
+	.max-height95pc
 		max-height: 95%
+	.max-height95px
+		max-height: 95px
+	.min-width95em
+		min-width: 95em
+	.min-width95pc
+		min-width: 95%
+	.min-width95px
+		min-width: 95px
+	.min-height95em
+		min-height: 95em
+	.min-height95pc
+		min-height: 95%
+	.min-height95px
+		min-height: 95px
+	.z95
+		z-index: 95
 	.vh95
 		height: 95vh
 	.vw95
 		width: 95vw
+	.basis95
+		flex-basis: 95%
+	.basis95em
+		flex-basis: 95em
 	.t96em
 		top: 96em
-	.t96
+	.t96pc
 		top: 96%
+	.t96px
+		top: 96px
 	.l96em
 		left: 96em
-	.l96
+	.l96pc
 		left: 96%
+	.l96px
+		left: 96px
 	.b96em
 		bottom: 96em
-	.b96
+	.b96pc
 		bottom: 96%
+	.b96px
+		bottom: 96px
 	.r96em
 		right: 96em
-	.r96
+	.r96pc
 		right: 96%
+	.r96px
+		right: 96px
 	.w96em
 		width: 96em
-	.w96
+	.w96pc
 		width: 96%
+	.w96px
+		width: 96px
 	.h96em
 		height: 96em
-	.h96
+	.h96pc
 		height: 96%
-	.o96
-		transform-origin: 96% 96%
+	.h96px
+		height: 96px
 	.max-width96em
 		max-width: 96em
-	.max-width96
+	.max-width96pc
 		max-width: 96%
+	.max-width96px
+		max-width: 96px
 	.max-height96em
 		max-height: 96em
-	.max-height96
+	.max-height96pc
 		max-height: 96%
+	.max-height96px
+		max-height: 96px
+	.min-width96em
+		min-width: 96em
+	.min-width96pc
+		min-width: 96%
+	.min-width96px
+		min-width: 96px
+	.min-height96em
+		min-height: 96em
+	.min-height96pc
+		min-height: 96%
+	.min-height96px
+		min-height: 96px
+	.z96
+		z-index: 96
 	.vh96
 		height: 96vh
 	.vw96
 		width: 96vw
+	.basis96
+		flex-basis: 96%
+	.basis96em
+		flex-basis: 96em
 	.t97em
 		top: 97em
-	.t97
+	.t97pc
 		top: 97%
+	.t97px
+		top: 97px
 	.l97em
 		left: 97em
-	.l97
+	.l97pc
 		left: 97%
+	.l97px
+		left: 97px
 	.b97em
 		bottom: 97em
-	.b97
+	.b97pc
 		bottom: 97%
+	.b97px
+		bottom: 97px
 	.r97em
 		right: 97em
-	.r97
+	.r97pc
 		right: 97%
+	.r97px
+		right: 97px
 	.w97em
 		width: 97em
-	.w97
+	.w97pc
 		width: 97%
+	.w97px
+		width: 97px
 	.h97em
 		height: 97em
-	.h97
+	.h97pc
 		height: 97%
-	.o97
-		transform-origin: 97% 97%
+	.h97px
+		height: 97px
 	.max-width97em
 		max-width: 97em
-	.max-width97
+	.max-width97pc
 		max-width: 97%
+	.max-width97px
+		max-width: 97px
 	.max-height97em
 		max-height: 97em
-	.max-height97
+	.max-height97pc
 		max-height: 97%
+	.max-height97px
+		max-height: 97px
+	.min-width97em
+		min-width: 97em
+	.min-width97pc
+		min-width: 97%
+	.min-width97px
+		min-width: 97px
+	.min-height97em
+		min-height: 97em
+	.min-height97pc
+		min-height: 97%
+	.min-height97px
+		min-height: 97px
+	.z97
+		z-index: 97
 	.vh97
 		height: 97vh
 	.vw97
 		width: 97vw
+	.basis97
+		flex-basis: 97%
+	.basis97em
+		flex-basis: 97em
 	.t98em
 		top: 98em
-	.t98
+	.t98pc
 		top: 98%
+	.t98px
+		top: 98px
 	.l98em
 		left: 98em
-	.l98
+	.l98pc
 		left: 98%
+	.l98px
+		left: 98px
 	.b98em
 		bottom: 98em
-	.b98
+	.b98pc
 		bottom: 98%
+	.b98px
+		bottom: 98px
 	.r98em
 		right: 98em
-	.r98
+	.r98pc
 		right: 98%
+	.r98px
+		right: 98px
 	.w98em
 		width: 98em
-	.w98
+	.w98pc
 		width: 98%
+	.w98px
+		width: 98px
 	.h98em
 		height: 98em
-	.h98
+	.h98pc
 		height: 98%
-	.o98
-		transform-origin: 98% 98%
+	.h98px
+		height: 98px
 	.max-width98em
 		max-width: 98em
-	.max-width98
+	.max-width98pc
 		max-width: 98%
+	.max-width98px
+		max-width: 98px
 	.max-height98em
 		max-height: 98em
-	.max-height98
+	.max-height98pc
 		max-height: 98%
+	.max-height98px
+		max-height: 98px
+	.min-width98em
+		min-width: 98em
+	.min-width98pc
+		min-width: 98%
+	.min-width98px
+		min-width: 98px
+	.min-height98em
+		min-height: 98em
+	.min-height98pc
+		min-height: 98%
+	.min-height98px
+		min-height: 98px
+	.z98
+		z-index: 98
 	.vh98
 		height: 98vh
 	.vw98
 		width: 98vw
+	.basis98
+		flex-basis: 98%
+	.basis98em
+		flex-basis: 98em
 	.t99em
 		top: 99em
-	.t99
+	.t99pc
 		top: 99%
+	.t99px
+		top: 99px
 	.l99em
 		left: 99em
-	.l99
+	.l99pc
 		left: 99%
+	.l99px
+		left: 99px
 	.b99em
 		bottom: 99em
-	.b99
+	.b99pc
 		bottom: 99%
+	.b99px
+		bottom: 99px
 	.r99em
 		right: 99em
-	.r99
+	.r99pc
 		right: 99%
+	.r99px
+		right: 99px
 	.w99em
 		width: 99em
-	.w99
+	.w99pc
 		width: 99%
+	.w99px
+		width: 99px
 	.h99em
 		height: 99em
-	.h99
+	.h99pc
 		height: 99%
-	.o99
-		transform-origin: 99% 99%
+	.h99px
+		height: 99px
 	.max-width99em
 		max-width: 99em
-	.max-width99
+	.max-width99pc
 		max-width: 99%
+	.max-width99px
+		max-width: 99px
 	.max-height99em
 		max-height: 99em
-	.max-height99
+	.max-height99pc
 		max-height: 99%
+	.max-height99px
+		max-height: 99px
+	.min-width99em
+		min-width: 99em
+	.min-width99pc
+		min-width: 99%
+	.min-width99px
+		min-width: 99px
+	.min-height99em
+		min-height: 99em
+	.min-height99pc
+		min-height: 99%
+	.min-height99px
+		min-height: 99px
+	.z99
+		z-index: 99
 	.vh99
 		height: 99vh
 	.vw99
 		width: 99vw
+	.basis99
+		flex-basis: 99%
+	.basis99em
+		flex-basis: 99em
 	.t100em
 		top: 100em
-	.t100
+	.t100pc
 		top: 100%
+	.t100px
+		top: 100px
 	.l100em
 		left: 100em
-	.l100
+	.l100pc
 		left: 100%
+	.l100px
+		left: 100px
 	.b100em
 		bottom: 100em
-	.b100
+	.b100pc
 		bottom: 100%
+	.b100px
+		bottom: 100px
 	.r100em
 		right: 100em
-	.r100
+	.r100pc
 		right: 100%
+	.r100px
+		right: 100px
 	.w100em
 		width: 100em
-	.w100
+	.w100pc
 		width: 100%
+	.w100px
+		width: 100px
 	.h100em
 		height: 100em
-	.h100
+	.h100pc
 		height: 100%
-	.o100
-		transform-origin: 100% 100%
+	.h100px
+		height: 100px
 	.max-width100em
 		max-width: 100em
-	.max-width100
+	.max-width100pc
 		max-width: 100%
+	.max-width100px
+		max-width: 100px
 	.max-height100em
 		max-height: 100em
-	.max-height100
+	.max-height100pc
 		max-height: 100%
+	.max-height100px
+		max-height: 100px
+	.min-width100em
+		min-width: 100em
+	.min-width100pc
+		min-width: 100%
+	.min-width100px
+		min-width: 100px
+	.min-height100em
+		min-height: 100em
+	.min-height100pc
+		min-height: 100%
+	.min-height100px
+		min-height: 100px
+	.z100
+		z-index: 100
 	.vh100
 		height: 100vh
 	.vw100
 		width: 100vw
+	.basis100
+		flex-basis: 100%
+	.basis100em
+		flex-basis: 100em
 
 
 

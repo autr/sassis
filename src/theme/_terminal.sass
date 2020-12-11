@@ -37,14 +37,14 @@
 		@return hsl( $hue, $sat, $light )
 
 =terminal-theme( $inv: false )
-	+terminal-structure
-	+terminal-code( $inv )
 
 	$sat: 95%
 	$li: 70%
 	$hue: 200 
 
-	+bg( terminal-color($hue, 10%, 10%, $inv), 10 )
+	+bg( terminal-color($hue, 10%, 10%, $inv), 8 )
+
+
 	$text: terminal-color($hue, 10%, 80%, $inv)
 	$bright: terminal-color($hue, 10%, 95%, $inv)
 	$fade: terminal-color($hue, 10%, 50%, $inv)
@@ -89,7 +89,7 @@
 		$b: darken( $b, $off * 0.25 )
 	@else
 		$b: lighten( $b, $off * 0.25 )
-	@debug $off $light
+	// @debug $off $light
 	@return $b
 
 =terminal-colors( $c, $n: '', $alt: false ) 
@@ -103,10 +103,63 @@
 			@if $i != length($n)
 				$s: #{$s + ', '}
 				$raw: #{$raw + ', '}
-	// @debug $c $s
+	// @debug $s
+
+
+	// ::-webkit-scrollbar
+	// 	width: 0px
+	// 	height: 10px
+	// ::-webkit-scrollbar:hover
+	// 	width: 10px
+	// 	height: 10px
+	// ::-webkit-scrollbar-button
+	// 	width: 0px
+	// 	height: 0px
+	// ::-webkit-scrollbar-thumb
+	// 	background: transparent
+	// 	width: 0px
+	// ::-webkit-scrollbar-thumb:hover
+	// 	background: #3e3e3e
+	// ::-webkit-scrollbar-track:hover
+	// 	background: transparent
+	// ::-webkit-scrollbar-thumb:active
+	// 	background: transparent
+	// ::-webkit-scrollbar-track:active
+	// 	background: transparent
+	// ::-webkit-scrollbar-track
+	// 	background: transparent
+	// 	border: 0px none transparent
+	// 	border-radius: 0px
+	// ::-webkit-scrollbar-corner
+	// 	background: transparent
+	// *:active::-webkit-scrollbar
+	// 	width: 10px
+	// *
+	// 	scrollbar-width: thin
+	// 	scrollbar-color: $c yellow
+	// 	// &::-webkit-scrollbar  
+	// 	// 	width: 11px
+	// 	// 	// background-color: transparent
+	// 	// 	// 	-webkit-appearance: none
+	// 	// 	// 	border-radius: 0px
+	// 	// 	// &::-webkit-scrollbar:horizontal
+	// 	// 	// 	height: $scrollbar
+	// 	// 	// &::-webkit-scrollbar:vertical 
+	// 	// 	// 	height: $scrollbar
+	// 	// &::-webkit-scrollbar-track
+	// 	// 	background: transparent 
+	// 	// &::-webkit-scrollbar-thumb 
+	// 	// 	// border-radius: 8px
+	// 	// 	// width: 4px
+	// 	// 	// border-radius: $scrollbar
+	// 	// 	// border: $scrollbar*0.15 solid $scrollBG
+	// 	// 	background-color: $c
+	// 	// 	border-radius: 6px
 
 	+set-prop( color, $c, $raw )
 	+set-prop( border-color, $c, $raw ) 
+	*
+		+set-prop( border-color, $c, $raw ) 
 
 	.cross
 		background:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><line x1='0' y1='0' x2='100' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /><line x1='100' y1='0' x2='0' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
@@ -132,10 +185,14 @@
 		&:focus
 			+set-prop(box-shadow, 0px 0px 0px 2px $c inset, $s )
 
-	input[type=text], textarea, input[type=range], textarea
+	input, textarea, input[type=range], textarea
 		+set-prop(border-color, $c, $s )
 	input[type=range]::-webkit-slider-thumb
 		+set-prop(background, $c, $s )
+	.fill
+		+set-prop(fill, $c, $s )
+	.stroke
+		+set-prop(stroke, $c, $s )
 
 
 
@@ -152,6 +209,12 @@
 	.filled, a:active, button:active
 		+set-prop(background, $c, $s )
 		+set-prop(color, $alt, $s )
+		.fill
+			+set-prop(fill, $alt, $s )
+		.stroke
+			+set-prop(stroke, $alt, $s )
+		&:after, &:before
+			+set-prop(border-color, $alt, $s )
 	.filled:active
 		+set-prop(background, transparent, $s )
 		+set-prop(color, $c, $s )
@@ -250,10 +313,11 @@
 
 
 =terminal-structure
+	*, *:after, *:before, input, textarea, select
+		border-style: solid
+		border-width: 0
 	input[type=range]
 		-webkit-appearance: none
-		border-width: 1px
-		border-style: solid
 		&::-webkit-slider-thumb
 			-webkit-appearance: none
 			width: 2px
@@ -261,13 +325,10 @@
 			min-height: 1em
 			border: none
 			border-radius: 0px
-	input[type=text], input[type=range], textarea
+	input, textarea
 		background: transparent
-		border-width: 1px
-		border-style: solid
 	.checkbox
 		$s: 0.9em
-		+inline-block
 		+width-height($s * 1.5, $s * 1.5)
 		+relative
 		+top(3px)
@@ -284,7 +345,6 @@
 			+top-left(50%, 0%)
 			+translate(0%, -50%)
 			border-width: 1px 
-			border-style: solid
 			overflow: hidden
 
 		// checked 
@@ -292,7 +352,6 @@
 		input[type=checkbox]:checked + span
 			&:before, &:after
 				border-width: 1px 
-				border-style: solid
 				content: ""
 				+absolute
 				+wh($s * 2, $s * 2)
@@ -313,49 +372,37 @@
 				+fill
 				+top(50%)
 				margin-top: -0.5px
-				border-width: 0px
 				border-top-width: 1px 
-				border-style: solid 
 	select, input, button, textarea
 		line-height: 1.8em
 		border-radius: 0px
-		padding: 0 1em
 		outline: none
 		&:disabled
 			opacity: 0.5
+	button, input, textarea, select
+		border-width: 1px
 	button
-		text-transform: lowercase
+		// text-transform: lowercase
 		font-weight: normal
 	.chevron
 		padding-right: 1em
 	.select, .chevron
-		+inline-block
 		+relative
-		select
-			height: 1.8em
-			padding: 0em 1.5em 0em 0.5em 
 		&:after
 			content: ""
-			display: inline-block
-			+top-right(0.6em, 0.6em)
+			+top-right(50%, 0.6em)
 			+absolute
 			$s: 4px
 			+width-height($s, $s)
-			border-width: 0px
 			border-left-width: 1px
 			border-bottom-width: 1px
 			border-style: solid
-			transform: rotateZ(-45deg)
+			transform: rotateZ(-45deg) translate( 0%, -50% )
 			transform-origin: 50% 50%
 	a, select
 		cursor: pointer
-		display: inline-block
 		text-decoration: none
-		border: none
 		background: transparent
-		border-width: 0px
-		border-bottom-width: 1px
-		border-style: solid
 		&.outline
 			border-width: 1px
 		&.nounderline
@@ -363,11 +410,7 @@
 		option
 			width: 10px
 			display: block
-		&.filled
-			padding: 0 0.2em
 	button
 		background: transparent
-		border-width: 1px
-		border-style: solid
 
 
