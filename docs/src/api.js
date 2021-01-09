@@ -1082,6 +1082,15 @@ export default [
         [
           "width: [n]%"
         ]
+      ],
+      [
+        [
+          "w",
+          "width"
+        ],
+        [
+          "width: [n]vw"
+        ]
       ]
     ]
   },
@@ -1118,6 +1127,15 @@ export default [
         ],
         [
           "height: [n]%"
+        ]
+      ],
+      [
+        [
+          "h",
+          "height"
+        ],
+        [
+          "height: [n]vh"
         ]
       ]
     ]

@@ -4,5 +4,8 @@
   "author": "Gilbert Sinnott",
   "scripts": {
     "build": "cd src && node shorthand.js"
+  },
+  "dependencies": {
+    "node-sass": "^5.0.0"
   }
 }
