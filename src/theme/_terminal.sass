@@ -65,6 +65,8 @@
 	+terminal-colors( $bright, strong highlight bright )
 	+terminal-colors( $fade, fade disabled unimportant ) 
 
+	+terminal-colors( $text, plain text ) 
+
 =set-prop( $prop, $c, $s: '' )
 	@if $s == ''
 		#{$prop}: $c
@@ -162,8 +164,9 @@
 		+set-prop( border-color, $c, $raw ) 
 
 	.cross
-		background:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><line x1='0' y1='0' x2='100' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /><line x1='100' y1='0' x2='0' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
-		background-size: auto
+		background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><line x1='0' y1='0' x2='100' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /><line x1='100' y1='0' x2='0' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
+	.arrow
+		background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'><polyline points='10,10 50,40 90,10' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
 
 	// get alternative luminance...
 
@@ -228,91 +231,14 @@
 		+set-prop(color, $c, $s ) 
 
 
-=terminal-code( $inv: false )
-
-	$hue: 200
-	$sat: 95%
-	$li: 70%
-	
-	.codejar-linenumbers *, .linenumbers, .line-numbers
-		color: terminal-color($hue, 10%, 50%, $inv)
-	code[class*="language-"],
-	pre[class*="language-"]
-		font-family: monospace
-		color: terminal-color($hue, 10%, 95%, $inv)
-		background: none
-		+text-left
-		white-space: pre
-		word-spacing: normal
-		word-break: normal
-		word-wrap: normal
-		white-space: normal
-		tab-size: 4
-		hyphens: none
-
-	.token.comment,
-	.token.prolog,
-	.token.doctype,
-	.token.cdata
-		color: terminal-color($hue, 10%, 50%, $inv)
-
-	.token.punctuation
-		color: terminal-color($hue, 10%, 80%, $inv)
-
-	.token.namespace
-		opacity: .7
-
-	.token.property,
-	.token.tag,
-	.token.constant,
-	.token.symbol,
-	.token.deleted
-		color: terminal-color( 360, $sat, $li, $inv )
-
-	.token.boolean,
-	.token.number
-		color: terminal-color( 250, $sat, $li, $inv )
-
-	.token.selector,
-	.token.attr-name,
-	.token.string,
-	.token.char,
-	.token.builtin,
-	.token.inserted
-		color: terminal-color( 150, $sat, $li, $inv )
-
-	.token.operator,
-	.token.entity,
-	.token.url,
-	.language-css .token.string,
-	.style .token.string,
-	.token.variable
-		color: terminal-color( 150, $sat, $li, $inv )
-
-	.token.atrule,
-	.token.attr-value,
-	.token.function,
-	.token.class-name
-		color: terminal-color( 320, $sat, $li, $inv )
-
-	.token.keyword
-		color: terminal-color( 120, $sat, $li, $inv )
-
-	.token.regex,
-	.token.important
-		color: terminal-color( 220, $sat, $li, $inv )
-
-	.token.important,
-	.token.bold
-		font-weight: bold
-	.token.italic
-		font-style: italic
-
-	.token.entity
-		cursor: help
-
-
 =terminal-structure
+
+	.arrow
+		background-repeat: no-repeat
+		background-size: 1em 0.5em
+		background-position: 100% 50%
+	.cross
+		background-size: auto
 	*, *:after, *:before, input, textarea, select
 		border-style: solid
 		border-width: 0
@@ -414,3 +340,86 @@
 		background: transparent
 
 
+
+=terminal-code( $inv: false )
+
+	$hue: 200
+	$sat: 95%
+	$li: 70%
+	
+	.codejar-linenumbers *, .linenumbers, .line-numbers
+		color: terminal-color($hue, 10%, 50%, $inv)
+	code[class*="language-"],
+	pre[class*="language-"]
+		font-family: monospace
+		color: terminal-color($hue, 10%, 95%, $inv)
+		background: none
+		+text-left
+		white-space: pre
+		word-spacing: normal
+		word-break: normal
+		word-wrap: normal
+		white-space: normal
+		tab-size: 4
+		hyphens: none
+
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata
+		color: terminal-color($hue, 10%, 50%, $inv)
+
+	.token.punctuation
+		color: terminal-color($hue, 10%, 80%, $inv)
+
+	.token.namespace
+		opacity: .7
+
+	.token.property,
+	.token.tag,
+	.token.constant,
+	.token.symbol,
+	.token.deleted
+		color: terminal-color( 360, $sat, $li, $inv )
+
+	.token.boolean,
+	.token.number
+		color: terminal-color( 250, $sat, $li, $inv )
+
+	.token.selector,
+	.token.attr-name,
+	.token.string,
+	.token.char,
+	.token.builtin,
+	.token.inserted
+		color: terminal-color( 150, $sat, $li, $inv )
+
+	.token.operator,
+	.token.entity,
+	.token.url,
+	.language-css .token.string,
+	.style .token.string,
+	.token.variable
+		color: terminal-color( 150, $sat, $li, $inv )
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.class-name
+		color: terminal-color( 320, $sat, $li, $inv )
+
+	.token.keyword
+		color: terminal-color( 120, $sat, $li, $inv )
+
+	.token.regex,
+	.token.important
+		color: terminal-color( 220, $sat, $li, $inv )
+
+	.token.important,
+	.token.bold
+		font-weight: bold
+	.token.italic
+		font-style: italic
+
+	.token.entity
+		cursor: help

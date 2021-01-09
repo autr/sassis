@@ -1,27 +1,27 @@
 
-=fontsize($fontsize, $ratio: 1.61803398875)
+=fontsize($fontsize, $ratio: 1.61803398875 / 2)
 	$fontratios: 0.785714, 1, 1.2857, 1.64285, 2.071428, 2.642857
 	font-size: $fontsize
-	line-height: $fontsize * $ratio
+	line-height: $fontsize * 1.61803398875
 	select, button, input, textarea
 		font-size: $fontsize
-		line-height: $fontsize * $ratio
+		line-height: $fontsize * 1.61803398875 
 	@for $i from 1 through length( $fontratios )
 		@if $i == 1
 			small
 				$fs: $fontsize * nth( $fontratios, $i )
 				font-size: $fs
-				line-height: $fs * $ratio
+				line-height: $fs * 1.61803398875
 		@if $i == 3
 			big
 				$fs: $fontsize * nth( $fontratios, $i )
 				font-size: $fs
-				line-height: $fs * $ratio
+				line-height: $fs * 1.61803398875
 
-		.f#{$i}, h#{7-$i}
+		.f#{$i}, h#{7-$i}, .h#{7-$i}
 			$fs: $fontsize * nth( $fontratios, $i )
 			font-size: $fs
-			line-height: $fs * $ratio
+			line-height: $fs * 1.61803398875
 
 
 // mixin....
@@ -199,6 +199,8 @@
 	table
 		border-collapse: collapse
 		border-spacing: 0
+
+	
 
 
 =twelve( $spacing: 0em )

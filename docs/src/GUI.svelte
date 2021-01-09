@@ -20,12 +20,17 @@ inputs: `
 <input type="range" min=0 max=100 value=50 />
 <textarea rows=4 placeholder="textarea"></textarea>
 <div class="select">
-	<select>
+	<select class="p1 pr2">
 		<option>option a</option>
 		<option>option b</option>
 		<option>option c</option>
 	</select>
 </div>
+<select class="arrow p1">
+	<option>option a</option>
+	<option>option b</option>
+	<option>option c</option>
+</select>
 
 `,
 fontsizes: `
