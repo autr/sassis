@@ -1,11 +1,11 @@
 <script>
-	import api from './api.js'
+	import data from '../data.js'
 	$: title = ( l ) => '.' + l.join(', .')
 </script>
 
 <table class="grow">
 
-	{#each api as sect}
+	{#each data as sect}
 
 		{#if !sect.data  }
 
@@ -17,17 +17,17 @@
 		{:else}
 
 				{#each sect.data as line}
-					<tr class="bb1-solid fade cptb1">
+					<tr class="fade cptb1">
 						<td>
 							<a class="class plain" title={title(line[0])}>
-								<span>{title(line[0])}</span>
+								<span>{@html title(line[0])}</span>
 							</a>
 						</td>
 						<!-- <td>
 						</td> -->
 						<td>
 							{#each line[1] as rule}
-								<div class="rule plain">{rule}</div>
+								<div class="rule plain">{@html rule}</div>
 							{/each}
 
 						</td>

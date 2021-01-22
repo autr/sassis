@@ -1,29 +1,19 @@
-const fs = require('fs')
-const sass = require('node-sass');
-
-
-
-let api = []
-
-let mixins, classes, file
-
-mixins = ''
-classes = '=shorthand\n'
+let api = [], mixins = '', classes = '=shorthand\n', file = ''
 
 const aliases = [
 
-    [ ['absolute', 'abs', 'a'], ['position: absolute' ] ],
-    [ ['relative', 'rel', 'r'], ['position: relative' ] ],
-    [ ['fixed', 'fix'], ['position: fixed' ] ],
-    [ ['sticky', 'stick'], ['position: sticky' ] ],
+    [ ['absolute', 'abs'], ['position: absolute' ] ],
+    [ ['relative', 'rel'], ['position: relative' ] ],
+    [ ['fixed'], ['position: fixed' ] ],
+    [ ['sticky'], ['position: sticky' ] ],
     [ ['table'], ['display: table' ] ],
-    [ ['inline-block', 'ib'], ['display: inline-block' ] ],
-    [ ['block', 'bk'], ['display: block' ] ],
-    [ ['flex', 'fx'], ['display: flex' ] ],
-    [ ['none', 'hidden', 'n'], ['display: none' ] ],
+    [ ['inline-block'], ['display: inline-block' ] ],
+    [ ['block'], ['display: block' ] ],
+    [ ['flex'], ['display: flex' ] ],
+    [ ['none'], ['display: none' ] ],
 
-    [ ['column', 'col', 'flex-column','fx-c'], ['flex-direction: column' ] ],
-    [ ['row', 'flex-row', 'fx-r'], ['flex-direction: row' ] ],
+    [ ['column', 'col', 'flex-column'], ['flex-direction: column' ] ],
+    [ ['row', 'flex-row'], ['flex-direction: row' ] ],
 
     [ ['grow'], ['flex-grow: 1' ] ],
     [ ['no-grow'], ['flex-grow: 0' ] ],
@@ -36,7 +26,7 @@ const aliases = [
     [ ['wrap'], ['flex-wrap: wrap' ] ],
     [ ['no-wrap'], ['flex-wrap: nowrap' ] ],
 
-    [ ['italic', 'i'], ['font-style: italic' ] ],
+    [ ['italic'], ['font-style: italic' ] ],
     [ ['bold', 'strong'], ['font-weight: bold' ] ],
     [ ['bolder', 'stronger'], ['font-weight: bold' ] ],
     [ ['normal'], ['font-weight: normal' ] ],
@@ -50,7 +40,7 @@ const aliases = [
     [ ['pointer'], ['cursor: pointer' ] ],
 
     [ ['visible'], ['opacity: 1' ] ],
-    [ ['invisible'], ['opacity: 0' ] ],
+    [ ['invisible', 'hidden'], ['opacity: 0' ] ],
     [ ['no-bg'], ['background: transparent' ] ],
     [ ['overflow-hidden', ], ['overflow: hidden' ] ],
     [ ['overflow-auto'], ['overflow: auto' ] ]
@@ -86,9 +76,9 @@ const alignments = [
         [ // 1 = props
             [ 'center', 'c' ], 
             [ 'end', 'e' ], 
-            [ 'flex-end', 'fxe', 'fe' ], 
+            [ 'flex-end', 'fe' ], 
             [ 'start', 's' ], 
-            [ 'flex-start', 'fxs', 'fs' ], 
+            [ 'flex-start', 'fs' ], 
             [ 'stretch', 'str' ]
         ]
     ],
@@ -105,26 +95,19 @@ const alignments = [
             [ 'right', 'r' ],
             [ 'center', 'c' ], 
             [ 'end', 'e' ], 
-            [ 'flex-end', 'fxe', 'fe' ], 
+            [ 'flex-end', 'fe' ], 
             [ 'start', 's' ], 
-            [ 'flex-start', 'fxs', 'fs' ], 
+            [ 'flex-start', 'fs' ], 
             [ 'stretch', 'str' ]
         ]
     ]
 ]
 
 
-
-api.push({
-    type: 'h2',
-    id: 'alignments'
-})
-
-
 alignments.forEach( (a, idx)  => {
     const nameMega = a[0]
     const values = a[1]
-    const which = (idx == 0) ? 'items-self' : 'content'
+    const which = (idx == 0) ? 'align items / self' : 'align content'
 
     api.push({
         type: 'h3',
@@ -172,11 +155,6 @@ alignments.forEach( (a, idx)  => {
 })
 
 
-api.push( {
-    type: 'h2',
-    id: 'ems'
-})
-
 
 for ( let i = 0; i <= 100; i ++ ) {
 
@@ -191,11 +169,14 @@ for ( let i = 0; i <= 100; i ++ ) {
         [ ['m'], 'margin', true], 
         [ ['b'], 'border', true], 
         [ [''], '', true], 
-        [ ['w', 'width'], 'width', false],
-        [ ['h', 'height'], 'height', false],
-        [ ['basis', 'flex', 'fx'], 'flex-basis', false],
-        [ ['radius', 'round'], 'border-radius', false],
-        [ ['bgpos'], 'background-position', false]
+        [ ['w'], 'width', false],
+        [ ['h'], 'height', false],
+        [ ['minw'], 'min-width', false],
+        [ ['minh'], 'min-height', false],
+        [ ['maxw'], 'max-width', false],
+        [ ['maxh'], 'max-height', false],
+        [ ['basis'], 'flex-basis', false],
+        [ ['radius'], 'border-radius', false]
     ]
 
 
@@ -204,7 +185,7 @@ for ( let i = 0; i <= 100; i ++ ) {
         if (i == 0) {
             api.push( {
                 type: 'h3',
-                id: pair[1]
+                id: pair[1] == '' ? 'positions' : pair[1]
             })
         }
 
@@ -235,16 +216,16 @@ for ( let i = 0; i <= 100; i ++ ) {
 
             if ( isBorder ) {
                 directions = [ 
-                    [ ['t'], (p, n, t, indent) => `${indent}${p}top-width: ${n}${t} ${indent}${p}top-style: solid`], 
-                    [ ['r'], (p, n, t, indent) => `${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: solid`],  
-                    [ ['l'], (p, n, t, indent) => `${indent}${p}left-width: ${n}${t} ${indent}${p}left-style: solid`],  
-                    [ ['b'], (p, n, t, indent) => `${indent}${p}bottom-width: ${n}${t} ${indent}${p}bottom-style: solid`],  
-                    [ ['lr'], (p, n, t, indent) => `${indent}${p}left-width: ${n}${t} ${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: solid ${indent}${p}left-style: solid`],  
-                    [ ['tb'], (p, n, t, indent) => `${indent}${p}top-width: ${n}${t} ${indent}${p}bottom-width: ${n}${t} ${indent}${p}top-style: solid ${indent}${p}bottom-style: solid`],  
+                    [ ['t'], (p, n, t, indent, style) => `${indent}${p}top-width: ${n}${t} ${indent}${p}top-style: ${style}`], 
+                    [ ['r'], (p, n, t, indent, style) => `${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: ${style}`],  
+                    [ ['l'], (p, n, t, indent, style) => `${indent}${p}left-width: ${n}${t} ${indent}${p}left-style: ${style}`],  
+                    [ ['b'], (p, n, t, indent, style) => `${indent}${p}bottom-width: ${n}${t} ${indent}${p}bottom-style: ${style}`],  
+                    [ ['lr'], (p, n, t, indent, style) => `${indent}${p}left-width: ${n}${t} ${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: ${style} ${indent}${p}left-style: ${style}`],  
+                    [ ['tb'], (p, n, t, indent, style) => `${indent}${p}top-width: ${n}${t} ${indent}${p}bottom-width: ${n}${t} ${indent}${p}top-style: ${style} ${indent}${p}bottom-style: ${style}`],  
                 ]
             }
             if ( name != '' ) directions.push( 
-                [ [''], (p, n, t, indent) => `${indent}${p}: ${n}${t}`] 
+                [ [''], (p, n, t, indent, style) => `${indent}${p}: ${n}${t} ${ (p == 'border') ? style : ''}`] 
             )
             directions.forEach( (direct, ii) => {
                 const classList = direct[0]
@@ -252,8 +233,8 @@ for ( let i = 0; i <= 100; i ++ ) {
                 let a = ''
                 let b = ''
                 let c = []
-                let pxA, pxB = ''
-                let pcA, pcB = ''
+                let pxA = '', pxB = ''
+                let pcA = '', pcB = ''
 
                 const blank = direct[0][0] == '' || name == ''
                 const blankC = ( direct[0][0].length == 2 && blank)
@@ -261,13 +242,13 @@ for ( let i = 0; i <= 100; i ++ ) {
 
                 classList.forEach( (d, iii) => {
                     const comma = iii == direct[0].length - 1 ? '' : ', '
-                    a += `.${name}${d}${num}${comma}`
-                    b += `.c${name}${d}${num}${comma}`
+                    a += `.${name || ''}${d}${num}${comma}`
+                    b += `.c${name || ''}${d}${num}${comma}`
                     c.push( 'c' + d )
-                    pxA += `.${name}${d}${i}px${comma}`
-                    pxB += `.${name}${d}${i}px${comma}`
-                    pcA += `.${name}${d}${i}pc${comma}`
-                    pcB += `.${name}${d}${i}pc${comma}`
+                    pxA += `.${name || ''}${d}${i}px${comma}`
+                    pxB += `.${name || ''}${d}${i}px${comma}`
+                    pcA += `.${name || ''}${d}${i}pc${comma}`
+                    pcB += `.${name || ''}${d}${i}pc${comma}`
 
                     if ( i == 0 && d != '' ) {
                         mixins += `\n=${name}${d}( $v )`
@@ -288,7 +269,7 @@ for ( let i = 0; i <= 100; i ++ ) {
 
                     // px --------------
 
-                    str += `\n\t${ pxA }${ run( propDash, i, 'px', '\n\t\t') }` // add rule
+                    str += `\n\t${ pxA }${ run( propDash, i * 10, 'px', '\n\t\t') }` // add rule
                     str += `\n\t${ pxB }\n\t\t> *${ run( propDash, i, 'px', '\n\t\t\t') }`
 
                     // pc --------------
@@ -309,7 +290,7 @@ for ( let i = 0; i <= 100; i ++ ) {
                             first += `.${name}${classList[0]}${i/10}-${tt}`
                             if (iiii < classList.length - 1) first += ', '
                         })
-                        second = `${ run( propDash, i/10, 'px', '\n\t\t') }` // add rule
+                        second = `${ run( propDash, i/10, 'px', '\n\t\t', tt) }` // add rule
                         bs += first + second
 
                     })
@@ -325,15 +306,18 @@ for ( let i = 0; i <= 100; i ++ ) {
 
                 if ( i == 0 ) {
 
-                    let aa = [ classList.map( c => name + c + '[n]em' ), run( propDash, '[n]', 'em', '$' ) ]
-                    let bb = [ c, run( propDash, '[n]', 'em', '$' ) ]
+                    const wang = `<span>[0-100(0)]</span>`
+                    const stroke = '<span>[solid|dashed|dotted]</span>'
+                    const unit = `<span class="second">${ isBorder ? 'px' : '[em|px|pc]'}</span>`
+                    let aa = [ classList.map( c => name + c + `${wang}${isBorder ? '-<span class="second">[solid|dashed|dotted]</span>' : unit.replaceAll('em', '~')}` ), run( propDash, wang, unit, '$', stroke ) ]
+                    let bb = [ c, run( propDash, wang, unit, '$', stroke ) ]
 
                     aa[1] = aa[1].split('$').filter(e => e.length != 0)
                     bb[1] = bb[1].split('$').filter(e => e.length != 0)
 
                     apiTable.push( aa )
-                    // if (!blankC) api.push( bb )
-                }
+
+                } 
 
             })
 
@@ -343,38 +327,26 @@ for ( let i = 0; i <= 100; i ++ ) {
 
             const name = names[0]
 
-            if ( name == 'bgpos' ) {
 
-                _classes += `\n\t.${name}${i}\n\t\t${prop}: ${i}% ${i}%`
-                for (let y = 0; y < 100; y++ ) {
+            let types = [ ['em', 'em', '[0-100]'], ['px', 'px', '[0-1000]'], ['pc', '%', '[0-100]']]
+            if (name == 'h' || name == 'minh' || name == 'maxh') types.push( ['vh', 'vh', '[0-100]'])
+            if (name == 'w' || name == 'minw' || name == 'maxw') types.push( ['vw', 'vw', '[0-100]'])
 
-                    _classes += `\n\t.${name}${i}\n\t\t${prop}: ${i}% ${y}%`
-                }
-
-                if ( i == 0) apiTable.push( [ names, [ `${prop}: [n1]% [n2]%` ] ] )
-                if ( i == 0 ) mixins += `\n=${name}( $a, $b )\n\t${prop}: $a $b`
-
-            } else {
-
-                let types = [ ['', 'em'], ['px', 'px'], ['pc', '%']]
-                if (name == 'h') types.push( ['vh', 'vh'])
-                if (name == 'w') types.push( ['vw', 'vw'])
-
-                types.forEach( pair => {
-                    let str = '\n\t'
-                    names.forEach( (n, iiii) => str += `.${n}${i}${pair[0]}${iiii == names.length - 1 ? '' : ', '}`)
-                    str += `\n\t\t${prop}: ${i}${pair[1]}`
-
-                    if ( i == 0) apiTable.push( [ names, [ `${prop}: [n]${pair[1]}` ] ] )
-                    _classes += str
-                })
+            types.forEach( pair => {
+                let str = '\n\t'
+                names.forEach( (n, iiii) => str += `.${n}${i}${pair[0]}${iiii == names.length - 1 ? '' : ', '}`)
+                str += `\n\t\t${prop}: ${i}${pair[1]}`
+                const wang = `<span>${pair[2]}</span>`
+                const nnn = names.map( n => `${n}${wang}${pair[0]}`)
+                if ( i == 0) apiTable.push( [ nnn, [ `${prop}: ${wang}${pair[1]}` ] ] )
+                _classes += str
+            })
 
 
-                if ( i == 0 ) {
-                    _classes += `\n\t.${names[0]}-auto\n\t\t${prop}: auto`
-                    mixins += `\n=${names[0]}( $v )\n\t${prop}: $v`
-                    mixins += `\n=${names[0]}-auto()\n\t${prop}: auto`
-                }
+            if ( i == 0 ) {
+                _classes += `\n\t.${names[0]}-auto\n\t\t${prop}: auto`
+                mixins += `\n=${names[0]}( $v )\n\t${prop}: $v`
+                mixins += `\n=${names[0]}-auto()\n\t${prop}: auto`
             }
 
         }
@@ -391,34 +363,51 @@ for ( let i = 0; i <= 100; i ++ ) {
     classes += _classes
 }
 
-
-
 file += mixins + '\n\n'
 file += classes + '\n\n'
 
-
-fs.writeFile('./_shorthand.sass', file, function(err) {
-    if (err) return console.error('❌ 💅', err.message)
-    console.log('✅ 💅  successfully written _shorthand.sass')
-
-
-    sass.render({ data: file, indentedSyntax: true }, function(err, result) { 
-        if (err) return console.error('❌ 📜', err.message, 'on line: ' + err.line)
-        const str = result.toString()
-        console.log('✅ 📜  successfully compiled _shorthand.sass')
-
-        fs.writeFile('../dist/shorthand.css', str, function(err) {
-            if (err) return console.error('❌ 🌐', err.message)
-            console.log('✅ 🌐  successfully written dist/shorthand.css')
-        })
-    });
-})
-
-api = `export default ${ JSON.stringify( api, null, 2 ) }`
+const fs = require('fs')
+const sass = require('node-sass')
+const clean = require('clean-css')
+const { Compress } = require('gzipper')
 
 
-fs.writeFile('../docs/src/api.js', api, function(err) {
-    if (err) return console.error('❌ 🧩', err.message)
-    console.log('✅ 🧩  successfully written Table.svelte')
+async function render( name, data ) {
 
-})
+    const sas = await fs.writeFileSync(`dist/${name}.sass`, data)
+    console.log(`✅ 🚨  successfully written dist/${name}.sass`, sas)
+    const css = await (await sass.renderSync({ file: `dist/${name}.sass`, indentedSyntax: true })).css.toString()
+    const min = (await (new clean()).minify( css )).styles
+    const wrtA = await fs.writeFileSync(`dist/${name}.css`, css )
+    const wrtB = await fs.writeFileSync(`dist/${name}.min.css`, min )
+    const rm = await fs.unlinkSync(`dist/${name}.sass`)
+    console.log(`✅ 📜  successfully compiled dist/${name}.sass to  dist/${name}.css`)
+    const gzip = new Compress(`dist/${name}.min.css`, 'dist', { verbose: true })
+    const zippd = await gzip.run()
+    console.log('✅ 🤐  successfully gzipped dist', zippd)
+}
+
+async function run() {
+
+    const mix = await fs.writeFileSync('src/_shorthand.sass', file)
+    console.log('✅ 💅  successfully written src/_shorthand.sass', mix)
+
+    await render( 'shorthand', `@import '../src/sassis' 
+html
+    +shorthand `)
+    await render( 'layout', `@import '../src/sassis' 
+html
+    +layout`)
+    await render( 'all', `@import '../src/sassis' 
+html
+    +sassis
+    +shorthand
+    +layout`)
+
+    api = `export default ${ JSON.stringify( api, null, 2 ) }`
+    const js = await fs.writeFileSync('docs/src/data.js', api )
+    console.log('✅ 🧩  successfully written Table.svelte', js)
+}
+
+
+run()

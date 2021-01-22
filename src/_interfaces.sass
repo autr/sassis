@@ -1,0 +1,109 @@
+
+=interfaces
+
+	.arrow
+		background-repeat: no-repeat
+		background-size: 1em 0.5em
+		background-position: 100% 50%
+	.cross
+		background-size: auto
+	*, *:after, *:before, input, textarea, select
+		border-style: solid
+		border-width: 0
+	input[type=range]
+		-webkit-appearance: none
+		&::-webkit-slider-thumb
+			-webkit-appearance: none
+			width: 2px
+			height: 100%
+			min-height: 1em
+			border: none
+			border-radius: 0px
+	input, textarea
+		background: transparent
+	.checkbox
+		$s: 0.9em
+		+width-height($s * 1.5, $s * 1.5)
+		+relative
+		+top(3px)
+		line-height: 0
+		input[type=checkbox]
+			opacity: 0
+			padding: 0
+			margin: 0
+			z-index: 9
+			+fill
+		input[type=checkbox] + span
+			+width-height($s, $s)
+			+absolute
+			+top-left(50%, 0%)
+			+translate(0%, -50%)
+			border-width: 1px 
+			overflow: hidden
+
+		// checked 
+
+		input[type=checkbox]:checked + span
+			&:before, &:after
+				border-width: 1px 
+				content: ""
+				+absolute
+				+wh($s * 2, $s * 2)
+			&:before
+				+top-right
+				+origin(100%,0%)
+				+rotate(-45deg)
+			&:after
+				+top-left
+				+origin(0%,0%)
+				+rotate(45deg)
+
+		// indeterminate
+
+		input[type=checkbox]:indeterminate + span
+			&:before, &:after
+				content: ""
+				+fill
+				+top(50%)
+				margin-top: -0.5px
+				border-top-width: 1px 
+	select, input, button, textarea
+		border-radius: 0px
+		outline: none
+		&:disabled
+			opacity: 0.5
+	button, input, textarea, select
+		border-width: 1px
+	button
+		font-weight: normal
+	.select, .chevron, .dropdown
+		+relative
+		select
+			width: 100%
+		&:after
+			content: ""
+			+top-right(50%, 0% )
+			margin: var(--field-padding)
+			margin-top: 0
+			margin-bottom: 0
+			+absolute
+			$s: 4px
+			+width-height($s, $s)
+			border-left-width: 1px
+			border-bottom-width: 1px
+			border-style: solid
+			transform: rotateZ(-45deg) translate( 0%, -50% )
+			transform-origin: 50% 50%
+	a, select
+		cursor: pointer
+		text-decoration: none
+		background: transparent
+		&.outline
+			border-width: 1px
+		&.nounderline
+			border-bottom-color: transparent
+		option
+			width: 10px
+			display: block
+	button
+		background: transparent

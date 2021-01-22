@@ -10,8 +10,7 @@ export default [
       [
         [
           "absolute",
-          "abs",
-          "a"
+          "abs"
         ],
         [
           "position: absolute"
@@ -20,8 +19,7 @@ export default [
       [
         [
           "relative",
-          "rel",
-          "r"
+          "rel"
         ],
         [
           "position: relative"
@@ -29,8 +27,7 @@ export default [
       ],
       [
         [
-          "fixed",
-          "fix"
+          "fixed"
         ],
         [
           "position: fixed"
@@ -38,8 +35,7 @@ export default [
       ],
       [
         [
-          "sticky",
-          "stick"
+          "sticky"
         ],
         [
           "position: sticky"
@@ -55,8 +51,7 @@ export default [
       ],
       [
         [
-          "inline-block",
-          "ib"
+          "inline-block"
         ],
         [
           "display: inline-block"
@@ -64,8 +59,7 @@ export default [
       ],
       [
         [
-          "block",
-          "bk"
+          "block"
         ],
         [
           "display: block"
@@ -73,8 +67,7 @@ export default [
       ],
       [
         [
-          "flex",
-          "fx"
+          "flex"
         ],
         [
           "display: flex"
@@ -82,9 +75,7 @@ export default [
       ],
       [
         [
-          "none",
-          "hidden",
-          "n"
+          "none"
         ],
         [
           "display: none"
@@ -94,8 +85,7 @@ export default [
         [
           "column",
           "col",
-          "flex-column",
-          "fx-c"
+          "flex-column"
         ],
         [
           "flex-direction: column"
@@ -104,8 +94,7 @@ export default [
       [
         [
           "row",
-          "flex-row",
-          "fx-r"
+          "flex-row"
         ],
         [
           "flex-direction: row"
@@ -193,8 +182,7 @@ export default [
       ],
       [
         [
-          "italic",
-          "i"
+          "italic"
         ],
         [
           "font-style: italic"
@@ -284,7 +272,8 @@ export default [
       ],
       [
         [
-          "invisible"
+          "invisible",
+          "hidden"
         ],
         [
           "opacity: 0"
@@ -317,16 +306,12 @@ export default [
     ]
   },
   {
-    "type": "h2",
-    "id": "alignments"
-  },
-  {
     "type": "h3",
-    "id": "items-self"
+    "id": "align items / self"
   },
   {
     "type": "table",
-    "id": "items-self",
+    "id": "align items / self",
     "data": [
       [
         [
@@ -349,7 +334,6 @@ export default [
       [
         [
           "align-self-flex-end",
-          "align-self-fxe",
           "a-s-fe"
         ],
         [
@@ -368,7 +352,6 @@ export default [
       [
         [
           "align-self-flex-start",
-          "align-self-fxs",
           "a-s-fs"
         ],
         [
@@ -405,7 +388,6 @@ export default [
       [
         [
           "align-items-flex-end",
-          "align-items-fxe",
           "a-i-fe"
         ],
         [
@@ -424,7 +406,6 @@ export default [
       [
         [
           "align-items-flex-start",
-          "align-items-fxs",
           "a-i-fs"
         ],
         [
@@ -461,7 +442,6 @@ export default [
       [
         [
           "justify-self-flex-end",
-          "justify-self-fxe",
           "j-s-fe"
         ],
         [
@@ -480,7 +460,6 @@ export default [
       [
         [
           "justify-self-flex-start",
-          "justify-self-fxs",
           "j-s-fs"
         ],
         [
@@ -517,7 +496,6 @@ export default [
       [
         [
           "justify-items-flex-end",
-          "justify-items-fxe",
           "j-i-fe"
         ],
         [
@@ -536,7 +514,6 @@ export default [
       [
         [
           "justify-items-flex-start",
-          "justify-items-fxs",
           "j-i-fs"
         ],
         [
@@ -556,11 +533,11 @@ export default [
   },
   {
     "type": "h3",
-    "id": "content"
+    "id": "align content"
   },
   {
     "type": "table",
-    "id": "content",
+    "id": "align content",
     "data": [
       [
         [
@@ -631,7 +608,6 @@ export default [
       [
         [
           "align-content-flex-end",
-          "align-content-fxe",
           "a-c-fe"
         ],
         [
@@ -650,7 +626,6 @@ export default [
       [
         [
           "align-content-flex-start",
-          "align-content-fxs",
           "a-c-fs"
         ],
         [
@@ -735,7 +710,6 @@ export default [
       [
         [
           "justify-content-flex-end",
-          "justify-content-fxe",
           "j-c-fe"
         ],
         [
@@ -754,7 +728,6 @@ export default [
       [
         [
           "justify-content-flex-start",
-          "justify-content-fxs",
           "j-c-fs"
         ],
         [
@@ -773,10 +746,6 @@ export default [
     ]
   },
   {
-    "type": "h2",
-    "id": "ems"
-  },
-  {
     "type": "h3",
     "id": "padding"
   },
@@ -786,60 +755,60 @@ export default [
     "data": [
       [
         [
-          "pt[n]em"
+          "pt<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "padding-top: [n]em"
+          "padding-top: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "pr[n]em"
+          "pr<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "padding-right: [n]em"
+          "padding-right: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "pl[n]em"
+          "pl<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "padding-left: [n]em"
+          "padding-left: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "pb[n]em"
+          "pb<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "padding-bottom: [n]em"
+          "padding-bottom: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "plr[n]em"
+          "plr<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "padding-left: [n]em ",
-          "padding-right: [n]em"
+          "padding-left: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> ",
+          "padding-right: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "ptb[n]em"
+          "ptb<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "padding-top: [n]em ",
-          "padding-bottom: [n]em"
+          "padding-top: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> ",
+          "padding-bottom: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "p[n]em"
+          "p<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "padding: [n]em"
+          "padding: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> "
         ]
       ]
     ]
@@ -854,60 +823,60 @@ export default [
     "data": [
       [
         [
-          "mt[n]em"
+          "mt<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "margin-top: [n]em"
+          "margin-top: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "mr[n]em"
+          "mr<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "margin-right: [n]em"
+          "margin-right: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "ml[n]em"
+          "ml<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "margin-left: [n]em"
+          "margin-left: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "mb[n]em"
+          "mb<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "margin-bottom: [n]em"
+          "margin-bottom: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "mlr[n]em"
+          "mlr<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "margin-left: [n]em ",
-          "margin-right: [n]em"
+          "margin-left: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> ",
+          "margin-right: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "mtb[n]em"
+          "mtb<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "margin-top: [n]em ",
-          "margin-bottom: [n]em"
+          "margin-top: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> ",
+          "margin-bottom: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "m[n]em"
+          "m<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "margin: [n]em"
+          "margin: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> "
         ]
       ]
     ]
@@ -922,75 +891,75 @@ export default [
     "data": [
       [
         [
-          "bt[n]em"
+          "bt<span>[0-100(0)]</span>-<span class=\"second\">[solid|dashed|dotted]</span>"
         ],
         [
-          "border-top-width: [n]em ",
-          "border-top-style: solid"
+          "border-top-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-top-style: <span>[solid|dashed|dotted]</span>"
         ]
       ],
       [
         [
-          "br[n]em"
+          "br<span>[0-100(0)]</span>-<span class=\"second\">[solid|dashed|dotted]</span>"
         ],
         [
-          "border-right-width: [n]em ",
-          "border-right-style: solid"
+          "border-right-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-right-style: <span>[solid|dashed|dotted]</span>"
         ]
       ],
       [
         [
-          "bl[n]em"
+          "bl<span>[0-100(0)]</span>-<span class=\"second\">[solid|dashed|dotted]</span>"
         ],
         [
-          "border-left-width: [n]em ",
-          "border-left-style: solid"
+          "border-left-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-left-style: <span>[solid|dashed|dotted]</span>"
         ]
       ],
       [
         [
-          "bb[n]em"
+          "bb<span>[0-100(0)]</span>-<span class=\"second\">[solid|dashed|dotted]</span>"
         ],
         [
-          "border-bottom-width: [n]em ",
-          "border-bottom-style: solid"
+          "border-bottom-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-bottom-style: <span>[solid|dashed|dotted]</span>"
         ]
       ],
       [
         [
-          "blr[n]em"
+          "blr<span>[0-100(0)]</span>-<span class=\"second\">[solid|dashed|dotted]</span>"
         ],
         [
-          "border-left-width: [n]em ",
-          "border-right-width: [n]em ",
-          "border-right-style: solid ",
-          "border-left-style: solid"
+          "border-left-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-right-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-right-style: <span>[solid|dashed|dotted]</span> ",
+          "border-left-style: <span>[solid|dashed|dotted]</span>"
         ]
       ],
       [
         [
-          "btb[n]em"
+          "btb<span>[0-100(0)]</span>-<span class=\"second\">[solid|dashed|dotted]</span>"
         ],
         [
-          "border-top-width: [n]em ",
-          "border-bottom-width: [n]em ",
-          "border-top-style: solid ",
-          "border-bottom-style: solid"
+          "border-top-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-bottom-width: <span>[0-100(0)]</span><span class=\"second\">px</span> ",
+          "border-top-style: <span>[solid|dashed|dotted]</span> ",
+          "border-bottom-style: <span>[solid|dashed|dotted]</span>"
         ]
       ],
       [
         [
-          "b[n]em"
+          "b<span>[0-100(0)]</span>-<span class=\"second\">[solid|dashed|dotted]</span>"
         ],
         [
-          "border: [n]em"
+          "border: <span>[0-100(0)]</span><span class=\"second\">px</span> <span>[solid|dashed|dotted]</span>"
         ]
       ]
     ]
   },
   {
     "type": "h3",
-    "id": ""
+    "id": "positions"
   },
   {
     "type": "table",
@@ -998,52 +967,52 @@ export default [
     "data": [
       [
         [
-          "t[n]em"
+          "t<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "top: [n]em"
+          "top: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "r[n]em"
+          "r<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "right: [n]em"
+          "right: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "l[n]em"
+          "l<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "left: [n]em"
+          "left: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "b[n]em"
+          "b<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "bottom: [n]em"
+          "bottom: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "lr[n]em"
+          "lr<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "left: [n]em ",
-          "right: [n]em"
+          "left: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> ",
+          "right: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ],
       [
         [
-          "tb[n]em"
+          "tb<span>[0-100(0)]</span><span class=\"second\">[~|px|pc]</span>"
         ],
         [
-          "top: [n]em ",
-          "bottom: [n]em"
+          "top: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span> ",
+          "bottom: <span>[0-100(0)]</span><span class=\"second\">[em|px|pc]</span>"
         ]
       ]
     ]
@@ -1058,38 +1027,34 @@ export default [
     "data": [
       [
         [
-          "w",
-          "width"
+          "w<span>[0-100]</span>em"
         ],
         [
-          "width: [n]em"
+          "width: <span>[0-100]</span>em"
         ]
       ],
       [
         [
-          "w",
-          "width"
+          "w<span>[0-1000]</span>px"
         ],
         [
-          "width: [n]px"
+          "width: <span>[0-1000]</span>px"
         ]
       ],
       [
         [
-          "w",
-          "width"
+          "w<span>[0-100]</span>pc"
         ],
         [
-          "width: [n]%"
+          "width: <span>[0-100]</span>%"
         ]
       ],
       [
         [
-          "w",
-          "width"
+          "w<span>[0-100]</span>vw"
         ],
         [
-          "width: [n]vw"
+          "width: <span>[0-100]</span>vw"
         ]
       ]
     ]
@@ -1104,38 +1069,202 @@ export default [
     "data": [
       [
         [
-          "h",
-          "height"
+          "h<span>[0-100]</span>em"
         ],
         [
-          "height: [n]em"
+          "height: <span>[0-100]</span>em"
         ]
       ],
       [
         [
-          "h",
-          "height"
+          "h<span>[0-1000]</span>px"
         ],
         [
-          "height: [n]px"
+          "height: <span>[0-1000]</span>px"
         ]
       ],
       [
         [
-          "h",
-          "height"
+          "h<span>[0-100]</span>pc"
         ],
         [
-          "height: [n]%"
+          "height: <span>[0-100]</span>%"
         ]
       ],
       [
         [
-          "h",
-          "height"
+          "h<span>[0-100]</span>vh"
         ],
         [
-          "height: [n]vh"
+          "height: <span>[0-100]</span>vh"
+        ]
+      ]
+    ]
+  },
+  {
+    "type": "h3",
+    "id": "min-width"
+  },
+  {
+    "type": "table",
+    "id": "min-width",
+    "data": [
+      [
+        [
+          "minw<span>[0-100]</span>em"
+        ],
+        [
+          "min-width: <span>[0-100]</span>em"
+        ]
+      ],
+      [
+        [
+          "minw<span>[0-1000]</span>px"
+        ],
+        [
+          "min-width: <span>[0-1000]</span>px"
+        ]
+      ],
+      [
+        [
+          "minw<span>[0-100]</span>pc"
+        ],
+        [
+          "min-width: <span>[0-100]</span>%"
+        ]
+      ],
+      [
+        [
+          "minw<span>[0-100]</span>vw"
+        ],
+        [
+          "min-width: <span>[0-100]</span>vw"
+        ]
+      ]
+    ]
+  },
+  {
+    "type": "h3",
+    "id": "min-height"
+  },
+  {
+    "type": "table",
+    "id": "min-height",
+    "data": [
+      [
+        [
+          "minh<span>[0-100]</span>em"
+        ],
+        [
+          "min-height: <span>[0-100]</span>em"
+        ]
+      ],
+      [
+        [
+          "minh<span>[0-1000]</span>px"
+        ],
+        [
+          "min-height: <span>[0-1000]</span>px"
+        ]
+      ],
+      [
+        [
+          "minh<span>[0-100]</span>pc"
+        ],
+        [
+          "min-height: <span>[0-100]</span>%"
+        ]
+      ],
+      [
+        [
+          "minh<span>[0-100]</span>vh"
+        ],
+        [
+          "min-height: <span>[0-100]</span>vh"
+        ]
+      ]
+    ]
+  },
+  {
+    "type": "h3",
+    "id": "max-width"
+  },
+  {
+    "type": "table",
+    "id": "max-width",
+    "data": [
+      [
+        [
+          "maxw<span>[0-100]</span>em"
+        ],
+        [
+          "max-width: <span>[0-100]</span>em"
+        ]
+      ],
+      [
+        [
+          "maxw<span>[0-1000]</span>px"
+        ],
+        [
+          "max-width: <span>[0-1000]</span>px"
+        ]
+      ],
+      [
+        [
+          "maxw<span>[0-100]</span>pc"
+        ],
+        [
+          "max-width: <span>[0-100]</span>%"
+        ]
+      ],
+      [
+        [
+          "maxw<span>[0-100]</span>vw"
+        ],
+        [
+          "max-width: <span>[0-100]</span>vw"
+        ]
+      ]
+    ]
+  },
+  {
+    "type": "h3",
+    "id": "max-height"
+  },
+  {
+    "type": "table",
+    "id": "max-height",
+    "data": [
+      [
+        [
+          "maxh<span>[0-100]</span>em"
+        ],
+        [
+          "max-height: <span>[0-100]</span>em"
+        ]
+      ],
+      [
+        [
+          "maxh<span>[0-1000]</span>px"
+        ],
+        [
+          "max-height: <span>[0-1000]</span>px"
+        ]
+      ],
+      [
+        [
+          "maxh<span>[0-100]</span>pc"
+        ],
+        [
+          "max-height: <span>[0-100]</span>%"
+        ]
+      ],
+      [
+        [
+          "maxh<span>[0-100]</span>vh"
+        ],
+        [
+          "max-height: <span>[0-100]</span>vh"
         ]
       ]
     ]
@@ -1150,32 +1279,26 @@ export default [
     "data": [
       [
         [
-          "basis",
-          "flex",
-          "fx"
+          "basis<span>[0-100]</span>em"
         ],
         [
-          "flex-basis: [n]em"
+          "flex-basis: <span>[0-100]</span>em"
         ]
       ],
       [
         [
-          "basis",
-          "flex",
-          "fx"
+          "basis<span>[0-1000]</span>px"
         ],
         [
-          "flex-basis: [n]px"
+          "flex-basis: <span>[0-1000]</span>px"
         ]
       ],
       [
         [
-          "basis",
-          "flex",
-          "fx"
+          "basis<span>[0-100]</span>pc"
         ],
         [
-          "flex-basis: [n]%"
+          "flex-basis: <span>[0-100]</span>%"
         ]
       ]
     ]
@@ -1190,47 +1313,26 @@ export default [
     "data": [
       [
         [
-          "radius",
-          "round"
+          "radius<span>[0-100]</span>em"
         ],
         [
-          "border-radius: [n]em"
+          "border-radius: <span>[0-100]</span>em"
         ]
       ],
       [
         [
-          "radius",
-          "round"
+          "radius<span>[0-1000]</span>px"
         ],
         [
-          "border-radius: [n]px"
+          "border-radius: <span>[0-1000]</span>px"
         ]
       ],
       [
         [
-          "radius",
-          "round"
+          "radius<span>[0-100]</span>pc"
         ],
         [
-          "border-radius: [n]%"
-        ]
-      ]
-    ]
-  },
-  {
-    "type": "h3",
-    "id": "background-position"
-  },
-  {
-    "type": "table",
-    "id": "background-position",
-    "data": [
-      [
-        [
-          "bgpos"
-        ],
-        [
-          "background-position: [n1]% [n2]%"
+          "border-radius: <span>[0-100]</span>%"
         ]
       ]
     ]

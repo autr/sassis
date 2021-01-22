@@ -1,0 +1,64 @@
+
+
+
+=layout( $spacing: 0em )
+	$screen-sm: 576px
+	$screen-md: 768px
+	$screen-lg: 922px
+	$screen-elg: 1200px
+	.layout
+		box-sizing: border-box
+		display: flex
+		flex: 0 1 auto
+		flex-direction: row
+		flex-wrap: wrap
+		&.layout-nogutter
+			margin: 0
+			& > .col
+				padding: 0
+			
+	.layout
+		margin: 0 ($spacing * -1) 0 ($spacing * -1)
+	.col
+		padding: 0 $spacing 0 $spacing
+
+
+	.col
+		box-sizing: border-box
+		flex: 0 0 auto
+		flex-grow: 1
+		flex-basis: 0
+		max-width: 100%
+		min-width: 0
+
+
+	@for $i from 1 through 12
+		.col-#{$i}
+			flex-basis: (100% / 12) * $i
+			max-width: (100% / 12) * $i
+
+
+	//////////////////
+	//Media Queries
+	//////////////////
+
+	@media only screen and (max-width: $screen-sm)
+		@for $i from 1 through 12
+			.col-sm-#{$i}
+				flex-basis: (100% / 12) * $i
+				max-width: (100% / 12) * $i
+			
+
+	@media only screen and (min-width: $screen-sm) and (max-width: $screen-md)
+		@for $i from 1 through 12
+			.col-md-#{$i}
+				flex-basis: (100% / 12) * $i
+				max-width: (100% / 12) * $i
+			
+
+	@media only screen and (min-width: $screen-md) and (max-width: $screen-lg)
+		@for $i from 1 through 12
+			.col-lg-#{$i}
+				flex-basis: (100% / 12) * $i
+				max-width: (100% / 12) * $i
+		

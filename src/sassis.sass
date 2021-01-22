@@ -1,0 +1,78 @@
+
+
+// --------------------------------------------------
+// +reset 			standard reset
+// +twelve 			12 column grid layout
+// +fontsize 		fontsizes with ratios
+// +device 			responsive show / hide
+// --------------------------------------------------
+
+
+
+		
+
+@import '_misc'
+@import '_interfaces'
+@import '_colours'
+@import '_shorthand'
+@import '_layout'
+@import '_syntax'
+
+
+=sassis
+
+	/* core sassis */
+
+	+reset
+	+fontsize
+	+interfaces
+
+	/* backgrounds w. pop and sink */
+
+	+bg( var(--bg) )
+	+bg( var(--bg-pop), pop )
+	+bg( var(--bg-sink), sink )
+
+	/* colors w. bright and fade */
+
+	+colors( var(--color), var(--bg)  )
+	+colors( var(--color-bright), var(--bg), strong highlight bright focus,  )
+	+colors( var(--color-fade), var(--bg), fade disabled unimportant ) 
+
+	/* placeholder fade colors */
+
+	*::placeholder
+		color: var(--color-fade)
+
+	/* colors w. success, info, error, alert */
+
+	+colors( var(--color-success), var(--bg), success selected added new created create add )
+	+colors( var(--color-info), var(--bg), info ok placid )
+	+colors( var(--color-error), var(--bg), error unselected removed deleted remove delete )
+	+colors( var(--color-alert), var(--bg), alert warning )
+	
+	/* background and colors w. a, b, c, d, e */
+
+	$abc: a, b, c, d, e
+	@for $i from 1 through length($abc) 
+		$char: nth( $abc, $i )
+		+bg( var(--bg-#{$char}), bg-#{$char} )
+		+colors( var(--color-#{$char}), var(--bg), color-#{$char} )
+
+
+	/* font-family w. monospace, serif, sans-serif, cursive, slab, grotesque */
+
+	+font( var(--font) )
+	$fonts: monospace, serif, sans-serif, cursive, slab, grotesque
+	@for $i from 1 through length($fonts) 
+		$font: nth( $fonts, $i )
+		+font( var(--font-#{$font}), #{$font} )
+
+	/* padding w. field, icon, button paddings */
+
+	input, textarea, select, .field, .element
+		padding: var(--field-padding)
+	select
+		padding-right: var(--icon-padding)
+	button, .button
+		padding: var(--button-padding)

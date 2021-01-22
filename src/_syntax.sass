@@ -1,0 +1,84 @@
+
+
+=syntax
+
+	$hue: 200
+	$sat: 95%
+	$li: 70%
+	
+	.codejar-linenumbers *, .linenumbers, .line-numbers
+		color: hsl($hue, 10%, 50%)
+	code[class*="language-"],
+	pre[class*="language-"]
+		font-family: monospace
+		color: hsl($hue, 10%, 95%)
+		background: none
+		+text-left
+		white-space: pre
+		word-spacing: normal
+		word-break: normal
+		word-wrap: normal
+		white-space: normal
+		tab-size: 4
+		hyphens: none
+
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata
+		color: hsl($hue, 10%, 50%)
+
+	.token.punctuation
+		color: hsl($hue, 10%, 80%)
+
+	.token.namespace
+		opacity: .7
+
+	.token.property,
+	.token.tag,
+	.token.constant,
+	.token.symbol,
+	.token.deleted
+		color: hsl( 360, $sat, $li )
+
+	.token.boolean,
+	.token.number
+		color: hsl( 250, $sat, $li )
+
+	.token.selector,
+	.token.attr-name,
+	.token.string,
+	.token.char,
+	.token.builtin,
+	.token.inserted
+		color: hsl( 150, $sat, $li )
+
+	.token.operator,
+	.token.entity,
+	.token.url,
+	.language-css .token.string,
+	.style .token.string,
+	.token.variable
+		color: hsl( 150, $sat, $li )
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.class-name
+		color: hsl( 320, $sat, $li )
+
+	.token.keyword
+		color: hsl( 120, $sat, $li )
+
+	.token.regex,
+	.token.important
+		color: hsl( 220, $sat, $li )
+
+	.token.important,
+	.token.bold
+		font-weight: bold
+	.token.italic
+		font-style: italic
+
+	.token.entity
+		cursor: help
