@@ -1,42 +1,4 @@
 
-=font( $c, $n: '' ) 
-	$raw: ''
-	@if $n != ''
-		@for $i from 1 through length($n)
-			$name: nth($n, $i)
-			$raw: #{$raw + '.' + $name}
-			@if $i != length($n)
-				$raw: #{$raw + ', '}
-	+set-prop( font-family, $c, $raw )
-	@if $raw == ''
-		*, input, textarea, button, select
-			font-family: $c
-	@else
-		#{$raw}
-			*, input, textarea, button, select
-				font-family: $c
-
-
-=fontsize
-	$fontratios: 0.785714, 1, 1.2857, 1.64285, 2.071428, 2.642857
-	font-size: var(--font-size)
-	line-height: var(--line-height)
-	select, button, input, textarea
-		font-size: var(--font-size)
-		line-height: var(--line-height)
-	@for $i from 1 through length( $fontratios )
-		@if $i == 1
-			small
-				font-size: nth( $fontratios, $i )rem
-		@if $i == 3
-			big
-				font-size: nth( $fontratios, $i )rem
-		.f#{$i}, h#{7-$i}, .h#{7-$i}
-			font-size: nth( $fontratios, $i )rem
-
-
-// mixin....
-
 =device
 	@media only screen and (max-width: 48em)
 		.mobile-hide
@@ -60,26 +22,13 @@
 			opacity: 1!important
 
 
-=reset-webkit
+=no-webkit
 	&:hover, &:active, &:focus
 		outline: none
 	-webkit-appearance: none
 	-webkit-tap-highlight-color: rgba(255,255,255,0)
 	touch-action: manipulation
 
-// is this used????
-
-=area( $name: "default" )
-	+flex
-	position: relative
-	box-sizing: border-box
-	border-radius: map-get($rounded-corners, $name)
-	width: 100%
-
-
-
-=basis( $amount: 1 )
-	flex-basis: $amount
 
 =line-clamp( $lines: 6 )
 	text-overflow: ellipsis
@@ -88,69 +37,34 @@
 	-webkit-line-clamp: #{2 * $lines}
 	-webkit-box-orient: vertical
 
-
-=fill
-	+absolute
-	+width-height
-	+top-left
-
-// top left right bottom
-
-=t( $y: 0px )
+=top( $y: 0px )
 	top: $y
-=l( $x: 0px )
+=left( $x: 0px )
 	left: $x
-=b( $y: 0px )
+=bottom( $y: 0px )
 	bottom: $y
-=r( $x: 0px )
+=right( $x: 0px  )
 	right: $x
 
-=tl( $x: 0px, $y: 0px)
-	top: $x
-	left: $y
-=tr( $x: 0px, $y: 0px)
-	top: $x
-	right: $y
-=bl( $x: 0px, $y: 0px)
-	bottom: $x
-	left: $y
-=br( $x: 0px, $y: 0px)
-	bottom: $x
-	right: $y
-
-=top( $y: 0px )
-	+t($y)
-=left( $x: 0px )
-	+l($x)
-=bottom( $y: 0px )
-	+b($y)
-=right( $x: 0px  )
-	+r($x)
-
 =top-left( $x: 0px, $y: 0px)
-	+tl( $x, $y )
+	top: $x
+	left: $y
 =top-right( $x: 0px, $y: 0px)
-	+tr( $x, $y )
+	top: $x
+	right: $y
 =bottom-left( $x: 0px, $y: 0px)
-	+bl( $x, $y )
+	bottom: $x
+	left: $y
 =bottom-right( $x: 0px, $y: 0px)
-	+br( $x, $y )
-
+	bottom: $x
+	right: $y
 
 // width height
 
-=w($w: 100%)
-	width: $w
-=h($h: 100%)
-	width: $h
 =wh( $w: 100%, $h: 100% )
 	width: $w
 	height: $h
 
-=width( $w: 100% )
-	width: $w
-=height( $h: 100% )
-	height: $h
 =width-height( $w: 100%, $h: 100% )
 	width: $w
 	height: $h

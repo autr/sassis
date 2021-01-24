@@ -1,412 +1,681 @@
 let api = [], mixins = '', classes = '=shorthand\n', file = ''
+ 
+const aliases = [ 
 
-const aliases = [
+	[ ['absolute', 'abs'], ['position: absolute' ] ],
+	[ ['relative', 'rel'], ['position: relative' ] ],
+	[ ['fixed'], ['position: fixed' ] ],
+	[ ['sticky'], ['position: sticky' ] ],
+	[ ['table'], ['display: table' ] ],
+	[ ['inline'], ['display: inline' ] ],
+	[ ['inline-block'], ['display: inline-block' ] ],
+	[ ['block'], ['display: block' ] ],
+	[ ['flex'], ['display: flex' ] ],
+	[ ['none'], ['display: none' ] ],
 
-    [ ['absolute', 'abs'], ['position: absolute' ] ],
-    [ ['relative', 'rel'], ['position: relative' ] ],
-    [ ['fixed'], ['position: fixed' ] ],
-    [ ['sticky'], ['position: sticky' ] ],
-    [ ['table'], ['display: table' ] ],
-    [ ['inline-block'], ['display: inline-block' ] ],
-    [ ['block'], ['display: block' ] ],
-    [ ['flex'], ['display: flex' ] ],
-    [ ['none'], ['display: none' ] ],
+	[ ['column', 'col', 'flex-column'], ['flex-direction: column' ] ],
+	[ ['row', 'flex-row'], ['flex-direction: row' ] ],
 
-    [ ['column', 'col', 'flex-column'], ['flex-direction: column' ] ],
-    [ ['row', 'flex-row'], ['flex-direction: row' ] ],
+	[ ['grow'], ['flex-grow: 1' ] ], 
+	[ ['no-grow'], ['flex-grow: 0' ] ],
+	[ ['shrink'], ['flex-shrink: 1' ] ], 
+	[ ['no-shrink'], ['flex-shrink: 0' ] ], 
+	[ ['no-basis'], ['flex-basis: 0' ] ],
+	[ ['wrap'], ['flex-wrap: wrap' ] ],
+	[ ['nowrap', 'no-wrap'], ['flex-wrap: nowrap' ] ],
+	[ ['border-box'], ['box-sizing: border-box' ] ],
 
-    [ ['grow'], ['flex-grow: 1' ] ],
-    [ ['no-grow'], ['flex-grow: 0' ] ],
-    [ ['shrink'], ['flex-shrink: 1' ] ],
-    [ ['no-shrink'], ['flex-shrink: 0' ] ],
-    [ ['no-basis'], ['flex-basis: 0' ] ],
-    [ ['wrap'], ['flex-wrap: wrap' ] ],
-    [ ['no-wrap'], ['flex-wrap: nowrap' ] ],
-    [ ['border-box'], ['box-sizing: border-box' ] ],
-    [ ['wrap'], ['flex-wrap: wrap' ] ],
-    [ ['no-wrap'], ['flex-wrap: nowrap' ] ],
+	[ ['italic'], ['font-style: italic' ] ],
+	[ ['bold', 'strong'], ['font-weight: bold' ] ],
+	[ ['bolder', 'stronger'], ['font-weight: bold' ] ],
+	[ ['normal'], ['font-weight: normal' ] ],
+	[ ['light'], ['font-weight: light' ] ],
+	[ ['lighter'], ['font-weight: lighter' ] ],
 
-    [ ['italic'], ['font-style: italic' ] ],
-    [ ['bold', 'strong'], ['font-weight: bold' ] ],
-    [ ['bolder', 'stronger'], ['font-weight: bold' ] ],
-    [ ['normal'], ['font-weight: normal' ] ],
-    [ ['light'], ['font-weight: light' ] ],
-    [ ['lighter'], ['font-weight: lighter' ] ],
+	[ ['text-left'], ['text-align: left' ] ],
+	[ ['text-center'], ['text-align: center' ] ],
+	[ ['text-right'], ['text-align: right' ] ],
 
-    [ ['text-left'], ['text-align: left' ] ],
-    [ ['text-center'], ['text-align: center' ] ],
-    [ ['text-right'], ['text-align: right' ] ],
+	[ ['pointer'], ['cursor: pointer' ] ],
 
-    [ ['pointer'], ['cursor: pointer' ] ],
+	[ ['visible'], ['opacity: 1' ] ],
+	[ ['invisible', 'hidden'], ['opacity: 0' ] ],
+	[ ['no-bg'], ['background: transparent' ] ],
+	[ ['overflow-hidden', ], ['overflow: hidden' ] ],
+	[ ['overflow-auto'], ['overflow: auto' ] ],
 
-    [ ['visible'], ['opacity: 1' ] ],
-    [ ['invisible', 'hidden'], ['opacity: 0' ] ],
-    [ ['no-bg'], ['background: transparent' ] ],
-    [ ['overflow-hidden', ], ['overflow: hidden' ] ],
-    [ ['overflow-auto'], ['overflow: auto' ] ]
+	[ ['margin-auto'], ['margin: 0 auto' ] ],
+	[ ['whitespace-pre', 'newlines'], ['white-space: pre' ] ],
+	[ ['whitespace-nowrap'], ['white-space: nowrap' ] ],
+	[ ['fill'], ['position: absolute', 'width: 100%', 'height: 100%', 'top: 0', 'left: 0' ] ],
+	[ ['no-webkit'], ['-webkit-appearance: none' ] ]
 ]
 
 api.push({
-    type: 'h2',
-    id: 'basic'
+	type: 'h2',
+	id: 'basic'
 })
 
 api.push( {
-    type: 'table',
-    id: 'basic',
-    data: aliases
+	type: 'table',
+	id: 'basic',
+	data: aliases,
+	mixins: '.'
 })
 
 aliases.forEach( pair => {
-    const names = pair[0]
-    const rule = pair[1].join('')
-    mixins += `\n=${names.join(`\n\t${rule}\n=`)}\n\t${rule}\n`
-    classes += `\n\t.${names.join(', .')}\n\t\t${rule}\n`
+	const names = pair[0]
+	const rule = pair[1].join('')
+	mixins += `\n=${names.join(`\n\t${rule}\n=`)}\n\t${pair[1].join('\n\t')}\n`
+	classes += `\n\t.${names.join(', .')}\n\t\t${pair[1].join('\n\t\t')}\n`
 })
 
 
 const alignments = [
-    [ // rule
-        [ // 0 = names
-            [ 'align-self', 'a-s' ], 
-            [ 'align-items', 'a-i' ], 
-            [ 'justify-self', 'j-s' ], 
-            [ 'justify-items', 'j-i' ]
-        ], 
-        [ // 1 = props
-            [ 'center', 'c' ], 
-            [ 'end', 'e' ], 
-            [ 'flex-end', 'fe' ], 
-            [ 'start', 's' ], 
-            [ 'flex-start', 'fs' ], 
-            [ 'stretch', 'str' ]
-        ]
-    ],
-    [
-        [ // 0 = names
-            [ 'align-content', 'a-c' ], 
-            [ 'justify-content', 'j-c' ], 
-        ], 
-        [ // 1 = props
-            [ 'space-between', 'between', 'b' ],
-            [ 'space-evenly', 'evenly', 'e' ],
-            [ 'space-around', 'around', 'a' ],
-            [ 'left', 'l' ],
-            [ 'right', 'r' ],
-            [ 'center', 'c' ], 
-            [ 'end', 'e' ], 
-            [ 'flex-end', 'fe' ], 
-            [ 'start', 's' ], 
-            [ 'flex-start', 'fs' ], 
-            [ 'stretch', 'str' ]
-        ]
-    ]
+	[ // rule
+		[ // 0 = names
+			[ 'align-self', 'a-s' ], 
+			[ 'align-items', 'a-i' ], 
+			[ 'justify-self', 'j-s' ], 
+			[ 'justify-items', 'j-i' ]
+		], 
+		[ // 1 = props
+			[ 'center', 'c' ], 
+			[ 'end', 'e' ], 
+			[ 'flex-end', 'fe' ], 
+			[ 'start', 's' ], 
+			[ 'flex-start', 'fs' ], 
+			[ 'stretch', 'str' ], 
+			[ 'baseline', 'b' ]
+		]
+	],
+	[
+		[ // 0 = names
+			[ 'align-content', 'a-c' ], 
+			[ 'justify-content', 'j-c' ], 
+		], 
+		[ // 1 = props
+			[ 'space-between', 'between', 'b' ],
+			[ 'space-evenly', 'evenly', 'e' ],
+			[ 'space-around', 'around', 'a' ],
+			[ 'left', 'l' ],
+			[ 'right', 'r' ],
+			[ 'center', 'c' ], 
+			[ 'end', 'e' ], 
+			[ 'flex-end', 'fe' ], 
+			[ 'start', 's' ], 
+			[ 'flex-start', 'fs' ], 
+			[ 'stretch', 'str' ]
+		]
+	]
 ]
 
 
 alignments.forEach( (a, idx)  => {
-    const nameMega = a[0]
-    const values = a[1]
-    const which = (idx == 0) ? 'align items / self' : 'align content'
+	const nameMega = a[0]
+	const values = a[1]
+	const which = (idx == 0) ? 'items' : 'content'
 
-    api.push({
-        type: 'h3',
-        id: which
-    })
+	api.push({
+		type: 'h3',
+		id: which
+	})
 
-    let apiTable = []
-    nameMega.forEach( nameList => {
-        values.forEach( classList => {
-            let rule = []
-            nameList.forEach( ( name, _i ) => {         
+	let apiTable = []
+	nameMega.forEach( nameList => {
+		values.forEach( classList => {
+			let rule = []
+			nameList.forEach( ( name, _i ) => {         
 
-                    classList.forEach( (className, _ii) => {
+					classList.forEach( (className, _ii) => {
 
-                        const beginner = _i == 0 && _ii < classList.length - 1
-                        const end = _i == nameList.length -1 && _ii == classList.length - 1
+						const beginner = _i == 0 && _ii < classList.length - 1
+						const end = _i == nameList.length -1 && _ii == classList.length - 1
+						if (beginner || end) rule.push( name + '-' + className )
+					})
 
-                        // console.log( name, _i, className, _ii )
-                        if (beginner || end) rule.push( name + '-' + className )
-                    })
+			})
 
-            })
+			const ruleArray = rule
+			rule = '\t.' + rule.join( ', .' ) // convert
+			const validProp = nameList[0]
+			const validValue = classList[0]
+			const validRule = validProp + ': ' + validValue
+			apiTable.push( [ ruleArray, [validRule] ] )
+			rule += '\n\t\t' + validRule
+			classes += `\n${rule}\n`
 
-            const ruleArray = rule
-            rule = '\t.' + rule.join( ', .' ) // convert
-            const validProp = nameList[0]
-            const validValue = classList[0]
-            const validRule = validProp + ': ' + validValue
-            apiTable.push( [ ruleArray, [validRule] ] )
-            rule += '\n\t\t' + validRule
-            classes += `\n${rule}\n`
+			mixins += `\n=${nameList[0]}-${validValue}\n\t${validRule}`
+			mixins += `\n=${nameList[nameList.length-1]}-${classList[classList.length-1]}\n\t${validRule}`
 
-            mixins += `\n=${nameList[0]}-${validValue}\n\t${classList[0]}`
-            mixins += `\n=${nameList[nameList.length-1]}-${classList[classList.length-1]}\n\t${validRule}`
+		})
 
-        })
+	})
 
-    })
-
-    api.push( {
-        type: 'table',
-        id: which,
-        data: apiTable
-    })
+	api.push( {
+		type: 'table',
+		id: which,
+		data: apiTable,
+		mixins: '.'
+	})
 })
 
 
 
 for ( let i = 0; i <= 100; i ++ ) {
 
-    let num = ( i < 10 && i > 0 ) ? '0' + i : i;
-    const val = num / 10;
-    num = (num%10 == 0) ? num / 10 : Math.floor( num / 10 ) + '-' + num%10;
+	let num = ( i < 10 && i > 0 ) ? '0' + i : i;
+	const val = num / 10;
+	num = (num%10 == 0) ? num / 10 : Math.floor( num / 10 ) + '-' + num%10;
 
 
-    let _classes = ''
-    const types = [ 
-        [ ['p'], 'padding', true], 
-        [ ['m'], 'margin', true], 
-        [ ['b'], 'border', true], 
-        [ [''], '', true], 
-        [ ['w'], 'width', false],
-        [ ['h'], 'height', false],
-        [ ['minw'], 'min-width', false],
-        [ ['minh'], 'min-height', false],
-        [ ['maxw'], 'max-width', false],
-        [ ['maxh'], 'max-height', false],
-        [ ['basis'], 'flex-basis', false],
-        [ ['radius'], 'border-radius', false]
-    ]
+	let _classes = ''
+	const types = [ 
+		[ ['p'], 'padding', true], 
+		[ ['m'], 'margin', true], 
+		[ ['b'], 'border', true], 
+		[ ['s'], 'flex-basis', true], 
+		[ [''], '', true], 
+		[ ['w'], 'width', false],
+		[ ['h'], 'height', false],
+		[ ['minw'], 'min-width', false],
+		[ ['minh'], 'min-height', false],
+		[ ['maxw'], 'max-width', false],
+		[ ['maxh'], 'max-height', false],
+		[ ['basis'], 'flex-basis', false],
+		[ ['radius'], 'border-radius', false]
+	]
 
 
-    types.forEach( pair => {
+	types.forEach( pair => {
 
-        if (i == 0) {
-            api.push( {
-                type: 'h3',
-                id: pair[1] == '' ? 'positions' : pair[1]
-            })
-        }
+		if (i == 0) {
+			api.push( {
+				type: 'h3',
+				id: pair[1] == '' ? 'position' : pair[1]
+			})
+		}
 
-        let apiTable = []
+		let apiTable = []
 
-        const names = pair[0]
-        const prop = pair[1]
-        const max = pair[2] || 100
-        const doDirections = pair[2]
+		const names = pair[0]
+		const prop = pair[1]
+		const max = pair[2] || 100
+		const doDirections = pair[2]
 
-        // top left right bottom versions
-        // directions --------------------------------------------
+		// top left right bottom versions
+		// directions --------------------------------------------
 
-        if ( doDirections ) {
+		if ( doDirections ) {
 
-            const name = names[0]
+			const name = names[0]
 
-            let directions = [ 
-                [ ['t'], (p, n, t, indent) => `${indent}${p}top: ${n}${t}`], 
-                [ ['r'], (p, n, t, indent) => `${indent}${p}right: ${n}${t}`],  
-                [ ['l'], (p, n, t, indent) => `${indent}${p}left: ${n}${t}`],  
-                [ ['b'], (p, n, t, indent) => `${indent}${p}bottom: ${n}${t}`],  
-                [ ['lr'], (p, n, t, indent) => `${indent}${p}left: ${n}${t} ${indent}${p}right: ${n}${t}`],  
-                [ ['tb'], (p, n, t, indent) => `${indent}${p}top: ${n}${t} ${indent}${p}bottom: ${n}${t}`],  
-            ]
+			let directions = [ 
+				[ ['t'], (p, n, t, indent) => `${indent}${p}top: ${n}${t}`], 
+				[ ['r'], (p, n, t, indent) => `${indent}${p}right: ${n}${t}`],  
+				[ ['l'], (p, n, t, indent) => `${indent}${p}left: ${n}${t}`],  
+				[ ['b'], (p, n, t, indent) => `${indent}${p}bottom: ${n}${t}`],  
+				[ ['lr'], (p, n, t, indent) => `${indent}${p}left: ${n}${t} ${indent}${p}right: ${n}${t}`],  
+				[ ['tb'], (p, n, t, indent) => `${indent}${p}top: ${n}${t} ${indent}${p}bottom: ${n}${t}`],  
+			]
 
-            const isBorder = name == 'b'
+			const isBorder = name == 'b'
 
-            if ( isBorder ) {
-                directions = [ 
-                    [ ['t'], (p, n, t, indent, style) => `${indent}${p}top-width: ${n}${t} ${indent}${p}top-style: ${style}`], 
-                    [ ['r'], (p, n, t, indent, style) => `${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: ${style}`],  
-                    [ ['l'], (p, n, t, indent, style) => `${indent}${p}left-width: ${n}${t} ${indent}${p}left-style: ${style}`],  
-                    [ ['b'], (p, n, t, indent, style) => `${indent}${p}bottom-width: ${n}${t} ${indent}${p}bottom-style: ${style}`],  
-                    [ ['lr'], (p, n, t, indent, style) => `${indent}${p}left-width: ${n}${t} ${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: ${style} ${indent}${p}left-style: ${style}`],  
-                    [ ['tb'], (p, n, t, indent, style) => `${indent}${p}top-width: ${n}${t} ${indent}${p}bottom-width: ${n}${t} ${indent}${p}top-style: ${style} ${indent}${p}bottom-style: ${style}`],  
-                ]
-            }
-            if ( name != '' ) directions.push( 
-                [ [''], (p, n, t, indent, style) => `${indent}${p}: ${n}${t} ${ (p == 'border') ? style : ''}`] 
-            )
-            directions.forEach( (direct, ii) => {
-                const classList = direct[0]
-                const run = direct[1]
-                let a = ''
-                let b = ''
-                let c = []
-                let pxA = '', pxB = ''
-                let pcA = '', pcB = ''
+			if ( isBorder ) {
+				directions = [ 
+					[ ['t'], (p, n, t, indent, style) => `${indent}${p}top-width: ${n}${t} ${indent}${p}top-style: ${style}`], 
+					[ ['r'], (p, n, t, indent, style) => `${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: ${style}`],  
+					[ ['l'], (p, n, t, indent, style) => `${indent}${p}left-width: ${n}${t} ${indent}${p}left-style: ${style}`],  
+					[ ['b'], (p, n, t, indent, style) => `${indent}${p}bottom-width: ${n}${t} ${indent}${p}bottom-style: ${style}`],  
+					[ ['lr'], (p, n, t, indent, style) => `${indent}${p}left-width: ${n}${t} ${indent}${p}right-width: ${n}${t} ${indent}${p}right-style: ${style} ${indent}${p}left-style: ${style}`],  
+					[ ['tb'], (p, n, t, indent, style) => `${indent}${p}top-width: ${n}${t} ${indent}${p}bottom-width: ${n}${t} ${indent}${p}top-style: ${style} ${indent}${p}bottom-style: ${style}`],  
+				]
+			}
+			if ( name != '' ) directions.push( 
+				[ [''], (p, n, t, indent, style) => `${indent}${p}: ${n}${t} ${ (p == 'border') ? style : ''}`] 
+			)
 
-                const blank = direct[0][0] == '' || name == ''
-                const blankC = ( direct[0][0].length == 2 && blank)
-                const propDash = blank ? prop : prop + '-'
+			if ( name == 's' ) {
+				directions = [
+					[ [''], (p, n, t, indent) => `${indent}${p}: ${n}${t}`]
+				]
+			}
 
-                classList.forEach( (d, iii) => {
-                    const comma = iii == direct[0].length - 1 ? '' : ', '
-                    a += `.${name || ''}${d}${num}${comma}`
-                    b += `.c${name || ''}${d}${num}${comma}`
-                    c.push( 'c' + d )
-                    pxA += `.${name || ''}${d}${i}px${comma}`
-                    pxB += `.${name || ''}${d}${i}px${comma}`
-                    pcA += `.${name || ''}${d}${i}pc${comma}`
-                    pcB += `.${name || ''}${d}${i}pc${comma}`
+			directions.forEach( (direct, ii) => {
+				const classList = direct[0]
+				const run = direct[1]
+				let a = ''
+				let b = ''
+				let c = []
+				let pxA = '', pxB = ''
+				let pcA = '', pcB = ''
 
-                    if ( i == 0 && d != '' ) {
-                        mixins += `\n=${name}${d}( $v )`
-                        mixins += `${ run( propDash, '$v', '', '\n\t') }` // add rule
-                    }
+				const blank = direct[0][0] == '' || name == ''
+				const blankC = ( direct[0][0].length == 2 && blank)
+				const propDash = blank ? prop : prop + '-'
 
-                })
+				classList.forEach( (d, iii) => {
+					const comma = iii == direct[0].length - 1 ? '' : ', '
+					a += `.${name || ''}${d}${num}${comma}`
+					b += `.c${name || ''}${d}${num}${comma}`
+					c.push( 'c' + d )
+					pxA += `.${name || ''}${d}${i}px${comma}`
+					pxB += `.${name || ''}${d}${i}px${comma}`
+					pcA += `.${name || ''}${d}${i}pc${comma}`
+					pcB += `.${name || ''}${d}${i}pc${comma}`
 
-                let str = ''
+					if ( i == 0 && d != '' ) {
+						mixins += `\n=${name}${d}( $v )`
+						mixins += `${ run( propDash, '$v', '', '\n\t') }` // add rule
+					}
 
-                if ( !blankC && !isBorder ) {
+				})
 
-                    // em --------------
+				let str = ''
 
-                    const em = (num+'').replace('-','.')
-                    str += `\n\t${ a }${ run( propDash, em, 'em', '\n\t\t') }` // add rule
-                    str += `\n\t${ b }\n\t\t> *${ run( propDash, em, 'em', '\n\t\t\t') }`
+				if ( !blankC && !isBorder ) {
 
-                    // px --------------
+					// em --------------
 
-                    str += `\n\t${ pxA }${ run( propDash, i * 10, 'px', '\n\t\t') }` // add rule
-                    str += `\n\t${ pxB }\n\t\t> *${ run( propDash, i, 'px', '\n\t\t\t') }`
+					const em = (num+'').replace('-','.')
+					str += `\n\t${ a }${ run( propDash, em, 'em', '\n\t\t') }` // add rule
+					str += `\n\t${ b }\n\t\t> *${ run( propDash, em, 'em', '\n\t\t\t') }`
 
-                    // pc --------------
+					// px --------------
 
-                    str += `\n\t${ pcA }${ run( propDash, i, '%', '\n\t\t') }` // add rule
-                    str += `\n\t${ pcB }\n\t\t> *${ run( propDash, i, '%', '\n\t\t\t') }`
+					str += `\n\t${ pxA }${ run( propDash, i * 10, 'px', '\n\t\t') }` // add rule
+					str += `\n\t${ pxB }\n\t\t> *${ run( propDash, i, 'px', '\n\t\t\t') }`
 
-                }
+					// pc --------------
 
-                if ( isBorder && i%10 == 0 ) {
+					str += `\n\t${ pcA }${ run( propDash, i, '%', '\n\t\t') }` // add rule
+					str += `\n\t${ pcB }\n\t\t> *${ run( propDash, i, '%', '\n\t\t\t') }`
 
-                    let bs = '';
-                    ['solid', 'dashed', 'dotted'].forEach( tt => {
-                        bs += `\n\t`
-                        let first = ''
-                        let second = ''
-                        classList.forEach( (c, iiii) => {
-                            first += `.${name}${classList[0]}${i/10}-${tt}`
-                            if (iiii < classList.length - 1) first += ', '
-                        })
-                        second = `${ run( propDash, i/10, 'px', '\n\t\t', tt) }` // add rule
-                        bs += first + second
+				}
 
-                    })
+				if ( isBorder && i%10 == 0 ) {
 
-                    str += bs
+					let bs = '';
+					['solid', 'dashed', 'dotted'].forEach( tt => {
+						bs += `\n\t`
+						let first = ''
+						let second = ''
+						classList.forEach( (c, iiii) => {
+							first += `.${name}${classList[0]}${i/10}-${tt}`
+							if (iiii < classList.length - 1) first += ', '
+						})
+						second = `${ run( propDash, i/10, 'px', '\n\t\t', tt) }` // add rule
+						bs += first + second
 
-                }
+					})
 
-                // --------->
+					str += bs
 
-                _classes += str
+				}
 
+				// --------->
 
-                if ( i == 0 ) {
-
-                    const wang = `<span>[0-100(0)]</span>`
-                    const stroke = '<span>[solid|dashed|dotted]</span>'
-                    const unit = `<span class="second">${ isBorder ? 'px' : '[em|px|pc]'}</span>`
-                    let aa = [ classList.map( c => name + c + `${wang}${isBorder ? '-<span class="second">[solid|dashed|dotted]</span>' : unit.replaceAll('em', '~')}` ), run( propDash, wang, unit, '$', stroke ) ]
-                    let bb = [ c, run( propDash, wang, unit, '$', stroke ) ]
-
-                    aa[1] = aa[1].split('$').filter(e => e.length != 0)
-                    bb[1] = bb[1].split('$').filter(e => e.length != 0)
-
-                    apiTable.push( aa )
-
-                } 
-
-            })
-
-        } else {
-
-            // normal --------------------------------------------
-
-            const name = names[0]
+				_classes += str
 
 
-            let types = [ ['em', 'em', '[0-100]'], ['px', 'px', '[0-1000]'], ['pc', '%', '[0-100]']]
-            if (name == 'h' || name == 'minh' || name == 'maxh') types.push( ['vh', 'vh', '[0-100]'])
-            if (name == 'w' || name == 'minw' || name == 'maxw') types.push( ['vw', 'vw', '[0-100]'])
+				if ( i == 0 ) {
 
-            types.forEach( pair => {
-                let str = '\n\t'
-                names.forEach( (n, iiii) => str += `.${n}${i}${pair[0]}${iiii == names.length - 1 ? '' : ', '}`)
-                str += `\n\t\t${prop}: ${i}${pair[1]}`
-                const wang = `<span>${pair[2]}</span>`
-                const nnn = names.map( n => `${n}${wang}${pair[0]}`)
-                if ( i == 0) apiTable.push( [ nnn, [ `${prop}: ${wang}${pair[1]}` ] ] )
-                _classes += str
-            })
+					const wang = `{alert}[${isBorder ? '0-10' : 'num'}]{end}`
+					const stroke = '{info}[solid|dashed|dotted]{end}'
+					const unit = isBorder ? 'px' : '{info}[em|px|pc]{end}'
+					let aa = [ 
+						classList.map( cc => `${name}${cc}${wang}${isBorder ? '-{info}[solid|dashed|dotted]{end}' : unit.replaceAll('em', '~')}` ), 
+						run( propDash, wang, unit, '$', stroke ) 
+					]
+					let bb = [ c, run( propDash, wang, unit, '$', stroke ) ]
+
+					aa[1] = aa[1].split('$').filter(e => e.length != 0)
+					aa[0].push( `+${name}${classList[0]}({alert}$val{end}${isBorder ? ', {info}$type{end}' : ''})` )
+					apiTable.push( aa )
+
+				} 
+
+			})
+
+		} else {
+
+			// normal --------------------------------------------
+
+			const NAME = names[0]
 
 
-            if ( i == 0 ) {
-                _classes += `\n\t.${names[0]}-auto\n\t\t${prop}: auto`
-                mixins += `\n=${names[0]}( $v )\n\t${prop}: $v`
-                mixins += `\n=${names[0]}-auto()\n\t${prop}: auto`
-            }
+			let types = [ ['em', 'em', '[0-100]'], ['px', 'px', '[0-1000]'], ['pc', '%', '[0-100]']]
+			if (NAME == 'h' || NAME == 'minh' || NAME == 'maxh') types.push( ['vh', 'vh', '[0-100]'])
+			if (NAME == 'w' || NAME == 'minw' || NAME == 'maxw') types.push( ['vw', 'vw', '[0-100]'])
 
-        }
+			types.forEach( (TYPE, III) => {
+				let str = '\n\t'
+				let ID = TYPE[0] // px, em, pc
+				let EXT = TYPE[1] // %
+				let INFO = TYPE[2] // [0-100]
+				let VALUE = i
+				if (ID == 'px' && NAME != 'radius') VALUE *= 10
 
-        if (i == 0) {
-            api.push( {
-                type: 'table',
-                id: pair[1],
-                data: apiTable
-            })
-        }
-    })
 
-    classes += _classes
+				if ( NAME == 'radius' ) {
+					const CONF = {
+						top: ['border-top-left-radius', 'border-top-right-radius'],
+						bottom: ['border-bottom-left-radius', 'border-bottom-right-radius'],
+						left: ['border-top-left-radius', 'border-bottom-left-radius'],
+						right: ['border-top-right-radius', 'border-bottom-right-radius']
+					};
+
+					const ALL = `{alert}${INFO}{end}{info}[em|pc|px]{end}`;
+					_classes += `\n\t.${NAME}${VALUE}${ID}\n\t\tborder-radius: ${VALUE}${EXT}`
+
+					if (i == 0 && III == 0) {
+						mixins += `\n=${NAME}($val)\n\tborder-radius: $val`
+						apiTable.push( [ 
+							[ 
+								`${NAME}${ALL}`, 
+								`+${NAME}($val)` 
+							], 
+							[ 
+								`border-radius: ${ALL}`
+							] 
+						] )
+					}
+
+					for (const [SIDE, ARR] of Object.entries(CONF)) {
+
+
+
+						_classes += `
+	.${NAME}${VALUE}${ID}-${SIDE}
+		${ARR[0]}: ${VALUE}${EXT}
+		${ARR[1]}: ${VALUE}${EXT}`
+						if (i == 0) {
+						mixins += `
+=${NAME}-${SIDE}($val)
+	${ARR[0]}: $val
+	${ARR[1]}: $val`
+						apiTable.push( [ 
+							[ 
+								`${NAME}{alert}${INFO}{end}{info}[em|pc|px]{end}-${SIDE}`, 
+								`+${NAME}-${SIDE}($val)` 
+							], 
+							[ 
+								`${ARR[0]}: {alert}${INFO}{end}{info}[em|pc|px]{end}`,
+								`${ARR[1]}: {alert}${INFO}{end}{info}[em|pc|px]{end}`
+							] 
+						] )
+						}
+
+					}
+
+				} else {
+
+					names.forEach( (n, iiii) => str += `.${n}${VALUE}${ID}${iiii == names.length - 1 ? '' : ', '}`)
+					str += `\n\t\t${prop}: ${VALUE}${EXT}`
+					const wang = `{alert}${INFO}{end}`
+					const ALLNAMES = names.map( n => `${n}${wang}${ID}`)
+					ALLNAMES.push( `+${NAME}({info}$val{end})` )
+					if ( i == 0) apiTable.push( [ ALLNAMES, [ `${prop}: ${wang}${EXT}` ] ] )
+
+					_classes += str
+				}
+			})
+
+
+			if ( i == 0 ) {
+				_classes += `\n\t.${NAME}-auto\n\t\t${prop}: auto`
+				mixins += `\n=${NAME}( $v )\n\t${prop}: $v`
+				mixins += `\n=${NAME}-auto\n\t${prop}: auto`
+			}
+
+		}
+
+		if (i == 0) {
+
+			let ccc = 'c'+pair[0][0]
+
+			if (doDirections) {
+				apiTable.push( [
+					[
+						'c'+pair[0][0]+'{succ}[rule]{end}',
+						'+c'+pair[0][0]+'{succ}[rule]{end}'
+					],
+					[
+						'> *',
+						'{succ}[rule]{end}',
+					]
+
+				])
+			} else {
+				apiTable.push( [
+					[
+						pair[0][0]+'-auto',
+						'+'+pair[0][0]+'-auto'
+					],
+					[
+						`${prop}: auto`,
+					]
+
+				])
+
+			}
+
+			api.push( {
+				type: 'table',
+				id: pair[1] == '' ? 'position' : pair[1],
+				data: apiTable
+			})
+		}
+	})
+
+	classes += _classes
 }
+
+
+const trans = ['0', '-50', '50', '100', '-100']
+
+let tranData = []
+trans.forEach( (tranA, a) => {
+
+	trans.forEach( (tranB, b) => {
+
+		classes += `
+	.translate${tranA}${tranB}
+		transform: translate( ${tranA}%, ${tranB}%)`
+
+		tranData.push( 
+		[
+			[
+				`translate{alert}${tranA}${tranB}{end}`
+			],
+			[
+				`transform: translate( {alert}${tranA}%, ${tranB}%{end})`
+			]
+		])
+	})
+
+})
+
+tranData.push( 
+[
+	[
+		`+translate({info}$x{end}, {info}$y{end})`
+	],
+	[
+		`transform: translate({info}$x{end}, {info}$y{end})`
+	]
+])
+
+api.push({
+	type: 'translate',
+	id: 'translate'
+})
+
+api.push( {
+	type: 'table',
+	id: 'translate',
+	data: tranData
+})
+
+let fontSizes = []
+const ffss = [0.785714, 1, 1.2857, 1.64285, 2.071428, 2.642857]
+ffss.forEach( (num, i) => {
+	classes += `
+	.f${i}, h${6 - i}, .h${6 - i}
+		font-size: ${num}rem
+		line-height: var(--line-height)
+		input, textarea, button, select
+			font-size: ${num}rem
+			line-height: var(--line-height)
+`
+	mixins += `
+=f${i}
+	font-size: ${num}rem
+	input, textarea, button, select
+		font-size: ${num}rem`
+	fontSizes.push(
+	[
+		[
+			`f${i}, h${6 - i}, .h${6 - i}`,
+			`+f${i}`
+		],
+		[
+			`font-size: {alert}${num}rem{end}`
+		]
+	])
+})
+
+
+api.push({
+	type: 'font-size',
+	id: 'font-size'
+})
+
+api.push( {
+	type: 'table',
+	id: 'font-size',
+	data: fontSizes
+})
+
+
+let fontFam = []
+const ffff = ['monospace', 'serif', 'sans-serif', 'cursive', 'slab', 'grotesque']
+ffff.forEach( (fam, i) => {
+	classes += `
+	.${fam}
+		font-family: var(--font-${fam})
+		input, textarea, button, select
+			font-size: var(--font-${fam})
+`
+	mixins += `
+=${fam}
+	font-family: var(--font-${fam})
+	input, textarea, button, select
+		font-size: var(--font-${fam})
+`
+	fontFam.push(
+	[
+		[
+			`${fam}`,
+			`+${fam}`
+		],
+		[
+			`font-family: {info}var(--font-${fam}){end}`
+		]
+	])
+})
+
+api.push({
+	type: 'h2',
+	id: 'font-family'
+})
+
+api.push( {
+	type: 'table',
+	id: 'font-family',
+	data: fontFam
+})
+
 
 file += mixins + '\n\n'
 file += classes + '\n\n'
 
 const fs = require('fs')
+const path = require('path')
 const sass = require('node-sass')
 const clean = require('clean-css')
 const { Compress } = require('gzipper')
+const markdown = require( "markdown" ).markdown
 
 
 async function render( name, data ) {
 
-    const sas = await fs.writeFileSync(`dist/${name}.sass`, data)
-    console.log(`✅ 🚨  successfully written dist/${name}.sass`, sas)
-    const css = await (await sass.renderSync({ file: `dist/${name}.sass`, indentedSyntax: true })).css.toString()
-    const min = (await (new clean()).minify( css )).styles
-    const wrtA = await fs.writeFileSync(`dist/${name}.css`, css )
-    const wrtB = await fs.writeFileSync(`dist/${name}.min.css`, min )
-    const rm = await fs.unlinkSync(`dist/${name}.sass`)
-    console.log(`✅ 📜  successfully compiled dist/${name}.sass to  dist/${name}.css`)
-    const gzip = new Compress(`dist/${name}.min.css`, 'dist', { verbose: true })
-    const zippd = await gzip.run()
-    console.log('✅ 🤐  successfully gzipped dist', zippd)
+	const full = `dist/${name}.css`
+	const min = `dist/${name}.min.css`
+	const gz = `dist/${name}.min.css.gz`
+
+	const sas = await fs.writeFileSync(`dist/${name}.sass`, data)
+	console.log(`✅ 🚨  successfully written dist/${name}.sass`, sas)
+	const css = await (await sass.renderSync({ file: `dist/${name}.sass`, indentedSyntax: true })).css.toString()
+	const minified = (await (new clean()).minify( css )).styles
+	await fs.writeFileSync(full, css )
+	await fs.writeFileSync(min, minified )
+	await fs.unlinkSync(`dist/${name}.sass`)
+	console.log(`✅ 📜  successfully compiled dist/${name}.sass to  dist/${name}.css`)
+	const gzip = new Compress(min, 'dist', { verbose: true })
+	await gzip.run()
+	console.log('✅ 🤐  successfully gzipped dist')
+
+	const info  = {
+		full: { path: full, basename: path.basename( full ), ...(await fs.statSync( full ) ) },
+		min: { path: min, basename: path.basename( min ), ...(await fs.statSync( min ) ) },
+		gz: { path: gz, basename: path.basename( gz ), ...(await fs.statSync( gz ) ) },
+	}
+	return info
+	
 }
 
 async function run() {
 
-    const mix = await fs.writeFileSync('src/_shorthand.sass', file)
-    console.log('✅ 💅  successfully written src/_shorthand.sass', mix)
+	const str = await ( await fs.readFileSync('README.md') ).toString()
+	console.log('✅ 📚 received readme...')
+	const exp = 'module.exports = `' + (await markdown.toHTML( str )) + '`'
+	console.log('✅ 🌐 converted to HTML...')
+	await fs.writeFileSync( 'src/readme.js', exp, 'utf8' )
+	console.log('✅ ✍️ written to src/readme.js...')
 
-    await render( 'shorthand', `@import '../src/sassis' 
-html
-    +shorthand `)
-    await render( 'layout', `@import '../src/sassis' 
-html
-    +layout`)
-    await render( 'all', `@import '../src/sassis' 
-html
-    +sassis
-    +shorthand
-    +layout`)
 
-    api = `export default ${ JSON.stringify( api, null, 2 ) }`
-    const js = await fs.writeFileSync('docs/src/data.js', api )
-    console.log('✅ 🧩  successfully written Table.svelte', js)
+	//...
+
+	const mix = await fs.writeFileSync('src/_shorthand.sass', file)
+	console.log('✅ 💅  successfully written src/_shorthand.sass', mix)
+
+	let infos = { downloads: {} }
+	infos['downloads']['shorthand'] = await render( 'shorthand', `@import '../src/sassis' 
+html
+	+shorthand `)
+	infos['downloads']['layout'] = await render( 'layout', `@import '../src/sassis' 
+html
+	+layout`) 
+	infos['downloads']['all'] = await render( 'all', `@import '../src/sassis' 
+html
+	+sassis
+	+shorthand
+	+layout`) 
+
+	infos['package'] = JSON.parse( await ( await fs.readFileSync( 'package.json' ) ).toString() )
+
+	api = `export default ${ JSON.stringify( api, null, 2 ) }`
+	await fs.writeFileSync('src/data.js', api ) 
+	console.log('✅ 🧩  successfully written src/data.js')
+
+
+	infos = `export default ${ JSON.stringify( infos, null, 2 ) }`
+	await fs.writeFileSync('src/infos.js', infos ) 
+
+	console.log('✅ 🧠  successfully written src/infos.js')
+
+
 }
 
 

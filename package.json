@@ -3,31 +3,32 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public",
-    "dev2": "nodemon ./src/sassis.js --ignore docs dist",
-    "build2": "node ./src/sassis.js"
+    "dev": "rollup -c -w & nodemon src/sassis.js",
+    "start": "sirv dist"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
+    "clean-css": "^4.2.3",
+    "codejar": "^3.2.3",
+    "gzipper": "^4.3.0",
+    "markdown": "^0.5.0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
     "postcss": "^7.0.35",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.0.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
-    "svelte-preprocess-css-global": "^0.0.1",
-    "node-sass": "^5.0.0",
     "sirv-cli": "^1.0.0",
+    "supervisor": "^0.12.0",
+    "svelte": "^3.0.0",
+    "svelte-code-editor": "^1.0.1",
     "svelte-hash-router": "^1.0.1",
     "svelte-preprocess": "^4.6.1",
-    "clean-css": "^4.2.3",
-    "gzipper": "^4.3.0",
-    "node-sass": "^5.0.0",
-    "nodemon": "^2.0.7"
+    "svelte-preprocess-css-global": "^0.0.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

@@ -1,33 +1,35 @@
-import svelte from 'rollup-plugin-svelte';
-import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import livereload from 'rollup-plugin-livereload';
-import { terser } from 'rollup-plugin-terser';
-import css from 'rollup-plugin-css-only';
-import autoPreprocess from 'svelte-preprocess';
-import { globalCSS } from 'svelte-preprocess-css-global';
+import svelte from 'rollup-plugin-svelte'
+import commonjs from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
+import livereload from 'rollup-plugin-livereload'
+import { terser } from 'rollup-plugin-terser'
+import css from 'rollup-plugin-css-only'
+import preprocess from 'svelte-preprocess'
+import { globalCSS } from 'svelte-preprocess-css-global'
+import alias from '@rollup/plugin-alias'
+import path from 'path'
 
-const production = !process.env.ROLLUP_WATCH;
+const production = !process.env.ROLLUP_WATCH
 
 function serve() {
-	let server;
+	let server
 
 	function toExit() {
-		if (server) server.kill(0);
+		if (server) server.kill(0)
 	}
 
 	return {
 		writeBundle() {
-			if (server) return;
+			if (server) return
 			server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
 				stdio: ['ignore', 'inherit', 'inherit'],
 				shell: true
-			});
+			})
 
-			process.on('SIGTERM', toExit);
-			process.on('exit', toExit);
+			process.on('SIGTERM', toExit)
+			process.on('exit', toExit)
 		}
-	};
+	}
 }
 
 export default {
@@ -36,14 +38,21 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: './../dist/index.js'
+		file: 'dist/index.js'
 	},
 	plugins: [
+		alias({
+			resolve: ['.js', '.svelte'],
+			entries: [ { find: '@', replacement: path.resolve(__dirname, 'src') } ]
+		}),
 		svelte({
-			preprocess: autoPreprocess(),
+			preprocess: preprocess(),
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
+			},
+			css: css => {
+				css.write('dist/index.css')
 			}
 		}),
 
@@ -64,7 +73,7 @@ export default {
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('./../dist'),
+		!production && livereload('dist'),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
@@ -73,4 +82,4 @@ export default {
 	watch: {
 		clearScreen: false
 	}
-};
+}

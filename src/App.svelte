@@ -1,0 +1,46 @@
+<script>
+	import infos from './infos.js'
+	import { Router, routes, params, active } from 'svelte-hash-router'
+	import { root } from './stores.js'
+
+	$: date = (new Date()).getDate() + "/" + ((new Date()).getMonth() + 1) + "/" + ((new Date()).getFullYear() - 2000);
+
+</script>
+
+<!-- utilitatian -->
+<main>
+
+	<div class="margin-auto align-self-center w100vw flex justify-content-center h100vh overflow-hidden">
+		<div class="flex basis20em grow justify-content-flex-end overflow-auto">
+			<div class="flex column p1 maxw15em grow justify-content-between">
+				<div class="flex column">
+					{#each Object.entries($routes) as [k,v]}
+						{#if v.$$href != '#/' && v.$$href.indexOf(':') == -1}
+							<div 
+								class="p0-4 bright pointer"
+								class:alert={ k == '/intro'}
+								class:mt1={ k == '/search'}
+								class:info={ k == '/search' || k == '/download'}
+								on:click={ e => window.location = v.$$href }
+								class:filled={ $active.$$href.indexOf( v.$$href ) != -1 } 
+								class:bright={ $active.$$href.indexOf( v.$$href ) != -1 }>
+								{k.substring(1)}
+							</div>
+						{/if}
+					{/each}
+				</div>
+				<div>
+					<div class="bright">v{infos.package.version} <span class="fade">{date}</span></div>
+				</div>
+			</div>
+
+		</div>
+		{@html $root}
+		<div class="flex basis60em overflow-auto grow">
+			<div class="flex maxw60em grow">
+				<Router />  
+			</div>
+		</div>
+	</div>
+</main>
+

@@ -1,109 +1,179 @@
+@import '_shorthand'
 
 =interfaces
 
-	.arrow
-		background-repeat: no-repeat
-		background-size: 1em 0.5em
-		background-position: 100% 50%
-	.cross
-		background-size: auto
+
+	/* ---------------------- EVERYTHING ---------------------- */
+
+	// EVERYTHING
+
 	*, *:after, *:before, input, textarea, select
 		border-style: solid
 		border-width: 0
-	input[type=range]
-		-webkit-appearance: none
-		&::-webkit-slider-thumb
-			-webkit-appearance: none
-			width: 2px
-			height: 100%
-			min-height: 1em
-			border: none
-			border-radius: 0px
-	input, textarea
 		background: transparent
-	.checkbox
-		$s: 0.9em
-		+width-height($s * 1.5, $s * 1.5)
-		+relative
-		+top(3px)
-		line-height: 0
-		input[type=checkbox]
-			opacity: 0
-			padding: 0
-			margin: 0
-			z-index: 9
-			+fill
-		input[type=checkbox] + span
-			+width-height($s, $s)
-			+absolute
-			+top-left(50%, 0%)
-			+translate(0%, -50%)
-			border-width: 1px 
-			overflow: hidden
-
-		// checked 
-
-		input[type=checkbox]:checked + span
-			&:before, &:after
-				border-width: 1px 
-				content: ""
-				+absolute
-				+wh($s * 2, $s * 2)
-			&:before
-				+top-right
-				+origin(100%,0%)
-				+rotate(-45deg)
-			&:after
-				+top-left
-				+origin(0%,0%)
-				+rotate(45deg)
-
-		// indeterminate
-
-		input[type=checkbox]:indeterminate + span
-			&:before, &:after
-				content: ""
-				+fill
-				+top(50%)
-				margin-top: -0.5px
-				border-top-width: 1px 
-	select, input, button, textarea
 		border-radius: 0px
+		font-weight: normal
+
+	// TEXTUAL INPUTS
+
+	textarea, input[type=text], input[type=number], input[type=email], select
+		padding: var(--input-padding)
+		flex-basis: 0
+		min-width: 1em
+
+	// LINKS
+
+	a, select
+		cursor: pointer
+		text-decoration: none
+
+	// BUTTONS
+
+	button, .button
+		padding: var(--button-padding)
+		text-align: center
+
+	// THINGS WITH BORDERS
+
+	select, input, button, textarea, .button
+		border-width: 1px
 		outline: none
 		&:disabled
 			opacity: 0.5
-	button, input, textarea, select
-		border-width: 1px
-	button
-		font-weight: normal
+
+	/* ---------------------- SELECT + CHEVRONS ---------------------- */
+
 	.select, .chevron, .dropdown
 		+relative
+		+inline-block
 		select
+			padding-right: 2em
 			width: 100%
 		&:after
 			content: ""
+			+width-height(0.5em, 0.5em)
 			+top-right(50%, 0% )
-			margin: var(--field-padding)
-			margin-top: 0
-			margin-bottom: 0
+			margin: var(--input-padding)
+			margin-top: -0.25em
 			+absolute
-			$s: 4px
-			+width-height($s, $s)
 			border-left-width: 1px
 			border-bottom-width: 1px
 			border-style: solid
 			transform: rotateZ(-45deg) translate( 0%, -50% )
 			transform-origin: 50% 50%
-	a, select
-		cursor: pointer
-		text-decoration: none
+
+	/* ---------------------- INPUT RANGE ---------------------- */
+
+	input[type=range]
+		flex-basis: 0
+		min-width: 1em
+		-webkit-appearance: none
 		background: transparent
-		&.outline
+		&::-webkit-slider-thumb
+			-webkit-appearance: none
+			width: 1em
+			height: 1em
+			min-height: 1em
+			border: none
+			border-radius: 0px
+		&.rounded, &.round
+			&::-webkit-slider-thumb
+				border-radius: 100%
+		&.start, &.end
+			min-height: 1em
+			overflow: hidden
+			&::-webkit-slider-thumb
+				width: 1%
+				transform-origin: 0% 50%
+		&.start::-webkit-slider-thumb
+			transform: scale( -200, 1 )
+		&.end::-webkit-slider-thumb
+			transform: scale( 200, 1 )
+
+
+	/* ---------------------- INPUT COLOR ---------------------- */
+
+	.color
+		overflow: hidden
+		+rel
+		padding: var(--input-padding)
+		input
+			padding: 0
+			+abs
+			+top-left( -100%, -100% )
+			+width-height(300%, 300%)
+
+
+	/* ---------------------- RADIOS + CHECKBOXES ---------------------- */
+
+
+	// DOT + CROSS + DASH + CHECKBOX / RADIO > SPAN
+
+	.dot, .cross, .dash, .checkbox input + span, .radio input + span
+		overflow: hidden
+		+rel
+
+	// CHECKBOX / RADIO > SPAN
+
+	.checkbox, .radio
+		input + span
+			width: 1em
+			height: 1em
+			+rel
+			+flex
+ 
+	// RADIO DOT
+
+	.radio
+		input + span
+			border-radius: 1em
+
+	// CROSS + CHECKBOX:CHECKED SPAN
+
+	.cross, .checkbox input:checked + span
+		&:before, &:after
+			+abs
+			border-width: 1px 
+			content: ""
+			+wh(150%, 150%)
+		&:before
+			+top-right
+			+origin(100%,0%)
+			+rotate(45deg)
+		&:after
+			+top-left
+			+origin(0%,0%)
+			+rotate(-45deg)
+
+	// DASH + CHECKBOX: INDETERMINATE SPAN
+
+	.dash, .checkbox input:indeterminate + span, .radio input:indeterminate + span
+		&:before, &:after
+			content: ""
+			+fill
+			+top(50%)
+			margin-top: -0.5px
+			border-top-width: 1px 
+
+	// CHECKBOX WRAP
+
+	.checkbox, .radio
+		+flex
+		+align-items-center
+		padding: var(--input-padding)
+		padding-left: 0px
+		padding-top: 0px
+		padding-bottom: 0px
+		span
 			border-width: 1px
-		&.nounderline
-			border-bottom-color: transparent
-		option
-			width: 10px
-			display: block
-	button
-		background: transparent
+			margin: var(--input-padding)
+			margin-left: 0em
+			margin-top: 0em
+			margin-bottom: 0em
+		input
+			opacity: 0
+			padding: 0
+			margin: 0
+			+abs
+
+

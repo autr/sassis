@@ -8,9 +8,6 @@
 // --------------------------------------------------
 
 
-
-		
-
 @import '_misc'
 @import '_interfaces'
 @import '_colours'
@@ -18,19 +15,26 @@
 @import '_layout'
 @import '_syntax'
 
-
 =sassis
+
+	font-family: var(--font)
+	font-size: var(--font-size)
+	line-height: var(--line-height)
+	select, button, input, textarea
+		font-family: var(--font)
+		font-size: var(--font-size)
+		line-height: var(--line-height)
 
 	/* core sassis */
 
 	+reset
-	+fontsize
 	+interfaces
+	+syntax
 
 	/* backgrounds w. pop and sink */
 
 	+bg( var(--bg) )
-	+bg( var(--bg-pop), pop )
+	+bg( var(--bg-pop), pop ) 
 	+bg( var(--bg-sink), sink )
 
 	/* colors w. bright and fade */
@@ -60,19 +64,7 @@
 		+colors( var(--color-#{$char}), var(--bg), color-#{$char} )
 
 
-	/* font-family w. monospace, serif, sans-serif, cursive, slab, grotesque */
 
-	+font( var(--font) )
-	$fonts: monospace, serif, sans-serif, cursive, slab, grotesque
-	@for $i from 1 through length($fonts) 
-		$font: nth( $fonts, $i )
-		+font( var(--font-#{$font}), #{$font} )
-
-	/* padding w. field, icon, button paddings */
-
-	input, textarea, select, .field, .element
-		padding: var(--field-padding)
-	select
-		padding-right: var(--icon-padding)
-	button, .button
-		padding: var(--button-padding)
+	// .auto-format
+	// 	p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol
+	// 		margin-bottom: 1em

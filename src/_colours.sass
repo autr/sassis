@@ -33,13 +33,6 @@
 		@return hsl( $hue, $sat, $light )
 
 
-=set-prop( $prop, $c, $s: '' )
-	@if $s == ''
-		#{$prop}: $c
-	@else
-		#{$s}
-			#{$prop}: $c
-
 
 @function counterpoint( $a )
 	$b: adjust-hue( invert($a), 180 )
@@ -57,38 +50,46 @@
 	// @debug $off $light
 	@return $b
 
-=bg( $c, $n: '' ) 
-	$raw: ''
-	@if $n != ''
-		@for $i from 1 through length($n)
-			$name: nth($n, $i)
-			$raw: #{$raw + '.' + $name}
-			@if $i != length($n)
-				$raw: #{$raw + ', '}
+=bg( $colour, $names: '' ) 
+	+set-prop( background-color, $colour, class-list($names) )
 
-	+set-prop( background-color, $c, $raw )
 
+=set-prop( $prop, $color, $classList: '', $toplevel: null )
+	@if $classList == ''
+		@if $toplevel == null
+			#{$prop}: $color
+		@else
+			#{$toplevel}
+				#{$prop}: $color
+	@else
+		#{$classList}
+			#{$prop}: $color
+
+
+@function class-list($names, $prefix: '', $suffix: '' )
+	$out: ''
+	@if $names != ''
+		@for $i from 1 through length($names)
+			$name: nth($names, $i)
+			$out: #{$out + $prefix + '.' + $name + $suffix}
+			@if $i != length($names)
+				$out: #{$out + ', '}
+	@return $out
 =colors( $c, $bg, $n: '') 
-	$s: ''
-	$raw: ''
-	@if $n != ''
-		@for $i from 1 through length($n)
-			$name: nth($n, $i)
-			$s: #{$s + '&.' + $name}
-			$raw: #{$raw + '.' + $name}
-			@if $i != length($n)
-				$s: #{$s + ', '}
-				$raw: #{$raw + ', '}
+	$s: class-list($n, '&')
+	$raw: class-list($n)
 
+	input[type=range]
+		+set-prop( background-color, $c, class-list($n, '&', '::-webkit-slider-thumb'), '&::-webkit-slider-thumb'  )
 	+set-prop( color, $c, $raw )
 	+set-prop( border-color, $c, $raw ) 
 	*
 		+set-prop( border-color, $c, $raw ) 
 
-	.cross
-		background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><line x1='0' y1='0' x2='100' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /><line x1='100' y1='0' x2='0' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
-	.arrow
-		background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'><polyline points='10,10 50,40 90,10' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
+	// .cross
+	// 	background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><line x1='0' y1='0' x2='100' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /><line x1='100' y1='0' x2='0' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
+	// .arrow
+	// 	background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'><polyline points='10,10 50,40 90,10' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
 
 
 	// colors... 
@@ -99,14 +100,11 @@
 	input, select, textarea, input[type=range], textarea
 		+set-prop(color, $c, $s )
 
-	input, textarea, select
+	textarea, input[type=text], input[type=number], input[type=email], select
 		&:focus
-			+set-prop(box-shadow, 0px 0px 0px 2px $c inset, $s )
+			+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
 
-	input, textarea, input[type=range], textarea
-		+set-prop(border-color, $c, $s )
-	input[type=range]::-webkit-slider-thumb
-		+set-prop(background, $c, $s )
+	
 	.fill
 		+set-prop(fill, $c, $s )
 	.stroke
@@ -115,16 +113,19 @@
 
 
 	.checkbox
-		input[type=checkbox] + span
+		input + span
 			+set-prop(border-color, $c, $s )
 			&:before, &:after
 				+set-prop(border-color, $c, $s )
+	.radio
+		input:checked + span
+			+set-prop(background-color, $c, $s )
 	.select, .chevron
 		&:after
 			+set-prop(border-color, $c, $s )
 	.edged
 		+set-prop( box-shadow, 0px 0px 0px 1px inset, $s)
-	.filled, a:active, button:active
+	.filled, a:active, button:active, .clickable:active, .button:active
 		+set-prop(background, $c, $s )
 		+set-prop(color, $bg, $s )
 		.fill
@@ -133,14 +134,15 @@
 			+set-prop(stroke, $bg, $s )
 		&:after, &:before
 			+set-prop(border-color, $bg, $s )
-	.filled:active
+	.filled.clickable:active, button.filled:active, a.filled:active, .button.filled:active, 
 		+set-prop(background, transparent, $s )
 		+set-prop(color, $c, $s )
 
 
-	a, select, button
+	a, select, button, .button
 		+set-prop(color, $c, $s )
 		+set-prop(border-color, $c, $s )
-	button
+	button, .button
 		+set-prop(border-color, $c, $s )
 		+set-prop(color, $c, $s ) 
+
