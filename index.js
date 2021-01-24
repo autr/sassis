@@ -553,13 +553,13 @@ var app = (function () {
             "ino": 17143898,
             "size": 768183,
             "blocks": 1504,
-            "atimeMs": 1611448750688.6248,
-            "mtimeMs": 1611448754246.4102,
-            "ctimeMs": 1611448754246.4102,
+            "atimeMs": 1611449824860.7983,
+            "mtimeMs": 1611449845315.1904,
+            "ctimeMs": 1611449845315.1904,
             "birthtimeMs": 1611310365878.471,
-            "atime": "2021-01-24T00:39:10.689Z",
-            "mtime": "2021-01-24T00:39:14.246Z",
-            "ctime": "2021-01-24T00:39:14.246Z",
+            "atime": "2021-01-24T00:57:04.861Z",
+            "mtime": "2021-01-24T00:57:25.315Z",
+            "ctime": "2021-01-24T00:57:25.315Z",
             "birthtime": "2021-01-22T10:12:45.878Z"
           },
           "min": {
@@ -575,13 +575,13 @@ var app = (function () {
             "ino": 17143899,
             "size": 594505,
             "blocks": 1168,
-            "atimeMs": 1611448754290.017,
-            "mtimeMs": 1611448754248.9153,
-            "ctimeMs": 1611448754248.9153,
+            "atimeMs": 1611449845334.5679,
+            "mtimeMs": 1611449845316.545,
+            "ctimeMs": 1611449845316.545,
             "birthtimeMs": 1611310365879.2778,
-            "atime": "2021-01-24T00:39:14.290Z",
-            "mtime": "2021-01-24T00:39:14.249Z",
-            "ctime": "2021-01-24T00:39:14.249Z",
+            "atime": "2021-01-24T00:57:25.335Z",
+            "mtime": "2021-01-24T00:57:25.317Z",
+            "ctime": "2021-01-24T00:57:25.317Z",
             "birthtime": "2021-01-22T10:12:45.879Z"
           },
           "gz": {
@@ -597,13 +597,13 @@ var app = (function () {
             "ino": 17143969,
             "size": 88631,
             "blocks": 256,
-            "atimeMs": 1611448750430.1953,
-            "mtimeMs": 1611448754289.076,
-            "ctimeMs": 1611448754289.076,
+            "atimeMs": 1611449824808.5527,
+            "mtimeMs": 1611449845367.9685,
+            "ctimeMs": 1611449845367.9685,
             "birthtimeMs": 1611310381040.7678,
-            "atime": "2021-01-24T00:39:10.430Z",
-            "mtime": "2021-01-24T00:39:14.289Z",
-            "ctime": "2021-01-24T00:39:14.289Z",
+            "atime": "2021-01-24T00:57:04.809Z",
+            "mtime": "2021-01-24T00:57:25.368Z",
+            "ctime": "2021-01-24T00:57:25.368Z",
             "birthtime": "2021-01-22T10:13:01.041Z"
           }
         },
@@ -621,13 +621,13 @@ var app = (function () {
             "ino": 17206072,
             "size": 3902,
             "blocks": 8,
-            "atimeMs": 1611448750883.587,
-            "mtimeMs": 1611448754615.3794,
-            "ctimeMs": 1611448754615.3794,
+            "atimeMs": 1611449825211.8481,
+            "mtimeMs": 1611449845692.3071,
+            "ctimeMs": 1611449845692.3071,
             "birthtimeMs": 1611332391824.218,
-            "atime": "2021-01-24T00:39:10.884Z",
-            "mtime": "2021-01-24T00:39:14.615Z",
-            "ctime": "2021-01-24T00:39:14.615Z",
+            "atime": "2021-01-24T00:57:05.212Z",
+            "mtime": "2021-01-24T00:57:25.692Z",
+            "ctime": "2021-01-24T00:57:25.692Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "min": {
@@ -643,13 +643,13 @@ var app = (function () {
             "ino": 17206073,
             "size": 2960,
             "blocks": 8,
-            "atimeMs": 1611448754618.4985,
-            "mtimeMs": 1611448754615.6252,
-            "ctimeMs": 1611448754615.6252,
+            "atimeMs": 1611449845695.58,
+            "mtimeMs": 1611449845692.5737,
+            "ctimeMs": 1611449845692.5737,
             "birthtimeMs": 1611332391824.479,
-            "atime": "2021-01-24T00:39:14.618Z",
-            "mtime": "2021-01-24T00:39:14.616Z",
-            "ctime": "2021-01-24T00:39:14.616Z",
+            "atime": "2021-01-24T00:57:25.696Z",
+            "mtime": "2021-01-24T00:57:25.693Z",
+            "ctime": "2021-01-24T00:57:25.693Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "gz": {
@@ -665,13 +665,13 @@ var app = (function () {
             "ino": 17206461,
             "size": 488,
             "blocks": 8,
-            "atimeMs": 1611448750923.6946,
-            "mtimeMs": 1611448754618.0933,
-            "ctimeMs": 1611448754618.0933,
+            "atimeMs": 1611449824936.164,
+            "mtimeMs": 1611449845695.286,
+            "ctimeMs": 1611449845695.286,
             "birthtimeMs": 1611332453898.8462,
-            "atime": "2021-01-24T00:39:10.924Z",
-            "mtime": "2021-01-24T00:39:14.618Z",
-            "ctime": "2021-01-24T00:39:14.618Z",
+            "atime": "2021-01-24T00:57:04.936Z",
+            "mtime": "2021-01-24T00:57:25.695Z",
+            "ctime": "2021-01-24T00:57:25.695Z",
             "birthtime": "2021-01-22T16:20:53.899Z"
           }
         },
@@ -687,15 +687,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206080,
-            "size": 915753,
+            "size": 915812,
             "blocks": 1792,
-            "atimeMs": 1611448726897.309,
-            "mtimeMs": 1611448757652.806,
-            "ctimeMs": 1611448757652.806,
+            "atimeMs": 1611449828764.9658,
+            "mtimeMs": 1611449848043.9607,
+            "ctimeMs": 1611449848043.9607,
             "birthtimeMs": 1611332393483.6533,
-            "atime": "2021-01-24T00:38:46.897Z",
-            "mtime": "2021-01-24T00:39:17.653Z",
-            "ctime": "2021-01-24T00:39:17.653Z",
+            "atime": "2021-01-24T00:57:08.765Z",
+            "mtime": "2021-01-24T00:57:28.044Z",
+            "ctime": "2021-01-24T00:57:28.044Z",
             "birthtime": "2021-01-22T16:19:53.484Z"
           },
           "min": {
@@ -709,15 +709,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206081,
-            "size": 675340,
+            "size": 675381,
             "blocks": 1320,
-            "atimeMs": 1611448757662.936,
-            "mtimeMs": 1611448757655.1548,
-            "ctimeMs": 1611448757655.1548,
+            "atimeMs": 1611449848054.4116,
+            "mtimeMs": 1611449848046.724,
+            "ctimeMs": 1611449848046.724,
             "birthtimeMs": 1611332393484.9053,
-            "atime": "2021-01-24T00:39:17.663Z",
-            "mtime": "2021-01-24T00:39:17.655Z",
-            "ctime": "2021-01-24T00:39:17.655Z",
+            "atime": "2021-01-24T00:57:28.054Z",
+            "mtime": "2021-01-24T00:57:28.047Z",
+            "ctime": "2021-01-24T00:57:28.047Z",
             "birthtime": "2021-01-22T16:19:53.485Z"
           },
           "gz": {
@@ -731,22 +731,22 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206471,
-            "size": 98098,
+            "size": 98112,
             "blocks": 256,
-            "atimeMs": 1611448757683.3354,
-            "mtimeMs": 1611448757698.1428,
-            "ctimeMs": 1611448757698.1428,
+            "atimeMs": 1611449827383.7227,
+            "mtimeMs": 1611449848081.784,
+            "ctimeMs": 1611449848081.784,
             "birthtimeMs": 1611332455561.552,
-            "atime": "2021-01-24T00:39:17.683Z",
-            "mtime": "2021-01-24T00:39:17.698Z",
-            "ctime": "2021-01-24T00:39:17.698Z",
+            "atime": "2021-01-24T00:57:07.384Z",
+            "mtime": "2021-01-24T00:57:28.082Z",
+            "ctime": "2021-01-24T00:57:28.082Z",
             "birthtime": "2021-01-22T16:20:55.562Z"
           }
         }
       },
       "package": {
-        "name": "sassis",
-        "version": "1.0.2",
+        "name": "sassis-docs",
+        "version": "1.0.0",
         "scripts": {
           "build": "rollup -c",
           "dev": "rollup -c -w & nodemon src/sassis.js",
@@ -5023,7 +5023,7 @@ var app = (function () {
     	shorthandtable = new ShorthandTable({
     			props: {
     				filters: ["flex-basis", "example"],
-    				name: "basic"
+    				name: "layouts"
     			},
     			$$inline: true
     		});
@@ -5072,49 +5072,49 @@ var app = (function () {
     			t16 = space();
     			div12 = element("div");
     			attr_dev(div0, "class", "grow b1-dotted cross");
-    			add_location(div0, file$2, 12, 4, 337);
+    			add_location(div0, file$2, 12, 4, 339);
     			attr_dev(span0, "class", "spacer s4 cross error");
-    			add_location(span0, file$2, 15, 4, 393);
+    			add_location(span0, file$2, 15, 4, 395);
     			attr_dev(div1, "class", "grow b1-dotted cross");
-    			add_location(div1, file$2, 16, 4, 436);
+    			add_location(div1, file$2, 16, 4, 438);
     			attr_dev(div2, "class", "grow b1-dotted flex flex-row");
-    			add_location(div2, file$2, 10, 3, 285);
+    			add_location(div2, file$2, 10, 3, 287);
     			attr_dev(span1, "class", "spacer s4 cross error");
-    			add_location(span1, file$2, 20, 3, 501);
+    			add_location(span1, file$2, 20, 3, 503);
     			attr_dev(div3, "class", "grow b1-dotted cross");
-    			add_location(div3, file$2, 21, 3, 543);
+    			add_location(div3, file$2, 21, 3, 545);
     			attr_dev(div4, "class", "flex b1-dashed grow w40 flex-column");
-    			add_location(div4, file$2, 8, 2, 228);
+    			add_location(div4, file$2, 8, 2, 230);
     			attr_dev(span2, "class", "spacer s6 cross error");
-    			add_location(span2, file$2, 25, 2, 604);
+    			add_location(span2, file$2, 25, 2, 606);
     			attr_dev(div5, "class", "grow b1-dotted cross");
-    			add_location(div5, file$2, 27, 3, 694);
+    			add_location(div5, file$2, 27, 3, 696);
     			attr_dev(span3, "class", "spacer s4 cross error");
-    			add_location(span3, file$2, 30, 3, 747);
+    			add_location(span3, file$2, 30, 3, 749);
     			attr_dev(div6, "class", "grow b1-dotted cross");
-    			add_location(div6, file$2, 31, 3, 789);
+    			add_location(div6, file$2, 31, 3, 791);
     			attr_dev(span4, "class", "spacer s4 cross error");
-    			add_location(span4, file$2, 34, 3, 842);
+    			add_location(span4, file$2, 34, 3, 844);
     			attr_dev(div7, "class", "cross grow");
-    			add_location(div7, file$2, 36, 4, 934);
+    			add_location(div7, file$2, 36, 4, 936);
     			attr_dev(span5, "class", "spacer s4 cross error");
-    			add_location(span5, file$2, 37, 4, 965);
+    			add_location(span5, file$2, 37, 4, 967);
     			attr_dev(div8, "class", "cross grow");
-    			add_location(div8, file$2, 38, 4, 1008);
+    			add_location(div8, file$2, 38, 4, 1010);
     			attr_dev(div9, "class", "grow b1-dotted flex flex-column");
-    			add_location(div9, file$2, 35, 3, 884);
+    			add_location(div9, file$2, 35, 3, 886);
     			attr_dev(span6, "class", "spacer s4 cross error");
-    			add_location(span6, file$2, 40, 3, 1048);
+    			add_location(span6, file$2, 40, 3, 1050);
     			attr_dev(div10, "class", "grow b1-dotted cross");
-    			add_location(div10, file$2, 41, 3, 1090);
+    			add_location(div10, file$2, 41, 3, 1092);
     			attr_dev(div11, "class", "flex flex-column b1-dashed grow");
-    			add_location(div11, file$2, 26, 2, 645);
+    			add_location(div11, file$2, 26, 2, 647);
     			attr_dev(span7, "class", "spacer s8 cross error");
-    			add_location(span7, file$2, 45, 2, 1151);
+    			add_location(span7, file$2, 45, 2, 1153);
     			attr_dev(div12, "class", "flex b1-dashed w20 cross");
-    			add_location(div12, file$2, 46, 2, 1192);
+    			add_location(div12, file$2, 46, 2, 1194);
     			attr_dev(div13, "class", "flex flex-row grow");
-    			add_location(div13, file$2, 7, 1, 193);
+    			add_location(div13, file$2, 7, 1, 195);
     			attr_dev(div14, "class", "flex flex-column grow");
     			add_location(div14, file$2, 4, 0, 86);
     		},
@@ -5303,7 +5303,7 @@ var app = (function () {
     	shorthandtable = new ShorthandTable({
     			props: {
     				filters: ["font-size", "font-family"],
-    				name: "texts"
+    				name: "type"
     			},
     			$$inline: true
     		});
