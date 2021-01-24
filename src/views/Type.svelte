@@ -2,4 +2,4 @@
 	import ShorthandTable from '../components/ShorthandTable.svelte'
 </script>
 
-<ShorthandTable filters={['font-size', 'font-family']} name="texts" />
+<ShorthandTable filters={['font-size', 'font-family']} name="type" />

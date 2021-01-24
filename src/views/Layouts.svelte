@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex flex-column grow">
-	<ShorthandTable filters={['flex-basis', 'example']} name="basic" />
+	<ShorthandTable filters={['flex-basis', 'example']} name="layouts" />
 
 	<div class="flex flex-row grow">
 		<div class="flex b1-dashed grow w40 flex-column">
