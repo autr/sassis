@@ -67,7 +67,7 @@ html {
     padding: var(--button-padding);
     text-align: center; }
   html select, html input, html button, html textarea, html .button {
-    border-width: 1px;
+    border-width: var(--stroke-width);
     outline: none; }
     html select:disabled, html input:disabled, html button:disabled, html textarea:disabled, html .button:disabled {
       opacity: 0.5; }
@@ -86,8 +86,8 @@ html {
       margin: var(--input-padding);
       margin-top: -0.25em;
       position: absolute;
-      border-left-width: 1px;
-      border-bottom-width: 1px;
+      border-left-width: var(--stroke-width);
+      border-bottom-width: var(--stroke-width);
       border-style: solid;
       transform: rotateZ(-45deg) translate(0%, -50%);
       transform-origin: 50% 50%; }
@@ -136,22 +136,8 @@ html {
     display: flex; }
   html .radio input + span {
     border-radius: 1em; }
-  html .cross:before, html .cross:after, html .checkbox input:checked + span:before, html .checkbox input:checked + span:after {
-    position: absolute;
-    border-width: 1px;
-    content: "";
-    width: 150%;
-    height: 150%; }
-  html .cross:before, html .checkbox input:checked + span:before {
-    top: 0px;
-    right: 0px;
-    transform-origin: 100% 0%;
-    transform: rotateZ(45deg); }
-  html .cross:after, html .checkbox input:checked + span:after {
-    top: 0px;
-    left: 0px;
-    transform-origin: 0% 0%;
-    transform: rotateZ(-45deg); }
+  html .cross, html .checkbox input:checked + span {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), white 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), white 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .dash:before, html .dash:after, html .checkbox input:indeterminate + span:before, html .checkbox input:indeterminate + span:after, html .radio input:indeterminate + span:before, html .radio input:indeterminate + span:after {
     content: "";
     position: absolute;
@@ -161,7 +147,7 @@ html {
     left: 0;
     top: 50%;
     margin-top: -0.5px;
-    border-top-width: 1px; }
+    border-top-width: var(--stroke-width); }
   html .checkbox, html .radio {
     display: flex;
     align-items: center;
