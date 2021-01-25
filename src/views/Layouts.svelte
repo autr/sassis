@@ -2,8 +2,20 @@
 	import ShorthandTable from '../components/ShorthandTable.svelte'
 </script>
 
+
+
 <div class="flex flex-column grow">
-	<ShorthandTable filters={['flex-basis', 'example']} name="layouts" />
+	<div class="cross minh10em flex row-center-center cs0-8">
+
+		<div class="cross p1 b1-solid y-flex-start"></div>
+		<div class="spacer" />
+		<div class="cross p1 b1-solid y-stretch"></div>
+		<div class="spacer" />
+		<div class="cross p1 b1-solid y-flex-end"></div>
+
+	</div>
+
+	<ShorthandTable filters={['alignments', 'spacer', 'flex-basis', 'example']} name="layouts" />
 
 	<div class="flex flex-row grow">
 		<div class="flex b1-dashed grow w40 flex-column">

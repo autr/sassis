@@ -1,6 +1,6 @@
 {
-  "name": "sassis-docs",
-  "version": "1.0.0",
+  "name": "sassis",
+  "version": "1.0.1",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w & nodemon src/sassis.js",

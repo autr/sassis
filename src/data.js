@@ -345,6 +345,90 @@ export default [
     "mixins": "."
   },
   {
+    "type": "h2",
+    "id": "alignments"
+  },
+  {
+    "type": "table",
+    "id": "alignments",
+    "data": [
+      [
+        [
+          "row-{alert}[content]{end}-{alert}[items]{end}",
+          "+row({info}$x, $y{end})"
+        ],
+        [
+          "justify-content: {alert}[content]{end}",
+          "align-items: {alert}[items]{end}",
+          "flex-direction: row"
+        ]
+      ],
+      [
+        [
+          "row-x-{alert}[content]{end}",
+          "+row-x({info}$val{end})"
+        ],
+        [
+          "justify-content: {alert}[content]{end}"
+        ]
+      ],
+      [
+        [
+          "row-y-{alert}[items]{end}",
+          "+row-y({info}$val{end})"
+        ],
+        [
+          "align-items: {alert}[items]{end}"
+        ]
+      ],
+      [
+        [
+          "row > .y-{alert}[items]{end}"
+        ],
+        [
+          "align-self: {alert}[items]{end}"
+        ]
+      ],
+      [
+        [
+          "column-{alert}[items]{end}-{alert}[content]{end}",
+          "+column({info}$x, $y{end})"
+        ],
+        [
+          "align-items: {alert}[items]{end}",
+          "justify-content: {alert}[content]{end}",
+          "flex-direction: column"
+        ]
+      ],
+      [
+        [
+          "column-x-{alert}[items]{end}",
+          "+column-x({info}$val{end})"
+        ],
+        [
+          "align-items: {alert}[items]{end}"
+        ]
+      ],
+      [
+        [
+          "column > .x-{alert}[items]{end}"
+        ],
+        [
+          "align-self: {alert}[items]{end}"
+        ]
+      ],
+      [
+        [
+          "column-y-{alert}[content]{end}",
+          "+column-y({info}$val{end})"
+        ],
+        [
+          "justify-content: {alert}[content]{end}"
+        ]
+      ]
+    ]
+  },
+  {
     "type": "h3",
     "id": "items"
   },
@@ -1087,7 +1171,7 @@ export default [
   },
   {
     "type": "h3",
-    "id": "flex-basis"
+    "id": "spacer"
   },
   {
     "type": "table",
@@ -1108,7 +1192,7 @@ export default [
           "+cs{succ}[rule]{end}"
         ],
         [
-          "> *",
+          "> .spacer",
           "{succ}[rule]{end}"
         ]
       ]

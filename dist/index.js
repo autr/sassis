@@ -543,7 +543,7 @@ var app = (function () {
           "full": {
             "path": "dist/shorthand.css",
             "basename": "shorthand.css",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -551,21 +551,21 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17143898,
-            "size": 768183,
-            "blocks": 1504,
-            "atimeMs": 1611449824860.7983,
-            "mtimeMs": 1611449845315.1904,
-            "ctimeMs": 1611449845315.1904,
+            "size": 789734,
+            "blocks": 1544,
+            "atimeMs": 1611569540157.9539,
+            "mtimeMs": 1611569543374.6465,
+            "ctimeMs": 1611569543374.6465,
             "birthtimeMs": 1611310365878.471,
-            "atime": "2021-01-24T00:57:04.861Z",
-            "mtime": "2021-01-24T00:57:25.315Z",
-            "ctime": "2021-01-24T00:57:25.315Z",
+            "atime": "2021-01-25T10:12:20.158Z",
+            "mtime": "2021-01-25T10:12:23.375Z",
+            "ctime": "2021-01-25T10:12:23.375Z",
             "birthtime": "2021-01-22T10:12:45.878Z"
           },
           "min": {
             "path": "dist/shorthand.min.css",
             "basename": "shorthand.min.css",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -573,21 +573,21 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17143899,
-            "size": 594505,
-            "blocks": 1168,
-            "atimeMs": 1611449845334.5679,
-            "mtimeMs": 1611449845316.545,
-            "ctimeMs": 1611449845316.545,
+            "size": 612918,
+            "blocks": 1200,
+            "atimeMs": 1611569543419.0657,
+            "mtimeMs": 1611569543375.5913,
+            "ctimeMs": 1611569543375.5913,
             "birthtimeMs": 1611310365879.2778,
-            "atime": "2021-01-24T00:57:25.335Z",
-            "mtime": "2021-01-24T00:57:25.317Z",
-            "ctime": "2021-01-24T00:57:25.317Z",
+            "atime": "2021-01-25T10:12:23.419Z",
+            "mtime": "2021-01-25T10:12:23.376Z",
+            "ctime": "2021-01-25T10:12:23.376Z",
             "birthtime": "2021-01-22T10:12:45.879Z"
           },
           "gz": {
             "path": "dist/shorthand.min.css.gz",
             "basename": "shorthand.min.css.gz",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -595,15 +595,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17143969,
-            "size": 88631,
+            "size": 90472,
             "blocks": 256,
-            "atimeMs": 1611449824808.5527,
-            "mtimeMs": 1611449845367.9685,
-            "ctimeMs": 1611449845367.9685,
+            "atimeMs": 1611569540158.0215,
+            "mtimeMs": 1611569543418.3823,
+            "ctimeMs": 1611569543418.3823,
             "birthtimeMs": 1611310381040.7678,
-            "atime": "2021-01-24T00:57:04.809Z",
-            "mtime": "2021-01-24T00:57:25.368Z",
-            "ctime": "2021-01-24T00:57:25.368Z",
+            "atime": "2021-01-25T10:12:20.158Z",
+            "mtime": "2021-01-25T10:12:23.418Z",
+            "ctime": "2021-01-25T10:12:23.418Z",
             "birthtime": "2021-01-22T10:13:01.041Z"
           }
         },
@@ -611,7 +611,7 @@ var app = (function () {
           "full": {
             "path": "dist/layout.css",
             "basename": "layout.css",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -621,19 +621,19 @@ var app = (function () {
             "ino": 17206072,
             "size": 3902,
             "blocks": 8,
-            "atimeMs": 1611449825211.8481,
-            "mtimeMs": 1611449845692.3071,
-            "ctimeMs": 1611449845692.3071,
+            "atimeMs": 1611569538488.9753,
+            "mtimeMs": 1611569543718.5674,
+            "ctimeMs": 1611569543718.5674,
             "birthtimeMs": 1611332391824.218,
-            "atime": "2021-01-24T00:57:05.212Z",
-            "mtime": "2021-01-24T00:57:25.692Z",
-            "ctime": "2021-01-24T00:57:25.692Z",
+            "atime": "2021-01-25T10:12:18.489Z",
+            "mtime": "2021-01-25T10:12:23.719Z",
+            "ctime": "2021-01-25T10:12:23.719Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "min": {
             "path": "dist/layout.min.css",
             "basename": "layout.min.css",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -643,19 +643,19 @@ var app = (function () {
             "ino": 17206073,
             "size": 2960,
             "blocks": 8,
-            "atimeMs": 1611449845695.58,
-            "mtimeMs": 1611449845692.5737,
-            "ctimeMs": 1611449845692.5737,
+            "atimeMs": 1611569543723.5432,
+            "mtimeMs": 1611569543718.8076,
+            "ctimeMs": 1611569543718.8076,
             "birthtimeMs": 1611332391824.479,
-            "atime": "2021-01-24T00:57:25.696Z",
-            "mtime": "2021-01-24T00:57:25.693Z",
-            "ctime": "2021-01-24T00:57:25.693Z",
+            "atime": "2021-01-25T10:12:23.724Z",
+            "mtime": "2021-01-25T10:12:23.719Z",
+            "ctime": "2021-01-25T10:12:23.719Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "gz": {
             "path": "dist/layout.min.css.gz",
             "basename": "layout.min.css.gz",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -665,13 +665,13 @@ var app = (function () {
             "ino": 17206461,
             "size": 488,
             "blocks": 8,
-            "atimeMs": 1611449824936.164,
-            "mtimeMs": 1611449845695.286,
-            "ctimeMs": 1611449845695.286,
+            "atimeMs": 1611569538489.0024,
+            "mtimeMs": 1611569543723.144,
+            "ctimeMs": 1611569543723.144,
             "birthtimeMs": 1611332453898.8462,
-            "atime": "2021-01-24T00:57:04.936Z",
-            "mtime": "2021-01-24T00:57:25.695Z",
-            "ctime": "2021-01-24T00:57:25.695Z",
+            "atime": "2021-01-25T10:12:18.489Z",
+            "mtime": "2021-01-25T10:12:23.723Z",
+            "ctime": "2021-01-25T10:12:23.723Z",
             "birthtime": "2021-01-22T16:20:53.899Z"
           }
         },
@@ -679,7 +679,7 @@ var app = (function () {
           "full": {
             "path": "dist/all.css",
             "basename": "all.css",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -687,21 +687,21 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206080,
-            "size": 915812,
-            "blocks": 1792,
-            "atimeMs": 1611449828764.9658,
-            "mtimeMs": 1611449848043.9607,
-            "ctimeMs": 1611449848043.9607,
+            "size": 938591,
+            "blocks": 1840,
+            "atimeMs": 1611569535306.7498,
+            "mtimeMs": 1611569545713.9504,
+            "ctimeMs": 1611569545713.9504,
             "birthtimeMs": 1611332393483.6533,
-            "atime": "2021-01-24T00:57:08.765Z",
-            "mtime": "2021-01-24T00:57:28.044Z",
-            "ctime": "2021-01-24T00:57:28.044Z",
+            "atime": "2021-01-25T10:12:15.307Z",
+            "mtime": "2021-01-25T10:12:25.714Z",
+            "ctime": "2021-01-25T10:12:25.714Z",
             "birthtime": "2021-01-22T16:19:53.484Z"
           },
           "min": {
             "path": "dist/all.min.css",
             "basename": "all.min.css",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -709,21 +709,21 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206081,
-            "size": 675381,
-            "blocks": 1320,
-            "atimeMs": 1611449848054.4116,
-            "mtimeMs": 1611449848046.724,
-            "ctimeMs": 1611449848046.724,
+            "size": 693794,
+            "blocks": 1360,
+            "atimeMs": 1611569545724.8997,
+            "mtimeMs": 1611569545715.2,
+            "ctimeMs": 1611569545715.2,
             "birthtimeMs": 1611332393484.9053,
-            "atime": "2021-01-24T00:57:28.054Z",
-            "mtime": "2021-01-24T00:57:28.047Z",
-            "ctime": "2021-01-24T00:57:28.047Z",
+            "atime": "2021-01-25T10:12:25.725Z",
+            "mtime": "2021-01-25T10:12:25.715Z",
+            "ctime": "2021-01-25T10:12:25.715Z",
             "birthtime": "2021-01-22T16:19:53.485Z"
           },
           "gz": {
             "path": "dist/all.min.css.gz",
             "basename": "all.min.css.gz",
-            "dev": 16777221,
+            "dev": 16777223,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
@@ -731,21 +731,21 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206471,
-            "size": 98112,
+            "size": 99899,
             "blocks": 256,
-            "atimeMs": 1611449827383.7227,
-            "mtimeMs": 1611449848081.784,
-            "ctimeMs": 1611449848081.784,
+            "atimeMs": 1611569533249.0796,
+            "mtimeMs": 1611569545744.2002,
+            "ctimeMs": 1611569545744.2002,
             "birthtimeMs": 1611332455561.552,
-            "atime": "2021-01-24T00:57:07.384Z",
-            "mtime": "2021-01-24T00:57:28.082Z",
-            "ctime": "2021-01-24T00:57:28.082Z",
+            "atime": "2021-01-25T10:12:13.249Z",
+            "mtime": "2021-01-25T10:12:25.744Z",
+            "ctime": "2021-01-25T10:12:25.744Z",
             "birthtime": "2021-01-22T16:20:55.562Z"
           }
         }
       },
       "package": {
-        "name": "sassis-docs",
+        "name": "sassis",
         "version": "1.0.0",
         "scripts": {
           "build": "rollup -c",
@@ -2353,6 +2353,90 @@ var app = (function () {
         "mixins": "."
       },
       {
+        "type": "h2",
+        "id": "alignments"
+      },
+      {
+        "type": "table",
+        "id": "alignments",
+        "data": [
+          [
+            [
+              "row-{alert}[content]{end}-{alert}[items]{end}",
+              "+row({info}$x, $y{end})"
+            ],
+            [
+              "justify-content: {alert}[content]{end}",
+              "align-items: {alert}[items]{end}",
+              "flex-direction: row"
+            ]
+          ],
+          [
+            [
+              "row-x-{alert}[content]{end}",
+              "+row-x({info}$val{end})"
+            ],
+            [
+              "justify-content: {alert}[content]{end}"
+            ]
+          ],
+          [
+            [
+              "row-y-{alert}[items]{end}",
+              "+row-y({info}$val{end})"
+            ],
+            [
+              "align-items: {alert}[items]{end}"
+            ]
+          ],
+          [
+            [
+              "row > .y-{alert}[items]{end}"
+            ],
+            [
+              "align-self: {alert}[items]{end}"
+            ]
+          ],
+          [
+            [
+              "column-{alert}[items]{end}-{alert}[content]{end}",
+              "+column({info}$x, $y{end})"
+            ],
+            [
+              "align-items: {alert}[items]{end}",
+              "justify-content: {alert}[content]{end}",
+              "flex-direction: column"
+            ]
+          ],
+          [
+            [
+              "column-x-{alert}[items]{end}",
+              "+column-x({info}$val{end})"
+            ],
+            [
+              "align-items: {alert}[items]{end}"
+            ]
+          ],
+          [
+            [
+              "column > .x-{alert}[items]{end}"
+            ],
+            [
+              "align-self: {alert}[items]{end}"
+            ]
+          ],
+          [
+            [
+              "column-y-{alert}[content]{end}",
+              "+column-y({info}$val{end})"
+            ],
+            [
+              "justify-content: {alert}[content]{end}"
+            ]
+          ]
+        ]
+      },
+      {
         "type": "h3",
         "id": "items"
       },
@@ -3095,7 +3179,7 @@ var app = (function () {
       },
       {
         "type": "h3",
-        "id": "flex-basis"
+        "id": "spacer"
       },
       {
         "type": "table",
@@ -3116,7 +3200,7 @@ var app = (function () {
               "+cs{succ}[rule]{end}"
             ],
             [
-              "> *",
+              "> .spacer",
               "{succ}[rule]{end}"
             ]
           ]
@@ -4977,52 +5061,63 @@ var app = (function () {
     const file$2 = "src/views/Layouts.svelte";
 
     function create_fragment$3(ctx) {
-    	let div14;
-    	let shorthandtable;
-    	let t0;
-    	let div13;
-    	let div4;
-    	let div2;
-    	let div0;
-    	let t1;
-    	let span0;
-    	let t2;
-    	let div1;
-    	let t3;
-    	let span1;
-    	let t4;
-    	let div3;
-    	let t5;
-    	let span2;
-    	let t6;
-    	let div11;
+    	let div20;
     	let div5;
-    	let t7;
-    	let span3;
-    	let t8;
-    	let div6;
-    	let t9;
-    	let span4;
-    	let t10;
-    	let div9;
-    	let div7;
-    	let t11;
-    	let span5;
-    	let t12;
-    	let div8;
-    	let t13;
-    	let span6;
-    	let t14;
+    	let div0;
+    	let t0;
+    	let div1;
+    	let t1;
+    	let div2;
+    	let t2;
+    	let div3;
+    	let t3;
+    	let div4;
+    	let t4;
+    	let shorthandtable;
+    	let t5;
+    	let div19;
     	let div10;
-    	let t15;
-    	let span7;
-    	let t16;
+    	let div8;
+    	let div6;
+    	let t6;
+    	let span0;
+    	let t7;
+    	let div7;
+    	let t8;
+    	let span1;
+    	let t9;
+    	let div9;
+    	let t10;
+    	let span2;
+    	let t11;
+    	let div17;
+    	let div11;
+    	let t12;
+    	let span3;
+    	let t13;
     	let div12;
+    	let t14;
+    	let span4;
+    	let t15;
+    	let div15;
+    	let div13;
+    	let t16;
+    	let span5;
+    	let t17;
+    	let div14;
+    	let t18;
+    	let span6;
+    	let t19;
+    	let div16;
+    	let t20;
+    	let span7;
+    	let t21;
+    	let div18;
     	let current;
 
     	shorthandtable = new ShorthandTable({
     			props: {
-    				filters: ["flex-basis", "example"],
+    				filters: ["alignments", "spacer", "flex-basis", "example"],
     				name: "layouts"
     			},
     			$$inline: true
@@ -5030,139 +5125,173 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div14 = element("div");
-    			create_component(shorthandtable.$$.fragment);
-    			t0 = space();
-    			div13 = element("div");
-    			div4 = element("div");
-    			div2 = element("div");
-    			div0 = element("div");
-    			t1 = space();
-    			span0 = element("span");
-    			t2 = space();
-    			div1 = element("div");
-    			t3 = space();
-    			span1 = element("span");
-    			t4 = space();
-    			div3 = element("div");
-    			t5 = space();
-    			span2 = element("span");
-    			t6 = space();
-    			div11 = element("div");
+    			div20 = element("div");
     			div5 = element("div");
-    			t7 = space();
-    			span3 = element("span");
-    			t8 = space();
-    			div6 = element("div");
-    			t9 = space();
-    			span4 = element("span");
-    			t10 = space();
-    			div9 = element("div");
-    			div7 = element("div");
-    			t11 = space();
-    			span5 = element("span");
-    			t12 = space();
-    			div8 = element("div");
-    			t13 = space();
-    			span6 = element("span");
-    			t14 = space();
+    			div0 = element("div");
+    			t0 = space();
+    			div1 = element("div");
+    			t1 = space();
+    			div2 = element("div");
+    			t2 = space();
+    			div3 = element("div");
+    			t3 = space();
+    			div4 = element("div");
+    			t4 = space();
+    			create_component(shorthandtable.$$.fragment);
+    			t5 = space();
+    			div19 = element("div");
     			div10 = element("div");
-    			t15 = space();
-    			span7 = element("span");
-    			t16 = space();
+    			div8 = element("div");
+    			div6 = element("div");
+    			t6 = space();
+    			span0 = element("span");
+    			t7 = space();
+    			div7 = element("div");
+    			t8 = space();
+    			span1 = element("span");
+    			t9 = space();
+    			div9 = element("div");
+    			t10 = space();
+    			span2 = element("span");
+    			t11 = space();
+    			div17 = element("div");
+    			div11 = element("div");
+    			t12 = space();
+    			span3 = element("span");
+    			t13 = space();
     			div12 = element("div");
-    			attr_dev(div0, "class", "grow b1-dotted cross");
-    			add_location(div0, file$2, 12, 4, 339);
-    			attr_dev(span0, "class", "spacer s4 cross error");
-    			add_location(span0, file$2, 15, 4, 395);
-    			attr_dev(div1, "class", "grow b1-dotted cross");
-    			add_location(div1, file$2, 16, 4, 438);
-    			attr_dev(div2, "class", "grow b1-dotted flex flex-row");
-    			add_location(div2, file$2, 10, 3, 287);
-    			attr_dev(span1, "class", "spacer s4 cross error");
-    			add_location(span1, file$2, 20, 3, 503);
-    			attr_dev(div3, "class", "grow b1-dotted cross");
-    			add_location(div3, file$2, 21, 3, 545);
-    			attr_dev(div4, "class", "flex b1-dashed grow w40 flex-column");
-    			add_location(div4, file$2, 8, 2, 230);
-    			attr_dev(span2, "class", "spacer s6 cross error");
-    			add_location(span2, file$2, 25, 2, 606);
-    			attr_dev(div5, "class", "grow b1-dotted cross");
-    			add_location(div5, file$2, 27, 3, 696);
-    			attr_dev(span3, "class", "spacer s4 cross error");
-    			add_location(span3, file$2, 30, 3, 749);
+    			t14 = space();
+    			span4 = element("span");
+    			t15 = space();
+    			div15 = element("div");
+    			div13 = element("div");
+    			t16 = space();
+    			span5 = element("span");
+    			t17 = space();
+    			div14 = element("div");
+    			t18 = space();
+    			span6 = element("span");
+    			t19 = space();
+    			div16 = element("div");
+    			t20 = space();
+    			span7 = element("span");
+    			t21 = space();
+    			div18 = element("div");
+    			attr_dev(div0, "class", "cross p1 b1-solid y-flex-start");
+    			add_location(div0, file$2, 9, 2, 186);
+    			attr_dev(div1, "class", "spacer");
+    			add_location(div1, file$2, 10, 2, 239);
+    			attr_dev(div2, "class", "cross p1 b1-solid y-stretch");
+    			add_location(div2, file$2, 11, 2, 264);
+    			attr_dev(div3, "class", "spacer");
+    			add_location(div3, file$2, 12, 2, 314);
+    			attr_dev(div4, "class", "cross p1 b1-solid y-flex-end");
+    			add_location(div4, file$2, 13, 2, 339);
+    			attr_dev(div5, "class", "cross minh10em flex row-center-center cs0-8");
+    			add_location(div5, file$2, 7, 1, 125);
     			attr_dev(div6, "class", "grow b1-dotted cross");
-    			add_location(div6, file$2, 31, 3, 791);
+    			add_location(div6, file$2, 24, 4, 639);
+    			attr_dev(span0, "class", "spacer s4 cross error");
+    			add_location(span0, file$2, 27, 4, 695);
+    			attr_dev(div7, "class", "grow b1-dotted cross");
+    			add_location(div7, file$2, 28, 4, 738);
+    			attr_dev(div8, "class", "grow b1-dotted flex flex-row");
+    			add_location(div8, file$2, 22, 3, 587);
+    			attr_dev(span1, "class", "spacer s4 cross error");
+    			add_location(span1, file$2, 32, 3, 803);
+    			attr_dev(div9, "class", "grow b1-dotted cross");
+    			add_location(div9, file$2, 33, 3, 845);
+    			attr_dev(div10, "class", "flex b1-dashed grow w40 flex-column");
+    			add_location(div10, file$2, 20, 2, 530);
+    			attr_dev(span2, "class", "spacer s6 cross error");
+    			add_location(span2, file$2, 37, 2, 906);
+    			attr_dev(div11, "class", "grow b1-dotted cross");
+    			add_location(div11, file$2, 39, 3, 996);
+    			attr_dev(span3, "class", "spacer s4 cross error");
+    			add_location(span3, file$2, 42, 3, 1049);
+    			attr_dev(div12, "class", "grow b1-dotted cross");
+    			add_location(div12, file$2, 43, 3, 1091);
     			attr_dev(span4, "class", "spacer s4 cross error");
-    			add_location(span4, file$2, 34, 3, 844);
-    			attr_dev(div7, "class", "cross grow");
-    			add_location(div7, file$2, 36, 4, 936);
+    			add_location(span4, file$2, 46, 3, 1144);
+    			attr_dev(div13, "class", "cross grow");
+    			add_location(div13, file$2, 48, 4, 1236);
     			attr_dev(span5, "class", "spacer s4 cross error");
-    			add_location(span5, file$2, 37, 4, 967);
-    			attr_dev(div8, "class", "cross grow");
-    			add_location(div8, file$2, 38, 4, 1010);
-    			attr_dev(div9, "class", "grow b1-dotted flex flex-column");
-    			add_location(div9, file$2, 35, 3, 886);
+    			add_location(span5, file$2, 49, 4, 1267);
+    			attr_dev(div14, "class", "cross grow");
+    			add_location(div14, file$2, 50, 4, 1310);
+    			attr_dev(div15, "class", "grow b1-dotted flex flex-column");
+    			add_location(div15, file$2, 47, 3, 1186);
     			attr_dev(span6, "class", "spacer s4 cross error");
-    			add_location(span6, file$2, 40, 3, 1050);
-    			attr_dev(div10, "class", "grow b1-dotted cross");
-    			add_location(div10, file$2, 41, 3, 1092);
-    			attr_dev(div11, "class", "flex flex-column b1-dashed grow");
-    			add_location(div11, file$2, 26, 2, 647);
+    			add_location(span6, file$2, 52, 3, 1350);
+    			attr_dev(div16, "class", "grow b1-dotted cross");
+    			add_location(div16, file$2, 53, 3, 1392);
+    			attr_dev(div17, "class", "flex flex-column b1-dashed grow");
+    			add_location(div17, file$2, 38, 2, 947);
     			attr_dev(span7, "class", "spacer s8 cross error");
-    			add_location(span7, file$2, 45, 2, 1153);
-    			attr_dev(div12, "class", "flex b1-dashed w20 cross");
-    			add_location(div12, file$2, 46, 2, 1194);
-    			attr_dev(div13, "class", "flex flex-row grow");
-    			add_location(div13, file$2, 7, 1, 195);
-    			attr_dev(div14, "class", "flex flex-column grow");
-    			add_location(div14, file$2, 4, 0, 86);
+    			add_location(span7, file$2, 57, 2, 1453);
+    			attr_dev(div18, "class", "flex b1-dashed w20 cross");
+    			add_location(div18, file$2, 58, 2, 1494);
+    			attr_dev(div19, "class", "flex flex-row grow");
+    			add_location(div19, file$2, 19, 1, 495);
+    			attr_dev(div20, "class", "flex flex-column grow");
+    			add_location(div20, file$2, 6, 0, 88);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div14, anchor);
-    			mount_component(shorthandtable, div14, null);
-    			append_dev(div14, t0);
-    			append_dev(div14, div13);
-    			append_dev(div13, div4);
-    			append_dev(div4, div2);
-    			append_dev(div2, div0);
-    			append_dev(div2, t1);
-    			append_dev(div2, span0);
-    			append_dev(div2, t2);
-    			append_dev(div2, div1);
-    			append_dev(div4, t3);
-    			append_dev(div4, span1);
-    			append_dev(div4, t4);
-    			append_dev(div4, div3);
-    			append_dev(div13, t5);
-    			append_dev(div13, span2);
-    			append_dev(div13, t6);
-    			append_dev(div13, div11);
-    			append_dev(div11, div5);
-    			append_dev(div11, t7);
-    			append_dev(div11, span3);
-    			append_dev(div11, t8);
-    			append_dev(div11, div6);
-    			append_dev(div11, t9);
-    			append_dev(div11, span4);
-    			append_dev(div11, t10);
-    			append_dev(div11, div9);
-    			append_dev(div9, div7);
-    			append_dev(div9, t11);
-    			append_dev(div9, span5);
-    			append_dev(div9, t12);
-    			append_dev(div9, div8);
-    			append_dev(div11, t13);
-    			append_dev(div11, span6);
-    			append_dev(div11, t14);
-    			append_dev(div11, div10);
-    			append_dev(div13, t15);
-    			append_dev(div13, span7);
-    			append_dev(div13, t16);
-    			append_dev(div13, div12);
+    			insert_dev(target, div20, anchor);
+    			append_dev(div20, div5);
+    			append_dev(div5, div0);
+    			append_dev(div5, t0);
+    			append_dev(div5, div1);
+    			append_dev(div5, t1);
+    			append_dev(div5, div2);
+    			append_dev(div5, t2);
+    			append_dev(div5, div3);
+    			append_dev(div5, t3);
+    			append_dev(div5, div4);
+    			append_dev(div20, t4);
+    			mount_component(shorthandtable, div20, null);
+    			append_dev(div20, t5);
+    			append_dev(div20, div19);
+    			append_dev(div19, div10);
+    			append_dev(div10, div8);
+    			append_dev(div8, div6);
+    			append_dev(div8, t6);
+    			append_dev(div8, span0);
+    			append_dev(div8, t7);
+    			append_dev(div8, div7);
+    			append_dev(div10, t8);
+    			append_dev(div10, span1);
+    			append_dev(div10, t9);
+    			append_dev(div10, div9);
+    			append_dev(div19, t10);
+    			append_dev(div19, span2);
+    			append_dev(div19, t11);
+    			append_dev(div19, div17);
+    			append_dev(div17, div11);
+    			append_dev(div17, t12);
+    			append_dev(div17, span3);
+    			append_dev(div17, t13);
+    			append_dev(div17, div12);
+    			append_dev(div17, t14);
+    			append_dev(div17, span4);
+    			append_dev(div17, t15);
+    			append_dev(div17, div15);
+    			append_dev(div15, div13);
+    			append_dev(div15, t16);
+    			append_dev(div15, span5);
+    			append_dev(div15, t17);
+    			append_dev(div15, div14);
+    			append_dev(div17, t18);
+    			append_dev(div17, span6);
+    			append_dev(div17, t19);
+    			append_dev(div17, div16);
+    			append_dev(div19, t20);
+    			append_dev(div19, span7);
+    			append_dev(div19, t21);
+    			append_dev(div19, div18);
     			current = true;
     		},
     		p: noop,
@@ -5176,7 +5305,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div14);
+    			if (detaching) detach_dev(div20);
     			destroy_component(shorthandtable);
     		}
     	};

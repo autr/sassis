@@ -70,6 +70,90 @@ aliases.forEach( pair => {
 	classes += `\n\t.${names.join(', .')}\n\t\t${pair[1].join('\n\t\t')}\n`
 })
 
+const yep = [
+	['row', 'x', 'justify-content'],
+	['row', 'y', 'align-items', 'align-self'],
+	['column', 'x', 'align-items', 'align-self'],
+	['column', 'y', 'justify-content'],
+]
+
+let yepyep = []
+
+yep.forEach( (y, ii) => {
+	const colrow = y[0]
+	const dir = y[1]
+	const type = y[2]
+	const child = y[3]
+
+	const items = ['center', 'end', 'flex-end', 'start', 'flex-start','stretch','baseline']
+	const content = ['space-between', 'space-evenly', 'space-around', 'left', 'right', 'center',  'end',  'flex-end', 'start',  'flex-start', 'stretch']
+
+	const iter = ( type.indexOf( 'content' ) != -1 ) ? content : items
+	const style = ( type.indexOf( 'content' ) != -1 ) ? 'content' : 'items'
+
+
+
+	if ( ii % 2 == 0) {
+		const A = y
+		const B = yep[ii+1]
+
+		const Atype = A[2]
+		const Btype = B[2]
+
+		const Aitems = ( Atype.indexOf( 'content' ) != -1 ) ? content : items
+		const Bitems = ( Btype.indexOf( 'content' ) != -1 ) ? content : items
+
+		const Astyle = ( Atype.indexOf( 'content' ) != -1 ) ? '{alert}[content]{end}' : '{alert}[items]{end}'
+		const Bstyle = ( Btype.indexOf( 'content' ) != -1 ) ? '{alert}[content]{end}' : '{alert}[items]{end}'
+
+		Aitems.forEach( Aitem => {
+			Bitems.forEach( Bitem => {
+
+				classes += `\n\t.${colrow}-${Aitem}-${Bitem}\n\t\t${Atype}: ${Aitem}\n\t\t${Btype}: ${Bitem}\n\t\tflex-direction: ${colrow}`
+				mixins += `\n=${colrow}($x, $y)\n\t${Atype}: $x\n\t${Atype}: $y\n\tflex-direction: ${colrow}`
+			})
+		})
+
+		yepyep.push([
+			[ `${colrow}-${Astyle}-${Bstyle}`, `+${colrow}({info}$x, $y{end})` ],
+			[ `${Atype}: ${Astyle}`,`${Btype}: ${Bstyle}`,`flex-direction: ${colrow}` ]
+		])
+	}
+
+
+	iter.forEach( (rule, i) => {
+		classes += `\n\t.${colrow}-${dir}-${rule}\n\t\t${type}: ${rule}`
+		mixins += `\n=${colrow}-${dir}($val)\n\t${type}: $val`
+
+	})
+
+	yepyep.push([
+		[ `${colrow}-${dir}-{alert}[${style}]{end}`, `+${colrow}-${dir}({info}$val{end})` ],
+		[ `${type}: {alert}[${style}]{end}` ]
+	])
+
+	if (child) {
+		items.forEach( (rule,i) => {
+			classes += `\n\t*[class*="${colrow}"] > .${dir}-${rule}\n\t\t${child}: ${rule}`
+		})
+		yepyep.push([
+			[ `${colrow} > .${dir}-{alert}[items]{end}` ],
+			[ `${child}: {alert}[items]{end}` ]
+		])
+	}
+
+})
+
+api.push({
+	type: 'h2',
+	id: 'alignments'
+})
+
+api.push( {
+	type: 'table',
+	id: 'alignments',
+	data: yepyep
+})
 
 const alignments = [
 	[ // rule
@@ -109,6 +193,7 @@ const alignments = [
 		]
 	]
 ]
+
 
 
 alignments.forEach( (a, idx)  => {
@@ -189,26 +274,28 @@ for ( let i = 0; i <= 100; i ++ ) {
 
 	types.forEach( pair => {
 
-		if (i == 0) {
-			api.push( {
-				type: 'h3',
-				id: pair[1] == '' ? 'position' : pair[1]
-			})
-		}
-
 		let apiTable = []
 
 		const names = pair[0]
 		const prop = pair[1]
 		const max = pair[2] || 100
 		const doDirections = pair[2]
+		const name = names[0]
+
+
+		if (i == 0) {
+			api.push( {
+				type: 'h3',
+				id: name == 's' ? 'spacer' : name == '' ? 'position' : prop
+			})
+		}
+
 
 		// top left right bottom versions
 		// directions --------------------------------------------
 
 		if ( doDirections ) {
 
-			const name = names[0]
 
 			let directions = [ 
 				[ ['t'], (p, n, t, indent) => `${indent}${p}top: ${n}${t}`], 
@@ -275,21 +362,23 @@ for ( let i = 0; i <= 100; i ++ ) {
 
 				if ( !blankC && !isBorder ) {
 
+					const astrx = (name == 's') ? '.spacer' : '*'
+
 					// em --------------
 
 					const em = (num+'').replace('-','.')
 					str += `\n\t${ a }${ run( propDash, em, 'em', '\n\t\t') }` // add rule
-					str += `\n\t${ b }\n\t\t> *${ run( propDash, em, 'em', '\n\t\t\t') }`
+					str += `\n\t${ b }\n\t\t> ${astrx}${ run( propDash, em, 'em', '\n\t\t\t') }`
 
 					// px --------------
 
 					str += `\n\t${ pxA }${ run( propDash, i * 10, 'px', '\n\t\t') }` // add rule
-					str += `\n\t${ pxB }\n\t\t> *${ run( propDash, i, 'px', '\n\t\t\t') }`
+					str += `\n\t${ pxB }\n\t\t> ${astrx}${ run( propDash, i, 'px', '\n\t\t\t') }`
 
 					// pc --------------
 
 					str += `\n\t${ pcA }${ run( propDash, i, '%', '\n\t\t') }` // add rule
-					str += `\n\t${ pcB }\n\t\t> *${ run( propDash, i, '%', '\n\t\t\t') }`
+					str += `\n\t${ pcB }\n\t\t> ${astrx}${ run( propDash, i, '%', '\n\t\t\t') }`
 
 				}
 
@@ -432,6 +521,8 @@ for ( let i = 0; i <= 100; i ++ ) {
 
 		if (i == 0) {
 
+
+			const astrx = (names[0] == 's') ? '.spacer' : '*'
 			let ccc = 'c'+pair[0][0]
 
 			if (doDirections) {
@@ -441,7 +532,7 @@ for ( let i = 0; i <= 100; i ++ ) {
 						'+c'+pair[0][0]+'{succ}[rule]{end}'
 					],
 					[
-						'> *',
+						`> ${astrx}`,
 						'{succ}[rule]{end}',
 					]
 
