@@ -39,7 +39,7 @@
 	// THINGS WITH BORDERS
 
 	select, input, button, textarea, .button
-		border-width: 1px
+		border-width: var(--stroke-width)
 		outline: none
 		&:disabled
 			opacity: 0.5
@@ -59,8 +59,8 @@
 			margin: var(--input-padding)
 			margin-top: -0.25em
 			+absolute
-			border-left-width: 1px
-			border-bottom-width: 1px
+			border-left-width: var(--stroke-width)
+			border-bottom-width: var(--stroke-width)
 			border-style: solid
 			transform: rotateZ(-45deg) translate( 0%, -50% )
 			transform-origin: 50% 50%
@@ -134,19 +134,8 @@
 	// CROSS + CHECKBOX:CHECKED SPAN
 
 	.cross, .checkbox input:checked + span
-		&:before, &:after
-			+abs
-			border-width: 1px 
-			content: ""
-			+wh(150%, 150%)
-		&:before
-			+top-right
-			+origin(100%,0%)
-			+rotate(45deg)
-		&:after
-			+top-left
-			+origin(0%,0%)
-			+rotate(-45deg)
+
+		background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), white 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), white 50%, transparent calc(50% + var(--stroke-width)), transparent 100%)
 
 	// DASH + CHECKBOX: INDETERMINATE SPAN
 
@@ -156,7 +145,7 @@
 			+fill
 			+top(50%)
 			margin-top: -0.5px
-			border-top-width: 1px 
+			border-top-width: var(--stroke-width) 
 
 	// CHECKBOX WRAP
 

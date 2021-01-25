@@ -5,7 +5,7 @@
 
 
 <div class="flex flex-column grow">
-	<div class="cross minh10em flex row-center-center cs0-8">
+	<div class="b1-solid mtb1 cross minh10em flex row-center-center cs0-8">
 
 		<div class="cross p1 b1-solid y-flex-start"></div>
 		<div class="spacer" />

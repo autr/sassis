@@ -553,13 +553,13 @@ var app = (function () {
             "ino": 17143898,
             "size": 789734,
             "blocks": 1544,
-            "atimeMs": 1611569540157.9539,
-            "mtimeMs": 1611569543374.6465,
-            "ctimeMs": 1611569543374.6465,
+            "atimeMs": 1611570873118.6843,
+            "mtimeMs": 1611570895063.5007,
+            "ctimeMs": 1611570895063.5007,
             "birthtimeMs": 1611310365878.471,
-            "atime": "2021-01-25T10:12:20.158Z",
-            "mtime": "2021-01-25T10:12:23.375Z",
-            "ctime": "2021-01-25T10:12:23.375Z",
+            "atime": "2021-01-25T10:34:33.119Z",
+            "mtime": "2021-01-25T10:34:55.064Z",
+            "ctime": "2021-01-25T10:34:55.064Z",
             "birthtime": "2021-01-22T10:12:45.878Z"
           },
           "min": {
@@ -575,13 +575,13 @@ var app = (function () {
             "ino": 17143899,
             "size": 612918,
             "blocks": 1200,
-            "atimeMs": 1611569543419.0657,
-            "mtimeMs": 1611569543375.5913,
-            "ctimeMs": 1611569543375.5913,
+            "atimeMs": 1611570895104.7358,
+            "mtimeMs": 1611570895064.58,
+            "ctimeMs": 1611570895064.58,
             "birthtimeMs": 1611310365879.2778,
-            "atime": "2021-01-25T10:12:23.419Z",
-            "mtime": "2021-01-25T10:12:23.376Z",
-            "ctime": "2021-01-25T10:12:23.376Z",
+            "atime": "2021-01-25T10:34:55.105Z",
+            "mtime": "2021-01-25T10:34:55.065Z",
+            "ctime": "2021-01-25T10:34:55.065Z",
             "birthtime": "2021-01-22T10:12:45.879Z"
           },
           "gz": {
@@ -597,13 +597,13 @@ var app = (function () {
             "ino": 17143969,
             "size": 90472,
             "blocks": 256,
-            "atimeMs": 1611569540158.0215,
-            "mtimeMs": 1611569543418.3823,
-            "ctimeMs": 1611569543418.3823,
+            "atimeMs": 1611570871346.5818,
+            "mtimeMs": 1611570895104.1348,
+            "ctimeMs": 1611570895104.1348,
             "birthtimeMs": 1611310381040.7678,
-            "atime": "2021-01-25T10:12:20.158Z",
-            "mtime": "2021-01-25T10:12:23.418Z",
-            "ctime": "2021-01-25T10:12:23.418Z",
+            "atime": "2021-01-25T10:34:31.347Z",
+            "mtime": "2021-01-25T10:34:55.104Z",
+            "ctime": "2021-01-25T10:34:55.104Z",
             "birthtime": "2021-01-22T10:13:01.041Z"
           }
         },
@@ -621,13 +621,13 @@ var app = (function () {
             "ino": 17206072,
             "size": 3902,
             "blocks": 8,
-            "atimeMs": 1611569538488.9753,
-            "mtimeMs": 1611569543718.5674,
-            "ctimeMs": 1611569543718.5674,
+            "atimeMs": 1611570873059.8867,
+            "mtimeMs": 1611570895405.0957,
+            "ctimeMs": 1611570895405.0957,
             "birthtimeMs": 1611332391824.218,
-            "atime": "2021-01-25T10:12:18.489Z",
-            "mtime": "2021-01-25T10:12:23.719Z",
-            "ctime": "2021-01-25T10:12:23.719Z",
+            "atime": "2021-01-25T10:34:33.060Z",
+            "mtime": "2021-01-25T10:34:55.405Z",
+            "ctime": "2021-01-25T10:34:55.405Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "min": {
@@ -643,13 +643,13 @@ var app = (function () {
             "ino": 17206073,
             "size": 2960,
             "blocks": 8,
-            "atimeMs": 1611569543723.5432,
-            "mtimeMs": 1611569543718.8076,
-            "ctimeMs": 1611569543718.8076,
+            "atimeMs": 1611570895415.9797,
+            "mtimeMs": 1611570895405.3408,
+            "ctimeMs": 1611570895405.3408,
             "birthtimeMs": 1611332391824.479,
-            "atime": "2021-01-25T10:12:23.724Z",
-            "mtime": "2021-01-25T10:12:23.719Z",
-            "ctime": "2021-01-25T10:12:23.719Z",
+            "atime": "2021-01-25T10:34:55.416Z",
+            "mtime": "2021-01-25T10:34:55.405Z",
+            "ctime": "2021-01-25T10:34:55.405Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "gz": {
@@ -665,13 +665,13 @@ var app = (function () {
             "ino": 17206461,
             "size": 488,
             "blocks": 8,
-            "atimeMs": 1611569538489.0024,
-            "mtimeMs": 1611569543723.144,
-            "ctimeMs": 1611569543723.144,
+            "atimeMs": 1611570872059.4438,
+            "mtimeMs": 1611570895413.262,
+            "ctimeMs": 1611570895413.262,
             "birthtimeMs": 1611332453898.8462,
-            "atime": "2021-01-25T10:12:18.489Z",
-            "mtime": "2021-01-25T10:12:23.723Z",
-            "ctime": "2021-01-25T10:12:23.723Z",
+            "atime": "2021-01-25T10:34:32.059Z",
+            "mtime": "2021-01-25T10:34:55.413Z",
+            "ctime": "2021-01-25T10:34:55.413Z",
             "birthtime": "2021-01-22T16:20:53.899Z"
           }
         },
@@ -687,15 +687,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206080,
-            "size": 938591,
+            "size": 938515,
             "blocks": 1840,
-            "atimeMs": 1611569535306.7498,
-            "mtimeMs": 1611569545713.9504,
-            "ctimeMs": 1611569545713.9504,
+            "atimeMs": 1611570874809.4412,
+            "mtimeMs": 1611570897234.164,
+            "ctimeMs": 1611570897234.164,
             "birthtimeMs": 1611332393483.6533,
-            "atime": "2021-01-25T10:12:15.307Z",
-            "mtime": "2021-01-25T10:12:25.714Z",
-            "ctime": "2021-01-25T10:12:25.714Z",
+            "atime": "2021-01-25T10:34:34.809Z",
+            "mtime": "2021-01-25T10:34:57.234Z",
+            "ctime": "2021-01-25T10:34:57.234Z",
             "birthtime": "2021-01-22T16:19:53.484Z"
           },
           "min": {
@@ -709,15 +709,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206081,
-            "size": 693794,
+            "size": 693808,
             "blocks": 1360,
-            "atimeMs": 1611569545724.8997,
-            "mtimeMs": 1611569545715.2,
-            "ctimeMs": 1611569545715.2,
+            "atimeMs": 1611570897244.8699,
+            "mtimeMs": 1611570897235.494,
+            "ctimeMs": 1611570897235.494,
             "birthtimeMs": 1611332393484.9053,
-            "atime": "2021-01-25T10:12:25.725Z",
-            "mtime": "2021-01-25T10:12:25.715Z",
-            "ctime": "2021-01-25T10:12:25.715Z",
+            "atime": "2021-01-25T10:34:57.245Z",
+            "mtime": "2021-01-25T10:34:57.235Z",
+            "ctime": "2021-01-25T10:34:57.235Z",
             "birthtime": "2021-01-22T16:19:53.485Z"
           },
           "gz": {
@@ -731,22 +731,22 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 17206471,
-            "size": 99899,
+            "size": 99938,
             "blocks": 256,
-            "atimeMs": 1611569533249.0796,
-            "mtimeMs": 1611569545744.2002,
-            "ctimeMs": 1611569545744.2002,
+            "atimeMs": 1611570897262.342,
+            "mtimeMs": 1611570897270.3647,
+            "ctimeMs": 1611570897270.3647,
             "birthtimeMs": 1611332455561.552,
-            "atime": "2021-01-25T10:12:13.249Z",
-            "mtime": "2021-01-25T10:12:25.744Z",
-            "ctime": "2021-01-25T10:12:25.744Z",
+            "atime": "2021-01-25T10:34:57.262Z",
+            "mtime": "2021-01-25T10:34:57.270Z",
+            "ctime": "2021-01-25T10:34:57.270Z",
             "birthtime": "2021-01-22T16:20:55.562Z"
           }
         }
       },
       "package": {
         "name": "sassis",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "scripts": {
           "build": "rollup -c",
           "dev": "rollup -c -w & nodemon src/sassis.js",
@@ -1588,6 +1588,8 @@ var app = (function () {
     const root = writable( `<style>
 
 :root {
+
+	--stroke-width: 1px;
 
 	--input-padding: 1em 0.6em;
 	--button-padding: 1em 3em;
@@ -5178,61 +5180,61 @@ var app = (function () {
     			t21 = space();
     			div18 = element("div");
     			attr_dev(div0, "class", "cross p1 b1-solid y-flex-start");
-    			add_location(div0, file$2, 9, 2, 186);
+    			add_location(div0, file$2, 9, 2, 200);
     			attr_dev(div1, "class", "spacer");
-    			add_location(div1, file$2, 10, 2, 239);
+    			add_location(div1, file$2, 10, 2, 253);
     			attr_dev(div2, "class", "cross p1 b1-solid y-stretch");
-    			add_location(div2, file$2, 11, 2, 264);
+    			add_location(div2, file$2, 11, 2, 278);
     			attr_dev(div3, "class", "spacer");
-    			add_location(div3, file$2, 12, 2, 314);
+    			add_location(div3, file$2, 12, 2, 328);
     			attr_dev(div4, "class", "cross p1 b1-solid y-flex-end");
-    			add_location(div4, file$2, 13, 2, 339);
-    			attr_dev(div5, "class", "cross minh10em flex row-center-center cs0-8");
+    			add_location(div4, file$2, 13, 2, 353);
+    			attr_dev(div5, "class", "b1-solid mtb1 cross minh10em flex row-center-center cs0-8");
     			add_location(div5, file$2, 7, 1, 125);
     			attr_dev(div6, "class", "grow b1-dotted cross");
-    			add_location(div6, file$2, 24, 4, 639);
+    			add_location(div6, file$2, 24, 4, 653);
     			attr_dev(span0, "class", "spacer s4 cross error");
-    			add_location(span0, file$2, 27, 4, 695);
+    			add_location(span0, file$2, 27, 4, 709);
     			attr_dev(div7, "class", "grow b1-dotted cross");
-    			add_location(div7, file$2, 28, 4, 738);
+    			add_location(div7, file$2, 28, 4, 752);
     			attr_dev(div8, "class", "grow b1-dotted flex flex-row");
-    			add_location(div8, file$2, 22, 3, 587);
+    			add_location(div8, file$2, 22, 3, 601);
     			attr_dev(span1, "class", "spacer s4 cross error");
-    			add_location(span1, file$2, 32, 3, 803);
+    			add_location(span1, file$2, 32, 3, 817);
     			attr_dev(div9, "class", "grow b1-dotted cross");
-    			add_location(div9, file$2, 33, 3, 845);
+    			add_location(div9, file$2, 33, 3, 859);
     			attr_dev(div10, "class", "flex b1-dashed grow w40 flex-column");
-    			add_location(div10, file$2, 20, 2, 530);
+    			add_location(div10, file$2, 20, 2, 544);
     			attr_dev(span2, "class", "spacer s6 cross error");
-    			add_location(span2, file$2, 37, 2, 906);
+    			add_location(span2, file$2, 37, 2, 920);
     			attr_dev(div11, "class", "grow b1-dotted cross");
-    			add_location(div11, file$2, 39, 3, 996);
+    			add_location(div11, file$2, 39, 3, 1010);
     			attr_dev(span3, "class", "spacer s4 cross error");
-    			add_location(span3, file$2, 42, 3, 1049);
+    			add_location(span3, file$2, 42, 3, 1063);
     			attr_dev(div12, "class", "grow b1-dotted cross");
-    			add_location(div12, file$2, 43, 3, 1091);
+    			add_location(div12, file$2, 43, 3, 1105);
     			attr_dev(span4, "class", "spacer s4 cross error");
-    			add_location(span4, file$2, 46, 3, 1144);
+    			add_location(span4, file$2, 46, 3, 1158);
     			attr_dev(div13, "class", "cross grow");
-    			add_location(div13, file$2, 48, 4, 1236);
+    			add_location(div13, file$2, 48, 4, 1250);
     			attr_dev(span5, "class", "spacer s4 cross error");
-    			add_location(span5, file$2, 49, 4, 1267);
+    			add_location(span5, file$2, 49, 4, 1281);
     			attr_dev(div14, "class", "cross grow");
-    			add_location(div14, file$2, 50, 4, 1310);
+    			add_location(div14, file$2, 50, 4, 1324);
     			attr_dev(div15, "class", "grow b1-dotted flex flex-column");
-    			add_location(div15, file$2, 47, 3, 1186);
+    			add_location(div15, file$2, 47, 3, 1200);
     			attr_dev(span6, "class", "spacer s4 cross error");
-    			add_location(span6, file$2, 52, 3, 1350);
+    			add_location(span6, file$2, 52, 3, 1364);
     			attr_dev(div16, "class", "grow b1-dotted cross");
-    			add_location(div16, file$2, 53, 3, 1392);
+    			add_location(div16, file$2, 53, 3, 1406);
     			attr_dev(div17, "class", "flex flex-column b1-dashed grow");
-    			add_location(div17, file$2, 38, 2, 947);
+    			add_location(div17, file$2, 38, 2, 961);
     			attr_dev(span7, "class", "spacer s8 cross error");
-    			add_location(span7, file$2, 57, 2, 1453);
+    			add_location(span7, file$2, 57, 2, 1467);
     			attr_dev(div18, "class", "flex b1-dashed w20 cross");
-    			add_location(div18, file$2, 58, 2, 1494);
+    			add_location(div18, file$2, 58, 2, 1508);
     			attr_dev(div19, "class", "flex flex-row grow");
-    			add_location(div19, file$2, 19, 1, 495);
+    			add_location(div19, file$2, 19, 1, 509);
     			attr_dev(div20, "class", "flex flex-column grow");
     			add_location(div20, file$2, 6, 0, 88);
     		},
