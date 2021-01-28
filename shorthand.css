@@ -37,7 +37,7 @@ html .row, html .flex-row {
 html .grow {
   flex-grow: 1; }
 
-html .no-grow {
+html .no-grow, html .nogrow {
   flex-grow: 0; }
 
 html .shrink {
@@ -54,6 +54,11 @@ html .wrap {
 
 html .nowrap, html .no-wrap {
   flex-wrap: nowrap; }
+
+html .auto-space > * {
+  margin-left: var(--column-spacing); }
+  html .auto-space > *:first-child {
+    margin-left: 0; }
 
 html .border-box {
   box-sizing: border-box; }
@@ -121,6 +126,9 @@ html .fill {
 
 html .no-webkit {
   -webkit-appearance: none; }
+
+html .user-select-none {
+  user-select: none; }
 
 html .row-space-between-center {
   justify-content: space-between;
@@ -53146,77 +53154,152 @@ html .radius100pc-right {
 html .translate00 {
   transform: translate(0%, 0%); }
 
+html .origin00 {
+  transform-origin: 0% 0%; }
+
 html .translate0-50 {
   transform: translate(0%, -50%); }
+
+html .origin0-50 {
+  transform-origin: 0% -50%; }
 
 html .translate050 {
   transform: translate(0%, 50%); }
 
+html .origin050 {
+  transform-origin: 0% 50%; }
+
 html .translate0100 {
   transform: translate(0%, 100%); }
+
+html .origin0100 {
+  transform-origin: 0% 100%; }
 
 html .translate0-100 {
   transform: translate(0%, -100%); }
 
+html .origin0-100 {
+  transform-origin: 0% -100%; }
+
 html .translate-500 {
   transform: translate(-50%, 0%); }
+
+html .origin-500 {
+  transform-origin: -50% 0%; }
 
 html .translate-50-50 {
   transform: translate(-50%, -50%); }
 
+html .origin-50-50 {
+  transform-origin: -50% -50%; }
+
 html .translate-5050 {
   transform: translate(-50%, 50%); }
+
+html .origin-5050 {
+  transform-origin: -50% 50%; }
 
 html .translate-50100 {
   transform: translate(-50%, 100%); }
 
+html .origin-50100 {
+  transform-origin: -50% 100%; }
+
 html .translate-50-100 {
   transform: translate(-50%, -100%); }
+
+html .origin-50-100 {
+  transform-origin: -50% -100%; }
 
 html .translate500 {
   transform: translate(50%, 0%); }
 
+html .origin500 {
+  transform-origin: 50% 0%; }
+
 html .translate50-50 {
   transform: translate(50%, -50%); }
+
+html .origin50-50 {
+  transform-origin: 50% -50%; }
 
 html .translate5050 {
   transform: translate(50%, 50%); }
 
+html .origin5050 {
+  transform-origin: 50% 50%; }
+
 html .translate50100 {
   transform: translate(50%, 100%); }
+
+html .origin50100 {
+  transform-origin: 50% 100%; }
 
 html .translate50-100 {
   transform: translate(50%, -100%); }
 
+html .origin50-100 {
+  transform-origin: 50% -100%; }
+
 html .translate1000 {
   transform: translate(100%, 0%); }
+
+html .origin1000 {
+  transform-origin: 100% 0%; }
 
 html .translate100-50 {
   transform: translate(100%, -50%); }
 
+html .origin100-50 {
+  transform-origin: 100% -50%; }
+
 html .translate10050 {
   transform: translate(100%, 50%); }
+
+html .origin10050 {
+  transform-origin: 100% 50%; }
 
 html .translate100100 {
   transform: translate(100%, 100%); }
 
+html .origin100100 {
+  transform-origin: 100% 100%; }
+
 html .translate100-100 {
   transform: translate(100%, -100%); }
+
+html .origin100-100 {
+  transform-origin: 100% -100%; }
 
 html .translate-1000 {
   transform: translate(-100%, 0%); }
 
+html .origin-1000 {
+  transform-origin: -100% 0%; }
+
 html .translate-100-50 {
   transform: translate(-100%, -50%); }
+
+html .origin-100-50 {
+  transform-origin: -100% -50%; }
 
 html .translate-10050 {
   transform: translate(-100%, 50%); }
 
+html .origin-10050 {
+  transform-origin: -100% 50%; }
+
 html .translate-100100 {
   transform: translate(-100%, 100%); }
 
+html .origin-100100 {
+  transform-origin: -100% 100%; }
+
 html .translate-100-100 {
   transform: translate(-100%, -100%); }
+
+html .origin-100-100 {
+  transform-origin: -100% -100%; }
 
 html .f0, html h6, html .h6 {
   font-size: 0.785714rem;
