@@ -1,5 +1,8 @@
 let api = [], mixins = '', classes = '=shorthand\n', file = ''
  
+
+// fourth argument is add it to layout view
+
 const aliases = [ 
 
 	[ ['absolute', 'abs'], ['position: absolute' ] ],
@@ -10,19 +13,26 @@ const aliases = [
 	[ ['inline'], ['display: inline' ] ],
 	[ ['inline-block'], ['display: inline-block' ] ],
 	[ ['block'], ['display: block' ] ],
-	[ ['flex'], ['display: flex' ] ],
+	[ ['flex'], ['display: flex' ],false, true ], // layout views
 	[ ['none'], ['display: none' ] ],
 
 	[ ['column', 'col', 'flex-column'], ['flex-direction: column' ] ],
 	[ ['row', 'flex-row'], ['flex-direction: row' ] ],
 
-	[ ['grow'], ['flex-grow: 1' ] ], 
-	[ ['no-grow'], ['flex-grow: 0' ] ],
-	[ ['shrink'], ['flex-shrink: 1' ] ], 
-	[ ['no-shrink'], ['flex-shrink: 0' ] ], 
-	[ ['no-basis'], ['flex-basis: 0' ] ],
-	[ ['wrap'], ['flex-wrap: wrap' ] ],
-	[ ['nowrap', 'no-wrap'], ['flex-wrap: nowrap' ] ],
+	[ ['grow'], ['flex-grow: 1' ], false, true ],  // layout views
+	[ ['no-grow', 'nogrow'], ['flex-grow: 0' ] ],
+	[ ['cgrow > *','c-grow > *'], ['flex-grow: 1'], true, true ], // layout views
+	[ ['cnogrow > *', 'cno-grow > *', 'c-no-grow > *'], ['flex-grow: 0'], true, true ], // layout views
+	[ ['shrink'], ['flex-shrink: 1' ], false, true ],  // layout views
+	[ ['no-shrink'], ['flex-shrink: 0' ], false, true ],  // layout views
+	[ ['no-basis'], ['flex-basis: 0' ], false, true ], // layout views
+	[ ['wrap'], ['flex-wrap: wrap' ], false, true ], // layout views
+	[ ['nowrap', 'no-wrap'], ['flex-wrap: nowrap' ], false, true, true], // layout views
+	[ ['auto-space > *'], [
+			'margin-left: var(--column-spacing)',
+			'&:first-child',
+			'\tmargin-left: 0'
+		], false, true, true ], // layout views
 	[ ['border-box'], ['box-sizing: border-box' ] ],
 
 	[ ['italic'], ['font-style: italic' ] ],
@@ -48,7 +58,8 @@ const aliases = [
 	[ ['whitespace-pre', 'newlines'], ['white-space: pre' ] ],
 	[ ['whitespace-nowrap'], ['white-space: nowrap' ] ],
 	[ ['fill'], ['position: absolute', 'width: 100%', 'height: 100%', 'top: 0', 'left: 0' ] ],
-	[ ['no-webkit'], ['-webkit-appearance: none' ] ]
+	[ ['no-webkit'], ['-webkit-appearance: none' ] ],
+	[ ['user-select-none'], ['user-select: none' ] ]
 ]
 
 api.push({
@@ -63,11 +74,25 @@ api.push( {
 	mixins: '.'
 })
 
+api.push({
+	type: 'h2',
+	id: 'layout'
+})
+
+api.push( {
+	type: 'table',
+	id: 'layout',
+	data: aliases.filter( a => a[3] )
+})
+
 aliases.forEach( pair => {
 	const names = pair[0]
 	const rule = pair[1].join('')
-	mixins += `\n=${names.join(`\n\t${rule}\n=`)}\n\t${pair[1].join('\n\t')}\n`
-	classes += `\n\t.${names.join(', .')}\n\t\t${pair[1].join('\n\t\t')}\n`
+
+	if (!pair[2]) {
+		if (!pair[4]) mixins += `\n=${names.join(`\n\t${rule}\n=`)}\n\t${pair[1].join('\n\t')}\n`
+		classes += `\n\t.${names.join(', .')}\n\t\t${pair[1].join('\n\t\t')}\n`
+	}
 })
 
 const yep = [
@@ -565,6 +590,7 @@ for ( let i = 0; i <= 100; i ++ ) {
 
 const trans = ['0', '-50', '50', '100', '-100']
 
+
 let tranData = []
 trans.forEach( (tranA, a) => {
 
@@ -573,6 +599,9 @@ trans.forEach( (tranA, a) => {
 		classes += `
 	.translate${tranA}${tranB}
 		transform: translate( ${tranA}%, ${tranB}%)`
+		classes += `
+	.origin${tranA}${tranB}
+		transform-origin:  ${tranA}% ${tranB}%`
 
 		tranData.push( 
 		[
@@ -583,28 +612,27 @@ trans.forEach( (tranA, a) => {
 				`transform: translate( {alert}${tranA}%, ${tranB}%{end})`
 			]
 		])
+		tranData.push( 
+		[
+			[
+				`origin{alert}${tranA}${tranB}{end}`
+			],
+			[
+				`transform-origin: {alert}${tranA}% ${tranB}%{end}`
+			]
+		])
 	})
 
 })
 
-tranData.push( 
-[
-	[
-		`+translate({info}$x{end}, {info}$y{end})`
-	],
-	[
-		`transform: translate({info}$x{end}, {info}$y{end})`
-	]
-])
-
 api.push({
-	type: 'translate',
-	id: 'translate'
+	type: 'h2',
+	id: 'transform'
 })
 
 api.push( {
 	type: 'table',
-	id: 'translate',
+	id: 'transform',
 	data: tranData
 })
 
@@ -638,7 +666,7 @@ ffss.forEach( (num, i) => {
 
 
 api.push({
-	type: 'font-size',
+	type: 'h2',
 	id: 'font-size'
 })
 

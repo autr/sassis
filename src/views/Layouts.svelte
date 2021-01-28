@@ -5,17 +5,24 @@
 
 
 <div class="flex flex-column grow">
-	<div class="b1-solid mtb1 cross minh10em flex row-center-center cs0-8">
+	<div class="b1-solid mtb1 cross error minh10em flex row-center-center cs0-8">
 
-		<div class="cross p1 b1-solid y-flex-start"></div>
+		<div class="cross ok p1 b1-solid y-flex-start"></div>
 		<div class="spacer" />
-		<div class="cross p1 b1-solid y-stretch"></div>
+		<div class="cross p1 success b1-solid y-stretch"></div>
 		<div class="spacer" />
-		<div class="cross p1 b1-solid y-flex-end"></div>
+		<div class="cross p1 alert b1-solid y-flex-end"></div>
+
+	</div>
+	<div class="flex row-center-stretch minh10em auto-space">
+
+		<div class="p1 grow b1-solid minw50pc"></div>
+		<div class="p1 grow b1-solid"></div>
+		<div class="p1 grow b1-solid"></div>
 
 	</div>
 
-	<ShorthandTable filters={['alignments', 'spacer', 'flex-basis', 'example']} name="layouts" />
+	<ShorthandTable filters={['layout', 'alignments', 'spacer', 'flex-basis', 'example']} name="layouts" />
 
 	<div class="flex flex-row grow">
 		<div class="flex b1-dashed grow w40 flex-column">

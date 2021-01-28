@@ -79,7 +79,9 @@ export default [
         ],
         [
           "display: flex"
-        ]
+        ],
+        false,
+        true
       ],
       [
         [
@@ -114,11 +116,14 @@ export default [
         ],
         [
           "flex-grow: 1"
-        ]
+        ],
+        false,
+        true
       ],
       [
         [
-          "no-grow"
+          "no-grow",
+          "nogrow"
         ],
         [
           "flex-grow: 0"
@@ -126,11 +131,36 @@ export default [
       ],
       [
         [
+          "cgrow > *",
+          "c-grow > *"
+        ],
+        [
+          "flex-grow: 1"
+        ],
+        true,
+        true
+      ],
+      [
+        [
+          "cnogrow > *",
+          "cno-grow > *",
+          "c-no-grow > *"
+        ],
+        [
+          "flex-grow: 0"
+        ],
+        true,
+        true
+      ],
+      [
+        [
           "shrink"
         ],
         [
           "flex-shrink: 1"
-        ]
+        ],
+        false,
+        true
       ],
       [
         [
@@ -138,7 +168,9 @@ export default [
         ],
         [
           "flex-shrink: 0"
-        ]
+        ],
+        false,
+        true
       ],
       [
         [
@@ -146,7 +178,9 @@ export default [
         ],
         [
           "flex-basis: 0"
-        ]
+        ],
+        false,
+        true
       ],
       [
         [
@@ -154,7 +188,9 @@ export default [
         ],
         [
           "flex-wrap: wrap"
-        ]
+        ],
+        false,
+        true
       ],
       [
         [
@@ -163,7 +199,23 @@ export default [
         ],
         [
           "flex-wrap: nowrap"
-        ]
+        ],
+        false,
+        true,
+        true
+      ],
+      [
+        [
+          "auto-space > *"
+        ],
+        [
+          "margin-left: var(--column-spacing)",
+          "&:first-child",
+          "\tmargin-left: 0"
+        ],
+        false,
+        true,
+        true
       ],
       [
         [
@@ -340,9 +392,135 @@ export default [
         [
           "-webkit-appearance: none"
         ]
+      ],
+      [
+        [
+          "user-select-none"
+        ],
+        [
+          "user-select: none"
+        ]
       ]
     ],
     "mixins": "."
+  },
+  {
+    "type": "h2",
+    "id": "layout"
+  },
+  {
+    "type": "table",
+    "id": "layout",
+    "data": [
+      [
+        [
+          "flex"
+        ],
+        [
+          "display: flex"
+        ],
+        false,
+        true
+      ],
+      [
+        [
+          "grow"
+        ],
+        [
+          "flex-grow: 1"
+        ],
+        false,
+        true
+      ],
+      [
+        [
+          "cgrow > *",
+          "c-grow > *"
+        ],
+        [
+          "flex-grow: 1"
+        ],
+        true,
+        true
+      ],
+      [
+        [
+          "cnogrow > *",
+          "cno-grow > *",
+          "c-no-grow > *"
+        ],
+        [
+          "flex-grow: 0"
+        ],
+        true,
+        true
+      ],
+      [
+        [
+          "shrink"
+        ],
+        [
+          "flex-shrink: 1"
+        ],
+        false,
+        true
+      ],
+      [
+        [
+          "no-shrink"
+        ],
+        [
+          "flex-shrink: 0"
+        ],
+        false,
+        true
+      ],
+      [
+        [
+          "no-basis"
+        ],
+        [
+          "flex-basis: 0"
+        ],
+        false,
+        true
+      ],
+      [
+        [
+          "wrap"
+        ],
+        [
+          "flex-wrap: wrap"
+        ],
+        false,
+        true
+      ],
+      [
+        [
+          "nowrap",
+          "no-wrap"
+        ],
+        [
+          "flex-wrap: nowrap"
+        ],
+        false,
+        true,
+        true
+      ],
+      [
+        [
+          "auto-space > *"
+        ],
+        [
+          "margin-left: var(--column-spacing)",
+          "&:first-child",
+          "\tmargin-left: 0"
+        ],
+        false,
+        true,
+        true
+      ]
+    ]
   },
   {
     "type": "h2",
@@ -1799,12 +1977,12 @@ export default [
     ]
   },
   {
-    "type": "translate",
-    "id": "translate"
+    "type": "h2",
+    "id": "transform"
   },
   {
     "type": "table",
-    "id": "translate",
+    "id": "transform",
     "data": [
       [
         [
@@ -1812,6 +1990,14 @@ export default [
         ],
         [
           "transform: translate( {alert}0%, 0%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}00{end}"
+        ],
+        [
+          "transform-origin: {alert}0% 0%{end}"
         ]
       ],
       [
@@ -1824,10 +2010,26 @@ export default [
       ],
       [
         [
+          "origin{alert}0-50{end}"
+        ],
+        [
+          "transform-origin: {alert}0% -50%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}050{end}"
         ],
         [
           "transform: translate( {alert}0%, 50%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}050{end}"
+        ],
+        [
+          "transform-origin: {alert}0% 50%{end}"
         ]
       ],
       [
@@ -1840,10 +2042,26 @@ export default [
       ],
       [
         [
+          "origin{alert}0100{end}"
+        ],
+        [
+          "transform-origin: {alert}0% 100%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}0-100{end}"
         ],
         [
           "transform: translate( {alert}0%, -100%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}0-100{end}"
+        ],
+        [
+          "transform-origin: {alert}0% -100%{end}"
         ]
       ],
       [
@@ -1856,10 +2074,26 @@ export default [
       ],
       [
         [
+          "origin{alert}-500{end}"
+        ],
+        [
+          "transform-origin: {alert}-50% 0%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}-50-50{end}"
         ],
         [
           "transform: translate( {alert}-50%, -50%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}-50-50{end}"
+        ],
+        [
+          "transform-origin: {alert}-50% -50%{end}"
         ]
       ],
       [
@@ -1872,10 +2106,26 @@ export default [
       ],
       [
         [
+          "origin{alert}-5050{end}"
+        ],
+        [
+          "transform-origin: {alert}-50% 50%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}-50100{end}"
         ],
         [
           "transform: translate( {alert}-50%, 100%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}-50100{end}"
+        ],
+        [
+          "transform-origin: {alert}-50% 100%{end}"
         ]
       ],
       [
@@ -1888,10 +2138,26 @@ export default [
       ],
       [
         [
+          "origin{alert}-50-100{end}"
+        ],
+        [
+          "transform-origin: {alert}-50% -100%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}500{end}"
         ],
         [
           "transform: translate( {alert}50%, 0%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}500{end}"
+        ],
+        [
+          "transform-origin: {alert}50% 0%{end}"
         ]
       ],
       [
@@ -1904,10 +2170,26 @@ export default [
       ],
       [
         [
+          "origin{alert}50-50{end}"
+        ],
+        [
+          "transform-origin: {alert}50% -50%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}5050{end}"
         ],
         [
           "transform: translate( {alert}50%, 50%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}5050{end}"
+        ],
+        [
+          "transform-origin: {alert}50% 50%{end}"
         ]
       ],
       [
@@ -1920,10 +2202,26 @@ export default [
       ],
       [
         [
+          "origin{alert}50100{end}"
+        ],
+        [
+          "transform-origin: {alert}50% 100%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}50-100{end}"
         ],
         [
           "transform: translate( {alert}50%, -100%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}50-100{end}"
+        ],
+        [
+          "transform-origin: {alert}50% -100%{end}"
         ]
       ],
       [
@@ -1936,10 +2234,26 @@ export default [
       ],
       [
         [
+          "origin{alert}1000{end}"
+        ],
+        [
+          "transform-origin: {alert}100% 0%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}100-50{end}"
         ],
         [
           "transform: translate( {alert}100%, -50%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}100-50{end}"
+        ],
+        [
+          "transform-origin: {alert}100% -50%{end}"
         ]
       ],
       [
@@ -1952,10 +2266,26 @@ export default [
       ],
       [
         [
+          "origin{alert}10050{end}"
+        ],
+        [
+          "transform-origin: {alert}100% 50%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}100100{end}"
         ],
         [
           "transform: translate( {alert}100%, 100%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}100100{end}"
+        ],
+        [
+          "transform-origin: {alert}100% 100%{end}"
         ]
       ],
       [
@@ -1968,10 +2298,26 @@ export default [
       ],
       [
         [
+          "origin{alert}100-100{end}"
+        ],
+        [
+          "transform-origin: {alert}100% -100%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}-1000{end}"
         ],
         [
           "transform: translate( {alert}-100%, 0%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}-1000{end}"
+        ],
+        [
+          "transform-origin: {alert}-100% 0%{end}"
         ]
       ],
       [
@@ -1984,10 +2330,26 @@ export default [
       ],
       [
         [
+          "origin{alert}-100-50{end}"
+        ],
+        [
+          "transform-origin: {alert}-100% -50%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}-10050{end}"
         ],
         [
           "transform: translate( {alert}-100%, 50%{end})"
+        ]
+      ],
+      [
+        [
+          "origin{alert}-10050{end}"
+        ],
+        [
+          "transform-origin: {alert}-100% 50%{end}"
         ]
       ],
       [
@@ -2000,6 +2362,14 @@ export default [
       ],
       [
         [
+          "origin{alert}-100100{end}"
+        ],
+        [
+          "transform-origin: {alert}-100% 100%{end}"
+        ]
+      ],
+      [
+        [
           "translate{alert}-100-100{end}"
         ],
         [
@@ -2008,16 +2378,16 @@ export default [
       ],
       [
         [
-          "+translate({info}$x{end}, {info}$y{end})"
+          "origin{alert}-100-100{end}"
         ],
         [
-          "transform: translate({info}$x{end}, {info}$y{end})"
+          "transform-origin: {alert}-100% -100%{end}"
         ]
       ]
     ]
   },
   {
-    "type": "font-size",
+    "type": "h2",
     "id": "font-size"
   },
   {

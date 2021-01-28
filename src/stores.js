@@ -5,6 +5,7 @@ export const root = writable( `<style>
 :root {
 
 	--stroke-width: 1px;
+	--column-spacing: 2em;
 
 	--input-padding: 1em 0.6em;
 	--button-padding: 1em 3em;

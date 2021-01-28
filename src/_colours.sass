@@ -47,7 +47,6 @@
 		$b: darken( $b, $off * 0.25 )
 	@else
 		$b: lighten( $b, $off * 0.25 )
-	// @debug $off $light
 	@return $b
 
 =bg( $colour, $names: '' ) 
@@ -86,12 +85,6 @@
 	*
 		+set-prop( border-color, $c, $raw ) 
 
-	// .cross
-	// 	background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><line x1='0' y1='0' x2='100' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /><line x1='100' y1='0' x2='0' y2='100' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
-	// .arrow
-	// 	background-image:  encode-svg( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'><polyline points='10,10 50,40 90,10' stroke='#{$c}' stoke-width='1' vector-effect='non-scaling-stroke' /></svg>")
-
-
 	// colors... 
 
 	h1, h2, h3, h4, h5, h6
@@ -105,12 +98,12 @@
 			+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
 
 	
+	.cross, .checkbox input:checked + span
+		+set-prop( background-image, (linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), $c 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), $c 50%, transparent calc(50% + var(--stroke-width)), transparent 100%)), $s )
 	.fill
 		+set-prop(fill, $c, $s )
 	.stroke
 		+set-prop(stroke, $c, $s )
-
-
 
 	.checkbox
 		input + span

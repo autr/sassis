@@ -66,7 +66,7 @@
 						class:b2-solid={ $params.id == id( operator ) }
 						class="cptb1" 
 						class:bt1-solid={ i > 0 }>
-
+<!-- 
 						{#if !isSearching}
 
 							<td 
@@ -78,10 +78,10 @@
 									href={`#/${name}/${id( operator )}`}><span /></a>
 							</td>
 
-						{/if}
+						{/if} -->
 
 
-						<td class="br1-solid pl1">
+						<td class="br1-solid">
 							{#if section.raw}
 								<span class="newlines">{ operator[0].join('\n') }</span>
 							{:else}

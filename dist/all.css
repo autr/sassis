@@ -136,8 +136,6 @@ html {
     display: flex; }
   html .radio input + span {
     border-radius: 1em; }
-  html .cross, html .checkbox input:checked + span {
-    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), white 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), white 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .dash:before, html .dash:after, html .checkbox input:indeterminate + span:before, html .checkbox input:indeterminate + span:after, html .radio input:indeterminate + span:before, html .radio input:indeterminate + span:after {
     content: "";
     position: absolute;
@@ -217,6 +215,8 @@ html {
     color: var(--color); }
   html textarea:focus, html input[type=text]:focus, html input[type=number]:focus, html input[type=email]:focus, html select:focus {
     box-shadow: 0px 0px 0px 1px var(--color) inset; }
+  html .cross, html .checkbox input:checked + span {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill {
     fill: var(--color); }
   html .stroke {
@@ -263,6 +263,8 @@ html {
     color: var(--color-bright); }
   html textarea:focus.strong, html textarea:focus.highlight, html textarea:focus.bright, html textarea:focus.focus, html input[type=text]:focus.strong, html input[type=text]:focus.highlight, html input[type=text]:focus.bright, html input[type=text]:focus.focus, html input[type=number]:focus.strong, html input[type=number]:focus.highlight, html input[type=number]:focus.bright, html input[type=number]:focus.focus, html input[type=email]:focus.strong, html input[type=email]:focus.highlight, html input[type=email]:focus.bright, html input[type=email]:focus.focus, html select:focus.strong, html select:focus.highlight, html select:focus.bright, html select:focus.focus {
     box-shadow: 0px 0px 0px 1px var(--color-bright) inset; }
+  html .cross.strong, html .cross.highlight, html .cross.bright, html .cross.focus, html .checkbox input:checked + span.strong, html .checkbox input:checked + span.highlight, html .checkbox input:checked + span.bright, html .checkbox input:checked + span.focus {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-bright) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-bright) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.strong, html .fill.highlight, html .fill.bright, html .fill.focus {
     fill: var(--color-bright); }
   html .stroke.strong, html .stroke.highlight, html .stroke.bright, html .stroke.focus {
@@ -313,6 +315,8 @@ html {
     color: var(--color-fade); }
   html textarea:focus.fade, html textarea:focus.disabled, html textarea:focus.unimportant, html input[type=text]:focus.fade, html input[type=text]:focus.disabled, html input[type=text]:focus.unimportant, html input[type=number]:focus.fade, html input[type=number]:focus.disabled, html input[type=number]:focus.unimportant, html input[type=email]:focus.fade, html input[type=email]:focus.disabled, html input[type=email]:focus.unimportant, html select:focus.fade, html select:focus.disabled, html select:focus.unimportant {
     box-shadow: 0px 0px 0px 1px var(--color-fade) inset; }
+  html .cross.fade, html .cross.disabled, html .cross.unimportant, html .checkbox input:checked + span.fade, html .checkbox input:checked + span.disabled, html .checkbox input:checked + span.unimportant {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-fade) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-fade) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.fade, html .fill.disabled, html .fill.unimportant {
     fill: var(--color-fade); }
   html .stroke.fade, html .stroke.disabled, html .stroke.unimportant {
@@ -365,6 +369,8 @@ html {
     color: var(--color-success); }
   html textarea:focus.success, html textarea:focus.selected, html textarea:focus.added, html textarea:focus.new, html textarea:focus.created, html textarea:focus.create, html textarea:focus.add, html input[type=text]:focus.success, html input[type=text]:focus.selected, html input[type=text]:focus.added, html input[type=text]:focus.new, html input[type=text]:focus.created, html input[type=text]:focus.create, html input[type=text]:focus.add, html input[type=number]:focus.success, html input[type=number]:focus.selected, html input[type=number]:focus.added, html input[type=number]:focus.new, html input[type=number]:focus.created, html input[type=number]:focus.create, html input[type=number]:focus.add, html input[type=email]:focus.success, html input[type=email]:focus.selected, html input[type=email]:focus.added, html input[type=email]:focus.new, html input[type=email]:focus.created, html input[type=email]:focus.create, html input[type=email]:focus.add, html select:focus.success, html select:focus.selected, html select:focus.added, html select:focus.new, html select:focus.created, html select:focus.create, html select:focus.add {
     box-shadow: 0px 0px 0px 1px var(--color-success) inset; }
+  html .cross.success, html .cross.selected, html .cross.added, html .cross.new, html .cross.created, html .cross.create, html .cross.add, html .checkbox input:checked + span.success, html .checkbox input:checked + span.selected, html .checkbox input:checked + span.added, html .checkbox input:checked + span.new, html .checkbox input:checked + span.created, html .checkbox input:checked + span.create, html .checkbox input:checked + span.add {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-success) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-success) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.success, html .fill.selected, html .fill.added, html .fill.new, html .fill.created, html .fill.create, html .fill.add {
     fill: var(--color-success); }
   html .stroke.success, html .stroke.selected, html .stroke.added, html .stroke.new, html .stroke.created, html .stroke.create, html .stroke.add {
@@ -415,6 +421,8 @@ html {
     color: var(--color-info); }
   html textarea:focus.info, html textarea:focus.ok, html textarea:focus.placid, html input[type=text]:focus.info, html input[type=text]:focus.ok, html input[type=text]:focus.placid, html input[type=number]:focus.info, html input[type=number]:focus.ok, html input[type=number]:focus.placid, html input[type=email]:focus.info, html input[type=email]:focus.ok, html input[type=email]:focus.placid, html select:focus.info, html select:focus.ok, html select:focus.placid {
     box-shadow: 0px 0px 0px 1px var(--color-info) inset; }
+  html .cross.info, html .cross.ok, html .cross.placid, html .checkbox input:checked + span.info, html .checkbox input:checked + span.ok, html .checkbox input:checked + span.placid {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-info) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-info) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.info, html .fill.ok, html .fill.placid {
     fill: var(--color-info); }
   html .stroke.info, html .stroke.ok, html .stroke.placid {
@@ -465,6 +473,8 @@ html {
     color: var(--color-error); }
   html textarea:focus.error, html textarea:focus.unselected, html textarea:focus.removed, html textarea:focus.deleted, html textarea:focus.remove, html textarea:focus.delete, html input[type=text]:focus.error, html input[type=text]:focus.unselected, html input[type=text]:focus.removed, html input[type=text]:focus.deleted, html input[type=text]:focus.remove, html input[type=text]:focus.delete, html input[type=number]:focus.error, html input[type=number]:focus.unselected, html input[type=number]:focus.removed, html input[type=number]:focus.deleted, html input[type=number]:focus.remove, html input[type=number]:focus.delete, html input[type=email]:focus.error, html input[type=email]:focus.unselected, html input[type=email]:focus.removed, html input[type=email]:focus.deleted, html input[type=email]:focus.remove, html input[type=email]:focus.delete, html select:focus.error, html select:focus.unselected, html select:focus.removed, html select:focus.deleted, html select:focus.remove, html select:focus.delete {
     box-shadow: 0px 0px 0px 1px var(--color-error) inset; }
+  html .cross.error, html .cross.unselected, html .cross.removed, html .cross.deleted, html .cross.remove, html .cross.delete, html .checkbox input:checked + span.error, html .checkbox input:checked + span.unselected, html .checkbox input:checked + span.removed, html .checkbox input:checked + span.deleted, html .checkbox input:checked + span.remove, html .checkbox input:checked + span.delete {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-error) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-error) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.error, html .fill.unselected, html .fill.removed, html .fill.deleted, html .fill.remove, html .fill.delete {
     fill: var(--color-error); }
   html .stroke.error, html .stroke.unselected, html .stroke.removed, html .stroke.deleted, html .stroke.remove, html .stroke.delete {
@@ -515,6 +525,8 @@ html {
     color: var(--color-alert); }
   html textarea:focus.alert, html textarea:focus.warning, html input[type=text]:focus.alert, html input[type=text]:focus.warning, html input[type=number]:focus.alert, html input[type=number]:focus.warning, html input[type=email]:focus.alert, html input[type=email]:focus.warning, html select:focus.alert, html select:focus.warning {
     box-shadow: 0px 0px 0px 1px var(--color-alert) inset; }
+  html .cross.alert, html .cross.warning, html .checkbox input:checked + span.alert, html .checkbox input:checked + span.warning {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-alert) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-alert) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.alert, html .fill.warning {
     fill: var(--color-alert); }
   html .stroke.alert, html .stroke.warning {
@@ -567,6 +579,8 @@ html {
     color: var(--color-a); }
   html textarea:focus.color-a, html input[type=text]:focus.color-a, html input[type=number]:focus.color-a, html input[type=email]:focus.color-a, html select:focus.color-a {
     box-shadow: 0px 0px 0px 1px var(--color-a) inset; }
+  html .cross.color-a, html .checkbox input:checked + span.color-a {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-a) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-a) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.color-a {
     fill: var(--color-a); }
   html .stroke.color-a {
@@ -619,6 +633,8 @@ html {
     color: var(--color-b); }
   html textarea:focus.color-b, html input[type=text]:focus.color-b, html input[type=number]:focus.color-b, html input[type=email]:focus.color-b, html select:focus.color-b {
     box-shadow: 0px 0px 0px 1px var(--color-b) inset; }
+  html .cross.color-b, html .checkbox input:checked + span.color-b {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-b) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-b) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.color-b {
     fill: var(--color-b); }
   html .stroke.color-b {
@@ -671,6 +687,8 @@ html {
     color: var(--color-c); }
   html textarea:focus.color-c, html input[type=text]:focus.color-c, html input[type=number]:focus.color-c, html input[type=email]:focus.color-c, html select:focus.color-c {
     box-shadow: 0px 0px 0px 1px var(--color-c) inset; }
+  html .cross.color-c, html .checkbox input:checked + span.color-c {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-c) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-c) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.color-c {
     fill: var(--color-c); }
   html .stroke.color-c {
@@ -723,6 +741,8 @@ html {
     color: var(--color-d); }
   html textarea:focus.color-d, html input[type=text]:focus.color-d, html input[type=number]:focus.color-d, html input[type=email]:focus.color-d, html select:focus.color-d {
     box-shadow: 0px 0px 0px 1px var(--color-d) inset; }
+  html .cross.color-d, html .checkbox input:checked + span.color-d {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-d) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-d) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.color-d {
     fill: var(--color-d); }
   html .stroke.color-d {
@@ -775,6 +795,8 @@ html {
     color: var(--color-e); }
   html textarea:focus.color-e, html input[type=text]:focus.color-e, html input[type=number]:focus.color-e, html input[type=email]:focus.color-e, html select:focus.color-e {
     box-shadow: 0px 0px 0px 1px var(--color-e) inset; }
+  html .cross.color-e, html .checkbox input:checked + span.color-e {
+    background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-e) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-e) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
   html .fill.color-e {
     fill: var(--color-e); }
   html .stroke.color-e {
@@ -837,7 +859,7 @@ html {
     flex-direction: row; }
   html .grow {
     flex-grow: 1; }
-  html .no-grow {
+  html .no-grow, html .nogrow {
     flex-grow: 0; }
   html .shrink {
     flex-shrink: 1; }
@@ -849,6 +871,10 @@ html {
     flex-wrap: wrap; }
   html .nowrap, html .no-wrap {
     flex-wrap: nowrap; }
+  html .auto-space > * {
+    margin-left: var(--column-spacing); }
+    html .auto-space > *:first-child {
+      margin-left: 0; }
   html .border-box {
     box-sizing: border-box; }
   html .italic {
@@ -895,6 +921,8 @@ html {
     left: 0; }
   html .no-webkit {
     -webkit-appearance: none; }
+  html .user-select-none {
+    user-select: none; }
   html .row-space-between-center {
     justify-content: space-between;
     align-items: center;
@@ -37669,54 +37697,104 @@ html {
     border-bottom-right-radius: 100%; }
   html .translate00 {
     transform: translate(0%, 0%); }
+  html .origin00 {
+    transform-origin: 0% 0%; }
   html .translate0-50 {
     transform: translate(0%, -50%); }
+  html .origin0-50 {
+    transform-origin: 0% -50%; }
   html .translate050 {
     transform: translate(0%, 50%); }
+  html .origin050 {
+    transform-origin: 0% 50%; }
   html .translate0100 {
     transform: translate(0%, 100%); }
+  html .origin0100 {
+    transform-origin: 0% 100%; }
   html .translate0-100 {
     transform: translate(0%, -100%); }
+  html .origin0-100 {
+    transform-origin: 0% -100%; }
   html .translate-500 {
     transform: translate(-50%, 0%); }
+  html .origin-500 {
+    transform-origin: -50% 0%; }
   html .translate-50-50 {
     transform: translate(-50%, -50%); }
+  html .origin-50-50 {
+    transform-origin: -50% -50%; }
   html .translate-5050 {
     transform: translate(-50%, 50%); }
+  html .origin-5050 {
+    transform-origin: -50% 50%; }
   html .translate-50100 {
     transform: translate(-50%, 100%); }
+  html .origin-50100 {
+    transform-origin: -50% 100%; }
   html .translate-50-100 {
     transform: translate(-50%, -100%); }
+  html .origin-50-100 {
+    transform-origin: -50% -100%; }
   html .translate500 {
     transform: translate(50%, 0%); }
+  html .origin500 {
+    transform-origin: 50% 0%; }
   html .translate50-50 {
     transform: translate(50%, -50%); }
+  html .origin50-50 {
+    transform-origin: 50% -50%; }
   html .translate5050 {
     transform: translate(50%, 50%); }
+  html .origin5050 {
+    transform-origin: 50% 50%; }
   html .translate50100 {
     transform: translate(50%, 100%); }
+  html .origin50100 {
+    transform-origin: 50% 100%; }
   html .translate50-100 {
     transform: translate(50%, -100%); }
+  html .origin50-100 {
+    transform-origin: 50% -100%; }
   html .translate1000 {
     transform: translate(100%, 0%); }
+  html .origin1000 {
+    transform-origin: 100% 0%; }
   html .translate100-50 {
     transform: translate(100%, -50%); }
+  html .origin100-50 {
+    transform-origin: 100% -50%; }
   html .translate10050 {
     transform: translate(100%, 50%); }
+  html .origin10050 {
+    transform-origin: 100% 50%; }
   html .translate100100 {
     transform: translate(100%, 100%); }
+  html .origin100100 {
+    transform-origin: 100% 100%; }
   html .translate100-100 {
     transform: translate(100%, -100%); }
+  html .origin100-100 {
+    transform-origin: 100% -100%; }
   html .translate-1000 {
     transform: translate(-100%, 0%); }
+  html .origin-1000 {
+    transform-origin: -100% 0%; }
   html .translate-100-50 {
     transform: translate(-100%, -50%); }
+  html .origin-100-50 {
+    transform-origin: -100% -50%; }
   html .translate-10050 {
     transform: translate(-100%, 50%); }
+  html .origin-10050 {
+    transform-origin: -100% 50%; }
   html .translate-100100 {
     transform: translate(-100%, 100%); }
+  html .origin-100100 {
+    transform-origin: -100% 100%; }
   html .translate-100-100 {
     transform: translate(-100%, -100%); }
+  html .origin-100-100 {
+    transform-origin: -100% -100%; }
   html .f0, html h6, html .h6 {
     font-size: 0.785714rem;
     line-height: var(--line-height); }
