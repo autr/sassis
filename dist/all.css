@@ -53,7 +53,7 @@ html {
     background: transparent;
     border-radius: 0px;
     font-weight: normal; }
-  html textarea, html input[type=text], html input[type=number], html input[type=email], html select {
+  html textarea, html input[type=text], html input[type=password], html input[type=number], html input[type=email], html select {
     padding: var(--input-padding);
     flex-basis: 0;
     min-width: 1em; }

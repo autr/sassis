@@ -7,7 +7,7 @@ export const root = writable( `<style>
 	--stroke-width: 1px;
 	--column-spacing: 2em;
 
-	--input-padding: 1em 0.6em;
+	--input-padding: 0.6em 1em;
 	--button-padding: 1em 3em;
 
 	--font: monospace;
