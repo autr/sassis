@@ -118,7 +118,7 @@
 			+set-prop(border-color, $c, $s )
 	.edged
 		+set-prop( box-shadow, 0px 0px 0px 1px inset, $s)
-	.filled, a:active, button:active, .clickable:active, .button:active
+	.filled, a:active:not(.unclickable), button:active:not(.unclickable), .clickable:active:not(.unclickable), .button:active:not(.unclickable), .button.filled, button.filled
 		+set-prop(background, $c, $s )
 		+set-prop(color, $bg, $s )
 		.fill
@@ -127,7 +127,7 @@
 			+set-prop(stroke, $bg, $s )
 		&:after, &:before
 			+set-prop(border-color, $bg, $s )
-	.filled.clickable:active, button.filled:active, a.filled:active, .button.filled:active, 
+	.filled.clickable:active:not(.unclickable), button.filled:active:not(.unclickable), a.filled:active:not(.unclickable), .button.filled:active:not(.unclickable), 
 		+set-prop(background, transparent, $s )
 		+set-prop(color, $c, $s )
 
