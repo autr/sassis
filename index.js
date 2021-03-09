@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35731/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -162,6 +162,9 @@ var app = (function () {
         if (!current_component)
             throw new Error('Function called outside component initialization');
         return current_component;
+    }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
     }
     function onDestroy(fn) {
         get_current_component().$$.on_destroy.push(fn);
@@ -551,15 +554,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 18603623,
-            "size": 791255,
-            "blocks": 1552,
-            "atimeMs": 1612343737034.309,
-            "mtimeMs": 1612343747370.0488,
-            "ctimeMs": 1612343747370.0488,
+            "size": 794835,
+            "blocks": 1560,
+            "atimeMs": 1615318760276.8237,
+            "mtimeMs": 1615318766673.2747,
+            "ctimeMs": 1615318766673.2747,
             "birthtimeMs": 1611856684362.6074,
-            "atime": "2021-02-03T09:15:37.034Z",
-            "mtime": "2021-02-03T09:15:47.370Z",
-            "ctime": "2021-02-03T09:15:47.370Z",
+            "atime": "2021-03-09T19:39:20.277Z",
+            "mtime": "2021-03-09T19:39:26.673Z",
+            "ctime": "2021-03-09T19:39:26.673Z",
             "birthtime": "2021-01-28T17:58:04.363Z"
           },
           "min": {
@@ -573,15 +576,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 18603624,
-            "size": 614168,
-            "blocks": 1200,
-            "atimeMs": 1612343747419.8723,
-            "mtimeMs": 1612343747370.9585,
-            "ctimeMs": 1612343747370.9585,
+            "size": 616848,
+            "blocks": 1208,
+            "atimeMs": 1615318766712.1167,
+            "mtimeMs": 1615318766674.195,
+            "ctimeMs": 1615318766674.195,
             "birthtimeMs": 1611856684366.754,
-            "atime": "2021-02-03T09:15:47.420Z",
-            "mtime": "2021-02-03T09:15:47.371Z",
-            "ctime": "2021-02-03T09:15:47.371Z",
+            "atime": "2021-03-09T19:39:26.712Z",
+            "mtime": "2021-03-09T19:39:26.674Z",
+            "ctime": "2021-03-09T19:39:26.674Z",
             "birthtime": "2021-01-28T17:58:04.367Z"
           },
           "gz": {
@@ -595,15 +598,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 18603625,
-            "size": 90687,
+            "size": 91235,
             "blocks": 256,
-            "atimeMs": 1612343735793.1104,
-            "mtimeMs": 1612343747419.2578,
-            "ctimeMs": 1612343747419.2578,
+            "atimeMs": 1615318758930.5535,
+            "mtimeMs": 1615318766711.5554,
+            "ctimeMs": 1615318766711.5554,
             "birthtimeMs": 1611856684372.2363,
-            "atime": "2021-02-03T09:15:35.793Z",
-            "mtime": "2021-02-03T09:15:47.419Z",
-            "ctime": "2021-02-03T09:15:47.419Z",
+            "atime": "2021-03-09T19:39:18.931Z",
+            "mtime": "2021-03-09T19:39:26.712Z",
+            "ctime": "2021-03-09T19:39:26.712Z",
             "birthtime": "2021-01-28T17:58:04.372Z"
           }
         },
@@ -621,13 +624,13 @@ var app = (function () {
             "ino": 17206072,
             "size": 3902,
             "blocks": 8,
-            "atimeMs": 1612343737001.0159,
-            "mtimeMs": 1612343747741.711,
-            "ctimeMs": 1612343747741.711,
+            "atimeMs": 1615318760226.147,
+            "mtimeMs": 1615318767030.6982,
+            "ctimeMs": 1615318767030.6982,
             "birthtimeMs": 1611332391824.218,
-            "atime": "2021-02-03T09:15:37.001Z",
-            "mtime": "2021-02-03T09:15:47.742Z",
-            "ctime": "2021-02-03T09:15:47.742Z",
+            "atime": "2021-03-09T19:39:20.226Z",
+            "mtime": "2021-03-09T19:39:27.031Z",
+            "ctime": "2021-03-09T19:39:27.031Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "min": {
@@ -643,13 +646,13 @@ var app = (function () {
             "ino": 17206073,
             "size": 2960,
             "blocks": 8,
-            "atimeMs": 1612343747746.75,
-            "mtimeMs": 1612343747741.9526,
-            "ctimeMs": 1612343747741.9526,
+            "atimeMs": 1615318767034.4143,
+            "mtimeMs": 1615318767030.953,
+            "ctimeMs": 1615318767030.953,
             "birthtimeMs": 1611332391824.479,
-            "atime": "2021-02-03T09:15:47.747Z",
-            "mtime": "2021-02-03T09:15:47.742Z",
-            "ctime": "2021-02-03T09:15:47.742Z",
+            "atime": "2021-03-09T19:39:27.034Z",
+            "mtime": "2021-03-09T19:39:27.031Z",
+            "ctime": "2021-03-09T19:39:27.031Z",
             "birthtime": "2021-01-22T16:19:51.824Z"
           },
           "gz": {
@@ -665,13 +668,13 @@ var app = (function () {
             "ino": 17206461,
             "size": 488,
             "blocks": 8,
-            "atimeMs": 1612343736453.4773,
-            "mtimeMs": 1612343747746.1248,
-            "ctimeMs": 1612343747746.1248,
+            "atimeMs": 1615318759060.6748,
+            "mtimeMs": 1615318767033.957,
+            "ctimeMs": 1615318767033.957,
             "birthtimeMs": 1611332453898.8462,
-            "atime": "2021-02-03T09:15:36.453Z",
-            "mtime": "2021-02-03T09:15:47.746Z",
-            "ctime": "2021-02-03T09:15:47.746Z",
+            "atime": "2021-03-09T19:39:19.061Z",
+            "mtime": "2021-03-09T19:39:27.034Z",
+            "ctime": "2021-03-09T19:39:27.034Z",
             "birthtime": "2021-01-22T16:20:53.899Z"
           }
         },
@@ -687,15 +690,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 18603618,
-            "size": 946284,
-            "blocks": 1856,
-            "atimeMs": 1612343739189.6663,
-            "mtimeMs": 1612343749633.656,
-            "ctimeMs": 1612343749633.656,
+            "size": 1000979,
+            "blocks": 1960,
+            "atimeMs": 1615318762929.6826,
+            "mtimeMs": 1615318768984.8552,
+            "ctimeMs": 1615318768984.8552,
             "birthtimeMs": 1611856684347.5044,
-            "atime": "2021-02-03T09:15:39.190Z",
-            "mtime": "2021-02-03T09:15:49.634Z",
-            "ctime": "2021-02-03T09:15:49.634Z",
+            "atime": "2021-03-09T19:39:22.930Z",
+            "mtime": "2021-03-09T19:39:28.985Z",
+            "ctime": "2021-03-09T19:39:28.985Z",
             "birthtime": "2021-01-28T17:58:04.348Z"
           },
           "min": {
@@ -709,15 +712,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 18603619,
-            "size": 700838,
-            "blocks": 1376,
-            "atimeMs": 1612343749643.5708,
-            "mtimeMs": 1612343749634.953,
-            "ctimeMs": 1612343749634.953,
+            "size": 753308,
+            "blocks": 1472,
+            "atimeMs": 1615318768994.7908,
+            "mtimeMs": 1615318768986.5466,
+            "ctimeMs": 1615318768986.5466,
             "birthtimeMs": 1611856684353.253,
-            "atime": "2021-02-03T09:15:49.644Z",
-            "mtime": "2021-02-03T09:15:49.635Z",
-            "ctime": "2021-02-03T09:15:49.635Z",
+            "atime": "2021-03-09T19:39:28.995Z",
+            "mtime": "2021-03-09T19:39:28.987Z",
+            "ctime": "2021-03-09T19:39:28.987Z",
             "birthtime": "2021-01-28T17:58:04.353Z"
           },
           "gz": {
@@ -731,22 +734,22 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 18603620,
-            "size": 100532,
+            "size": 103456,
             "blocks": 256,
-            "atimeMs": 1612343737693.615,
-            "mtimeMs": 1612343749663.4587,
-            "ctimeMs": 1612343749663.4587,
+            "atimeMs": 1615318760987.636,
+            "mtimeMs": 1615318769022.7131,
+            "ctimeMs": 1615318769022.7131,
             "birthtimeMs": 1611856684359.9097,
-            "atime": "2021-02-03T09:15:37.694Z",
-            "mtime": "2021-02-03T09:15:49.663Z",
-            "ctime": "2021-02-03T09:15:49.663Z",
+            "atime": "2021-03-09T19:39:20.988Z",
+            "mtime": "2021-03-09T19:39:29.023Z",
+            "ctime": "2021-03-09T19:39:29.023Z",
             "birthtime": "2021-01-28T17:58:04.360Z"
           }
         }
       },
       "package": {
         "name": "sassis",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "scripts": {
           "build": "rollup -c",
           "dev": "rollup -c -w & nodemon src/sassis.js",
@@ -1585,69 +1588,7 @@ var app = (function () {
     	}
     }
 
-    const root = writable( `<style>
-
-:root {
-
-	--stroke-width: 1px;
-	--column-spacing: 2em;
-
-	--input-padding: 0.6em 1em;
-	--button-padding: 1em 3em;
-
-	--font: monospace;
-	--font-monospace: monospace;
-	--font-serif: serif;
-	--font-sans-serif: sans-serif;
-	--font-cursive: cursive;
-	--font-slab: sans-serif;
-	--font-grotesque: sans-serif; 
-
-	--font-size: 13px;
-	--line-height: 1.61803398875em;
-
-	--bg: hsl( 200, 10%, 10% );
-	--bg-pop: hsl( 200, 10%, 12% );
-	--bg-sink: hsl( 200, 10%, 8% );
-
-	--color: hsl( 200, 10%, 75% );
-	--color-bright: hsl( 200, 10%, 95% );
-	--color-fade: hsl( 200, 10%, 50% );
-
-	--color-success: hsl( 150, 95%, 70% );
-	--color-info: hsl( 200, 95%, 70% );
-	--color-error: hsl( 340, 95%, 70% );
-	--color-alert: hsl( 50, 95%, 70% );
-
-	--bg-a: hsl( 300, 20%, 10% );
-	--bg-b: hsl( 300, 20%, 15% );
-	--bg-c: hsl( 300, 20%, 20% );
-	--bg-d: hsl( 300, 20%, 25% );
-	--bg-e: hsl( 300, 20%, 30% );
-
-	--color-a: hsl( 0, 90%, 75% );
-	--color-b: hsl( 80, 90%, 75% );
-	--color-c: hsl( 160, 90%, 75% );
-	--color-d: hsl( 240, 90%, 75% );
-	--color-e: hsl( 320, 90%, 75% );
-
-	--code: hsl( 200, 10%, 90% );
-	--code-operator: hsl( 200, 10%, 60% );
-	--code-punctuation: hsl( 290, 95%, 70% );
-
-	--code-number: hsl( 220, 95%, 80% );
-	--code-atrule: hsl( 180, 95%, 70% );
-
-	--code-cdata: hsl( 0, 95%, 70% );
-	--code-namespace: hsl( 60, 95%, 70% );
-	--code-property: hsl( 90, 95%, 70% );
-	--code-selector: hsl( 170, 95%, 70% );
-	--code-keyboard: hsl( 260, 95%, 70% );
-	--code-regex: hsl( 300, 95%, 70% );
-
-}
-
-</style>` );
+    const root = writable( `<style></style>` );
 
     /* src/App.svelte generated by Svelte v3.31.2 */
 
@@ -1661,7 +1602,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (18:6) {#if v.$$href != '#/' && v.$$href.indexOf(':') == -1}
+    // (28:6) {#if v.$$href != '#/' && v.$$href.indexOf(':') == -1}
     function create_if_block(ctx) {
     	let div;
     	let t0_value = /*k*/ ctx[5].substring(1) + "";
@@ -1683,9 +1624,9 @@ var app = (function () {
     			toggle_class(div, "alert", /*k*/ ctx[5] == "/intro");
     			toggle_class(div, "mt1", /*k*/ ctx[5] == "/search");
     			toggle_class(div, "info", /*k*/ ctx[5] == "/search" || /*k*/ ctx[5] == "/download");
-    			toggle_class(div, "filled", /*$active*/ ctx[2].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
-    			toggle_class(div, "bright", /*$active*/ ctx[2].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
-    			add_location(div, file, 18, 7, 696);
+    			toggle_class(div, "filled", /*$active*/ ctx[3].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
+    			toggle_class(div, "bright", /*$active*/ ctx[3].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
+    			add_location(div, file, 28, 7, 887);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1699,26 +1640,26 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*$routes*/ 2 && t0_value !== (t0_value = /*k*/ ctx[5].substring(1) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$routes*/ 4 && t0_value !== (t0_value = /*k*/ ctx[5].substring(1) + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*Object, $routes*/ 2) {
+    			if (dirty & /*Object, $routes*/ 4) {
     				toggle_class(div, "alert", /*k*/ ctx[5] == "/intro");
     			}
 
-    			if (dirty & /*Object, $routes*/ 2) {
+    			if (dirty & /*Object, $routes*/ 4) {
     				toggle_class(div, "mt1", /*k*/ ctx[5] == "/search");
     			}
 
-    			if (dirty & /*Object, $routes*/ 2) {
+    			if (dirty & /*Object, $routes*/ 4) {
     				toggle_class(div, "info", /*k*/ ctx[5] == "/search" || /*k*/ ctx[5] == "/download");
     			}
 
-    			if (dirty & /*$active, Object, $routes*/ 6) {
-    				toggle_class(div, "filled", /*$active*/ ctx[2].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
+    			if (dirty & /*$active, Object, $routes*/ 12) {
+    				toggle_class(div, "filled", /*$active*/ ctx[3].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
     			}
 
-    			if (dirty & /*$active, Object, $routes*/ 6) {
-    				toggle_class(div, "bright", /*$active*/ ctx[2].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
+    			if (dirty & /*$active, Object, $routes*/ 12) {
+    				toggle_class(div, "bright", /*$active*/ ctx[3].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
     			}
     		},
     		d: function destroy(detaching) {
@@ -1732,14 +1673,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(18:6) {#if v.$$href != '#/' && v.$$href.indexOf(':') == -1}",
+    		source: "(28:6) {#if v.$$href != '#/' && v.$$href.indexOf(':') == -1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (17:5) {#each Object.entries($routes) as [k,v]}
+    // (27:5) {#each Object.entries($routes) as [k,v]}
     function create_each_block(ctx) {
     	let show_if = /*v*/ ctx[6].$$href != "#/" && /*v*/ ctx[6].$$href.indexOf(":") == -1;
     	let if_block_anchor;
@@ -1755,7 +1696,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*$routes*/ 2) show_if = /*v*/ ctx[6].$$href != "#/" && /*v*/ ctx[6].$$href.indexOf(":") == -1;
+    			if (dirty & /*$routes*/ 4) show_if = /*v*/ ctx[6].$$href != "#/" && /*v*/ ctx[6].$$href.indexOf(":") == -1;
 
     			if (show_if) {
     				if (if_block) {
@@ -1780,7 +1721,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(17:5) {#each Object.entries($routes) as [k,v]}",
+    		source: "(27:5) {#each Object.entries($routes) as [k,v]}",
     		ctx
     	});
 
@@ -1789,27 +1730,27 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let main;
+    	let html_tag;
+    	let t0;
     	let div7;
     	let div4;
     	let div3;
     	let div0;
-    	let t0;
+    	let t1;
     	let div2;
     	let div1;
-    	let t1;
-    	let t2_value = infos.package.version + "";
     	let t2;
+    	let t3_value = infos.package.version + "";
     	let t3;
-    	let span;
     	let t4;
+    	let span;
     	let t5;
-    	let html_tag;
     	let t6;
     	let div6;
     	let div5;
     	let router;
     	let current;
-    	let each_value = Object.entries(/*$routes*/ ctx[1]);
+    	let each_value = Object.entries(/*$routes*/ ctx[2]);
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -1822,6 +1763,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
+    			t0 = space();
     			div7 = element("div");
     			div4 = element("div");
     			div3 = element("div");
@@ -1831,44 +1773,45 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			t0 = space();
+    			t1 = space();
     			div2 = element("div");
     			div1 = element("div");
-    			t1 = text("v");
-    			t2 = text(t2_value);
-    			t3 = space();
+    			t2 = text("v");
+    			t3 = text(t3_value);
+    			t4 = space();
     			span = element("span");
-    			t4 = text(/*date*/ ctx[0]);
-    			t5 = space();
+    			t5 = text(/*date*/ ctx[1]);
     			t6 = space();
     			div6 = element("div");
     			div5 = element("div");
     			create_component(router.$$.fragment);
+    			html_tag = new HtmlTag(t0);
     			attr_dev(div0, "class", "flex column");
-    			add_location(div0, file, 15, 4, 557);
+    			add_location(div0, file, 25, 4, 748);
     			attr_dev(span, "class", "fade");
-    			add_location(span, file, 32, 50, 1190);
+    			add_location(span, file, 42, 50, 1381);
     			attr_dev(div1, "class", "bright");
-    			add_location(div1, file, 32, 5, 1145);
-    			add_location(div2, file, 31, 4, 1134);
+    			add_location(div1, file, 42, 5, 1336);
+    			add_location(div2, file, 41, 4, 1325);
     			attr_dev(div3, "class", "flex column p1 maxw15em grow justify-content-between");
-    			add_location(div3, file, 14, 3, 486);
+    			add_location(div3, file, 24, 3, 677);
     			attr_dev(div4, "class", "flex basis20em grow justify-content-flex-end overflow-auto");
-    			add_location(div4, file, 13, 2, 410);
-    			html_tag = new HtmlTag(t6);
+    			add_location(div4, file, 23, 2, 601);
     			attr_dev(div5, "class", "flex maxw60em grow");
-    			add_location(div5, file, 39, 3, 1329);
+    			add_location(div5, file, 48, 3, 1504);
     			attr_dev(div6, "class", "flex basis60em overflow-auto grow");
-    			add_location(div6, file, 38, 2, 1278);
+    			add_location(div6, file, 47, 2, 1453);
     			attr_dev(div7, "class", "margin-auto align-self-center w100vw flex justify-content-center h100vh overflow-hidden");
-    			add_location(div7, file, 12, 1, 306);
-    			add_location(main, file, 10, 0, 297);
+    			add_location(div7, file, 22, 1, 497);
+    			add_location(main, file, 19, 0, 473);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
+    			html_tag.m(/*$root*/ ctx[0], main);
+    			append_dev(main, t0);
     			append_dev(main, div7);
     			append_dev(div7, div4);
     			append_dev(div4, div3);
@@ -1878,16 +1821,14 @@ var app = (function () {
     				each_blocks[i].m(div0, null);
     			}
 
-    			append_dev(div3, t0);
+    			append_dev(div3, t1);
     			append_dev(div3, div2);
     			append_dev(div2, div1);
-    			append_dev(div1, t1);
     			append_dev(div1, t2);
     			append_dev(div1, t3);
+    			append_dev(div1, t4);
     			append_dev(div1, span);
-    			append_dev(span, t4);
-    			append_dev(div7, t5);
-    			html_tag.m(/*$root*/ ctx[3], div7);
+    			append_dev(span, t5);
     			append_dev(div7, t6);
     			append_dev(div7, div6);
     			append_dev(div6, div5);
@@ -1895,8 +1836,10 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*Object, $routes, $active, window*/ 6) {
-    				each_value = Object.entries(/*$routes*/ ctx[1]);
+    			if (!current || dirty & /*$root*/ 1) html_tag.p(/*$root*/ ctx[0]);
+
+    			if (dirty & /*Object, $routes, $active, window*/ 12) {
+    				each_value = Object.entries(/*$routes*/ ctx[2]);
     				validate_each_argument(each_value);
     				let i;
 
@@ -1919,8 +1862,7 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (!current || dirty & /*date*/ 1) set_data_dev(t4, /*date*/ ctx[0]);
-    			if (!current || dirty & /*$root*/ 8) html_tag.p(/*$root*/ ctx[3]);
+    			if (!current || dirty & /*date*/ 2) set_data_dev(t5, /*date*/ ctx[1]);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1951,17 +1893,24 @@ var app = (function () {
 
     function instance$1($$self, $$props, $$invalidate) {
     	let date;
+    	let $root;
     	let $routes;
     	let $active;
-    	let $root;
-    	validate_store(routes, "routes");
-    	component_subscribe($$self, routes, $$value => $$invalidate(1, $routes = $$value));
-    	validate_store(active, "active");
-    	component_subscribe($$self, active, $$value => $$invalidate(2, $active = $$value));
     	validate_store(root, "root");
-    	component_subscribe($$self, root, $$value => $$invalidate(3, $root = $$value));
+    	component_subscribe($$self, root, $$value => $$invalidate(0, $root = $$value));
+    	validate_store(routes, "routes");
+    	component_subscribe($$self, routes, $$value => $$invalidate(2, $routes = $$value));
+    	validate_store(active, "active");
+    	component_subscribe($$self, active, $$value => $$invalidate(3, $active = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
+
+    	onMount(async () => {
+    		const res = await fetch(`/defaults.css`);
+    		const text = await res.text();
+    		set_store_value(root, $root = "<style>" + text + "</style >", $root);
+    	});
+
     	const writable_props = [];
 
     	Object_1.keys($$props).forEach(key => {
@@ -1971,28 +1920,29 @@ var app = (function () {
     	const click_handler = (v, e) => window.location = v.$$href;
 
     	$$self.$capture_state = () => ({
+    		onMount,
     		infos,
     		Router,
     		routes,
     		params,
     		active,
     		root,
+    		$root,
     		date,
     		$routes,
-    		$active,
-    		$root
+    		$active
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("date" in $$props) $$invalidate(0, date = $$props.date);
+    		if ("date" in $$props) $$invalidate(1, date = $$props.date);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	 $$invalidate(0, date = new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + (new Date().getFullYear() - 2000));
-    	return [date, $routes, $active, $root, click_handler];
+    	 $$invalidate(1, date = new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + (new Date().getFullYear() - 2000));
+    	return [$root, date, $routes, $active, click_handler];
     }
 
     class App extends SvelteComponentDev {
@@ -4463,6 +4413,25 @@ var app = (function () {
       },
       {
         "type": "h2",
+        "id": "z-index"
+      },
+      {
+        "type": "table",
+        "id": "z-index",
+        "data": [
+          [
+            [
+              "z-index{alert}0-99{end}",
+              "+z-index( {alert}$z{end} )"
+            ],
+            [
+              "z-index: {alert}0-99{end}"
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "h2",
         "id": "font-family"
       },
       {
@@ -4548,7 +4517,7 @@ var app = (function () {
     					'.button'
     				],
     				[`
-					<button>button</button>
+					<button >button</button>
 				`]
     			],
     			[
@@ -4577,10 +4546,21 @@ var app = (function () {
     			],
     			[
     				[
-    					'.select',
+    					'.select >',
     					'select'
     				],
-    				[`<div class="select"><select><option>a</option><option>b</option><option>c</option></select>`]
+    				[`
+				<div class="select"><select><option>a</option><option>b</option><option>c</option></select>
+				`]
+    			],
+    			[
+    				[
+    					'.dropdown >',
+    					'div'
+    				],
+    				[`
+				<div class="dropdown" tabindex="0">dropdown <div class="r0pc t100pc">hello world</div></div>
+				`]
     			],
     			[
     				[
@@ -4609,7 +4589,7 @@ var app = (function () {
     				[
     					'.clickable'
     				],
-    				[`<div class="clickable pointer">clickable</div>`]
+    				[`<div class="clickable">clickable</div>`]
     			]
     		]
     	}
@@ -5408,7 +5388,7 @@ var app = (function () {
 
     	shorthandtable = new ShorthandTable({
     			props: {
-    				filters: ["layout", "alignments", "spacer", "flex-basis", "example"],
+    				filters: ["z-index", "layout", "alignments", "spacer", "flex-basis", "example"],
     				name: "layouts"
     			},
     			$$inline: true
@@ -5496,49 +5476,49 @@ var app = (function () {
     			attr_dev(div9, "class", "flex row-center-stretch minh10em auto-space");
     			add_location(div9, file$2, 16, 1, 435);
     			attr_dev(div10, "class", "grow b1-dotted cross");
-    			add_location(div10, file$2, 31, 4, 881);
+    			add_location(div10, file$2, 31, 4, 892);
     			attr_dev(span0, "class", "spacer s4 cross error");
-    			add_location(span0, file$2, 34, 4, 937);
+    			add_location(span0, file$2, 34, 4, 948);
     			attr_dev(div11, "class", "grow b1-dotted cross");
-    			add_location(div11, file$2, 35, 4, 980);
+    			add_location(div11, file$2, 35, 4, 991);
     			attr_dev(div12, "class", "grow b1-dotted flex flex-row");
-    			add_location(div12, file$2, 29, 3, 829);
+    			add_location(div12, file$2, 29, 3, 840);
     			attr_dev(span1, "class", "spacer s4 cross error");
-    			add_location(span1, file$2, 39, 3, 1045);
+    			add_location(span1, file$2, 39, 3, 1056);
     			attr_dev(div13, "class", "grow b1-dotted cross");
-    			add_location(div13, file$2, 40, 3, 1087);
+    			add_location(div13, file$2, 40, 3, 1098);
     			attr_dev(div14, "class", "flex b1-dashed grow w40 flex-column");
-    			add_location(div14, file$2, 27, 2, 772);
+    			add_location(div14, file$2, 27, 2, 783);
     			attr_dev(span2, "class", "spacer s6 cross error");
-    			add_location(span2, file$2, 44, 2, 1148);
+    			add_location(span2, file$2, 44, 2, 1159);
     			attr_dev(div15, "class", "grow b1-dotted cross");
-    			add_location(div15, file$2, 46, 3, 1238);
+    			add_location(div15, file$2, 46, 3, 1249);
     			attr_dev(span3, "class", "spacer s4 cross error");
-    			add_location(span3, file$2, 49, 3, 1291);
+    			add_location(span3, file$2, 49, 3, 1302);
     			attr_dev(div16, "class", "grow b1-dotted cross");
-    			add_location(div16, file$2, 50, 3, 1333);
+    			add_location(div16, file$2, 50, 3, 1344);
     			attr_dev(span4, "class", "spacer s4 cross error");
-    			add_location(span4, file$2, 53, 3, 1386);
+    			add_location(span4, file$2, 53, 3, 1397);
     			attr_dev(div17, "class", "cross grow");
-    			add_location(div17, file$2, 55, 4, 1478);
+    			add_location(div17, file$2, 55, 4, 1489);
     			attr_dev(span5, "class", "spacer s4 cross error");
-    			add_location(span5, file$2, 56, 4, 1509);
+    			add_location(span5, file$2, 56, 4, 1520);
     			attr_dev(div18, "class", "cross grow");
-    			add_location(div18, file$2, 57, 4, 1552);
+    			add_location(div18, file$2, 57, 4, 1563);
     			attr_dev(div19, "class", "grow b1-dotted flex flex-column");
-    			add_location(div19, file$2, 54, 3, 1428);
+    			add_location(div19, file$2, 54, 3, 1439);
     			attr_dev(span6, "class", "spacer s4 cross error");
-    			add_location(span6, file$2, 59, 3, 1592);
+    			add_location(span6, file$2, 59, 3, 1603);
     			attr_dev(div20, "class", "grow b1-dotted cross");
-    			add_location(div20, file$2, 60, 3, 1634);
+    			add_location(div20, file$2, 60, 3, 1645);
     			attr_dev(div21, "class", "flex flex-column b1-dashed grow");
-    			add_location(div21, file$2, 45, 2, 1189);
+    			add_location(div21, file$2, 45, 2, 1200);
     			attr_dev(span7, "class", "spacer s8 cross error");
-    			add_location(span7, file$2, 64, 2, 1695);
+    			add_location(span7, file$2, 64, 2, 1706);
     			attr_dev(div22, "class", "flex b1-dashed w20 cross");
-    			add_location(div22, file$2, 65, 2, 1736);
+    			add_location(div22, file$2, 65, 2, 1747);
     			attr_dev(div23, "class", "flex flex-row grow");
-    			add_location(div23, file$2, 26, 1, 737);
+    			add_location(div23, file$2, 26, 1, 748);
     			attr_dev(div24, "class", "flex flex-column grow");
     			add_location(div24, file$2, 6, 0, 88);
     		},
@@ -9283,7 +9263,9 @@ var app = (function () {
     	}
     }
 
-    var readme = `<p>TODO / WIP</p>`;
+    var intro = `<h1>SASSIS</h1>
+
+<p>TODO / WIP</p>`;
 
     /* src/views/Introduction.svelte generated by Svelte v3.31.2 */
     const file$5 = "src/views/Introduction.svelte";
@@ -9295,14 +9277,14 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "p1");
-    			add_location(div, file$5, 12, 0, 282);
+    			add_location(div, file$5, 12, 0, 281);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			div.innerHTML = readme;
+    			div.innerHTML = intro;
     		},
     		p: noop,
     		i: noop,
@@ -9344,7 +9326,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		root,
     		CodeEditor,
-    		readme,
+    		readme: intro,
     		onCode,
     		height,
     		$root
