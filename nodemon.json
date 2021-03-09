@@ -1,8 +1,7 @@
 {
 	"verbose": true,
-	"ignore": ["src/data.js", "dist/*"],
+	"ignore": ["src/data.js", "dist/*", "README.md"],
 	"watch": [
-		"README.md",
 		"src/_colours.sass",
 		"src/_interfaces.sass",
 		"src/_layout.sass",

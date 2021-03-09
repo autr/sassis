@@ -16,7 +16,7 @@
 
 	// TEXTUAL INPUTS
 
-	textarea, input[type=text], input[type=password], input[type=number], input[type=email], select
+	textarea, input[type=text], input[type=password], input[type=number], input[type=email], select, .dropdown
 		padding: var(--input-padding)
 		flex-basis: 0
 		min-width: 1em
@@ -27,30 +27,45 @@
 	// LINKS
 
 	a, select
-		cursor: pointer
 		text-decoration: none
+
+	a, select, .clickable
+		cursor: pointer
+	*.disabled, *[disabled]
+		cursor: default
 
 	// BUTTONS
 
+	input, button, .button, select, .dropdown
+		white-space: nowrap
+
 	button, .button
 		padding: var(--button-padding)
-		text-align: center
+	.dropdown, select
+		text-align: left
 
 	// THINGS WITH BORDERS
 
-	select, input, button, textarea, .button
+	select, input, button, textarea, .button, .dropdown
 		border-width: var(--stroke-width)
 		outline: none
-		&:disabled
+		&:disabled, &:disabled + span, &.disabled, &.disabled + span
 			opacity: 0.5
 
 	/* ---------------------- SELECT + CHEVRONS ---------------------- */
+
+	.dropdown
+		padding-right: var(--icon-padding, 2.2em)
+		> *
+			+abs
+		&:not(:focus) > *
+			display: none
 
 	.select, .chevron, .dropdown
 		+relative
 		+inline-block
 		select
-			padding-right: 2em
+			padding-right: var(--icon-padding, 2.2em)
 			width: 100%
 		&:after
 			content: ""

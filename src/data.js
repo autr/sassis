@@ -2452,6 +2452,25 @@ export default [
   },
   {
     "type": "h2",
+    "id": "z-index"
+  },
+  {
+    "type": "table",
+    "id": "z-index",
+    "data": [
+      [
+        [
+          "z-index{alert}0-99{end}",
+          "+z-index( {alert}$z{end} )"
+        ],
+        [
+          "z-index: {alert}0-99{end}"
+        ]
+      ]
+    ]
+  },
+  {
+    "type": "h2",
     "id": "font-family"
   },
   {

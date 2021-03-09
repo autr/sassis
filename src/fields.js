@@ -19,7 +19,7 @@ module.exports = [
 					'.button'
 				],
 				[`
-					<button>button</button>
+					<button >button</button>
 				`]
 			],
 			[
@@ -48,10 +48,21 @@ module.exports = [
 			],
 			[
 				[
-					'.select',
+					'.select >',
 					'select'
 				],
-				[`<div class="select"><select><option>a</option><option>b</option><option>c</option></select>`]
+				[`
+				<div class="select"><select><option>a</option><option>b</option><option>c</option></select>
+				`]
+			],
+			[
+				[
+					'.dropdown >',
+					'div'
+				],
+				[`
+				<div class="dropdown" tabindex="0">dropdown <div class="r0pc t100pc">hello world</div></div>
+				`]
 			],
 			[
 				[
@@ -80,7 +91,7 @@ module.exports = [
 				[
 					'.clickable'
 				],
-				[`<div class="clickable pointer">clickable</div>`]
+				[`<div class="clickable">clickable</div>`]
 			]
 		]
 	}

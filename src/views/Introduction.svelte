@@ -1,7 +1,7 @@
 <script>
 	import { root } from '../stores.js'
 	import CodeEditor from '../components/CodeEditor.svelte'
-	import readme from '../readme.js'
+	import readme from '../intro.js'
 
 	$: height = `min-height: calc( ${$root.split('\n').length} * var(--line-height) )`
 

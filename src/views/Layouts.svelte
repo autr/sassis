@@ -22,7 +22,7 @@
 
 	</div>
 
-	<ShorthandTable filters={['layout', 'alignments', 'spacer', 'flex-basis', 'example']} name="layouts" />
+	<ShorthandTable filters={['z-index', 'layout', 'alignments', 'spacer', 'flex-basis', 'example']} name="layouts" />
 
 	<div class="flex flex-row grow">
 		<div class="flex b1-dashed grow w40 flex-column">

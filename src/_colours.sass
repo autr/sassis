@@ -90,12 +90,14 @@
 	h1, h2, h3, h4, h5, h6
 		+set-prop( color, $c, $s )
 
-	input, select, textarea, input[type=range], textarea
+	input, select, textarea, input[type=range], textarea, .dropdown
 		+set-prop(color, $c, $s )
 
-	textarea, input[type=text], input[type=number], input[type=email], select
+	textarea, input[type=text], input[type=number], input[type=email], input[type=password], select, .dropdown
 		&:focus
 			+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
+	input[type=range]:active:not([disabled]), input[type=checkbox]:active:not([disabled])+span, input[type=radio]:active:not([disabled])+span
+		+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
 
 	
 	.cross, .checkbox input:checked + span
@@ -118,7 +120,7 @@
 			+set-prop(border-color, $c, $s )
 	.edged
 		+set-prop( box-shadow, 0px 0px 0px 1px inset, $s)
-	.filled, a:active:not(.unclickable), button:active:not(.unclickable), .clickable:active:not(.unclickable), .button:active:not(.unclickable), .button.filled, button.filled
+	.filled, a:active:not(.unclickable):not(.disabled), button:active:not(.unclickable):not(.disabled), .clickable:active:not(.unclickable):not(.disabled), .button:active:not(.unclickable):not(.disabled), .button.filled, button.filled
 		+set-prop(background, $c, $s )
 		+set-prop(color, $bg, $s )
 		.fill

@@ -297,6 +297,8 @@ for ( let i = 0; i <= 100; i ++ ) {
 	]
 
 
+
+
 	types.forEach( pair => {
 
 		let apiTable = []
@@ -636,6 +638,10 @@ api.push( {
 	data: tranData
 })
 
+
+
+// font sizes
+
 let fontSizes = []
 const ffss = [0.785714, 1, 1.2857, 1.64285, 2.071428, 2.642857]
 ffss.forEach( (num, i) => {
@@ -675,6 +681,44 @@ api.push( {
 	id: 'font-size',
 	data: fontSizes
 })
+
+
+// z-index
+
+for( let i = 0; i < 100; i++) {
+	classes += `
+	.z-index${i}
+		z-index: ${i}
+`
+}
+mixins += `
+=z-index( $z )
+	z-index: $z`
+
+
+
+api.push({
+	type: 'h2',
+	id: 'z-index'
+})
+
+api.push( {
+	type: 'table',
+	id: 'z-index',
+	data: [[
+		[
+			`z-index{alert}0-99{end}`,
+			`+z-index( {alert}$z{end} )`
+		],
+		[
+			`z-index: {alert}0-99{end}`
+		]
+	]]
+})
+
+
+
+// font family
 
 
 let fontFam = []
@@ -754,15 +798,39 @@ async function render( name, data ) {
 	
 }
 
+
 async function run() {
 
-	const str = await ( await fs.readFileSync('README.md') ).toString()
-	console.log('✅ 📚 received readme...')
-	const exp = 'module.exports = `' + (await markdown.toHTML( str )) + '`'
-	console.log('✅ 🌐 converted to HTML...')
-	await fs.writeFileSync( 'src/readme.js', exp, 'utf8' )
-	console.log('✅ ✍️ written to src/readme.js...')
+	let readme = ''
 
+	api.forEach( a => {
+		if ( a.data ) {
+			readme += `## ${a.id} \n\n` 
+			readme += '<table>\n'
+			a.data.forEach( b => {
+				readme += '<tr>\n'
+				readme += `<td>${b[0].join('<br />')}</td>`
+				readme += `<td>${b[1].join('<br />')}</td>`
+				readme += '</tr>\n'
+			})
+			readme += '</table>\n\n'
+		}
+	})
+
+
+
+
+
+	const str = await ( await fs.readFileSync('intro.md') ).toString()
+	const intro = await markdown.toHTML( str )
+	console.log('✅ 📚 received intro...')
+	const exp = 'module.exports = `' + intro + '`'
+	console.log('✅ 🌐 converted to HTML...')
+	await fs.writeFileSync( 'src/intro.js', exp, 'utf8' )
+	console.log('✅ ✍️ written to src/intro.js...')
+
+
+	await fs.writeFileSync('README.md', str + readme ) 
 
 	//...
 
@@ -793,6 +861,8 @@ html
 	await fs.writeFileSync('src/infos.js', infos ) 
 
 	console.log('✅ 🧠  successfully written src/infos.js')
+
+
 
 
 

@@ -1,7 +1,16 @@
 <script>
+	import { onMount } from 'svelte'
 	import infos from './infos.js'
 	import { Router, routes, params, active } from 'svelte-hash-router'
 	import { root } from './stores.js'
+
+
+	onMount(async () => {
+		const res = await fetch(`/defaults.css`)
+		const text = await res.text()
+		$root = '<style>'+text+'</style >'
+	})
+
 
 	$: date = (new Date()).getDate() + "/" + ((new Date()).getMonth() + 1) + "/" + ((new Date()).getFullYear() - 2000);
 
@@ -10,6 +19,7 @@
 <!-- utilitatian -->
 <main>
 
+	{@html $root}
 	<div class="margin-auto align-self-center w100vw flex justify-content-center h100vh overflow-hidden">
 		<div class="flex basis20em grow justify-content-flex-end overflow-auto">
 			<div class="flex column p1 maxw15em grow justify-content-between">
@@ -35,7 +45,6 @@
 			</div>
 
 		</div>
-		{@html $root}
 		<div class="flex basis60em overflow-auto grow">
 			<div class="flex maxw60em grow">
 				<Router />  
