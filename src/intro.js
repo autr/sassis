@@ -1,3 +1,1 @@
-module.exports = `<h1>SASSIS</h1>
-
-<p>TODO / WIP</p>`
+module.exports = `<p><a href="https://autr.github.io/sassis">website documentation</a> / <a href="https://github.com/autr/eazeaze">github repository</a></p>`

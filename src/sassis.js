@@ -801,7 +801,7 @@ async function render( name, data ) {
 
 async function run() {
 
-	let readme = ''
+	let readme = '\n\n'
 
 	api.forEach( a => {
 		if ( a.data ) {
@@ -809,8 +809,13 @@ async function run() {
 			readme += '<table>\n'
 			a.data.forEach( b => {
 				readme += '<tr>\n'
-				readme += `<td>${b[0].join('<br />')}</td>`
-				readme += `<td>${b[1].join('<br />')}</td>`
+				readme += `<td>${b[0].map( c => {
+					if ( c[0] != '.' || c[0] != '+') c = '.' + c
+					return c.replaceAll('{alert}', '<em>').replaceAll('{end}', '</em>').replaceAll('{info}', '<em>')
+				}).join('<br />')}</td>`
+				readme += `<td>${b[1].map( c => {
+					return c.replaceAll('{alert}', '<em>').replaceAll('{end}', '</em>').replaceAll('{info}', '<em>')
+				}).join('<br />')}</td>`
 				readme += '</tr>\n'
 			})
 			readme += '</table>\n\n'
