@@ -78,6 +78,10 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <tr>
 <td>.lowercase</td><td>text-transform: lowercase</td></tr>
 <tr>
+<td>.underline</td><td>text-decoration: underline</td></tr>
+<tr>
+<td>.strike-through<br />.line-through<br />.cross-out</td><td>text-decoration: line-through</td></tr>
+<tr>
 <td>.pointer</td><td>cursor: pointer</td></tr>
 <tr>
 <td>.visible</td><td>opacity: 1</td></tr>

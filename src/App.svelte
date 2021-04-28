@@ -32,7 +32,7 @@
 			<div class="flex basis20em justify-content-flex-end overflow-auto h100vh">
 				<div class="flex column p1 grow justify-content-between">
 					<div class="flex column">
-						<div class="bright f5 pb0">SASSIS</div>
+						<a href="#/intro" class="unclickable bright f5 pb0">SASSIS</a>
 						{#each Object.entries($routes) as [k,v]}
 							{#if v.$$href != '#/' && v.$$href.indexOf(':') == -1}
 								<div 
@@ -44,7 +44,7 @@
 									on:click={ e => window.location = v.$$href }
 									class:filled={ $active.$$href.indexOf( v.$$href ) != -1 } 
 									class:bright={ $active.$$href.indexOf( v.$$href ) != -1 }>
-									{k.substring(1)}
+									{k.substring(1)} {k == '/search' ? '(cmd/ctrl+f)' : ''}
 								</div>
 							{/if}
 						{/each}

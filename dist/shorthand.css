@@ -105,6 +105,12 @@ html .uppercase {
 html .lowercase {
   text-transform: lowercase; }
 
+html .underline {
+  text-decoration: underline; }
+
+html .strike-through, html .line-through, html .cross-out {
+  text-decoration: line-through; }
+
 html .pointer {
   cursor: pointer; }
 

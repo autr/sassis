@@ -51,6 +51,8 @@ const aliases = [
 	[ ['capitalize'], ['text-transform: capitalize' ] ],
 	[ ['uppercase'], ['text-transform: uppercase' ] ],
 	[ ['lowercase'], ['text-transform: lowercase' ] ],
+	[ ['underline'], ['text-decoration: underline' ] ],
+	[ ['strike-through', 'line-through', 'cross-out'], ['text-decoration: line-through' ] ],
 
 	[ ['pointer'], ['cursor: pointer' ] ],
 

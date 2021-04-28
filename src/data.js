@@ -327,6 +327,24 @@ export default [
       ],
       [
         [
+          "underline"
+        ],
+        [
+          "text-decoration: underline"
+        ]
+      ],
+      [
+        [
+          "strike-through",
+          "line-through",
+          "cross-out"
+        ],
+        [
+          "text-decoration: line-through"
+        ]
+      ],
+      [
+        [
           "pointer"
         ],
         [
