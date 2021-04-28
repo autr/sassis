@@ -19,7 +19,7 @@
 	textarea, input[type=text], input[type=password], input[type=number], input[type=email], select, .dropdown
 		padding: var(--input-padding)
 		flex-basis: 0
-		min-width: 1em
+		// min-width: 1em
 	textarea
 		min-height: 7em
 		resize: none
@@ -80,11 +80,21 @@
 			transform: rotateZ(-45deg) translate( 0%, -50% )
 			transform-origin: 50% 50%
 
+	/* ---------------------- FILE ---------------------- */
+
+	.file
+		input[type=file]
+			opacity: 0
+			+abs
+			+t(0)
+			+l(0)
+			+wh()
+
 	/* ---------------------- INPUT RANGE ---------------------- */
 
 	input[type=range]
 		flex-basis: 0
-		min-width: 1em
+		// min-width: 1em
 		-webkit-appearance: none
 		background: transparent
 		&::-webkit-slider-thumb

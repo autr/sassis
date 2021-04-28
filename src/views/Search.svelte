@@ -40,6 +40,6 @@
 </script>
 
 <div class="flex column ptb1 grow">
-	<input type="text" bind:value={search} placeholder="search terms" />
+	<input id="search" type="text" bind:value={search} placeholder="search terms" />
 	<ShorthandTable {items} />
 </div>

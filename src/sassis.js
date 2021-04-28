@@ -21,8 +21,11 @@ const aliases = [
 
 	[ ['grow'], ['flex-grow: 1' ], false, true ],  // layout views
 	[ ['no-grow', 'nogrow'], ['flex-grow: 0' ] ],
-	[ ['cgrow > *','c-grow > *'], ['flex-grow: 1'], true, true ], // layout views
-	[ ['cnogrow > *', 'cno-grow > *', 'c-no-grow > *'], ['flex-grow: 0'], true, true ], // layout views
+
+	[ ['cgrow > *','c-grow > *'], ['flex-grow: 1'], false, true, true ], // layout views
+	[ ['cnogrow > *', 'cno-grow > *', 'c-no-grow > *'], ['flex-grow: 0'], false, true, true ], // layout views
+
+
 	[ ['shrink'], ['flex-shrink: 1' ], false, true ],  // layout views
 	[ ['no-shrink'], ['flex-shrink: 0' ], false, true ],  // layout views
 	[ ['no-basis'], ['flex-basis: 0' ], false, true ], // layout views
@@ -45,6 +48,9 @@ const aliases = [
 	[ ['text-left'], ['text-align: left' ] ],
 	[ ['text-center'], ['text-align: center' ] ],
 	[ ['text-right'], ['text-align: right' ] ],
+	[ ['capitalize'], ['text-transform: capitalize' ] ],
+	[ ['uppercase'], ['text-transform: uppercase' ] ],
+	[ ['lowercase'], ['text-transform: lowercase' ] ],
 
 	[ ['pointer'], ['cursor: pointer' ] ],
 
@@ -91,7 +97,8 @@ aliases.forEach( pair => {
 
 	if (!pair[2]) {
 		if (!pair[4]) mixins += `\n=${names.join(`\n\t${rule}\n=`)}\n\t${pair[1].join('\n\t')}\n`
-		classes += `\n\t.${names.join(', .')}\n\t\t${pair[1].join('\n\t\t')}\n`
+		const c = `\n\t.${names.join(', .')}\n\t\t${pair[1].join('\n\t\t')}\n`
+		classes += c
 	}
 })
 
@@ -690,10 +697,17 @@ for( let i = 0; i < 100; i++) {
 	.z-index${i}
 		z-index: ${i}
 `
+	classes += `
+	.opacity${i}
+		opacity: ${i} 
+`
 }
 mixins += `
 =z-index( $z )
 	z-index: $z`
+mixins += `
+=opacity( $z )
+	opacity: $z`
 
 
 
@@ -715,6 +729,28 @@ api.push( {
 		]
 	]]
 })
+
+
+
+api.push({
+	type: 'h2',
+	id: 'opacity'
+})
+
+api.push( {
+	type: 'table',
+	id: 'opacity',
+	data: [[
+		[
+			`opacity{alert}0-99{end}`,
+			`+opacity( {alert}$z{end} )`
+		],
+		[
+			`opacity: {alert}0-99{end}`
+		]
+	]]
+})
+
 
 
 

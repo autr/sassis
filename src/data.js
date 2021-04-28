@@ -137,6 +137,7 @@ export default [
         [
           "flex-grow: 1"
         ],
+        false,
         true,
         true
       ],
@@ -149,6 +150,7 @@ export default [
         [
           "flex-grow: 0"
         ],
+        false,
         true,
         true
       ],
@@ -301,6 +303,30 @@ export default [
       ],
       [
         [
+          "capitalize"
+        ],
+        [
+          "text-transform: capitalize"
+        ]
+      ],
+      [
+        [
+          "uppercase"
+        ],
+        [
+          "text-transform: uppercase"
+        ]
+      ],
+      [
+        [
+          "lowercase"
+        ],
+        [
+          "text-transform: lowercase"
+        ]
+      ],
+      [
+        [
           "pointer"
         ],
         [
@@ -440,6 +466,7 @@ export default [
         [
           "flex-grow: 1"
         ],
+        false,
         true,
         true
       ],
@@ -452,6 +479,7 @@ export default [
         [
           "flex-grow: 0"
         ],
+        false,
         true,
         true
       ],
@@ -2465,6 +2493,25 @@ export default [
         ],
         [
           "z-index: {alert}0-99{end}"
+        ]
+      ]
+    ]
+  },
+  {
+    "type": "h2",
+    "id": "opacity"
+  },
+  {
+    "type": "table",
+    "id": "opacity",
+    "data": [
+      [
+        [
+          "opacity{alert}0-99{end}",
+          "+opacity( {alert}$z{end} )"
+        ],
+        [
+          "opacity: {alert}0-99{end}"
         ]
       ]
     ]

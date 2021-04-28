@@ -34,12 +34,14 @@
 	/* backgrounds w. pop and sink */
 
 	+bg( var(--bg) )
+	+bg( var(--bg), bg )
 	+bg( var(--bg-pop), pop ) 
 	+bg( var(--bg-sink), sink )
 
 	/* colors w. bright and fade */
 
 	+colors( var(--color), var(--bg)  )
+	+colors( var(--color), var(--bg), normal color  )
 	+colors( var(--color-bright), var(--bg), strong highlight bright focus,  )
 	+colors( var(--color-fade), var(--bg), fade disabled unimportant ) 
 

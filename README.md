@@ -1,4 +1,6 @@
-[website documentation](https://autr.github.io/sassis) / [github repository](https://github.com/autr/eazeaze)
+SASSIS is a SASS / CSS library for shorthand frontend styling.
+
+[website documentation](https://autr.github.io/sassis) / [github repository](https://github.com/autr/sassis)
 
 
 
@@ -69,6 +71,12 @@
 <td>.text-center</td><td>text-align: center</td></tr>
 <tr>
 <td>.text-right</td><td>text-align: right</td></tr>
+<tr>
+<td>.capitalize</td><td>text-transform: capitalize</td></tr>
+<tr>
+<td>.uppercase</td><td>text-transform: uppercase</td></tr>
+<tr>
+<td>.lowercase</td><td>text-transform: lowercase</td></tr>
 <tr>
 <td>.pointer</td><td>cursor: pointer</td></tr>
 <tr>
@@ -605,6 +613,13 @@
 <table>
 <tr>
 <td>.z-index<em>0-99</em><br />.+z-index( <em>$z</em> )</td><td>z-index: <em>0-99</em></td></tr>
+</table>
+
+## opacity 
+
+<table>
+<tr>
+<td>.opacity<em>0-99</em><br />.+opacity( <em>$z</em> )</td><td>opacity: <em>0-99</em></td></tr>
 </table>
 
 ## font-family 
