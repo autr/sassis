@@ -1,0 +1,25 @@
+{
+  "name": "sassis",
+  "version": "1.0.5",
+  "description": "SASSIS is a SASS / CSS library for shorthand frontend styling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autr/sassis.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "shorthand",
+    "mixins"
+  ],
+  "author": "G.Sinnott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/autr/sassis/issues"
+  },
+  "homepage": "https://github.com/autr/sassis#readme"
+}
