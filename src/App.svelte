@@ -6,11 +6,10 @@
 	import hotkeys from 'hotkeys-js'
 
 	onMount(async () => {
-		const res = await fetch(`/defaults.css`)
+		const res = await fetch(`defaults.css`)
 		const text = await res.text()
 		$root = '<style>'+text+'</style >'
 		hotkeys('ctrl+f,cmd+f', function(event, handler){
-			console.log('!!!!')
 			event.preventDefault() 
 			window.location = '/#/search'
 			setTimeout( e => {
