@@ -18,6 +18,8 @@ const aliases = [
 
 	[ ['column', 'col', 'flex-column'], ['flex-direction: column' ] ],
 	[ ['row', 'flex-row'], ['flex-direction: row' ] ],
+	[ ['row-reverse', 'flex-row-reverse'], ['flex-direction: row-reverse' ] ],
+	[ ['column-reverse', 'flex-column-reverse'], ['flex-direction: column-reverse' ] ],
 
 	[ ['grow'], ['flex-grow: 1' ], false, true ],  // layout views
 	[ ['no-grow', 'nogrow'], ['flex-grow: 0' ] ],

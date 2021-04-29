@@ -34,6 +34,12 @@ html .column, html .col, html .flex-column {
 html .row, html .flex-row {
   flex-direction: row; }
 
+html .row-reverse, html .flex-row-reverse {
+  flex-direction: row-reverse; }
+
+html .column-reverse, html .flex-column-reverse {
+  flex-direction: column-reverse; }
+
 html .grow {
   flex-grow: 1; }
 

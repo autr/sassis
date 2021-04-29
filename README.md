@@ -32,6 +32,10 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <tr>
 <td>.row<br />.flex-row</td><td>flex-direction: row</td></tr>
 <tr>
+<td>.row-reverse<br />.flex-row-reverse</td><td>flex-direction: row-reverse</td></tr>
+<tr>
+<td>.column-reverse<br />.flex-column-reverse</td><td>flex-direction: column-reverse</td></tr>
+<tr>
 <td>.grow</td><td>flex-grow: 1</td></tr>
 <tr>
 <td>.no-grow<br />.nogrow</td><td>flex-grow: 0</td></tr>

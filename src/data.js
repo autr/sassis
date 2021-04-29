@@ -112,6 +112,24 @@ export default [
       ],
       [
         [
+          "row-reverse",
+          "flex-row-reverse"
+        ],
+        [
+          "flex-direction: row-reverse"
+        ]
+      ],
+      [
+        [
+          "column-reverse",
+          "flex-column-reverse"
+        ],
+        [
+          "flex-direction: column-reverse"
+        ]
+      ],
+      [
+        [
           "grow"
         ],
         [
