@@ -57,4 +57,9 @@
 	--code-keyboard: hsl( 260, 95%, 70% );
 	--code-regex: hsl( 300, 95%, 70% );
 
+	--media-sm: 576px;
+	--media-md: 768px;
+	--media-lg: 922px;
+	--media-elg: 1200px;
+
 }

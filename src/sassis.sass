@@ -17,31 +17,34 @@
 
 =sassis
 
-	font-family: var(--font)
-	font-size: var(--font-size)
-	line-height: var(--line-height)
-	select, button, input, textarea
+	// font-family: var(--font)
+	// font-size: var(--font-size)
+	// line-height: var(--line-height)
+	.sassis, select, button, input, textarea
 		font-family: var(--font)
 		font-size: var(--font-size)
 		line-height: var(--line-height)
 
 	/* core sassis */
-
-	+reset
+	html
+		+reset
 	+interfaces
 	+syntax
 
+	.sassis
+		+f0
+
 	/* backgrounds w. pop and sink */
 
-	+bg( var(--bg) )
-	+bg( var(--bg), bg )
+
+	+bg( var(--bg), bg sassis )
 	+bg( var(--bg-pop), pop ) 
 	+bg( var(--bg-sink), sink )
 
 	/* colors w. bright and fade */
 
 	+colors( var(--color), var(--bg)  )
-	+colors( var(--color), var(--bg), normal color  )
+	+colors( var(--color), var(--bg), normal color sassis  )
 	+colors( var(--color-bright), var(--bg), strong highlight bright focus,  )
 	+colors( var(--color-fade), var(--bg), fade disabled unimportant ) 
 
@@ -66,7 +69,3 @@
 		+colors( var(--color-#{$char}), var(--bg), color-#{$char} )
 
 
-
-	// .auto-format
-	// 	p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol
-	// 		margin-bottom: 1em

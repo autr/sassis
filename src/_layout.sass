@@ -2,10 +2,14 @@
 
 
 =layout( $spacing: 0em )
-	$screen-sm: 576px
-	$screen-md: 768px
-	$screen-lg: 922px
-	$screen-elg: 1200px
+
+	$screen-sm: var(--media-sm)
+	$screen-md: var(--media-md)
+	$screen-lg: var(--media-lg)
+	$screen-elg: var(--media-elg)
+
+	$sizes: ( "sm": $screen-sm, "md": $screen-md, "lg": $screen-lg, "elg": $screen-elg )
+
 	.layout
 		box-sizing: border-box
 		display: flex
@@ -41,6 +45,23 @@
 	//////////////////
 	//Media Queries
 	//////////////////
+
+	@each $name, $size in $sizes
+		@media only screen and (max-width: $size)
+			.#{$name}-hide
+				display: none
+		@media only screen and (min-width: $size)
+			.#{$name}-flex
+				display: flex
+			.#{$name}-block
+				display: block
+			.#{$name}-inline-block
+				display: inline-block
+			.#{$name}-fixed
+				display: fixed
+			.#{$name}-sticky
+				display: sticky
+
 
 	@media only screen and (max-width: $screen-sm)
 		@for $i from 1 through 12

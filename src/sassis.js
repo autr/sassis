@@ -667,8 +667,10 @@ ffss.forEach( (num, i) => {
 	mixins += `
 =f${i}
 	font-size: ${num}rem
+	line-height: var(--line-height)
 	input, textarea, button, select
-		font-size: ${num}rem`
+		font-size: ${num}rem
+		line-height: var(--line-height)`
 	fontSizes.push(
 	[
 		[
@@ -884,16 +886,14 @@ async function run() {
 
 	let infos = { downloads: {} }
 	infos['downloads']['shorthand'] = await render( 'shorthand', `@import '../src/sassis' 
-html
-	+shorthand `)
++shorthand `)
 	infos['downloads']['layout'] = await render( 'layout', `@import '../src/sassis' 
-html
-	+layout`) 
++layout`) 
 	infos['downloads']['all'] = await render( 'all', `@import '../src/sassis' 
-html
-	+sassis
-	+shorthand
-	+layout`) 
+
++sassis
++shorthand
++layout`) 
 
 	infos['package'] = JSON.parse( await ( await fs.readFileSync( 'package.json' ) ).toString() )
 

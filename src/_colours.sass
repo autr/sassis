@@ -54,6 +54,7 @@
 
 
 =set-prop( $prop, $color, $classList: '', $toplevel: null )
+
 	@if $classList == ''
 		@if $toplevel == null
 			#{$prop}: $color
@@ -80,8 +81,9 @@
 
 	input[type=range]
 		+set-prop( background-color, $c, class-list($n, '&', '::-webkit-slider-thumb'), '&::-webkit-slider-thumb'  )
-	+set-prop( color, $c, $raw )
-	+set-prop( border-color, $c, $raw ) 
+	@if $n != ''
+		+set-prop( color, $c, $raw )
+		+set-prop( border-color, $c, $raw ) 
 	*
 		+set-prop( border-color, $c, $raw ) 
 

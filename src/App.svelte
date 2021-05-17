@@ -24,7 +24,7 @@
 </script>
 
 <!-- utilitatian -->
-<main>
+<main class="sassis">
 
 	{@html $root}
 	<div class="flex w100vw h100vh overflow-hidden row-center-flex-start">
