@@ -17,22 +17,17 @@
 
 =sassis
 
-	// font-family: var(--font)
-	// font-size: var(--font-size)
-	// line-height: var(--line-height)
-	.sassis, select, button, input, textarea
+	/* core sassis */
+
+	+reset
+
+	html, .sassis, select, button, input, textarea
 		font-family: var(--font)
 		font-size: var(--font-size)
 		line-height: var(--line-height)
 
-	/* core sassis */
-	html
-		+reset
 	+interfaces
 	+syntax
-
-	.sassis
-		+f0
 
 	/* backgrounds w. pop and sink */
 

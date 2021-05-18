@@ -1,44 +1,44 @@
-.sassis, select, button, input, textarea {
-  font-family: var(--font);
-  font-size: var(--font-size);
-  line-height: var(--line-height); }
-
 /* core sassis */
-html * {
+* {
   -webkit-appearance: none;
   box-sizing: border-box;
   transform-origin: 50% 50%; }
 
-html a {
+a {
   text-decoration: none; }
 
-html body, html div, html span, html applet, html object, html iframe, html h1, html h2, html h3, html h4, html h5, html h6, html p, html blockquote, html pre, html a, html abbr, html acronym, html address, html big, html cite, html code, html del, html dfn, html em, html img, html ins, html kbd, html q, html s, html samp, html small, html strike, html strong, html sub, html sup, html tt, html var, html b, html u, html i, html center, html dl, html dt, html dd, html ol, html ul, html li, html fieldset, html form, html label, html legend, html table, html caption, html tbody, html tfoot, html thead, html tr, html th, html td, html article, html aside, html canvas, html details, html embed, html figure, html figcaption, html footer, html header, html hgroup, html menu, html nav, html output, html ruby, html section, html summary, html time, html mark, html audio, html video, html select {
+body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, select {
   margin: 0;
   padding: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline; }
 
-html article, html aside, html details, html figcaption, html figure, html footer, html header, html hgroup, html menu, html nav, html section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
-html body {
+body {
   width: 100%;
   height: 100%; }
 
-html ol, html ul {
+ol, ul {
   list-style: none; }
 
-html blockquote, html q {
+blockquote, q {
   quotes: none; }
 
-html blockquote:before, html blockquote:after, html q:before, html q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none; }
 
-html table {
+table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+html, .sassis, select, button, input, textarea {
+  font-family: var(--font);
+  font-size: var(--font-size);
+  line-height: var(--line-height); }
 
 /* ---------------------- EVERYTHING ---------------------- */
 *, *:after, *:before, input, textarea, select {
@@ -251,13 +251,6 @@ code[class*="language-"], pre[class*="language-"] {
 
 .token.entity {
   cursor: help; }
-
-.sassis {
-  font-size: 0.785714rem;
-  line-height: var(--line-height); }
-  .sassis input, .sassis textarea, .sassis button, .sassis select {
-    font-size: 0.785714rem;
-    line-height: var(--line-height); }
 
 /* backgrounds w. pop and sink */
 .bg, .sassis {
