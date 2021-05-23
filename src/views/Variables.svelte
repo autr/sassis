@@ -11,7 +11,7 @@
 	let radios
 </script>
 
-<div class="ptb1 pr1 flex h100vh overflow-auto minw32em">
+<div class="ptb1 pr1 flex  minw32em">
 
     <CodeEditor 
     	bind:code={$root} 
@@ -21,7 +21,7 @@
     	on:change={ onCode }
     	lang="javascript" />
 </div>
-<div class="ptb1 pr1 flex column cmb1 h100vh overflow-auto">
+<div class="ptb1 pr1 flex column cmb1 ">
 	<div class="flex">
 		<label class="color grow mr1">
 			<input type="color" value="#ff0000"/>
@@ -72,9 +72,9 @@
 
 		</div>
 	</div>
-	<div class="flex">
+	<div class="flex wrap">
 		<input type="text" class="grow" placeholder="text" />
-		<input class="grow ml1" type="number" placeholder="number" />
+		<input class="grow mt1" type="number" placeholder="number" />
 	</div>
 
 
@@ -144,7 +144,9 @@
 	<div class="flex align-items-center">
 		<input class="grow radius1em success" type="range" value=50 min=0 max=100 />
 		<input class="grow ml1 radius1em info" type="range" value=50 min=0 max=100 />
-		<input class="grow ml1 radius1em alert" type="range" value=50 min=0 max=100 />
+	</div>
+	<div class="flex align-items-center">
+		<input class="grow radius1em alert" type="range" value=50 min=0 max=100 />
 		<input class="grow ml1 radius1em error" type="range" value=50 min=0 max=100 />
 	</div>
 	<div class="flex">
