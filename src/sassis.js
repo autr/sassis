@@ -64,9 +64,10 @@ const aliases = [
 	[ ['overflow-hidden', ], ['overflow: hidden' ] ],
 	[ ['overflow-auto'], ['overflow: auto' ] ],
 
-	[ ['margin-auto'], ['margin: 0 auto' ] ],
+	[ ['margin-auto'], ['margin: auto auto' ] ],
 	[ ['whitespace-pre', 'newlines'], ['white-space: pre' ] ],
 	[ ['whitespace-nowrap'], ['white-space: nowrap' ] ],
+	[ ['whitespace-prewrap'], ['white-space: pre-wrap' ] ],
 	[ ['fill'], ['position: absolute', 'width: 100%', 'height: 100%', 'top: 0', 'left: 0' ] ],
 	[ ['no-webkit'], ['-webkit-appearance: none' ] ],
 	[ ['user-select-none'], ['user-select: none' ] ]
@@ -146,7 +147,7 @@ yep.forEach( (y, ii) => {
 			Bitems.forEach( Bitem => {
 
 				classes += `\n\t.${colrow}-${Aitem}-${Bitem}\n\t\t${Atype}: ${Aitem}\n\t\t${Btype}: ${Bitem}\n\t\tflex-direction: ${colrow}`
-				mixins += `\n=${colrow}($x, $y)\n\t${Atype}: $x\n\t${Atype}: $y\n\tflex-direction: ${colrow}`
+				mixins += `\n=${colrow}($x, $y)\n\t${Atype}: $x\n\t${Btype}: $y\n\tflex-direction: ${colrow}`
 			})
 		})
 
@@ -658,18 +659,18 @@ const ffss = [0.785714, 1, 1.2857, 1.64285, 2.071428, 2.642857]
 ffss.forEach( (num, i) => {
 	classes += `
 	.f${i}, h${6 - i}, .h${6 - i}
-		font-size: ${num}rem
+		font-size: var(--f${i})
 		line-height: var(--line-height)
 		input, textarea, button, select
-			font-size: ${num}rem
+			font-size: var(--f${i})
 			line-height: var(--line-height)
 `
 	mixins += `
 =f${i}
-	font-size: ${num}rem
+	font-size: var(--f${i})
 	line-height: var(--line-height)
 	input, textarea, button, select
-		font-size: ${num}rem
+		font-size: var(--f${i})
 		line-height: var(--line-height)`
 	fontSizes.push(
 	[
@@ -770,13 +771,13 @@ ffff.forEach( (fam, i) => {
 	.${fam}
 		font-family: var(--font-${fam})
 		input, textarea, button, select
-			font-size: var(--font-${fam})
+			font-family: var(--font-${fam})
 `
 	mixins += `
 =${fam}
 	font-family: var(--font-${fam})
 	input, textarea, button, select
-		font-size: var(--font-${fam})
+		font-family: var(--font-${fam})
 `
 	fontFam.push(
 	[

@@ -136,13 +136,16 @@
   overflow: auto; }
 
 .margin-auto {
-  margin: 0 auto; }
+  margin: auto auto; }
 
 .whitespace-pre, .newlines {
   white-space: pre; }
 
 .whitespace-nowrap {
   white-space: nowrap; }
+
+.whitespace-prewrap {
+  white-space: pre-wrap; }
 
 .fill {
   position: absolute;
@@ -53329,45 +53332,45 @@
   transform-origin: -100% -100%; }
 
 .f0, h6, .h6 {
-  font-size: 0.785714rem;
+  font-size: var(--f0);
   line-height: var(--line-height); }
   .f0 input, .f0 textarea, .f0 button, .f0 select, h6 input, h6 textarea, h6 button, h6 select, .h6 input, .h6 textarea, .h6 button, .h6 select {
-    font-size: 0.785714rem;
+    font-size: var(--f0);
     line-height: var(--line-height); }
 
 .f1, h5, .h5 {
-  font-size: 1rem;
+  font-size: var(--f1);
   line-height: var(--line-height); }
   .f1 input, .f1 textarea, .f1 button, .f1 select, h5 input, h5 textarea, h5 button, h5 select, .h5 input, .h5 textarea, .h5 button, .h5 select {
-    font-size: 1rem;
+    font-size: var(--f1);
     line-height: var(--line-height); }
 
 .f2, h4, .h4 {
-  font-size: 1.2857rem;
+  font-size: var(--f2);
   line-height: var(--line-height); }
   .f2 input, .f2 textarea, .f2 button, .f2 select, h4 input, h4 textarea, h4 button, h4 select, .h4 input, .h4 textarea, .h4 button, .h4 select {
-    font-size: 1.2857rem;
+    font-size: var(--f2);
     line-height: var(--line-height); }
 
 .f3, h3, .h3 {
-  font-size: 1.64285rem;
+  font-size: var(--f3);
   line-height: var(--line-height); }
   .f3 input, .f3 textarea, .f3 button, .f3 select, h3 input, h3 textarea, h3 button, h3 select, .h3 input, .h3 textarea, .h3 button, .h3 select {
-    font-size: 1.64285rem;
+    font-size: var(--f3);
     line-height: var(--line-height); }
 
 .f4, h2, .h2 {
-  font-size: 2.071428rem;
+  font-size: var(--f4);
   line-height: var(--line-height); }
   .f4 input, .f4 textarea, .f4 button, .f4 select, h2 input, h2 textarea, h2 button, h2 select, .h2 input, .h2 textarea, .h2 button, .h2 select {
-    font-size: 2.071428rem;
+    font-size: var(--f4);
     line-height: var(--line-height); }
 
 .f5, h1, .h1 {
-  font-size: 2.642857rem;
+  font-size: var(--f5);
   line-height: var(--line-height); }
   .f5 input, .f5 textarea, .f5 button, .f5 select, h1 input, h1 textarea, h1 button, h1 select, .h1 input, .h1 textarea, .h1 button, .h1 select {
-    font-size: 2.642857rem;
+    font-size: var(--f5);
     line-height: var(--line-height); }
 
 .z-index0 {
@@ -53973,29 +53976,29 @@
 .monospace {
   font-family: var(--font-monospace); }
   .monospace input, .monospace textarea, .monospace button, .monospace select {
-    font-size: var(--font-monospace); }
+    font-family: var(--font-monospace); }
 
 .serif {
   font-family: var(--font-serif); }
   .serif input, .serif textarea, .serif button, .serif select {
-    font-size: var(--font-serif); }
+    font-family: var(--font-serif); }
 
 .sans-serif {
   font-family: var(--font-sans-serif); }
   .sans-serif input, .sans-serif textarea, .sans-serif button, .sans-serif select {
-    font-size: var(--font-sans-serif); }
+    font-family: var(--font-sans-serif); }
 
 .cursive {
   font-family: var(--font-cursive); }
   .cursive input, .cursive textarea, .cursive button, .cursive select {
-    font-size: var(--font-cursive); }
+    font-family: var(--font-cursive); }
 
 .slab {
   font-family: var(--font-slab); }
   .slab input, .slab textarea, .slab button, .slab select {
-    font-size: var(--font-slab); }
+    font-family: var(--font-slab); }
 
 .grotesque {
   font-family: var(--font-grotesque); }
   .grotesque input, .grotesque textarea, .grotesque button, .grotesque select {
-    font-size: var(--font-grotesque); }
+    font-family: var(--font-grotesque); }

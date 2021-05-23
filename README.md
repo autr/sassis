@@ -98,11 +98,13 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <tr>
 <td>.overflow-auto</td><td>overflow: auto</td></tr>
 <tr>
-<td>.margin-auto</td><td>margin: 0 auto</td></tr>
+<td>.margin-auto</td><td>margin: auto auto</td></tr>
 <tr>
 <td>.whitespace-pre<br />.newlines</td><td>white-space: pre</td></tr>
 <tr>
 <td>.whitespace-nowrap</td><td>white-space: nowrap</td></tr>
+<tr>
+<td>.whitespace-prewrap</td><td>white-space: pre-wrap</td></tr>
 <tr>
 <td>.fill</td><td>position: absolute<br />width: 100%<br />height: 100%<br />top: 0<br />left: 0</td></tr>
 <tr>

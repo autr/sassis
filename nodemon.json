@@ -4,6 +4,7 @@
 	"watch": [
 		"src/_colours.sass",
 		"src/_interfaces.sass",
+		"src/_icons.scss",
 		"src/_layout.sass",
 		"src/_misc.sass",
 		"src/_syntax.sass",

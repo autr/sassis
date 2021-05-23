@@ -415,7 +415,7 @@ export default [
           "margin-auto"
         ],
         [
-          "margin: 0 auto"
+          "margin: auto auto"
         ]
       ],
       [
@@ -433,6 +433,14 @@ export default [
         ],
         [
           "white-space: nowrap"
+        ]
+      ],
+      [
+        [
+          "whitespace-prewrap"
+        ],
+        [
+          "white-space: pre-wrap"
         ]
       ],
       [

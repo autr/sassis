@@ -8,6 +8,7 @@
 // --------------------------------------------------
 
 
+@import '_icons'
 @import '_misc'
 @import '_interfaces'
 @import '_colours'
@@ -19,18 +20,32 @@
 
 	/* core sassis */
 
+	html
+		font-size: var(--font-size)
+
 	+reset
 
-	html, .sassis, select, button, input, textarea
+	.sassis, select, button, input, textarea, *
 		font-family: var(--font)
-		font-size: var(--font-size)
+		font-size: 1rem
 		line-height: var(--line-height)
+
 
 	+interfaces
 	+syntax
 
 	/* backgrounds w. pop and sink */
 
+
+	@for $i from 0 through 3
+		$rot: $i * 90
+		.rotate#{$rot}
+			transform: rotateZ( $rot * 1deg )
+
+	.flipy
+		transform: scale( 1, -1 )
+	.flipx
+		transform: scale( -1, 1 )
 
 	+bg( var(--bg), bg sassis )
 	+bg( var(--bg-pop), pop ) 
@@ -40,6 +55,7 @@
 
 	+colors( var(--color), var(--bg)  )
 	+colors( var(--color), var(--bg), normal color sassis  )
+	+colors( var(--bg), var(--color), inverted  )
 	+colors( var(--color-bright), var(--bg), strong highlight bright focus,  )
 	+colors( var(--color-fade), var(--bg), fade disabled unimportant ) 
 
@@ -63,4 +79,8 @@
 		+bg( var(--bg-#{$char}), bg-#{$char} )
 		+colors( var(--color-#{$char}), var(--bg), color-#{$char} )
 
+
+	@media screen and (max-width: 767px)
+		_::-webkit-full-page-media, _:future, :root .safari-only
+			padding-bottom: 70px!important
 

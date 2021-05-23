@@ -1,5 +1,7 @@
+@import '_icons' 
+
 @function str-replace($string, $search, $replace: '')
-	$index: str-index($string, $search)
+	$index: str-index($string, $search) 
 	@if $index
 		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
 	@return $string
@@ -53,19 +55,6 @@
 	+set-prop( background-color, $colour, class-list($names) )
 
 
-=set-prop( $prop, $color, $classList: '', $toplevel: null )
-
-	@if $classList == ''
-		@if $toplevel == null
-			#{$prop}: $color
-		@else
-			#{$toplevel}
-				#{$prop}: $color
-	@else
-		#{$classList}
-			#{$prop}: $color
-
-
 @function class-list($names, $prefix: '', $suffix: '' )
 	$out: ''
 	@if $names != ''
@@ -75,22 +64,35 @@
 			@if $i != length($names)
 				$out: #{$out + ', '}
 	@return $out
+
+=filled( $c, $s, $bg )
+	+set-prop(background, $c, $s )
+	+set-prop(color, $bg, $s )
+	.fill
+		+set-prop(fill, $bg, $s )
+	.stroke
+		+set-prop(stroke, $bg, $s )
+	&:after, &:before 
+		+set-prop(border-color, $bg, $s )
+
 =colors( $c, $bg, $n: '') 
 	$s: class-list($n, '&')
 	$raw: class-list($n)
 
-	input[type=range]
-		+set-prop( background-color, $c, class-list($n, '&', '::-webkit-slider-thumb'), '&::-webkit-slider-thumb'  )
+	// basic ----------------------------------------------------
+
 	@if $n != ''
 		+set-prop( color, $c, $raw )
 		+set-prop( border-color, $c, $raw ) 
 	*
 		+set-prop( border-color, $c, $raw ) 
 
-	// colors... 
+	// headers ----------------------------------------------------
 
 	h1, h2, h3, h4, h5, h6
 		+set-prop( color, $c, $s )
+
+	// form inputs ----------------------------------------------------
 
 	input, select, textarea, input[type=range], textarea, .dropdown
 		+set-prop(color, $c, $s )
@@ -98,16 +100,13 @@
 	textarea, input[type=text], input[type=number], input[type=email], input[type=password], select, .dropdown
 		&:focus
 			+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
-	input[type=range]:active:not([disabled]), input[type=checkbox]:active:not([disabled])+span, input[type=radio]:active:not([disabled])+span
-		+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
+	input[type=range], input[type=checkbox]+span, input[type=radio]+span
+		&:not([disabled])
+			&:active,&.active
+				+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
 
-	
-	.cross, .checkbox input:checked + span
-		+set-prop( background-image, (linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), $c 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), $c 50%, transparent calc(50% + var(--stroke-width)), transparent 100%)), $s )
-	.fill
-		+set-prop(fill, $c, $s )
-	.stroke
-		+set-prop(stroke, $c, $s )
+	input[type=range]
+		+set-prop( background-color, $c, class-list($n, '&', '::-webkit-slider-thumb'), '&::-webkit-slider-thumb'  )
 
 	.checkbox
 		input + span
@@ -120,20 +119,34 @@
 	.select, .chevron
 		&:after
 			+set-prop(border-color, $c, $s )
+
+	// cool cross icon ----------------------------------------------------
+	
+	.cross, .checkbox input:checked + span
+		+cross( $c, $s )
+	.tick
+		+tick( $c, $s )
+
+	// svg! dont forget ----------------------------------------------------
+
+	.fill
+		+set-prop(fill, $c, $s )
+	.stroke
+		+set-prop(stroke, $c, $s )
 	.edged
 		+set-prop( box-shadow, 0px 0px 0px 1px inset, $s)
-	.filled, a:active:not(.unclickable):not(.disabled), button:active:not(.unclickable):not(.disabled), .clickable:active:not(.unclickable):not(.disabled), .button:active:not(.unclickable):not(.disabled), .button.filled, button.filled
-		+set-prop(background, $c, $s )
-		+set-prop(color, $bg, $s )
-		.fill
-			+set-prop(fill, $bg, $s )
-		.stroke
-			+set-prop(stroke, $bg, $s )
-		&:after, &:before
-			+set-prop(border-color, $bg, $s )
-	.filled.clickable:active:not(.unclickable), button.filled:active:not(.unclickable), a.filled:active:not(.unclickable), .button.filled:active:not(.unclickable), 
-		+set-prop(background, transparent, $s )
-		+set-prop(color, $c, $s )
+
+
+	// buttons + filled
+
+
+	.filled
+		+filled( $c, $s, $bg )
+
+	a, button, .clickable, .button
+		&:active,&.active
+			&:not(.unclickable):not(.disabled)
+				+filled( $c, $s, $bg )
 
 
 	a, select, button, .button

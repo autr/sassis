@@ -1,0 +1,56 @@
+@mixin set-prop( $prop, $color, $classList: '', $toplevel: null ) {
+
+	@if $classList == '' {
+		@if $toplevel == null {
+			#{$prop}: $color
+		} @else {
+			#{$toplevel} {
+				#{$prop}: $color
+			}  
+		}
+	} @else { 
+		#{$classList} {
+			#{$prop}: $color
+		}
+	}
+}
+
+
+@mixin cross( $c, $s ) {
+	@include set-prop( background-image, ( 
+		linear-gradient(
+			to top left, 
+			transparent 0%, 
+			transparent calc(50% - var(--stroke-width)), 
+			$c 50%, 
+			transparent calc(50% + var(--stroke-width)), 
+			transparent 100%), 
+		linear-gradient(
+			to top right, 
+			transparent 0%, 
+			transparent calc(50% - var(--stroke-width)), 
+			$c 50%, transparent calc(50% + var(--stroke-width)), 
+			transparent 100%)
+	), $s )
+}
+
+
+@mixin tick( $c, $s ) {
+	$a: 40%;
+	$b: 15%;
+	@include set-prop( background-image, (
+		linear-gradient(
+			307deg,
+			transparent 0%, 
+			transparent calc(#{$a} - var(--stroke-width)), 
+			$c #{$a}, 
+			transparent calc(#{$a} + var(--stroke-width)), 
+			transparent 100%), 
+		linear-gradient(
+			45deg, 
+			transparent 0%, 
+			transparent calc(#{$b} - var(--stroke-width)), 
+			$c #{$b}, transparent calc(#{$b} + var(--stroke-width)), 
+			transparent 100%)
+	), $s )
+}

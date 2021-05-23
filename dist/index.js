@@ -556,15 +556,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952630,
-            "size": 715289,
+            "size": 715350,
             "blocks": 1400,
-            "atimeMs": 1621354262311.4128,
-            "mtimeMs": 1621354280681.0364,
-            "ctimeMs": 1621354280681.0364,
+            "atimeMs": 1621785957301.9697,
+            "mtimeMs": 1621785961339.2383,
+            "ctimeMs": 1621785961339.2383,
             "birthtimeMs": 1619634754295.2676,
-            "atime": "2021-05-18T16:11:02.311Z",
-            "mtime": "2021-05-18T16:11:20.681Z",
-            "ctime": "2021-05-18T16:11:20.681Z",
+            "atime": "2021-05-23T16:05:57.302Z",
+            "mtime": "2021-05-23T16:06:01.339Z",
+            "ctime": "2021-05-23T16:06:01.339Z",
             "birthtime": "2021-04-28T18:32:34.295Z"
           },
           "min": {
@@ -578,15 +578,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952631,
-            "size": 536304,
+            "size": 536358,
             "blocks": 1048,
-            "atimeMs": 1621354280724.6628,
-            "mtimeMs": 1621354280682.1333,
-            "ctimeMs": 1621354280682.1333,
+            "atimeMs": 1621785961385.3604,
+            "mtimeMs": 1621785961341.0698,
+            "ctimeMs": 1621785961341.0698,
             "birthtimeMs": 1619634754298.138,
-            "atime": "2021-05-18T16:11:20.725Z",
-            "mtime": "2021-05-18T16:11:20.682Z",
-            "ctime": "2021-05-18T16:11:20.682Z",
+            "atime": "2021-05-23T16:06:01.385Z",
+            "mtime": "2021-05-23T16:06:01.341Z",
+            "ctime": "2021-05-23T16:06:01.341Z",
             "birthtime": "2021-04-28T18:32:34.298Z"
           },
           "gz": {
@@ -600,15 +600,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952632,
-            "size": 92473,
+            "size": 92463,
             "blocks": 256,
-            "atimeMs": 1621354262311.452,
-            "mtimeMs": 1621354280733.3533,
-            "ctimeMs": 1621354280733.3533,
+            "atimeMs": 1621785954640.1323,
+            "mtimeMs": 1621785961384.94,
+            "ctimeMs": 1621785961384.94,
             "birthtimeMs": 1619634754300.7788,
-            "atime": "2021-05-18T16:11:02.311Z",
-            "mtime": "2021-05-18T16:11:20.733Z",
-            "ctime": "2021-05-18T16:11:20.733Z",
+            "atime": "2021-05-23T16:05:54.640Z",
+            "mtime": "2021-05-23T16:06:01.385Z",
+            "ctime": "2021-05-23T16:06:01.385Z",
             "birthtime": "2021-04-28T18:32:34.301Z"
           }
         },
@@ -624,15 +624,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952626,
-            "size": 5058,
-            "blocks": 16,
-            "atimeMs": 1621354264379.4,
-            "mtimeMs": 1621354281067.5366,
-            "ctimeMs": 1621354281067.5366,
+            "size": 11523,
+            "blocks": 24,
+            "atimeMs": 1621785958701.9387,
+            "mtimeMs": 1621785961736.4263,
+            "ctimeMs": 1621785961736.4263,
             "birthtimeMs": 1619634754294.3696,
-            "atime": "2021-05-18T16:11:04.379Z",
-            "mtime": "2021-05-18T16:11:21.068Z",
-            "ctime": "2021-05-18T16:11:21.068Z",
+            "atime": "2021-05-23T16:05:58.702Z",
+            "mtime": "2021-05-23T16:06:01.736Z",
+            "ctime": "2021-05-23T16:06:01.736Z",
             "birthtime": "2021-04-28T18:32:34.294Z"
           },
           "min": {
@@ -646,15 +646,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952627,
-            "size": 3788,
-            "blocks": 8,
-            "atimeMs": 1621354281070.548,
-            "mtimeMs": 1621354281067.7952,
-            "ctimeMs": 1621354281067.7952,
+            "size": 8696,
+            "blocks": 24,
+            "atimeMs": 1621785961740.1357,
+            "mtimeMs": 1621785961736.6619,
+            "ctimeMs": 1621785961736.6619,
             "birthtimeMs": 1619634754294.5928,
-            "atime": "2021-05-18T16:11:21.071Z",
-            "mtime": "2021-05-18T16:11:21.068Z",
-            "ctime": "2021-05-18T16:11:21.068Z",
+            "atime": "2021-05-23T16:06:01.740Z",
+            "mtime": "2021-05-23T16:06:01.737Z",
+            "ctime": "2021-05-23T16:06:01.737Z",
             "birthtime": "2021-04-28T18:32:34.295Z"
           },
           "gz": {
@@ -668,15 +668,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952628,
-            "size": 639,
+            "size": 1148,
             "blocks": 8,
-            "atimeMs": 1621354264379.4124,
-            "mtimeMs": 1621354281070.256,
-            "ctimeMs": 1621354281070.256,
+            "atimeMs": 1621785878498.5266,
+            "mtimeMs": 1621785961739.7637,
+            "ctimeMs": 1621785961739.7637,
             "birthtimeMs": 1619634754294.808,
-            "atime": "2021-05-18T16:11:04.379Z",
-            "mtime": "2021-05-18T16:11:21.070Z",
-            "ctime": "2021-05-18T16:11:21.070Z",
+            "atime": "2021-05-23T16:04:38.499Z",
+            "mtime": "2021-05-23T16:06:01.740Z",
+            "ctime": "2021-05-23T16:06:01.740Z",
             "birthtime": "2021-04-28T18:32:34.295Z"
           }
         },
@@ -692,15 +692,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952614,
-            "size": 857474,
-            "blocks": 1680,
-            "atimeMs": 1621354266147.0342,
-            "mtimeMs": 1621354282902.8943,
-            "ctimeMs": 1621354282902.8943,
+            "size": 907038,
+            "blocks": 1776,
+            "atimeMs": 1621785880506.4458,
+            "mtimeMs": 1621785963927.0461,
+            "ctimeMs": 1621785963927.0461,
             "birthtimeMs": 1619634754281.715,
-            "atime": "2021-05-18T16:11:06.147Z",
-            "mtime": "2021-05-18T16:11:22.903Z",
-            "ctime": "2021-05-18T16:11:22.903Z",
+            "atime": "2021-05-23T16:04:40.506Z",
+            "mtime": "2021-05-23T16:06:03.927Z",
+            "ctime": "2021-05-23T16:06:03.927Z",
             "birthtime": "2021-04-28T18:32:34.282Z"
           },
           "min": {
@@ -714,15 +714,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952615,
-            "size": 667600,
-            "blocks": 1304,
-            "atimeMs": 1621354282912.9539,
-            "mtimeMs": 1621354282904.2847,
-            "ctimeMs": 1621354282904.2847,
+            "size": 714173,
+            "blocks": 1400,
+            "atimeMs": 1621785963958.1223,
+            "mtimeMs": 1621785963928.5886,
+            "ctimeMs": 1621785963928.5886,
             "birthtimeMs": 1619634754285.8376,
-            "atime": "2021-05-18T16:11:22.913Z",
-            "mtime": "2021-05-18T16:11:22.904Z",
-            "ctime": "2021-05-18T16:11:22.904Z",
+            "atime": "2021-05-23T16:06:03.958Z",
+            "mtime": "2021-05-23T16:06:03.929Z",
+            "ctime": "2021-05-23T16:06:03.929Z",
             "birthtime": "2021-04-28T18:32:34.286Z"
           },
           "gz": {
@@ -736,22 +736,22 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952616,
-            "size": 105498,
+            "size": 108116,
             "blocks": 256,
-            "atimeMs": 1621354278478.0881,
-            "mtimeMs": 1621354282938.3445,
-            "ctimeMs": 1621354282938.3445,
+            "atimeMs": 1621785878642.7031,
+            "mtimeMs": 1621785963957.7217,
+            "ctimeMs": 1621785963957.7217,
             "birthtimeMs": 1619634754290.6511,
-            "atime": "2021-05-18T16:11:18.478Z",
-            "mtime": "2021-05-18T16:11:22.938Z",
-            "ctime": "2021-05-18T16:11:22.938Z",
+            "atime": "2021-05-23T16:04:38.643Z",
+            "mtime": "2021-05-23T16:06:03.958Z",
+            "ctime": "2021-05-23T16:06:03.958Z",
             "birthtime": "2021-04-28T18:32:34.291Z"
           }
         }
       },
       "package": {
         "name": "sassis",
-        "version": "1.0.7",
+        "version": "1.2.1",
         "scripts": {
           "build": "rollup -c",
           "dev": "rollup -c -w & nodemon src/sassis.js",
@@ -3003,7 +3003,7 @@ var app = (function () {
               "margin-auto"
             ],
             [
-              "margin: 0 auto"
+              "margin: auto auto"
             ]
           ],
           [
@@ -3021,6 +3021,14 @@ var app = (function () {
             ],
             [
               "white-space: nowrap"
+            ]
+          ],
+          [
+            [
+              "whitespace-prewrap"
+            ],
+            [
+              "white-space: pre-wrap"
             ]
           ],
           [
@@ -9989,7 +9997,7 @@ var app = (function () {
     const file$2 = "src/views/Introduction.svelte";
 
     function create_fragment$5(ctx) {
-    	let div5;
+    	let div6;
     	let div0;
     	let t1;
     	let div1;
@@ -9997,21 +10005,23 @@ var app = (function () {
     	let div2;
     	let t5;
     	let div3;
-    	let a0;
-    	let t7;
-    	let a1;
-    	let t9;
-    	let a2;
-    	let t11;
-    	let a3;
-    	let t13;
+    	let t6;
     	let div4;
+    	let a0;
+    	let t8;
+    	let a1;
+    	let t10;
+    	let a2;
+    	let t12;
+    	let a3;
     	let t14;
+    	let div5;
+    	let t15;
     	let a4;
 
     	const block = {
     		c: function create() {
-    			div5 = element("div");
+    			div6 = element("div");
     			div0 = element("div");
     			div0.textContent = "SASSIS is a SASS / CSS library and boilerplate for shorthand frontend styling.";
     			t1 = space();
@@ -10022,77 +10032,83 @@ var app = (function () {
     			div2.textContent = "Use Cmd/Ctrl+F to search through available mixins and classes.";
     			t5 = space();
     			div3 = element("div");
+    			t6 = space();
+    			div4 = element("div");
     			a0 = element("a");
     			a0.textContent = "github";
-    			t7 = space();
+    			t8 = space();
     			a1 = element("a");
     			a1.textContent = "layouts";
-    			t9 = space();
+    			t10 = space();
     			a2 = element("a");
     			a2.textContent = "variables";
-    			t11 = space();
+    			t12 = space();
     			a3 = element("a");
     			a3.textContent = "download";
-    			t13 = space();
-    			div4 = element("div");
-    			t14 = text("Created by ");
+    			t14 = space();
+    			div5 = element("div");
+    			t15 = text("Created by ");
     			a4 = element("a");
     			a4.textContent = "G.Sinnott";
     			add_location(div0, file$2, 13, 1, 299);
     			add_location(div1, file$2, 14, 1, 390);
     			add_location(div2, file$2, 15, 1, 478);
+    			attr_dev(div3, "class", "mtb1 w1em h1em tick");
+    			add_location(div3, file$2, 17, 1, 554);
     			attr_dev(a0, "class", "alert button");
     			attr_dev(a0, "href", "https://github.com/autr/sassis");
     			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file$2, 17, 2, 574);
+    			add_location(a0, file$2, 19, 2, 612);
     			attr_dev(a1, "class", "bright button");
     			attr_dev(a1, "href", "#/layouts");
-    			add_location(a1, file$2, 18, 2, 665);
+    			add_location(a1, file$2, 20, 2, 703);
     			attr_dev(a2, "class", "error button");
     			attr_dev(a2, "href", "#/variables");
-    			add_location(a2, file$2, 19, 2, 721);
+    			add_location(a2, file$2, 21, 2, 759);
     			attr_dev(a3, "class", "info button");
     			attr_dev(a3, "href", "#/download");
-    			add_location(a3, file$2, 20, 2, 780);
-    			attr_dev(div3, "class", "ptb2");
-    			add_location(div3, file$2, 16, 1, 553);
+    			add_location(a3, file$2, 22, 2, 818);
+    			attr_dev(div4, "class", "ptb2");
+    			add_location(div4, file$2, 18, 1, 591);
     			attr_dev(a4, "href", "https://autr.tv");
     			attr_dev(a4, "class", "bb1-solid");
     			attr_dev(a4, "target", "_blank");
-    			add_location(a4, file$2, 22, 17, 859);
-    			add_location(div4, file$2, 22, 1, 843);
-    			attr_dev(div5, "class", "p1");
-    			add_location(div5, file$2, 12, 0, 281);
+    			add_location(a4, file$2, 24, 17, 897);
+    			add_location(div5, file$2, 24, 1, 881);
+    			attr_dev(div6, "class", "p1");
+    			add_location(div6, file$2, 12, 0, 281);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div5, anchor);
-    			append_dev(div5, div0);
-    			append_dev(div5, t1);
-    			append_dev(div5, div1);
-    			append_dev(div5, t3);
-    			append_dev(div5, div2);
-    			append_dev(div5, t5);
-    			append_dev(div5, div3);
-    			append_dev(div3, a0);
-    			append_dev(div3, t7);
-    			append_dev(div3, a1);
-    			append_dev(div3, t9);
-    			append_dev(div3, a2);
-    			append_dev(div3, t11);
-    			append_dev(div3, a3);
-    			append_dev(div5, t13);
-    			append_dev(div5, div4);
-    			append_dev(div4, t14);
-    			append_dev(div4, a4);
+    			insert_dev(target, div6, anchor);
+    			append_dev(div6, div0);
+    			append_dev(div6, t1);
+    			append_dev(div6, div1);
+    			append_dev(div6, t3);
+    			append_dev(div6, div2);
+    			append_dev(div6, t5);
+    			append_dev(div6, div3);
+    			append_dev(div6, t6);
+    			append_dev(div6, div4);
+    			append_dev(div4, a0);
+    			append_dev(div4, t8);
+    			append_dev(div4, a1);
+    			append_dev(div4, t10);
+    			append_dev(div4, a2);
+    			append_dev(div4, t12);
+    			append_dev(div4, a3);
+    			append_dev(div6, t14);
+    			append_dev(div6, div5);
+    			append_dev(div5, t15);
+    			append_dev(div5, a4);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div5);
+    			if (detaching) detach_dev(div6);
     		}
     	};
 
