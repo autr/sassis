@@ -558,13 +558,13 @@ var app = (function () {
             "ino": 28952630,
             "size": 715350,
             "blocks": 1400,
-            "atimeMs": 1621785957301.9697,
-            "mtimeMs": 1621785961339.2383,
-            "ctimeMs": 1621785961339.2383,
+            "atimeMs": 1621786480254.9802,
+            "mtimeMs": 1621786485121.93,
+            "ctimeMs": 1621786485121.93,
             "birthtimeMs": 1619634754295.2676,
-            "atime": "2021-05-23T16:05:57.302Z",
-            "mtime": "2021-05-23T16:06:01.339Z",
-            "ctime": "2021-05-23T16:06:01.339Z",
+            "atime": "2021-05-23T16:14:40.255Z",
+            "mtime": "2021-05-23T16:14:45.122Z",
+            "ctime": "2021-05-23T16:14:45.122Z",
             "birthtime": "2021-04-28T18:32:34.295Z"
           },
           "min": {
@@ -580,13 +580,13 @@ var app = (function () {
             "ino": 28952631,
             "size": 536358,
             "blocks": 1048,
-            "atimeMs": 1621785961385.3604,
-            "mtimeMs": 1621785961341.0698,
-            "ctimeMs": 1621785961341.0698,
+            "atimeMs": 1621786485181.1572,
+            "mtimeMs": 1621786485123.0996,
+            "ctimeMs": 1621786485123.0996,
             "birthtimeMs": 1619634754298.138,
-            "atime": "2021-05-23T16:06:01.385Z",
-            "mtime": "2021-05-23T16:06:01.341Z",
-            "ctime": "2021-05-23T16:06:01.341Z",
+            "atime": "2021-05-23T16:14:45.181Z",
+            "mtime": "2021-05-23T16:14:45.123Z",
+            "ctime": "2021-05-23T16:14:45.123Z",
             "birthtime": "2021-04-28T18:32:34.298Z"
           },
           "gz": {
@@ -602,13 +602,13 @@ var app = (function () {
             "ino": 28952632,
             "size": 92463,
             "blocks": 256,
-            "atimeMs": 1621785954640.1323,
-            "mtimeMs": 1621785961384.94,
-            "ctimeMs": 1621785961384.94,
+            "atimeMs": 1621786478626.427,
+            "mtimeMs": 1621786485180.693,
+            "ctimeMs": 1621786485180.693,
             "birthtimeMs": 1619634754300.7788,
-            "atime": "2021-05-23T16:05:54.640Z",
-            "mtime": "2021-05-23T16:06:01.385Z",
-            "ctime": "2021-05-23T16:06:01.385Z",
+            "atime": "2021-05-23T16:14:38.626Z",
+            "mtime": "2021-05-23T16:14:45.181Z",
+            "ctime": "2021-05-23T16:14:45.181Z",
             "birthtime": "2021-04-28T18:32:34.301Z"
           }
         },
@@ -626,13 +626,13 @@ var app = (function () {
             "ino": 28952626,
             "size": 11523,
             "blocks": 24,
-            "atimeMs": 1621785958701.9387,
-            "mtimeMs": 1621785961736.4263,
-            "ctimeMs": 1621785961736.4263,
+            "atimeMs": 1621786480222.5073,
+            "mtimeMs": 1621786485545.5742,
+            "ctimeMs": 1621786485545.5742,
             "birthtimeMs": 1619634754294.3696,
-            "atime": "2021-05-23T16:05:58.702Z",
-            "mtime": "2021-05-23T16:06:01.736Z",
-            "ctime": "2021-05-23T16:06:01.736Z",
+            "atime": "2021-05-23T16:14:40.223Z",
+            "mtime": "2021-05-23T16:14:45.546Z",
+            "ctime": "2021-05-23T16:14:45.546Z",
             "birthtime": "2021-04-28T18:32:34.294Z"
           },
           "min": {
@@ -648,13 +648,13 @@ var app = (function () {
             "ino": 28952627,
             "size": 8696,
             "blocks": 24,
-            "atimeMs": 1621785961740.1357,
-            "mtimeMs": 1621785961736.6619,
-            "ctimeMs": 1621785961736.6619,
+            "atimeMs": 1621786485551.3535,
+            "mtimeMs": 1621786485545.856,
+            "ctimeMs": 1621786485545.856,
             "birthtimeMs": 1619634754294.5928,
-            "atime": "2021-05-23T16:06:01.740Z",
-            "mtime": "2021-05-23T16:06:01.737Z",
-            "ctime": "2021-05-23T16:06:01.737Z",
+            "atime": "2021-05-23T16:14:45.551Z",
+            "mtime": "2021-05-23T16:14:45.546Z",
+            "ctime": "2021-05-23T16:14:45.546Z",
             "birthtime": "2021-04-28T18:32:34.295Z"
           },
           "gz": {
@@ -670,13 +670,13 @@ var app = (function () {
             "ino": 28952628,
             "size": 1148,
             "blocks": 8,
-            "atimeMs": 1621785878498.5266,
-            "mtimeMs": 1621785961739.7637,
-            "ctimeMs": 1621785961739.7637,
+            "atimeMs": 1621786479959.5525,
+            "mtimeMs": 1621786485550.6174,
+            "ctimeMs": 1621786485550.6174,
             "birthtimeMs": 1619634754294.808,
-            "atime": "2021-05-23T16:04:38.499Z",
-            "mtime": "2021-05-23T16:06:01.740Z",
-            "ctime": "2021-05-23T16:06:01.740Z",
+            "atime": "2021-05-23T16:14:39.960Z",
+            "mtime": "2021-05-23T16:14:45.551Z",
+            "ctime": "2021-05-23T16:14:45.551Z",
             "birthtime": "2021-04-28T18:32:34.295Z"
           }
         },
@@ -692,15 +692,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952614,
-            "size": 907038,
-            "blocks": 1776,
-            "atimeMs": 1621785880506.4458,
-            "mtimeMs": 1621785963927.0461,
-            "ctimeMs": 1621785963927.0461,
+            "size": 923740,
+            "blocks": 1808,
+            "atimeMs": 1621786482056.7598,
+            "mtimeMs": 1621786487659.2883,
+            "ctimeMs": 1621786487659.2883,
             "birthtimeMs": 1619634754281.715,
-            "atime": "2021-05-23T16:04:40.506Z",
-            "mtime": "2021-05-23T16:06:03.927Z",
-            "ctime": "2021-05-23T16:06:03.927Z",
+            "atime": "2021-05-23T16:14:42.057Z",
+            "mtime": "2021-05-23T16:14:47.659Z",
+            "ctime": "2021-05-23T16:14:47.659Z",
             "birthtime": "2021-04-28T18:32:34.282Z"
           },
           "min": {
@@ -714,15 +714,15 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952615,
-            "size": 714173,
-            "blocks": 1400,
-            "atimeMs": 1621785963958.1223,
-            "mtimeMs": 1621785963928.5886,
-            "ctimeMs": 1621785963928.5886,
+            "size": 730189,
+            "blocks": 1432,
+            "atimeMs": 1621786487696.3674,
+            "mtimeMs": 1621786487660.6206,
+            "ctimeMs": 1621786487660.6206,
             "birthtimeMs": 1619634754285.8376,
-            "atime": "2021-05-23T16:06:03.958Z",
-            "mtime": "2021-05-23T16:06:03.929Z",
-            "ctime": "2021-05-23T16:06:03.929Z",
+            "atime": "2021-05-23T16:14:47.696Z",
+            "mtime": "2021-05-23T16:14:47.661Z",
+            "ctime": "2021-05-23T16:14:47.661Z",
             "birthtime": "2021-04-28T18:32:34.286Z"
           },
           "gz": {
@@ -736,22 +736,22 @@ var app = (function () {
             "rdev": 0,
             "blksize": 4096,
             "ino": 28952616,
-            "size": 108116,
+            "size": 109036,
             "blocks": 256,
-            "atimeMs": 1621785878642.7031,
-            "mtimeMs": 1621785963957.7217,
-            "ctimeMs": 1621785963957.7217,
+            "atimeMs": 1621786480778.41,
+            "mtimeMs": 1621786487695.9524,
+            "ctimeMs": 1621786487695.9524,
             "birthtimeMs": 1619634754290.6511,
-            "atime": "2021-05-23T16:04:38.643Z",
-            "mtime": "2021-05-23T16:06:03.958Z",
-            "ctime": "2021-05-23T16:06:03.958Z",
+            "atime": "2021-05-23T16:14:40.778Z",
+            "mtime": "2021-05-23T16:14:47.696Z",
+            "ctime": "2021-05-23T16:14:47.696Z",
             "birthtime": "2021-04-28T18:32:34.291Z"
           }
         }
       },
       "package": {
         "name": "sassis",
-        "version": "1.2.1",
+        "version": "1.2.2",
         "scripts": {
           "build": "rollup -c",
           "dev": "rollup -c -w & nodemon src/sassis.js",
@@ -8902,7 +8902,7 @@ var app = (function () {
     	let codeeditor;
     	let updating_code;
     	let t0;
-    	let div55;
+    	let div56;
     	let div1;
     	let label0;
     	let input0;
@@ -9042,64 +9042,65 @@ var app = (function () {
     	let t79;
     	let input21;
     	let t80;
+    	let div34;
     	let input22;
     	let t81;
     	let input23;
     	let t82;
-    	let div34;
+    	let div35;
     	let input24;
     	let t83;
     	let input25;
     	let t84;
-    	let div35;
+    	let div36;
     	let input26;
     	let t85;
     	let input27;
     	let t86;
-    	let div37;
+    	let div38;
     	let button0;
     	let t88;
-    	let div36;
+    	let div37;
     	let t90;
-    	let div38;
+    	let div39;
     	let button1;
     	let t92;
     	let button2;
     	let t94;
-    	let div39;
+    	let div40;
     	let button3;
     	let t96;
     	let button4;
     	let t98;
-    	let div40;
+    	let div41;
     	let button5;
     	let t100;
     	let button6;
     	let t102;
-    	let div43;
-    	let div41;
-    	let t104;
-    	let div42;
-    	let t106;
-    	let div48;
     	let div44;
-    	let t108;
-    	let div45;
-    	let t110;
-    	let div46;
-    	let t112;
-    	let div47;
-    	let t114;
-    	let div54;
+    	let div42;
+    	let t104;
+    	let div43;
+    	let t106;
     	let div49;
-    	let t116;
+    	let div45;
+    	let t108;
+    	let div46;
+    	let t110;
+    	let div47;
+    	let t112;
+    	let div48;
+    	let t114;
+    	let div55;
     	let div50;
-    	let t118;
+    	let t116;
     	let div51;
-    	let t120;
+    	let t118;
     	let div52;
-    	let t122;
+    	let t120;
     	let div53;
+    	let t122;
+    	let div54;
     	let t124;
     	let textarea;
     	let current;
@@ -9128,7 +9129,7 @@ var app = (function () {
     			div0 = element("div");
     			create_component(codeeditor.$$.fragment);
     			t0 = space();
-    			div55 = element("div");
+    			div56 = element("div");
     			div1 = element("div");
     			label0 = element("label");
     			input0 = element("input");
@@ -9290,390 +9291,393 @@ var app = (function () {
     			t79 = space();
     			input21 = element("input");
     			t80 = space();
+    			div34 = element("div");
     			input22 = element("input");
     			t81 = space();
     			input23 = element("input");
     			t82 = space();
-    			div34 = element("div");
+    			div35 = element("div");
     			input24 = element("input");
     			t83 = space();
     			input25 = element("input");
     			t84 = space();
-    			div35 = element("div");
+    			div36 = element("div");
     			input26 = element("input");
     			t85 = space();
     			input27 = element("input");
     			t86 = space();
-    			div37 = element("div");
+    			div38 = element("div");
     			button0 = element("button");
     			button0.textContent = "button";
     			t88 = space();
-    			div36 = element("div");
-    			div36.textContent = "clickable";
+    			div37 = element("div");
+    			div37.textContent = "clickable";
     			t90 = space();
-    			div38 = element("div");
+    			div39 = element("div");
     			button1 = element("button");
     			button1.textContent = "success";
     			t92 = space();
     			button2 = element("button");
     			button2.textContent = "info";
     			t94 = space();
-    			div39 = element("div");
+    			div40 = element("div");
     			button3 = element("button");
     			button3.textContent = "error";
     			t96 = space();
     			button4 = element("button");
     			button4.textContent = "alert";
     			t98 = space();
-    			div40 = element("div");
+    			div41 = element("div");
     			button5 = element("button");
     			button5.textContent = "rounded";
     			t100 = space();
     			button6 = element("button");
     			button6.textContent = "filled";
     			t102 = space();
-    			div43 = element("div");
-    			div41 = element("div");
-    			div41.textContent = "pop";
-    			t104 = space();
-    			div42 = element("div");
-    			div42.textContent = "sink";
-    			t106 = space();
-    			div48 = element("div");
     			div44 = element("div");
-    			div44.textContent = "border";
-    			t108 = space();
-    			div45 = element("div");
-    			div45.textContent = "solid";
-    			t110 = space();
-    			div46 = element("div");
-    			div46.textContent = "dashed";
-    			t112 = space();
-    			div47 = element("div");
-    			div47.textContent = "dotted";
-    			t114 = space();
-    			div54 = element("div");
+    			div42 = element("div");
+    			div42.textContent = "pop";
+    			t104 = space();
+    			div43 = element("div");
+    			div43.textContent = "sink";
+    			t106 = space();
     			div49 = element("div");
-    			div49.textContent = "a";
-    			t116 = space();
+    			div45 = element("div");
+    			div45.textContent = "border";
+    			t108 = space();
+    			div46 = element("div");
+    			div46.textContent = "solid";
+    			t110 = space();
+    			div47 = element("div");
+    			div47.textContent = "dashed";
+    			t112 = space();
+    			div48 = element("div");
+    			div48.textContent = "dotted";
+    			t114 = space();
+    			div55 = element("div");
     			div50 = element("div");
-    			div50.textContent = "b";
-    			t118 = space();
+    			div50.textContent = "a";
+    			t116 = space();
     			div51 = element("div");
-    			div51.textContent = "c";
-    			t120 = space();
+    			div51.textContent = "b";
+    			t118 = space();
     			div52 = element("div");
-    			div52.textContent = "d";
-    			t122 = space();
+    			div52.textContent = "c";
+    			t120 = space();
     			div53 = element("div");
-    			div53.textContent = "e";
+    			div53.textContent = "d";
+    			t122 = space();
+    			div54 = element("div");
+    			div54.textContent = "e";
     			t124 = space();
     			textarea = element("textarea");
-    			attr_dev(div0, "class", "ptb1 pr1 flex h100vh overflow-auto minw32em");
+    			attr_dev(div0, "class", "ptb1 pr1 flex  minw32em");
     			add_location(div0, file$3, 13, 0, 260);
     			attr_dev(input0, "type", "color");
     			input0.value = "#ff0000";
-    			add_location(input0, file$3, 26, 3, 596);
+    			add_location(input0, file$3, 26, 3, 556);
     			attr_dev(label0, "class", "color grow mr1");
-    			add_location(label0, file$3, 25, 2, 562);
+    			add_location(label0, file$3, 25, 2, 522);
     			attr_dev(input1, "type", "color");
     			input1.value = "#ff00ff";
-    			add_location(input1, file$3, 29, 3, 681);
+    			add_location(input1, file$3, 29, 3, 641);
     			attr_dev(label1, "class", "color grow mr1");
-    			add_location(label1, file$3, 28, 2, 647);
+    			add_location(label1, file$3, 28, 2, 607);
     			attr_dev(input2, "type", "color");
     			input2.value = "#0000ff";
-    			add_location(input2, file$3, 32, 3, 766);
+    			add_location(input2, file$3, 32, 3, 726);
     			attr_dev(label2, "class", "color grow mr1");
-    			add_location(label2, file$3, 31, 2, 732);
+    			add_location(label2, file$3, 31, 2, 692);
     			attr_dev(input3, "type", "color");
     			input3.value = "#00ffff";
-    			add_location(input3, file$3, 35, 3, 851);
+    			add_location(input3, file$3, 35, 3, 811);
     			attr_dev(label3, "class", "color grow mr1");
-    			add_location(label3, file$3, 34, 2, 817);
+    			add_location(label3, file$3, 34, 2, 777);
     			attr_dev(input4, "type", "color");
     			input4.value = "#00ff00";
-    			add_location(input4, file$3, 38, 3, 936);
+    			add_location(input4, file$3, 38, 3, 896);
     			attr_dev(label4, "class", "color grow mr1");
-    			add_location(label4, file$3, 37, 2, 902);
+    			add_location(label4, file$3, 37, 2, 862);
     			attr_dev(input5, "type", "color");
     			input5.value = "#ffff00";
-    			add_location(input5, file$3, 41, 3, 1017);
+    			add_location(input5, file$3, 41, 3, 977);
     			attr_dev(label5, "class", "color grow");
-    			add_location(label5, file$3, 40, 2, 987);
+    			add_location(label5, file$3, 40, 2, 947);
     			attr_dev(div1, "class", "flex");
-    			add_location(div1, file$3, 24, 1, 541);
+    			add_location(div1, file$3, 24, 1, 501);
     			attr_dev(div2, "class", "b1-solid plr0-8 h1");
-    			add_location(div2, file$3, 46, 3, 1138);
+    			add_location(div2, file$3, 46, 3, 1098);
     			attr_dev(div3, "class", "b1-solid plr0-8 h2");
-    			add_location(div3, file$3, 47, 3, 1182);
+    			add_location(div3, file$3, 47, 3, 1142);
     			attr_dev(div4, "class", "b1-solid plr0-8 h3");
-    			add_location(div4, file$3, 48, 3, 1226);
+    			add_location(div4, file$3, 48, 3, 1186);
     			attr_dev(div5, "class", "b1-solid plr0-8 h4");
-    			add_location(div5, file$3, 49, 3, 1270);
+    			add_location(div5, file$3, 49, 3, 1230);
     			attr_dev(div6, "class", "b1-solid plr0-8 h5");
-    			add_location(div6, file$3, 50, 3, 1314);
+    			add_location(div6, file$3, 50, 3, 1274);
     			attr_dev(div7, "class", "b1-solid plr0-8 h6");
-    			add_location(div7, file$3, 51, 3, 1358);
+    			add_location(div7, file$3, 51, 3, 1318);
     			attr_dev(div8, "class", "align-items-baseline rel");
-    			add_location(div8, file$3, 45, 2, 1096);
+    			add_location(div8, file$3, 45, 2, 1056);
     			attr_dev(div9, "class", "b1-solid plr0-8 f0");
-    			add_location(div9, file$3, 54, 3, 1463);
+    			add_location(div9, file$3, 54, 3, 1423);
     			attr_dev(div10, "class", "b1-solid plr0-8 f1");
-    			add_location(div10, file$3, 55, 3, 1507);
+    			add_location(div10, file$3, 55, 3, 1467);
     			attr_dev(div11, "class", "b1-solid plr0-8 f2");
-    			add_location(div11, file$3, 56, 3, 1551);
+    			add_location(div11, file$3, 56, 3, 1511);
     			attr_dev(div12, "class", "b1-solid plr0-8 f3");
-    			add_location(div12, file$3, 57, 3, 1595);
+    			add_location(div12, file$3, 57, 3, 1555);
     			attr_dev(div13, "class", "b1-solid plr0-8 f4");
-    			add_location(div13, file$3, 58, 3, 1639);
+    			add_location(div13, file$3, 58, 3, 1599);
     			attr_dev(div14, "class", "b1-solid plr0-8 f5");
-    			add_location(div14, file$3, 59, 3, 1683);
+    			add_location(div14, file$3, 59, 3, 1643);
     			attr_dev(div15, "class", "justify-content-flex-end text-right");
-    			add_location(div15, file$3, 53, 2, 1410);
+    			add_location(div15, file$3, 53, 2, 1370);
     			attr_dev(div16, "class", "flex align-items-center justify-content-center pop grow");
-    			add_location(div16, file$3, 62, 3, 1773);
+    			add_location(div16, file$3, 62, 3, 1733);
     			attr_dev(div17, "class", "mt1 flex align-items-center justify-content-center  align-content-center sink grow");
-    			add_location(div17, file$3, 63, 3, 1855);
+    			add_location(div17, file$3, 63, 3, 1815);
     			attr_dev(div18, "class", "flex grow pl1 column");
-    			add_location(div18, file$3, 61, 2, 1735);
+    			add_location(div18, file$3, 61, 2, 1695);
     			attr_dev(div19, "class", "flex align-items-center justify-content-center  align-content-center bg-a grow");
-    			add_location(div19, file$3, 66, 3, 2011);
+    			add_location(div19, file$3, 66, 3, 1971);
     			attr_dev(div20, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-b grow");
-    			add_location(div20, file$3, 67, 3, 2117);
+    			add_location(div20, file$3, 67, 3, 2077);
     			attr_dev(div21, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-c grow");
-    			add_location(div21, file$3, 68, 3, 2227);
+    			add_location(div21, file$3, 68, 3, 2187);
     			attr_dev(div22, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-d grow");
-    			add_location(div22, file$3, 69, 3, 2337);
+    			add_location(div22, file$3, 69, 3, 2297);
     			attr_dev(div23, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-e grow");
-    			add_location(div23, file$3, 70, 3, 2447);
+    			add_location(div23, file$3, 70, 3, 2407);
     			attr_dev(div24, "class", "flex grow pl1 column");
-    			add_location(div24, file$3, 65, 2, 1973);
+    			add_location(div24, file$3, 65, 2, 1933);
     			attr_dev(div25, "class", "flex");
-    			add_location(div25, file$3, 44, 1, 1075);
+    			add_location(div25, file$3, 44, 1, 1035);
     			attr_dev(input6, "type", "text");
     			attr_dev(input6, "class", "grow");
     			attr_dev(input6, "placeholder", "text");
-    			add_location(input6, file$3, 75, 2, 2594);
-    			attr_dev(input7, "class", "grow ml1");
+    			add_location(input6, file$3, 75, 2, 2559);
+    			attr_dev(input7, "class", "grow mt1");
     			attr_dev(input7, "type", "number");
     			attr_dev(input7, "placeholder", "number");
-    			add_location(input7, file$3, 76, 2, 2650);
-    			attr_dev(div26, "class", "flex");
-    			add_location(div26, file$3, 74, 1, 2573);
+    			add_location(input7, file$3, 76, 2, 2615);
+    			attr_dev(div26, "class", "flex wrap");
+    			add_location(div26, file$3, 74, 1, 2533);
     			attr_dev(input8, "type", "checkbox");
     			input8.checked = true;
-    			add_location(input8, file$3, 82, 3, 2772);
-    			add_location(span0, file$3, 83, 3, 2809);
+    			add_location(input8, file$3, 82, 3, 2737);
+    			add_location(span0, file$3, 83, 3, 2774);
     			attr_dev(label6, "class", "checkbox");
-    			add_location(label6, file$3, 81, 2, 2744);
+    			add_location(label6, file$3, 81, 2, 2709);
     			attr_dev(input9, "type", "checkbox");
     			input9.checked = true;
-    			add_location(input9, file$3, 87, 3, 2868);
-    			add_location(span1, file$3, 88, 3, 2905);
+    			add_location(input9, file$3, 87, 3, 2833);
+    			add_location(span1, file$3, 88, 3, 2870);
     			attr_dev(label7, "class", "radio");
-    			add_location(label7, file$3, 86, 2, 2843);
+    			add_location(label7, file$3, 86, 2, 2808);
     			attr_dev(div27, "class", "flex");
-    			add_location(div27, file$3, 80, 1, 2723);
+    			add_location(div27, file$3, 80, 1, 2688);
     			attr_dev(input10, "type", "radio");
     			input10.checked = true;
     			attr_dev(input10, "name", "checkradios");
     			input10.value = "a";
-    			add_location(input10, file$3, 95, 3, 2996);
-    			add_location(span2, file$3, 96, 3, 3059);
+    			add_location(input10, file$3, 95, 3, 2961);
+    			add_location(span2, file$3, 96, 3, 3024);
     			attr_dev(label8, "class", "checkbox");
-    			add_location(label8, file$3, 94, 2, 2968);
+    			add_location(label8, file$3, 94, 2, 2933);
     			attr_dev(input11, "type", "radio");
     			attr_dev(input11, "name", "checkradios");
     			input11.value = "b";
-    			add_location(input11, file$3, 100, 3, 3120);
-    			add_location(span3, file$3, 101, 3, 3175);
+    			add_location(input11, file$3, 100, 3, 3085);
+    			add_location(span3, file$3, 101, 3, 3140);
     			attr_dev(label9, "class", "checkbox");
-    			add_location(label9, file$3, 99, 2, 3092);
+    			add_location(label9, file$3, 99, 2, 3057);
     			attr_dev(input12, "type", "radio");
     			attr_dev(input12, "name", "checkradios");
     			input12.value = "c";
-    			add_location(input12, file$3, 105, 3, 3236);
-    			add_location(span4, file$3, 106, 3, 3291);
+    			add_location(input12, file$3, 105, 3, 3201);
+    			add_location(span4, file$3, 106, 3, 3256);
     			attr_dev(label10, "class", "checkbox");
-    			add_location(label10, file$3, 104, 2, 3208);
+    			add_location(label10, file$3, 104, 2, 3173);
     			attr_dev(div28, "class", "flex");
-    			add_location(div28, file$3, 93, 1, 2947);
+    			add_location(div28, file$3, 93, 1, 2912);
     			attr_dev(input13, "type", "radio");
     			input13.checked = true;
     			attr_dev(input13, "name", "radioradios");
     			input13.value = "a";
-    			add_location(input13, file$3, 112, 3, 3377);
-    			add_location(span5, file$3, 113, 3, 3440);
+    			add_location(input13, file$3, 112, 3, 3342);
+    			add_location(span5, file$3, 113, 3, 3405);
     			attr_dev(label11, "class", "radio");
-    			add_location(label11, file$3, 111, 2, 3352);
+    			add_location(label11, file$3, 111, 2, 3317);
     			attr_dev(input14, "type", "radio");
     			attr_dev(input14, "name", "radioradios");
     			input14.value = "b";
-    			add_location(input14, file$3, 117, 3, 3498);
-    			add_location(span6, file$3, 118, 3, 3553);
+    			add_location(input14, file$3, 117, 3, 3463);
+    			add_location(span6, file$3, 118, 3, 3518);
     			attr_dev(label12, "class", "radio");
-    			add_location(label12, file$3, 116, 2, 3473);
+    			add_location(label12, file$3, 116, 2, 3438);
     			attr_dev(input15, "type", "radio");
     			attr_dev(input15, "name", "radioradios");
     			input15.value = "c";
-    			add_location(input15, file$3, 122, 3, 3611);
-    			add_location(span7, file$3, 123, 3, 3666);
+    			add_location(input15, file$3, 122, 3, 3576);
+    			add_location(span7, file$3, 123, 3, 3631);
     			attr_dev(label13, "class", "radio");
-    			add_location(label13, file$3, 121, 2, 3586);
+    			add_location(label13, file$3, 121, 2, 3551);
     			attr_dev(div29, "class", "flex");
-    			add_location(div29, file$3, 110, 1, 3331);
+    			add_location(div29, file$3, 110, 1, 3296);
     			option0.__value = "option a ";
     			option0.value = option0.__value;
-    			add_location(option0, file$3, 129, 3, 3741);
+    			add_location(option0, file$3, 129, 3, 3706);
     			option1.__value = "option b ";
     			option1.value = option1.__value;
-    			add_location(option1, file$3, 130, 3, 3771);
+    			add_location(option1, file$3, 130, 3, 3736);
     			option2.__value = "option c ";
     			option2.value = option2.__value;
-    			add_location(option2, file$3, 131, 3, 3801);
-    			add_location(select, file$3, 128, 2, 3729);
+    			add_location(option2, file$3, 131, 3, 3766);
+    			add_location(select, file$3, 128, 2, 3694);
     			attr_dev(div30, "class", "select");
-    			add_location(div30, file$3, 127, 1, 3706);
+    			add_location(div30, file$3, 127, 1, 3671);
     			attr_dev(input16, "class", "grow mr1");
     			attr_dev(input16, "type", "range");
     			input16.value = "50";
     			attr_dev(input16, "min", "0");
     			attr_dev(input16, "max", "100");
-    			add_location(input16, file$3, 136, 2, 3871);
+    			add_location(input16, file$3, 136, 2, 3836);
     			attr_dev(input17, "class", "grow round radius1em");
     			attr_dev(input17, "type", "range");
     			input17.value = "50";
     			attr_dev(input17, "min", "0");
     			attr_dev(input17, "max", "100");
-    			add_location(input17, file$3, 137, 2, 3936);
+    			add_location(input17, file$3, 137, 2, 3901);
     			attr_dev(div31, "class", "flex");
-    			add_location(div31, file$3, 135, 1, 3850);
+    			add_location(div31, file$3, 135, 1, 3815);
     			attr_dev(input18, "class", "grow mr1 h10px radius10px");
     			attr_dev(input18, "type", "range");
     			input18.value = "50";
     			attr_dev(input18, "min", "0");
     			attr_dev(input18, "max", "100");
-    			add_location(input18, file$3, 140, 2, 4060);
+    			add_location(input18, file$3, 140, 2, 4025);
     			attr_dev(input19, "class", "grow round h0em radius1em");
     			attr_dev(input19, "type", "range");
     			input19.value = "50";
     			attr_dev(input19, "min", "0");
     			attr_dev(input19, "max", "100");
-    			add_location(input19, file$3, 141, 2, 4142);
+    			add_location(input19, file$3, 141, 2, 4107);
     			attr_dev(div32, "class", "flex align-items-center");
-    			add_location(div32, file$3, 139, 1, 4020);
+    			add_location(div32, file$3, 139, 1, 3985);
     			attr_dev(input20, "class", "grow radius1em success");
     			attr_dev(input20, "type", "range");
     			input20.value = "50";
     			attr_dev(input20, "min", "0");
     			attr_dev(input20, "max", "100");
-    			add_location(input20, file$3, 144, 2, 4271);
+    			add_location(input20, file$3, 144, 2, 4236);
     			attr_dev(input21, "class", "grow ml1 radius1em info");
     			attr_dev(input21, "type", "range");
     			input21.value = "50";
     			attr_dev(input21, "min", "0");
     			attr_dev(input21, "max", "100");
-    			add_location(input21, file$3, 145, 2, 4350);
-    			attr_dev(input22, "class", "grow ml1 radius1em alert");
+    			add_location(input21, file$3, 145, 2, 4315);
+    			attr_dev(div33, "class", "flex align-items-center");
+    			add_location(div33, file$3, 143, 1, 4196);
+    			attr_dev(input22, "class", "grow radius1em alert");
     			attr_dev(input22, "type", "range");
     			input22.value = "50";
     			attr_dev(input22, "min", "0");
     			attr_dev(input22, "max", "100");
-    			add_location(input22, file$3, 146, 2, 4430);
+    			add_location(input22, file$3, 148, 2, 4442);
     			attr_dev(input23, "class", "grow ml1 radius1em error");
     			attr_dev(input23, "type", "range");
     			input23.value = "50";
     			attr_dev(input23, "min", "0");
     			attr_dev(input23, "max", "100");
-    			add_location(input23, file$3, 147, 2, 4511);
-    			attr_dev(div33, "class", "flex align-items-center");
-    			add_location(div33, file$3, 143, 1, 4231);
+    			add_location(input23, file$3, 149, 2, 4519);
+    			attr_dev(div34, "class", "flex align-items-center");
+    			add_location(div34, file$3, 147, 1, 4402);
     			attr_dev(input24, "class", "grow start mr1");
     			attr_dev(input24, "type", "range");
     			input24.value = "50";
     			attr_dev(input24, "min", "0");
     			attr_dev(input24, "max", "100");
-    			add_location(input24, file$3, 150, 2, 4620);
+    			add_location(input24, file$3, 152, 2, 4628);
     			attr_dev(input25, "class", "grow start radius1em");
     			attr_dev(input25, "type", "range");
     			input25.value = "50";
     			attr_dev(input25, "min", "0");
     			attr_dev(input25, "max", "100");
-    			add_location(input25, file$3, 151, 2, 4691);
-    			attr_dev(div34, "class", "flex");
-    			add_location(div34, file$3, 149, 1, 4599);
+    			add_location(input25, file$3, 153, 2, 4699);
+    			attr_dev(div35, "class", "flex");
+    			add_location(div35, file$3, 151, 1, 4607);
     			attr_dev(input26, "class", "grow end mr1");
     			attr_dev(input26, "type", "range");
     			input26.value = "50";
     			attr_dev(input26, "min", "0");
     			attr_dev(input26, "max", "100");
-    			add_location(input26, file$3, 154, 2, 4796);
+    			add_location(input26, file$3, 156, 2, 4804);
     			attr_dev(input27, "class", "grow end radius1em");
     			attr_dev(input27, "type", "range");
     			input27.value = "50";
     			attr_dev(input27, "min", "0");
     			attr_dev(input27, "max", "100");
-    			add_location(input27, file$3, 155, 2, 4865);
-    			attr_dev(div35, "class", "flex");
-    			add_location(div35, file$3, 153, 1, 4775);
+    			add_location(input27, file$3, 157, 2, 4873);
+    			attr_dev(div36, "class", "flex");
+    			add_location(div36, file$3, 155, 1, 4783);
     			attr_dev(button0, "class", "grow mr1 radius2em-right");
-    			add_location(button0, file$3, 160, 2, 4970);
-    			attr_dev(div36, "class", "flex b3-solid clickable grow justify-content-center align-items-center");
-    			add_location(div36, file$3, 161, 2, 5029);
-    			attr_dev(div37, "class", "flex");
-    			add_location(div37, file$3, 159, 1, 4949);
-    			attr_dev(button1, "class", "success mr1 grow radius10px");
-    			add_location(button1, file$3, 164, 2, 5159);
-    			attr_dev(button2, "class", "info grow radius100pc");
-    			add_location(button2, file$3, 165, 2, 5222);
+    			add_location(button0, file$3, 162, 2, 4978);
+    			attr_dev(div37, "class", "flex b3-solid clickable grow justify-content-center align-items-center");
+    			add_location(div37, file$3, 163, 2, 5037);
     			attr_dev(div38, "class", "flex");
-    			add_location(div38, file$3, 163, 1, 5138);
-    			attr_dev(button3, "class", "error mr1 grow");
-    			add_location(button3, file$3, 168, 2, 5304);
-    			attr_dev(button4, "class", "alert grow");
-    			add_location(button4, file$3, 169, 2, 5352);
+    			add_location(div38, file$3, 161, 1, 4957);
+    			attr_dev(button1, "class", "success mr1 grow radius10px");
+    			add_location(button1, file$3, 166, 2, 5167);
+    			attr_dev(button2, "class", "info grow radius100pc");
+    			add_location(button2, file$3, 167, 2, 5230);
     			attr_dev(div39, "class", "flex");
-    			add_location(div39, file$3, 167, 1, 5283);
-    			attr_dev(button5, "class", "grow mr1 radius2em");
-    			add_location(button5, file$3, 172, 2, 5424);
-    			attr_dev(button6, "class", "filled grow radius2em");
-    			add_location(button6, file$3, 173, 2, 5478);
+    			add_location(div39, file$3, 165, 1, 5146);
+    			attr_dev(button3, "class", "error mr1 grow");
+    			add_location(button3, file$3, 170, 2, 5312);
+    			attr_dev(button4, "class", "alert grow");
+    			add_location(button4, file$3, 171, 2, 5360);
     			attr_dev(div40, "class", "flex");
-    			add_location(div40, file$3, 171, 1, 5403);
-    			attr_dev(div41, "class", "p2 flex justify-content-center pop grow");
-    			add_location(div41, file$3, 176, 2, 5562);
-    			attr_dev(div42, "class", "p2 flex justify-content-center sink grow");
-    			add_location(div42, file$3, 177, 2, 5627);
-    			attr_dev(div43, "class", "flex");
-    			add_location(div43, file$3, 175, 1, 5541);
-    			attr_dev(div44, "class", "p1 grow bright");
-    			add_location(div44, file$3, 180, 2, 5731);
-    			attr_dev(div45, "class", "p1 grow bl1-solid");
-    			add_location(div45, file$3, 181, 2, 5774);
-    			attr_dev(div46, "class", "p1 grow bl1-dashed");
-    			add_location(div46, file$3, 182, 2, 5819);
-    			attr_dev(div47, "class", "p1 grow bl1-dotted");
-    			add_location(div47, file$3, 183, 2, 5866);
-    			attr_dev(div48, "class", "flex b1-solid");
-    			add_location(div48, file$3, 179, 1, 5701);
-    			attr_dev(div49, "class", "p0-6 text-center grow color-a filled radius2em-left");
-    			add_location(div49, file$3, 186, 2, 5941);
-    			attr_dev(div50, "class", "p0-6 text-center grow color-b filled");
-    			add_location(div50, file$3, 187, 2, 6016);
-    			attr_dev(div51, "class", "p0-6 text-center grow color-c filled");
-    			add_location(div51, file$3, 188, 2, 6076);
-    			attr_dev(div52, "class", "p0-6 text-center grow color-d filled");
-    			add_location(div52, file$3, 189, 2, 6136);
-    			attr_dev(div53, "class", "p0-6 text-center grow color-e filled radius2em-right");
-    			add_location(div53, file$3, 190, 2, 6196);
-    			attr_dev(div54, "class", "flex");
-    			add_location(div54, file$3, 185, 1, 5920);
+    			add_location(div40, file$3, 169, 1, 5291);
+    			attr_dev(button5, "class", "grow mr1 radius2em");
+    			add_location(button5, file$3, 174, 2, 5432);
+    			attr_dev(button6, "class", "filled grow radius2em");
+    			add_location(button6, file$3, 175, 2, 5486);
+    			attr_dev(div41, "class", "flex");
+    			add_location(div41, file$3, 173, 1, 5411);
+    			attr_dev(div42, "class", "p2 flex justify-content-center pop grow");
+    			add_location(div42, file$3, 178, 2, 5570);
+    			attr_dev(div43, "class", "p2 flex justify-content-center sink grow");
+    			add_location(div43, file$3, 179, 2, 5635);
+    			attr_dev(div44, "class", "flex");
+    			add_location(div44, file$3, 177, 1, 5549);
+    			attr_dev(div45, "class", "p1 grow bright");
+    			add_location(div45, file$3, 182, 2, 5739);
+    			attr_dev(div46, "class", "p1 grow bl1-solid");
+    			add_location(div46, file$3, 183, 2, 5782);
+    			attr_dev(div47, "class", "p1 grow bl1-dashed");
+    			add_location(div47, file$3, 184, 2, 5827);
+    			attr_dev(div48, "class", "p1 grow bl1-dotted");
+    			add_location(div48, file$3, 185, 2, 5874);
+    			attr_dev(div49, "class", "flex b1-solid");
+    			add_location(div49, file$3, 181, 1, 5709);
+    			attr_dev(div50, "class", "p0-6 text-center grow color-a filled radius2em-left");
+    			add_location(div50, file$3, 188, 2, 5949);
+    			attr_dev(div51, "class", "p0-6 text-center grow color-b filled");
+    			add_location(div51, file$3, 189, 2, 6024);
+    			attr_dev(div52, "class", "p0-6 text-center grow color-c filled");
+    			add_location(div52, file$3, 190, 2, 6084);
+    			attr_dev(div53, "class", "p0-6 text-center grow color-d filled");
+    			add_location(div53, file$3, 191, 2, 6144);
+    			attr_dev(div54, "class", "p0-6 text-center grow color-e filled radius2em-right");
+    			add_location(div54, file$3, 192, 2, 6204);
+    			attr_dev(div55, "class", "flex");
+    			add_location(div55, file$3, 187, 1, 5928);
     			attr_dev(textarea, "rows", 4);
     			textarea.value = "textarea";
-    			add_location(textarea, file$3, 193, 1, 6280);
-    			attr_dev(div55, "class", "ptb1 pr1 flex column cmb1 h100vh overflow-auto");
-    			add_location(div55, file$3, 23, 0, 479);
+    			add_location(textarea, file$3, 195, 1, 6288);
+    			attr_dev(div56, "class", "ptb1 pr1 flex column cmb1 ");
+    			add_location(div56, file$3, 23, 0, 459);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9682,8 +9686,8 @@ var app = (function () {
     			insert_dev(target, div0, anchor);
     			mount_component(codeeditor, div0, null);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, div55, anchor);
-    			append_dev(div55, div1);
+    			insert_dev(target, div56, anchor);
+    			append_dev(div56, div1);
     			append_dev(div1, label0);
     			append_dev(label0, input0);
     			append_dev(div1, t1);
@@ -9701,8 +9705,8 @@ var app = (function () {
     			append_dev(div1, t5);
     			append_dev(div1, label5);
     			append_dev(label5, input5);
-    			append_dev(div55, t6);
-    			append_dev(div55, div25);
+    			append_dev(div56, t6);
+    			append_dev(div56, div25);
     			append_dev(div25, div8);
     			append_dev(div8, div2);
     			append_dev(div8, t8);
@@ -9744,13 +9748,13 @@ var app = (function () {
     			append_dev(div24, div22);
     			append_dev(div24, t42);
     			append_dev(div24, div23);
-    			append_dev(div55, t44);
-    			append_dev(div55, div26);
+    			append_dev(div56, t44);
+    			append_dev(div56, div26);
     			append_dev(div26, input6);
     			append_dev(div26, t45);
     			append_dev(div26, input7);
-    			append_dev(div55, t46);
-    			append_dev(div55, div27);
+    			append_dev(div56, t46);
+    			append_dev(div56, div27);
     			append_dev(div27, label6);
     			append_dev(label6, input8);
     			append_dev(label6, t47);
@@ -9762,8 +9766,8 @@ var app = (function () {
     			append_dev(label7, t50);
     			append_dev(label7, span1);
     			append_dev(label7, t51);
-    			append_dev(div55, t52);
-    			append_dev(div55, div28);
+    			append_dev(div56, t52);
+    			append_dev(div56, div28);
     			append_dev(div28, label8);
     			append_dev(label8, input10);
     			append_dev(label8, t53);
@@ -9781,8 +9785,8 @@ var app = (function () {
     			append_dev(label10, t59);
     			append_dev(label10, span4);
     			append_dev(label10, t60);
-    			append_dev(div55, t61);
-    			append_dev(div55, div29);
+    			append_dev(div56, t61);
+    			append_dev(div56, div29);
     			append_dev(div29, label11);
     			append_dev(label11, input13);
     			append_dev(label11, t62);
@@ -9800,88 +9804,89 @@ var app = (function () {
     			append_dev(label13, t68);
     			append_dev(label13, span7);
     			append_dev(label13, t69);
-    			append_dev(div55, t70);
-    			append_dev(div55, div30);
+    			append_dev(div56, t70);
+    			append_dev(div56, div30);
     			append_dev(div30, select);
     			append_dev(select, option0);
     			append_dev(select, option1);
     			append_dev(select, option2);
-    			append_dev(div55, t74);
-    			append_dev(div55, div31);
+    			append_dev(div56, t74);
+    			append_dev(div56, div31);
     			append_dev(div31, input16);
     			append_dev(div31, t75);
     			append_dev(div31, input17);
-    			append_dev(div55, t76);
-    			append_dev(div55, div32);
+    			append_dev(div56, t76);
+    			append_dev(div56, div32);
     			append_dev(div32, input18);
     			append_dev(div32, t77);
     			append_dev(div32, input19);
-    			append_dev(div55, t78);
-    			append_dev(div55, div33);
+    			append_dev(div56, t78);
+    			append_dev(div56, div33);
     			append_dev(div33, input20);
     			append_dev(div33, t79);
     			append_dev(div33, input21);
-    			append_dev(div33, t80);
-    			append_dev(div33, input22);
-    			append_dev(div33, t81);
-    			append_dev(div33, input23);
-    			append_dev(div55, t82);
-    			append_dev(div55, div34);
-    			append_dev(div34, input24);
-    			append_dev(div34, t83);
-    			append_dev(div34, input25);
-    			append_dev(div55, t84);
-    			append_dev(div55, div35);
-    			append_dev(div35, input26);
-    			append_dev(div35, t85);
-    			append_dev(div35, input27);
-    			append_dev(div55, t86);
-    			append_dev(div55, div37);
-    			append_dev(div37, button0);
-    			append_dev(div37, t88);
-    			append_dev(div37, div36);
-    			append_dev(div55, t90);
-    			append_dev(div55, div38);
-    			append_dev(div38, button1);
-    			append_dev(div38, t92);
-    			append_dev(div38, button2);
-    			append_dev(div55, t94);
-    			append_dev(div55, div39);
-    			append_dev(div39, button3);
-    			append_dev(div39, t96);
-    			append_dev(div39, button4);
-    			append_dev(div55, t98);
-    			append_dev(div55, div40);
-    			append_dev(div40, button5);
-    			append_dev(div40, t100);
-    			append_dev(div40, button6);
-    			append_dev(div55, t102);
-    			append_dev(div55, div43);
-    			append_dev(div43, div41);
-    			append_dev(div43, t104);
-    			append_dev(div43, div42);
-    			append_dev(div55, t106);
-    			append_dev(div55, div48);
-    			append_dev(div48, div44);
-    			append_dev(div48, t108);
-    			append_dev(div48, div45);
-    			append_dev(div48, t110);
-    			append_dev(div48, div46);
-    			append_dev(div48, t112);
-    			append_dev(div48, div47);
-    			append_dev(div55, t114);
+    			append_dev(div56, t80);
+    			append_dev(div56, div34);
+    			append_dev(div34, input22);
+    			append_dev(div34, t81);
+    			append_dev(div34, input23);
+    			append_dev(div56, t82);
+    			append_dev(div56, div35);
+    			append_dev(div35, input24);
+    			append_dev(div35, t83);
+    			append_dev(div35, input25);
+    			append_dev(div56, t84);
+    			append_dev(div56, div36);
+    			append_dev(div36, input26);
+    			append_dev(div36, t85);
+    			append_dev(div36, input27);
+    			append_dev(div56, t86);
+    			append_dev(div56, div38);
+    			append_dev(div38, button0);
+    			append_dev(div38, t88);
+    			append_dev(div38, div37);
+    			append_dev(div56, t90);
+    			append_dev(div56, div39);
+    			append_dev(div39, button1);
+    			append_dev(div39, t92);
+    			append_dev(div39, button2);
+    			append_dev(div56, t94);
+    			append_dev(div56, div40);
+    			append_dev(div40, button3);
+    			append_dev(div40, t96);
+    			append_dev(div40, button4);
+    			append_dev(div56, t98);
+    			append_dev(div56, div41);
+    			append_dev(div41, button5);
+    			append_dev(div41, t100);
+    			append_dev(div41, button6);
+    			append_dev(div56, t102);
+    			append_dev(div56, div44);
+    			append_dev(div44, div42);
+    			append_dev(div44, t104);
+    			append_dev(div44, div43);
+    			append_dev(div56, t106);
+    			append_dev(div56, div49);
+    			append_dev(div49, div45);
+    			append_dev(div49, t108);
+    			append_dev(div49, div46);
+    			append_dev(div49, t110);
+    			append_dev(div49, div47);
+    			append_dev(div49, t112);
+    			append_dev(div49, div48);
+    			append_dev(div56, t114);
+    			append_dev(div56, div55);
+    			append_dev(div55, div50);
+    			append_dev(div55, t116);
+    			append_dev(div55, div51);
+    			append_dev(div55, t118);
+    			append_dev(div55, div52);
+    			append_dev(div55, t120);
+    			append_dev(div55, div53);
+    			append_dev(div55, t122);
     			append_dev(div55, div54);
-    			append_dev(div54, div49);
-    			append_dev(div54, t116);
-    			append_dev(div54, div50);
-    			append_dev(div54, t118);
-    			append_dev(div54, div51);
-    			append_dev(div54, t120);
-    			append_dev(div54, div52);
-    			append_dev(div54, t122);
-    			append_dev(div54, div53);
-    			append_dev(div55, t124);
-    			append_dev(div55, textarea);
+    			append_dev(div56, t124);
+    			append_dev(div56, textarea);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -9909,7 +9914,7 @@ var app = (function () {
     			if (detaching) detach_dev(div0);
     			destroy_component(codeeditor);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(div55);
+    			if (detaching) detach_dev(div56);
     		}
     	};
 
@@ -10904,19 +10909,19 @@ var app = (function () {
     routes.set({
     	'/': Introduction,
     	'/intro': Introduction,
-    	'/basic': Basic,
-    	'/basic/:id': Basic,
-    	'/sizing': Sizing,
-    	'/sizing/:id': Sizing,
-    	'/spacing': Spacing,
-    	'/spacing/:id': Spacing,
+    	'/themes+colours': Variables,
+    	'/basic-utils': Basic,
+    	'/basic-utils/:id': Basic,
+    	'/dimensions': Sizing,
+    	'/dimensions/:id': Sizing,
+    	'/margin+padding': Spacing,
+    	'/margin+padding/:id': Spacing,
     	'/layouts': Layouts,
     	'/layouts/:id': Layouts,
-    	'/fields': FormFields,
-    	'/fields/:id': FormFields,
-    	'/type': Type,
-    	'/type/:id': Type,
-    	'/variables': Variables,
+    	'/user-interface': FormFields,
+    	'/user-interface/:id': FormFields,
+    	'/fonts': Type,
+    	'/fonts/:id': Type,
     	'/search': Search,
     	'/download': Download
     });
