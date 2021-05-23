@@ -1,5 +1,12 @@
 :root {
 
+	--f0: 0.785714rem;
+	--f1: 1rem;
+	--f2: 1.2857rem;
+	--f3: 1.64285rem;
+	--f4: 2.071428rem;
+	--f5: 2.642857rem;
+
 	--stroke-width: 1px;
 	--column-spacing: 2em;
 
