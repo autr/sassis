@@ -36,7 +36,17 @@
 
 	/* backgrounds w. pop and sink */
 
+	@for $i from 1 through 24
+		.clamp#{$i}
+			display: box
+			display: -webkit-box
+			max-lines: $i
+			line-clamp: $i
+			-webkit-line-clamp: $i
+			box-orient: vertical
+			-webkit-box-orient: vertical
 
+ 
 	@for $i from 0 through 3
 		$rot: $i * 90
 		.rotate#{$rot}

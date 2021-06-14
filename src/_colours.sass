@@ -145,8 +145,11 @@
 
 	// buttons + filled
 
+	button, .button
+		+set-prop(border-color, $c, $s )
+		+set-prop(color, $c, $s ) 
 
-	.filled
+	.filled, button.filled, .button.filled
 		+filled( $c, $s, $bg )
 
 	a, button, .clickable, .button
@@ -158,7 +161,4 @@
 	a, select, button, .button
 		+set-prop(color, $c, $s )
 		+set-prop(border-color, $c, $s )
-	button, .button
-		+set-prop(border-color, $c, $s )
-		+set-prop(color, $c, $s ) 
 
