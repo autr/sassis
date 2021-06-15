@@ -51,7 +51,7 @@ table {
   border-radius: 0px;
   font-weight: normal; }
 
-textarea, input[type=text], input[type=password], input[type=number], input[type=email], select, .dropdown {
+textarea, input[type=text], input[type=password], input[type=number], input[type=email], input[type=date], input[type=datetime-local], select, .dropdown {
   padding: var(--input-padding);
   flex-basis: 0; }
 
