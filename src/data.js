@@ -420,6 +420,14 @@ export default [
       ],
       [
         [
+          "whitespace-normal"
+        ],
+        [
+          "white-space: normal"
+        ]
+      ],
+      [
+        [
           "whitespace-pre",
           "newlines"
         ],

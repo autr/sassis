@@ -138,6 +138,9 @@
 .margin-auto {
   margin: auto auto; }
 
+.whitespace-normal {
+  white-space: normal; }
+
 .whitespace-pre, .newlines {
   white-space: pre; }
 

@@ -65,6 +65,7 @@ const aliases = [
 	[ ['overflow-auto'], ['overflow: auto' ] ],
 
 	[ ['margin-auto'], ['margin: auto auto' ] ],
+	[ ['whitespace-normal'], ['white-space: normal' ] ],
 	[ ['whitespace-pre', 'newlines'], ['white-space: pre' ] ],
 	[ ['whitespace-nowrap'], ['white-space: nowrap' ] ],
 	[ ['whitespace-prewrap'], ['white-space: pre-wrap' ] ],

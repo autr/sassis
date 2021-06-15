@@ -153,8 +153,8 @@
 		+filled( $c, $s, $bg )
 
 	a, button, .clickable, .button
-		&:active,&.active
-			&:not(.unclickable):not(.disabled)
+		&:active,&.active,&:focus
+			&:not(.unclickable):not(.disabled),.bg
 				+filled( $c, $s, $bg )
 
 

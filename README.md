@@ -100,6 +100,8 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <tr>
 <td>.margin-auto</td><td>margin: auto auto</td></tr>
 <tr>
+<td>.whitespace-normal</td><td>white-space: normal</td></tr>
+<tr>
 <td>.whitespace-pre<br />.newlines</td><td>white-space: pre</td></tr>
 <tr>
 <td>.whitespace-nowrap</td><td>white-space: nowrap</td></tr>
