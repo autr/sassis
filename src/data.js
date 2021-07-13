@@ -10,7 +10,8 @@ export default [
       [
         [
           "absolute",
-          "abs"
+          "abs",
+          "a"
         ],
         [
           "position: absolute"
@@ -19,7 +20,8 @@ export default [
       [
         [
           "relative",
-          "rel"
+          "rel",
+          "r"
         ],
         [
           "position: relative"
@@ -51,7 +53,8 @@ export default [
       ],
       [
         [
-          "inline"
+          "inline",
+          "i"
         ],
         [
           "display: inline"
@@ -75,7 +78,8 @@ export default [
       ],
       [
         [
-          "flex"
+          "flex",
+          "f"
         ],
         [
           "display: flex"
@@ -85,7 +89,8 @@ export default [
       ],
       [
         [
-          "none"
+          "none",
+          "n"
         ],
         [
           "display: none"
@@ -492,7 +497,8 @@ export default [
     "data": [
       [
         [
-          "flex"
+          "flex",
+          "f"
         ],
         [
           "display: flex"

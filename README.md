@@ -8,9 +8,9 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 
 <table>
 <tr>
-<td>.absolute<br />.abs</td><td>position: absolute</td></tr>
+<td>.absolute<br />.abs<br />.a</td><td>position: absolute</td></tr>
 <tr>
-<td>.relative<br />.rel</td><td>position: relative</td></tr>
+<td>.relative<br />.rel<br />.r</td><td>position: relative</td></tr>
 <tr>
 <td>.fixed</td><td>position: fixed</td></tr>
 <tr>
@@ -18,15 +18,15 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <tr>
 <td>.table</td><td>display: table</td></tr>
 <tr>
-<td>.inline</td><td>display: inline</td></tr>
+<td>.inline<br />.i</td><td>display: inline</td></tr>
 <tr>
 <td>.inline-block</td><td>display: inline-block</td></tr>
 <tr>
 <td>.block</td><td>display: block</td></tr>
 <tr>
-<td>.flex</td><td>display: flex</td></tr>
+<td>.flex<br />.f</td><td>display: flex</td></tr>
 <tr>
-<td>.none</td><td>display: none</td></tr>
+<td>.none<br />.n</td><td>display: none</td></tr>
 <tr>
 <td>.column<br />.col<br />.flex-column</td><td>flex-direction: column</td></tr>
 <tr>
@@ -119,7 +119,7 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 
 <table>
 <tr>
-<td>.flex</td><td>display: flex</td></tr>
+<td>.flex<br />.f</td><td>display: flex</td></tr>
 <tr>
 <td>.grow</td><td>flex-grow: 1</td></tr>
 <tr>
