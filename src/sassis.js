@@ -707,7 +707,7 @@ for( let i = 0; i < 100; i++) {
 `
 	classes += `
 	.opacity${i}
-		opacity: ${i} 
+		opacity: ${(i/100).toFixed(2)} 
 `
 }
 mixins += `

@@ -26,11 +26,12 @@
 
 	// LINKS
 
+	a
+		cursor: pointer
+
 	a, select
 		text-decoration: none
 
-	a, select, .clickable
-		cursor: pointer
 	*.disabled, *[disabled]
 		cursor: default
 
@@ -62,7 +63,7 @@
 		&:not(:focus) > *, &:not(.focus) > *
 			display: none
 
-	.select, .chevron, .dropdown
+	.select, .chevron, .dropdown, .arrow
 		+relative
 		+inline-block
 		select
@@ -80,6 +81,13 @@
 			border-style: solid
 			transform: rotateZ(-45deg) translate( 0%, -50% )
 			transform-origin: 50% 50%
+	.arrow, .chevron
+		&:after
+			right: auto
+			+top-left(50%, 50%)
+			margin: 0!important
+			transform: translate( -50%, -0.5em )rotateZ(-45deg) 
+
 
 	/* ---------------------- FILE ---------------------- */
 
@@ -103,7 +111,7 @@
 			width: 1em
 			height: 1em
 			min-height: 1em
-			border: none
+			border: 1px solid var(--color)
 			border-radius: 0px
 		&.rounded, &.round
 			&::-webkit-slider-thumb
