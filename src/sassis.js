@@ -5,16 +5,16 @@ let api = [], mixins = '', classes = '=shorthand\n', file = ''
 
 const aliases = [ 
 
-	[ ['absolute', 'abs'], ['position: absolute' ] ],
-	[ ['relative', 'rel'], ['position: relative' ] ],
+	[ ['absolute', 'abs', 'a'], ['position: absolute' ] ],
+	[ ['relative', 'rel', 'r'], ['position: relative' ] ],
 	[ ['fixed'], ['position: fixed' ] ],
 	[ ['sticky'], ['position: sticky' ] ],
 	[ ['table'], ['display: table' ] ],
-	[ ['inline'], ['display: inline' ] ],
+	[ ['inline', 'i'], ['display: inline' ] ],
 	[ ['inline-block'], ['display: inline-block' ] ],
 	[ ['block'], ['display: block' ] ],
-	[ ['flex'], ['display: flex' ],false, true ], // layout views
-	[ ['none'], ['display: none' ] ],
+	[ ['flex', 'f'], ['display: flex' ],false, true ], // layout views
+	[ ['none', 'n'], ['display: none' ] ],
 
 	[ ['column', 'col', 'flex-column'], ['flex-direction: column' ] ],
 	[ ['row', 'flex-row'], ['flex-direction: row' ] ],
@@ -26,7 +26,6 @@ const aliases = [
 
 	[ ['cgrow > *','c-grow > *'], ['flex-grow: 1'], false, true, true ], // layout views
 	[ ['cnogrow > *', 'cno-grow > *', 'c-no-grow > *'], ['flex-grow: 0'], false, true, true ], // layout views
-
 
 	[ ['shrink'], ['flex-shrink: 1' ], false, true ],  // layout views
 	[ ['no-shrink'], ['flex-shrink: 0' ], false, true ],  // layout views
@@ -147,8 +146,15 @@ yep.forEach( (y, ii) => {
 		Aitems.forEach( Aitem => {
 			Bitems.forEach( Bitem => {
 
-				classes += `\n\t.${colrow}-${Aitem}-${Bitem}\n\t\t${Atype}: ${Aitem}\n\t\t${Btype}: ${Bitem}\n\t\tflex-direction: ${colrow}`
-				mixins += `\n=${colrow}($x, $y)\n\t${Atype}: $x\n\t${Btype}: $y\n\tflex-direction: ${colrow}`
+				for (let i = 0; i < 2; i++) {
+					let arrrrrr = [colrow,Aitem,Bitem]
+					if (i == 0) arrrrrr.unshift('c')
+					let append = i == 0 ? ' > *' : ''
+					let str = `\n\t.${arrrrrr.join('-')}${append},.${arrrrrr.map(l=>(l.split('-').map(ll=>(ll[0])).join('') )).join('-')}${append}\n\t\t${Atype}: ${Aitem}\n\t\t${Btype}: ${Bitem}\n\t\tflex-direction: ${colrow}`
+					classes += str
+					mixins += `\n=${colrow}($x, $y)\n\t${Atype}: $x\n\t${Btype}: $y\n\tflex-direction: ${colrow}`
+					console.log(str)
+				}
 			})
 		})
 
@@ -707,7 +713,7 @@ for( let i = 0; i < 100; i++) {
 `
 	classes += `
 	.opacity${i}
-		opacity: ${i} 
+		opacity: ${(i/100).toFixed(2)} 
 `
 }
 mixins += `

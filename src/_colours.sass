@@ -101,7 +101,7 @@
 		&:focus
 			+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
 	label:not(.disabled)
-		&:active,&.active
+		&:active, &.active
 			input[type=range], input[type=checkbox]+span, input[type=radio]+span
 				&:not([disabled])
 					+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
@@ -153,7 +153,7 @@
 		+filled( $c, $s, $bg )
 
 	a, button, .clickable, .button
-		&:active,&.active,&:focus
+		&:active,&.active,&.focusable:focus
 			&:not(.unclickable):not(.disabled),.bg
 				+filled( $c, $s, $bg )
 
