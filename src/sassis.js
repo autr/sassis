@@ -56,6 +56,8 @@ const aliases = [
 	[ ['strike-through', 'line-through', 'cross-out'], ['text-decoration: line-through' ] ],
 
 	[ ['pointer'], ['cursor: pointer' ] ],
+	[ ['grab'], ['cursor: grab' ] ],
+	[ ['grabbing'], ['cursor: grabbing' ] ],
 
 	[ ['visible'], ['opacity: 1' ] ],
 	[ ['invisible', 'hidden'], ['opacity: 0' ] ],

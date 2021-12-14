@@ -376,6 +376,22 @@ export default [
       ],
       [
         [
+          "grab"
+        ],
+        [
+          "cursor: grab"
+        ]
+      ],
+      [
+        [
+          "grabbing"
+        ],
+        [
+          "cursor: grabbing"
+        ]
+      ],
+      [
+        [
           "visible"
         ],
         [

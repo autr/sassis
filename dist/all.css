@@ -200,7 +200,7 @@ input[type=range] {
   padding-top: 0px;
   padding-bottom: 0px; }
   .checkbox span, .radio span {
-    border-width: 1px;
+    border-width: var(--stroke-width);
     margin: var(--input-padding);
     margin-left: 0em;
     margin-top: 0em;
@@ -262,6 +262,26 @@ code[class*="language-"], pre[class*="language-"] {
 
 .token.entity {
   cursor: help; }
+
+.border {
+  border-width: var(--borders);
+  border-style: solid; }
+
+.bb {
+  border-bottom-width: var(--borders);
+  border-bottom-style: solid; }
+
+.bt {
+  border-top-width: var(--borders);
+  border-top-style: solid; }
+
+.br {
+  border-right-width: var(--borders);
+  border-right-style: solid; }
+
+.bl {
+  border-left-width: var(--borders);
+  border-left-style: solid; }
 
 /* backgrounds w. pop and sink */
 .clamp1 {
@@ -2184,6 +2204,12 @@ a.color-e, select.color-e, button.color-e, .button.color-e {
 
 .pointer {
   cursor: pointer; }
+
+.grab {
+  cursor: grab; }
+
+.grabbing {
+  cursor: grabbing; }
 
 .visible {
   opacity: 1; }
