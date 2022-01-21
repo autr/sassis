@@ -88,6 +88,10 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <tr>
 <td>.pointer</td><td>cursor: pointer</td></tr>
 <tr>
+<td>.grab</td><td>cursor: grab</td></tr>
+<tr>
+<td>.grabbing</td><td>cursor: grabbing</td></tr>
+<tr>
 <td>.visible</td><td>opacity: 1</td></tr>
 <tr>
 <td>.invisible<br />.hidden</td><td>opacity: 0</td></tr>

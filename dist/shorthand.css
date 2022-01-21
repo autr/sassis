@@ -120,6 +120,12 @@
 .pointer {
   cursor: pointer; }
 
+.grab {
+  cursor: grab; }
+
+.grabbing {
+  cursor: grabbing; }
+
 .visible {
   opacity: 1; }
 
