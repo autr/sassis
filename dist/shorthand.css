@@ -54104,6 +54104,72 @@
 .origin-100-100 {
   transform-origin: -100% -100%; }
 
+.cursor-auto {
+  cursor: auto; }
+
+.cursor-inherit {
+  cursor: inherit; }
+
+.cursor-crosshair {
+  cursor: crosshair; }
+
+.cursor-default {
+  cursor: default; }
+
+.cursor-help {
+  cursor: help; }
+
+.cursor-move {
+  cursor: move; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.cursor-progress {
+  cursor: progress; }
+
+.cursor-text {
+  cursor: text; }
+
+.cursor-wait {
+  cursor: wait; }
+
+.cursor-e-resize {
+  cursor: e-resize; }
+
+.cursor-ne-resize {
+  cursor: ne-resize; }
+
+.cursor-nw-resize {
+  cursor: nw-resize; }
+
+.cursor-n-resize {
+  cursor: n-resize; }
+
+.cursor-se-resize {
+  cursor: se-resize; }
+
+.cursor-sw-resize {
+  cursor: sw-resize; }
+
+.cursor-s-resize {
+  cursor: s-resize; }
+
+.cursor-w-resize {
+  cursor: w-resize; }
+
+.cursor-grab {
+  cursor: grab; }
+
+.cursor-grabbing {
+  cursor: grabbing; }
+
+.cursor-zoom-in {
+  cursor: zoom-in; }
+
+.cursor-zoom-out {
+  cursor: zoom-out; }
+
 .f0, h6, .h6 {
   font-size: var(--f0);
   line-height: var(--line-height); }

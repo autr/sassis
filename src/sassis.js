@@ -659,6 +659,29 @@ api.push( {
 
 
 
+// cursors
+
+api.push({
+	type: 'h2',
+	id: 'cursors'
+})
+api.push({
+	type: 'h2',
+	id: 'cursors',
+	data: ['auto', 'inherit', 'crosshair', 'default', 'help', 'move', 'pointer', 'progress', 'text', 'wait', 'e-resize', 'ne-resize', 'nw-resize', 'n-resize', 'se-resize', 'sw-resize', 's-resize', 'w-resize', 'grab', 'grabbing', 'zoom-in', 'zoom-out'].map( c => {
+		classes += `
+	.cursor-${c} 
+		cursor: ${c}
+		`
+		return [
+			[ `cursor-{alert}${c}{end}` ],
+			[ `cursor: {alert}${c}{end}` ]
+		]
+	})
+})
+
+
+
 // font sizes
 
 let fontSizes = []

@@ -603,6 +603,55 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <td>.origin<em>-100-100</em></td><td>transform-origin: <em>-100% -100%</em></td></tr>
 </table>
 
+## cursors 
+
+<table>
+<tr>
+<td>.cursor-<em>auto</em></td><td>cursor: <em>auto</em></td></tr>
+<tr>
+<td>.cursor-<em>inherit</em></td><td>cursor: <em>inherit</em></td></tr>
+<tr>
+<td>.cursor-<em>crosshair</em></td><td>cursor: <em>crosshair</em></td></tr>
+<tr>
+<td>.cursor-<em>default</em></td><td>cursor: <em>default</em></td></tr>
+<tr>
+<td>.cursor-<em>help</em></td><td>cursor: <em>help</em></td></tr>
+<tr>
+<td>.cursor-<em>move</em></td><td>cursor: <em>move</em></td></tr>
+<tr>
+<td>.cursor-<em>pointer</em></td><td>cursor: <em>pointer</em></td></tr>
+<tr>
+<td>.cursor-<em>progress</em></td><td>cursor: <em>progress</em></td></tr>
+<tr>
+<td>.cursor-<em>text</em></td><td>cursor: <em>text</em></td></tr>
+<tr>
+<td>.cursor-<em>wait</em></td><td>cursor: <em>wait</em></td></tr>
+<tr>
+<td>.cursor-<em>e-resize</em></td><td>cursor: <em>e-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>ne-resize</em></td><td>cursor: <em>ne-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>nw-resize</em></td><td>cursor: <em>nw-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>n-resize</em></td><td>cursor: <em>n-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>se-resize</em></td><td>cursor: <em>se-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>sw-resize</em></td><td>cursor: <em>sw-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>s-resize</em></td><td>cursor: <em>s-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>w-resize</em></td><td>cursor: <em>w-resize</em></td></tr>
+<tr>
+<td>.cursor-<em>grab</em></td><td>cursor: <em>grab</em></td></tr>
+<tr>
+<td>.cursor-<em>grabbing</em></td><td>cursor: <em>grabbing</em></td></tr>
+<tr>
+<td>.cursor-<em>zoom-in</em></td><td>cursor: <em>zoom-in</em></td></tr>
+<tr>
+<td>.cursor-<em>zoom-out</em></td><td>cursor: <em>zoom-out</em></td></tr>
+</table>
+
 ## font-size 
 
 <table>

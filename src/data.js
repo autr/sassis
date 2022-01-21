@@ -2474,6 +2474,192 @@ export default [
   },
   {
     "type": "h2",
+    "id": "cursors"
+  },
+  {
+    "type": "h2",
+    "id": "cursors",
+    "data": [
+      [
+        [
+          "cursor-{alert}auto{end}"
+        ],
+        [
+          "cursor: {alert}auto{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}inherit{end}"
+        ],
+        [
+          "cursor: {alert}inherit{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}crosshair{end}"
+        ],
+        [
+          "cursor: {alert}crosshair{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}default{end}"
+        ],
+        [
+          "cursor: {alert}default{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}help{end}"
+        ],
+        [
+          "cursor: {alert}help{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}move{end}"
+        ],
+        [
+          "cursor: {alert}move{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}pointer{end}"
+        ],
+        [
+          "cursor: {alert}pointer{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}progress{end}"
+        ],
+        [
+          "cursor: {alert}progress{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}text{end}"
+        ],
+        [
+          "cursor: {alert}text{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}wait{end}"
+        ],
+        [
+          "cursor: {alert}wait{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}e-resize{end}"
+        ],
+        [
+          "cursor: {alert}e-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}ne-resize{end}"
+        ],
+        [
+          "cursor: {alert}ne-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}nw-resize{end}"
+        ],
+        [
+          "cursor: {alert}nw-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}n-resize{end}"
+        ],
+        [
+          "cursor: {alert}n-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}se-resize{end}"
+        ],
+        [
+          "cursor: {alert}se-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}sw-resize{end}"
+        ],
+        [
+          "cursor: {alert}sw-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}s-resize{end}"
+        ],
+        [
+          "cursor: {alert}s-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}w-resize{end}"
+        ],
+        [
+          "cursor: {alert}w-resize{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}grab{end}"
+        ],
+        [
+          "cursor: {alert}grab{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}grabbing{end}"
+        ],
+        [
+          "cursor: {alert}grabbing{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}zoom-in{end}"
+        ],
+        [
+          "cursor: {alert}zoom-in{end}"
+        ]
+      ],
+      [
+        [
+          "cursor-{alert}zoom-out{end}"
+        ],
+        [
+          "cursor: {alert}zoom-out{end}"
+        ]
+      ]
+    ]
+  },
+  {
+    "type": "h2",
     "id": "font-size"
   },
   {
