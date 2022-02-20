@@ -1,4 +1,30 @@
 
+=border($width: var(--borders), $style: solid, $color: var(--color))
+	border: $width $style $color
+=bb($width: var(--borders), $style: solid, $color: var(--color))
+	border-bottom: $width $style $color
+=bt($width: var(--borders), $style: solid, $color: var(--color)) 
+	border-top: $width $style $color
+=br($width: var(--borders), $style: solid, $color: var(--color))
+	border-right: $width $style $color
+=bl($width: var(--borders), $style: solid, $color: var(--color))
+	border-left: $width $style $color
+
+=p($v)
+	padding: $v
+=m($v)
+	margin: $v
+
+=allw($v) 
+	min-width: $v
+	max-width: $v
+	width: $v
+=allh($v) 
+	min-height: $v
+	max-height: $v
+	height: $v
+
+
 =device
 	@media only screen and (max-width: 48em)
 		.mobile-hide

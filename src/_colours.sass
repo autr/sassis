@@ -51,7 +51,7 @@
 		$b: lighten( $b, $off * 0.25 )
 	@return $b
 
-=bg( $colour, $names: '' ) 
+=bg( $colour: var(--bg), $names: '' ) 
 	+set-prop( background-color, $colour, class-list($names) )
 
 

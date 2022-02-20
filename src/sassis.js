@@ -154,7 +154,7 @@ yep.forEach( (y, ii) => {
 					let append = i == 0 ? ' > *' : ''
 					let str = `\n\t.${arrrrrr.join('-')}${append},.${arrrrrr.map(l=>(l.split('-').map(ll=>(ll[0])).join('') )).join('-')}${append}\n\t\t${Atype}: ${Aitem}\n\t\t${Btype}: ${Bitem}\n\t\tflex-direction: ${colrow}`
 					classes += str
-					mixins += `\n=${colrow}($x, $y)\n\t${Atype}: $x\n\t${Btype}: $y\n\tflex-direction: ${colrow}`
+					mixins += `\n=${colrow}($x: flex-start, $y: flex-start)\n\t${Atype}: $x\n\t${Btype}: $y\n\tflex-direction: ${colrow}`
 					console.log(str)
 				}
 			})
@@ -320,7 +320,7 @@ for ( let i = 0; i <= 100; i ++ ) {
 
 
 
-	types.forEach( pair => {
+	types.forEach( (pair, iiii) => {
 
 		let apiTable = []
 
@@ -399,7 +399,7 @@ for ( let i = 0; i <= 100; i ++ ) {
 					pcA += `.${name || ''}${d}${i}pc${comma}`
 					pcB += `.${name || ''}${d}${i}pc${comma}`
 
-					if ( i == 0 && d != '' ) {
+					if ( i == 0 && d != '' && name != 'b' ) {
 						mixins += `\n=${name}${d}( $v )`
 						mixins += `${ run( propDash, '$v', '', '\n\t') }` // add rule
 					}

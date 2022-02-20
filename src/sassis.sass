@@ -16,6 +16,7 @@
 @import '_layout'
 @import '_syntax'
 
+
 =sassis
 
 	/* core sassis */
@@ -34,23 +35,18 @@
 	+interfaces
 	+syntax
 
-	
+	/* ez borders */
+
 	.border
-		border-width: var(--borders)
-		border-style: solid 
-		
+		+border
 	.bb
-		border-bottom-width: var(--borders)
-		border-bottom-style: solid
+		+bb
 	.bt
-		border-top-width: var(--borders)
-		border-top-style: solid
+		+bt
 	.br
-		border-right-width: var(--borders)
-		border-right-style: solid
+		+br
 	.bl
-		border-left-width: var(--borders)
-		border-left-style: solid
+		+bl
 
 	/* backgrounds w. pop and sink */
 

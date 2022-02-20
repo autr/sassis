@@ -263,25 +263,21 @@ code[class*="language-"], pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
+/* ez borders */
 .border {
-  border-width: var(--borders);
-  border-style: solid; }
+  border: var(--borders) solid var(--color); }
 
 .bb {
-  border-bottom-width: var(--borders);
-  border-bottom-style: solid; }
+  border-bottom: var(--borders) solid var(--color); }
 
 .bt {
-  border-top-width: var(--borders);
-  border-top-style: solid; }
+  border-top: var(--borders) solid var(--color); }
 
 .br {
-  border-right-width: var(--borders);
-  border-right-style: solid; }
+  border-right: var(--borders) solid var(--color); }
 
 .bl {
-  border-left-width: var(--borders);
-  border-left-style: solid; }
+  border-left: var(--borders) solid var(--color); }
 
 /* backgrounds w. pop and sink */
 .clamp1 {

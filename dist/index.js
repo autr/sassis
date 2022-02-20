@@ -1,7 +1,11 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
-var app = (function () {
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+var app = (function (Prism) {
     'use strict';
+
+    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+    var Prism__default = /*#__PURE__*/_interopDefaultLegacy(Prism);
 
     function noop() { }
     function assign(tar, src) {
@@ -63,14 +67,13 @@ var app = (function () {
                 rest[k] = props[k];
         return rest;
     }
-    function set_store_value(store, ret, value = ret) {
+    function set_store_value(store, ret, value) {
         store.set(value);
         return ret;
     }
     function action_destroyer(action_result) {
         return action_result && is_function(action_result.destroy) ? action_result.destroy : noop;
     }
-
     function append(target, node) {
         target.appendChild(node);
     }
@@ -117,21 +120,23 @@ var app = (function () {
     function toggle_class(element, name, toggle) {
         element.classList[toggle ? 'add' : 'remove'](name);
     }
-    function custom_event(type, detail) {
+    function custom_event(type, detail, bubbles = false) {
         const e = document.createEvent('CustomEvent');
-        e.initCustomEvent(type, false, false, detail);
+        e.initCustomEvent(type, bubbles, false, detail);
         return e;
     }
     class HtmlTag {
-        constructor(anchor = null) {
-            this.a = anchor;
+        constructor() {
             this.e = this.n = null;
+        }
+        c(html) {
+            this.h(html);
         }
         m(html, target, anchor = null) {
             if (!this.e) {
                 this.e = element(target.nodeName);
                 this.t = target;
-                this.h(html);
+                this.c(html);
             }
             this.i(anchor);
         }
@@ -175,7 +180,8 @@ var app = (function () {
     function bubble(component, event) {
         const callbacks = component.$$.callbacks[event.type];
         if (callbacks) {
-            callbacks.slice().forEach(fn => fn(event));
+            // @ts-ignore
+            callbacks.slice().forEach(fn => fn.call(this, event));
         }
     }
 
@@ -201,22 +207,40 @@ var app = (function () {
     function add_flush_callback(fn) {
         flush_callbacks.push(fn);
     }
-    let flushing = false;
+    // flush() calls callbacks in this order:
+    // 1. All beforeUpdate callbacks, in order: parents before children
+    // 2. All bind:this callbacks, in reverse order: children before parents.
+    // 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+    //    for afterUpdates called during the initial onMount, which are called in
+    //    reverse order: children before parents.
+    // Since callbacks might update component values, which could trigger another
+    // call to flush(), the following steps guard against this:
+    // 1. During beforeUpdate, any updated components will be added to the
+    //    dirty_components array and will cause a reentrant call to flush(). Because
+    //    the flush index is kept outside the function, the reentrant call will pick
+    //    up where the earlier call left off and go through all dirty components. The
+    //    current_component value is saved and restored so that the reentrant call will
+    //    not interfere with the "parent" flush() call.
+    // 2. bind:this callbacks cannot trigger new flush() calls.
+    // 3. During afterUpdate, any updated components will NOT have their afterUpdate
+    //    callback called a second time; the seen_callbacks set, outside the flush()
+    //    function, guarantees this behavior.
     const seen_callbacks = new Set();
+    let flushidx = 0; // Do *not* move this inside the flush() function
     function flush() {
-        if (flushing)
-            return;
-        flushing = true;
+        const saved_component = current_component;
         do {
             // first, call beforeUpdate functions
             // and update components
-            for (let i = 0; i < dirty_components.length; i += 1) {
-                const component = dirty_components[i];
+            while (flushidx < dirty_components.length) {
+                const component = dirty_components[flushidx];
+                flushidx++;
                 set_current_component(component);
                 update(component.$$);
             }
             set_current_component(null);
             dirty_components.length = 0;
+            flushidx = 0;
             while (binding_callbacks.length)
                 binding_callbacks.pop()();
             // then, once components are updated, call
@@ -236,8 +260,8 @@ var app = (function () {
             flush_callbacks.pop()();
         }
         update_scheduled = false;
-        flushing = false;
         seen_callbacks.clear();
+        set_current_component(saved_component);
     }
     function update($$) {
         if ($$.fragment !== null) {
@@ -379,7 +403,7 @@ var app = (function () {
         }
         component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
     }
-    function init$1(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
+    function init$1(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
         const parent_component = current_component;
         set_current_component(component);
         const $$ = component.$$ = {
@@ -396,12 +420,14 @@ var app = (function () {
             on_disconnect: [],
             before_update: [],
             after_update: [],
-            context: new Map(parent_component ? parent_component.$$.context : options.context || []),
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
             // everything else
             callbacks: blank_object(),
             dirty,
-            skip_bound: false
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
         };
+        append_styles && append_styles($$.root);
         let ready = false;
         $$.ctx = instance
             ? instance(component, options.props || {}, (i, ret, ...rest) => {
@@ -465,7 +491,7 @@ var app = (function () {
     }
 
     function dispatch_dev(type, detail) {
-        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.37.0' }, detail)));
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.46.4' }, detail), true));
     }
     function append_dev(target, node) {
         dispatch_dev('SvelteDOMInsert', { target, node });
@@ -548,204 +574,204 @@ var app = (function () {
           "full": {
             "path": "dist/shorthand.css",
             "basename": "shorthand.css",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 61615868,
+            "ino": 3117776,
             "size": 737259,
             "blocks": 1440,
-            "atimeMs": 1642752767890.707,
-            "mtimeMs": 1642752767827.7925,
-            "ctimeMs": 1642752767827.7925,
-            "birthtimeMs": 1642752605086.002,
-            "atime": "2022-01-21T08:12:47.891Z",
-            "mtime": "2022-01-21T08:12:47.828Z",
-            "ctime": "2022-01-21T08:12:47.828Z",
-            "birthtime": "2022-01-21T08:10:05.086Z"
+            "atimeMs": 1645287512001.1099,
+            "mtimeMs": 1645287578982.7212,
+            "ctimeMs": 1645287578982.7212,
+            "birthtimeMs": 1644862202614.4878,
+            "atime": "2022-02-19T16:18:32.001Z",
+            "mtime": "2022-02-19T16:19:38.983Z",
+            "ctime": "2022-02-19T16:19:38.983Z",
+            "birthtime": "2022-02-14T18:10:02.614Z"
           },
           "min": {
             "path": "dist/shorthand.min.css",
             "basename": "shorthand.min.css",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 61616062,
+            "ino": 3117777,
             "size": 554384,
             "blocks": 1088,
-            "atimeMs": 1642752767888.0996,
-            "mtimeMs": 1642752767829.5022,
-            "ctimeMs": 1642752767829.5022,
-            "birthtimeMs": 1642752767829.015,
-            "atime": "2022-01-21T08:12:47.888Z",
-            "mtime": "2022-01-21T08:12:47.830Z",
-            "ctime": "2022-01-21T08:12:47.830Z",
-            "birthtime": "2022-01-21T08:12:47.829Z"
+            "atimeMs": 1645287578994.3845,
+            "mtimeMs": 1645287578983.3574,
+            "ctimeMs": 1645287578983.3574,
+            "birthtimeMs": 1644862202615.064,
+            "atime": "2022-02-19T16:19:38.994Z",
+            "mtime": "2022-02-19T16:19:38.983Z",
+            "ctime": "2022-02-19T16:19:38.983Z",
+            "birthtime": "2022-02-14T18:10:02.615Z"
           },
           "gz": {
             "path": "dist/shorthand.min.css.gz",
             "basename": "shorthand.min.css.gz",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 61616063,
-            "size": 94553,
-            "blocks": 192,
-            "atimeMs": 1642752767847.4016,
-            "mtimeMs": 1642752767887.4768,
-            "ctimeMs": 1642752767887.4768,
-            "birthtimeMs": 1642752767847.4016,
-            "atime": "2022-01-21T08:12:47.847Z",
-            "mtime": "2022-01-21T08:12:47.887Z",
-            "ctime": "2022-01-21T08:12:47.887Z",
-            "birthtime": "2022-01-21T08:12:47.847Z"
+            "ino": 3117778,
+            "size": 94523,
+            "blocks": 256,
+            "atimeMs": 1645275223082.5154,
+            "mtimeMs": 1645287579003.4348,
+            "ctimeMs": 1645287579003.4348,
+            "birthtimeMs": 1644862202615.4795,
+            "atime": "2022-02-19T12:53:43.083Z",
+            "mtime": "2022-02-19T16:19:39.003Z",
+            "ctime": "2022-02-19T16:19:39.003Z",
+            "birthtime": "2022-02-14T18:10:02.615Z"
           }
         },
         "layout": {
           "full": {
             "path": "dist/layout.css",
             "basename": "layout.css",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 28952626,
+            "ino": 3117772,
             "size": 11523,
             "blocks": 24,
-            "atimeMs": 1639176873249.7913,
-            "mtimeMs": 1642752768233.536,
-            "ctimeMs": 1642752768233.536,
-            "birthtimeMs": 1619634754294.3696,
-            "atime": "2021-12-10T22:54:33.250Z",
-            "mtime": "2022-01-21T08:12:48.234Z",
-            "ctime": "2022-01-21T08:12:48.234Z",
-            "birthtime": "2021-04-28T18:32:34.294Z"
+            "atimeMs": 1645287511992.9924,
+            "mtimeMs": 1645287579109.0513,
+            "ctimeMs": 1645287579109.0513,
+            "birthtimeMs": 1644862202614.2297,
+            "atime": "2022-02-19T16:18:31.993Z",
+            "mtime": "2022-02-19T16:19:39.109Z",
+            "ctime": "2022-02-19T16:19:39.109Z",
+            "birthtime": "2022-02-14T18:10:02.614Z"
           },
           "min": {
             "path": "dist/layout.min.css",
             "basename": "layout.min.css",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 28952627,
+            "ino": 3117773,
             "size": 8696,
             "blocks": 24,
-            "atimeMs": 1642752768237.5671,
-            "mtimeMs": 1642752768234.0813,
-            "ctimeMs": 1642752768234.0813,
-            "birthtimeMs": 1619634754294.5928,
-            "atime": "2022-01-21T08:12:48.238Z",
-            "mtime": "2022-01-21T08:12:48.234Z",
-            "ctime": "2022-01-21T08:12:48.234Z",
-            "birthtime": "2021-04-28T18:32:34.295Z"
+            "atimeMs": 1645287579110.7217,
+            "mtimeMs": 1645287579109.1855,
+            "ctimeMs": 1645287579109.1855,
+            "birthtimeMs": 1644862202614.3035,
+            "atime": "2022-02-19T16:19:39.111Z",
+            "mtime": "2022-02-19T16:19:39.109Z",
+            "ctime": "2022-02-19T16:19:39.109Z",
+            "birthtime": "2022-02-14T18:10:02.614Z"
           },
           "gz": {
             "path": "dist/layout.min.css.gz",
             "basename": "layout.min.css.gz",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 28952628,
+            "ino": 3117774,
             "size": 1148,
             "blocks": 8,
-            "atimeMs": 1639176873188.5376,
-            "mtimeMs": 1642752768237.0852,
-            "ctimeMs": 1642752768237.0852,
-            "birthtimeMs": 1619634754294.808,
-            "atime": "2021-12-10T22:54:33.189Z",
-            "mtime": "2022-01-21T08:12:48.237Z",
-            "ctime": "2022-01-21T08:12:48.237Z",
-            "birthtime": "2021-04-28T18:32:34.295Z"
+            "atimeMs": 1645287511286.4,
+            "mtimeMs": 1645287579110.6018,
+            "ctimeMs": 1645287579110.6018,
+            "birthtimeMs": 1644862202614.3738,
+            "atime": "2022-02-19T16:18:31.286Z",
+            "mtime": "2022-02-19T16:19:39.111Z",
+            "ctime": "2022-02-19T16:19:39.111Z",
+            "birthtime": "2022-02-14T18:10:02.614Z"
           }
         },
         "all": {
           "full": {
             "path": "dist/all.css",
             "basename": "all.css",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 61615881,
-            "size": 1106490,
+            "ino": 3117759,
+            "size": 1106435,
             "blocks": 2168,
-            "atimeMs": 1642752754259.029,
-            "mtimeMs": 1642752770144.0576,
-            "ctimeMs": 1642752770144.0576,
-            "birthtimeMs": 1642752605192.5962,
-            "atime": "2022-01-21T08:12:34.259Z",
-            "mtime": "2022-01-21T08:12:50.144Z",
-            "ctime": "2022-01-21T08:12:50.144Z",
-            "birthtime": "2022-01-21T08:10:05.193Z"
+            "atimeMs": 1645287513450.5322,
+            "mtimeMs": 1645287579795.9043,
+            "ctimeMs": 1645287579795.9043,
+            "birthtimeMs": 1644862202606.3157,
+            "atime": "2022-02-19T16:18:33.451Z",
+            "mtime": "2022-02-19T16:19:39.796Z",
+            "ctime": "2022-02-19T16:19:39.796Z",
+            "birthtime": "2022-02-14T18:10:02.606Z"
           },
           "min": {
             "path": "dist/all.min.css",
             "basename": "all.min.css",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 61616066,
-            "size": 903781,
+            "ino": 3117760,
+            "size": 903729,
             "blocks": 1768,
-            "atimeMs": 1642752770153.6484,
-            "mtimeMs": 1642752770146.6807,
-            "ctimeMs": 1642752770146.6807,
-            "birthtimeMs": 1642752770145.8833,
-            "atime": "2022-01-21T08:12:50.154Z",
-            "mtime": "2022-01-21T08:12:50.147Z",
-            "ctime": "2022-01-21T08:12:50.147Z",
-            "birthtime": "2022-01-21T08:12:50.146Z"
+            "atimeMs": 1645287579821.622,
+            "mtimeMs": 1645287579797.0017,
+            "ctimeMs": 1645287579797.0017,
+            "birthtimeMs": 1644862202609.2708,
+            "atime": "2022-02-19T16:19:39.822Z",
+            "mtime": "2022-02-19T16:19:39.797Z",
+            "ctime": "2022-02-19T16:19:39.797Z",
+            "birthtime": "2022-02-14T18:10:02.609Z"
           },
           "gz": {
             "path": "dist/all.min.css.gz",
             "basename": "all.min.css.gz",
-            "dev": 16777220,
+            "dev": 16777229,
             "mode": 33188,
             "nlink": 1,
             "uid": 501,
             "gid": 20,
             "rdev": 0,
             "blksize": 4096,
-            "ino": 61615873,
-            "size": 121919,
+            "ino": 3117761,
+            "size": 121881,
             "blocks": 256,
-            "atimeMs": 1642752754339.1165,
-            "mtimeMs": 1642752770188.6704,
-            "ctimeMs": 1642752770188.6704,
-            "birthtimeMs": 1642752605106.378,
-            "atime": "2022-01-21T08:12:34.339Z",
-            "mtime": "2022-01-21T08:12:50.189Z",
-            "ctime": "2022-01-21T08:12:50.189Z",
-            "birthtime": "2022-01-21T08:10:05.106Z"
+            "atimeMs": 1645275223081.4631,
+            "mtimeMs": 1645287579821.3423,
+            "ctimeMs": 1645287579821.3423,
+            "birthtimeMs": 1644862202611.5713,
+            "atime": "2022-02-19T12:53:43.081Z",
+            "mtime": "2022-02-19T16:19:39.821Z",
+            "ctime": "2022-02-19T16:19:39.821Z",
+            "birthtime": "2022-02-14T18:10:02.612Z"
           }
         }
       },
@@ -805,16 +831,15 @@ var app = (function () {
      */
     function writable(value, start = noop) {
         let stop;
-        const subscribers = [];
+        const subscribers = new Set();
         function set(new_value) {
             if (safe_not_equal(value, new_value)) {
                 value = new_value;
                 if (stop) { // store is ready
                     const run_queue = !subscriber_queue.length;
-                    for (let i = 0; i < subscribers.length; i += 1) {
-                        const s = subscribers[i];
-                        s[1]();
-                        subscriber_queue.push(s, value);
+                    for (const subscriber of subscribers) {
+                        subscriber[1]();
+                        subscriber_queue.push(subscriber, value);
                     }
                     if (run_queue) {
                         for (let i = 0; i < subscriber_queue.length; i += 2) {
@@ -830,17 +855,14 @@ var app = (function () {
         }
         function subscribe(run, invalidate = noop) {
             const subscriber = [run, invalidate];
-            subscribers.push(subscriber);
-            if (subscribers.length === 1) {
+            subscribers.add(subscriber);
+            if (subscribers.size === 1) {
                 stop = start(set) || noop;
             }
             run(value);
             return () => {
-                const index = subscribers.indexOf(subscriber);
-                if (index !== -1) {
-                    subscribers.splice(index, 1);
-                }
-                if (subscribers.length === 0) {
+                subscribers.delete(subscriber);
+                if (subscribers.size === 0) {
                     stop();
                     stop = null;
                 }
@@ -1445,7 +1467,7 @@ var app = (function () {
     let matches = derived(match, $ => $.matches || []); // parents of active route and itself
     let components = derived(matches, $ => $.map(e => e.$$component).filter(e => e));// components to use in <Router/>
 
-    /* node_modules/.pnpm/svelte-hash-router@1.0.1_svelte@3.37.0/node_modules/svelte-hash-router/src/components/Router.svelte generated by Svelte v3.37.0 */
+    /* node_modules/.pnpm/svelte-hash-router@1.0.1_svelte@3.46.4/node_modules/svelte-hash-router/src/components/Router.svelte generated by Svelte v3.46.4 */
 
     function create_fragment$d(ctx) {
     	let switch_instance;
@@ -1546,10 +1568,10 @@ var app = (function () {
 
     function instance$d($$self, $$props, $$invalidate) {
     	let $components;
-    	validate_store(components, "components");
+    	validate_store(components, 'components');
     	component_subscribe($$self, components, $$value => $$invalidate(0, $components = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Router", slots, []);
+    	validate_slots('Router', slots, []);
     	let i = level++;
     	onDestroy(() => level--);
 
@@ -1567,7 +1589,7 @@ var app = (function () {
 
     	$$self.$inject_state = $$new_props => {
     		$$invalidate(2, $$props = assign(assign({}, $$props), $$new_props));
-    		if ("i" in $$props) $$invalidate(1, i = $$new_props.i);
+    		if ('i' in $$props) $$invalidate(1, i = $$new_props.i);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1595,7 +1617,7 @@ var app = (function () {
     const root = writable( `<style></style>` );
 
     /*!
-     * hotkeys-js v3.8.3
+     * hotkeys-js v3.8.7
      * A simple micro-library for defining and dispatching keyboard shortcuts. It has no dependencies.
      * 
      * Copyright (c) 2021 kenny wong <wowohoo@qq.com>
@@ -1663,7 +1685,7 @@ var app = (function () {
       tab: 9,
       clear: 12,
       enter: 13,
-      "return": 13,
+      return: 13,
       esc: 27,
       escape: 27,
       space: 32,
@@ -1672,7 +1694,7 @@ var app = (function () {
       right: 39,
       down: 40,
       del: 46,
-      "delete": 46,
+      delete: 46,
       ins: 45,
       insert: 45,
       home: 36,
@@ -2165,7 +2187,7 @@ var app = (function () {
       window.hotkeys = hotkeys;
     }
 
-    /* src/App.svelte generated by Svelte v3.37.0 */
+    /* src/App.svelte generated by Svelte v3.46.4 */
 
     const { Object: Object_1$1 } = globals;
     const file$7 = "src/App.svelte";
@@ -2183,7 +2205,7 @@ var app = (function () {
     	let t0_value = /*k*/ ctx[5].substring(1) + "";
     	let t0;
     	let t1;
-    	let t2_value = (/*k*/ ctx[5] == "/search" ? "(cmd/ctrl+f)" : "") + "";
+    	let t2_value = (/*k*/ ctx[5] == '/search' ? '(cmd/ctrl+f)' : '') + "";
     	let t2;
     	let t3;
     	let mounted;
@@ -2201,10 +2223,10 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			attr_dev(div, "class", "p0-4 bright pointer");
-    			toggle_class(div, "alert", /*k*/ ctx[5] == "/intro");
-    			toggle_class(div, "mt1", /*k*/ ctx[5] == "/search");
-    			toggle_class(div, "info", /*k*/ ctx[5] == "/search" || /*k*/ ctx[5] == "/download");
-    			toggle_class(div, "error", /*k*/ ctx[5] == "/variables");
+    			toggle_class(div, "alert", /*k*/ ctx[5] == '/intro');
+    			toggle_class(div, "mt1", /*k*/ ctx[5] == '/search');
+    			toggle_class(div, "info", /*k*/ ctx[5] == '/search' || /*k*/ ctx[5] == '/download');
+    			toggle_class(div, "error", /*k*/ ctx[5] == '/variables');
     			toggle_class(div, "filled", /*$active*/ ctx[3].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
     			toggle_class(div, "bright", /*$active*/ ctx[3].$$href.indexOf(/*v*/ ctx[6].$$href) != -1);
     			add_location(div, file$7, 37, 8, 1235);
@@ -2224,22 +2246,22 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			if (dirty & /*$routes*/ 4 && t0_value !== (t0_value = /*k*/ ctx[5].substring(1) + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*$routes*/ 4 && t2_value !== (t2_value = (/*k*/ ctx[5] == "/search" ? "(cmd/ctrl+f)" : "") + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*$routes*/ 4 && t2_value !== (t2_value = (/*k*/ ctx[5] == '/search' ? '(cmd/ctrl+f)' : '') + "")) set_data_dev(t2, t2_value);
 
     			if (dirty & /*Object, $routes*/ 4) {
-    				toggle_class(div, "alert", /*k*/ ctx[5] == "/intro");
+    				toggle_class(div, "alert", /*k*/ ctx[5] == '/intro');
     			}
 
     			if (dirty & /*Object, $routes*/ 4) {
-    				toggle_class(div, "mt1", /*k*/ ctx[5] == "/search");
+    				toggle_class(div, "mt1", /*k*/ ctx[5] == '/search');
     			}
 
     			if (dirty & /*Object, $routes*/ 4) {
-    				toggle_class(div, "info", /*k*/ ctx[5] == "/search" || /*k*/ ctx[5] == "/download");
+    				toggle_class(div, "info", /*k*/ ctx[5] == '/search' || /*k*/ ctx[5] == '/download');
     			}
 
     			if (dirty & /*Object, $routes*/ 4) {
-    				toggle_class(div, "error", /*k*/ ctx[5] == "/variables");
+    				toggle_class(div, "error", /*k*/ ctx[5] == '/variables');
     			}
 
     			if (dirty & /*$active, Object, $routes*/ 12) {
@@ -2270,7 +2292,7 @@ var app = (function () {
 
     // (36:6) {#each Object.entries($routes) as [k,v]}
     function create_each_block$2(ctx) {
-    	let show_if = /*v*/ ctx[6].$$href != "#/" && /*v*/ ctx[6].$$href.indexOf(":") == -1;
+    	let show_if = /*v*/ ctx[6].$$href != '#/' && /*v*/ ctx[6].$$href.indexOf(':') == -1;
     	let if_block_anchor;
     	let if_block = show_if && create_if_block$1(ctx);
 
@@ -2284,7 +2306,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*$routes*/ 4) show_if = /*v*/ ctx[6].$$href != "#/" && /*v*/ ctx[6].$$href.indexOf(":") == -1;
+    			if (dirty & /*$routes*/ 4) show_if = /*v*/ ctx[6].$$href != '#/' && /*v*/ ctx[6].$$href.indexOf(':') == -1;
 
     			if (show_if) {
     				if (if_block) {
@@ -2356,6 +2378,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
+    			html_tag = new HtmlTag();
     			t0 = space();
     			div8 = element("div");
     			div7 = element("div");
@@ -2377,7 +2400,7 @@ var app = (function () {
     			t5 = text(t5_value);
     			t6 = space();
     			span = element("span");
-    			t7 = text(/*date*/ ctx[1]);
+    			t7 = text(/*date*/ ctx[0]);
     			t8 = space();
     			a1 = element("a");
     			a1.textContent = "autr.tv";
@@ -2385,7 +2408,7 @@ var app = (function () {
     			div6 = element("div");
     			div5 = element("div");
     			create_component(router.$$.fragment);
-    			html_tag = new HtmlTag(t0);
+    			html_tag.a = t0;
     			attr_dev(a0, "href", "#/intro");
     			attr_dev(a0, "class", "unclickable bright f5 pb0");
     			add_location(a0, file$7, 34, 6, 1056);
@@ -2419,7 +2442,7 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			html_tag.m(/*$root*/ ctx[0], main);
+    			html_tag.m(/*$root*/ ctx[1], main);
     			append_dev(main, t0);
     			append_dev(main, div8);
     			append_dev(div8, div7);
@@ -2450,7 +2473,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*$root*/ 1) html_tag.p(/*$root*/ ctx[0]);
+    			if (!current || dirty & /*$root*/ 2) html_tag.p(/*$root*/ ctx[1]);
 
     			if (dirty & /*Object, $routes, $active, window*/ 12) {
     				each_value = Object.entries(/*$routes*/ ctx[2]);
@@ -2476,7 +2499,7 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (!current || dirty & /*date*/ 2) set_data_dev(t7, /*date*/ ctx[1]);
+    			if (!current || dirty & /*date*/ 1) set_data_dev(t7, /*date*/ ctx[0]);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -2510,27 +2533,27 @@ var app = (function () {
     	let $root;
     	let $routes;
     	let $active;
-    	validate_store(root, "root");
-    	component_subscribe($$self, root, $$value => $$invalidate(0, $root = $$value));
-    	validate_store(routes, "routes");
+    	validate_store(root, 'root');
+    	component_subscribe($$self, root, $$value => $$invalidate(1, $root = $$value));
+    	validate_store(routes, 'routes');
     	component_subscribe($$self, routes, $$value => $$invalidate(2, $routes = $$value));
-    	validate_store(active, "active");
+    	validate_store(active, 'active');
     	component_subscribe($$self, active, $$value => $$invalidate(3, $active = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("App", slots, []);
+    	validate_slots('App', slots, []);
 
     	onMount(async () => {
     		const res = await fetch(`defaults.css`);
     		const text = await res.text();
-    		set_store_value(root, $root = "<style>" + text + "</style >", $root);
+    		set_store_value(root, $root = '<style>' + text + '</style >', $root);
 
-    		hotkeys("ctrl+f,cmd+f", function (event, handler) {
+    		hotkeys('ctrl+f,cmd+f', function (event, handler) {
     			event.preventDefault();
-    			window.location.hash = "#/search";
+    			window.location.hash = '#/search';
 
     			setTimeout(
     				e => {
-    					document.getElementById("search").focus();
+    					document.getElementById('search').focus();
     				},
     				10
     			);
@@ -2540,7 +2563,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object_1$1.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
     	const click_handler = (v, e) => window.location = v.$$href;
@@ -2554,22 +2577,22 @@ var app = (function () {
     		active,
     		root,
     		hotkeys,
-    		$root,
     		date,
+    		$root,
     		$routes,
     		$active
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("date" in $$props) $$invalidate(1, date = $$props.date);
+    		if ('date' in $$props) $$invalidate(0, date = $$props.date);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	$$invalidate(1, date = new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + (new Date().getFullYear() - 2000));
-    	return [$root, date, $routes, $active, click_handler];
+    	$$invalidate(0, date = new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + (new Date().getFullYear() - 2000));
+    	return [date, $root, $routes, $active, click_handler];
     }
 
     class App extends SvelteComponentDev {
@@ -5529,7 +5552,7 @@ var app = (function () {
     	}
     ];
 
-    /* src/components/ShorthandTable.svelte generated by Svelte v3.37.0 */
+    /* src/components/ShorthandTable.svelte generated by Svelte v3.46.4 */
     const file$6 = "src/components/ShorthandTable.svelte";
 
     function get_each_context$1(ctx, list, i) {
@@ -5686,9 +5709,9 @@ var app = (function () {
     			append_dev(tr, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*filtered*/ 16 && t0_value !== (t0_value = /*section*/ ctx[13].id + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*filtered*/ 8 && t0_value !== (t0_value = /*section*/ ctx[13].id + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*filtered*/ 16 && tr_id_value !== (tr_id_value = /*section*/ ctx[13].id)) {
+    			if (dirty & /*filtered*/ 8 && tr_id_value !== (tr_id_value = /*section*/ ctx[13].id)) {
     				attr_dev(tr, "id", tr_id_value);
     			}
     		},
@@ -5711,7 +5734,7 @@ var app = (function () {
     // (87:7) {:else}
     function create_else_block_1(ctx) {
     	let span;
-    	let raw_value = /*className*/ ctx[2](/*operator*/ ctx[16], /*section*/ ctx[13]) + "";
+    	let raw_value = /*className*/ ctx[4](/*operator*/ ctx[16], /*section*/ ctx[13]) + "";
 
     	const block = {
     		c: function create() {
@@ -5723,7 +5746,7 @@ var app = (function () {
     			span.innerHTML = raw_value;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*className, filtered*/ 20 && raw_value !== (raw_value = /*className*/ ctx[2](/*operator*/ ctx[16], /*section*/ ctx[13]) + "")) span.innerHTML = raw_value;		},
+    			if (dirty & /*className, filtered*/ 24 && raw_value !== (raw_value = /*className*/ ctx[4](/*operator*/ ctx[16], /*section*/ ctx[13]) + "")) span.innerHTML = raw_value;		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
     		}
@@ -5743,7 +5766,7 @@ var app = (function () {
     // (85:7) {#if section.raw}
     function create_if_block_1(ctx) {
     	let span;
-    	let t_value = /*operator*/ ctx[16][0].join("\n") + "";
+    	let t_value = /*operator*/ ctx[16][0].join('\n') + "";
     	let t;
 
     	const block = {
@@ -5758,7 +5781,7 @@ var app = (function () {
     			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*filtered*/ 16 && t_value !== (t_value = /*operator*/ ctx[16][0].join("\n") + "")) set_data_dev(t, t_value);
+    			if (dirty & /*filtered*/ 8 && t_value !== (t_value = /*operator*/ ctx[16][0].join('\n') + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
@@ -5792,7 +5815,7 @@ var app = (function () {
     			div.innerHTML = raw_value;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*html, filtered*/ 18 && raw_value !== (raw_value = /*html*/ ctx[1](/*rule*/ ctx[19]) + "")) div.innerHTML = raw_value;		},
+    			if (dirty & /*html, filtered*/ 10 && raw_value !== (raw_value = /*html*/ ctx[1](/*rule*/ ctx[19]) + "")) div.innerHTML = raw_value;		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     		}
@@ -5850,9 +5873,9 @@ var app = (function () {
     			add_location(td0, file$6, 83, 6, 2291);
     			attr_dev(td1, "class", "bright pl1 ");
     			add_location(td1, file$6, 90, 6, 2512);
-    			attr_dev(tr, "id", tr_id_value = `/${/*name*/ ctx[0]}/${/*id*/ ctx[3](/*operator*/ ctx[16])}`);
+    			attr_dev(tr, "id", tr_id_value = `/${/*name*/ ctx[0]}/${/*id*/ ctx[2](/*operator*/ ctx[16])}`);
     			attr_dev(tr, "class", "cptb1");
-    			toggle_class(tr, "b2-solid", /*$params*/ ctx[5].id == /*id*/ ctx[3](/*operator*/ ctx[16]));
+    			toggle_class(tr, "b2-solid", /*$params*/ ctx[5].id == /*id*/ ctx[2](/*operator*/ ctx[16]));
     			toggle_class(tr, "bt1-solid", /*i*/ ctx[18] > 0);
     			add_location(tr, file$6, 63, 5, 1763);
     		},
@@ -5882,7 +5905,7 @@ var app = (function () {
     				}
     			}
 
-    			if (dirty & /*html, filtered*/ 18) {
+    			if (dirty & /*html, filtered*/ 10) {
     				each_value_2 = /*operator*/ ctx[16][1];
     				validate_each_argument(each_value_2);
     				let i;
@@ -5906,12 +5929,12 @@ var app = (function () {
     				each_blocks.length = each_value_2.length;
     			}
 
-    			if (dirty & /*name, id, filtered*/ 25 && tr_id_value !== (tr_id_value = `/${/*name*/ ctx[0]}/${/*id*/ ctx[3](/*operator*/ ctx[16])}`)) {
+    			if (dirty & /*name, id, filtered*/ 13 && tr_id_value !== (tr_id_value = `/${/*name*/ ctx[0]}/${/*id*/ ctx[2](/*operator*/ ctx[16])}`)) {
     				attr_dev(tr, "id", tr_id_value);
     			}
 
-    			if (dirty & /*$params, id, filtered*/ 56) {
-    				toggle_class(tr, "b2-solid", /*$params*/ ctx[5].id == /*id*/ ctx[3](/*operator*/ ctx[16]));
+    			if (dirty & /*$params, id, filtered*/ 44) {
+    				toggle_class(tr, "b2-solid", /*$params*/ ctx[5].id == /*id*/ ctx[2](/*operator*/ ctx[16]));
     			}
     		},
     		d: function destroy(detaching) {
@@ -5986,8 +6009,8 @@ var app = (function () {
     function create_fragment$b(ctx) {
     	let t;
     	let table;
-    	let if_block = /*filtered*/ ctx[4].length == 1 && /*filtered*/ ctx[4][0].data.length == 0 && create_if_block_2(ctx);
-    	let each_value = /*filtered*/ ctx[4];
+    	let if_block = /*filtered*/ ctx[3].length == 1 && /*filtered*/ ctx[3][0].data.length == 0 && create_if_block_2(ctx);
+    	let each_value = /*filtered*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -6021,7 +6044,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*filtered*/ ctx[4].length == 1 && /*filtered*/ ctx[4][0].data.length == 0) {
+    			if (/*filtered*/ ctx[3].length == 1 && /*filtered*/ ctx[3][0].data.length == 0) {
     				if (if_block) ; else {
     					if_block = create_if_block_2(ctx);
     					if_block.c();
@@ -6033,7 +6056,7 @@ var app = (function () {
     			}
 
     			if (dirty & /*filtered, name, id, $params, html, className*/ 63) {
-    				each_value = /*filtered*/ ctx[4];
+    				each_value = /*filtered*/ ctx[3];
     				validate_each_argument(each_value);
     				let i;
 
@@ -6087,11 +6110,11 @@ var app = (function () {
     	let _filtered;
     	let filtered;
     	let $params;
-    	validate_store(params, "params");
+    	validate_store(params, 'params');
     	component_subscribe($$self, params, $$value => $$invalidate(5, $params = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("ShorthandTable", slots, []);
-    	let { name = "shorthand" } = $$props;
+    	validate_slots('ShorthandTable', slots, []);
+    	let { name = 'shorthand' } = $$props;
     	let { filters = [] } = $$props;
     	let { items } = $$props;
 
@@ -6099,16 +6122,16 @@ var app = (function () {
     		window.location = `#${id(operator)}`;
     	}
 
-    	const writable_props = ["name", "filters", "items"];
+    	const writable_props = ['name', 'filters', 'items'];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ShorthandTable> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<ShorthandTable> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$$set = $$props => {
-    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
-    		if ("filters" in $$props) $$invalidate(6, filters = $$props.filters);
-    		if ("items" in $$props) $$invalidate(7, items = $$props.items);
+    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
+    		if ('filters' in $$props) $$invalidate(6, filters = $$props.filters);
+    		if ('items' in $$props) $$invalidate(7, items = $$props.items);
     	};
 
     	$$self.$capture_state = () => ({
@@ -6120,29 +6143,29 @@ var app = (function () {
     		filters,
     		items,
     		onClick,
-    		className,
-    		html,
     		id,
-    		sanitise,
-    		isSearching,
-    		all,
     		_filtered,
     		filtered,
+    		all,
+    		isSearching,
+    		html,
+    		sanitise,
+    		className,
     		$params
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
-    		if ("filters" in $$props) $$invalidate(6, filters = $$props.filters);
-    		if ("items" in $$props) $$invalidate(7, items = $$props.items);
-    		if ("className" in $$props) $$invalidate(2, className = $$props.className);
-    		if ("html" in $$props) $$invalidate(1, html = $$props.html);
-    		if ("id" in $$props) $$invalidate(3, id = $$props.id);
-    		if ("sanitise" in $$props) $$invalidate(8, sanitise = $$props.sanitise);
-    		if ("isSearching" in $$props) $$invalidate(9, isSearching = $$props.isSearching);
-    		if ("all" in $$props) $$invalidate(10, all = $$props.all);
-    		if ("_filtered" in $$props) $$invalidate(11, _filtered = $$props._filtered);
-    		if ("filtered" in $$props) $$invalidate(4, filtered = $$props.filtered);
+    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
+    		if ('filters' in $$props) $$invalidate(6, filters = $$props.filters);
+    		if ('items' in $$props) $$invalidate(7, items = $$props.items);
+    		if ('id' in $$props) $$invalidate(2, id = $$props.id);
+    		if ('_filtered' in $$props) $$invalidate(8, _filtered = $$props._filtered);
+    		if ('filtered' in $$props) $$invalidate(3, filtered = $$props.filtered);
+    		if ('all' in $$props) $$invalidate(9, all = $$props.all);
+    		if ('isSearching' in $$props) $$invalidate(10, isSearching = $$props.isSearching);
+    		if ('html' in $$props) $$invalidate(1, html = $$props.html);
+    		if ('sanitise' in $$props) $$invalidate(11, sanitise = $$props.sanitise);
+    		if ('className' in $$props) $$invalidate(4, className = $$props.className);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -6151,62 +6174,62 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*html*/ 2) {
-    			$$invalidate(2, className = (operator, section) => {
-    				let o = html(operator[0].map(s => s[0] == "+" ? s : "." + s).join(`, <br />`));
-    				if (section.mixins == ".") return o.replaceAll(".", "<span class=\"info\">[.|+]</span>");
+    			$$invalidate(4, className = (operator, section) => {
+    				let o = html(operator[0].map(s => s[0] == '+' ? s : '.' + s).join(`, <br />`));
+    				if (section.mixins == '.') return o.replaceAll('.', '<span class="info">[.|+]</span>');
     				return o;
     			});
     		}
 
-    		if ($$self.$$.dirty & /*sanitise*/ 256) {
-    			$$invalidate(3, id = operator => `${sanitise(operator[0][0])}`);
+    		if ($$self.$$.dirty & /*sanitise*/ 2048) {
+    			$$invalidate(2, id = operator => `${sanitise(operator[0][0])}`);
     		}
 
     		if ($$self.$$.dirty & /*items*/ 128) {
-    			$$invalidate(9, isSearching = items != undefined);
+    			$$invalidate(10, isSearching = items != undefined);
     		}
 
-    		if ($$self.$$.dirty & /*isSearching, items*/ 640) {
-    			$$invalidate(10, all = isSearching ? items : data.concat(fields));
+    		if ($$self.$$.dirty & /*isSearching, items*/ 1152) {
+    			$$invalidate(9, all = isSearching ? items : data.concat(fields));
     		}
 
-    		if ($$self.$$.dirty & /*filters, all*/ 1088) {
-    			$$invalidate(11, _filtered = () => {
+    		if ($$self.$$.dirty & /*filters, all*/ 576) {
+    			$$invalidate(8, _filtered = () => {
     				if (!filters || filters?.length == 0) return all;
     				return all.filter(d => filters.indexOf(d.id) != -1);
     			});
     		}
 
-    		if ($$self.$$.dirty & /*_filtered*/ 2048) {
-    			$$invalidate(4, filtered = _filtered());
+    		if ($$self.$$.dirty & /*_filtered*/ 256) {
+    			$$invalidate(3, filtered = _filtered());
     		}
     	};
 
     	$$invalidate(1, html = rule => {
-    		rule = rule.replaceAll("{alert}", "<span class=\"alert\">");
-    		rule = rule.replaceAll("{info}", "<span class=\"info\">");
-    		rule = rule.replaceAll("{succ}", "<span class=\"success\">");
-    		rule = rule.replaceAll("{end}", "</span>");
+    		rule = rule.replaceAll('{alert}', '<span class="alert">');
+    		rule = rule.replaceAll('{info}', '<span class="info">');
+    		rule = rule.replaceAll('{succ}', '<span class="success">');
+    		rule = rule.replaceAll('{end}', '</span>');
     		return rule;
     	});
 
-    	$$invalidate(8, sanitise = lines => {
-    		return lines.replaceAll(/[.+,~|()<>$]/g, "").replaceAll(/[\ [\]]/g, "-").replaceAll(/{alert}|{info}|{end}|{succ}/gi, "").replaceAll("--", "-");
+    	$$invalidate(11, sanitise = lines => {
+    		return lines.replaceAll(/[.+,~|()<>$]/g, '').replaceAll(/[\ [\]]/g, '-').replaceAll(/{alert}|{info}|{end}|{succ}/gi, '').replaceAll('--', '-');
     	});
 
     	return [
     		name,
     		html,
-    		className,
     		id,
     		filtered,
+    		className,
     		$params,
     		filters,
     		items,
-    		sanitise,
-    		isSearching,
+    		_filtered,
     		all,
-    		_filtered
+    		isSearching,
+    		sanitise
     	];
     }
 
@@ -6225,7 +6248,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*items*/ ctx[7] === undefined && !("items" in props)) {
+    		if (/*items*/ ctx[7] === undefined && !('items' in props)) {
     			console.warn("<ShorthandTable> was created without expected prop 'items'");
     		}
     	}
@@ -6255,7 +6278,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Layouts.svelte generated by Svelte v3.37.0 */
+    /* src/views/Layouts.svelte generated by Svelte v3.46.4 */
     const file$5 = "src/views/Layouts.svelte";
 
     function create_fragment$a(ctx) {
@@ -6323,13 +6346,13 @@ var app = (function () {
     	shorthandtable = new ShorthandTable({
     			props: {
     				filters: [
-    					"z-index",
-    					"layout",
-    					"alignments",
-    					"spacer",
-    					"flex-basis",
-    					"example",
-    					"transform"
+    					'z-index',
+    					'layout',
+    					'alignments',
+    					'spacer',
+    					'flex-basis',
+    					'example',
+    					'transform'
     				],
     				name: "layouts"
     			},
@@ -6558,11 +6581,11 @@ var app = (function () {
 
     function instance$a($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Layouts", slots, []);
+    	validate_slots('Layouts', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Layouts> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Layouts> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ ShorthandTable });
@@ -6583,14 +6606,14 @@ var app = (function () {
     	}
     }
 
-    /* src/views/FormFields.svelte generated by Svelte v3.37.0 */
+    /* src/views/FormFields.svelte generated by Svelte v3.46.4 */
 
     function create_fragment$9(ctx) {
     	let shorthandtable;
     	let current;
 
     	shorthandtable = new ShorthandTable({
-    			props: { filters: ["form-fields"], name: "basic" },
+    			props: { filters: ['form-fields'], name: "basic" },
     			$$inline: true
     		});
 
@@ -6633,11 +6656,11 @@ var app = (function () {
 
     function instance$9($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("FormFields", slots, []);
+    	validate_slots('FormFields', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<FormFields> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<FormFields> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ ShorthandTable });
@@ -6658,7 +6681,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Type.svelte generated by Svelte v3.37.0 */
+    /* src/views/Type.svelte generated by Svelte v3.46.4 */
 
     function create_fragment$8(ctx) {
     	let shorthandtable;
@@ -6666,7 +6689,7 @@ var app = (function () {
 
     	shorthandtable = new ShorthandTable({
     			props: {
-    				filters: ["font-size", "font-family"],
+    				filters: ['font-size', 'font-family'],
     				name: "type"
     			},
     			$$inline: true
@@ -6711,11 +6734,11 @@ var app = (function () {
 
     function instance$8($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Type", slots, []);
+    	validate_slots('Type', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Type> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Type> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ ShorthandTable });
@@ -6735,1728 +6758,6 @@ var app = (function () {
     		});
     	}
     }
-
-    var prism = createCommonjsModule(function (module) {
-    /* **********************************************
-         Begin prism-core.js
-    ********************************************** */
-
-    /// <reference lib="WebWorker"/>
-
-    var _self = (typeof window !== 'undefined')
-    	? window   // if in browser
-    	: (
-    		(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
-    		? self // if in worker
-    		: {}   // if in node js
-    	);
-
-    /**
-     * Prism: Lightweight, robust, elegant syntax highlighting
-     *
-     * @license MIT <https://opensource.org/licenses/MIT>
-     * @author Lea Verou <https://lea.verou.me>
-     * @namespace
-     * @public
-     */
-    var Prism = (function (_self){
-
-    // Private helper vars
-    var lang = /\blang(?:uage)?-([\w-]+)\b/i;
-    var uniqueId = 0;
-
-
-    var _ = {
-    	/**
-    	 * By default, Prism will attempt to highlight all code elements (by calling {@link Prism.highlightAll}) on the
-    	 * current page after the page finished loading. This might be a problem if e.g. you wanted to asynchronously load
-    	 * additional languages or plugins yourself.
-    	 *
-    	 * By setting this value to `true`, Prism will not automatically highlight all code elements on the page.
-    	 *
-    	 * You obviously have to change this value before the automatic highlighting started. To do this, you can add an
-    	 * empty Prism object into the global scope before loading the Prism script like this:
-    	 *
-    	 * ```js
-    	 * window.Prism = window.Prism || {};
-    	 * Prism.manual = true;
-    	 * // add a new <script> to load Prism's script
-    	 * ```
-    	 *
-    	 * @default false
-    	 * @type {boolean}
-    	 * @memberof Prism
-    	 * @public
-    	 */
-    	manual: _self.Prism && _self.Prism.manual,
-    	disableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,
-
-    	/**
-    	 * A namespace for utility methods.
-    	 *
-    	 * All function in this namespace that are not explicitly marked as _public_ are for __internal use only__ and may
-    	 * change or disappear at any time.
-    	 *
-    	 * @namespace
-    	 * @memberof Prism
-    	 */
-    	util: {
-    		encode: function encode(tokens) {
-    			if (tokens instanceof Token) {
-    				return new Token(tokens.type, encode(tokens.content), tokens.alias);
-    			} else if (Array.isArray(tokens)) {
-    				return tokens.map(encode);
-    			} else {
-    				return tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\u00a0/g, ' ');
-    			}
-    		},
-
-    		/**
-    		 * Returns the name of the type of the given value.
-    		 *
-    		 * @param {any} o
-    		 * @returns {string}
-    		 * @example
-    		 * type(null)      === 'Null'
-    		 * type(undefined) === 'Undefined'
-    		 * type(123)       === 'Number'
-    		 * type('foo')     === 'String'
-    		 * type(true)      === 'Boolean'
-    		 * type([1, 2])    === 'Array'
-    		 * type({})        === 'Object'
-    		 * type(String)    === 'Function'
-    		 * type(/abc+/)    === 'RegExp'
-    		 */
-    		type: function (o) {
-    			return Object.prototype.toString.call(o).slice(8, -1);
-    		},
-
-    		/**
-    		 * Returns a unique number for the given object. Later calls will still return the same number.
-    		 *
-    		 * @param {Object} obj
-    		 * @returns {number}
-    		 */
-    		objId: function (obj) {
-    			if (!obj['__id']) {
-    				Object.defineProperty(obj, '__id', { value: ++uniqueId });
-    			}
-    			return obj['__id'];
-    		},
-
-    		/**
-    		 * Creates a deep clone of the given object.
-    		 *
-    		 * The main intended use of this function is to clone language definitions.
-    		 *
-    		 * @param {T} o
-    		 * @param {Record<number, any>} [visited]
-    		 * @returns {T}
-    		 * @template T
-    		 */
-    		clone: function deepClone(o, visited) {
-    			visited = visited || {};
-
-    			var clone, id;
-    			switch (_.util.type(o)) {
-    				case 'Object':
-    					id = _.util.objId(o);
-    					if (visited[id]) {
-    						return visited[id];
-    					}
-    					clone = /** @type {Record<string, any>} */ ({});
-    					visited[id] = clone;
-
-    					for (var key in o) {
-    						if (o.hasOwnProperty(key)) {
-    							clone[key] = deepClone(o[key], visited);
-    						}
-    					}
-
-    					return /** @type {any} */ (clone);
-
-    				case 'Array':
-    					id = _.util.objId(o);
-    					if (visited[id]) {
-    						return visited[id];
-    					}
-    					clone = [];
-    					visited[id] = clone;
-
-    					(/** @type {Array} */(/** @type {any} */(o))).forEach(function (v, i) {
-    						clone[i] = deepClone(v, visited);
-    					});
-
-    					return /** @type {any} */ (clone);
-
-    				default:
-    					return o;
-    			}
-    		},
-
-    		/**
-    		 * Returns the Prism language of the given element set by a `language-xxxx` or `lang-xxxx` class.
-    		 *
-    		 * If no language is set for the element or the element is `null` or `undefined`, `none` will be returned.
-    		 *
-    		 * @param {Element} element
-    		 * @returns {string}
-    		 */
-    		getLanguage: function (element) {
-    			while (element && !lang.test(element.className)) {
-    				element = element.parentElement;
-    			}
-    			if (element) {
-    				return (element.className.match(lang) || [, 'none'])[1].toLowerCase();
-    			}
-    			return 'none';
-    		},
-
-    		/**
-    		 * Returns the script element that is currently executing.
-    		 *
-    		 * This does __not__ work for line script element.
-    		 *
-    		 * @returns {HTMLScriptElement | null}
-    		 */
-    		currentScript: function () {
-    			if (typeof document === 'undefined') {
-    				return null;
-    			}
-    			if ('currentScript' in document && 1 < 2 /* hack to trip TS' flow analysis */) {
-    				return /** @type {any} */ (document.currentScript);
-    			}
-
-    			// IE11 workaround
-    			// we'll get the src of the current script by parsing IE11's error stack trace
-    			// this will not work for inline scripts
-
-    			try {
-    				throw new Error();
-    			} catch (err) {
-    				// Get file src url from stack. Specifically works with the format of stack traces in IE.
-    				// A stack will look like this:
-    				//
-    				// Error
-    				//    at _.util.currentScript (http://localhost/components/prism-core.js:119:5)
-    				//    at Global code (http://localhost/components/prism-core.js:606:1)
-
-    				var src = (/at [^(\r\n]*\((.*):.+:.+\)$/i.exec(err.stack) || [])[1];
-    				if (src) {
-    					var scripts = document.getElementsByTagName('script');
-    					for (var i in scripts) {
-    						if (scripts[i].src == src) {
-    							return scripts[i];
-    						}
-    					}
-    				}
-    				return null;
-    			}
-    		},
-
-    		/**
-    		 * Returns whether a given class is active for `element`.
-    		 *
-    		 * The class can be activated if `element` or one of its ancestors has the given class and it can be deactivated
-    		 * if `element` or one of its ancestors has the negated version of the given class. The _negated version_ of the
-    		 * given class is just the given class with a `no-` prefix.
-    		 *
-    		 * Whether the class is active is determined by the closest ancestor of `element` (where `element` itself is
-    		 * closest ancestor) that has the given class or the negated version of it. If neither `element` nor any of its
-    		 * ancestors have the given class or the negated version of it, then the default activation will be returned.
-    		 *
-    		 * In the paradoxical situation where the closest ancestor contains __both__ the given class and the negated
-    		 * version of it, the class is considered active.
-    		 *
-    		 * @param {Element} element
-    		 * @param {string} className
-    		 * @param {boolean} [defaultActivation=false]
-    		 * @returns {boolean}
-    		 */
-    		isActive: function (element, className, defaultActivation) {
-    			var no = 'no-' + className;
-
-    			while (element) {
-    				var classList = element.classList;
-    				if (classList.contains(className)) {
-    					return true;
-    				}
-    				if (classList.contains(no)) {
-    					return false;
-    				}
-    				element = element.parentElement;
-    			}
-    			return !!defaultActivation;
-    		}
-    	},
-
-    	/**
-    	 * This namespace contains all currently loaded languages and the some helper functions to create and modify languages.
-    	 *
-    	 * @namespace
-    	 * @memberof Prism
-    	 * @public
-    	 */
-    	languages: {
-    		/**
-    		 * Creates a deep copy of the language with the given id and appends the given tokens.
-    		 *
-    		 * If a token in `redef` also appears in the copied language, then the existing token in the copied language
-    		 * will be overwritten at its original position.
-    		 *
-    		 * ## Best practices
-    		 *
-    		 * Since the position of overwriting tokens (token in `redef` that overwrite tokens in the copied language)
-    		 * doesn't matter, they can technically be in any order. However, this can be confusing to others that trying to
-    		 * understand the language definition because, normally, the order of tokens matters in Prism grammars.
-    		 *
-    		 * Therefore, it is encouraged to order overwriting tokens according to the positions of the overwritten tokens.
-    		 * Furthermore, all non-overwriting tokens should be placed after the overwriting ones.
-    		 *
-    		 * @param {string} id The id of the language to extend. This has to be a key in `Prism.languages`.
-    		 * @param {Grammar} redef The new tokens to append.
-    		 * @returns {Grammar} The new language created.
-    		 * @public
-    		 * @example
-    		 * Prism.languages['css-with-colors'] = Prism.languages.extend('css', {
-    		 *     // Prism.languages.css already has a 'comment' token, so this token will overwrite CSS' 'comment' token
-    		 *     // at its original position
-    		 *     'comment': { ... },
-    		 *     // CSS doesn't have a 'color' token, so this token will be appended
-    		 *     'color': /\b(?:red|green|blue)\b/
-    		 * });
-    		 */
-    		extend: function (id, redef) {
-    			var lang = _.util.clone(_.languages[id]);
-
-    			for (var key in redef) {
-    				lang[key] = redef[key];
-    			}
-
-    			return lang;
-    		},
-
-    		/**
-    		 * Inserts tokens _before_ another token in a language definition or any other grammar.
-    		 *
-    		 * ## Usage
-    		 *
-    		 * This helper method makes it easy to modify existing languages. For example, the CSS language definition
-    		 * not only defines CSS highlighting for CSS documents, but also needs to define highlighting for CSS embedded
-    		 * in HTML through `<style>` elements. To do this, it needs to modify `Prism.languages.markup` and add the
-    		 * appropriate tokens. However, `Prism.languages.markup` is a regular JavaScript object literal, so if you do
-    		 * this:
-    		 *
-    		 * ```js
-    		 * Prism.languages.markup.style = {
-    		 *     // token
-    		 * };
-    		 * ```
-    		 *
-    		 * then the `style` token will be added (and processed) at the end. `insertBefore` allows you to insert tokens
-    		 * before existing tokens. For the CSS example above, you would use it like this:
-    		 *
-    		 * ```js
-    		 * Prism.languages.insertBefore('markup', 'cdata', {
-    		 *     'style': {
-    		 *         // token
-    		 *     }
-    		 * });
-    		 * ```
-    		 *
-    		 * ## Special cases
-    		 *
-    		 * If the grammars of `inside` and `insert` have tokens with the same name, the tokens in `inside`'s grammar
-    		 * will be ignored.
-    		 *
-    		 * This behavior can be used to insert tokens after `before`:
-    		 *
-    		 * ```js
-    		 * Prism.languages.insertBefore('markup', 'comment', {
-    		 *     'comment': Prism.languages.markup.comment,
-    		 *     // tokens after 'comment'
-    		 * });
-    		 * ```
-    		 *
-    		 * ## Limitations
-    		 *
-    		 * The main problem `insertBefore` has to solve is iteration order. Since ES2015, the iteration order for object
-    		 * properties is guaranteed to be the insertion order (except for integer keys) but some browsers behave
-    		 * differently when keys are deleted and re-inserted. So `insertBefore` can't be implemented by temporarily
-    		 * deleting properties which is necessary to insert at arbitrary positions.
-    		 *
-    		 * To solve this problem, `insertBefore` doesn't actually insert the given tokens into the target object.
-    		 * Instead, it will create a new object and replace all references to the target object with the new one. This
-    		 * can be done without temporarily deleting properties, so the iteration order is well-defined.
-    		 *
-    		 * However, only references that can be reached from `Prism.languages` or `insert` will be replaced. I.e. if
-    		 * you hold the target object in a variable, then the value of the variable will not change.
-    		 *
-    		 * ```js
-    		 * var oldMarkup = Prism.languages.markup;
-    		 * var newMarkup = Prism.languages.insertBefore('markup', 'comment', { ... });
-    		 *
-    		 * assert(oldMarkup !== Prism.languages.markup);
-    		 * assert(newMarkup === Prism.languages.markup);
-    		 * ```
-    		 *
-    		 * @param {string} inside The property of `root` (e.g. a language id in `Prism.languages`) that contains the
-    		 * object to be modified.
-    		 * @param {string} before The key to insert before.
-    		 * @param {Grammar} insert An object containing the key-value pairs to be inserted.
-    		 * @param {Object<string, any>} [root] The object containing `inside`, i.e. the object that contains the
-    		 * object to be modified.
-    		 *
-    		 * Defaults to `Prism.languages`.
-    		 * @returns {Grammar} The new grammar object.
-    		 * @public
-    		 */
-    		insertBefore: function (inside, before, insert, root) {
-    			root = root || /** @type {any} */ (_.languages);
-    			var grammar = root[inside];
-    			/** @type {Grammar} */
-    			var ret = {};
-
-    			for (var token in grammar) {
-    				if (grammar.hasOwnProperty(token)) {
-
-    					if (token == before) {
-    						for (var newToken in insert) {
-    							if (insert.hasOwnProperty(newToken)) {
-    								ret[newToken] = insert[newToken];
-    							}
-    						}
-    					}
-
-    					// Do not insert token which also occur in insert. See #1525
-    					if (!insert.hasOwnProperty(token)) {
-    						ret[token] = grammar[token];
-    					}
-    				}
-    			}
-
-    			var old = root[inside];
-    			root[inside] = ret;
-
-    			// Update references in other language definitions
-    			_.languages.DFS(_.languages, function(key, value) {
-    				if (value === old && key != inside) {
-    					this[key] = ret;
-    				}
-    			});
-
-    			return ret;
-    		},
-
-    		// Traverse a language definition with Depth First Search
-    		DFS: function DFS(o, callback, type, visited) {
-    			visited = visited || {};
-
-    			var objId = _.util.objId;
-
-    			for (var i in o) {
-    				if (o.hasOwnProperty(i)) {
-    					callback.call(o, i, o[i], type || i);
-
-    					var property = o[i],
-    					    propertyType = _.util.type(property);
-
-    					if (propertyType === 'Object' && !visited[objId(property)]) {
-    						visited[objId(property)] = true;
-    						DFS(property, callback, null, visited);
-    					}
-    					else if (propertyType === 'Array' && !visited[objId(property)]) {
-    						visited[objId(property)] = true;
-    						DFS(property, callback, i, visited);
-    					}
-    				}
-    			}
-    		}
-    	},
-
-    	plugins: {},
-
-    	/**
-    	 * This is the most high-level function in Prism’s API.
-    	 * It fetches all the elements that have a `.language-xxxx` class and then calls {@link Prism.highlightElement} on
-    	 * each one of them.
-    	 *
-    	 * This is equivalent to `Prism.highlightAllUnder(document, async, callback)`.
-    	 *
-    	 * @param {boolean} [async=false] Same as in {@link Prism.highlightAllUnder}.
-    	 * @param {HighlightCallback} [callback] Same as in {@link Prism.highlightAllUnder}.
-    	 * @memberof Prism
-    	 * @public
-    	 */
-    	highlightAll: function(async, callback) {
-    		_.highlightAllUnder(document, async, callback);
-    	},
-
-    	/**
-    	 * Fetches all the descendants of `container` that have a `.language-xxxx` class and then calls
-    	 * {@link Prism.highlightElement} on each one of them.
-    	 *
-    	 * The following hooks will be run:
-    	 * 1. `before-highlightall`
-    	 * 2. `before-all-elements-highlight`
-    	 * 3. All hooks of {@link Prism.highlightElement} for each element.
-    	 *
-    	 * @param {ParentNode} container The root element, whose descendants that have a `.language-xxxx` class will be highlighted.
-    	 * @param {boolean} [async=false] Whether each element is to be highlighted asynchronously using Web Workers.
-    	 * @param {HighlightCallback} [callback] An optional callback to be invoked on each element after its highlighting is done.
-    	 * @memberof Prism
-    	 * @public
-    	 */
-    	highlightAllUnder: function(container, async, callback) {
-    		var env = {
-    			callback: callback,
-    			container: container,
-    			selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
-    		};
-
-    		_.hooks.run('before-highlightall', env);
-
-    		env.elements = Array.prototype.slice.apply(env.container.querySelectorAll(env.selector));
-
-    		_.hooks.run('before-all-elements-highlight', env);
-
-    		for (var i = 0, element; element = env.elements[i++];) {
-    			_.highlightElement(element, async === true, env.callback);
-    		}
-    	},
-
-    	/**
-    	 * Highlights the code inside a single element.
-    	 *
-    	 * The following hooks will be run:
-    	 * 1. `before-sanity-check`
-    	 * 2. `before-highlight`
-    	 * 3. All hooks of {@link Prism.highlight}. These hooks will be run by an asynchronous worker if `async` is `true`.
-    	 * 4. `before-insert`
-    	 * 5. `after-highlight`
-    	 * 6. `complete`
-    	 *
-    	 * Some the above hooks will be skipped if the element doesn't contain any text or there is no grammar loaded for
-    	 * the element's language.
-    	 *
-    	 * @param {Element} element The element containing the code.
-    	 * It must have a class of `language-xxxx` to be processed, where `xxxx` is a valid language identifier.
-    	 * @param {boolean} [async=false] Whether the element is to be highlighted asynchronously using Web Workers
-    	 * to improve performance and avoid blocking the UI when highlighting very large chunks of code. This option is
-    	 * [disabled by default](https://prismjs.com/faq.html#why-is-asynchronous-highlighting-disabled-by-default).
-    	 *
-    	 * Note: All language definitions required to highlight the code must be included in the main `prism.js` file for
-    	 * asynchronous highlighting to work. You can build your own bundle on the
-    	 * [Download page](https://prismjs.com/download.html).
-    	 * @param {HighlightCallback} [callback] An optional callback to be invoked after the highlighting is done.
-    	 * Mostly useful when `async` is `true`, since in that case, the highlighting is done asynchronously.
-    	 * @memberof Prism
-    	 * @public
-    	 */
-    	highlightElement: function(element, async, callback) {
-    		// Find language
-    		var language = _.util.getLanguage(element);
-    		var grammar = _.languages[language];
-
-    		// Set language on the element, if not present
-    		element.className = element.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
-
-    		// Set language on the parent, for styling
-    		var parent = element.parentElement;
-    		if (parent && parent.nodeName.toLowerCase() === 'pre') {
-    			parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
-    		}
-
-    		var code = element.textContent;
-
-    		var env = {
-    			element: element,
-    			language: language,
-    			grammar: grammar,
-    			code: code
-    		};
-
-    		function insertHighlightedCode(highlightedCode) {
-    			env.highlightedCode = highlightedCode;
-
-    			_.hooks.run('before-insert', env);
-
-    			env.element.innerHTML = env.highlightedCode;
-
-    			_.hooks.run('after-highlight', env);
-    			_.hooks.run('complete', env);
-    			callback && callback.call(env.element);
-    		}
-
-    		_.hooks.run('before-sanity-check', env);
-
-    		if (!env.code) {
-    			_.hooks.run('complete', env);
-    			callback && callback.call(env.element);
-    			return;
-    		}
-
-    		_.hooks.run('before-highlight', env);
-
-    		if (!env.grammar) {
-    			insertHighlightedCode(_.util.encode(env.code));
-    			return;
-    		}
-
-    		if (async && _self.Worker) {
-    			var worker = new Worker(_.filename);
-
-    			worker.onmessage = function(evt) {
-    				insertHighlightedCode(evt.data);
-    			};
-
-    			worker.postMessage(JSON.stringify({
-    				language: env.language,
-    				code: env.code,
-    				immediateClose: true
-    			}));
-    		}
-    		else {
-    			insertHighlightedCode(_.highlight(env.code, env.grammar, env.language));
-    		}
-    	},
-
-    	/**
-    	 * Low-level function, only use if you know what you’re doing. It accepts a string of text as input
-    	 * and the language definitions to use, and returns a string with the HTML produced.
-    	 *
-    	 * The following hooks will be run:
-    	 * 1. `before-tokenize`
-    	 * 2. `after-tokenize`
-    	 * 3. `wrap`: On each {@link Token}.
-    	 *
-    	 * @param {string} text A string with the code to be highlighted.
-    	 * @param {Grammar} grammar An object containing the tokens to use.
-    	 *
-    	 * Usually a language definition like `Prism.languages.markup`.
-    	 * @param {string} language The name of the language definition passed to `grammar`.
-    	 * @returns {string} The highlighted HTML.
-    	 * @memberof Prism
-    	 * @public
-    	 * @example
-    	 * Prism.highlight('var foo = true;', Prism.languages.javascript, 'javascript');
-    	 */
-    	highlight: function (text, grammar, language) {
-    		var env = {
-    			code: text,
-    			grammar: grammar,
-    			language: language
-    		};
-    		_.hooks.run('before-tokenize', env);
-    		env.tokens = _.tokenize(env.code, env.grammar);
-    		_.hooks.run('after-tokenize', env);
-    		return Token.stringify(_.util.encode(env.tokens), env.language);
-    	},
-
-    	/**
-    	 * This is the heart of Prism, and the most low-level function you can use. It accepts a string of text as input
-    	 * and the language definitions to use, and returns an array with the tokenized code.
-    	 *
-    	 * When the language definition includes nested tokens, the function is called recursively on each of these tokens.
-    	 *
-    	 * This method could be useful in other contexts as well, as a very crude parser.
-    	 *
-    	 * @param {string} text A string with the code to be highlighted.
-    	 * @param {Grammar} grammar An object containing the tokens to use.
-    	 *
-    	 * Usually a language definition like `Prism.languages.markup`.
-    	 * @returns {TokenStream} An array of strings and tokens, a token stream.
-    	 * @memberof Prism
-    	 * @public
-    	 * @example
-    	 * let code = `var foo = 0;`;
-    	 * let tokens = Prism.tokenize(code, Prism.languages.javascript);
-    	 * tokens.forEach(token => {
-    	 *     if (token instanceof Prism.Token && token.type === 'number') {
-    	 *         console.log(`Found numeric literal: ${token.content}`);
-    	 *     }
-    	 * });
-    	 */
-    	tokenize: function(text, grammar) {
-    		var rest = grammar.rest;
-    		if (rest) {
-    			for (var token in rest) {
-    				grammar[token] = rest[token];
-    			}
-
-    			delete grammar.rest;
-    		}
-
-    		var tokenList = new LinkedList();
-    		addAfter(tokenList, tokenList.head, text);
-
-    		matchGrammar(text, tokenList, grammar, tokenList.head, 0);
-
-    		return toArray(tokenList);
-    	},
-
-    	/**
-    	 * @namespace
-    	 * @memberof Prism
-    	 * @public
-    	 */
-    	hooks: {
-    		all: {},
-
-    		/**
-    		 * Adds the given callback to the list of callbacks for the given hook.
-    		 *
-    		 * The callback will be invoked when the hook it is registered for is run.
-    		 * Hooks are usually directly run by a highlight function but you can also run hooks yourself.
-    		 *
-    		 * One callback function can be registered to multiple hooks and the same hook multiple times.
-    		 *
-    		 * @param {string} name The name of the hook.
-    		 * @param {HookCallback} callback The callback function which is given environment variables.
-    		 * @public
-    		 */
-    		add: function (name, callback) {
-    			var hooks = _.hooks.all;
-
-    			hooks[name] = hooks[name] || [];
-
-    			hooks[name].push(callback);
-    		},
-
-    		/**
-    		 * Runs a hook invoking all registered callbacks with the given environment variables.
-    		 *
-    		 * Callbacks will be invoked synchronously and in the order in which they were registered.
-    		 *
-    		 * @param {string} name The name of the hook.
-    		 * @param {Object<string, any>} env The environment variables of the hook passed to all callbacks registered.
-    		 * @public
-    		 */
-    		run: function (name, env) {
-    			var callbacks = _.hooks.all[name];
-
-    			if (!callbacks || !callbacks.length) {
-    				return;
-    			}
-
-    			for (var i=0, callback; callback = callbacks[i++];) {
-    				callback(env);
-    			}
-    		}
-    	},
-
-    	Token: Token
-    };
-    _self.Prism = _;
-
-
-    // Typescript note:
-    // The following can be used to import the Token type in JSDoc:
-    //
-    //   @typedef {InstanceType<import("./prism-core")["Token"]>} Token
-
-    /**
-     * Creates a new token.
-     *
-     * @param {string} type See {@link Token#type type}
-     * @param {string | TokenStream} content See {@link Token#content content}
-     * @param {string|string[]} [alias] The alias(es) of the token.
-     * @param {string} [matchedStr=""] A copy of the full string this token was created from.
-     * @class
-     * @global
-     * @public
-     */
-    function Token(type, content, alias, matchedStr) {
-    	/**
-    	 * The type of the token.
-    	 *
-    	 * This is usually the key of a pattern in a {@link Grammar}.
-    	 *
-    	 * @type {string}
-    	 * @see GrammarToken
-    	 * @public
-    	 */
-    	this.type = type;
-    	/**
-    	 * The strings or tokens contained by this token.
-    	 *
-    	 * This will be a token stream if the pattern matched also defined an `inside` grammar.
-    	 *
-    	 * @type {string | TokenStream}
-    	 * @public
-    	 */
-    	this.content = content;
-    	/**
-    	 * The alias(es) of the token.
-    	 *
-    	 * @type {string|string[]}
-    	 * @see GrammarToken
-    	 * @public
-    	 */
-    	this.alias = alias;
-    	// Copy of the full string this token was created from
-    	this.length = (matchedStr || '').length | 0;
-    }
-
-    /**
-     * A token stream is an array of strings and {@link Token Token} objects.
-     *
-     * Token streams have to fulfill a few properties that are assumed by most functions (mostly internal ones) that process
-     * them.
-     *
-     * 1. No adjacent strings.
-     * 2. No empty strings.
-     *
-     *    The only exception here is the token stream that only contains the empty string and nothing else.
-     *
-     * @typedef {Array<string | Token>} TokenStream
-     * @global
-     * @public
-     */
-
-    /**
-     * Converts the given token or token stream to an HTML representation.
-     *
-     * The following hooks will be run:
-     * 1. `wrap`: On each {@link Token}.
-     *
-     * @param {string | Token | TokenStream} o The token or token stream to be converted.
-     * @param {string} language The name of current language.
-     * @returns {string} The HTML representation of the token or token stream.
-     * @memberof Token
-     * @static
-     */
-    Token.stringify = function stringify(o, language) {
-    	if (typeof o == 'string') {
-    		return o;
-    	}
-    	if (Array.isArray(o)) {
-    		var s = '';
-    		o.forEach(function (e) {
-    			s += stringify(e, language);
-    		});
-    		return s;
-    	}
-
-    	var env = {
-    		type: o.type,
-    		content: stringify(o.content, language),
-    		tag: 'span',
-    		classes: ['token', o.type],
-    		attributes: {},
-    		language: language
-    	};
-
-    	var aliases = o.alias;
-    	if (aliases) {
-    		if (Array.isArray(aliases)) {
-    			Array.prototype.push.apply(env.classes, aliases);
-    		} else {
-    			env.classes.push(aliases);
-    		}
-    	}
-
-    	_.hooks.run('wrap', env);
-
-    	var attributes = '';
-    	for (var name in env.attributes) {
-    		attributes += ' ' + name + '="' + (env.attributes[name] || '').replace(/"/g, '&quot;') + '"';
-    	}
-
-    	return '<' + env.tag + ' class="' + env.classes.join(' ') + '"' + attributes + '>' + env.content + '</' + env.tag + '>';
-    };
-
-    /**
-     * @param {RegExp} pattern
-     * @param {number} pos
-     * @param {string} text
-     * @param {boolean} lookbehind
-     * @returns {RegExpExecArray | null}
-     */
-    function matchPattern(pattern, pos, text, lookbehind) {
-    	pattern.lastIndex = pos;
-    	var match = pattern.exec(text);
-    	if (match && lookbehind && match[1]) {
-    		// change the match to remove the text matched by the Prism lookbehind group
-    		var lookbehindLength = match[1].length;
-    		match.index += lookbehindLength;
-    		match[0] = match[0].slice(lookbehindLength);
-    	}
-    	return match;
-    }
-
-    /**
-     * @param {string} text
-     * @param {LinkedList<string | Token>} tokenList
-     * @param {any} grammar
-     * @param {LinkedListNode<string | Token>} startNode
-     * @param {number} startPos
-     * @param {RematchOptions} [rematch]
-     * @returns {void}
-     * @private
-     *
-     * @typedef RematchOptions
-     * @property {string} cause
-     * @property {number} reach
-     */
-    function matchGrammar(text, tokenList, grammar, startNode, startPos, rematch) {
-    	for (var token in grammar) {
-    		if (!grammar.hasOwnProperty(token) || !grammar[token]) {
-    			continue;
-    		}
-
-    		var patterns = grammar[token];
-    		patterns = Array.isArray(patterns) ? patterns : [patterns];
-
-    		for (var j = 0; j < patterns.length; ++j) {
-    			if (rematch && rematch.cause == token + ',' + j) {
-    				return;
-    			}
-
-    			var patternObj = patterns[j],
-    				inside = patternObj.inside,
-    				lookbehind = !!patternObj.lookbehind,
-    				greedy = !!patternObj.greedy,
-    				alias = patternObj.alias;
-
-    			if (greedy && !patternObj.pattern.global) {
-    				// Without the global flag, lastIndex won't work
-    				var flags = patternObj.pattern.toString().match(/[imsuy]*$/)[0];
-    				patternObj.pattern = RegExp(patternObj.pattern.source, flags + 'g');
-    			}
-
-    			/** @type {RegExp} */
-    			var pattern = patternObj.pattern || patternObj;
-
-    			for ( // iterate the token list and keep track of the current token/string position
-    				var currentNode = startNode.next, pos = startPos;
-    				currentNode !== tokenList.tail;
-    				pos += currentNode.value.length, currentNode = currentNode.next
-    			) {
-
-    				if (rematch && pos >= rematch.reach) {
-    					break;
-    				}
-
-    				var str = currentNode.value;
-
-    				if (tokenList.length > text.length) {
-    					// Something went terribly wrong, ABORT, ABORT!
-    					return;
-    				}
-
-    				if (str instanceof Token) {
-    					continue;
-    				}
-
-    				var removeCount = 1; // this is the to parameter of removeBetween
-    				var match;
-
-    				if (greedy) {
-    					match = matchPattern(pattern, pos, text, lookbehind);
-    					if (!match) {
-    						break;
-    					}
-
-    					var from = match.index;
-    					var to = match.index + match[0].length;
-    					var p = pos;
-
-    					// find the node that contains the match
-    					p += currentNode.value.length;
-    					while (from >= p) {
-    						currentNode = currentNode.next;
-    						p += currentNode.value.length;
-    					}
-    					// adjust pos (and p)
-    					p -= currentNode.value.length;
-    					pos = p;
-
-    					// the current node is a Token, then the match starts inside another Token, which is invalid
-    					if (currentNode.value instanceof Token) {
-    						continue;
-    					}
-
-    					// find the last node which is affected by this match
-    					for (
-    						var k = currentNode;
-    						k !== tokenList.tail && (p < to || typeof k.value === 'string');
-    						k = k.next
-    					) {
-    						removeCount++;
-    						p += k.value.length;
-    					}
-    					removeCount--;
-
-    					// replace with the new match
-    					str = text.slice(pos, p);
-    					match.index -= pos;
-    				} else {
-    					match = matchPattern(pattern, 0, str, lookbehind);
-    					if (!match) {
-    						continue;
-    					}
-    				}
-
-    				var from = match.index,
-    					matchStr = match[0],
-    					before = str.slice(0, from),
-    					after = str.slice(from + matchStr.length);
-
-    				var reach = pos + str.length;
-    				if (rematch && reach > rematch.reach) {
-    					rematch.reach = reach;
-    				}
-
-    				var removeFrom = currentNode.prev;
-
-    				if (before) {
-    					removeFrom = addAfter(tokenList, removeFrom, before);
-    					pos += before.length;
-    				}
-
-    				removeRange(tokenList, removeFrom, removeCount);
-
-    				var wrapped = new Token(token, inside ? _.tokenize(matchStr, inside) : matchStr, alias, matchStr);
-    				currentNode = addAfter(tokenList, removeFrom, wrapped);
-
-    				if (after) {
-    					addAfter(tokenList, currentNode, after);
-    				}
-
-    				if (removeCount > 1) {
-    					// at least one Token object was removed, so we have to do some rematching
-    					// this can only happen if the current pattern is greedy
-    					matchGrammar(text, tokenList, grammar, currentNode.prev, pos, {
-    						cause: token + ',' + j,
-    						reach: reach
-    					});
-    				}
-    			}
-    		}
-    	}
-    }
-
-    /**
-     * @typedef LinkedListNode
-     * @property {T} value
-     * @property {LinkedListNode<T> | null} prev The previous node.
-     * @property {LinkedListNode<T> | null} next The next node.
-     * @template T
-     * @private
-     */
-
-    /**
-     * @template T
-     * @private
-     */
-    function LinkedList() {
-    	/** @type {LinkedListNode<T>} */
-    	var head = { value: null, prev: null, next: null };
-    	/** @type {LinkedListNode<T>} */
-    	var tail = { value: null, prev: head, next: null };
-    	head.next = tail;
-
-    	/** @type {LinkedListNode<T>} */
-    	this.head = head;
-    	/** @type {LinkedListNode<T>} */
-    	this.tail = tail;
-    	this.length = 0;
-    }
-
-    /**
-     * Adds a new node with the given value to the list.
-     * @param {LinkedList<T>} list
-     * @param {LinkedListNode<T>} node
-     * @param {T} value
-     * @returns {LinkedListNode<T>} The added node.
-     * @template T
-     */
-    function addAfter(list, node, value) {
-    	// assumes that node != list.tail && values.length >= 0
-    	var next = node.next;
-
-    	var newNode = { value: value, prev: node, next: next };
-    	node.next = newNode;
-    	next.prev = newNode;
-    	list.length++;
-
-    	return newNode;
-    }
-    /**
-     * Removes `count` nodes after the given node. The given node will not be removed.
-     * @param {LinkedList<T>} list
-     * @param {LinkedListNode<T>} node
-     * @param {number} count
-     * @template T
-     */
-    function removeRange(list, node, count) {
-    	var next = node.next;
-    	for (var i = 0; i < count && next !== list.tail; i++) {
-    		next = next.next;
-    	}
-    	node.next = next;
-    	next.prev = node;
-    	list.length -= i;
-    }
-    /**
-     * @param {LinkedList<T>} list
-     * @returns {T[]}
-     * @template T
-     */
-    function toArray(list) {
-    	var array = [];
-    	var node = list.head.next;
-    	while (node !== list.tail) {
-    		array.push(node.value);
-    		node = node.next;
-    	}
-    	return array;
-    }
-
-
-    if (!_self.document) {
-    	if (!_self.addEventListener) {
-    		// in Node.js
-    		return _;
-    	}
-
-    	if (!_.disableWorkerMessageHandler) {
-    		// In worker
-    		_self.addEventListener('message', function (evt) {
-    			var message = JSON.parse(evt.data),
-    				lang = message.language,
-    				code = message.code,
-    				immediateClose = message.immediateClose;
-
-    			_self.postMessage(_.highlight(code, _.languages[lang], lang));
-    			if (immediateClose) {
-    				_self.close();
-    			}
-    		}, false);
-    	}
-
-    	return _;
-    }
-
-    // Get current script and highlight
-    var script = _.util.currentScript();
-
-    if (script) {
-    	_.filename = script.src;
-
-    	if (script.hasAttribute('data-manual')) {
-    		_.manual = true;
-    	}
-    }
-
-    function highlightAutomaticallyCallback() {
-    	if (!_.manual) {
-    		_.highlightAll();
-    	}
-    }
-
-    if (!_.manual) {
-    	// If the document state is "loading", then we'll use DOMContentLoaded.
-    	// If the document state is "interactive" and the prism.js script is deferred, then we'll also use the
-    	// DOMContentLoaded event because there might be some plugins or languages which have also been deferred and they
-    	// might take longer one animation frame to execute which can create a race condition where only some plugins have
-    	// been loaded when Prism.highlightAll() is executed, depending on how fast resources are loaded.
-    	// See https://github.com/PrismJS/prism/issues/2102
-    	var readyState = document.readyState;
-    	if (readyState === 'loading' || readyState === 'interactive' && script && script.defer) {
-    		document.addEventListener('DOMContentLoaded', highlightAutomaticallyCallback);
-    	} else {
-    		if (window.requestAnimationFrame) {
-    			window.requestAnimationFrame(highlightAutomaticallyCallback);
-    		} else {
-    			window.setTimeout(highlightAutomaticallyCallback, 16);
-    		}
-    	}
-    }
-
-    return _;
-
-    })(_self);
-
-    if (module.exports) {
-    	module.exports = Prism;
-    }
-
-    // hack for components to work correctly in node.js
-    if (typeof commonjsGlobal !== 'undefined') {
-    	commonjsGlobal.Prism = Prism;
-    }
-
-    // some additional documentation/types
-
-    /**
-     * The expansion of a simple `RegExp` literal to support additional properties.
-     *
-     * @typedef GrammarToken
-     * @property {RegExp} pattern The regular expression of the token.
-     * @property {boolean} [lookbehind=false] If `true`, then the first capturing group of `pattern` will (effectively)
-     * behave as a lookbehind group meaning that the captured text will not be part of the matched text of the new token.
-     * @property {boolean} [greedy=false] Whether the token is greedy.
-     * @property {string|string[]} [alias] An optional alias or list of aliases.
-     * @property {Grammar} [inside] The nested grammar of this token.
-     *
-     * The `inside` grammar will be used to tokenize the text value of each token of this kind.
-     *
-     * This can be used to make nested and even recursive language definitions.
-     *
-     * Note: This can cause infinite recursion. Be careful when you embed different languages or even the same language into
-     * each another.
-     * @global
-     * @public
-    */
-
-    /**
-     * @typedef Grammar
-     * @type {Object<string, RegExp | GrammarToken | Array<RegExp | GrammarToken>>}
-     * @property {Grammar} [rest] An optional grammar object that will be appended to this grammar.
-     * @global
-     * @public
-     */
-
-    /**
-     * A function which will invoked after an element was successfully highlighted.
-     *
-     * @callback HighlightCallback
-     * @param {Element} element The element successfully highlighted.
-     * @returns {void}
-     * @global
-     * @public
-    */
-
-    /**
-     * @callback HookCallback
-     * @param {Object<string, any>} env The environment variables of the hook.
-     * @returns {void}
-     * @global
-     * @public
-     */
-
-
-    /* **********************************************
-         Begin prism-markup.js
-    ********************************************** */
-
-    Prism.languages.markup = {
-    	'comment': /<!--[\s\S]*?-->/,
-    	'prolog': /<\?[\s\S]+?\?>/,
-    	'doctype': {
-    		// https://www.w3.org/TR/xml/#NT-doctypedecl
-    		pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
-    		greedy: true,
-    		inside: {
-    			'internal-subset': {
-    				pattern: /(\[)[\s\S]+(?=\]>$)/,
-    				lookbehind: true,
-    				greedy: true,
-    				inside: null // see below
-    			},
-    			'string': {
-    				pattern: /"[^"]*"|'[^']*'/,
-    				greedy: true
-    			},
-    			'punctuation': /^<!|>$|[[\]]/,
-    			'doctype-tag': /^DOCTYPE/,
-    			'name': /[^\s<>'"]+/
-    		}
-    	},
-    	'cdata': /<!\[CDATA\[[\s\S]*?]]>/i,
-    	'tag': {
-    		pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
-    		greedy: true,
-    		inside: {
-    			'tag': {
-    				pattern: /^<\/?[^\s>\/]+/,
-    				inside: {
-    					'punctuation': /^<\/?/,
-    					'namespace': /^[^\s>\/:]+:/
-    				}
-    			},
-    			'attr-value': {
-    				pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
-    				inside: {
-    					'punctuation': [
-    						{
-    							pattern: /^=/,
-    							alias: 'attr-equals'
-    						},
-    						/"|'/
-    					]
-    				}
-    			},
-    			'punctuation': /\/?>/,
-    			'attr-name': {
-    				pattern: /[^\s>\/]+/,
-    				inside: {
-    					'namespace': /^[^\s>\/:]+:/
-    				}
-    			}
-
-    		}
-    	},
-    	'entity': [
-    		{
-    			pattern: /&[\da-z]{1,8};/i,
-    			alias: 'named-entity'
-    		},
-    		/&#x?[\da-f]{1,8};/i
-    	]
-    };
-
-    Prism.languages.markup['tag'].inside['attr-value'].inside['entity'] =
-    	Prism.languages.markup['entity'];
-    Prism.languages.markup['doctype'].inside['internal-subset'].inside = Prism.languages.markup;
-
-    // Plugin to make entity title show the real entity, idea by Roman Komarov
-    Prism.hooks.add('wrap', function (env) {
-
-    	if (env.type === 'entity') {
-    		env.attributes['title'] = env.content.replace(/&amp;/, '&');
-    	}
-    });
-
-    Object.defineProperty(Prism.languages.markup.tag, 'addInlined', {
-    	/**
-    	 * Adds an inlined language to markup.
-    	 *
-    	 * An example of an inlined language is CSS with `<style>` tags.
-    	 *
-    	 * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as
-    	 * case insensitive.
-    	 * @param {string} lang The language key.
-    	 * @example
-    	 * addInlined('style', 'css');
-    	 */
-    	value: function addInlined(tagName, lang) {
-    		var includedCdataInside = {};
-    		includedCdataInside['language-' + lang] = {
-    			pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,
-    			lookbehind: true,
-    			inside: Prism.languages[lang]
-    		};
-    		includedCdataInside['cdata'] = /^<!\[CDATA\[|\]\]>$/i;
-
-    		var inside = {
-    			'included-cdata': {
-    				pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
-    				inside: includedCdataInside
-    			}
-    		};
-    		inside['language-' + lang] = {
-    			pattern: /[\s\S]+/,
-    			inside: Prism.languages[lang]
-    		};
-
-    		var def = {};
-    		def[tagName] = {
-    			pattern: RegExp(/(<__[^>]*>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function () { return tagName; }), 'i'),
-    			lookbehind: true,
-    			greedy: true,
-    			inside: inside
-    		};
-
-    		Prism.languages.insertBefore('markup', 'cdata', def);
-    	}
-    });
-
-    Prism.languages.html = Prism.languages.markup;
-    Prism.languages.mathml = Prism.languages.markup;
-    Prism.languages.svg = Prism.languages.markup;
-
-    Prism.languages.xml = Prism.languages.extend('markup', {});
-    Prism.languages.ssml = Prism.languages.xml;
-    Prism.languages.atom = Prism.languages.xml;
-    Prism.languages.rss = Prism.languages.xml;
-
-
-    /* **********************************************
-         Begin prism-css.js
-    ********************************************** */
-
-    (function (Prism) {
-
-    	var string = /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/;
-
-    	Prism.languages.css = {
-    		'comment': /\/\*[\s\S]*?\*\//,
-    		'atrule': {
-    			pattern: /@[\w-](?:[^;{\s]|\s+(?![\s{]))*(?:;|(?=\s*\{))/,
-    			inside: {
-    				'rule': /^@[\w-]+/,
-    				'selector-function-argument': {
-    					pattern: /(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/,
-    					lookbehind: true,
-    					alias: 'selector'
-    				},
-    				'keyword': {
-    					pattern: /(^|[^\w-])(?:and|not|only|or)(?![\w-])/,
-    					lookbehind: true
-    				}
-    				// See rest below
-    			}
-    		},
-    		'url': {
-    			// https://drafts.csswg.org/css-values-3/#urls
-    			pattern: RegExp('\\burl\\((?:' + string.source + '|' + /(?:[^\\\r\n()"']|\\[\s\S])*/.source + ')\\)', 'i'),
-    			greedy: true,
-    			inside: {
-    				'function': /^url/i,
-    				'punctuation': /^\(|\)$/,
-    				'string': {
-    					pattern: RegExp('^' + string.source + '$'),
-    					alias: 'url'
-    				}
-    			}
-    		},
-    		'selector': RegExp('[^{}\\s](?:[^{};"\'\\s]|\\s+(?![\\s{])|' + string.source + ')*(?=\\s*\\{)'),
-    		'string': {
-    			pattern: string,
-    			greedy: true
-    		},
-    		'property': /(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i,
-    		'important': /!important\b/i,
-    		'function': /[-a-z0-9]+(?=\()/i,
-    		'punctuation': /[(){};:,]/
-    	};
-
-    	Prism.languages.css['atrule'].inside.rest = Prism.languages.css;
-
-    	var markup = Prism.languages.markup;
-    	if (markup) {
-    		markup.tag.addInlined('style', 'css');
-
-    		Prism.languages.insertBefore('inside', 'attr-value', {
-    			'style-attr': {
-    				pattern: /(^|["'\s])style\s*=\s*(?:"[^"]*"|'[^']*')/i,
-    				lookbehind: true,
-    				inside: {
-    					'attr-value': {
-    						pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
-    						inside: {
-    							'style': {
-    								pattern: /(["'])[\s\S]+(?=["']$)/,
-    								lookbehind: true,
-    								alias: 'language-css',
-    								inside: Prism.languages.css
-    							},
-    							'punctuation': [
-    								{
-    									pattern: /^=/,
-    									alias: 'attr-equals'
-    								},
-    								/"|'/
-    							]
-    						}
-    					},
-    					'attr-name': /^style/i
-    				}
-    			}
-    		}, markup.tag);
-    	}
-
-    }(Prism));
-
-
-    /* **********************************************
-         Begin prism-clike.js
-    ********************************************** */
-
-    Prism.languages.clike = {
-    	'comment': [
-    		{
-    			pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
-    			lookbehind: true,
-    			greedy: true
-    		},
-    		{
-    			pattern: /(^|[^\\:])\/\/.*/,
-    			lookbehind: true,
-    			greedy: true
-    		}
-    	],
-    	'string': {
-    		pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
-    		greedy: true
-    	},
-    	'class-name': {
-    		pattern: /(\b(?:class|interface|extends|implements|trait|instanceof|new)\s+|\bcatch\s+\()[\w.\\]+/i,
-    		lookbehind: true,
-    		inside: {
-    			'punctuation': /[.\\]/
-    		}
-    	},
-    	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
-    	'boolean': /\b(?:true|false)\b/,
-    	'function': /\w+(?=\()/,
-    	'number': /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,
-    	'operator': /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
-    	'punctuation': /[{}[\];(),.:]/
-    };
-
-
-    /* **********************************************
-         Begin prism-javascript.js
-    ********************************************** */
-
-    Prism.languages.javascript = Prism.languages.extend('clike', {
-    	'class-name': [
-    		Prism.languages.clike['class-name'],
-    		{
-    			pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:prototype|constructor))/,
-    			lookbehind: true
-    		}
-    	],
-    	'keyword': [
-    		{
-    			pattern: /((?:^|})\s*)(?:catch|finally)\b/,
-    			lookbehind: true
-    		},
-    		{
-    			pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|for|from|function|(?:get|set)(?=\s*[\[$\w\xA0-\uFFFF])|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,
-    			lookbehind: true
-    		},
-    	],
-    	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
-    	'function': /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,
-    	'number': /\b(?:(?:0[xX](?:[\dA-Fa-f](?:_[\dA-Fa-f])?)+|0[bB](?:[01](?:_[01])?)+|0[oO](?:[0-7](?:_[0-7])?)+)n?|(?:\d(?:_\d)?)+n|NaN|Infinity)\b|(?:\b(?:\d(?:_\d)?)+\.?(?:\d(?:_\d)?)*|\B\.(?:\d(?:_\d)?)+)(?:[Ee][+-]?(?:\d(?:_\d)?)+)?/,
-    	'operator': /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/
-    });
-
-    Prism.languages.javascript['class-name'][0].pattern = /(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/;
-
-    Prism.languages.insertBefore('javascript', 'keyword', {
-    	'regex': {
-    		pattern: /((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/,
-    		lookbehind: true,
-    		greedy: true,
-    		inside: {
-    			'regex-source': {
-    				pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/,
-    				lookbehind: true,
-    				alias: 'language-regex',
-    				inside: Prism.languages.regex
-    			},
-    			'regex-flags': /[a-z]+$/,
-    			'regex-delimiter': /^\/|\/$/
-    		}
-    	},
-    	// This must be declared before keyword because we use "function" inside the look-forward
-    	'function-variable': {
-    		pattern: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/,
-    		alias: 'function'
-    	},
-    	'parameter': [
-    		{
-    			pattern: /(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/,
-    			lookbehind: true,
-    			inside: Prism.languages.javascript
-    		},
-    		{
-    			pattern: /(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i,
-    			inside: Prism.languages.javascript
-    		},
-    		{
-    			pattern: /(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/,
-    			lookbehind: true,
-    			inside: Prism.languages.javascript
-    		},
-    		{
-    			pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/,
-    			lookbehind: true,
-    			inside: Prism.languages.javascript
-    		}
-    	],
-    	'constant': /\b[A-Z](?:[A-Z_]|\dx?)*\b/
-    });
-
-    Prism.languages.insertBefore('javascript', 'string', {
-    	'template-string': {
-    		pattern: /`(?:\\[\s\S]|\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}|(?!\${)[^\\`])*`/,
-    		greedy: true,
-    		inside: {
-    			'template-punctuation': {
-    				pattern: /^`|`$/,
-    				alias: 'string'
-    			},
-    			'interpolation': {
-    				pattern: /((?:^|[^\\])(?:\\{2})*)\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}/,
-    				lookbehind: true,
-    				inside: {
-    					'interpolation-punctuation': {
-    						pattern: /^\${|}$/,
-    						alias: 'punctuation'
-    					},
-    					rest: Prism.languages.javascript
-    				}
-    			},
-    			'string': /[\s\S]+/
-    		}
-    	}
-    });
-
-    if (Prism.languages.markup) {
-    	Prism.languages.markup.tag.addInlined('script', 'javascript');
-    }
-
-    Prism.languages.js = Prism.languages.javascript;
-
-
-    /* **********************************************
-         Begin prism-file-highlight.js
-    ********************************************** */
-
-    (function () {
-    	if (typeof self === 'undefined' || !self.Prism || !self.document) {
-    		return;
-    	}
-
-    	// https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill
-    	if (!Element.prototype.matches) {
-    		Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-    	}
-
-    	var Prism = window.Prism;
-
-    	var LOADING_MESSAGE = 'Loading…';
-    	var FAILURE_MESSAGE = function (status, message) {
-    		return '✖ Error ' + status + ' while fetching file: ' + message;
-    	};
-    	var FAILURE_EMPTY_MESSAGE = '✖ Error: File does not exist or is empty';
-
-    	var EXTENSIONS = {
-    		'js': 'javascript',
-    		'py': 'python',
-    		'rb': 'ruby',
-    		'ps1': 'powershell',
-    		'psm1': 'powershell',
-    		'sh': 'bash',
-    		'bat': 'batch',
-    		'h': 'c',
-    		'tex': 'latex'
-    	};
-
-    	var STATUS_ATTR = 'data-src-status';
-    	var STATUS_LOADING = 'loading';
-    	var STATUS_LOADED = 'loaded';
-    	var STATUS_FAILED = 'failed';
-
-    	var SELECTOR = 'pre[data-src]:not([' + STATUS_ATTR + '="' + STATUS_LOADED + '"])'
-    		+ ':not([' + STATUS_ATTR + '="' + STATUS_LOADING + '"])';
-
-    	var lang = /\blang(?:uage)?-([\w-]+)\b/i;
-
-    	/**
-    	 * Sets the Prism `language-xxxx` or `lang-xxxx` class to the given language.
-    	 *
-    	 * @param {HTMLElement} element
-    	 * @param {string} language
-    	 * @returns {void}
-    	 */
-    	function setLanguageClass(element, language) {
-    		var className = element.className;
-    		className = className.replace(lang, ' ') + ' language-' + language;
-    		element.className = className.replace(/\s+/g, ' ').trim();
-    	}
-
-
-    	Prism.hooks.add('before-highlightall', function (env) {
-    		env.selector += ', ' + SELECTOR;
-    	});
-
-    	Prism.hooks.add('before-sanity-check', function (env) {
-    		var pre = /** @type {HTMLPreElement} */ (env.element);
-    		if (pre.matches(SELECTOR)) {
-    			env.code = ''; // fast-path the whole thing and go to complete
-
-    			pre.setAttribute(STATUS_ATTR, STATUS_LOADING); // mark as loading
-
-    			// add code element with loading message
-    			var code = pre.appendChild(document.createElement('CODE'));
-    			code.textContent = LOADING_MESSAGE;
-
-    			var src = pre.getAttribute('data-src');
-
-    			var language = env.language;
-    			if (language === 'none') {
-    				// the language might be 'none' because there is no language set;
-    				// in this case, we want to use the extension as the language
-    				var extension = (/\.(\w+)$/.exec(src) || [, 'none'])[1];
-    				language = EXTENSIONS[extension] || extension;
-    			}
-
-    			// set language classes
-    			setLanguageClass(code, language);
-    			setLanguageClass(pre, language);
-
-    			// preload the language
-    			var autoloader = Prism.plugins.autoloader;
-    			if (autoloader) {
-    				autoloader.loadLanguages(language);
-    			}
-
-    			// load file
-    			var xhr = new XMLHttpRequest();
-    			xhr.open('GET', src, true);
-    			xhr.onreadystatechange = function () {
-    				if (xhr.readyState == 4) {
-    					if (xhr.status < 400 && xhr.responseText) {
-    						// mark as loaded
-    						pre.setAttribute(STATUS_ATTR, STATUS_LOADED);
-
-    						// highlight code
-    						code.textContent = xhr.responseText;
-    						Prism.highlightElement(code);
-
-    					} else {
-    						// mark as failed
-    						pre.setAttribute(STATUS_ATTR, STATUS_FAILED);
-
-    						if (xhr.status >= 400) {
-    							code.textContent = FAILURE_MESSAGE(xhr.status, xhr.statusText);
-    						} else {
-    							code.textContent = FAILURE_EMPTY_MESSAGE;
-    						}
-    					}
-    				}
-    			};
-    			xhr.send(null);
-    		}
-    	});
-
-    	Prism.plugins.fileHighlight = {
-    		/**
-    		 * Executes the File Highlight plugin for all matching `pre` elements under the given container.
-    		 *
-    		 * Note: Elements which are already loaded or currently loading will not be touched by this method.
-    		 *
-    		 * @param {ParentNode} [container=document]
-    		 */
-    		highlight: function highlight(container) {
-    			var elements = (container || document).querySelectorAll(SELECTOR);
-
-    			for (var i = 0, element; element = elements[i++];) {
-    				Prism.highlightElement(element);
-    			}
-    		}
-    	};
-
-    	var logged = false;
-    	/** @deprecated Use `Prism.plugins.fileHighlight.highlight` instead. */
-    	Prism.fileHighlight = function () {
-    		if (!logged) {
-    			console.warn('Prism.fileHighlight is deprecated. Use `Prism.plugins.fileHighlight.highlight` instead.');
-    			logged = true;
-    		}
-    		Prism.plugins.fileHighlight.highlight.apply(this, arguments);
-    	};
-
-    })();
-    });
 
     function withLineNumbers(highlight, options = {}) {
         const opts = Object.assign({ class: "linenumbers", wrapClass: "wrapper", width: "35px", backgroundColor: "rgba(128, 128, 128, 0.15)", color: "" }, options);
@@ -8886,7 +7187,7 @@ var app = (function () {
         };
     }
 
-    /* src/components/CodeEditor.svelte generated by Svelte v3.37.0 */
+    /* src/components/CodeEditor.svelte generated by Svelte v3.46.4 */
     const file$4 = "src/components/CodeEditor.svelte";
 
     function create_fragment$7(ctx) {
@@ -8961,13 +7262,13 @@ var app = (function () {
 
     function codedit(node, { code, autofocus = false, loc = false, ...options }) {
     	const highlight = loc
-    	? withLineNumbers(prism.highlightElement)
-    	: prism.highlightElement;
+    	? withLineNumbers(Prism__default["default"].highlightElement)
+    	: Prism__default["default"].highlightElement;
 
     	const editor = CodeJar(node, highlight, options);
 
     	editor.onUpdate(neuCode => {
-    		const e = new CustomEvent("change", { detail: neuCode });
+    		const e = new CustomEvent('change', { detail: neuCode });
     		node.dispatchEvent(e);
     	});
 
@@ -8994,31 +7295,31 @@ var app = (function () {
     	const omit_props_names = ["lang","code","autofocus","loc","style"];
     	let $$restProps = compute_rest_props($$props, omit_props_names);
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("CodeEditor", slots, []);
-    	let { lang = "" } = $$props;
-    	let { code = "" } = $$props;
+    	validate_slots('CodeEditor', slots, []);
+    	let { lang = '' } = $$props;
+    	let { code = '' } = $$props;
     	let { autofocus = false } = $$props;
     	let { loc = false } = $$props;
     	let { style } = $$props;
 
     	function change_handler(event) {
-    		bubble($$self, event);
+    		bubble.call(this, $$self, event);
     	}
 
     	$$self.$$set = $$new_props => {
     		$$props = assign(assign({}, $$props), exclude_internal_props($$new_props));
     		$$invalidate(5, $$restProps = compute_rest_props($$props, omit_props_names));
-    		if ("lang" in $$new_props) $$invalidate(0, lang = $$new_props.lang);
-    		if ("code" in $$new_props) $$invalidate(1, code = $$new_props.code);
-    		if ("autofocus" in $$new_props) $$invalidate(2, autofocus = $$new_props.autofocus);
-    		if ("loc" in $$new_props) $$invalidate(3, loc = $$new_props.loc);
-    		if ("style" in $$new_props) $$invalidate(4, style = $$new_props.style);
+    		if ('lang' in $$new_props) $$invalidate(0, lang = $$new_props.lang);
+    		if ('code' in $$new_props) $$invalidate(1, code = $$new_props.code);
+    		if ('autofocus' in $$new_props) $$invalidate(2, autofocus = $$new_props.autofocus);
+    		if ('loc' in $$new_props) $$invalidate(3, loc = $$new_props.loc);
+    		if ('style' in $$new_props) $$invalidate(4, style = $$new_props.style);
     	};
 
     	$$self.$capture_state = () => ({
     		CodeJar,
     		withLineNumbers,
-    		Prism: prism,
+    		Prism: Prism__default["default"],
     		codedit,
     		lang,
     		code,
@@ -9028,11 +7329,11 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$new_props => {
-    		if ("lang" in $$props) $$invalidate(0, lang = $$new_props.lang);
-    		if ("code" in $$props) $$invalidate(1, code = $$new_props.code);
-    		if ("autofocus" in $$props) $$invalidate(2, autofocus = $$new_props.autofocus);
-    		if ("loc" in $$props) $$invalidate(3, loc = $$new_props.loc);
-    		if ("style" in $$props) $$invalidate(4, style = $$new_props.style);
+    		if ('lang' in $$props) $$invalidate(0, lang = $$new_props.lang);
+    		if ('code' in $$props) $$invalidate(1, code = $$new_props.code);
+    		if ('autofocus' in $$props) $$invalidate(2, autofocus = $$new_props.autofocus);
+    		if ('loc' in $$props) $$invalidate(3, loc = $$new_props.loc);
+    		if ('style' in $$props) $$invalidate(4, style = $$new_props.style);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -9064,7 +7365,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*style*/ ctx[4] === undefined && !("style" in props)) {
+    		if (/*style*/ ctx[4] === undefined && !('style' in props)) {
     			console.warn("<CodeEditor> was created without expected prop 'style'");
     		}
     	}
@@ -9110,7 +7411,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Variables.svelte generated by Svelte v3.37.0 */
+    /* src/views/Variables.svelte generated by Svelte v3.46.4 */
     const file$3 = "src/views/Variables.svelte";
 
     function create_fragment$6(ctx) {
@@ -9337,7 +7638,7 @@ var app = (function () {
     	}
 
     	codeeditor = new CodeEditor({ props: codeeditor_props, $$inline: true });
-    	binding_callbacks.push(() => bind(codeeditor, "code", codeeditor_code_binding));
+    	binding_callbacks.push(() => bind(codeeditor, 'code', codeeditor_code_binding));
     	codeeditor.$on("change", /*onCode*/ ctx[2]);
 
     	const block = {
@@ -9587,7 +7888,7 @@ var app = (function () {
     			div54.textContent = "e";
     			t124 = space();
     			textarea = element("textarea");
-    			attr_dev(div0, "class", "ptb1 pr1 flex  minw32em");
+    			attr_dev(div0, "class", "ptb1 pr1 flex minw32em");
     			add_location(div0, file$3, 13, 0, 260);
     			attr_dev(input0, "type", "color");
     			input0.value = "#ff0000";
@@ -9651,19 +7952,19 @@ var app = (function () {
     			add_location(div15, file$3, 53, 2, 1370);
     			attr_dev(div16, "class", "flex align-items-center justify-content-center pop grow");
     			add_location(div16, file$3, 62, 3, 1733);
-    			attr_dev(div17, "class", "mt1 flex align-items-center justify-content-center  align-content-center sink grow");
+    			attr_dev(div17, "class", "mt1 flex align-items-center justify-content-center align-content-center sink grow");
     			add_location(div17, file$3, 63, 3, 1815);
     			attr_dev(div18, "class", "flex grow pl1 column");
     			add_location(div18, file$3, 61, 2, 1695);
-    			attr_dev(div19, "class", "flex align-items-center justify-content-center  align-content-center bg-a grow");
+    			attr_dev(div19, "class", "flex align-items-center justify-content-center align-content-center bg-a grow");
     			add_location(div19, file$3, 66, 3, 1971);
-    			attr_dev(div20, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-b grow");
+    			attr_dev(div20, "class", "mt1 flex align-items-center justify-content-center align-content-center bg-b grow");
     			add_location(div20, file$3, 67, 3, 2077);
-    			attr_dev(div21, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-c grow");
+    			attr_dev(div21, "class", "mt1 flex align-items-center justify-content-center align-content-center bg-c grow");
     			add_location(div21, file$3, 68, 3, 2187);
-    			attr_dev(div22, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-d grow");
+    			attr_dev(div22, "class", "mt1 flex align-items-center justify-content-center align-content-center bg-d grow");
     			add_location(div22, file$3, 69, 3, 2297);
-    			attr_dev(div23, "class", "mt1 flex align-items-center justify-content-center  align-content-center bg-e grow");
+    			attr_dev(div23, "class", "mt1 flex align-items-center justify-content-center align-content-center bg-e grow");
     			add_location(div23, file$3, 70, 3, 2407);
     			attr_dev(div24, "class", "flex grow pl1 column");
     			add_location(div24, file$3, 65, 2, 1933);
@@ -10148,10 +8449,10 @@ var app = (function () {
     function instance$6($$self, $$props, $$invalidate) {
     	let height;
     	let $root;
-    	validate_store(root, "root");
+    	validate_store(root, 'root');
     	component_subscribe($$self, root, $$value => $$invalidate(0, $root = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Variables", slots, []);
+    	validate_slots('Variables', slots, []);
 
     	function onCode(e) {
     		set_store_value(root, $root = e.detail, $root);
@@ -10161,7 +8462,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Variables> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Variables> was created with unknown prop '${key}'`);
     	});
 
     	function codeeditor_code_binding(value) {
@@ -10179,8 +8480,8 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("radios" in $$props) radios = $$props.radios;
-    		if ("height" in $$props) $$invalidate(1, height = $$props.height);
+    		if ('radios' in $$props) radios = $$props.radios;
+    		if ('height' in $$props) $$invalidate(1, height = $$props.height);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10189,7 +8490,7 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*$root*/ 1) {
-    			$$invalidate(1, height = `min-height: calc( ${$root.split("\n").length} * var(--line-height) )`);
+    			$$invalidate(1, height = `min-height: calc( ${$root.split('\n').length} * var(--line-height) )`);
     		}
     	};
 
@@ -10214,7 +8515,7 @@ var app = (function () {
 
 <p><a href="https://autr.github.io/sassis">website documentation</a> / <a href="https://github.com/autr/sassis">github repository</a></p>`;
 
-    /* src/views/Introduction.svelte generated by Svelte v3.37.0 */
+    /* src/views/Introduction.svelte generated by Svelte v3.46.4 */
     const file$2 = "src/views/Introduction.svelte";
 
     function create_fragment$5(ctx) {
@@ -10347,10 +8648,10 @@ var app = (function () {
     function instance$5($$self, $$props, $$invalidate) {
     	let height;
     	let $root;
-    	validate_store(root, "root");
+    	validate_store(root, 'root');
     	component_subscribe($$self, root, $$value => $$invalidate(0, $root = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Introduction", slots, []);
+    	validate_slots('Introduction', slots, []);
 
     	function onCode(e) {
     		set_store_value(root, $root = e.detail, $root);
@@ -10359,7 +8660,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Introduction> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Introduction> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -10372,7 +8673,7 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("height" in $$props) height = $$props.height;
+    		if ('height' in $$props) height = $$props.height;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10381,7 +8682,7 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*$root*/ 1) {
-    			height = `min-height: calc( ${$root.split("\n").length} * var(--line-height) )`;
+    			height = `min-height: calc( ${$root.split('\n').length} * var(--line-height) )`;
     		}
     	};
 
@@ -10402,7 +8703,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Basic.svelte generated by Svelte v3.37.0 */
+    /* src/views/Basic.svelte generated by Svelte v3.46.4 */
 
     function create_fragment$4(ctx) {
     	let shorthandtable;
@@ -10410,7 +8711,7 @@ var app = (function () {
 
     	shorthandtable = new ShorthandTable({
     			props: {
-    				filters: ["basic", "items", "content", "opacity"],
+    				filters: ['basic', 'items', 'content', 'opacity'],
     				name: "basic"
     			},
     			$$inline: true
@@ -10455,11 +8756,11 @@ var app = (function () {
 
     function instance$4($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Basic", slots, []);
+    	validate_slots('Basic', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Basic> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Basic> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ ShorthandTable });
@@ -10480,7 +8781,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Spacing.svelte generated by Svelte v3.37.0 */
+    /* src/views/Spacing.svelte generated by Svelte v3.46.4 */
 
     function create_fragment$3(ctx) {
     	let shorthandtable;
@@ -10488,7 +8789,7 @@ var app = (function () {
 
     	shorthandtable = new ShorthandTable({
     			props: {
-    				filters: ["position", "padding", "margin", "border", "translate"],
+    				filters: ['position', 'padding', 'margin', 'border', 'translate'],
     				name: "spacing"
     			},
     			$$inline: true
@@ -10533,11 +8834,11 @@ var app = (function () {
 
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Spacing", slots, []);
+    	validate_slots('Spacing', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Spacing> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Spacing> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ ShorthandTable });
@@ -10558,7 +8859,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Sizing.svelte generated by Svelte v3.37.0 */
+    /* src/views/Sizing.svelte generated by Svelte v3.46.4 */
 
     function create_fragment$2(ctx) {
     	let shorthandtable;
@@ -10567,13 +8868,13 @@ var app = (function () {
     	shorthandtable = new ShorthandTable({
     			props: {
     				filters: [
-    					"width",
-    					"height",
-    					"min-width",
-    					"min-height",
-    					"max-width",
-    					"max-height",
-    					"border-radius"
+    					'width',
+    					'height',
+    					'min-width',
+    					'min-height',
+    					'max-width',
+    					'max-height',
+    					'border-radius'
     				],
     				name: "sizing"
     			},
@@ -10619,11 +8920,11 @@ var app = (function () {
 
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Sizing", slots, []);
+    	validate_slots('Sizing', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Sizing> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Sizing> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ ShorthandTable });
@@ -10644,7 +8945,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Search.svelte generated by Svelte v3.37.0 */
+    /* src/views/Search.svelte generated by Svelte v3.46.4 */
     const file$1 = "src/views/Search.svelte";
 
     function create_fragment$1(ctx) {
@@ -10731,13 +9032,13 @@ var app = (function () {
     	let _items;
     	let items;
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Search", slots, []);
+    	validate_slots('Search', slots, []);
     	let search;
     	let concated = data.concat(fields);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Search> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Search> was created with unknown prop '${key}'`);
     	});
 
     	function input_input_handler() {
@@ -10756,10 +9057,10 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("search" in $$props) $$invalidate(0, search = $$props.search);
-    		if ("concated" in $$props) concated = $$props.concated;
-    		if ("_items" in $$props) $$invalidate(2, _items = $$props._items);
-    		if ("items" in $$props) $$invalidate(1, items = $$props.items);
+    		if ('search' in $$props) $$invalidate(0, search = $$props.search);
+    		if ('concated' in $$props) concated = $$props.concated;
+    		if ('_items' in $$props) $$invalidate(2, _items = $$props._items);
+    		if ('items' in $$props) $$invalidate(1, items = $$props.items);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10770,13 +9071,13 @@ var app = (function () {
     		if ($$self.$$.dirty & /*search*/ 1) {
     			$$invalidate(2, _items = () => {
     				let out = {
-    					type: "table",
-    					id: "search-results",
+    					type: 'table',
+    					id: 'search-results',
     					data: []
     				};
 
     				if (!search) return [out];
-    				const parts = search.split(" ");
+    				const parts = search.split(' ');
 
     				data.concat(fields).forEach(item => {
     					if (!item.data) return;
@@ -10791,7 +9092,7 @@ var app = (function () {
 
     								parts.forEach(s => {
     									matches += str.indexOf(s) != -1 ? 1 : 0;
-    									matches += ("." + str).indexOf(s) != -1 ? 1 : 0;
+    									matches += ('.' + str).indexOf(s) != -1 ? 1 : 0;
     								});
     							}
     						}
@@ -10828,7 +9129,7 @@ var app = (function () {
     	}
     }
 
-    /* src/views/Download.svelte generated by Svelte v3.37.0 */
+    /* src/views/Download.svelte generated by Svelte v3.46.4 */
 
     const { Object: Object_1 } = globals;
     const file = "src/views/Download.svelte";
@@ -10875,9 +9176,9 @@ var app = (function () {
     			attr_dev(a, "href", /*o*/ ctx[4].basename);
     			attr_dev(a, "class", "basis0 mb1 grow button");
     			attr_dev(a, "target", "_blank");
-    			toggle_class(a, "alert", /*name*/ ctx[0] == "full");
-    			toggle_class(a, "info", /*name*/ ctx[0] == "min");
-    			toggle_class(a, "success", /*name*/ ctx[0] == "gz");
+    			toggle_class(a, "alert", /*name*/ ctx[0] == 'full');
+    			toggle_class(a, "info", /*name*/ ctx[0] == 'min');
+    			toggle_class(a, "success", /*name*/ ctx[0] == 'gz');
     			add_location(a, file, 13, 5, 312);
     		},
     		m: function mount(target, anchor) {
@@ -10892,15 +9193,15 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*Object, infos*/ 0) {
-    				toggle_class(a, "alert", /*name*/ ctx[0] == "full");
+    				toggle_class(a, "alert", /*name*/ ctx[0] == 'full');
     			}
 
     			if (dirty & /*Object, infos*/ 0) {
-    				toggle_class(a, "info", /*name*/ ctx[0] == "min");
+    				toggle_class(a, "info", /*name*/ ctx[0] == 'min');
     			}
 
     			if (dirty & /*Object, infos*/ 0) {
-    				toggle_class(a, "success", /*name*/ ctx[0] == "gz");
+    				toggle_class(a, "success", /*name*/ ctx[0] == 'gz');
     			}
     		},
     		d: function destroy(detaching) {
@@ -11092,11 +9393,11 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("Download", slots, []);
+    	validate_slots('Download', slots, []);
     	const writable_props = [];
 
     	Object_1.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Download> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Download> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ infos });
@@ -11144,5 +9445,5 @@ var app = (function () {
 
     return app;
 
-}());
+})(Prism);
 //# sourceMappingURL=index.js.map
