@@ -1,14 +1,29 @@
 
-=border($width: var(--borders), $style: solid, $color: var(--color))
-	border: $width $style $color
-=bb($width: var(--borders), $style: solid, $color: var(--color))
-	border-bottom: $width $style $color
-=bt($width: var(--borders), $style: solid, $color: var(--color)) 
-	border-top: $width $style $color
-=br($width: var(--borders), $style: solid, $color: var(--color))
-	border-right: $width $style $color
-=bl($width: var(--borders), $style: solid, $color: var(--color))
-	border-left: $width $style $color
+=border-color($color) 
+	border-color: $color
+	*
+		border-color: $color
+=bc($color)
+	+border-color($color)
+=border($width: var(--borders), $color: '')
+	border-width: $width
+	border-style: solid
+	@if $color != ''
+		border-color: $color
+=b( $width, $color )
+	+border($width, $color)
+=bb($width: var(--borders))
+	border-bottom-width: $width
+	border-bottom-style: solid
+=bt($width: var(--borders)) 
+	border-top-width: $width
+	border-top-style: solid
+=br($width: var(--borders))
+	border-right-width: $width
+	border-right-style: solid
+=bl($width: var(--borders))
+	border-left-width: $width
+	border-left-style: solid
 
 =p($v)
 	padding: $v

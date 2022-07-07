@@ -12,7 +12,7 @@
 		border-width: 0
 		background: transparent
 		border-radius: 0px
-		font-weight: normal
+		font-weight: inherit 
 
 	// TEXTUAL INPUTS
 
@@ -22,7 +22,7 @@
 		// min-width: 1em
 	textarea
 		min-height: 7em
-		resize: none
+		resize: none 
 
 	// LINKS
 
@@ -103,7 +103,6 @@
 
 	input[type=range]
 		flex-basis: 0
-		// min-width: 1em
 		-webkit-appearance: none
 		background: transparent
 		&::-webkit-slider-thumb
@@ -147,15 +146,15 @@
 	// DOT + CROSS + DASH + CHECKBOX / RADIO > SPAN
 
 	.dot, .cross, .dash, .checkbox input + span, .radio input + span
-		overflow: hidden
+		overflow: hidden 
 		+rel
 
 	// CHECKBOX / RADIO > SPAN
 
 	.checkbox, .radio
 		input + span
-			width: 1em
-			height: 1em
+			width: var(--radio-checkbox-size)
+			height: var(--radio-checkbox-size)
 			+rel
 			+flex
  

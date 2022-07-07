@@ -51,7 +51,10 @@
 		$b: lighten( $b, $off * 0.25 )
 	@return $b
 
-=bg( $colour: var(--bg), $names: '' ) 
+=color( $color: var(--c3) ) 
+	color: $color
+	
+=bg( $colour: var(--bg3), $names: '' ) 
 	+set-prop( background-color, $colour, class-list($names) )
 
 
@@ -65,7 +68,7 @@
 				$out: #{$out + ', '}
 	@return $out
 
-=filled( $c, $s, $bg )
+=createFilled( $c, $s, $bg )
 	+set-prop(background, $c, $s )
 	+set-prop(color, $bg, $s )
 	.fill
@@ -75,7 +78,7 @@
 	&:after, &:before 
 		+set-prop(border-color, $bg, $s )
 
-=colors( $c, $bg, $n: '') 
+=createColors( $c, $bg, $n: '', $active-filled: true) 
 	$s: class-list($n, '&')
 	$raw: class-list($n)
 
@@ -119,7 +122,7 @@
 			+set-prop(border-color, $c, $s )
 			&:before, &:after
 				+set-prop(border-color, $c, $s )
-	.radio
+	.radio, .checkbox
 		input:checked + span
 			+set-prop(background-color, $c, $s )
 	.select, .chevron
@@ -128,8 +131,8 @@
 
 	// cool cross icon ----------------------------------------------------
 	
-	.cross, .checkbox input:checked + span
-		+cross( $c, $s )
+	.cross, .checkbox-cross input:checked + span, .radio-cross input:checked + span
+		+cross( $c, $s ) 
 	.tick
 		+tick( $c, $s )
 
@@ -143,19 +146,23 @@
 		+set-prop( box-shadow, 0px 0px 0px 1px inset, $s)
 
 
-	// buttons + filled
-
 	button, .button
 		+set-prop(border-color, $c, $s )
 		+set-prop(color, $c, $s ) 
 
-	.filled, button.filled, .button.filled
-		+filled( $c, $s, $bg )
+	.filled, button.filled, .button.filled, .tag
+		+createFilled( $c, $s, $bg )
 
 	a, button, .clickable, .button
-		&:active,&.active,&.focusable:focus
-			&:not(.unclickable):not(.disabled),.bg
-				+filled( $c, $s, $bg )
+		@if $active-filled
+			&:active,&.active,&.focusable:focus
+				&:not(.unclickable):not(.disabled),.bg
+					+createFilled( $c, $s, $bg )
+		@else
+			&.active-filled
+				&:active,&.active,&.focusable:focus
+					&:not(.unclickable):not(.disabled),.bg
+						+createFilled( $c, $s, $bg )
 
 
 	a, select, button, .button

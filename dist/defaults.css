@@ -25,44 +25,49 @@
 	--font-size: 13px;
 	--line-height: 1.61803398875em;
 
-	--bg: hsl( 200, 10%, 10% );
-	--bg-pop: hsl( 200, 10%, 12% );
-	--bg-sink: hsl( 200, 10%, 8% );
 
-	--color: hsl( 200, 10%, 75% );
-	--color-bright: hsl( 200, 10%, 95% );
-	--color-fade: hsl( 200, 10%, 50% );
+	--c0: hsl( 200, 10%, 5% ); 
+	--c1: hsl( 200, 10%, 8% );
+	--c2: hsl( 200, 10%, 10% );
+	--c3: hsl( 200, 10%, 14% );
+	--c4: hsl( 200, 10%, 20% );
+	--c5: hsl( 200, 10%, 30% );
+	--c6: hsl( 200, 10%, 40% );
 
-	--color-success: hsl( 150, 95%, 70% );
-	--color-info: hsl( 200, 95%, 70% );
-	--color-error: hsl( 340, 95%, 70% );
-	--color-alert: hsl( 50, 95%, 70% );
+	--bg0: hsl( 200, 20%, 70% );
+	--bg1: hsl( 200, 20%, 80% );
+	--bg2: hsl( 200, 20%, 85% );
+	--bg3: hsl( 200, 20%, 90% );
+	--bg4: hsl( 200, 20%, 98% );
+	--bg5: hsl( 200, 20%, 99% );
+	--bg6: hsl( 200, 20%, 100% );
 
-	--bg-a: hsl( 300, 20%, 10% );
-	--bg-b: hsl( 300, 20%, 15% );
-	--bg-c: hsl( 300, 20%, 20% );
-	--bg-d: hsl( 300, 20%, 25% );
-	--bg-e: hsl( 300, 20%, 30% );
+	--red: hsl( 345, 90%, 70% );
+	--pink: hsl( 300, 95%, 75% );
+	--purple: hsl( 250, 95%, 75% );
+	--blue:  hsl( 200, 95%, 70% );
+	--green: hsl( 160, 95%, 70% );
+	--yellow: hsl( 55, 90%, 68% );
+	--orange: hsl( 35, 90%, 64% );
 
-	--color-a: hsl( 0, 90%, 75% );
-	--color-b: hsl( 80, 90%, 75% );
-	--color-c: hsl( 160, 90%, 75% );
-	--color-d: hsl( 240, 90%, 75% );
-	--color-e: hsl( 320, 90%, 75% );
+	--color-success: var(--green);
+	--color-info: var(--blue);
+	--color-error: var(--error);
+	--color-alert: var(--orange);
 
-	--code: hsl( 200, 10%, 90% );
-	--code-operator: hsl( 200, 10%, 60% );
-	--code-punctuation: hsl( 290, 95%, 70% );
+	--code: var(--c3);
+	--code-operator: var(--c5);
+	--code-punctuation: var(--purple);
 
-	--code-number: hsl( 220, 95%, 80% );
-	--code-atrule: hsl( 180, 95%, 70% );
+	--code-number: var(--green);
+	--code-atrule: var(--orange);
 
-	--code-cdata: hsl( 0, 95%, 70% );
-	--code-namespace: hsl( 60, 95%, 70% );
-	--code-property: hsl( 90, 95%, 70% );
-	--code-selector: hsl( 170, 95%, 70% );
-	--code-keyboard: hsl( 260, 95%, 70% );
-	--code-regex: hsl( 300, 95%, 70% );
+	--code-cdata: var(--red);
+	--code-namespace: var(--yellow);
+	--code-property: var(--blue);
+	--code-selector: var(--green);
+	--code-keyboard: var(--purple);
+	--code-regex: var(--pink);
 
 	--media-sm: 576px;
 	--media-md: 768px;
