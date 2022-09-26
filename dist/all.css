@@ -1,20 +1,5 @@
+/* sassis creates THEME-BASED shorthand: colors, borders, filled etc */
 /* core sassis */
-html {
-  font-size: var(--font-size); }
-
-.app {
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
-  flex-direction: column;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--bg3);
-  color: var(--c3); }
-
 * {
   -webkit-appearance: none;
   box-sizing: border-box;
@@ -50,6 +35,20 @@ blockquote:before, blockquote:after, q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+html {
+  font-size: var(--font-size); }
+
+.app {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
 
 .sassis, select, button, input, textarea, * {
   font-family: var(--font);
@@ -207,7 +206,6 @@ input[type=range] {
 
 .checkbox, .radio {
   display: flex;
-  align-items: center;
   padding: var(--input-padding);
   padding-left: 0px;
   padding-top: 0px;
@@ -224,6 +222,7 @@ input[type=range] {
     margin: 0;
     position: absolute; }
 
+/* code syntax (ADD MONACO EDITOR: TODO) */
 .linenumbers {
   color: var(--color-fade); }
 
@@ -276,7 +275,7 @@ code[class*="language-"], pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
-/* ez borders */
+/* ez borders (ADD TO SHORTHAND ONLY: TODO) */
 .border, .b {
   border-width: var(--borders);
   border-style: solid; }
@@ -297,7 +296,7 @@ code[class*="language-"], pre[class*="language-"] {
   border-left-width: var(--borders);
   border-left-style: solid; }
 
-/* backgrounds w. pop and sink */
+/* backgrounds w. pop and sink  (ADD TO SHORTHAND ONLY: TODO) */
 .clamp1 {
   display: box;
   display: -webkit-box;
@@ -1481,67 +1480,67 @@ a.orange, select.orange, button.orange, .button.orange {
   background-color: var(--bg6); }
 
 .c0, .fadiest {
-  color: var(--c0); }
+  color: var(--c6); }
 
 .c0, .fadiest {
-  border-color: var(--c0); }
+  border-color: var(--c6); }
 
 * .c0, * .fadiest {
-  border-color: var(--c0); }
+  border-color: var(--c6); }
 
 h1.c0, h1.fadiest, h2.c0, h2.fadiest, h3.c0, h3.fadiest, h4.c0, h4.fadiest, h5.c0, h5.fadiest, h6.c0, h6.fadiest {
-  color: var(--c0); }
+  color: var(--c6); }
 
 input.c0, input.fadiest, select.c0, select.fadiest, textarea.c0, textarea.fadiest, input[type=range].c0, input[type=range].fadiest, textarea.c0, textarea.fadiest, .dropdown.c0, .dropdown.fadiest {
-  color: var(--c0); }
+  color: var(--c6); }
 
 textarea:focus.c0, textarea:focus.fadiest, input[type=text]:focus.c0, input[type=text]:focus.fadiest, input[type=number]:focus.c0, input[type=number]:focus.fadiest, input[type=email]:focus.c0, input[type=email]:focus.fadiest, input[type=password]:focus.c0, input[type=password]:focus.fadiest, select:focus.c0, select:focus.fadiest, .dropdown:focus.c0, .dropdown:focus.fadiest {
-  box-shadow: 0px 0px 0px 1px var(--c0) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c6) inset; }
 
 label:not(.disabled):active input[type=range]:not([disabled]).c0, label:not(.disabled):active input[type=range]:not([disabled]).fadiest, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c0, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).fadiest, label:not(.disabled):active input[type=radio] + span:not([disabled]).c0, label:not(.disabled):active input[type=radio] + span:not([disabled]).fadiest, label:not(.disabled).active input[type=range]:not([disabled]).c0, label:not(.disabled).active input[type=range]:not([disabled]).fadiest, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c0, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).fadiest, label:not(.disabled).active input[type=radio] + span:not([disabled]).c0, label:not(.disabled).active input[type=radio] + span:not([disabled]).fadiest {
-  box-shadow: 0px 0px 0px 1px var(--c0) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c6) inset; }
 
 input[type=range]:not([disabled]):active.c0, input[type=range]:not([disabled]):active.fadiest, input[type=range]:not([disabled]).active.c0, input[type=range]:not([disabled]).active.fadiest, input[type=checkbox] + span:not([disabled]):active.c0, input[type=checkbox] + span:not([disabled]):active.fadiest, input[type=checkbox] + span:not([disabled]).active.c0, input[type=checkbox] + span:not([disabled]).active.fadiest, input[type=radio] + span:not([disabled]):active.c0, input[type=radio] + span:not([disabled]):active.fadiest, input[type=radio] + span:not([disabled]).active.c0, input[type=radio] + span:not([disabled]).active.fadiest {
-  box-shadow: 0px 0px 0px 1px var(--c0) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c6) inset; }
 
 input[type=range].c0::-webkit-slider-thumb, input[type=range].fadiest::-webkit-slider-thumb {
-  background-color: var(--c0); }
+  background-color: var(--c6); }
 
 .checkbox input + span.c0, .checkbox input + span.fadiest {
-  border-color: var(--c0); }
+  border-color: var(--c6); }
 
 .checkbox input + span:before.c0, .checkbox input + span:before.fadiest, .checkbox input + span:after.c0, .checkbox input + span:after.fadiest {
-  border-color: var(--c0); }
+  border-color: var(--c6); }
 
 .radio input:checked + span.c0, .radio input:checked + span.fadiest, .checkbox input:checked + span.c0, .checkbox input:checked + span.fadiest {
-  background-color: var(--c0); }
+  background-color: var(--c6); }
 
 .select:after.c0, .select:after.fadiest, .chevron:after.c0, .chevron:after.fadiest {
-  border-color: var(--c0); }
+  border-color: var(--c6); }
 
 .cross.c0, .cross.fadiest, .checkbox-cross input:checked + span.c0, .checkbox-cross input:checked + span.fadiest, .radio-cross input:checked + span.c0, .radio-cross input:checked + span.fadiest {
-  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c0) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c0) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c6) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c6) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.c0, .tick.fadiest {
-  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c0) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c0) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c6) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c6) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
 
 .fill.c0, .fill.fadiest {
-  fill: var(--c0); }
+  fill: var(--c6); }
 
 .stroke.c0, .stroke.fadiest {
-  stroke: var(--c0); }
+  stroke: var(--c6); }
 
 .edged.c0, .edged.fadiest {
   box-shadow: 0px 0px 0px 1px inset; }
 
 button.c0, button.fadiest, .button.c0, .button.fadiest {
-  border-color: var(--c0); }
+  border-color: var(--c6); }
 
 button.c0, button.fadiest, .button.c0, .button.fadiest {
-  color: var(--c0); }
+  color: var(--c6); }
 
 .filled.c0, .filled.fadiest, button.filled.c0, button.filled.fadiest, .button.filled.c0, .button.filled.fadiest, .tag.c0, .tag.fadiest {
-  background: var(--c0); }
+  background: var(--c6); }
 
 .filled.c0, .filled.fadiest, button.filled.c0, button.filled.fadiest, .button.filled.c0, .button.filled.fadiest, .tag.c0, .tag.fadiest {
   color: var(--bg3); }
@@ -1556,7 +1555,7 @@ button.c0, button.fadiest, .button.c0, .button.fadiest {
   border-color: var(--bg3); }
 
 a:active:not(.unclickable):not(.disabled).c0, a:active:not(.unclickable):not(.disabled).fadiest, a:active .bg.c0, a:active .bg.fadiest, a.active:not(.unclickable):not(.disabled).c0, a.active:not(.unclickable):not(.disabled).fadiest, a.active .bg.c0, a.active .bg.fadiest, a.focusable:focus:not(.unclickable):not(.disabled).c0, a.focusable:focus:not(.unclickable):not(.disabled).fadiest, a.focusable:focus .bg.c0, a.focusable:focus .bg.fadiest, button:active:not(.unclickable):not(.disabled).c0, button:active:not(.unclickable):not(.disabled).fadiest, button:active .bg.c0, button:active .bg.fadiest, button.active:not(.unclickable):not(.disabled).c0, button.active:not(.unclickable):not(.disabled).fadiest, button.active .bg.c0, button.active .bg.fadiest, button.focusable:focus:not(.unclickable):not(.disabled).c0, button.focusable:focus:not(.unclickable):not(.disabled).fadiest, button.focusable:focus .bg.c0, button.focusable:focus .bg.fadiest, .clickable:active:not(.unclickable):not(.disabled).c0, .clickable:active:not(.unclickable):not(.disabled).fadiest, .clickable:active .bg.c0, .clickable:active .bg.fadiest, .clickable.active:not(.unclickable):not(.disabled).c0, .clickable.active:not(.unclickable):not(.disabled).fadiest, .clickable.active .bg.c0, .clickable.active .bg.fadiest, .clickable.focusable:focus:not(.unclickable):not(.disabled).c0, .clickable.focusable:focus:not(.unclickable):not(.disabled).fadiest, .clickable.focusable:focus .bg.c0, .clickable.focusable:focus .bg.fadiest, .button:active:not(.unclickable):not(.disabled).c0, .button:active:not(.unclickable):not(.disabled).fadiest, .button:active .bg.c0, .button:active .bg.fadiest, .button.active:not(.unclickable):not(.disabled).c0, .button.active:not(.unclickable):not(.disabled).fadiest, .button.active .bg.c0, .button.active .bg.fadiest, .button.focusable:focus:not(.unclickable):not(.disabled).c0, .button.focusable:focus:not(.unclickable):not(.disabled).fadiest, .button.focusable:focus .bg.c0, .button.focusable:focus .bg.fadiest {
-  background: var(--c0); }
+  background: var(--c6); }
 
 a:active:not(.unclickable):not(.disabled).c0, a:active:not(.unclickable):not(.disabled).fadiest, a:active .bg.c0, a:active .bg.fadiest, a.active:not(.unclickable):not(.disabled).c0, a.active:not(.unclickable):not(.disabled).fadiest, a.active .bg.c0, a.active .bg.fadiest, a.focusable:focus:not(.unclickable):not(.disabled).c0, a.focusable:focus:not(.unclickable):not(.disabled).fadiest, a.focusable:focus .bg.c0, a.focusable:focus .bg.fadiest, button:active:not(.unclickable):not(.disabled).c0, button:active:not(.unclickable):not(.disabled).fadiest, button:active .bg.c0, button:active .bg.fadiest, button.active:not(.unclickable):not(.disabled).c0, button.active:not(.unclickable):not(.disabled).fadiest, button.active .bg.c0, button.active .bg.fadiest, button.focusable:focus:not(.unclickable):not(.disabled).c0, button.focusable:focus:not(.unclickable):not(.disabled).fadiest, button.focusable:focus .bg.c0, button.focusable:focus .bg.fadiest, .clickable:active:not(.unclickable):not(.disabled).c0, .clickable:active:not(.unclickable):not(.disabled).fadiest, .clickable:active .bg.c0, .clickable:active .bg.fadiest, .clickable.active:not(.unclickable):not(.disabled).c0, .clickable.active:not(.unclickable):not(.disabled).fadiest, .clickable.active .bg.c0, .clickable.active .bg.fadiest, .clickable.focusable:focus:not(.unclickable):not(.disabled).c0, .clickable.focusable:focus:not(.unclickable):not(.disabled).fadiest, .clickable.focusable:focus .bg.c0, .clickable.focusable:focus .bg.fadiest, .button:active:not(.unclickable):not(.disabled).c0, .button:active:not(.unclickable):not(.disabled).fadiest, .button:active .bg.c0, .button:active .bg.fadiest, .button.active:not(.unclickable):not(.disabled).c0, .button.active:not(.unclickable):not(.disabled).fadiest, .button.active .bg.c0, .button.active .bg.fadiest, .button.focusable:focus:not(.unclickable):not(.disabled).c0, .button.focusable:focus:not(.unclickable):not(.disabled).fadiest, .button.focusable:focus .bg.c0, .button.focusable:focus .bg.fadiest {
   color: var(--bg3); }
@@ -1571,73 +1570,73 @@ a:active:not(.unclickable):not(.disabled):after.c0, a:active:not(.unclickable):n
   border-color: var(--bg3); }
 
 a.c0, a.fadiest, select.c0, select.fadiest, button.c0, button.fadiest, .button.c0, .button.fadiest {
-  color: var(--c0); }
+  color: var(--c6); }
 
 a.c0, a.fadiest, select.c0, select.fadiest, button.c0, button.fadiest, .button.c0, .button.fadiest {
-  border-color: var(--c0); }
+  border-color: var(--c6); }
 
 .c1, .fadier, .inactive, .disabled {
-  color: var(--c1); }
+  color: var(--c5); }
 
 .c1, .fadier, .inactive, .disabled {
-  border-color: var(--c1); }
+  border-color: var(--c5); }
 
 * .c1, * .fadier, * .inactive, * .disabled {
-  border-color: var(--c1); }
+  border-color: var(--c5); }
 
 h1.c1, h1.fadier, h1.inactive, h1.disabled, h2.c1, h2.fadier, h2.inactive, h2.disabled, h3.c1, h3.fadier, h3.inactive, h3.disabled, h4.c1, h4.fadier, h4.inactive, h4.disabled, h5.c1, h5.fadier, h5.inactive, h5.disabled, h6.c1, h6.fadier, h6.inactive, h6.disabled {
-  color: var(--c1); }
+  color: var(--c5); }
 
 input.c1, input.fadier, input.inactive, input.disabled, select.c1, select.fadier, select.inactive, select.disabled, textarea.c1, textarea.fadier, textarea.inactive, textarea.disabled, input[type=range].c1, input[type=range].fadier, input[type=range].inactive, input[type=range].disabled, textarea.c1, textarea.fadier, textarea.inactive, textarea.disabled, .dropdown.c1, .dropdown.fadier, .dropdown.inactive, .dropdown.disabled {
-  color: var(--c1); }
+  color: var(--c5); }
 
 textarea:focus.c1, textarea:focus.fadier, textarea:focus.inactive, textarea:focus.disabled, input[type=text]:focus.c1, input[type=text]:focus.fadier, input[type=text]:focus.inactive, input[type=text]:focus.disabled, input[type=number]:focus.c1, input[type=number]:focus.fadier, input[type=number]:focus.inactive, input[type=number]:focus.disabled, input[type=email]:focus.c1, input[type=email]:focus.fadier, input[type=email]:focus.inactive, input[type=email]:focus.disabled, input[type=password]:focus.c1, input[type=password]:focus.fadier, input[type=password]:focus.inactive, input[type=password]:focus.disabled, select:focus.c1, select:focus.fadier, select:focus.inactive, select:focus.disabled, .dropdown:focus.c1, .dropdown:focus.fadier, .dropdown:focus.inactive, .dropdown:focus.disabled {
-  box-shadow: 0px 0px 0px 1px var(--c1) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c5) inset; }
 
 label:not(.disabled):active input[type=range]:not([disabled]).c1, label:not(.disabled):active input[type=range]:not([disabled]).fadier, label:not(.disabled):active input[type=range]:not([disabled]).inactive, label:not(.disabled):active input[type=range]:not([disabled]).disabled, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c1, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).fadier, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).inactive, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).disabled, label:not(.disabled):active input[type=radio] + span:not([disabled]).c1, label:not(.disabled):active input[type=radio] + span:not([disabled]).fadier, label:not(.disabled):active input[type=radio] + span:not([disabled]).inactive, label:not(.disabled):active input[type=radio] + span:not([disabled]).disabled, label:not(.disabled).active input[type=range]:not([disabled]).c1, label:not(.disabled).active input[type=range]:not([disabled]).fadier, label:not(.disabled).active input[type=range]:not([disabled]).inactive, label:not(.disabled).active input[type=range]:not([disabled]).disabled, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c1, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).fadier, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).inactive, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).disabled, label:not(.disabled).active input[type=radio] + span:not([disabled]).c1, label:not(.disabled).active input[type=radio] + span:not([disabled]).fadier, label:not(.disabled).active input[type=radio] + span:not([disabled]).inactive, label:not(.disabled).active input[type=radio] + span:not([disabled]).disabled {
-  box-shadow: 0px 0px 0px 1px var(--c1) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c5) inset; }
 
 input[type=range]:not([disabled]):active.c1, input[type=range]:not([disabled]):active.fadier, input[type=range]:not([disabled]):active.inactive, input[type=range]:not([disabled]):active.disabled, input[type=range]:not([disabled]).active.c1, input[type=range]:not([disabled]).active.fadier, input[type=range]:not([disabled]).active.inactive, input[type=range]:not([disabled]).active.disabled, input[type=checkbox] + span:not([disabled]):active.c1, input[type=checkbox] + span:not([disabled]):active.fadier, input[type=checkbox] + span:not([disabled]):active.inactive, input[type=checkbox] + span:not([disabled]):active.disabled, input[type=checkbox] + span:not([disabled]).active.c1, input[type=checkbox] + span:not([disabled]).active.fadier, input[type=checkbox] + span:not([disabled]).active.inactive, input[type=checkbox] + span:not([disabled]).active.disabled, input[type=radio] + span:not([disabled]):active.c1, input[type=radio] + span:not([disabled]):active.fadier, input[type=radio] + span:not([disabled]):active.inactive, input[type=radio] + span:not([disabled]):active.disabled, input[type=radio] + span:not([disabled]).active.c1, input[type=radio] + span:not([disabled]).active.fadier, input[type=radio] + span:not([disabled]).active.inactive, input[type=radio] + span:not([disabled]).active.disabled {
-  box-shadow: 0px 0px 0px 1px var(--c1) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c5) inset; }
 
 input[type=range].c1::-webkit-slider-thumb, input[type=range].fadier::-webkit-slider-thumb, input[type=range].inactive::-webkit-slider-thumb, input[type=range].disabled::-webkit-slider-thumb {
-  background-color: var(--c1); }
+  background-color: var(--c5); }
 
 .checkbox input + span.c1, .checkbox input + span.fadier, .checkbox input + span.inactive, .checkbox input + span.disabled {
-  border-color: var(--c1); }
+  border-color: var(--c5); }
 
 .checkbox input + span:before.c1, .checkbox input + span:before.fadier, .checkbox input + span:before.inactive, .checkbox input + span:before.disabled, .checkbox input + span:after.c1, .checkbox input + span:after.fadier, .checkbox input + span:after.inactive, .checkbox input + span:after.disabled {
-  border-color: var(--c1); }
+  border-color: var(--c5); }
 
 .radio input:checked + span.c1, .radio input:checked + span.fadier, .radio input:checked + span.inactive, .radio input:checked + span.disabled, .checkbox input:checked + span.c1, .checkbox input:checked + span.fadier, .checkbox input:checked + span.inactive, .checkbox input:checked + span.disabled {
-  background-color: var(--c1); }
+  background-color: var(--c5); }
 
 .select:after.c1, .select:after.fadier, .select:after.inactive, .select:after.disabled, .chevron:after.c1, .chevron:after.fadier, .chevron:after.inactive, .chevron:after.disabled {
-  border-color: var(--c1); }
+  border-color: var(--c5); }
 
 .cross.c1, .cross.fadier, .cross.inactive, .cross.disabled, .checkbox-cross input:checked + span.c1, .checkbox-cross input:checked + span.fadier, .checkbox-cross input:checked + span.inactive, .checkbox-cross input:checked + span.disabled, .radio-cross input:checked + span.c1, .radio-cross input:checked + span.fadier, .radio-cross input:checked + span.inactive, .radio-cross input:checked + span.disabled {
-  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c1) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c1) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c5) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c5) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.c1, .tick.fadier, .tick.inactive, .tick.disabled {
-  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c1) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c1) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c5) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c5) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
 
 .fill.c1, .fill.fadier, .fill.inactive, .fill.disabled {
-  fill: var(--c1); }
+  fill: var(--c5); }
 
 .stroke.c1, .stroke.fadier, .stroke.inactive, .stroke.disabled {
-  stroke: var(--c1); }
+  stroke: var(--c5); }
 
 .edged.c1, .edged.fadier, .edged.inactive, .edged.disabled {
   box-shadow: 0px 0px 0px 1px inset; }
 
 button.c1, button.fadier, button.inactive, button.disabled, .button.c1, .button.fadier, .button.inactive, .button.disabled {
-  border-color: var(--c1); }
+  border-color: var(--c5); }
 
 button.c1, button.fadier, button.inactive, button.disabled, .button.c1, .button.fadier, .button.inactive, .button.disabled {
-  color: var(--c1); }
+  color: var(--c5); }
 
 .filled.c1, .filled.fadier, .filled.inactive, .filled.disabled, button.filled.c1, button.filled.fadier, button.filled.inactive, button.filled.disabled, .button.filled.c1, .button.filled.fadier, .button.filled.inactive, .button.filled.disabled, .tag.c1, .tag.fadier, .tag.inactive, .tag.disabled {
-  background: var(--c1); }
+  background: var(--c5); }
 
 .filled.c1, .filled.fadier, .filled.inactive, .filled.disabled, button.filled.c1, button.filled.fadier, button.filled.inactive, button.filled.disabled, .button.filled.c1, .button.filled.fadier, .button.filled.inactive, .button.filled.disabled, .tag.c1, .tag.fadier, .tag.inactive, .tag.disabled {
   color: var(--bg3); }
@@ -1652,7 +1651,7 @@ button.c1, button.fadier, button.inactive, button.disabled, .button.c1, .button.
   border-color: var(--bg3); }
 
 a:active:not(.unclickable):not(.disabled).c1, a:active:not(.unclickable):not(.disabled).fadier, a:active:not(.unclickable):not(.disabled).inactive, a:active:not(.unclickable):not(.disabled).disabled, a:active .bg.c1, a:active .bg.fadier, a:active .bg.inactive, a:active .bg.disabled, a.active:not(.unclickable):not(.disabled).c1, a.active:not(.unclickable):not(.disabled).fadier, a.active:not(.unclickable):not(.disabled).inactive, a.active:not(.unclickable):not(.disabled).disabled, a.active .bg.c1, a.active .bg.fadier, a.active .bg.inactive, a.active .bg.disabled, a.focusable:focus:not(.unclickable):not(.disabled).c1, a.focusable:focus:not(.unclickable):not(.disabled).fadier, a.focusable:focus:not(.unclickable):not(.disabled).inactive, a.focusable:focus:not(.unclickable):not(.disabled).disabled, a.focusable:focus .bg.c1, a.focusable:focus .bg.fadier, a.focusable:focus .bg.inactive, a.focusable:focus .bg.disabled, button:active:not(.unclickable):not(.disabled).c1, button:active:not(.unclickable):not(.disabled).fadier, button:active:not(.unclickable):not(.disabled).inactive, button:active:not(.unclickable):not(.disabled).disabled, button:active .bg.c1, button:active .bg.fadier, button:active .bg.inactive, button:active .bg.disabled, button.active:not(.unclickable):not(.disabled).c1, button.active:not(.unclickable):not(.disabled).fadier, button.active:not(.unclickable):not(.disabled).inactive, button.active:not(.unclickable):not(.disabled).disabled, button.active .bg.c1, button.active .bg.fadier, button.active .bg.inactive, button.active .bg.disabled, button.focusable:focus:not(.unclickable):not(.disabled).c1, button.focusable:focus:not(.unclickable):not(.disabled).fadier, button.focusable:focus:not(.unclickable):not(.disabled).inactive, button.focusable:focus:not(.unclickable):not(.disabled).disabled, button.focusable:focus .bg.c1, button.focusable:focus .bg.fadier, button.focusable:focus .bg.inactive, button.focusable:focus .bg.disabled, .clickable:active:not(.unclickable):not(.disabled).c1, .clickable:active:not(.unclickable):not(.disabled).fadier, .clickable:active:not(.unclickable):not(.disabled).inactive, .clickable:active:not(.unclickable):not(.disabled).disabled, .clickable:active .bg.c1, .clickable:active .bg.fadier, .clickable:active .bg.inactive, .clickable:active .bg.disabled, .clickable.active:not(.unclickable):not(.disabled).c1, .clickable.active:not(.unclickable):not(.disabled).fadier, .clickable.active:not(.unclickable):not(.disabled).inactive, .clickable.active:not(.unclickable):not(.disabled).disabled, .clickable.active .bg.c1, .clickable.active .bg.fadier, .clickable.active .bg.inactive, .clickable.active .bg.disabled, .clickable.focusable:focus:not(.unclickable):not(.disabled).c1, .clickable.focusable:focus:not(.unclickable):not(.disabled).fadier, .clickable.focusable:focus:not(.unclickable):not(.disabled).inactive, .clickable.focusable:focus:not(.unclickable):not(.disabled).disabled, .clickable.focusable:focus .bg.c1, .clickable.focusable:focus .bg.fadier, .clickable.focusable:focus .bg.inactive, .clickable.focusable:focus .bg.disabled, .button:active:not(.unclickable):not(.disabled).c1, .button:active:not(.unclickable):not(.disabled).fadier, .button:active:not(.unclickable):not(.disabled).inactive, .button:active:not(.unclickable):not(.disabled).disabled, .button:active .bg.c1, .button:active .bg.fadier, .button:active .bg.inactive, .button:active .bg.disabled, .button.active:not(.unclickable):not(.disabled).c1, .button.active:not(.unclickable):not(.disabled).fadier, .button.active:not(.unclickable):not(.disabled).inactive, .button.active:not(.unclickable):not(.disabled).disabled, .button.active .bg.c1, .button.active .bg.fadier, .button.active .bg.inactive, .button.active .bg.disabled, .button.focusable:focus:not(.unclickable):not(.disabled).c1, .button.focusable:focus:not(.unclickable):not(.disabled).fadier, .button.focusable:focus:not(.unclickable):not(.disabled).inactive, .button.focusable:focus:not(.unclickable):not(.disabled).disabled, .button.focusable:focus .bg.c1, .button.focusable:focus .bg.fadier, .button.focusable:focus .bg.inactive, .button.focusable:focus .bg.disabled {
-  background: var(--c1); }
+  background: var(--c5); }
 
 a:active:not(.unclickable):not(.disabled).c1, a:active:not(.unclickable):not(.disabled).fadier, a:active:not(.unclickable):not(.disabled).inactive, a:active:not(.unclickable):not(.disabled).disabled, a:active .bg.c1, a:active .bg.fadier, a:active .bg.inactive, a:active .bg.disabled, a.active:not(.unclickable):not(.disabled).c1, a.active:not(.unclickable):not(.disabled).fadier, a.active:not(.unclickable):not(.disabled).inactive, a.active:not(.unclickable):not(.disabled).disabled, a.active .bg.c1, a.active .bg.fadier, a.active .bg.inactive, a.active .bg.disabled, a.focusable:focus:not(.unclickable):not(.disabled).c1, a.focusable:focus:not(.unclickable):not(.disabled).fadier, a.focusable:focus:not(.unclickable):not(.disabled).inactive, a.focusable:focus:not(.unclickable):not(.disabled).disabled, a.focusable:focus .bg.c1, a.focusable:focus .bg.fadier, a.focusable:focus .bg.inactive, a.focusable:focus .bg.disabled, button:active:not(.unclickable):not(.disabled).c1, button:active:not(.unclickable):not(.disabled).fadier, button:active:not(.unclickable):not(.disabled).inactive, button:active:not(.unclickable):not(.disabled).disabled, button:active .bg.c1, button:active .bg.fadier, button:active .bg.inactive, button:active .bg.disabled, button.active:not(.unclickable):not(.disabled).c1, button.active:not(.unclickable):not(.disabled).fadier, button.active:not(.unclickable):not(.disabled).inactive, button.active:not(.unclickable):not(.disabled).disabled, button.active .bg.c1, button.active .bg.fadier, button.active .bg.inactive, button.active .bg.disabled, button.focusable:focus:not(.unclickable):not(.disabled).c1, button.focusable:focus:not(.unclickable):not(.disabled).fadier, button.focusable:focus:not(.unclickable):not(.disabled).inactive, button.focusable:focus:not(.unclickable):not(.disabled).disabled, button.focusable:focus .bg.c1, button.focusable:focus .bg.fadier, button.focusable:focus .bg.inactive, button.focusable:focus .bg.disabled, .clickable:active:not(.unclickable):not(.disabled).c1, .clickable:active:not(.unclickable):not(.disabled).fadier, .clickable:active:not(.unclickable):not(.disabled).inactive, .clickable:active:not(.unclickable):not(.disabled).disabled, .clickable:active .bg.c1, .clickable:active .bg.fadier, .clickable:active .bg.inactive, .clickable:active .bg.disabled, .clickable.active:not(.unclickable):not(.disabled).c1, .clickable.active:not(.unclickable):not(.disabled).fadier, .clickable.active:not(.unclickable):not(.disabled).inactive, .clickable.active:not(.unclickable):not(.disabled).disabled, .clickable.active .bg.c1, .clickable.active .bg.fadier, .clickable.active .bg.inactive, .clickable.active .bg.disabled, .clickable.focusable:focus:not(.unclickable):not(.disabled).c1, .clickable.focusable:focus:not(.unclickable):not(.disabled).fadier, .clickable.focusable:focus:not(.unclickable):not(.disabled).inactive, .clickable.focusable:focus:not(.unclickable):not(.disabled).disabled, .clickable.focusable:focus .bg.c1, .clickable.focusable:focus .bg.fadier, .clickable.focusable:focus .bg.inactive, .clickable.focusable:focus .bg.disabled, .button:active:not(.unclickable):not(.disabled).c1, .button:active:not(.unclickable):not(.disabled).fadier, .button:active:not(.unclickable):not(.disabled).inactive, .button:active:not(.unclickable):not(.disabled).disabled, .button:active .bg.c1, .button:active .bg.fadier, .button:active .bg.inactive, .button:active .bg.disabled, .button.active:not(.unclickable):not(.disabled).c1, .button.active:not(.unclickable):not(.disabled).fadier, .button.active:not(.unclickable):not(.disabled).inactive, .button.active:not(.unclickable):not(.disabled).disabled, .button.active .bg.c1, .button.active .bg.fadier, .button.active .bg.inactive, .button.active .bg.disabled, .button.focusable:focus:not(.unclickable):not(.disabled).c1, .button.focusable:focus:not(.unclickable):not(.disabled).fadier, .button.focusable:focus:not(.unclickable):not(.disabled).inactive, .button.focusable:focus:not(.unclickable):not(.disabled).disabled, .button.focusable:focus .bg.c1, .button.focusable:focus .bg.fadier, .button.focusable:focus .bg.inactive, .button.focusable:focus .bg.disabled {
   color: var(--bg3); }
@@ -1667,73 +1666,73 @@ a:active:not(.unclickable):not(.disabled):after.c1, a:active:not(.unclickable):n
   border-color: var(--bg3); }
 
 a.c1, a.fadier, a.inactive, a.disabled, select.c1, select.fadier, select.inactive, select.disabled, button.c1, button.fadier, button.inactive, button.disabled, .button.c1, .button.fadier, .button.inactive, .button.disabled {
-  color: var(--c1); }
+  color: var(--c5); }
 
 a.c1, a.fadier, a.inactive, a.disabled, select.c1, select.fadier, select.inactive, select.disabled, button.c1, button.fadier, button.inactive, button.disabled, .button.c1, .button.fadier, .button.inactive, .button.disabled {
-  border-color: var(--c1); }
+  border-color: var(--c5); }
 
 .c2, .fade {
-  color: var(--c2); }
+  color: var(--c4); }
 
 .c2, .fade {
-  border-color: var(--c2); }
+  border-color: var(--c4); }
 
 * .c2, * .fade {
-  border-color: var(--c2); }
+  border-color: var(--c4); }
 
 h1.c2, h1.fade, h2.c2, h2.fade, h3.c2, h3.fade, h4.c2, h4.fade, h5.c2, h5.fade, h6.c2, h6.fade {
-  color: var(--c2); }
+  color: var(--c4); }
 
 input.c2, input.fade, select.c2, select.fade, textarea.c2, textarea.fade, input[type=range].c2, input[type=range].fade, textarea.c2, textarea.fade, .dropdown.c2, .dropdown.fade {
-  color: var(--c2); }
+  color: var(--c4); }
 
 textarea:focus.c2, textarea:focus.fade, input[type=text]:focus.c2, input[type=text]:focus.fade, input[type=number]:focus.c2, input[type=number]:focus.fade, input[type=email]:focus.c2, input[type=email]:focus.fade, input[type=password]:focus.c2, input[type=password]:focus.fade, select:focus.c2, select:focus.fade, .dropdown:focus.c2, .dropdown:focus.fade {
-  box-shadow: 0px 0px 0px 1px var(--c2) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c4) inset; }
 
 label:not(.disabled):active input[type=range]:not([disabled]).c2, label:not(.disabled):active input[type=range]:not([disabled]).fade, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c2, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).fade, label:not(.disabled):active input[type=radio] + span:not([disabled]).c2, label:not(.disabled):active input[type=radio] + span:not([disabled]).fade, label:not(.disabled).active input[type=range]:not([disabled]).c2, label:not(.disabled).active input[type=range]:not([disabled]).fade, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c2, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).fade, label:not(.disabled).active input[type=radio] + span:not([disabled]).c2, label:not(.disabled).active input[type=radio] + span:not([disabled]).fade {
-  box-shadow: 0px 0px 0px 1px var(--c2) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c4) inset; }
 
 input[type=range]:not([disabled]):active.c2, input[type=range]:not([disabled]):active.fade, input[type=range]:not([disabled]).active.c2, input[type=range]:not([disabled]).active.fade, input[type=checkbox] + span:not([disabled]):active.c2, input[type=checkbox] + span:not([disabled]):active.fade, input[type=checkbox] + span:not([disabled]).active.c2, input[type=checkbox] + span:not([disabled]).active.fade, input[type=radio] + span:not([disabled]):active.c2, input[type=radio] + span:not([disabled]):active.fade, input[type=radio] + span:not([disabled]).active.c2, input[type=radio] + span:not([disabled]).active.fade {
-  box-shadow: 0px 0px 0px 1px var(--c2) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c4) inset; }
 
 input[type=range].c2::-webkit-slider-thumb, input[type=range].fade::-webkit-slider-thumb {
-  background-color: var(--c2); }
+  background-color: var(--c4); }
 
 .checkbox input + span.c2, .checkbox input + span.fade {
-  border-color: var(--c2); }
+  border-color: var(--c4); }
 
 .checkbox input + span:before.c2, .checkbox input + span:before.fade, .checkbox input + span:after.c2, .checkbox input + span:after.fade {
-  border-color: var(--c2); }
+  border-color: var(--c4); }
 
 .radio input:checked + span.c2, .radio input:checked + span.fade, .checkbox input:checked + span.c2, .checkbox input:checked + span.fade {
-  background-color: var(--c2); }
+  background-color: var(--c4); }
 
 .select:after.c2, .select:after.fade, .chevron:after.c2, .chevron:after.fade {
-  border-color: var(--c2); }
+  border-color: var(--c4); }
 
 .cross.c2, .cross.fade, .checkbox-cross input:checked + span.c2, .checkbox-cross input:checked + span.fade, .radio-cross input:checked + span.c2, .radio-cross input:checked + span.fade {
-  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c2) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c2) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c4) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c4) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.c2, .tick.fade {
-  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c2) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c2) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c4) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c4) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
 
 .fill.c2, .fill.fade {
-  fill: var(--c2); }
+  fill: var(--c4); }
 
 .stroke.c2, .stroke.fade {
-  stroke: var(--c2); }
+  stroke: var(--c4); }
 
 .edged.c2, .edged.fade {
   box-shadow: 0px 0px 0px 1px inset; }
 
 button.c2, button.fade, .button.c2, .button.fade {
-  border-color: var(--c2); }
+  border-color: var(--c4); }
 
 button.c2, button.fade, .button.c2, .button.fade {
-  color: var(--c2); }
+  color: var(--c4); }
 
 .filled.c2, .filled.fade, button.filled.c2, button.filled.fade, .button.filled.c2, .button.filled.fade, .tag.c2, .tag.fade {
-  background: var(--c2); }
+  background: var(--c4); }
 
 .filled.c2, .filled.fade, button.filled.c2, button.filled.fade, .button.filled.c2, .button.filled.fade, .tag.c2, .tag.fade {
   color: var(--bg3); }
@@ -1748,7 +1747,7 @@ button.c2, button.fade, .button.c2, .button.fade {
   border-color: var(--bg3); }
 
 a:active:not(.unclickable):not(.disabled).c2, a:active:not(.unclickable):not(.disabled).fade, a:active .bg.c2, a:active .bg.fade, a.active:not(.unclickable):not(.disabled).c2, a.active:not(.unclickable):not(.disabled).fade, a.active .bg.c2, a.active .bg.fade, a.focusable:focus:not(.unclickable):not(.disabled).c2, a.focusable:focus:not(.unclickable):not(.disabled).fade, a.focusable:focus .bg.c2, a.focusable:focus .bg.fade, button:active:not(.unclickable):not(.disabled).c2, button:active:not(.unclickable):not(.disabled).fade, button:active .bg.c2, button:active .bg.fade, button.active:not(.unclickable):not(.disabled).c2, button.active:not(.unclickable):not(.disabled).fade, button.active .bg.c2, button.active .bg.fade, button.focusable:focus:not(.unclickable):not(.disabled).c2, button.focusable:focus:not(.unclickable):not(.disabled).fade, button.focusable:focus .bg.c2, button.focusable:focus .bg.fade, .clickable:active:not(.unclickable):not(.disabled).c2, .clickable:active:not(.unclickable):not(.disabled).fade, .clickable:active .bg.c2, .clickable:active .bg.fade, .clickable.active:not(.unclickable):not(.disabled).c2, .clickable.active:not(.unclickable):not(.disabled).fade, .clickable.active .bg.c2, .clickable.active .bg.fade, .clickable.focusable:focus:not(.unclickable):not(.disabled).c2, .clickable.focusable:focus:not(.unclickable):not(.disabled).fade, .clickable.focusable:focus .bg.c2, .clickable.focusable:focus .bg.fade, .button:active:not(.unclickable):not(.disabled).c2, .button:active:not(.unclickable):not(.disabled).fade, .button:active .bg.c2, .button:active .bg.fade, .button.active:not(.unclickable):not(.disabled).c2, .button.active:not(.unclickable):not(.disabled).fade, .button.active .bg.c2, .button.active .bg.fade, .button.focusable:focus:not(.unclickable):not(.disabled).c2, .button.focusable:focus:not(.unclickable):not(.disabled).fade, .button.focusable:focus .bg.c2, .button.focusable:focus .bg.fade {
-  background: var(--c2); }
+  background: var(--c4); }
 
 a:active:not(.unclickable):not(.disabled).c2, a:active:not(.unclickable):not(.disabled).fade, a:active .bg.c2, a:active .bg.fade, a.active:not(.unclickable):not(.disabled).c2, a.active:not(.unclickable):not(.disabled).fade, a.active .bg.c2, a.active .bg.fade, a.focusable:focus:not(.unclickable):not(.disabled).c2, a.focusable:focus:not(.unclickable):not(.disabled).fade, a.focusable:focus .bg.c2, a.focusable:focus .bg.fade, button:active:not(.unclickable):not(.disabled).c2, button:active:not(.unclickable):not(.disabled).fade, button:active .bg.c2, button:active .bg.fade, button.active:not(.unclickable):not(.disabled).c2, button.active:not(.unclickable):not(.disabled).fade, button.active .bg.c2, button.active .bg.fade, button.focusable:focus:not(.unclickable):not(.disabled).c2, button.focusable:focus:not(.unclickable):not(.disabled).fade, button.focusable:focus .bg.c2, button.focusable:focus .bg.fade, .clickable:active:not(.unclickable):not(.disabled).c2, .clickable:active:not(.unclickable):not(.disabled).fade, .clickable:active .bg.c2, .clickable:active .bg.fade, .clickable.active:not(.unclickable):not(.disabled).c2, .clickable.active:not(.unclickable):not(.disabled).fade, .clickable.active .bg.c2, .clickable.active .bg.fade, .clickable.focusable:focus:not(.unclickable):not(.disabled).c2, .clickable.focusable:focus:not(.unclickable):not(.disabled).fade, .clickable.focusable:focus .bg.c2, .clickable.focusable:focus .bg.fade, .button:active:not(.unclickable):not(.disabled).c2, .button:active:not(.unclickable):not(.disabled).fade, .button:active .bg.c2, .button:active .bg.fade, .button.active:not(.unclickable):not(.disabled).c2, .button.active:not(.unclickable):not(.disabled).fade, .button.active .bg.c2, .button.active .bg.fade, .button.focusable:focus:not(.unclickable):not(.disabled).c2, .button.focusable:focus:not(.unclickable):not(.disabled).fade, .button.focusable:focus .bg.c2, .button.focusable:focus .bg.fade {
   color: var(--bg3); }
@@ -1763,105 +1762,105 @@ a:active:not(.unclickable):not(.disabled):after.c2, a:active:not(.unclickable):n
   border-color: var(--bg3); }
 
 a.c2, a.fade, select.c2, select.fade, button.c2, button.fade, .button.c2, .button.fade {
-  color: var(--c2); }
+  color: var(--c4); }
 
 a.c2, a.fade, select.c2, select.fade, button.c2, button.fade, .button.c2, .button.fade {
-  border-color: var(--c2); }
+  border-color: var(--c4); }
 
-.c3, .normal, .sassis {
+.c3, .normal, .color, .sassis {
   color: var(--c3); }
 
-.c3, .normal, .sassis {
+.c3, .normal, .color, .sassis {
   border-color: var(--c3); }
 
-* .c3, * .normal, * .sassis {
+* .c3, * .normal, * .color, * .sassis {
   border-color: var(--c3); }
 
-h1.c3, h1.normal, h1.sassis, h2.c3, h2.normal, h2.sassis, h3.c3, h3.normal, h3.sassis, h4.c3, h4.normal, h4.sassis, h5.c3, h5.normal, h5.sassis, h6.c3, h6.normal, h6.sassis {
+h1.c3, h1.normal, h1.color, h1.sassis, h2.c3, h2.normal, h2.color, h2.sassis, h3.c3, h3.normal, h3.color, h3.sassis, h4.c3, h4.normal, h4.color, h4.sassis, h5.c3, h5.normal, h5.color, h5.sassis, h6.c3, h6.normal, h6.color, h6.sassis {
   color: var(--c3); }
 
-input.c3, input.normal, input.sassis, select.c3, select.normal, select.sassis, textarea.c3, textarea.normal, textarea.sassis, input[type=range].c3, input[type=range].normal, input[type=range].sassis, textarea.c3, textarea.normal, textarea.sassis, .dropdown.c3, .dropdown.normal, .dropdown.sassis {
+input.c3, input.normal, input.color, input.sassis, select.c3, select.normal, select.color, select.sassis, textarea.c3, textarea.normal, textarea.color, textarea.sassis, input[type=range].c3, input[type=range].normal, input[type=range].color, input[type=range].sassis, textarea.c3, textarea.normal, textarea.color, textarea.sassis, .dropdown.c3, .dropdown.normal, .dropdown.color, .dropdown.sassis {
   color: var(--c3); }
 
-textarea:focus.c3, textarea:focus.normal, textarea:focus.sassis, input[type=text]:focus.c3, input[type=text]:focus.normal, input[type=text]:focus.sassis, input[type=number]:focus.c3, input[type=number]:focus.normal, input[type=number]:focus.sassis, input[type=email]:focus.c3, input[type=email]:focus.normal, input[type=email]:focus.sassis, input[type=password]:focus.c3, input[type=password]:focus.normal, input[type=password]:focus.sassis, select:focus.c3, select:focus.normal, select:focus.sassis, .dropdown:focus.c3, .dropdown:focus.normal, .dropdown:focus.sassis {
+textarea:focus.c3, textarea:focus.normal, textarea:focus.color, textarea:focus.sassis, input[type=text]:focus.c3, input[type=text]:focus.normal, input[type=text]:focus.color, input[type=text]:focus.sassis, input[type=number]:focus.c3, input[type=number]:focus.normal, input[type=number]:focus.color, input[type=number]:focus.sassis, input[type=email]:focus.c3, input[type=email]:focus.normal, input[type=email]:focus.color, input[type=email]:focus.sassis, input[type=password]:focus.c3, input[type=password]:focus.normal, input[type=password]:focus.color, input[type=password]:focus.sassis, select:focus.c3, select:focus.normal, select:focus.color, select:focus.sassis, .dropdown:focus.c3, .dropdown:focus.normal, .dropdown:focus.color, .dropdown:focus.sassis {
   box-shadow: 0px 0px 0px 1px var(--c3) inset; }
 
-label:not(.disabled):active input[type=range]:not([disabled]).c3, label:not(.disabled):active input[type=range]:not([disabled]).normal, label:not(.disabled):active input[type=range]:not([disabled]).sassis, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c3, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).normal, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).sassis, label:not(.disabled):active input[type=radio] + span:not([disabled]).c3, label:not(.disabled):active input[type=radio] + span:not([disabled]).normal, label:not(.disabled):active input[type=radio] + span:not([disabled]).sassis, label:not(.disabled).active input[type=range]:not([disabled]).c3, label:not(.disabled).active input[type=range]:not([disabled]).normal, label:not(.disabled).active input[type=range]:not([disabled]).sassis, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c3, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).normal, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).sassis, label:not(.disabled).active input[type=radio] + span:not([disabled]).c3, label:not(.disabled).active input[type=radio] + span:not([disabled]).normal, label:not(.disabled).active input[type=radio] + span:not([disabled]).sassis {
+label:not(.disabled):active input[type=range]:not([disabled]).c3, label:not(.disabled):active input[type=range]:not([disabled]).normal, label:not(.disabled):active input[type=range]:not([disabled]).color, label:not(.disabled):active input[type=range]:not([disabled]).sassis, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c3, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).normal, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).color, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).sassis, label:not(.disabled):active input[type=radio] + span:not([disabled]).c3, label:not(.disabled):active input[type=radio] + span:not([disabled]).normal, label:not(.disabled):active input[type=radio] + span:not([disabled]).color, label:not(.disabled):active input[type=radio] + span:not([disabled]).sassis, label:not(.disabled).active input[type=range]:not([disabled]).c3, label:not(.disabled).active input[type=range]:not([disabled]).normal, label:not(.disabled).active input[type=range]:not([disabled]).color, label:not(.disabled).active input[type=range]:not([disabled]).sassis, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c3, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).normal, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).color, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).sassis, label:not(.disabled).active input[type=radio] + span:not([disabled]).c3, label:not(.disabled).active input[type=radio] + span:not([disabled]).normal, label:not(.disabled).active input[type=radio] + span:not([disabled]).color, label:not(.disabled).active input[type=radio] + span:not([disabled]).sassis {
   box-shadow: 0px 0px 0px 1px var(--c3) inset; }
 
-input[type=range]:not([disabled]):active.c3, input[type=range]:not([disabled]):active.normal, input[type=range]:not([disabled]):active.sassis, input[type=range]:not([disabled]).active.c3, input[type=range]:not([disabled]).active.normal, input[type=range]:not([disabled]).active.sassis, input[type=checkbox] + span:not([disabled]):active.c3, input[type=checkbox] + span:not([disabled]):active.normal, input[type=checkbox] + span:not([disabled]):active.sassis, input[type=checkbox] + span:not([disabled]).active.c3, input[type=checkbox] + span:not([disabled]).active.normal, input[type=checkbox] + span:not([disabled]).active.sassis, input[type=radio] + span:not([disabled]):active.c3, input[type=radio] + span:not([disabled]):active.normal, input[type=radio] + span:not([disabled]):active.sassis, input[type=radio] + span:not([disabled]).active.c3, input[type=radio] + span:not([disabled]).active.normal, input[type=radio] + span:not([disabled]).active.sassis {
+input[type=range]:not([disabled]):active.c3, input[type=range]:not([disabled]):active.normal, input[type=range]:not([disabled]):active.color, input[type=range]:not([disabled]):active.sassis, input[type=range]:not([disabled]).active.c3, input[type=range]:not([disabled]).active.normal, input[type=range]:not([disabled]).active.color, input[type=range]:not([disabled]).active.sassis, input[type=checkbox] + span:not([disabled]):active.c3, input[type=checkbox] + span:not([disabled]):active.normal, input[type=checkbox] + span:not([disabled]):active.color, input[type=checkbox] + span:not([disabled]):active.sassis, input[type=checkbox] + span:not([disabled]).active.c3, input[type=checkbox] + span:not([disabled]).active.normal, input[type=checkbox] + span:not([disabled]).active.color, input[type=checkbox] + span:not([disabled]).active.sassis, input[type=radio] + span:not([disabled]):active.c3, input[type=radio] + span:not([disabled]):active.normal, input[type=radio] + span:not([disabled]):active.color, input[type=radio] + span:not([disabled]):active.sassis, input[type=radio] + span:not([disabled]).active.c3, input[type=radio] + span:not([disabled]).active.normal, input[type=radio] + span:not([disabled]).active.color, input[type=radio] + span:not([disabled]).active.sassis {
   box-shadow: 0px 0px 0px 1px var(--c3) inset; }
 
-input[type=range].c3::-webkit-slider-thumb, input[type=range].normal::-webkit-slider-thumb, input[type=range].sassis::-webkit-slider-thumb {
+input[type=range].c3::-webkit-slider-thumb, input[type=range].normal::-webkit-slider-thumb, input[type=range].color::-webkit-slider-thumb, input[type=range].sassis::-webkit-slider-thumb {
   background-color: var(--c3); }
 
-.checkbox input + span.c3, .checkbox input + span.normal, .checkbox input + span.sassis {
+.checkbox input + span.c3, .checkbox input + span.normal, .checkbox input + span.color, .checkbox input + span.sassis {
   border-color: var(--c3); }
 
-.checkbox input + span:before.c3, .checkbox input + span:before.normal, .checkbox input + span:before.sassis, .checkbox input + span:after.c3, .checkbox input + span:after.normal, .checkbox input + span:after.sassis {
+.checkbox input + span:before.c3, .checkbox input + span:before.normal, .checkbox input + span:before.color, .checkbox input + span:before.sassis, .checkbox input + span:after.c3, .checkbox input + span:after.normal, .checkbox input + span:after.color, .checkbox input + span:after.sassis {
   border-color: var(--c3); }
 
-.radio input:checked + span.c3, .radio input:checked + span.normal, .radio input:checked + span.sassis, .checkbox input:checked + span.c3, .checkbox input:checked + span.normal, .checkbox input:checked + span.sassis {
+.radio input:checked + span.c3, .radio input:checked + span.normal, .radio input:checked + span.color, .radio input:checked + span.sassis, .checkbox input:checked + span.c3, .checkbox input:checked + span.normal, .checkbox input:checked + span.color, .checkbox input:checked + span.sassis {
   background-color: var(--c3); }
 
-.select:after.c3, .select:after.normal, .select:after.sassis, .chevron:after.c3, .chevron:after.normal, .chevron:after.sassis {
+.select:after.c3, .select:after.normal, .select:after.color, .select:after.sassis, .chevron:after.c3, .chevron:after.normal, .chevron:after.color, .chevron:after.sassis {
   border-color: var(--c3); }
 
-.cross.c3, .cross.normal, .cross.sassis, .checkbox-cross input:checked + span.c3, .checkbox-cross input:checked + span.normal, .checkbox-cross input:checked + span.sassis, .radio-cross input:checked + span.c3, .radio-cross input:checked + span.normal, .radio-cross input:checked + span.sassis {
+.cross.c3, .cross.normal, .cross.color, .cross.sassis, .checkbox-cross input:checked + span.c3, .checkbox-cross input:checked + span.normal, .checkbox-cross input:checked + span.color, .checkbox-cross input:checked + span.sassis, .radio-cross input:checked + span.c3, .radio-cross input:checked + span.normal, .radio-cross input:checked + span.color, .radio-cross input:checked + span.sassis {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c3) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c3) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
-.tick.c3, .tick.normal, .tick.sassis {
+.tick.c3, .tick.normal, .tick.color, .tick.sassis {
   background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c3) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c3) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
 
-.fill.c3, .fill.normal, .fill.sassis {
+.fill.c3, .fill.normal, .fill.color, .fill.sassis {
   fill: var(--c3); }
 
-.stroke.c3, .stroke.normal, .stroke.sassis {
+.stroke.c3, .stroke.normal, .stroke.color, .stroke.sassis {
   stroke: var(--c3); }
 
-.edged.c3, .edged.normal, .edged.sassis {
+.edged.c3, .edged.normal, .edged.color, .edged.sassis {
   box-shadow: 0px 0px 0px 1px inset; }
 
-button.c3, button.normal, button.sassis, .button.c3, .button.normal, .button.sassis {
+button.c3, button.normal, button.color, button.sassis, .button.c3, .button.normal, .button.color, .button.sassis {
   border-color: var(--c3); }
 
-button.c3, button.normal, button.sassis, .button.c3, .button.normal, .button.sassis {
+button.c3, button.normal, button.color, button.sassis, .button.c3, .button.normal, .button.color, .button.sassis {
   color: var(--c3); }
 
-.filled.c3, .filled.normal, .filled.sassis, button.filled.c3, button.filled.normal, button.filled.sassis, .button.filled.c3, .button.filled.normal, .button.filled.sassis, .tag.c3, .tag.normal, .tag.sassis {
+.filled.c3, .filled.normal, .filled.color, .filled.sassis, button.filled.c3, button.filled.normal, button.filled.color, button.filled.sassis, .button.filled.c3, .button.filled.normal, .button.filled.color, .button.filled.sassis, .tag.c3, .tag.normal, .tag.color, .tag.sassis {
   background: var(--c3); }
 
-.filled.c3, .filled.normal, .filled.sassis, button.filled.c3, button.filled.normal, button.filled.sassis, .button.filled.c3, .button.filled.normal, .button.filled.sassis, .tag.c3, .tag.normal, .tag.sassis {
+.filled.c3, .filled.normal, .filled.color, .filled.sassis, button.filled.c3, button.filled.normal, button.filled.color, button.filled.sassis, .button.filled.c3, .button.filled.normal, .button.filled.color, .button.filled.sassis, .tag.c3, .tag.normal, .tag.color, .tag.sassis {
   color: var(--bg3); }
 
-.filled .fill.c3, .filled .fill.normal, .filled .fill.sassis, button.filled .fill.c3, button.filled .fill.normal, button.filled .fill.sassis, .button.filled .fill.c3, .button.filled .fill.normal, .button.filled .fill.sassis, .tag .fill.c3, .tag .fill.normal, .tag .fill.sassis {
+.filled .fill.c3, .filled .fill.normal, .filled .fill.color, .filled .fill.sassis, button.filled .fill.c3, button.filled .fill.normal, button.filled .fill.color, button.filled .fill.sassis, .button.filled .fill.c3, .button.filled .fill.normal, .button.filled .fill.color, .button.filled .fill.sassis, .tag .fill.c3, .tag .fill.normal, .tag .fill.color, .tag .fill.sassis {
   fill: var(--bg3); }
 
-.filled .stroke.c3, .filled .stroke.normal, .filled .stroke.sassis, button.filled .stroke.c3, button.filled .stroke.normal, button.filled .stroke.sassis, .button.filled .stroke.c3, .button.filled .stroke.normal, .button.filled .stroke.sassis, .tag .stroke.c3, .tag .stroke.normal, .tag .stroke.sassis {
+.filled .stroke.c3, .filled .stroke.normal, .filled .stroke.color, .filled .stroke.sassis, button.filled .stroke.c3, button.filled .stroke.normal, button.filled .stroke.color, button.filled .stroke.sassis, .button.filled .stroke.c3, .button.filled .stroke.normal, .button.filled .stroke.color, .button.filled .stroke.sassis, .tag .stroke.c3, .tag .stroke.normal, .tag .stroke.color, .tag .stroke.sassis {
   stroke: var(--bg3); }
 
-.filled:after.c3, .filled:after.normal, .filled:after.sassis, .filled:before.c3, .filled:before.normal, .filled:before.sassis, button.filled:after.c3, button.filled:after.normal, button.filled:after.sassis, button.filled:before.c3, button.filled:before.normal, button.filled:before.sassis, .button.filled:after.c3, .button.filled:after.normal, .button.filled:after.sassis, .button.filled:before.c3, .button.filled:before.normal, .button.filled:before.sassis, .tag:after.c3, .tag:after.normal, .tag:after.sassis, .tag:before.c3, .tag:before.normal, .tag:before.sassis {
+.filled:after.c3, .filled:after.normal, .filled:after.color, .filled:after.sassis, .filled:before.c3, .filled:before.normal, .filled:before.color, .filled:before.sassis, button.filled:after.c3, button.filled:after.normal, button.filled:after.color, button.filled:after.sassis, button.filled:before.c3, button.filled:before.normal, button.filled:before.color, button.filled:before.sassis, .button.filled:after.c3, .button.filled:after.normal, .button.filled:after.color, .button.filled:after.sassis, .button.filled:before.c3, .button.filled:before.normal, .button.filled:before.color, .button.filled:before.sassis, .tag:after.c3, .tag:after.normal, .tag:after.color, .tag:after.sassis, .tag:before.c3, .tag:before.normal, .tag:before.color, .tag:before.sassis {
   border-color: var(--bg3); }
 
-a:active:not(.unclickable):not(.disabled).c3, a:active:not(.unclickable):not(.disabled).normal, a:active:not(.unclickable):not(.disabled).sassis, a:active .bg.c3, a:active .bg.normal, a:active .bg.sassis, a.active:not(.unclickable):not(.disabled).c3, a.active:not(.unclickable):not(.disabled).normal, a.active:not(.unclickable):not(.disabled).sassis, a.active .bg.c3, a.active .bg.normal, a.active .bg.sassis, a.focusable:focus:not(.unclickable):not(.disabled).c3, a.focusable:focus:not(.unclickable):not(.disabled).normal, a.focusable:focus:not(.unclickable):not(.disabled).sassis, a.focusable:focus .bg.c3, a.focusable:focus .bg.normal, a.focusable:focus .bg.sassis, button:active:not(.unclickable):not(.disabled).c3, button:active:not(.unclickable):not(.disabled).normal, button:active:not(.unclickable):not(.disabled).sassis, button:active .bg.c3, button:active .bg.normal, button:active .bg.sassis, button.active:not(.unclickable):not(.disabled).c3, button.active:not(.unclickable):not(.disabled).normal, button.active:not(.unclickable):not(.disabled).sassis, button.active .bg.c3, button.active .bg.normal, button.active .bg.sassis, button.focusable:focus:not(.unclickable):not(.disabled).c3, button.focusable:focus:not(.unclickable):not(.disabled).normal, button.focusable:focus:not(.unclickable):not(.disabled).sassis, button.focusable:focus .bg.c3, button.focusable:focus .bg.normal, button.focusable:focus .bg.sassis, .clickable:active:not(.unclickable):not(.disabled).c3, .clickable:active:not(.unclickable):not(.disabled).normal, .clickable:active:not(.unclickable):not(.disabled).sassis, .clickable:active .bg.c3, .clickable:active .bg.normal, .clickable:active .bg.sassis, .clickable.active:not(.unclickable):not(.disabled).c3, .clickable.active:not(.unclickable):not(.disabled).normal, .clickable.active:not(.unclickable):not(.disabled).sassis, .clickable.active .bg.c3, .clickable.active .bg.normal, .clickable.active .bg.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled).c3, .clickable.focusable:focus:not(.unclickable):not(.disabled).normal, .clickable.focusable:focus:not(.unclickable):not(.disabled).sassis, .clickable.focusable:focus .bg.c3, .clickable.focusable:focus .bg.normal, .clickable.focusable:focus .bg.sassis, .button:active:not(.unclickable):not(.disabled).c3, .button:active:not(.unclickable):not(.disabled).normal, .button:active:not(.unclickable):not(.disabled).sassis, .button:active .bg.c3, .button:active .bg.normal, .button:active .bg.sassis, .button.active:not(.unclickable):not(.disabled).c3, .button.active:not(.unclickable):not(.disabled).normal, .button.active:not(.unclickable):not(.disabled).sassis, .button.active .bg.c3, .button.active .bg.normal, .button.active .bg.sassis, .button.focusable:focus:not(.unclickable):not(.disabled).c3, .button.focusable:focus:not(.unclickable):not(.disabled).normal, .button.focusable:focus:not(.unclickable):not(.disabled).sassis, .button.focusable:focus .bg.c3, .button.focusable:focus .bg.normal, .button.focusable:focus .bg.sassis {
+a:active:not(.unclickable):not(.disabled).c3, a:active:not(.unclickable):not(.disabled).normal, a:active:not(.unclickable):not(.disabled).color, a:active:not(.unclickable):not(.disabled).sassis, a:active .bg.c3, a:active .bg.normal, a:active .bg.color, a:active .bg.sassis, a.active:not(.unclickable):not(.disabled).c3, a.active:not(.unclickable):not(.disabled).normal, a.active:not(.unclickable):not(.disabled).color, a.active:not(.unclickable):not(.disabled).sassis, a.active .bg.c3, a.active .bg.normal, a.active .bg.color, a.active .bg.sassis, a.focusable:focus:not(.unclickable):not(.disabled).c3, a.focusable:focus:not(.unclickable):not(.disabled).normal, a.focusable:focus:not(.unclickable):not(.disabled).color, a.focusable:focus:not(.unclickable):not(.disabled).sassis, a.focusable:focus .bg.c3, a.focusable:focus .bg.normal, a.focusable:focus .bg.color, a.focusable:focus .bg.sassis, button:active:not(.unclickable):not(.disabled).c3, button:active:not(.unclickable):not(.disabled).normal, button:active:not(.unclickable):not(.disabled).color, button:active:not(.unclickable):not(.disabled).sassis, button:active .bg.c3, button:active .bg.normal, button:active .bg.color, button:active .bg.sassis, button.active:not(.unclickable):not(.disabled).c3, button.active:not(.unclickable):not(.disabled).normal, button.active:not(.unclickable):not(.disabled).color, button.active:not(.unclickable):not(.disabled).sassis, button.active .bg.c3, button.active .bg.normal, button.active .bg.color, button.active .bg.sassis, button.focusable:focus:not(.unclickable):not(.disabled).c3, button.focusable:focus:not(.unclickable):not(.disabled).normal, button.focusable:focus:not(.unclickable):not(.disabled).color, button.focusable:focus:not(.unclickable):not(.disabled).sassis, button.focusable:focus .bg.c3, button.focusable:focus .bg.normal, button.focusable:focus .bg.color, button.focusable:focus .bg.sassis, .clickable:active:not(.unclickable):not(.disabled).c3, .clickable:active:not(.unclickable):not(.disabled).normal, .clickable:active:not(.unclickable):not(.disabled).color, .clickable:active:not(.unclickable):not(.disabled).sassis, .clickable:active .bg.c3, .clickable:active .bg.normal, .clickable:active .bg.color, .clickable:active .bg.sassis, .clickable.active:not(.unclickable):not(.disabled).c3, .clickable.active:not(.unclickable):not(.disabled).normal, .clickable.active:not(.unclickable):not(.disabled).color, .clickable.active:not(.unclickable):not(.disabled).sassis, .clickable.active .bg.c3, .clickable.active .bg.normal, .clickable.active .bg.color, .clickable.active .bg.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled).c3, .clickable.focusable:focus:not(.unclickable):not(.disabled).normal, .clickable.focusable:focus:not(.unclickable):not(.disabled).color, .clickable.focusable:focus:not(.unclickable):not(.disabled).sassis, .clickable.focusable:focus .bg.c3, .clickable.focusable:focus .bg.normal, .clickable.focusable:focus .bg.color, .clickable.focusable:focus .bg.sassis, .button:active:not(.unclickable):not(.disabled).c3, .button:active:not(.unclickable):not(.disabled).normal, .button:active:not(.unclickable):not(.disabled).color, .button:active:not(.unclickable):not(.disabled).sassis, .button:active .bg.c3, .button:active .bg.normal, .button:active .bg.color, .button:active .bg.sassis, .button.active:not(.unclickable):not(.disabled).c3, .button.active:not(.unclickable):not(.disabled).normal, .button.active:not(.unclickable):not(.disabled).color, .button.active:not(.unclickable):not(.disabled).sassis, .button.active .bg.c3, .button.active .bg.normal, .button.active .bg.color, .button.active .bg.sassis, .button.focusable:focus:not(.unclickable):not(.disabled).c3, .button.focusable:focus:not(.unclickable):not(.disabled).normal, .button.focusable:focus:not(.unclickable):not(.disabled).color, .button.focusable:focus:not(.unclickable):not(.disabled).sassis, .button.focusable:focus .bg.c3, .button.focusable:focus .bg.normal, .button.focusable:focus .bg.color, .button.focusable:focus .bg.sassis {
   background: var(--c3); }
 
-a:active:not(.unclickable):not(.disabled).c3, a:active:not(.unclickable):not(.disabled).normal, a:active:not(.unclickable):not(.disabled).sassis, a:active .bg.c3, a:active .bg.normal, a:active .bg.sassis, a.active:not(.unclickable):not(.disabled).c3, a.active:not(.unclickable):not(.disabled).normal, a.active:not(.unclickable):not(.disabled).sassis, a.active .bg.c3, a.active .bg.normal, a.active .bg.sassis, a.focusable:focus:not(.unclickable):not(.disabled).c3, a.focusable:focus:not(.unclickable):not(.disabled).normal, a.focusable:focus:not(.unclickable):not(.disabled).sassis, a.focusable:focus .bg.c3, a.focusable:focus .bg.normal, a.focusable:focus .bg.sassis, button:active:not(.unclickable):not(.disabled).c3, button:active:not(.unclickable):not(.disabled).normal, button:active:not(.unclickable):not(.disabled).sassis, button:active .bg.c3, button:active .bg.normal, button:active .bg.sassis, button.active:not(.unclickable):not(.disabled).c3, button.active:not(.unclickable):not(.disabled).normal, button.active:not(.unclickable):not(.disabled).sassis, button.active .bg.c3, button.active .bg.normal, button.active .bg.sassis, button.focusable:focus:not(.unclickable):not(.disabled).c3, button.focusable:focus:not(.unclickable):not(.disabled).normal, button.focusable:focus:not(.unclickable):not(.disabled).sassis, button.focusable:focus .bg.c3, button.focusable:focus .bg.normal, button.focusable:focus .bg.sassis, .clickable:active:not(.unclickable):not(.disabled).c3, .clickable:active:not(.unclickable):not(.disabled).normal, .clickable:active:not(.unclickable):not(.disabled).sassis, .clickable:active .bg.c3, .clickable:active .bg.normal, .clickable:active .bg.sassis, .clickable.active:not(.unclickable):not(.disabled).c3, .clickable.active:not(.unclickable):not(.disabled).normal, .clickable.active:not(.unclickable):not(.disabled).sassis, .clickable.active .bg.c3, .clickable.active .bg.normal, .clickable.active .bg.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled).c3, .clickable.focusable:focus:not(.unclickable):not(.disabled).normal, .clickable.focusable:focus:not(.unclickable):not(.disabled).sassis, .clickable.focusable:focus .bg.c3, .clickable.focusable:focus .bg.normal, .clickable.focusable:focus .bg.sassis, .button:active:not(.unclickable):not(.disabled).c3, .button:active:not(.unclickable):not(.disabled).normal, .button:active:not(.unclickable):not(.disabled).sassis, .button:active .bg.c3, .button:active .bg.normal, .button:active .bg.sassis, .button.active:not(.unclickable):not(.disabled).c3, .button.active:not(.unclickable):not(.disabled).normal, .button.active:not(.unclickable):not(.disabled).sassis, .button.active .bg.c3, .button.active .bg.normal, .button.active .bg.sassis, .button.focusable:focus:not(.unclickable):not(.disabled).c3, .button.focusable:focus:not(.unclickable):not(.disabled).normal, .button.focusable:focus:not(.unclickable):not(.disabled).sassis, .button.focusable:focus .bg.c3, .button.focusable:focus .bg.normal, .button.focusable:focus .bg.sassis {
+a:active:not(.unclickable):not(.disabled).c3, a:active:not(.unclickable):not(.disabled).normal, a:active:not(.unclickable):not(.disabled).color, a:active:not(.unclickable):not(.disabled).sassis, a:active .bg.c3, a:active .bg.normal, a:active .bg.color, a:active .bg.sassis, a.active:not(.unclickable):not(.disabled).c3, a.active:not(.unclickable):not(.disabled).normal, a.active:not(.unclickable):not(.disabled).color, a.active:not(.unclickable):not(.disabled).sassis, a.active .bg.c3, a.active .bg.normal, a.active .bg.color, a.active .bg.sassis, a.focusable:focus:not(.unclickable):not(.disabled).c3, a.focusable:focus:not(.unclickable):not(.disabled).normal, a.focusable:focus:not(.unclickable):not(.disabled).color, a.focusable:focus:not(.unclickable):not(.disabled).sassis, a.focusable:focus .bg.c3, a.focusable:focus .bg.normal, a.focusable:focus .bg.color, a.focusable:focus .bg.sassis, button:active:not(.unclickable):not(.disabled).c3, button:active:not(.unclickable):not(.disabled).normal, button:active:not(.unclickable):not(.disabled).color, button:active:not(.unclickable):not(.disabled).sassis, button:active .bg.c3, button:active .bg.normal, button:active .bg.color, button:active .bg.sassis, button.active:not(.unclickable):not(.disabled).c3, button.active:not(.unclickable):not(.disabled).normal, button.active:not(.unclickable):not(.disabled).color, button.active:not(.unclickable):not(.disabled).sassis, button.active .bg.c3, button.active .bg.normal, button.active .bg.color, button.active .bg.sassis, button.focusable:focus:not(.unclickable):not(.disabled).c3, button.focusable:focus:not(.unclickable):not(.disabled).normal, button.focusable:focus:not(.unclickable):not(.disabled).color, button.focusable:focus:not(.unclickable):not(.disabled).sassis, button.focusable:focus .bg.c3, button.focusable:focus .bg.normal, button.focusable:focus .bg.color, button.focusable:focus .bg.sassis, .clickable:active:not(.unclickable):not(.disabled).c3, .clickable:active:not(.unclickable):not(.disabled).normal, .clickable:active:not(.unclickable):not(.disabled).color, .clickable:active:not(.unclickable):not(.disabled).sassis, .clickable:active .bg.c3, .clickable:active .bg.normal, .clickable:active .bg.color, .clickable:active .bg.sassis, .clickable.active:not(.unclickable):not(.disabled).c3, .clickable.active:not(.unclickable):not(.disabled).normal, .clickable.active:not(.unclickable):not(.disabled).color, .clickable.active:not(.unclickable):not(.disabled).sassis, .clickable.active .bg.c3, .clickable.active .bg.normal, .clickable.active .bg.color, .clickable.active .bg.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled).c3, .clickable.focusable:focus:not(.unclickable):not(.disabled).normal, .clickable.focusable:focus:not(.unclickable):not(.disabled).color, .clickable.focusable:focus:not(.unclickable):not(.disabled).sassis, .clickable.focusable:focus .bg.c3, .clickable.focusable:focus .bg.normal, .clickable.focusable:focus .bg.color, .clickable.focusable:focus .bg.sassis, .button:active:not(.unclickable):not(.disabled).c3, .button:active:not(.unclickable):not(.disabled).normal, .button:active:not(.unclickable):not(.disabled).color, .button:active:not(.unclickable):not(.disabled).sassis, .button:active .bg.c3, .button:active .bg.normal, .button:active .bg.color, .button:active .bg.sassis, .button.active:not(.unclickable):not(.disabled).c3, .button.active:not(.unclickable):not(.disabled).normal, .button.active:not(.unclickable):not(.disabled).color, .button.active:not(.unclickable):not(.disabled).sassis, .button.active .bg.c3, .button.active .bg.normal, .button.active .bg.color, .button.active .bg.sassis, .button.focusable:focus:not(.unclickable):not(.disabled).c3, .button.focusable:focus:not(.unclickable):not(.disabled).normal, .button.focusable:focus:not(.unclickable):not(.disabled).color, .button.focusable:focus:not(.unclickable):not(.disabled).sassis, .button.focusable:focus .bg.c3, .button.focusable:focus .bg.normal, .button.focusable:focus .bg.color, .button.focusable:focus .bg.sassis {
   color: var(--bg3); }
 
-a:active:not(.unclickable):not(.disabled) .fill.c3, a:active:not(.unclickable):not(.disabled) .fill.normal, a:active:not(.unclickable):not(.disabled) .fill.sassis, a:active .bg .fill.c3, a:active .bg .fill.normal, a:active .bg .fill.sassis, a.active:not(.unclickable):not(.disabled) .fill.c3, a.active:not(.unclickable):not(.disabled) .fill.normal, a.active:not(.unclickable):not(.disabled) .fill.sassis, a.active .bg .fill.c3, a.active .bg .fill.normal, a.active .bg .fill.sassis, a.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, a.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, a.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, a.focusable:focus .bg .fill.c3, a.focusable:focus .bg .fill.normal, a.focusable:focus .bg .fill.sassis, button:active:not(.unclickable):not(.disabled) .fill.c3, button:active:not(.unclickable):not(.disabled) .fill.normal, button:active:not(.unclickable):not(.disabled) .fill.sassis, button:active .bg .fill.c3, button:active .bg .fill.normal, button:active .bg .fill.sassis, button.active:not(.unclickable):not(.disabled) .fill.c3, button.active:not(.unclickable):not(.disabled) .fill.normal, button.active:not(.unclickable):not(.disabled) .fill.sassis, button.active .bg .fill.c3, button.active .bg .fill.normal, button.active .bg .fill.sassis, button.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, button.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, button.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, button.focusable:focus .bg .fill.c3, button.focusable:focus .bg .fill.normal, button.focusable:focus .bg .fill.sassis, .clickable:active:not(.unclickable):not(.disabled) .fill.c3, .clickable:active:not(.unclickable):not(.disabled) .fill.normal, .clickable:active:not(.unclickable):not(.disabled) .fill.sassis, .clickable:active .bg .fill.c3, .clickable:active .bg .fill.normal, .clickable:active .bg .fill.sassis, .clickable.active:not(.unclickable):not(.disabled) .fill.c3, .clickable.active:not(.unclickable):not(.disabled) .fill.normal, .clickable.active:not(.unclickable):not(.disabled) .fill.sassis, .clickable.active .bg .fill.c3, .clickable.active .bg .fill.normal, .clickable.active .bg .fill.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, .clickable.focusable:focus .bg .fill.c3, .clickable.focusable:focus .bg .fill.normal, .clickable.focusable:focus .bg .fill.sassis, .button:active:not(.unclickable):not(.disabled) .fill.c3, .button:active:not(.unclickable):not(.disabled) .fill.normal, .button:active:not(.unclickable):not(.disabled) .fill.sassis, .button:active .bg .fill.c3, .button:active .bg .fill.normal, .button:active .bg .fill.sassis, .button.active:not(.unclickable):not(.disabled) .fill.c3, .button.active:not(.unclickable):not(.disabled) .fill.normal, .button.active:not(.unclickable):not(.disabled) .fill.sassis, .button.active .bg .fill.c3, .button.active .bg .fill.normal, .button.active .bg .fill.sassis, .button.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, .button.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, .button.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, .button.focusable:focus .bg .fill.c3, .button.focusable:focus .bg .fill.normal, .button.focusable:focus .bg .fill.sassis {
+a:active:not(.unclickable):not(.disabled) .fill.c3, a:active:not(.unclickable):not(.disabled) .fill.normal, a:active:not(.unclickable):not(.disabled) .fill.color, a:active:not(.unclickable):not(.disabled) .fill.sassis, a:active .bg .fill.c3, a:active .bg .fill.normal, a:active .bg .fill.color, a:active .bg .fill.sassis, a.active:not(.unclickable):not(.disabled) .fill.c3, a.active:not(.unclickable):not(.disabled) .fill.normal, a.active:not(.unclickable):not(.disabled) .fill.color, a.active:not(.unclickable):not(.disabled) .fill.sassis, a.active .bg .fill.c3, a.active .bg .fill.normal, a.active .bg .fill.color, a.active .bg .fill.sassis, a.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, a.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, a.focusable:focus:not(.unclickable):not(.disabled) .fill.color, a.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, a.focusable:focus .bg .fill.c3, a.focusable:focus .bg .fill.normal, a.focusable:focus .bg .fill.color, a.focusable:focus .bg .fill.sassis, button:active:not(.unclickable):not(.disabled) .fill.c3, button:active:not(.unclickable):not(.disabled) .fill.normal, button:active:not(.unclickable):not(.disabled) .fill.color, button:active:not(.unclickable):not(.disabled) .fill.sassis, button:active .bg .fill.c3, button:active .bg .fill.normal, button:active .bg .fill.color, button:active .bg .fill.sassis, button.active:not(.unclickable):not(.disabled) .fill.c3, button.active:not(.unclickable):not(.disabled) .fill.normal, button.active:not(.unclickable):not(.disabled) .fill.color, button.active:not(.unclickable):not(.disabled) .fill.sassis, button.active .bg .fill.c3, button.active .bg .fill.normal, button.active .bg .fill.color, button.active .bg .fill.sassis, button.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, button.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, button.focusable:focus:not(.unclickable):not(.disabled) .fill.color, button.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, button.focusable:focus .bg .fill.c3, button.focusable:focus .bg .fill.normal, button.focusable:focus .bg .fill.color, button.focusable:focus .bg .fill.sassis, .clickable:active:not(.unclickable):not(.disabled) .fill.c3, .clickable:active:not(.unclickable):not(.disabled) .fill.normal, .clickable:active:not(.unclickable):not(.disabled) .fill.color, .clickable:active:not(.unclickable):not(.disabled) .fill.sassis, .clickable:active .bg .fill.c3, .clickable:active .bg .fill.normal, .clickable:active .bg .fill.color, .clickable:active .bg .fill.sassis, .clickable.active:not(.unclickable):not(.disabled) .fill.c3, .clickable.active:not(.unclickable):not(.disabled) .fill.normal, .clickable.active:not(.unclickable):not(.disabled) .fill.color, .clickable.active:not(.unclickable):not(.disabled) .fill.sassis, .clickable.active .bg .fill.c3, .clickable.active .bg .fill.normal, .clickable.active .bg .fill.color, .clickable.active .bg .fill.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill.color, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, .clickable.focusable:focus .bg .fill.c3, .clickable.focusable:focus .bg .fill.normal, .clickable.focusable:focus .bg .fill.color, .clickable.focusable:focus .bg .fill.sassis, .button:active:not(.unclickable):not(.disabled) .fill.c3, .button:active:not(.unclickable):not(.disabled) .fill.normal, .button:active:not(.unclickable):not(.disabled) .fill.color, .button:active:not(.unclickable):not(.disabled) .fill.sassis, .button:active .bg .fill.c3, .button:active .bg .fill.normal, .button:active .bg .fill.color, .button:active .bg .fill.sassis, .button.active:not(.unclickable):not(.disabled) .fill.c3, .button.active:not(.unclickable):not(.disabled) .fill.normal, .button.active:not(.unclickable):not(.disabled) .fill.color, .button.active:not(.unclickable):not(.disabled) .fill.sassis, .button.active .bg .fill.c3, .button.active .bg .fill.normal, .button.active .bg .fill.color, .button.active .bg .fill.sassis, .button.focusable:focus:not(.unclickable):not(.disabled) .fill.c3, .button.focusable:focus:not(.unclickable):not(.disabled) .fill.normal, .button.focusable:focus:not(.unclickable):not(.disabled) .fill.color, .button.focusable:focus:not(.unclickable):not(.disabled) .fill.sassis, .button.focusable:focus .bg .fill.c3, .button.focusable:focus .bg .fill.normal, .button.focusable:focus .bg .fill.color, .button.focusable:focus .bg .fill.sassis {
   fill: var(--bg3); }
 
-a:active:not(.unclickable):not(.disabled) .stroke.c3, a:active:not(.unclickable):not(.disabled) .stroke.normal, a:active:not(.unclickable):not(.disabled) .stroke.sassis, a:active .bg .stroke.c3, a:active .bg .stroke.normal, a:active .bg .stroke.sassis, a.active:not(.unclickable):not(.disabled) .stroke.c3, a.active:not(.unclickable):not(.disabled) .stroke.normal, a.active:not(.unclickable):not(.disabled) .stroke.sassis, a.active .bg .stroke.c3, a.active .bg .stroke.normal, a.active .bg .stroke.sassis, a.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, a.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, a.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, a.focusable:focus .bg .stroke.c3, a.focusable:focus .bg .stroke.normal, a.focusable:focus .bg .stroke.sassis, button:active:not(.unclickable):not(.disabled) .stroke.c3, button:active:not(.unclickable):not(.disabled) .stroke.normal, button:active:not(.unclickable):not(.disabled) .stroke.sassis, button:active .bg .stroke.c3, button:active .bg .stroke.normal, button:active .bg .stroke.sassis, button.active:not(.unclickable):not(.disabled) .stroke.c3, button.active:not(.unclickable):not(.disabled) .stroke.normal, button.active:not(.unclickable):not(.disabled) .stroke.sassis, button.active .bg .stroke.c3, button.active .bg .stroke.normal, button.active .bg .stroke.sassis, button.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, button.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, button.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, button.focusable:focus .bg .stroke.c3, button.focusable:focus .bg .stroke.normal, button.focusable:focus .bg .stroke.sassis, .clickable:active:not(.unclickable):not(.disabled) .stroke.c3, .clickable:active:not(.unclickable):not(.disabled) .stroke.normal, .clickable:active:not(.unclickable):not(.disabled) .stroke.sassis, .clickable:active .bg .stroke.c3, .clickable:active .bg .stroke.normal, .clickable:active .bg .stroke.sassis, .clickable.active:not(.unclickable):not(.disabled) .stroke.c3, .clickable.active:not(.unclickable):not(.disabled) .stroke.normal, .clickable.active:not(.unclickable):not(.disabled) .stroke.sassis, .clickable.active .bg .stroke.c3, .clickable.active .bg .stroke.normal, .clickable.active .bg .stroke.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, .clickable.focusable:focus .bg .stroke.c3, .clickable.focusable:focus .bg .stroke.normal, .clickable.focusable:focus .bg .stroke.sassis, .button:active:not(.unclickable):not(.disabled) .stroke.c3, .button:active:not(.unclickable):not(.disabled) .stroke.normal, .button:active:not(.unclickable):not(.disabled) .stroke.sassis, .button:active .bg .stroke.c3, .button:active .bg .stroke.normal, .button:active .bg .stroke.sassis, .button.active:not(.unclickable):not(.disabled) .stroke.c3, .button.active:not(.unclickable):not(.disabled) .stroke.normal, .button.active:not(.unclickable):not(.disabled) .stroke.sassis, .button.active .bg .stroke.c3, .button.active .bg .stroke.normal, .button.active .bg .stroke.sassis, .button.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, .button.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, .button.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, .button.focusable:focus .bg .stroke.c3, .button.focusable:focus .bg .stroke.normal, .button.focusable:focus .bg .stroke.sassis {
+a:active:not(.unclickable):not(.disabled) .stroke.c3, a:active:not(.unclickable):not(.disabled) .stroke.normal, a:active:not(.unclickable):not(.disabled) .stroke.color, a:active:not(.unclickable):not(.disabled) .stroke.sassis, a:active .bg .stroke.c3, a:active .bg .stroke.normal, a:active .bg .stroke.color, a:active .bg .stroke.sassis, a.active:not(.unclickable):not(.disabled) .stroke.c3, a.active:not(.unclickable):not(.disabled) .stroke.normal, a.active:not(.unclickable):not(.disabled) .stroke.color, a.active:not(.unclickable):not(.disabled) .stroke.sassis, a.active .bg .stroke.c3, a.active .bg .stroke.normal, a.active .bg .stroke.color, a.active .bg .stroke.sassis, a.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, a.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, a.focusable:focus:not(.unclickable):not(.disabled) .stroke.color, a.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, a.focusable:focus .bg .stroke.c3, a.focusable:focus .bg .stroke.normal, a.focusable:focus .bg .stroke.color, a.focusable:focus .bg .stroke.sassis, button:active:not(.unclickable):not(.disabled) .stroke.c3, button:active:not(.unclickable):not(.disabled) .stroke.normal, button:active:not(.unclickable):not(.disabled) .stroke.color, button:active:not(.unclickable):not(.disabled) .stroke.sassis, button:active .bg .stroke.c3, button:active .bg .stroke.normal, button:active .bg .stroke.color, button:active .bg .stroke.sassis, button.active:not(.unclickable):not(.disabled) .stroke.c3, button.active:not(.unclickable):not(.disabled) .stroke.normal, button.active:not(.unclickable):not(.disabled) .stroke.color, button.active:not(.unclickable):not(.disabled) .stroke.sassis, button.active .bg .stroke.c3, button.active .bg .stroke.normal, button.active .bg .stroke.color, button.active .bg .stroke.sassis, button.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, button.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, button.focusable:focus:not(.unclickable):not(.disabled) .stroke.color, button.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, button.focusable:focus .bg .stroke.c3, button.focusable:focus .bg .stroke.normal, button.focusable:focus .bg .stroke.color, button.focusable:focus .bg .stroke.sassis, .clickable:active:not(.unclickable):not(.disabled) .stroke.c3, .clickable:active:not(.unclickable):not(.disabled) .stroke.normal, .clickable:active:not(.unclickable):not(.disabled) .stroke.color, .clickable:active:not(.unclickable):not(.disabled) .stroke.sassis, .clickable:active .bg .stroke.c3, .clickable:active .bg .stroke.normal, .clickable:active .bg .stroke.color, .clickable:active .bg .stroke.sassis, .clickable.active:not(.unclickable):not(.disabled) .stroke.c3, .clickable.active:not(.unclickable):not(.disabled) .stroke.normal, .clickable.active:not(.unclickable):not(.disabled) .stroke.color, .clickable.active:not(.unclickable):not(.disabled) .stroke.sassis, .clickable.active .bg .stroke.c3, .clickable.active .bg .stroke.normal, .clickable.active .bg .stroke.color, .clickable.active .bg .stroke.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled) .stroke.color, .clickable.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, .clickable.focusable:focus .bg .stroke.c3, .clickable.focusable:focus .bg .stroke.normal, .clickable.focusable:focus .bg .stroke.color, .clickable.focusable:focus .bg .stroke.sassis, .button:active:not(.unclickable):not(.disabled) .stroke.c3, .button:active:not(.unclickable):not(.disabled) .stroke.normal, .button:active:not(.unclickable):not(.disabled) .stroke.color, .button:active:not(.unclickable):not(.disabled) .stroke.sassis, .button:active .bg .stroke.c3, .button:active .bg .stroke.normal, .button:active .bg .stroke.color, .button:active .bg .stroke.sassis, .button.active:not(.unclickable):not(.disabled) .stroke.c3, .button.active:not(.unclickable):not(.disabled) .stroke.normal, .button.active:not(.unclickable):not(.disabled) .stroke.color, .button.active:not(.unclickable):not(.disabled) .stroke.sassis, .button.active .bg .stroke.c3, .button.active .bg .stroke.normal, .button.active .bg .stroke.color, .button.active .bg .stroke.sassis, .button.focusable:focus:not(.unclickable):not(.disabled) .stroke.c3, .button.focusable:focus:not(.unclickable):not(.disabled) .stroke.normal, .button.focusable:focus:not(.unclickable):not(.disabled) .stroke.color, .button.focusable:focus:not(.unclickable):not(.disabled) .stroke.sassis, .button.focusable:focus .bg .stroke.c3, .button.focusable:focus .bg .stroke.normal, .button.focusable:focus .bg .stroke.color, .button.focusable:focus .bg .stroke.sassis {
   stroke: var(--bg3); }
 
-a:active:not(.unclickable):not(.disabled):after.c3, a:active:not(.unclickable):not(.disabled):after.normal, a:active:not(.unclickable):not(.disabled):after.sassis, a:active:not(.unclickable):not(.disabled):before.c3, a:active:not(.unclickable):not(.disabled):before.normal, a:active:not(.unclickable):not(.disabled):before.sassis, a:active .bg:after.c3, a:active .bg:after.normal, a:active .bg:after.sassis, a:active .bg:before.c3, a:active .bg:before.normal, a:active .bg:before.sassis, a.active:not(.unclickable):not(.disabled):after.c3, a.active:not(.unclickable):not(.disabled):after.normal, a.active:not(.unclickable):not(.disabled):after.sassis, a.active:not(.unclickable):not(.disabled):before.c3, a.active:not(.unclickable):not(.disabled):before.normal, a.active:not(.unclickable):not(.disabled):before.sassis, a.active .bg:after.c3, a.active .bg:after.normal, a.active .bg:after.sassis, a.active .bg:before.c3, a.active .bg:before.normal, a.active .bg:before.sassis, a.focusable:focus:not(.unclickable):not(.disabled):after.c3, a.focusable:focus:not(.unclickable):not(.disabled):after.normal, a.focusable:focus:not(.unclickable):not(.disabled):after.sassis, a.focusable:focus:not(.unclickable):not(.disabled):before.c3, a.focusable:focus:not(.unclickable):not(.disabled):before.normal, a.focusable:focus:not(.unclickable):not(.disabled):before.sassis, a.focusable:focus .bg:after.c3, a.focusable:focus .bg:after.normal, a.focusable:focus .bg:after.sassis, a.focusable:focus .bg:before.c3, a.focusable:focus .bg:before.normal, a.focusable:focus .bg:before.sassis, button:active:not(.unclickable):not(.disabled):after.c3, button:active:not(.unclickable):not(.disabled):after.normal, button:active:not(.unclickable):not(.disabled):after.sassis, button:active:not(.unclickable):not(.disabled):before.c3, button:active:not(.unclickable):not(.disabled):before.normal, button:active:not(.unclickable):not(.disabled):before.sassis, button:active .bg:after.c3, button:active .bg:after.normal, button:active .bg:after.sassis, button:active .bg:before.c3, button:active .bg:before.normal, button:active .bg:before.sassis, button.active:not(.unclickable):not(.disabled):after.c3, button.active:not(.unclickable):not(.disabled):after.normal, button.active:not(.unclickable):not(.disabled):after.sassis, button.active:not(.unclickable):not(.disabled):before.c3, button.active:not(.unclickable):not(.disabled):before.normal, button.active:not(.unclickable):not(.disabled):before.sassis, button.active .bg:after.c3, button.active .bg:after.normal, button.active .bg:after.sassis, button.active .bg:before.c3, button.active .bg:before.normal, button.active .bg:before.sassis, button.focusable:focus:not(.unclickable):not(.disabled):after.c3, button.focusable:focus:not(.unclickable):not(.disabled):after.normal, button.focusable:focus:not(.unclickable):not(.disabled):after.sassis, button.focusable:focus:not(.unclickable):not(.disabled):before.c3, button.focusable:focus:not(.unclickable):not(.disabled):before.normal, button.focusable:focus:not(.unclickable):not(.disabled):before.sassis, button.focusable:focus .bg:after.c3, button.focusable:focus .bg:after.normal, button.focusable:focus .bg:after.sassis, button.focusable:focus .bg:before.c3, button.focusable:focus .bg:before.normal, button.focusable:focus .bg:before.sassis, .clickable:active:not(.unclickable):not(.disabled):after.c3, .clickable:active:not(.unclickable):not(.disabled):after.normal, .clickable:active:not(.unclickable):not(.disabled):after.sassis, .clickable:active:not(.unclickable):not(.disabled):before.c3, .clickable:active:not(.unclickable):not(.disabled):before.normal, .clickable:active:not(.unclickable):not(.disabled):before.sassis, .clickable:active .bg:after.c3, .clickable:active .bg:after.normal, .clickable:active .bg:after.sassis, .clickable:active .bg:before.c3, .clickable:active .bg:before.normal, .clickable:active .bg:before.sassis, .clickable.active:not(.unclickable):not(.disabled):after.c3, .clickable.active:not(.unclickable):not(.disabled):after.normal, .clickable.active:not(.unclickable):not(.disabled):after.sassis, .clickable.active:not(.unclickable):not(.disabled):before.c3, .clickable.active:not(.unclickable):not(.disabled):before.normal, .clickable.active:not(.unclickable):not(.disabled):before.sassis, .clickable.active .bg:after.c3, .clickable.active .bg:after.normal, .clickable.active .bg:after.sassis, .clickable.active .bg:before.c3, .clickable.active .bg:before.normal, .clickable.active .bg:before.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled):after.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled):after.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled):after.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled):before.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled):before.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled):before.sassis, .clickable.focusable:focus .bg:after.c3, .clickable.focusable:focus .bg:after.normal, .clickable.focusable:focus .bg:after.sassis, .clickable.focusable:focus .bg:before.c3, .clickable.focusable:focus .bg:before.normal, .clickable.focusable:focus .bg:before.sassis, .button:active:not(.unclickable):not(.disabled):after.c3, .button:active:not(.unclickable):not(.disabled):after.normal, .button:active:not(.unclickable):not(.disabled):after.sassis, .button:active:not(.unclickable):not(.disabled):before.c3, .button:active:not(.unclickable):not(.disabled):before.normal, .button:active:not(.unclickable):not(.disabled):before.sassis, .button:active .bg:after.c3, .button:active .bg:after.normal, .button:active .bg:after.sassis, .button:active .bg:before.c3, .button:active .bg:before.normal, .button:active .bg:before.sassis, .button.active:not(.unclickable):not(.disabled):after.c3, .button.active:not(.unclickable):not(.disabled):after.normal, .button.active:not(.unclickable):not(.disabled):after.sassis, .button.active:not(.unclickable):not(.disabled):before.c3, .button.active:not(.unclickable):not(.disabled):before.normal, .button.active:not(.unclickable):not(.disabled):before.sassis, .button.active .bg:after.c3, .button.active .bg:after.normal, .button.active .bg:after.sassis, .button.active .bg:before.c3, .button.active .bg:before.normal, .button.active .bg:before.sassis, .button.focusable:focus:not(.unclickable):not(.disabled):after.c3, .button.focusable:focus:not(.unclickable):not(.disabled):after.normal, .button.focusable:focus:not(.unclickable):not(.disabled):after.sassis, .button.focusable:focus:not(.unclickable):not(.disabled):before.c3, .button.focusable:focus:not(.unclickable):not(.disabled):before.normal, .button.focusable:focus:not(.unclickable):not(.disabled):before.sassis, .button.focusable:focus .bg:after.c3, .button.focusable:focus .bg:after.normal, .button.focusable:focus .bg:after.sassis, .button.focusable:focus .bg:before.c3, .button.focusable:focus .bg:before.normal, .button.focusable:focus .bg:before.sassis {
+a:active:not(.unclickable):not(.disabled):after.c3, a:active:not(.unclickable):not(.disabled):after.normal, a:active:not(.unclickable):not(.disabled):after.color, a:active:not(.unclickable):not(.disabled):after.sassis, a:active:not(.unclickable):not(.disabled):before.c3, a:active:not(.unclickable):not(.disabled):before.normal, a:active:not(.unclickable):not(.disabled):before.color, a:active:not(.unclickable):not(.disabled):before.sassis, a:active .bg:after.c3, a:active .bg:after.normal, a:active .bg:after.color, a:active .bg:after.sassis, a:active .bg:before.c3, a:active .bg:before.normal, a:active .bg:before.color, a:active .bg:before.sassis, a.active:not(.unclickable):not(.disabled):after.c3, a.active:not(.unclickable):not(.disabled):after.normal, a.active:not(.unclickable):not(.disabled):after.color, a.active:not(.unclickable):not(.disabled):after.sassis, a.active:not(.unclickable):not(.disabled):before.c3, a.active:not(.unclickable):not(.disabled):before.normal, a.active:not(.unclickable):not(.disabled):before.color, a.active:not(.unclickable):not(.disabled):before.sassis, a.active .bg:after.c3, a.active .bg:after.normal, a.active .bg:after.color, a.active .bg:after.sassis, a.active .bg:before.c3, a.active .bg:before.normal, a.active .bg:before.color, a.active .bg:before.sassis, a.focusable:focus:not(.unclickable):not(.disabled):after.c3, a.focusable:focus:not(.unclickable):not(.disabled):after.normal, a.focusable:focus:not(.unclickable):not(.disabled):after.color, a.focusable:focus:not(.unclickable):not(.disabled):after.sassis, a.focusable:focus:not(.unclickable):not(.disabled):before.c3, a.focusable:focus:not(.unclickable):not(.disabled):before.normal, a.focusable:focus:not(.unclickable):not(.disabled):before.color, a.focusable:focus:not(.unclickable):not(.disabled):before.sassis, a.focusable:focus .bg:after.c3, a.focusable:focus .bg:after.normal, a.focusable:focus .bg:after.color, a.focusable:focus .bg:after.sassis, a.focusable:focus .bg:before.c3, a.focusable:focus .bg:before.normal, a.focusable:focus .bg:before.color, a.focusable:focus .bg:before.sassis, button:active:not(.unclickable):not(.disabled):after.c3, button:active:not(.unclickable):not(.disabled):after.normal, button:active:not(.unclickable):not(.disabled):after.color, button:active:not(.unclickable):not(.disabled):after.sassis, button:active:not(.unclickable):not(.disabled):before.c3, button:active:not(.unclickable):not(.disabled):before.normal, button:active:not(.unclickable):not(.disabled):before.color, button:active:not(.unclickable):not(.disabled):before.sassis, button:active .bg:after.c3, button:active .bg:after.normal, button:active .bg:after.color, button:active .bg:after.sassis, button:active .bg:before.c3, button:active .bg:before.normal, button:active .bg:before.color, button:active .bg:before.sassis, button.active:not(.unclickable):not(.disabled):after.c3, button.active:not(.unclickable):not(.disabled):after.normal, button.active:not(.unclickable):not(.disabled):after.color, button.active:not(.unclickable):not(.disabled):after.sassis, button.active:not(.unclickable):not(.disabled):before.c3, button.active:not(.unclickable):not(.disabled):before.normal, button.active:not(.unclickable):not(.disabled):before.color, button.active:not(.unclickable):not(.disabled):before.sassis, button.active .bg:after.c3, button.active .bg:after.normal, button.active .bg:after.color, button.active .bg:after.sassis, button.active .bg:before.c3, button.active .bg:before.normal, button.active .bg:before.color, button.active .bg:before.sassis, button.focusable:focus:not(.unclickable):not(.disabled):after.c3, button.focusable:focus:not(.unclickable):not(.disabled):after.normal, button.focusable:focus:not(.unclickable):not(.disabled):after.color, button.focusable:focus:not(.unclickable):not(.disabled):after.sassis, button.focusable:focus:not(.unclickable):not(.disabled):before.c3, button.focusable:focus:not(.unclickable):not(.disabled):before.normal, button.focusable:focus:not(.unclickable):not(.disabled):before.color, button.focusable:focus:not(.unclickable):not(.disabled):before.sassis, button.focusable:focus .bg:after.c3, button.focusable:focus .bg:after.normal, button.focusable:focus .bg:after.color, button.focusable:focus .bg:after.sassis, button.focusable:focus .bg:before.c3, button.focusable:focus .bg:before.normal, button.focusable:focus .bg:before.color, button.focusable:focus .bg:before.sassis, .clickable:active:not(.unclickable):not(.disabled):after.c3, .clickable:active:not(.unclickable):not(.disabled):after.normal, .clickable:active:not(.unclickable):not(.disabled):after.color, .clickable:active:not(.unclickable):not(.disabled):after.sassis, .clickable:active:not(.unclickable):not(.disabled):before.c3, .clickable:active:not(.unclickable):not(.disabled):before.normal, .clickable:active:not(.unclickable):not(.disabled):before.color, .clickable:active:not(.unclickable):not(.disabled):before.sassis, .clickable:active .bg:after.c3, .clickable:active .bg:after.normal, .clickable:active .bg:after.color, .clickable:active .bg:after.sassis, .clickable:active .bg:before.c3, .clickable:active .bg:before.normal, .clickable:active .bg:before.color, .clickable:active .bg:before.sassis, .clickable.active:not(.unclickable):not(.disabled):after.c3, .clickable.active:not(.unclickable):not(.disabled):after.normal, .clickable.active:not(.unclickable):not(.disabled):after.color, .clickable.active:not(.unclickable):not(.disabled):after.sassis, .clickable.active:not(.unclickable):not(.disabled):before.c3, .clickable.active:not(.unclickable):not(.disabled):before.normal, .clickable.active:not(.unclickable):not(.disabled):before.color, .clickable.active:not(.unclickable):not(.disabled):before.sassis, .clickable.active .bg:after.c3, .clickable.active .bg:after.normal, .clickable.active .bg:after.color, .clickable.active .bg:after.sassis, .clickable.active .bg:before.c3, .clickable.active .bg:before.normal, .clickable.active .bg:before.color, .clickable.active .bg:before.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled):after.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled):after.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled):after.color, .clickable.focusable:focus:not(.unclickable):not(.disabled):after.sassis, .clickable.focusable:focus:not(.unclickable):not(.disabled):before.c3, .clickable.focusable:focus:not(.unclickable):not(.disabled):before.normal, .clickable.focusable:focus:not(.unclickable):not(.disabled):before.color, .clickable.focusable:focus:not(.unclickable):not(.disabled):before.sassis, .clickable.focusable:focus .bg:after.c3, .clickable.focusable:focus .bg:after.normal, .clickable.focusable:focus .bg:after.color, .clickable.focusable:focus .bg:after.sassis, .clickable.focusable:focus .bg:before.c3, .clickable.focusable:focus .bg:before.normal, .clickable.focusable:focus .bg:before.color, .clickable.focusable:focus .bg:before.sassis, .button:active:not(.unclickable):not(.disabled):after.c3, .button:active:not(.unclickable):not(.disabled):after.normal, .button:active:not(.unclickable):not(.disabled):after.color, .button:active:not(.unclickable):not(.disabled):after.sassis, .button:active:not(.unclickable):not(.disabled):before.c3, .button:active:not(.unclickable):not(.disabled):before.normal, .button:active:not(.unclickable):not(.disabled):before.color, .button:active:not(.unclickable):not(.disabled):before.sassis, .button:active .bg:after.c3, .button:active .bg:after.normal, .button:active .bg:after.color, .button:active .bg:after.sassis, .button:active .bg:before.c3, .button:active .bg:before.normal, .button:active .bg:before.color, .button:active .bg:before.sassis, .button.active:not(.unclickable):not(.disabled):after.c3, .button.active:not(.unclickable):not(.disabled):after.normal, .button.active:not(.unclickable):not(.disabled):after.color, .button.active:not(.unclickable):not(.disabled):after.sassis, .button.active:not(.unclickable):not(.disabled):before.c3, .button.active:not(.unclickable):not(.disabled):before.normal, .button.active:not(.unclickable):not(.disabled):before.color, .button.active:not(.unclickable):not(.disabled):before.sassis, .button.active .bg:after.c3, .button.active .bg:after.normal, .button.active .bg:after.color, .button.active .bg:after.sassis, .button.active .bg:before.c3, .button.active .bg:before.normal, .button.active .bg:before.color, .button.active .bg:before.sassis, .button.focusable:focus:not(.unclickable):not(.disabled):after.c3, .button.focusable:focus:not(.unclickable):not(.disabled):after.normal, .button.focusable:focus:not(.unclickable):not(.disabled):after.color, .button.focusable:focus:not(.unclickable):not(.disabled):after.sassis, .button.focusable:focus:not(.unclickable):not(.disabled):before.c3, .button.focusable:focus:not(.unclickable):not(.disabled):before.normal, .button.focusable:focus:not(.unclickable):not(.disabled):before.color, .button.focusable:focus:not(.unclickable):not(.disabled):before.sassis, .button.focusable:focus .bg:after.c3, .button.focusable:focus .bg:after.normal, .button.focusable:focus .bg:after.color, .button.focusable:focus .bg:after.sassis, .button.focusable:focus .bg:before.c3, .button.focusable:focus .bg:before.normal, .button.focusable:focus .bg:before.color, .button.focusable:focus .bg:before.sassis {
   border-color: var(--bg3); }
 
-a.c3, a.normal, a.sassis, select.c3, select.normal, select.sassis, button.c3, button.normal, button.sassis, .button.c3, .button.normal, .button.sassis {
+a.c3, a.normal, a.color, a.sassis, select.c3, select.normal, select.color, select.sassis, button.c3, button.normal, button.color, button.sassis, .button.c3, .button.normal, .button.color, .button.sassis {
   color: var(--c3); }
 
-a.c3, a.normal, a.sassis, select.c3, select.normal, select.sassis, button.c3, button.normal, button.sassis, .button.c3, .button.normal, .button.sassis {
+a.c3, a.normal, a.color, a.sassis, select.c3, select.normal, select.color, select.sassis, button.c3, button.normal, button.color, button.sassis, .button.c3, .button.normal, .button.color, .button.sassis {
   border-color: var(--c3); }
 
 * {
@@ -1940,67 +1939,67 @@ a, select, button, .button {
   border-color: var(--c3); }
 
 .c4, .bright, .strong {
-  color: var(--c4); }
+  color: var(--c2); }
 
 .c4, .bright, .strong {
-  border-color: var(--c4); }
+  border-color: var(--c2); }
 
 * .c4, * .bright, * .strong {
-  border-color: var(--c4); }
+  border-color: var(--c2); }
 
 h1.c4, h1.bright, h1.strong, h2.c4, h2.bright, h2.strong, h3.c4, h3.bright, h3.strong, h4.c4, h4.bright, h4.strong, h5.c4, h5.bright, h5.strong, h6.c4, h6.bright, h6.strong {
-  color: var(--c4); }
+  color: var(--c2); }
 
 input.c4, input.bright, input.strong, select.c4, select.bright, select.strong, textarea.c4, textarea.bright, textarea.strong, input[type=range].c4, input[type=range].bright, input[type=range].strong, textarea.c4, textarea.bright, textarea.strong, .dropdown.c4, .dropdown.bright, .dropdown.strong {
-  color: var(--c4); }
+  color: var(--c2); }
 
 textarea:focus.c4, textarea:focus.bright, textarea:focus.strong, input[type=text]:focus.c4, input[type=text]:focus.bright, input[type=text]:focus.strong, input[type=number]:focus.c4, input[type=number]:focus.bright, input[type=number]:focus.strong, input[type=email]:focus.c4, input[type=email]:focus.bright, input[type=email]:focus.strong, input[type=password]:focus.c4, input[type=password]:focus.bright, input[type=password]:focus.strong, select:focus.c4, select:focus.bright, select:focus.strong, .dropdown:focus.c4, .dropdown:focus.bright, .dropdown:focus.strong {
-  box-shadow: 0px 0px 0px 1px var(--c4) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c2) inset; }
 
 label:not(.disabled):active input[type=range]:not([disabled]).c4, label:not(.disabled):active input[type=range]:not([disabled]).bright, label:not(.disabled):active input[type=range]:not([disabled]).strong, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c4, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).bright, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).strong, label:not(.disabled):active input[type=radio] + span:not([disabled]).c4, label:not(.disabled):active input[type=radio] + span:not([disabled]).bright, label:not(.disabled):active input[type=radio] + span:not([disabled]).strong, label:not(.disabled).active input[type=range]:not([disabled]).c4, label:not(.disabled).active input[type=range]:not([disabled]).bright, label:not(.disabled).active input[type=range]:not([disabled]).strong, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c4, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).bright, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).strong, label:not(.disabled).active input[type=radio] + span:not([disabled]).c4, label:not(.disabled).active input[type=radio] + span:not([disabled]).bright, label:not(.disabled).active input[type=radio] + span:not([disabled]).strong {
-  box-shadow: 0px 0px 0px 1px var(--c4) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c2) inset; }
 
 input[type=range]:not([disabled]):active.c4, input[type=range]:not([disabled]):active.bright, input[type=range]:not([disabled]):active.strong, input[type=range]:not([disabled]).active.c4, input[type=range]:not([disabled]).active.bright, input[type=range]:not([disabled]).active.strong, input[type=checkbox] + span:not([disabled]):active.c4, input[type=checkbox] + span:not([disabled]):active.bright, input[type=checkbox] + span:not([disabled]):active.strong, input[type=checkbox] + span:not([disabled]).active.c4, input[type=checkbox] + span:not([disabled]).active.bright, input[type=checkbox] + span:not([disabled]).active.strong, input[type=radio] + span:not([disabled]):active.c4, input[type=radio] + span:not([disabled]):active.bright, input[type=radio] + span:not([disabled]):active.strong, input[type=radio] + span:not([disabled]).active.c4, input[type=radio] + span:not([disabled]).active.bright, input[type=radio] + span:not([disabled]).active.strong {
-  box-shadow: 0px 0px 0px 1px var(--c4) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c2) inset; }
 
 input[type=range].c4::-webkit-slider-thumb, input[type=range].bright::-webkit-slider-thumb, input[type=range].strong::-webkit-slider-thumb {
-  background-color: var(--c4); }
+  background-color: var(--c2); }
 
 .checkbox input + span.c4, .checkbox input + span.bright, .checkbox input + span.strong {
-  border-color: var(--c4); }
+  border-color: var(--c2); }
 
 .checkbox input + span:before.c4, .checkbox input + span:before.bright, .checkbox input + span:before.strong, .checkbox input + span:after.c4, .checkbox input + span:after.bright, .checkbox input + span:after.strong {
-  border-color: var(--c4); }
+  border-color: var(--c2); }
 
 .radio input:checked + span.c4, .radio input:checked + span.bright, .radio input:checked + span.strong, .checkbox input:checked + span.c4, .checkbox input:checked + span.bright, .checkbox input:checked + span.strong {
-  background-color: var(--c4); }
+  background-color: var(--c2); }
 
 .select:after.c4, .select:after.bright, .select:after.strong, .chevron:after.c4, .chevron:after.bright, .chevron:after.strong {
-  border-color: var(--c4); }
+  border-color: var(--c2); }
 
 .cross.c4, .cross.bright, .cross.strong, .checkbox-cross input:checked + span.c4, .checkbox-cross input:checked + span.bright, .checkbox-cross input:checked + span.strong, .radio-cross input:checked + span.c4, .radio-cross input:checked + span.bright, .radio-cross input:checked + span.strong {
-  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c4) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c4) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c2) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c2) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.c4, .tick.bright, .tick.strong {
-  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c4) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c4) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c2) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c2) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
 
 .fill.c4, .fill.bright, .fill.strong {
-  fill: var(--c4); }
+  fill: var(--c2); }
 
 .stroke.c4, .stroke.bright, .stroke.strong {
-  stroke: var(--c4); }
+  stroke: var(--c2); }
 
 .edged.c4, .edged.bright, .edged.strong {
   box-shadow: 0px 0px 0px 1px inset; }
 
 button.c4, button.bright, button.strong, .button.c4, .button.bright, .button.strong {
-  border-color: var(--c4); }
+  border-color: var(--c2); }
 
 button.c4, button.bright, button.strong, .button.c4, .button.bright, .button.strong {
-  color: var(--c4); }
+  color: var(--c2); }
 
 .filled.c4, .filled.bright, .filled.strong, button.filled.c4, button.filled.bright, button.filled.strong, .button.filled.c4, .button.filled.bright, .button.filled.strong, .tag.c4, .tag.bright, .tag.strong {
-  background: var(--c4); }
+  background: var(--c2); }
 
 .filled.c4, .filled.bright, .filled.strong, button.filled.c4, button.filled.bright, button.filled.strong, .button.filled.c4, .button.filled.bright, .button.filled.strong, .tag.c4, .tag.bright, .tag.strong {
   color: var(--bg3); }
@@ -2015,7 +2014,7 @@ button.c4, button.bright, button.strong, .button.c4, .button.bright, .button.str
   border-color: var(--bg3); }
 
 a:active:not(.unclickable):not(.disabled).c4, a:active:not(.unclickable):not(.disabled).bright, a:active:not(.unclickable):not(.disabled).strong, a:active .bg.c4, a:active .bg.bright, a:active .bg.strong, a.active:not(.unclickable):not(.disabled).c4, a.active:not(.unclickable):not(.disabled).bright, a.active:not(.unclickable):not(.disabled).strong, a.active .bg.c4, a.active .bg.bright, a.active .bg.strong, a.focusable:focus:not(.unclickable):not(.disabled).c4, a.focusable:focus:not(.unclickable):not(.disabled).bright, a.focusable:focus:not(.unclickable):not(.disabled).strong, a.focusable:focus .bg.c4, a.focusable:focus .bg.bright, a.focusable:focus .bg.strong, button:active:not(.unclickable):not(.disabled).c4, button:active:not(.unclickable):not(.disabled).bright, button:active:not(.unclickable):not(.disabled).strong, button:active .bg.c4, button:active .bg.bright, button:active .bg.strong, button.active:not(.unclickable):not(.disabled).c4, button.active:not(.unclickable):not(.disabled).bright, button.active:not(.unclickable):not(.disabled).strong, button.active .bg.c4, button.active .bg.bright, button.active .bg.strong, button.focusable:focus:not(.unclickable):not(.disabled).c4, button.focusable:focus:not(.unclickable):not(.disabled).bright, button.focusable:focus:not(.unclickable):not(.disabled).strong, button.focusable:focus .bg.c4, button.focusable:focus .bg.bright, button.focusable:focus .bg.strong, .clickable:active:not(.unclickable):not(.disabled).c4, .clickable:active:not(.unclickable):not(.disabled).bright, .clickable:active:not(.unclickable):not(.disabled).strong, .clickable:active .bg.c4, .clickable:active .bg.bright, .clickable:active .bg.strong, .clickable.active:not(.unclickable):not(.disabled).c4, .clickable.active:not(.unclickable):not(.disabled).bright, .clickable.active:not(.unclickable):not(.disabled).strong, .clickable.active .bg.c4, .clickable.active .bg.bright, .clickable.active .bg.strong, .clickable.focusable:focus:not(.unclickable):not(.disabled).c4, .clickable.focusable:focus:not(.unclickable):not(.disabled).bright, .clickable.focusable:focus:not(.unclickable):not(.disabled).strong, .clickable.focusable:focus .bg.c4, .clickable.focusable:focus .bg.bright, .clickable.focusable:focus .bg.strong, .button:active:not(.unclickable):not(.disabled).c4, .button:active:not(.unclickable):not(.disabled).bright, .button:active:not(.unclickable):not(.disabled).strong, .button:active .bg.c4, .button:active .bg.bright, .button:active .bg.strong, .button.active:not(.unclickable):not(.disabled).c4, .button.active:not(.unclickable):not(.disabled).bright, .button.active:not(.unclickable):not(.disabled).strong, .button.active .bg.c4, .button.active .bg.bright, .button.active .bg.strong, .button.focusable:focus:not(.unclickable):not(.disabled).c4, .button.focusable:focus:not(.unclickable):not(.disabled).bright, .button.focusable:focus:not(.unclickable):not(.disabled).strong, .button.focusable:focus .bg.c4, .button.focusable:focus .bg.bright, .button.focusable:focus .bg.strong {
-  background: var(--c4); }
+  background: var(--c2); }
 
 a:active:not(.unclickable):not(.disabled).c4, a:active:not(.unclickable):not(.disabled).bright, a:active:not(.unclickable):not(.disabled).strong, a:active .bg.c4, a:active .bg.bright, a:active .bg.strong, a.active:not(.unclickable):not(.disabled).c4, a.active:not(.unclickable):not(.disabled).bright, a.active:not(.unclickable):not(.disabled).strong, a.active .bg.c4, a.active .bg.bright, a.active .bg.strong, a.focusable:focus:not(.unclickable):not(.disabled).c4, a.focusable:focus:not(.unclickable):not(.disabled).bright, a.focusable:focus:not(.unclickable):not(.disabled).strong, a.focusable:focus .bg.c4, a.focusable:focus .bg.bright, a.focusable:focus .bg.strong, button:active:not(.unclickable):not(.disabled).c4, button:active:not(.unclickable):not(.disabled).bright, button:active:not(.unclickable):not(.disabled).strong, button:active .bg.c4, button:active .bg.bright, button:active .bg.strong, button.active:not(.unclickable):not(.disabled).c4, button.active:not(.unclickable):not(.disabled).bright, button.active:not(.unclickable):not(.disabled).strong, button.active .bg.c4, button.active .bg.bright, button.active .bg.strong, button.focusable:focus:not(.unclickable):not(.disabled).c4, button.focusable:focus:not(.unclickable):not(.disabled).bright, button.focusable:focus:not(.unclickable):not(.disabled).strong, button.focusable:focus .bg.c4, button.focusable:focus .bg.bright, button.focusable:focus .bg.strong, .clickable:active:not(.unclickable):not(.disabled).c4, .clickable:active:not(.unclickable):not(.disabled).bright, .clickable:active:not(.unclickable):not(.disabled).strong, .clickable:active .bg.c4, .clickable:active .bg.bright, .clickable:active .bg.strong, .clickable.active:not(.unclickable):not(.disabled).c4, .clickable.active:not(.unclickable):not(.disabled).bright, .clickable.active:not(.unclickable):not(.disabled).strong, .clickable.active .bg.c4, .clickable.active .bg.bright, .clickable.active .bg.strong, .clickable.focusable:focus:not(.unclickable):not(.disabled).c4, .clickable.focusable:focus:not(.unclickable):not(.disabled).bright, .clickable.focusable:focus:not(.unclickable):not(.disabled).strong, .clickable.focusable:focus .bg.c4, .clickable.focusable:focus .bg.bright, .clickable.focusable:focus .bg.strong, .button:active:not(.unclickable):not(.disabled).c4, .button:active:not(.unclickable):not(.disabled).bright, .button:active:not(.unclickable):not(.disabled).strong, .button:active .bg.c4, .button:active .bg.bright, .button:active .bg.strong, .button.active:not(.unclickable):not(.disabled).c4, .button.active:not(.unclickable):not(.disabled).bright, .button.active:not(.unclickable):not(.disabled).strong, .button.active .bg.c4, .button.active .bg.bright, .button.active .bg.strong, .button.focusable:focus:not(.unclickable):not(.disabled).c4, .button.focusable:focus:not(.unclickable):not(.disabled).bright, .button.focusable:focus:not(.unclickable):not(.disabled).strong, .button.focusable:focus .bg.c4, .button.focusable:focus .bg.bright, .button.focusable:focus .bg.strong {
   color: var(--bg3); }
@@ -2030,73 +2029,73 @@ a:active:not(.unclickable):not(.disabled):after.c4, a:active:not(.unclickable):n
   border-color: var(--bg3); }
 
 a.c4, a.bright, a.strong, select.c4, select.bright, select.strong, button.c4, button.bright, button.strong, .button.c4, .button.bright, .button.strong {
-  color: var(--c4); }
+  color: var(--c2); }
 
 a.c4, a.bright, a.strong, select.c4, select.bright, select.strong, button.c4, button.bright, button.strong, .button.c4, .button.bright, .button.strong {
-  border-color: var(--c4); }
+  border-color: var(--c2); }
 
 .c5, .brighter {
-  color: var(--c5); }
+  color: var(--c1); }
 
 .c5, .brighter {
-  border-color: var(--c5); }
+  border-color: var(--c1); }
 
 * .c5, * .brighter {
-  border-color: var(--c5); }
+  border-color: var(--c1); }
 
 h1.c5, h1.brighter, h2.c5, h2.brighter, h3.c5, h3.brighter, h4.c5, h4.brighter, h5.c5, h5.brighter, h6.c5, h6.brighter {
-  color: var(--c5); }
+  color: var(--c1); }
 
 input.c5, input.brighter, select.c5, select.brighter, textarea.c5, textarea.brighter, input[type=range].c5, input[type=range].brighter, textarea.c5, textarea.brighter, .dropdown.c5, .dropdown.brighter {
-  color: var(--c5); }
+  color: var(--c1); }
 
 textarea:focus.c5, textarea:focus.brighter, input[type=text]:focus.c5, input[type=text]:focus.brighter, input[type=number]:focus.c5, input[type=number]:focus.brighter, input[type=email]:focus.c5, input[type=email]:focus.brighter, input[type=password]:focus.c5, input[type=password]:focus.brighter, select:focus.c5, select:focus.brighter, .dropdown:focus.c5, .dropdown:focus.brighter {
-  box-shadow: 0px 0px 0px 1px var(--c5) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c1) inset; }
 
 label:not(.disabled):active input[type=range]:not([disabled]).c5, label:not(.disabled):active input[type=range]:not([disabled]).brighter, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c5, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).brighter, label:not(.disabled):active input[type=radio] + span:not([disabled]).c5, label:not(.disabled):active input[type=radio] + span:not([disabled]).brighter, label:not(.disabled).active input[type=range]:not([disabled]).c5, label:not(.disabled).active input[type=range]:not([disabled]).brighter, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c5, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).brighter, label:not(.disabled).active input[type=radio] + span:not([disabled]).c5, label:not(.disabled).active input[type=radio] + span:not([disabled]).brighter {
-  box-shadow: 0px 0px 0px 1px var(--c5) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c1) inset; }
 
 input[type=range]:not([disabled]):active.c5, input[type=range]:not([disabled]):active.brighter, input[type=range]:not([disabled]).active.c5, input[type=range]:not([disabled]).active.brighter, input[type=checkbox] + span:not([disabled]):active.c5, input[type=checkbox] + span:not([disabled]):active.brighter, input[type=checkbox] + span:not([disabled]).active.c5, input[type=checkbox] + span:not([disabled]).active.brighter, input[type=radio] + span:not([disabled]):active.c5, input[type=radio] + span:not([disabled]):active.brighter, input[type=radio] + span:not([disabled]).active.c5, input[type=radio] + span:not([disabled]).active.brighter {
-  box-shadow: 0px 0px 0px 1px var(--c5) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c1) inset; }
 
 input[type=range].c5::-webkit-slider-thumb, input[type=range].brighter::-webkit-slider-thumb {
-  background-color: var(--c5); }
+  background-color: var(--c1); }
 
 .checkbox input + span.c5, .checkbox input + span.brighter {
-  border-color: var(--c5); }
+  border-color: var(--c1); }
 
 .checkbox input + span:before.c5, .checkbox input + span:before.brighter, .checkbox input + span:after.c5, .checkbox input + span:after.brighter {
-  border-color: var(--c5); }
+  border-color: var(--c1); }
 
 .radio input:checked + span.c5, .radio input:checked + span.brighter, .checkbox input:checked + span.c5, .checkbox input:checked + span.brighter {
-  background-color: var(--c5); }
+  background-color: var(--c1); }
 
 .select:after.c5, .select:after.brighter, .chevron:after.c5, .chevron:after.brighter {
-  border-color: var(--c5); }
+  border-color: var(--c1); }
 
 .cross.c5, .cross.brighter, .checkbox-cross input:checked + span.c5, .checkbox-cross input:checked + span.brighter, .radio-cross input:checked + span.c5, .radio-cross input:checked + span.brighter {
-  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c5) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c5) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c1) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c1) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.c5, .tick.brighter {
-  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c5) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c5) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c1) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c1) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
 
 .fill.c5, .fill.brighter {
-  fill: var(--c5); }
+  fill: var(--c1); }
 
 .stroke.c5, .stroke.brighter {
-  stroke: var(--c5); }
+  stroke: var(--c1); }
 
 .edged.c5, .edged.brighter {
   box-shadow: 0px 0px 0px 1px inset; }
 
 button.c5, button.brighter, .button.c5, .button.brighter {
-  border-color: var(--c5); }
+  border-color: var(--c1); }
 
 button.c5, button.brighter, .button.c5, .button.brighter {
-  color: var(--c5); }
+  color: var(--c1); }
 
 .filled.c5, .filled.brighter, button.filled.c5, button.filled.brighter, .button.filled.c5, .button.filled.brighter, .tag.c5, .tag.brighter {
-  background: var(--c5); }
+  background: var(--c1); }
 
 .filled.c5, .filled.brighter, button.filled.c5, button.filled.brighter, .button.filled.c5, .button.filled.brighter, .tag.c5, .tag.brighter {
   color: var(--bg3); }
@@ -2111,7 +2110,7 @@ button.c5, button.brighter, .button.c5, .button.brighter {
   border-color: var(--bg3); }
 
 a:active:not(.unclickable):not(.disabled).c5, a:active:not(.unclickable):not(.disabled).brighter, a:active .bg.c5, a:active .bg.brighter, a.active:not(.unclickable):not(.disabled).c5, a.active:not(.unclickable):not(.disabled).brighter, a.active .bg.c5, a.active .bg.brighter, a.focusable:focus:not(.unclickable):not(.disabled).c5, a.focusable:focus:not(.unclickable):not(.disabled).brighter, a.focusable:focus .bg.c5, a.focusable:focus .bg.brighter, button:active:not(.unclickable):not(.disabled).c5, button:active:not(.unclickable):not(.disabled).brighter, button:active .bg.c5, button:active .bg.brighter, button.active:not(.unclickable):not(.disabled).c5, button.active:not(.unclickable):not(.disabled).brighter, button.active .bg.c5, button.active .bg.brighter, button.focusable:focus:not(.unclickable):not(.disabled).c5, button.focusable:focus:not(.unclickable):not(.disabled).brighter, button.focusable:focus .bg.c5, button.focusable:focus .bg.brighter, .clickable:active:not(.unclickable):not(.disabled).c5, .clickable:active:not(.unclickable):not(.disabled).brighter, .clickable:active .bg.c5, .clickable:active .bg.brighter, .clickable.active:not(.unclickable):not(.disabled).c5, .clickable.active:not(.unclickable):not(.disabled).brighter, .clickable.active .bg.c5, .clickable.active .bg.brighter, .clickable.focusable:focus:not(.unclickable):not(.disabled).c5, .clickable.focusable:focus:not(.unclickable):not(.disabled).brighter, .clickable.focusable:focus .bg.c5, .clickable.focusable:focus .bg.brighter, .button:active:not(.unclickable):not(.disabled).c5, .button:active:not(.unclickable):not(.disabled).brighter, .button:active .bg.c5, .button:active .bg.brighter, .button.active:not(.unclickable):not(.disabled).c5, .button.active:not(.unclickable):not(.disabled).brighter, .button.active .bg.c5, .button.active .bg.brighter, .button.focusable:focus:not(.unclickable):not(.disabled).c5, .button.focusable:focus:not(.unclickable):not(.disabled).brighter, .button.focusable:focus .bg.c5, .button.focusable:focus .bg.brighter {
-  background: var(--c5); }
+  background: var(--c1); }
 
 a:active:not(.unclickable):not(.disabled).c5, a:active:not(.unclickable):not(.disabled).brighter, a:active .bg.c5, a:active .bg.brighter, a.active:not(.unclickable):not(.disabled).c5, a.active:not(.unclickable):not(.disabled).brighter, a.active .bg.c5, a.active .bg.brighter, a.focusable:focus:not(.unclickable):not(.disabled).c5, a.focusable:focus:not(.unclickable):not(.disabled).brighter, a.focusable:focus .bg.c5, a.focusable:focus .bg.brighter, button:active:not(.unclickable):not(.disabled).c5, button:active:not(.unclickable):not(.disabled).brighter, button:active .bg.c5, button:active .bg.brighter, button.active:not(.unclickable):not(.disabled).c5, button.active:not(.unclickable):not(.disabled).brighter, button.active .bg.c5, button.active .bg.brighter, button.focusable:focus:not(.unclickable):not(.disabled).c5, button.focusable:focus:not(.unclickable):not(.disabled).brighter, button.focusable:focus .bg.c5, button.focusable:focus .bg.brighter, .clickable:active:not(.unclickable):not(.disabled).c5, .clickable:active:not(.unclickable):not(.disabled).brighter, .clickable:active .bg.c5, .clickable:active .bg.brighter, .clickable.active:not(.unclickable):not(.disabled).c5, .clickable.active:not(.unclickable):not(.disabled).brighter, .clickable.active .bg.c5, .clickable.active .bg.brighter, .clickable.focusable:focus:not(.unclickable):not(.disabled).c5, .clickable.focusable:focus:not(.unclickable):not(.disabled).brighter, .clickable.focusable:focus .bg.c5, .clickable.focusable:focus .bg.brighter, .button:active:not(.unclickable):not(.disabled).c5, .button:active:not(.unclickable):not(.disabled).brighter, .button:active .bg.c5, .button:active .bg.brighter, .button.active:not(.unclickable):not(.disabled).c5, .button.active:not(.unclickable):not(.disabled).brighter, .button.active .bg.c5, .button.active .bg.brighter, .button.focusable:focus:not(.unclickable):not(.disabled).c5, .button.focusable:focus:not(.unclickable):not(.disabled).brighter, .button.focusable:focus .bg.c5, .button.focusable:focus .bg.brighter {
   color: var(--bg3); }
@@ -2126,73 +2125,73 @@ a:active:not(.unclickable):not(.disabled):after.c5, a:active:not(.unclickable):n
   border-color: var(--bg3); }
 
 a.c5, a.brighter, select.c5, select.brighter, button.c5, button.brighter, .button.c5, .button.brighter {
-  color: var(--c5); }
+  color: var(--c1); }
 
 a.c5, a.brighter, select.c5, select.brighter, button.c5, button.brighter, .button.c5, .button.brighter {
-  border-color: var(--c5); }
+  border-color: var(--c1); }
 
 .c6, .brightest {
-  color: var(--c6); }
+  color: var(--c0); }
 
 .c6, .brightest {
-  border-color: var(--c6); }
+  border-color: var(--c0); }
 
 * .c6, * .brightest {
-  border-color: var(--c6); }
+  border-color: var(--c0); }
 
 h1.c6, h1.brightest, h2.c6, h2.brightest, h3.c6, h3.brightest, h4.c6, h4.brightest, h5.c6, h5.brightest, h6.c6, h6.brightest {
-  color: var(--c6); }
+  color: var(--c0); }
 
 input.c6, input.brightest, select.c6, select.brightest, textarea.c6, textarea.brightest, input[type=range].c6, input[type=range].brightest, textarea.c6, textarea.brightest, .dropdown.c6, .dropdown.brightest {
-  color: var(--c6); }
+  color: var(--c0); }
 
 textarea:focus.c6, textarea:focus.brightest, input[type=text]:focus.c6, input[type=text]:focus.brightest, input[type=number]:focus.c6, input[type=number]:focus.brightest, input[type=email]:focus.c6, input[type=email]:focus.brightest, input[type=password]:focus.c6, input[type=password]:focus.brightest, select:focus.c6, select:focus.brightest, .dropdown:focus.c6, .dropdown:focus.brightest {
-  box-shadow: 0px 0px 0px 1px var(--c6) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c0) inset; }
 
 label:not(.disabled):active input[type=range]:not([disabled]).c6, label:not(.disabled):active input[type=range]:not([disabled]).brightest, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).c6, label:not(.disabled):active input[type=checkbox] + span:not([disabled]).brightest, label:not(.disabled):active input[type=radio] + span:not([disabled]).c6, label:not(.disabled):active input[type=radio] + span:not([disabled]).brightest, label:not(.disabled).active input[type=range]:not([disabled]).c6, label:not(.disabled).active input[type=range]:not([disabled]).brightest, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).c6, label:not(.disabled).active input[type=checkbox] + span:not([disabled]).brightest, label:not(.disabled).active input[type=radio] + span:not([disabled]).c6, label:not(.disabled).active input[type=radio] + span:not([disabled]).brightest {
-  box-shadow: 0px 0px 0px 1px var(--c6) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c0) inset; }
 
 input[type=range]:not([disabled]):active.c6, input[type=range]:not([disabled]):active.brightest, input[type=range]:not([disabled]).active.c6, input[type=range]:not([disabled]).active.brightest, input[type=checkbox] + span:not([disabled]):active.c6, input[type=checkbox] + span:not([disabled]):active.brightest, input[type=checkbox] + span:not([disabled]).active.c6, input[type=checkbox] + span:not([disabled]).active.brightest, input[type=radio] + span:not([disabled]):active.c6, input[type=radio] + span:not([disabled]):active.brightest, input[type=radio] + span:not([disabled]).active.c6, input[type=radio] + span:not([disabled]).active.brightest {
-  box-shadow: 0px 0px 0px 1px var(--c6) inset; }
+  box-shadow: 0px 0px 0px 1px var(--c0) inset; }
 
 input[type=range].c6::-webkit-slider-thumb, input[type=range].brightest::-webkit-slider-thumb {
-  background-color: var(--c6); }
+  background-color: var(--c0); }
 
 .checkbox input + span.c6, .checkbox input + span.brightest {
-  border-color: var(--c6); }
+  border-color: var(--c0); }
 
 .checkbox input + span:before.c6, .checkbox input + span:before.brightest, .checkbox input + span:after.c6, .checkbox input + span:after.brightest {
-  border-color: var(--c6); }
+  border-color: var(--c0); }
 
 .radio input:checked + span.c6, .radio input:checked + span.brightest, .checkbox input:checked + span.c6, .checkbox input:checked + span.brightest {
-  background-color: var(--c6); }
+  background-color: var(--c0); }
 
 .select:after.c6, .select:after.brightest, .chevron:after.c6, .chevron:after.brightest {
-  border-color: var(--c6); }
+  border-color: var(--c0); }
 
 .cross.c6, .cross.brightest, .checkbox-cross input:checked + span.c6, .checkbox-cross input:checked + span.brightest, .radio-cross input:checked + span.c6, .radio-cross input:checked + span.brightest {
-  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c6) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c6) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c0) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--c0) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.c6, .tick.brightest {
-  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c6) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c6) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
+  background-image: linear-gradient(307deg, transparent 0%, transparent calc(40% - var(--stroke-width)), var(--c0) 40%, transparent calc(40% + var(--stroke-width)), transparent 100%), linear-gradient(45deg, transparent 0%, transparent calc(15% - var(--stroke-width)), var(--c0) 15%, transparent calc(15% + var(--stroke-width)), transparent 100%); }
 
 .fill.c6, .fill.brightest {
-  fill: var(--c6); }
+  fill: var(--c0); }
 
 .stroke.c6, .stroke.brightest {
-  stroke: var(--c6); }
+  stroke: var(--c0); }
 
 .edged.c6, .edged.brightest {
   box-shadow: 0px 0px 0px 1px inset; }
 
 button.c6, button.brightest, .button.c6, .button.brightest {
-  border-color: var(--c6); }
+  border-color: var(--c0); }
 
 button.c6, button.brightest, .button.c6, .button.brightest {
-  color: var(--c6); }
+  color: var(--c0); }
 
 .filled.c6, .filled.brightest, button.filled.c6, button.filled.brightest, .button.filled.c6, .button.filled.brightest, .tag.c6, .tag.brightest {
-  background: var(--c6); }
+  background: var(--c0); }
 
 .filled.c6, .filled.brightest, button.filled.c6, button.filled.brightest, .button.filled.c6, .button.filled.brightest, .tag.c6, .tag.brightest {
   color: var(--bg3); }
@@ -2207,7 +2206,7 @@ button.c6, button.brightest, .button.c6, .button.brightest {
   border-color: var(--bg3); }
 
 a:active:not(.unclickable):not(.disabled).c6, a:active:not(.unclickable):not(.disabled).brightest, a:active .bg.c6, a:active .bg.brightest, a.active:not(.unclickable):not(.disabled).c6, a.active:not(.unclickable):not(.disabled).brightest, a.active .bg.c6, a.active .bg.brightest, a.focusable:focus:not(.unclickable):not(.disabled).c6, a.focusable:focus:not(.unclickable):not(.disabled).brightest, a.focusable:focus .bg.c6, a.focusable:focus .bg.brightest, button:active:not(.unclickable):not(.disabled).c6, button:active:not(.unclickable):not(.disabled).brightest, button:active .bg.c6, button:active .bg.brightest, button.active:not(.unclickable):not(.disabled).c6, button.active:not(.unclickable):not(.disabled).brightest, button.active .bg.c6, button.active .bg.brightest, button.focusable:focus:not(.unclickable):not(.disabled).c6, button.focusable:focus:not(.unclickable):not(.disabled).brightest, button.focusable:focus .bg.c6, button.focusable:focus .bg.brightest, .clickable:active:not(.unclickable):not(.disabled).c6, .clickable:active:not(.unclickable):not(.disabled).brightest, .clickable:active .bg.c6, .clickable:active .bg.brightest, .clickable.active:not(.unclickable):not(.disabled).c6, .clickable.active:not(.unclickable):not(.disabled).brightest, .clickable.active .bg.c6, .clickable.active .bg.brightest, .clickable.focusable:focus:not(.unclickable):not(.disabled).c6, .clickable.focusable:focus:not(.unclickable):not(.disabled).brightest, .clickable.focusable:focus .bg.c6, .clickable.focusable:focus .bg.brightest, .button:active:not(.unclickable):not(.disabled).c6, .button:active:not(.unclickable):not(.disabled).brightest, .button:active .bg.c6, .button:active .bg.brightest, .button.active:not(.unclickable):not(.disabled).c6, .button.active:not(.unclickable):not(.disabled).brightest, .button.active .bg.c6, .button.active .bg.brightest, .button.focusable:focus:not(.unclickable):not(.disabled).c6, .button.focusable:focus:not(.unclickable):not(.disabled).brightest, .button.focusable:focus .bg.c6, .button.focusable:focus .bg.brightest {
-  background: var(--c6); }
+  background: var(--c0); }
 
 a:active:not(.unclickable):not(.disabled).c6, a:active:not(.unclickable):not(.disabled).brightest, a:active .bg.c6, a:active .bg.brightest, a.active:not(.unclickable):not(.disabled).c6, a.active:not(.unclickable):not(.disabled).brightest, a.active .bg.c6, a.active .bg.brightest, a.focusable:focus:not(.unclickable):not(.disabled).c6, a.focusable:focus:not(.unclickable):not(.disabled).brightest, a.focusable:focus .bg.c6, a.focusable:focus .bg.brightest, button:active:not(.unclickable):not(.disabled).c6, button:active:not(.unclickable):not(.disabled).brightest, button:active .bg.c6, button:active .bg.brightest, button.active:not(.unclickable):not(.disabled).c6, button.active:not(.unclickable):not(.disabled).brightest, button.active .bg.c6, button.active .bg.brightest, button.focusable:focus:not(.unclickable):not(.disabled).c6, button.focusable:focus:not(.unclickable):not(.disabled).brightest, button.focusable:focus .bg.c6, button.focusable:focus .bg.brightest, .clickable:active:not(.unclickable):not(.disabled).c6, .clickable:active:not(.unclickable):not(.disabled).brightest, .clickable:active .bg.c6, .clickable:active .bg.brightest, .clickable.active:not(.unclickable):not(.disabled).c6, .clickable.active:not(.unclickable):not(.disabled).brightest, .clickable.active .bg.c6, .clickable.active .bg.brightest, .clickable.focusable:focus:not(.unclickable):not(.disabled).c6, .clickable.focusable:focus:not(.unclickable):not(.disabled).brightest, .clickable.focusable:focus .bg.c6, .clickable.focusable:focus .bg.brightest, .button:active:not(.unclickable):not(.disabled).c6, .button:active:not(.unclickable):not(.disabled).brightest, .button:active .bg.c6, .button:active .bg.brightest, .button.active:not(.unclickable):not(.disabled).c6, .button.active:not(.unclickable):not(.disabled).brightest, .button.active .bg.c6, .button.active .bg.brightest, .button.focusable:focus:not(.unclickable):not(.disabled).c6, .button.focusable:focus:not(.unclickable):not(.disabled).brightest, .button.focusable:focus .bg.c6, .button.focusable:focus .bg.brightest {
   color: var(--bg3); }
@@ -2222,10 +2221,10 @@ a:active:not(.unclickable):not(.disabled):after.c6, a:active:not(.unclickable):n
   border-color: var(--bg3); }
 
 a.c6, a.brightest, select.c6, select.brightest, button.c6, button.brightest, .button.c6, .button.brightest {
-  color: var(--c6); }
+  color: var(--c0); }
 
 a.c6, a.brightest, select.c6, select.brightest, button.c6, button.brightest, .button.c6, .button.brightest {
-  border-color: var(--c6); }
+  border-color: var(--c0); }
 
 .success {
   color: var(--green); }
@@ -2615,10 +2614,10 @@ a.info, select.info, button.info, .button.info {
   _::-webkit-full-page-media, _:future, :root .safari-only {
     padding-bottom: 70px !important; } }
 
-.absolute, .abs, .a {
+.absolute, .abs {
   position: absolute; }
 
-.relative, .rel, .r {
+.relative, .rel {
   position: relative; }
 
 .fixed {
@@ -2639,10 +2638,10 @@ a.info, select.info, button.info, .button.info {
 .block {
   display: block; }
 
-.flex, .f {
+.flex {
   display: flex; }
 
-.none, .n {
+.none {
   display: none; }
 
 .column, .col, .flex-column {
@@ -4476,154 +4475,154 @@ a.info, select.info, button.info, .button.info {
 .column-y-stretch {
   justify-content: stretch; }
 
-.align-self-center, .a-s-c {
+.align-self-center {
   align-self: center; }
 
-.align-self-end, .a-s-e {
+.align-self-end {
   align-self: end; }
 
-.align-self-flex-end, .a-s-fe {
+.align-self-flex-end {
   align-self: flex-end; }
 
-.align-self-start, .a-s-s {
+.align-self-start {
   align-self: start; }
 
-.align-self-flex-start, .a-s-fs {
+.align-self-flex-start {
   align-self: flex-start; }
 
-.align-self-stretch, .a-s-str {
+.align-self-stretch {
   align-self: stretch; }
 
-.align-self-baseline, .a-s-b {
+.align-self-baseline {
   align-self: baseline; }
 
-.align-items-center, .a-i-c {
+.align-items-center {
   align-items: center; }
 
-.align-items-end, .a-i-e {
+.align-items-end {
   align-items: end; }
 
-.align-items-flex-end, .a-i-fe {
+.align-items-flex-end {
   align-items: flex-end; }
 
-.align-items-start, .a-i-s {
+.align-items-start {
   align-items: start; }
 
-.align-items-flex-start, .a-i-fs {
+.align-items-flex-start {
   align-items: flex-start; }
 
-.align-items-stretch, .a-i-str {
+.align-items-stretch {
   align-items: stretch; }
 
-.align-items-baseline, .a-i-b {
+.align-items-baseline {
   align-items: baseline; }
 
-.justify-self-center, .j-s-c {
+.justify-self-center {
   justify-self: center; }
 
-.justify-self-end, .j-s-e {
+.justify-self-end {
   justify-self: end; }
 
-.justify-self-flex-end, .j-s-fe {
+.justify-self-flex-end {
   justify-self: flex-end; }
 
-.justify-self-start, .j-s-s {
+.justify-self-start {
   justify-self: start; }
 
-.justify-self-flex-start, .j-s-fs {
+.justify-self-flex-start {
   justify-self: flex-start; }
 
-.justify-self-stretch, .j-s-str {
+.justify-self-stretch {
   justify-self: stretch; }
 
-.justify-self-baseline, .j-s-b {
+.justify-self-baseline {
   justify-self: baseline; }
 
-.justify-items-center, .j-i-c {
+.justify-items-center {
   justify-items: center; }
 
-.justify-items-end, .j-i-e {
+.justify-items-end {
   justify-items: end; }
 
-.justify-items-flex-end, .j-i-fe {
+.justify-items-flex-end {
   justify-items: flex-end; }
 
-.justify-items-start, .j-i-s {
+.justify-items-start {
   justify-items: start; }
 
-.justify-items-flex-start, .j-i-fs {
+.justify-items-flex-start {
   justify-items: flex-start; }
 
-.justify-items-stretch, .j-i-str {
+.justify-items-stretch {
   justify-items: stretch; }
 
-.justify-items-baseline, .j-i-b {
+.justify-items-baseline {
   justify-items: baseline; }
 
-.align-content-space-between, .align-content-between, .a-c-b {
+.align-content-space-between {
   align-content: space-between; }
 
-.align-content-space-evenly, .align-content-evenly, .a-c-e {
+.align-content-space-evenly {
   align-content: space-evenly; }
 
-.align-content-space-around, .align-content-around, .a-c-a {
+.align-content-space-around {
   align-content: space-around; }
 
-.align-content-left, .a-c-l {
+.align-content-left {
   align-content: left; }
 
-.align-content-right, .a-c-r {
+.align-content-right {
   align-content: right; }
 
-.align-content-center, .a-c-c {
+.align-content-center {
   align-content: center; }
 
-.align-content-end, .a-c-e {
+.align-content-end {
   align-content: end; }
 
-.align-content-flex-end, .a-c-fe {
+.align-content-flex-end {
   align-content: flex-end; }
 
-.align-content-start, .a-c-s {
+.align-content-start {
   align-content: start; }
 
-.align-content-flex-start, .a-c-fs {
+.align-content-flex-start {
   align-content: flex-start; }
 
-.align-content-stretch, .a-c-str {
+.align-content-stretch {
   align-content: stretch; }
 
-.justify-content-space-between, .justify-content-between, .j-c-b {
+.justify-content-space-between {
   justify-content: space-between; }
 
-.justify-content-space-evenly, .justify-content-evenly, .j-c-e {
+.justify-content-space-evenly {
   justify-content: space-evenly; }
 
-.justify-content-space-around, .justify-content-around, .j-c-a {
+.justify-content-space-around {
   justify-content: space-around; }
 
-.justify-content-left, .j-c-l {
+.justify-content-left {
   justify-content: left; }
 
-.justify-content-right, .j-c-r {
+.justify-content-right {
   justify-content: right; }
 
-.justify-content-center, .j-c-c {
+.justify-content-center {
   justify-content: center; }
 
-.justify-content-end, .j-c-e {
+.justify-content-end {
   justify-content: end; }
 
-.justify-content-flex-end, .j-c-fe {
+.justify-content-flex-end {
   justify-content: flex-end; }
 
-.justify-content-start, .j-c-s {
+.justify-content-start {
   justify-content: start; }
 
-.justify-content-flex-start, .j-c-fs {
+.justify-content-flex-start {
   justify-content: flex-start; }
 
-.justify-content-stretch, .j-c-str {
+.justify-content-stretch {
   justify-content: stretch; }
 
 .pt0 {

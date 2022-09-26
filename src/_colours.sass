@@ -78,7 +78,7 @@
 	&:after, &:before 
 		+set-prop(border-color, $bg, $s )
 
-=createColors( $c, $bg, $n: '', $active-filled: true) 
+=createColors( $c, $bg, $n: '', $active-filled: true, $use-interfaces: true ) 
 	$s: class-list($n, '&')
 	$raw: class-list($n)
 
@@ -96,38 +96,39 @@
 		+set-prop( color, $c, $s )
 
 	// form inputs ----------------------------------------------------
-
 	input, select, textarea, input[type=range], textarea, .dropdown
 		+set-prop(color, $c, $s )
+	@debug "use interfaces on colours: #{$use-interfaces} / #{$n}";
+	@if $use-interfaces
 
-	textarea, input[type=text], input[type=number], input[type=email], input[type=password], select, .dropdown
-		&:focus
-			+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
-	label:not(.disabled)
-		&:active, &.active
-			input[type=range], input[type=checkbox]+span, input[type=radio]+span
-				&:not([disabled])
+		textarea, input[type=text], input[type=number], input[type=email], input[type=password], select, .dropdown
+			&:focus
+				+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
+		label:not(.disabled)
+			&:active, &.active
+				input[type=range], input[type=checkbox]+span, input[type=radio]+span
+					&:not([disabled])
+						+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
+
+		input[type=range], input[type=checkbox]+span, input[type=radio]+span
+			&:not([disabled])
+				&:active,&.active
 					+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
 
-	input[type=range], input[type=checkbox]+span, input[type=radio]+span
-		&:not([disabled])
-			&:active,&.active
-				+set-prop(box-shadow, 0px 0px 0px 1px $c inset, $s )
+		input[type=range]
+			+set-prop( background-color, $c, class-list($n, '&', '::-webkit-slider-thumb'), '&::-webkit-slider-thumb'  )
 
-	input[type=range]
-		+set-prop( background-color, $c, class-list($n, '&', '::-webkit-slider-thumb'), '&::-webkit-slider-thumb'  )
-
-	.checkbox
-		input + span
-			+set-prop(border-color, $c, $s )
-			&:before, &:after
+		.checkbox
+			input + span
 				+set-prop(border-color, $c, $s )
-	.radio, .checkbox
-		input:checked + span
-			+set-prop(background-color, $c, $s )
-	.select, .chevron
-		&:after
-			+set-prop(border-color, $c, $s )
+				&:before, &:after
+					+set-prop(border-color, $c, $s )
+		.radio, .checkbox
+			input:checked + span
+				+set-prop(background-color, $c, $s )
+		.select, .chevron
+			&:after
+				+set-prop(border-color, $c, $s )
 
 	// cool cross icon ----------------------------------------------------
 	

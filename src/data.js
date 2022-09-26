@@ -10,8 +10,7 @@ export default [
       [
         [
           "absolute",
-          "abs",
-          "a"
+          "abs"
         ],
         [
           "position: absolute"
@@ -20,8 +19,7 @@ export default [
       [
         [
           "relative",
-          "rel",
-          "r"
+          "rel"
         ],
         [
           "position: relative"
@@ -78,8 +76,7 @@ export default [
       ],
       [
         [
-          "flex",
-          "f"
+          "flex"
         ],
         [
           "display: flex"
@@ -89,8 +86,7 @@ export default [
       ],
       [
         [
-          "none",
-          "n"
+          "none"
         ],
         [
           "display: none"
@@ -513,8 +509,7 @@ export default [
     "data": [
       [
         [
-          "flex",
-          "f"
+          "flex"
         ],
         [
           "display: flex"
@@ -718,8 +713,7 @@ export default [
     "data": [
       [
         [
-          "align-self-center",
-          "a-s-c"
+          "align-self-center"
         ],
         [
           "align-self: center"
@@ -727,8 +721,7 @@ export default [
       ],
       [
         [
-          "align-self-end",
-          "a-s-e"
+          "align-self-end"
         ],
         [
           "align-self: end"
@@ -736,8 +729,7 @@ export default [
       ],
       [
         [
-          "align-self-flex-end",
-          "a-s-fe"
+          "align-self-flex-end"
         ],
         [
           "align-self: flex-end"
@@ -745,8 +737,7 @@ export default [
       ],
       [
         [
-          "align-self-start",
-          "a-s-s"
+          "align-self-start"
         ],
         [
           "align-self: start"
@@ -754,8 +745,7 @@ export default [
       ],
       [
         [
-          "align-self-flex-start",
-          "a-s-fs"
+          "align-self-flex-start"
         ],
         [
           "align-self: flex-start"
@@ -763,8 +753,7 @@ export default [
       ],
       [
         [
-          "align-self-stretch",
-          "a-s-str"
+          "align-self-stretch"
         ],
         [
           "align-self: stretch"
@@ -772,8 +761,7 @@ export default [
       ],
       [
         [
-          "align-self-baseline",
-          "a-s-b"
+          "align-self-baseline"
         ],
         [
           "align-self: baseline"
@@ -781,8 +769,7 @@ export default [
       ],
       [
         [
-          "align-items-center",
-          "a-i-c"
+          "align-items-center"
         ],
         [
           "align-items: center"
@@ -790,8 +777,7 @@ export default [
       ],
       [
         [
-          "align-items-end",
-          "a-i-e"
+          "align-items-end"
         ],
         [
           "align-items: end"
@@ -799,8 +785,7 @@ export default [
       ],
       [
         [
-          "align-items-flex-end",
-          "a-i-fe"
+          "align-items-flex-end"
         ],
         [
           "align-items: flex-end"
@@ -808,8 +793,7 @@ export default [
       ],
       [
         [
-          "align-items-start",
-          "a-i-s"
+          "align-items-start"
         ],
         [
           "align-items: start"
@@ -817,8 +801,7 @@ export default [
       ],
       [
         [
-          "align-items-flex-start",
-          "a-i-fs"
+          "align-items-flex-start"
         ],
         [
           "align-items: flex-start"
@@ -826,8 +809,7 @@ export default [
       ],
       [
         [
-          "align-items-stretch",
-          "a-i-str"
+          "align-items-stretch"
         ],
         [
           "align-items: stretch"
@@ -835,8 +817,7 @@ export default [
       ],
       [
         [
-          "align-items-baseline",
-          "a-i-b"
+          "align-items-baseline"
         ],
         [
           "align-items: baseline"
@@ -844,8 +825,7 @@ export default [
       ],
       [
         [
-          "justify-self-center",
-          "j-s-c"
+          "justify-self-center"
         ],
         [
           "justify-self: center"
@@ -853,8 +833,7 @@ export default [
       ],
       [
         [
-          "justify-self-end",
-          "j-s-e"
+          "justify-self-end"
         ],
         [
           "justify-self: end"
@@ -862,8 +841,7 @@ export default [
       ],
       [
         [
-          "justify-self-flex-end",
-          "j-s-fe"
+          "justify-self-flex-end"
         ],
         [
           "justify-self: flex-end"
@@ -871,8 +849,7 @@ export default [
       ],
       [
         [
-          "justify-self-start",
-          "j-s-s"
+          "justify-self-start"
         ],
         [
           "justify-self: start"
@@ -880,8 +857,7 @@ export default [
       ],
       [
         [
-          "justify-self-flex-start",
-          "j-s-fs"
+          "justify-self-flex-start"
         ],
         [
           "justify-self: flex-start"
@@ -889,8 +865,7 @@ export default [
       ],
       [
         [
-          "justify-self-stretch",
-          "j-s-str"
+          "justify-self-stretch"
         ],
         [
           "justify-self: stretch"
@@ -898,8 +873,7 @@ export default [
       ],
       [
         [
-          "justify-self-baseline",
-          "j-s-b"
+          "justify-self-baseline"
         ],
         [
           "justify-self: baseline"
@@ -907,8 +881,7 @@ export default [
       ],
       [
         [
-          "justify-items-center",
-          "j-i-c"
+          "justify-items-center"
         ],
         [
           "justify-items: center"
@@ -916,8 +889,7 @@ export default [
       ],
       [
         [
-          "justify-items-end",
-          "j-i-e"
+          "justify-items-end"
         ],
         [
           "justify-items: end"
@@ -925,8 +897,7 @@ export default [
       ],
       [
         [
-          "justify-items-flex-end",
-          "j-i-fe"
+          "justify-items-flex-end"
         ],
         [
           "justify-items: flex-end"
@@ -934,8 +905,7 @@ export default [
       ],
       [
         [
-          "justify-items-start",
-          "j-i-s"
+          "justify-items-start"
         ],
         [
           "justify-items: start"
@@ -943,8 +913,7 @@ export default [
       ],
       [
         [
-          "justify-items-flex-start",
-          "j-i-fs"
+          "justify-items-flex-start"
         ],
         [
           "justify-items: flex-start"
@@ -952,8 +921,7 @@ export default [
       ],
       [
         [
-          "justify-items-stretch",
-          "j-i-str"
+          "justify-items-stretch"
         ],
         [
           "justify-items: stretch"
@@ -961,8 +929,7 @@ export default [
       ],
       [
         [
-          "justify-items-baseline",
-          "j-i-b"
+          "justify-items-baseline"
         ],
         [
           "justify-items: baseline"
@@ -981,9 +948,7 @@ export default [
     "data": [
       [
         [
-          "align-content-space-between",
-          "align-content-between",
-          "a-c-b"
+          "align-content-space-between"
         ],
         [
           "align-content: space-between"
@@ -991,9 +956,7 @@ export default [
       ],
       [
         [
-          "align-content-space-evenly",
-          "align-content-evenly",
-          "a-c-e"
+          "align-content-space-evenly"
         ],
         [
           "align-content: space-evenly"
@@ -1001,9 +964,7 @@ export default [
       ],
       [
         [
-          "align-content-space-around",
-          "align-content-around",
-          "a-c-a"
+          "align-content-space-around"
         ],
         [
           "align-content: space-around"
@@ -1011,8 +972,7 @@ export default [
       ],
       [
         [
-          "align-content-left",
-          "a-c-l"
+          "align-content-left"
         ],
         [
           "align-content: left"
@@ -1020,8 +980,7 @@ export default [
       ],
       [
         [
-          "align-content-right",
-          "a-c-r"
+          "align-content-right"
         ],
         [
           "align-content: right"
@@ -1029,8 +988,7 @@ export default [
       ],
       [
         [
-          "align-content-center",
-          "a-c-c"
+          "align-content-center"
         ],
         [
           "align-content: center"
@@ -1038,8 +996,7 @@ export default [
       ],
       [
         [
-          "align-content-end",
-          "a-c-e"
+          "align-content-end"
         ],
         [
           "align-content: end"
@@ -1047,8 +1004,7 @@ export default [
       ],
       [
         [
-          "align-content-flex-end",
-          "a-c-fe"
+          "align-content-flex-end"
         ],
         [
           "align-content: flex-end"
@@ -1056,8 +1012,7 @@ export default [
       ],
       [
         [
-          "align-content-start",
-          "a-c-s"
+          "align-content-start"
         ],
         [
           "align-content: start"
@@ -1065,8 +1020,7 @@ export default [
       ],
       [
         [
-          "align-content-flex-start",
-          "a-c-fs"
+          "align-content-flex-start"
         ],
         [
           "align-content: flex-start"
@@ -1074,8 +1028,7 @@ export default [
       ],
       [
         [
-          "align-content-stretch",
-          "a-c-str"
+          "align-content-stretch"
         ],
         [
           "align-content: stretch"
@@ -1083,9 +1036,7 @@ export default [
       ],
       [
         [
-          "justify-content-space-between",
-          "justify-content-between",
-          "j-c-b"
+          "justify-content-space-between"
         ],
         [
           "justify-content: space-between"
@@ -1093,9 +1044,7 @@ export default [
       ],
       [
         [
-          "justify-content-space-evenly",
-          "justify-content-evenly",
-          "j-c-e"
+          "justify-content-space-evenly"
         ],
         [
           "justify-content: space-evenly"
@@ -1103,9 +1052,7 @@ export default [
       ],
       [
         [
-          "justify-content-space-around",
-          "justify-content-around",
-          "j-c-a"
+          "justify-content-space-around"
         ],
         [
           "justify-content: space-around"
@@ -1113,8 +1060,7 @@ export default [
       ],
       [
         [
-          "justify-content-left",
-          "j-c-l"
+          "justify-content-left"
         ],
         [
           "justify-content: left"
@@ -1122,8 +1068,7 @@ export default [
       ],
       [
         [
-          "justify-content-right",
-          "j-c-r"
+          "justify-content-right"
         ],
         [
           "justify-content: right"
@@ -1131,8 +1076,7 @@ export default [
       ],
       [
         [
-          "justify-content-center",
-          "j-c-c"
+          "justify-content-center"
         ],
         [
           "justify-content: center"
@@ -1140,8 +1084,7 @@ export default [
       ],
       [
         [
-          "justify-content-end",
-          "j-c-e"
+          "justify-content-end"
         ],
         [
           "justify-content: end"
@@ -1149,8 +1092,7 @@ export default [
       ],
       [
         [
-          "justify-content-flex-end",
-          "j-c-fe"
+          "justify-content-flex-end"
         ],
         [
           "justify-content: flex-end"
@@ -1158,8 +1100,7 @@ export default [
       ],
       [
         [
-          "justify-content-start",
-          "j-c-s"
+          "justify-content-start"
         ],
         [
           "justify-content: start"
@@ -1167,8 +1108,7 @@ export default [
       ],
       [
         [
-          "justify-content-flex-start",
-          "j-c-fs"
+          "justify-content-flex-start"
         ],
         [
           "justify-content: flex-start"
@@ -1176,8 +1116,7 @@ export default [
       ],
       [
         [
-          "justify-content-stretch",
-          "j-c-str"
+          "justify-content-stretch"
         ],
         [
           "justify-content: stretch"

@@ -1,3 +1,7 @@
+// api = documentation
+// mixins = sass
+// classes = shorthand
+
 let api = [], mixins = '', classes = '=shorthand\n', file = ''
  
 
@@ -5,16 +9,16 @@ let api = [], mixins = '', classes = '=shorthand\n', file = ''
 
 const aliases = [ 
 
-	[ ['absolute', 'abs', 'a'], ['position: absolute' ] ],
-	[ ['relative', 'rel', 'r'], ['position: relative' ] ],
+	[ ['absolute', 'abs'], ['position: absolute' ] ],
+	[ ['relative', 'rel'], ['position: relative' ] ],
 	[ ['fixed'], ['position: fixed' ] ],
 	[ ['sticky'], ['position: sticky' ] ],
 	[ ['table'], ['display: table' ] ],
 	[ ['inline', 'i'], ['display: inline' ] ],
 	[ ['inline-block'], ['display: inline-block' ] ],
 	[ ['block'], ['display: block' ] ],
-	[ ['flex', 'f'], ['display: flex' ],false, true ], // layout views
-	[ ['none', 'n'], ['display: none' ] ],
+	[ ['flex'], ['display: flex' ],false, true ], // layout views
+	[ ['none'], ['display: none' ] ],
 
 	[ ['column', 'col', 'flex-column'], ['flex-direction: column' ] ],
 	[ ['row', 'flex-row'], ['flex-direction: row' ] ],
@@ -154,11 +158,10 @@ yep.forEach( (y, ii) => {
 					let append = i == 0 ? ' > *' : ''
 					let str = `\n\t.${arrrrrr.join('-')}${append},.${arrrrrr.map(l=>(l.split('-').map(ll=>(ll[0])).join('') )).join('-')}${append}\n\t\t${Atype}: ${Aitem}\n\t\t${Btype}: ${Bitem}\n\t\tflex-direction: ${colrow}`
 					classes += str
-					mixins += `\n=${colrow}($x: flex-start, $y: flex-start)\n\t${Atype}: $x\n\t${Btype}: $y\n\tflex-direction: ${colrow}`
-					console.log(str)
 				}
 			})
 		})
+		mixins += `\n=${colrow}($x: flex-start, $y: flex-start)\n\t${Atype}: $x\n\t${Btype}: $y\n\tflex-direction: ${colrow}`
 
 		yepyep.push([
 			[ `${colrow}-${Astyle}-${Bstyle}`, `+${colrow}({info}$x, $y{end})` ],
@@ -169,9 +172,9 @@ yep.forEach( (y, ii) => {
 
 	iter.forEach( (rule, i) => {
 		classes += `\n\t.${colrow}-${dir}-${rule}\n\t\t${type}: ${rule}`
-		mixins += `\n=${colrow}-${dir}($val)\n\t${type}: $val`
 
 	})
+	// mixins += `\n=${colrow}-${dir}($val)\n\t${type}: $val`
 
 	yepyep.push([
 		[ `${colrow}-${dir}-{alert}[${style}]{end}`, `+${colrow}-${dir}({info}$val{end})` ],
@@ -204,38 +207,38 @@ api.push( {
 const alignments = [
 	[ // rule
 		[ // 0 = names
-			[ 'align-self', 'a-s' ], 
-			[ 'align-items', 'a-i' ], 
-			[ 'justify-self', 'j-s' ], 
-			[ 'justify-items', 'j-i' ]
+			[ 'align-self' ], 
+			[ 'align-items' ], 
+			[ 'justify-self' ], 
+			[ 'justify-items' ]
 		], 
 		[ // 1 = props
-			[ 'center', 'c' ], 
-			[ 'end', 'e' ], 
-			[ 'flex-end', 'fe' ], 
-			[ 'start', 's' ], 
-			[ 'flex-start', 'fs' ], 
-			[ 'stretch', 'str' ], 
-			[ 'baseline', 'b' ]
+			[ 'center'], 
+			[ 'end' ], 
+			[ 'flex-end' ], 
+			[ 'start' ], 
+			[ 'flex-start' ], 
+			[ 'stretch' ], 
+			[ 'baseline' ]
 		]
 	],
 	[
 		[ // 0 = names
-			[ 'align-content', 'a-c' ], 
-			[ 'justify-content', 'j-c' ], 
+			[ 'align-content' ], 
+			[ 'justify-content' ], 
 		], 
 		[ // 1 = props
-			[ 'space-between', 'between', 'b' ],
-			[ 'space-evenly', 'evenly', 'e' ],
-			[ 'space-around', 'around', 'a' ],
-			[ 'left', 'l' ],
-			[ 'right', 'r' ],
-			[ 'center', 'c' ], 
-			[ 'end', 'e' ], 
-			[ 'flex-end', 'fe' ], 
-			[ 'start', 's' ], 
-			[ 'flex-start', 'fs' ], 
-			[ 'stretch', 'str' ]
+			[ 'space-between'],
+			[ 'space-evenly' ],
+			[ 'space-around' ],
+			[ 'left' ],
+			[ 'right' ],
+			[ 'center' ], 
+			[ 'end' ], 
+			[ 'flex-end' ], 
+			[ 'start' ], 
+			[ 'flex-start' ], 
+			[ 'stretch'  ]
 		]
 	]
 ]
@@ -276,8 +279,8 @@ alignments.forEach( (a, idx)  => {
 			rule += '\n\t\t' + validRule
 			classes += `\n${rule}\n`
 
-			mixins += `\n=${nameList[0]}-${validValue}\n\t${validRule}`
-			mixins += `\n=${nameList[nameList.length-1]}-${classList[classList.length-1]}\n\t${validRule}`
+			// mixins += `\n=${nameList[0]}-${validValue}\n\t${validRule}`
+			// mixins += `\n=${nameList[nameList.length-1]}-${classList[classList.length-1]}\n\t${validRule}`
 
 		})
 
@@ -914,8 +917,9 @@ async function run() {
 
 	//...
 
-	const mix = await fs.writeFileSync('src/_shorthand.sass', file)
-	console.log('✅ 💅  successfully written src/_shorthand.sass', mix)
+	await fs.writeFileSync('src/_shorthand.sass', `@import '_shorthand-css.sass'\n` + mixins)
+	await fs.writeFileSync('src/_shorthand-css.sass', classes)
+	console.log('✅ 💅  successfully written src/_shorthand-css.sass src/_shorthand.sass')
 
 	let infos = { downloads: {} }
 	infos['downloads']['shorthand'] = await render( 'shorthand', `@import '../src/sassis' 

@@ -8,9 +8,9 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 
 <table>
 <tr>
-<td>.absolute<br />.abs<br />.a</td><td>position: absolute</td></tr>
+<td>.absolute<br />.abs</td><td>position: absolute</td></tr>
 <tr>
-<td>.relative<br />.rel<br />.r</td><td>position: relative</td></tr>
+<td>.relative<br />.rel</td><td>position: relative</td></tr>
 <tr>
 <td>.fixed</td><td>position: fixed</td></tr>
 <tr>
@@ -24,9 +24,9 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 <tr>
 <td>.block</td><td>display: block</td></tr>
 <tr>
-<td>.flex<br />.f</td><td>display: flex</td></tr>
+<td>.flex</td><td>display: flex</td></tr>
 <tr>
-<td>.none<br />.n</td><td>display: none</td></tr>
+<td>.none</td><td>display: none</td></tr>
 <tr>
 <td>.column<br />.col<br />.flex-column</td><td>flex-direction: column</td></tr>
 <tr>
@@ -123,7 +123,7 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 
 <table>
 <tr>
-<td>.flex<br />.f</td><td>display: flex</td></tr>
+<td>.flex</td><td>display: flex</td></tr>
 <tr>
 <td>.grow</td><td>flex-grow: 1</td></tr>
 <tr>
@@ -169,110 +169,110 @@ SASSIS is a SASS / CSS library for shorthand frontend styling.
 
 <table>
 <tr>
-<td>.align-self-center<br />.a-s-c</td><td>align-self: center</td></tr>
+<td>.align-self-center</td><td>align-self: center</td></tr>
 <tr>
-<td>.align-self-end<br />.a-s-e</td><td>align-self: end</td></tr>
+<td>.align-self-end</td><td>align-self: end</td></tr>
 <tr>
-<td>.align-self-flex-end<br />.a-s-fe</td><td>align-self: flex-end</td></tr>
+<td>.align-self-flex-end</td><td>align-self: flex-end</td></tr>
 <tr>
-<td>.align-self-start<br />.a-s-s</td><td>align-self: start</td></tr>
+<td>.align-self-start</td><td>align-self: start</td></tr>
 <tr>
-<td>.align-self-flex-start<br />.a-s-fs</td><td>align-self: flex-start</td></tr>
+<td>.align-self-flex-start</td><td>align-self: flex-start</td></tr>
 <tr>
-<td>.align-self-stretch<br />.a-s-str</td><td>align-self: stretch</td></tr>
+<td>.align-self-stretch</td><td>align-self: stretch</td></tr>
 <tr>
-<td>.align-self-baseline<br />.a-s-b</td><td>align-self: baseline</td></tr>
+<td>.align-self-baseline</td><td>align-self: baseline</td></tr>
 <tr>
-<td>.align-items-center<br />.a-i-c</td><td>align-items: center</td></tr>
+<td>.align-items-center</td><td>align-items: center</td></tr>
 <tr>
-<td>.align-items-end<br />.a-i-e</td><td>align-items: end</td></tr>
+<td>.align-items-end</td><td>align-items: end</td></tr>
 <tr>
-<td>.align-items-flex-end<br />.a-i-fe</td><td>align-items: flex-end</td></tr>
+<td>.align-items-flex-end</td><td>align-items: flex-end</td></tr>
 <tr>
-<td>.align-items-start<br />.a-i-s</td><td>align-items: start</td></tr>
+<td>.align-items-start</td><td>align-items: start</td></tr>
 <tr>
-<td>.align-items-flex-start<br />.a-i-fs</td><td>align-items: flex-start</td></tr>
+<td>.align-items-flex-start</td><td>align-items: flex-start</td></tr>
 <tr>
-<td>.align-items-stretch<br />.a-i-str</td><td>align-items: stretch</td></tr>
+<td>.align-items-stretch</td><td>align-items: stretch</td></tr>
 <tr>
-<td>.align-items-baseline<br />.a-i-b</td><td>align-items: baseline</td></tr>
+<td>.align-items-baseline</td><td>align-items: baseline</td></tr>
 <tr>
-<td>.justify-self-center<br />.j-s-c</td><td>justify-self: center</td></tr>
+<td>.justify-self-center</td><td>justify-self: center</td></tr>
 <tr>
-<td>.justify-self-end<br />.j-s-e</td><td>justify-self: end</td></tr>
+<td>.justify-self-end</td><td>justify-self: end</td></tr>
 <tr>
-<td>.justify-self-flex-end<br />.j-s-fe</td><td>justify-self: flex-end</td></tr>
+<td>.justify-self-flex-end</td><td>justify-self: flex-end</td></tr>
 <tr>
-<td>.justify-self-start<br />.j-s-s</td><td>justify-self: start</td></tr>
+<td>.justify-self-start</td><td>justify-self: start</td></tr>
 <tr>
-<td>.justify-self-flex-start<br />.j-s-fs</td><td>justify-self: flex-start</td></tr>
+<td>.justify-self-flex-start</td><td>justify-self: flex-start</td></tr>
 <tr>
-<td>.justify-self-stretch<br />.j-s-str</td><td>justify-self: stretch</td></tr>
+<td>.justify-self-stretch</td><td>justify-self: stretch</td></tr>
 <tr>
-<td>.justify-self-baseline<br />.j-s-b</td><td>justify-self: baseline</td></tr>
+<td>.justify-self-baseline</td><td>justify-self: baseline</td></tr>
 <tr>
-<td>.justify-items-center<br />.j-i-c</td><td>justify-items: center</td></tr>
+<td>.justify-items-center</td><td>justify-items: center</td></tr>
 <tr>
-<td>.justify-items-end<br />.j-i-e</td><td>justify-items: end</td></tr>
+<td>.justify-items-end</td><td>justify-items: end</td></tr>
 <tr>
-<td>.justify-items-flex-end<br />.j-i-fe</td><td>justify-items: flex-end</td></tr>
+<td>.justify-items-flex-end</td><td>justify-items: flex-end</td></tr>
 <tr>
-<td>.justify-items-start<br />.j-i-s</td><td>justify-items: start</td></tr>
+<td>.justify-items-start</td><td>justify-items: start</td></tr>
 <tr>
-<td>.justify-items-flex-start<br />.j-i-fs</td><td>justify-items: flex-start</td></tr>
+<td>.justify-items-flex-start</td><td>justify-items: flex-start</td></tr>
 <tr>
-<td>.justify-items-stretch<br />.j-i-str</td><td>justify-items: stretch</td></tr>
+<td>.justify-items-stretch</td><td>justify-items: stretch</td></tr>
 <tr>
-<td>.justify-items-baseline<br />.j-i-b</td><td>justify-items: baseline</td></tr>
+<td>.justify-items-baseline</td><td>justify-items: baseline</td></tr>
 </table>
 
 ## content 
 
 <table>
 <tr>
-<td>.align-content-space-between<br />.align-content-between<br />.a-c-b</td><td>align-content: space-between</td></tr>
+<td>.align-content-space-between</td><td>align-content: space-between</td></tr>
 <tr>
-<td>.align-content-space-evenly<br />.align-content-evenly<br />.a-c-e</td><td>align-content: space-evenly</td></tr>
+<td>.align-content-space-evenly</td><td>align-content: space-evenly</td></tr>
 <tr>
-<td>.align-content-space-around<br />.align-content-around<br />.a-c-a</td><td>align-content: space-around</td></tr>
+<td>.align-content-space-around</td><td>align-content: space-around</td></tr>
 <tr>
-<td>.align-content-left<br />.a-c-l</td><td>align-content: left</td></tr>
+<td>.align-content-left</td><td>align-content: left</td></tr>
 <tr>
-<td>.align-content-right<br />.a-c-r</td><td>align-content: right</td></tr>
+<td>.align-content-right</td><td>align-content: right</td></tr>
 <tr>
-<td>.align-content-center<br />.a-c-c</td><td>align-content: center</td></tr>
+<td>.align-content-center</td><td>align-content: center</td></tr>
 <tr>
-<td>.align-content-end<br />.a-c-e</td><td>align-content: end</td></tr>
+<td>.align-content-end</td><td>align-content: end</td></tr>
 <tr>
-<td>.align-content-flex-end<br />.a-c-fe</td><td>align-content: flex-end</td></tr>
+<td>.align-content-flex-end</td><td>align-content: flex-end</td></tr>
 <tr>
-<td>.align-content-start<br />.a-c-s</td><td>align-content: start</td></tr>
+<td>.align-content-start</td><td>align-content: start</td></tr>
 <tr>
-<td>.align-content-flex-start<br />.a-c-fs</td><td>align-content: flex-start</td></tr>
+<td>.align-content-flex-start</td><td>align-content: flex-start</td></tr>
 <tr>
-<td>.align-content-stretch<br />.a-c-str</td><td>align-content: stretch</td></tr>
+<td>.align-content-stretch</td><td>align-content: stretch</td></tr>
 <tr>
-<td>.justify-content-space-between<br />.justify-content-between<br />.j-c-b</td><td>justify-content: space-between</td></tr>
+<td>.justify-content-space-between</td><td>justify-content: space-between</td></tr>
 <tr>
-<td>.justify-content-space-evenly<br />.justify-content-evenly<br />.j-c-e</td><td>justify-content: space-evenly</td></tr>
+<td>.justify-content-space-evenly</td><td>justify-content: space-evenly</td></tr>
 <tr>
-<td>.justify-content-space-around<br />.justify-content-around<br />.j-c-a</td><td>justify-content: space-around</td></tr>
+<td>.justify-content-space-around</td><td>justify-content: space-around</td></tr>
 <tr>
-<td>.justify-content-left<br />.j-c-l</td><td>justify-content: left</td></tr>
+<td>.justify-content-left</td><td>justify-content: left</td></tr>
 <tr>
-<td>.justify-content-right<br />.j-c-r</td><td>justify-content: right</td></tr>
+<td>.justify-content-right</td><td>justify-content: right</td></tr>
 <tr>
-<td>.justify-content-center<br />.j-c-c</td><td>justify-content: center</td></tr>
+<td>.justify-content-center</td><td>justify-content: center</td></tr>
 <tr>
-<td>.justify-content-end<br />.j-c-e</td><td>justify-content: end</td></tr>
+<td>.justify-content-end</td><td>justify-content: end</td></tr>
 <tr>
-<td>.justify-content-flex-end<br />.j-c-fe</td><td>justify-content: flex-end</td></tr>
+<td>.justify-content-flex-end</td><td>justify-content: flex-end</td></tr>
 <tr>
-<td>.justify-content-start<br />.j-c-s</td><td>justify-content: start</td></tr>
+<td>.justify-content-start</td><td>justify-content: start</td></tr>
 <tr>
-<td>.justify-content-flex-start<br />.j-c-fs</td><td>justify-content: flex-start</td></tr>
+<td>.justify-content-flex-start</td><td>justify-content: flex-start</td></tr>
 <tr>
-<td>.justify-content-stretch<br />.j-c-str</td><td>justify-content: stretch</td></tr>
+<td>.justify-content-stretch</td><td>justify-content: stretch</td></tr>
 </table>
 
 ## padding 

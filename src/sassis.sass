@@ -17,36 +17,66 @@
 @import '_syntax'
 
 
-
+=bg0
+	+bg(var(--bg0))
+=bg1
+	+bg(var(--bg1))
+=bg2
+	+bg(var(--bg2))
+=bg3
+	+bg(var(--bg3))
+=bg4
+	+bg(var(--bg4))
+=bg5
+	+bg(var(--bg5))
+=bg6
+	+bg(var(--bg6))
+=c0
+	+createColors(var(--c0), var(--bg3))
+=c1
+	+createColors(var(--c1), var(--bg3))
+=c2
+	+createColors(var(--c2), var(--bg3))
+=c3
+	+createColors(var(--c3), var(--bg3))
+=c4
+	+createColors(var(--c4), var(--bg3))
+=c5
+	+createColors(var(--c5), var(--bg3))
+=c6
+	+createColors(var(--c6), var(--bg3))
 
 =app
-	+flex
-	+column(stretch,stretch)
-	+fill
-	+bg
-	+color
-=sassis( $active-filled: true )
-
-	/* core sassis */
-
 	html
 		font-size: var(--font-size)	
-
 	.app
-		+app
-
-	+reset
-
+		+flex
+		+column(stretch,stretch)
+		+fill
 	.sassis, select, button, input, textarea, *
 		font-family: var(--font)
 		font-size: 1rem
 		line-height: var(--line-height)
 
+/* sassis creates THEME-BASED shorthand: colors, borders, filled etc */ 
 
-	+interfaces
+=sassis( $active-filled: true, $use-interfaces: true )
+
+	/* core sassis */
+
+
+	+reset
+	+app
+
+
+	@if $use-interfaces
+		+interfaces
+
+	/* code syntax (ADD MONACO EDITOR: TODO) */
+
 	+syntax
 
-	/* ez borders */
+	/* ez borders (ADD TO SHORTHAND ONLY: TODO) */
 
 	.border, .b
 		+border
@@ -59,7 +89,7 @@
 	.bl
 		+bl
 
-	/* backgrounds w. pop and sink */
+	/* backgrounds w. pop and sink  (ADD TO SHORTHAND ONLY: TODO) */
 
 	@for $i from 1 through 24
 		.clamp#{$i}
@@ -91,7 +121,7 @@
 	$COLORS: red, pink, purple, blue, green, yellow, orange
 
 	@each $col in $COLORS
-		+createColors( var(--#{$col}), var(--bg), #{$col})
+		+createColors( var(--#{$col}), var(--bg), #{$col}, $active-filled, $use-interfaces)
 
 	@for $i from 0 through 6
 		$ii: $i + 7
@@ -110,19 +140,19 @@
 	+bg( var(--bg5), bg5 popper )
 	+bg( var(--bg6), bg6 poppest )
 
-	+createColors( var(--c0), var(--bg3), c0 fadiest, $active-filled  )
-	+createColors( var(--c1), var(--bg3), c1 fadier inactive disabled, $active-filled  )
-	+createColors( var(--c2), var(--bg3), c2 fade, $active-filled  )
-	+createColors( var(--c3), var(--bg3), c3 normal sassis, $active-filled  )
-	+createColors( var(--c3), var(--bg3) )
-	+createColors( var(--c4), var(--bg3), c4 bright strong, $active-filled  )
-	+createColors( var(--c5), var(--bg3), c5 brighter, $active-filled  )
-	+createColors( var(--c6), var(--bg3), c6 brightest, $active-filled  )
+	+createColors( var(--c6), var(--bg3), c0 fadiest, $active-filled, $use-interfaces)
+	+createColors( var(--c5), var(--bg3), c1 fadier inactive disabled, $active-filled, $use-interfaces)
+	+createColors( var(--c4), var(--bg3), c2 fade, $active-filled, $use-interfaces)
+	+createColors( var(--c3), var(--bg3), c3 normal color sassis, $active-filled, $use-interfaces)
+	+createColors( var(--c3), var(--bg3), '', $active-filled, $use-interfaces)
+	+createColors( var(--c2), var(--bg3), c4 bright strong, $active-filled, $use-interfaces)
+	+createColors( var(--c1), var(--bg3), c5 brighter, $active-filled, $use-interfaces)
+	+createColors( var(--c0), var(--bg3), c6 brightest, $active-filled, $use-interfaces)
 
-	+createColors( var(--green), var(--bg3), success, $active-filled )
-	+createColors( var(--red), var(--bg3), error, $active-filled )
-	+createColors( var(--orange), var(--bg3), warning, $active-filled )
-	+createColors( var(--blue), var(--bg3), info, $active-filled )
+	+createColors( var(--green), var(--bg3), success, $active-filled, $use-interfaces )
+	+createColors( var(--red), var(--bg3), error, $active-filled, $use-interfaces )
+	+createColors( var(--orange), var(--bg3), warning, $active-filled, $use-interfaces )
+	+createColors( var(--blue), var(--bg3), info, $active-filled, $use-interfaces )
 
 	@media screen and (max-width: 767px)
 		_::-webkit-full-page-media, _:future, :root .safari-only
